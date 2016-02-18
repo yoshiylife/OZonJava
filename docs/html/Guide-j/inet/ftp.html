@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="pop3.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="nntp.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>FTPクラスとFTPClientクラスの使い方<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>FTPクラスのコンストラクタ
+  <LI>FTPクラスのメソッド
+  <LI>FTPClientクラスのコンストラクタ
+  <LI>FTPClientクラスのメソッド
+  <LI>FTPクラスの使用方法
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>１．FTPクラスのコンストラクタ
+  <DD><BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new create ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>FTPプロトコルを生成</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>２．FTPクラスのメソッド
+  <DD><BR>
+FTPコマンドに対応したメソッドメンバを持っています。<BR>
+<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String user (String username)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String pass (String password)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String acct (String username)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String cwd (String pathname)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String cdup ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String smnt (String pathname)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String quit ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String rein ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String port (String host_port)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String pasv ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String type (String type_code)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String stru (String structure)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String mode (String mode_code)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String retr (String pathname, OutputStream
+out)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String stor (String pathname, InputStream
+in)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String stou (InputStream in)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String appe (String pathname, InputStream
+in)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String allo (String integer)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String rest (String marker)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String rnfr (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String rnto (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String abor ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String dele (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String rmd (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String mkd (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String pwd ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String list ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String list (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String nlst ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String nlst (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String site (String str)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String syst ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String stat ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String stat (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String help ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String help (String str)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String noop ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>３．FTPClientクラスのコンストラクタ
+  <DD><BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new create ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>FTPプロトコルを生成</TD></TR>
+  </TABLE>
+
+<BR>
+FTPClientクラスの上位クラスは、FTPクラスです。<BR>
+FTPClientクラスのコンストラクタはその本体定義の中でFTPクラスのコンストラクタを起動するということだけを行います。<BR>
+<BR>
+<BR>
+  <DT>４．FTPClientクラスのメソッド
+  <DD><BR>
+FTPコマンドに対応したメソッドメンバを持っています。<BR>
+<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean conn (String host, int port)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サーバとの接続を確立します。<BR>
+第1引数はマシン名、第2引数はポート番号。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean conn (String host)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サーバとの接続を確立します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean put (String files)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean put (String source_file, String
+remote_file)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">Array get_pathnames_local (String paths)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean get (String files)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean get (String remote_file, String
+source_file)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public boolean mkdir (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public boolean cd (String pathname)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String pwd ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String list ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String list (String path)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String dir ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String dir (String path)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public boolean disconnect ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public boolean userAndPassword (String user, String
+pass)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public boolean binary ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public boolean ascii ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>５．FTPクラスとFTPClientクラスの使用方法
+  <DD><BR>
+FTPクラスを使用するときには、コンストラクタ create によりインスタンスを生成し、そのインスタンスに対してインタフェースとして提供されている各メソッドを起動することにより、FTP
+プロトコルで規定される各コマンドを送信することができます。<BR>
+各メソッドはレスポンスデータ中のステータス文字列を戻り値とします。<BR>
+レスポンスデータ全体を得るには、getResponse メソッドを利用します。<BR>
+<BR>
+FTPClientクラスの使用方法も同様です。<BR>
+<BR>
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">FTPクラス
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell FTPTester { 
+
+        public void initialize () { 
+        }
+
+        public void go () {
+            FTPTesterR run=&gt;create ();
+            Thread th=&gt;create (run);
+        }
+
+        public void quiet () {
+            flushCell ();
+        }
+    }
+
+    class FTPTesterR : *Runnable {
+        new create () {
+        }
+
+        public void run () {
+            FTP ftp=&gt;create ();
+            System sys=&gt;create ();
+
+            sys-&gt;println (ftp-&gt;connect (&quot;dorothy&quot;));
+            sys-&gt;println (ftp-&gt;getResponse ());
+            sys-&gt;println (ftp-&gt;user (&quot;toto&quot;));
+            sys-&gt;println (ftp-&gt;getResponse ());
+            sys-&gt;println (ftp-&gt;pass (&quot;kansas10&quot;));
+            sys-&gt;println (ftp-&gt;getResponse ());
+            sys-&gt;println (ftp-&gt;nlst ());
+            sys-&gt;println (ftp-&gt;getResponse ());
+            sys-&gt;println (ftp-&gt;getRecvData ());
+            sys-&gt;println (ftp-&gt;quit ());
+            sys-&gt;println (ftp-&gt;getResponse ());
+       }
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="pop3.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="nntp.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

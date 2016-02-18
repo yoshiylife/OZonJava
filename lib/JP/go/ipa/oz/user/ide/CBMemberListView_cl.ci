@@ -1,0 +1,36 @@
+j, JP.go.ipa.oz.user.ide.CBMemberListView_cl, 0x10, JP.go.ipa.oz.user.ide.CBMemberListView_if, JP.go.ipa.oz.lib.standard._Panel_cl
+a, targetSchool, 0x0, LJP.go.ipa.oz.user.ide.School_if, 359, 21
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 774, 15
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 421, 43
+a, argumentTypePanel, 0x0, LJP.go.ipa.oz.lib.standard._Panel_if, 487, 106
+a, methodView, 0x0, LJP.go.ipa.oz.user.ide.CBMethodView_if, 307, 25
+a, partView, 0x0, LJP.go.ipa.oz.user.ide.CBPartView_if, 282, 21
+a, accessLevelPanel, 0x0, LJP.go.ipa.oz.lib.standard._Panel_if, 487, 106
+a, targetImplPart, 0x0, LJP.go.ipa.oz.user.ide.CIImplementationPart_if, 731, 37
+a, declaringClassPanel, 0x0, LJP.go.ipa.oz.lib.standard._Panel_if, 487, 106
+a, modifierPanel, 0x0, LJP.go.ipa.oz.lib.standard._Panel_if, 487, 106
+a, targetIfPart, 0x0, LJP.go.ipa.oz.user.ide.CIInterfacePart_if, 697, 30
+a, titleLabel, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 624, 18
+a, selectedView, 0x0, LJP.go.ipa.oz.user.ide.CBMemberView_if, 251, 27
+a, targetPart, 0x0, LJP.go.ipa.oz.user.ide.CIPart_if, 336, 19
+a, namePanel, 0x0, LJP.go.ipa.oz.lib.standard._Panel_if, 487, 106
+a, memberList, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 186, 23
+a, eventQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 421, 43
+a, scrollPane, 0x0, LJP.go.ipa.oz.lib.standard._ScrollPane_if, 597, 23
+a, typePanel, 0x0, LJP.go.ipa.oz.lib.standard._Panel_if, 487, 106
+a, memberListener, 0x0, LJP.go.ipa.oz.user.ide.CBMemberListener_if, 384, 33
+a, isImpl, 0x0, Z, 677, 16
+c, newCBIfMemberListView, (LJP.go.ipa.oz.user.ide.CIPart_if, LJP.go.ipa.oz.lib.standard._Collection_if, LJP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._System_cl), (951, 291, ())
+c, newCBImplMemberListView, (LJP.go.ipa.oz.user.ide.CIPart_if, LJP.go.ipa.oz.lib.standard._Collection_if, LJP.go.ipa.oz.user.ide.CBMethodView_if, LJP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.user.ide.CBMethodView_if, JP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._System_cl), (1328, 358, ())
+m, initGUI, 0x0, V, (LJP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.lib.standard._Collection_if), (), (4733, 138, ())
+m, initParams, 0x0, V, (LJP.go.ipa.oz.user.ide.CIPart_if, LJP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.user.ide.CBPartView_if, JP.go.ipa.oz.user.ide.ClassBrowser_if), (JP.go.ipa.oz.lib.standard._Dictionary_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.ide.CBMemberListener_cl), (4953, 441, ())
+m, setMembers, 0x0, V, (LJP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.CIPart_if), (), (9637, 292, ((9692, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (9716, 6, JP.go.ipa.oz.user.ide.CIPart_if)))
+m, select, 0x1, V, (LJP.go.ipa.oz.user.ide.CIMember_if), (JP.go.ipa.oz.user.ide.CIMember_if, JP.go.ipa.oz.user.ide.CBMemberView_if, JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.user.ide.CIType_if, JP.go.ipa.oz.user.ide.CIAttribute_if, JP.go.ipa.oz.user.ide.CIClassType_if), (), (1844, 1077, ((1890, 12, JP.go.ipa.oz.user.ide.CBMemberView_if), (1915, 6, JP.go.ipa.oz.user.ide.CIPart_if), (1937, 6, JP.go.ipa.oz.user.ide.CIType_if), (2310, 11, JP.go.ipa.oz.user.ide.CIAttribute_if), (2452, 11, JP.go.ipa.oz.user.ide.CIClassType_if)))
+m, setAttributeListOf, 0x0, V, (LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.user.ide.CIImplementationPart_if, JP.go.ipa.oz.user.ide.CIAttribute_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.CBMemberView_if), (JP.go.ipa.oz.user.ide.CBMemberView_cl), (8055, 758, ((8102, 20, JP.go.ipa.oz.user.ide.CIImplementationPart_if), (8139, 11, JP.go.ipa.oz.user.ide.CIAttribute_if), (8162, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (8182, 12, JP.go.ipa.oz.user.ide.CBMemberView_if)))
+m, showPart, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CBExceptionDialog_if, JP.go.ipa.oz.user.ide.ClassBrowser_if, JP.go.ipa.oz.user.ide.CIException_if), (JP.go.ipa.oz.user.ide.CBExceptionDialog_cl), (12571, 286, ((12607, 17, JP.go.ipa.oz.user.ide.CBExceptionDialog_if), (12710, 11, JP.go.ipa.oz.user.ide.CIException_if)))
+m, layoutComponents, 0x0, V, (), (JP.go.ipa.oz.lib.standard._GridBagLayout_if, JP.go.ipa.oz.lib.standard._GridBagConstraints_if), (JP.go.ipa.oz.lib.standard._GridBagLayout_cl, JP.go.ipa.oz.lib.standard._GridBagConstraints_cl), (5476, 543, ((5510, 13, JP.go.ipa.oz.lib.standard._GridBagLayout_if), (5538, 18, JP.go.ipa.oz.lib.standard._GridBagConstraints_if)))
+m, setMembersOf, 0x0, V, (LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIPart_if), (), (10013, 178, ())
+m, setConstructorListOf, 0x0, V, (LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.user.ide.CIMethod_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.CBMemberView_if), (JP.go.ipa.oz.user.ide.CBMemberView_cl), (8895, 660, ((8944, 8, JP.go.ipa.oz.user.ide.CIMethod_if), (8967, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (8987, 12, JP.go.ipa.oz.user.ide.CBMemberView_if)))
+m, selectView, 0x0, V, (LJP.go.ipa.oz.user.ide.CBMemberView_if), (JP.go.ipa.oz.user.ide.CBMemberView_if), (), (7809, 164, ())
+m, setMethodListOf, 0x0, V, (LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.user.ide.CIImplementationPart_if, JP.go.ipa.oz.user.ide.CIMethod_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.CBMemberView_if), (JP.go.ipa.oz.user.ide.CBMemberView_cl), (10273, 2216, ((10317, 20, JP.go.ipa.oz.user.ide.CIImplementationPart_if), (10354, 8, JP.go.ipa.oz.user.ide.CIMethod_if), (10377, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (10397, 12, JP.go.ipa.oz.user.ide.CBMemberView_if)))
+m, mkMemberComponents, 0x0, V, (), (JP.go.ipa.oz.lib.standard._Panel_if, JP.go.ipa.oz.lib.standard._GridBagLayout_if, JP.go.ipa.oz.lib.standard._GridBagConstraints_if, JP.go.ipa.oz.lib.standard._GridLayout_if, JP.go.ipa.oz.lib.standard._Color_if), (JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._ScrollPane_cl, JP.go.ipa.oz.lib.standard._Color_cl, JP.go.ipa.oz.lib.standard._GridLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._GridBagLayout_cl, JP.go.ipa.oz.lib.standard._GridBagConstraints_cl), (6101, 1626, ((6137, 5, JP.go.ipa.oz.lib.standard._Panel_if), (6156, 13, JP.go.ipa.oz.lib.standard._GridBagLayout_if), (6185, 18, JP.go.ipa.oz.lib.standard._GridBagConstraints_if), (6223, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (6249, 5, JP.go.ipa.oz.lib.standard._Color_if)))

@@ -1,0 +1,744 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="s_ide.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H2>Helloプログラムとその実行<BR>
+</H2>
+<P>
+<BR>
+</P>
+<P>
+ここでは、OZ言語でアプリケーションを作成するための基礎的事項について扱っています。このページに続いて「<A href="s_ide.html">統合開発環境を利用したアプリケーション開発</A>」のページも参照してください。<BR>
+<BR>
+<BR>
+OZプログラム <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+Hello.oz
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    cell Hello{
+        public void initialize(){
+            ;
+        }
+
+        public void go(){
+            println(&quot;Hello!&quot;);
+        }
+         
+        public void println(String str){
+            System system=&gt;create();  
+            system-&gt;println(str);
+        }
+
+        protected void quiet(){
+            flushCell();
+        }
+    }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+Contents
+</P>
+<OL>
+  <LI><A href="#file">ソースファイルの拡張子</A>
+  <LI><A href="#element">OZプログラムの構成要素</A>
+  <LI><A href="#ozc">OZコンパイラ</A>
+  <LI><A href="#school">スクールファイル</A>
+  <LI><A href="#compile">ソースファイルのコンパイル</A>
+  <LI>OzVM によるアプリケーション実行のしくみ
+  <LI><A href="#obj">グローバルオブジェクトの生成と活性化</A>
+</OL>
+<UL>
+  <LI><A href="#ap">補足: 非活性化を自ら行うアプリケーションの作成</A>
+</UL>
+<P>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="file"></A><BR>
+１．ソースファイルの拡張子
+  <DD><BR>
+上のソースプログラムのタイトルに「Hello.oz」と書かれています。このHello.oz
+というのは、OZソースプログラムのファイル名です。<BR>
+OZソースプログラムの拡張子として、<B>.oz</B> を指定します。<BR>
+<BR>
+ソースプログラムは、テキストエディタで編集します。<BR>
+<BR>
+<BR>
+  <DT><A name="element"></A><BR>
+２．OZプログラムの構成要素
+  <DD><BR>
+Hello.oz はコンパイルでき、そして、実行できるソースプログラムです。 C++
+のメイン関数のような特殊な関数は存在しません。OZ言語で書かれたソースプログラムはすべて<B>クラス宣言</B>から構成されます。そして、実行時のシステムは、クラスから生成されたオブジェクトから構成されます。<BR>
+<BR>
+<BR>
+Hello.oz を利用して、OZプログラムの構成について調べてみましょう。<BR>
+<BR>
+  <DL>
+    <DT><B>クラス宣言</B>
+    <DD><BR>
+１つのクラスが宣言されています。クラス名は Hello です。<BR>
+<BR>
+クラス宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+    <CENTER>
+    <TABLE width="90%" cellpadding="2">
+      <TR>
+        <TD>
+<PRE>
+    cell Hello{
+        （略）
+    }
+</PRE>
+</TD></TR>
+    </TABLE>
+
+    </CENTER>
+<BR>
+<BR>
+この例では、<B>cell</B> というキーワードを使用して、クラス宣言をしています。<B>class</B>
+というキーワードでクラス宣言を行うこともできます。OZシステムのクラスには、cell型とclass型の2種類のクラスが存在します。両者の違いは、cell型クラスのインスタンスがOZの全世界規模のネットワークの中でユニークに識別されるのに対して、class型のインスタンスはローカルマシンでのみ識別されるということです。<BR>
+<BR>
+<BR>
+任意の識別子をクラス名に使用することができます。但し、1つのアプリケーションに複数のクラスを宣言する場合には、その名前に重複がないように決定する必要があります。（ここで、識別子とはOZ言語の字句の規定による識別子です。OZ言語のキーワード以外の英字
+(a-zA-Z) から始まり英数字 (a-zA-Z0-9) およびアンダースコア (_) からなる任意の長さの文字列を識別子と規定しています。）<BR>
+<BR>
+<BR>
+    <DT><B>クラスのメンバ</B>
+    <DD><BR>
+クラスHello のメンバとして、メソッドが4つ宣言され、そのメソッド本体が定義されています。initialize、go、println、quiet
+が宣言されているメソッドの名前です。<BR>
+<BR>
+メンバの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+    <CENTER>
+    <TABLE width="90%" cellpadding="2">
+      <TR>
+        <TD>
+<PRE>
+    cell Hello{
+        public void initialize(){;}
+        public void go(){ ... }
+        public void println(String str){ ... }
+        protected void quiet(){ ... }   
+    }
+</PRE>
+</TD></TR>
+    </TABLE>
+
+    </CENTER>
+<BR>
+<BR>
+OZ言語では、3種類のクラスメンバを宣言することができます。<BR>
+    <UL>
+      <LI>アトリビュート
+      <LI>メソッド
+      <LI>コンストラクタ
+    </UL>
+<BR>
+アトリビュートは、そのクラスのインスタンスが保有する情報です。メソッドは、クラスのインスタンスの振舞い(=操作)を定義するものです。そのインスタンスが保有するアトリビュートについて答えたり、アトリビュートを加工したりする操作が宣言されることでしょう。コンストラクタはクラスからそのオブジェクトを生成するときに起動されます。<BR>
+<BR>
+このマニュアルではオブジェクトという用語が使われていますが、OZシステムでオブジェクトとはクラスの「インスタンス」を意味しています。<BR>
+<BR>
+メンバの名前は、クラス内で重複することが認められることもあります。<BR>
+アトリビュートとメソッドは異なる名前空間を持つので、同じ名前を持つことができます。また、メソッドは多重定義することができます。すなわち、同一型、同一名で異なる引数リストを持つメソッドを宣言することができます。コンストラクタとメソッドの名前空間は同一なので、メソッド名と同じ名前を持つコンストラクタを宣言することはできません。<BR>
+<BR>
+メンバの宣言の順序に制約はありません。<BR>
+<BR>
+アトリビュートの宣言、コンストラクタの宣言については、次の「統合開発環境を利用したアプリケーション開発」の中で説明しています。ここでは、メソッドの宣言について、Hello.oz
+を用いて調べてみましょう。<BR>
+<BR>
+<BR>
+    <DT><B>メソッド宣言</B>
+    <DD><BR>
+まず、initialize メソッドを調べてみましょう。<BR>
+<BR>
+メソッド宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">initialize
+    <CENTER>
+    <TABLE width="90%" cellpadding="2">
+      <TR>
+        <TD>
+<PRE>
+    public void initialize(){;}
+</PRE>
+</TD></TR>
+    </TABLE>
+
+    </CENTER>
+publicは<B>アクセスレベル</B>を指定するメソッド宣言の修飾子です。public
+指定がされているメソッドは任意のオブジェクトから起動することができます。<BR>
+<BR>
+oz言語のメンバ宣言におけるアクセスレベルの指定には、
+    <UL>
+      <LI>public
+      <LI>protected
+      <LI>(指定しない)
+    </UL>
+の3種類があります。protected は、そのクラスおよびそれを継承して宣言されたクラスのオブジェクトの中でアクセスできるという指定です。何も指定しないと、そのクラスのオブジェクトの中でアクセスできるという指定になります。<BR>
+<BR>
+次の void は、<B>メソッドの型</B>の指定です。メソッド名の直前にはこのメソッドの戻り値の型を指定します。initializeメソッドの型は
+void です。すなわち、initializeは戻り値のないメソッドです。<BR>
+<BR>
+メソッド名の後ろに、（ ) で囲って、<B>引数</B>を指定します。引数は複数指定することができますが、このメソッドには引数がありません。<BR>
+<BR>
+引数リストの後ろに、 { } で囲って、<B>メソッド本体の定義</B>を記述します。ここでは、空文(
+; )が記述されています。このメソッドは何も処理せずに終了します。<BR>
+<BR>
+<BR>
+次に、goメソッドを調べてみましょう。<BR>
+<BR>
+メソッド宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">go
+    <CENTER>
+    <TABLE width="90%" cellpadding="2">
+      <TR>
+        <TD>
+<PRE>
+    public void go(){
+        println(&quot;Hello!&quot;); 
+    }
+</PRE>
+</TD></TR>
+    </TABLE>
+
+    </CENTER>
+アクセスレベル、メソッドの型、引数リストは、上のinitializeメソッドと同様ですが、goメソッドの宣言ではメソッド本体の定義が行われています。
+<TT><FONT color="#400040">println(&quot;Hello!&quot;);</FONT></TT> という文が、メソッド本体の定義です。<BR>
+<BR>
+<B>メソッド本体の定義では、OZ言語が規定するさまざまな文を記述します。</B>文は
+; で終了します。<BR>
+ここで定義されている文 <TT><FONT color="#400040">println(&quot;Hello!&quot;);</FONT></TT>には、<B>(</B>
+と <B>)</B> が含まれていますから、これはメソッドを起動するために記述された文です。メソッド名
+println の前には何も指定されていないので、このクラスのメソッド、あるいは、祖先クラスで
+protected以上のアクセスレベルが指定されたメソッドの起動を意味しています。そして、引数として<TT><FONT color="#400040">Hello!</FONT></TT>という文字列を渡しています。<BR>
+<BR>
+その下を見ると、printlnメソッドが宣言されているので、このクラス自身のメソッドを起動していることがわかります。<BR>
+<BR>
+    <DT><B>クラスの継承</B>
+    <DD><BR>
+printlnメソッドについては後から調べることにして、最後のquietメソッドを先に調べましょう。<BR>
+<BR>
+メソッド宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">quiet
+    <CENTER>
+    <TABLE width="90%" cellpadding="2">
+      <TR>
+        <TD>
+<PRE>
+    protected void quiet(){
+        flushCell();
+    }
+</PRE>
+</TD></TR>
+    </TABLE>
+
+    </CENTER>
+アクセスレベルはprotectedで、子孫クラスのオブジェクトもこのメソッドを起動することができます。メソッドの型はvoidで、上述の２つのメソッドと同様です。引数もありません。メソッド本体の定義では、<TT><FONT color="#400040">flushCell()
+;</FONT></TT> というメソッド起動の文が記述されています。メソッド名の前に何も指定されていないので、このクラスのメソッド、あるいは、祖先クラスでprotected以上のアクセスレベルが指定されているメソッドの起動を意味しています。<BR>
+<BR>
+goメソッドの本体定義の中で記述されているメソッドはこのクラスのメンバでしたが、quietメソッドの本体定義で記述されている
+flushCell() はこのクラスに宣言されていません。したがって、これは祖先クラスでprotected、あるいは、
+public宣言されているメソッドの起動であることがわかります。<BR>
+<BR>
+ところで、どのクラスから継承してこのクラスを宣言しているのでしょうか。その指定はどこで行っているのでしょうか。<BR>
+<BR>
+OZ言語では、クラスPから継承してクラスCを宣言するためには、クラス名Cに続いて<TT><FONT color="#800080">:
+*P</FONT></TT> を指定します。<BR>
+<BR>
+<BR>
+クラス宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">継承
+    <CENTER>
+    <TABLE width="90%" cellpadding="2">
+      <TR>
+        <TD>
+<PRE>
+    class ChildClass : *ParentClass{
+        ...
+    }
+</PRE>
+</TD></TR>
+    </TABLE>
+
+    </CENTER>
+上の例ではclass型を指定していますが、継承はcell型のクラスにも行うことができます。class型のクラスはclass型から継承して宣言できます。cell
+型のクラスはcell型のクラスを継承して宣言することができます。<BR>
+<BR>
+Helloクラスは親クラスを指定していません。このような場合には祖先クラスはどうなるのでしょうか。OZ言語では、親クラスが明示的に指定されないと暗黙クラスを親クラスと指定したことみなします。<BR>
+<BR>
+cell型クラスの暗黙の親クラスには、
+    <UL>
+      <LI>protected void initialize()
+      <LI>protected void go()
+      <LI>protected void quiet()
+      <LI>protected final void flushCell()
+    </UL>
+などのメソッドが定義されています。<BR>
+<BR>
+flushCell() はグローバルオブジェクトを永続化するメソッドです。<BR>
+<BR>
+void initialize()、void go()、void quiet() は親クラスの<B>メソッドの再定義</B>です。このように、祖先クラスで定義されているメソッド本体の定義をそのクラスに適したメソッド定義に変更することができます。<BR>
+<BR>
+暗黙クラスについては「OZアプリケーションの特徴」で説明しています。<BR>
+<BR>
+<BR>
+    <DT>オブジェクト生成とメソッド起動
+    <DD><BR>
+最後に、println メソッドについて調べてみましょう。<BR>
+<BR>
+メソッド宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">println
+    <CENTER>
+    <TABLE width="90%" cellpadding="2">
+      <TR>
+        <TD>
+<PRE>
+    public void println(String str){
+        System system=&gt;create();
+        system-&gt;println(str);
+    }
+</PRE>
+</TD></TR>
+    </TABLE>
+
+    </CENTER>
+このメソッドはアクセスレベルが public で、型は void です。引数として、<FONT color="#400040"><TT>String
+str</TT></FONT> を指定しています。<BR>
+このように、メソッド宣言の引数リストには型名と変数名を記述します。メソッドの引数リストの変数は引数を表わし、メソッド本体の定義の中で使用することができます。ここでは、<TT><FONT color="#400040">system-&gt;println(str);</FONT></TT>という文の中でこの引数が使用されています。<BR>
+<BR>
+<BR>
+<BR>
+（1） <TT><FONT color="#400040">System system=&gt;create();</FONT></TT><BR>
+Systemクラスのローカル変数systemを宣言し、その変数がリファレンスするSystemクラスのオブジェクトを生成しています。<BR>
+オブジェクト生成するためには=&gt;を用いてコンストラクタを起動します。「(クラス型の)変数名<B>=&gt;</B>そのクラスのコンストラクタ名」を<B>インスタンス生成式</B>といいます。<BR>
+ローカル変数は宣言時に初期化することができます。<BR>
+<BR>
+System クラスは、標準出力への出力などを実現するユーティリティの役割を持つクラスです。<BR>
+<BR>
+（2） <TT><FONT color="#400040">system-&gt;println(str);</FONT></TT><BR>
+system がリファレンスしているSystemクラスのオブジェクトが持つprintlnメソッドを起動します。「(クラス型の)変数名-&gt;メソッド名」を<B>メソッド起動式</B>といいます。オブジェクト自身が持つメソッドを起動する場合には、「<TT><FONT color="#400040">変数名-&gt;</FONT></TT>」 
+を省略します。<BR>
+この文によって、このメソッドへの引数が標準出力に出力されます。<BR>
+この場合は、この文の実行によって、Hello! が出力されます。<BR>
+<BR>
+<BR>
+すべてのメンバを見てきましたが、なぜgoメソッドから起動されるprintlnメソッドもpublic指定なのか、不思議に思われる方もいらっしゃるかもしれません。実は
+cell型のクラスのinitialize、 go、 quiet は特殊なメソッドなのです。これについては後述します（「OZアプリケーションの特徴」）。<BR>
+<BR>
+<BR>
+  </DL>
+  <DT><A name="ozc"></A><BR>
+３．OZコンパイラ
+  <DD><BR>
+このテキストエディタで入力した Hello.oz をコンパイルしましょう。コンパイルにはOZコンパイラを使用します。<BR>
+<BR>
+コマンドプロンプトから
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    ozc -help
+</PRE>
+</TD></TR>
+  </TABLE>
+
+を起動してください。ozc はOZコンパイラのコマンド名です。-help という引数を指定すると、ozc
+の使用方法(Usage)が出力されます。<BR>
+<BR>
+OZコンパイラ <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">ozc
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; ozc -help
+   
+    &gt; ECHO OFF
+   Usage: ozc [-v] [-i] -s &lt;school&gt; &lt;files&gt;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+このUsageから、OZプログラムをコンパイルするときにはソースプログラムだけではいけないことがわかります。すなわち、
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    ozc Hello.oz
+</PRE>
+</TD></TR>
+  </TABLE>
+
+と指定してもコンパイルエラーになります。<BR>
+OZコンパイラの起動には、<TT>-s &lt;school&gt;</TT> の指定が必要です。&lt;school&gt;は、スクールファイルを意味しています。<BR>
+<BR>
+<BR>
+  <DT><A name="school"></A><BR>
+４．スクールファイル
+  <DD><BR>
+Hello.ozをコンパイルするために必要なスクールファイルとは、以下のようなエントリが記述されたファイルです。<BR>
+<BR>
+<BR>
+スクールファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">Hello.ozをコンパイルするためのスクールファイルhello.s
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+  &quot;Hello&quot;,&quot;.user.hello.Hello&quot;,&quot;.user.hello.Hello&quot;
+  &quot;System&quot;,&quot;.lib.standard._System&quot;,&quot;.lib.standard._System&quot;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+スクールファイルの名前は任意です。拡張子に .s をつけておくと、後述する「開発統合環境」を利用する開発で便利です。ここではファイル名
+hello.s に上記エントリを格納することにします。<BR>
+<BR>
+<BR>
+&quot;Hello&quot;、&quot;System&quot; は Hello.oz で宣言されているクラスとそこで利用されているクラスの名前です。<BR>
+<BR>
+スクールファイルは行単位で以下の情報を記述したエントリから構成されます。
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+  &quot;クラス名&quot;,&quot;インタフェース定義部&quot;,&quot;動作定義部&quot;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+ダブルクォーテーション( &quot; )で囲まれた3つの文字列をコンマで区切っています。最初の文字列がクラス名です。2番目にインタフェース定義部、3番目に動作定義部を指定しますが、これらはOZプログラムで使用されているクラスをユニークに指定するものです。<BR>
+<BR>
+OZ言語のクラスの名前は、コンパイル単位でユニークです。 別のコンパイル単位で、同一の名前のクラスが存在していてもかまいません。 
+しかし、分散環境であるOZでは、1つのクラスの定義が世界中でユニークなものでなければなりません。そこで、クラス名とは別にクラス識別子を付与し、それによってクラスのアイデンティティを確立します。<BR>
+ここで記述する&quot;インタフェース定義部&quot;,&quot;動作定義部&quot;はその識別子と関係するものです。<BR>
+<BR>
+この詳細については、後述の「OZアプリケーションの特徴」で説明しています。<BR>
+ここでは、OZプログラムをコンパイルするためには、そのプログラムで宣言、使用するすべてのクラスについてクラス名とクラス識別子の対応を記述したスクールファイルが必要であることを明記しておいてください。<BR>
+<BR>
+<BR>
+  <DT><A name="compile"></A><BR>
+５．ソースファイルのコンパイル
+  <DD><BR>
+OZプログラムとスクールファイルを作成すると、コンパイルを行うことができます。<BR>
+<BR>
+-s オプションでスクールファイルを指定し、そして、ソースファイル名を指定します。ここでは、コンパイルの情報を出力するためにオプション
+-v を指定しています。<BR>
+<BR>
+コンパイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; ozc -v -s hello.s Hello.oz 
+   
+    &gt; ECHO OFF
+   hello.s: loading school.
+   Hello.oz: compiling for implementation.
+   Hello: compiling.
+   Hello: loading class file of interface.
+   System: loading class file of interface.
+   System: loading class file of implementation.
+   String: loading class file of interface.
+   Cell: loading class file of implementation.
+   JP.go.ipa.oz.system.OzSecure: loading class file of implementation.
+   JP.go.ipa.oz.system.OzMonitor: loading class file of implementation.
+   java.lang.Object: loading class file of implementation.
+   F:\oz\lib\JP\go\ipa\oz\user\test\Hello_cl.java: emitting.
+   F:\oz\lib\JP\go\ipa\oz\user\test\Hello_cl.ci: emitting.
+   F:\oz\lib\JP\go\ipa\oz\user\test\Hello_cl.java: compiling java code.
+   ozc done.
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+Hello_cl.java: compiling java code.というメッセージが出力されて、最後に
+ozc done. と表示されていれば、このコンパイルは成功です。<BR>
+このメッセージについては「OZアプリケーションの特徴」で説明しています。<BR>
+<BR>
+<BR>
+  <DT>６．OzVM によるアプリケーション実行のしくみ
+  <DD><BR>
+オブジェクト指向システムでのアプリケーションの実行とは、オブジェクトの生成とオブジェクト間のメッセージ送受信のことです。<BR>
+OZシステムも同様です。アプリケーションのサービスを必要とする利用者がオブジェクトを生成します。利用者が直接生成することができるのはcell型クラスのオブジェクトだけです。<BR>
+cell型クラスのインスタンスをグローバルオブジェクトと呼びます。グローバルオブジェクトはOZの全世界規模のネットワークの中でユニークに識別されます。このグローバルオブジェクトがローカル環境で活動するオブジェクト（=ローカルオブジェクト）や別のグローバルオブジェクトとメッセージ送受信することで、アプリケーションとしての役割を果たします。<BR>
+<BR>
+<BR>
+  <DT><A name="obj"></A><BR>
+７．グローバルオブジェクトの生成
+  <DD><BR>
+では、まず、Helloクラスのグローバルオブジェクトを生成します。グローバルオブジェクトの生成にはランチャを使用することもできますが、ここでは
+OzVM の機能を直接利用して行うことにしましょう。OzVM というのは、OZオブジェクトの実行環境です。<BR>
+<BR>
+<BR>
+まず、OzVM を起動します。OzVMのコマンド名は <B>oz</B> です。コマンドプロンプトから以下のコマンドを実行してください。<BR>
+<BR>
+OzVM の起動 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; oz -i
+    Logging file F:\oz\logs\dorothy01080.log  
+    Executor&gt;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+-i オプションをつけると、インタラクティブモードで起動されます。<BR>
+<BR>
+インタラクティブモードでは、OzVM のコマンドを実行できます。グローバルオブジェクトを生成するためのコマンドは、create
+です。引数として、グローバルオブジェクトの識別子と動作部クラス識別子を渡します。<BR>
+<BR>
+グローバルオブジェクトの生成 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; oz -i
+    Logging file F:\oz\logs\dorothy01080.log  
+    Executor&gt;create test JP.go.ipa.oz.<B>user.hello.Hello</B>_cl
+    Executor&gt;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+ここでは、グローバルオブジェクトの識別子に test を付与しています。<BR>
+そして、Helloクラスの動作部クラス識別子を指定しています。上の太字とスクールファイルの&quot;動作定義部&quot;が同一であることを確認してください。<BR>
+<BR>
+test という単純な識別子では全世界でユニークという要件を満たしませんが、これは省略形です。省略形で記述すると、現在設定されているOZホームにおけるグローバルオブジェクトという意味になります。OZホームは利用者を抽象化した概念です。ユーザID（=利用者識別子）に相当すると理解しておいてください。<BR>
+<BR>
+グローバルオブジェクトの識別子をGOL（Global Object Location）といいます。GOLはコロン（:）で区切られた３つの要素から構成されます。<BR>
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    DNSドメイン名：OZホーム識別子：GOD
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+この場合は、GOD(Global Object Directory )が test です。GODは1人の利用者が管理しているオブジェクトの名前のことです。<BR>
+<BR>
+  <DL>
+    <DT>補足：
+    <DD>ここで、環境変数OZHOMEの下のobjects ディレクトリを調べてください。<BR>
+test というディレクトリが作成されていますが、ここにグローバルオブジェクトが貯えられています。<BR>
+<BR>
+  </DL>
+いったん、OzVM を終了させます。<BR>
+<BR>
+OzVM の終了 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; oz -i
+    Logging file F:\oz\logs\dorothy01080.log  
+    Executor&gt;create test JP.go.ipa.oz.<B>user.hello.Hello</B>_cl
+    Executor&gt;stop test
+    Executor&gt;<B>exit</B>
+    ...
+    &gt;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT><A name="run"></A><BR>
+８．グローバルオブジェクトの活性化
+  <DD><BR>
+OZシステムでは、プログラムの実行は<B>グローバルオブジェクトの活性化</B>を意味します。活性化すると、グローバルオブジェクトとそれと関連するその他のオブジェクトがOzVMの実行空間で活動することになります。<BR>
+<BR>
+グローバルオブジェクトの活性化をランチャを利用して行うこともできます。<BR>
+ここでは、OzVMを直接用いてグローバルオブジェクトの活性化を行いましょう。<BR>
+<BR>
+今度は、OｚVMのコマンドファイルを作成し、それをOzVMに実行させます。<BR>
+<BR>
+まず、以下の内容のテキストファイルを作成してください。ファイル名は任意です。このファイルにもOzVMコマンドが記述されています。<BR>
+<BR>
+<BR>
+OzVMコマンドファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+hello.e
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    go test;
+    sleep 500;
+    stop test;
+    go test;
+    sleep 500;
+    stop test;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+1行目はグローバルオブジェクトの活性化を行うコマンドです。testという名前のグローバルオブジェクトが活動を開始します。グローバルオブジェクトにはHelloクラスのオブジェクトが１つ含まれています。このコマンドによって、そのオブジェクトが活性化します。2行目はOzVM自身がスリープします。3行目でtestというグローバルオブジェクトに含めれていたオブジェクトの活動を非活性化します。4行目から6行目はその繰返しです。<BR>
+<BR>
+グローバルオブジェクトの活性化 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; oz -f hello.e
+    Logging file F:\oz\logs\dorothy01085.log
+    Hello!
+    Hello!
+    ...
+    &gt;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+「Hello!」という文字列が2度出力されていることを確認してください。<BR>
+OZプログラムから作成したアプリケーションが正しく実行されています。<BR>
+<BR>
+上記コマンドをインタラクティヴモードで入力しても、グローバルオブジェクトの活性化と非活性化を行うことができます。<BR>
+<BR>
+グローバルオブジェクトを活性化するために、引数にグローバルオブジェクトのGODを指定して
+OzVMを起動する方法もあります。<BR>
+<BR>
+グローバルオブジェクトの活性化 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">（Helloオブジェクトの活性には不適切な方法）
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; oz  hello
+    Logging file F:\oz\logs\dorothy01087.log
+    Hello!
+    
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+しかし、グローバルオブジェクトhello をこの方法で活性化すると、コマンド実行後コマンドプロンプトが戻ってきません。コマンドプロンプトが戻ってくるためには、グローバルオブジェクトが非活性化される必要があるのですが、Helloクラスのオブジェクト自身には、自分を非活性化する能力が実装されていません。そして、この方法で起動するとOzVMからオブジェクトにその指定を行うことができません。そのために、このような結果になります。<BR>
+このような場合には、Ctrl-CでOzVMを終了させるのですが、それを行うと、再度グローバルオブジェクトの活性化を行おうとしてもうまくいきません。Ctrl-Cで終了させると、OZアプリケーションが正しく動かなくなる可能性があるので注意が必要です。<BR>
+<BR>
+</DL>
+<P>
+「はじめてのOZアプリケーション」はなんとか動きました。しかし、本格的なOZアプリケーションとして完成させるためにはもういくつかの手続きが必要です。それについて「統合開発環境を利用したアプリケーション開発」でご紹介していきましょう。
+</P>
+<P>
+<BR>
+</P>
+<DL>
+  <DT><A name="ap"></A><BR>
+補足：非活性化を自ら行うグローバルオブジェクトの作成
+  <DD><BR>
+Hello.oz と hello.ins を以下のように変更して、上と同様にコンパイルし(ozc
+-v -s hello.s Hello.oz)、グローバルオブジェクトを生成してください(oz -f
+hello.ins)。<BR>
+そして、コマンドプロンプトから<BR>
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; oz  hello2
+</PRE>
+</TD></TR>
+  </TABLE>
+
+としてグローバルオブジェクトを活性化してください。今度は Hello! と表示されたあと、コマンドプロンプトが戻ってきます。<BR>
+<BR>
+OZプログラム <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+Hello.oz
+  <CENTER>
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell Hello{
+        public void initialize(){;}
+
+        public void go(){
+            println(&quot;Hello!&quot;);
+            <B>stopCell();</B>
+        }
+         
+        public void println(String str){
+            System system=&gt;create();  
+            system-&gt;println(str);           
+        }
+
+        protected void quiet(){
+            flushCell();
+        }
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+<BR>
+<BR>
+OzVMコマンドファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+hello.ins
+  <TABLE cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    create <B>hello</B> JP.go.ipa.oz.user.hello.Hello_cl;
+    stop <B>hello2</B>;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+(すでに test というグローバルオブジェクトが存在するので、別の名前のグローバルオブジェクトを生成します。)
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="s_ide.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

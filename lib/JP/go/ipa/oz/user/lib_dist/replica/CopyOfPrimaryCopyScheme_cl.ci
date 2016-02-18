@@ -1,0 +1,21 @@
+j, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_cl, 0x2000, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_cl
+a, primaryCopy, 0x4, LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, 328, 46
+a, primaryGOL, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 416, 28
+a, primaryFlag, 0x4, Z, 240, 27
+m, commitAll, 0x1, Z, (), (), (), (4209, 198, ())
+m, initialize, 0x4, V, (), (), (JP.go.ipa.oz.lib.standard._String_cl), (669, 161, ())
+m, propagateAll, 0x1, Z, (), (), (), (3594, 345, ())
+m, getClientStub, 0x1, LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, (), (JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if), (), (5516, 243, ((5662, 23, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if)))
+m, setPrimaryGOL, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (6922, 151, ())
+m, newSecondaryCopyAt, 0x1, Z, (LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyResource_cl), (1370, 927, ((1999, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if)))
+m, quiet, 0x4, V, (), (), (), (897, 36, ())
+m, getPrimaryCopy, 0x1, LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, (), (), (), (7342, 76, ())
+m, setPrimaryFlag, 0x1, V, (Z), (), (), (6089, 66, ())
+m, setAllPrimaryCopy, 0x1, V, (LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (8610, 376, ((8678, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (8707, 23, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if), (8746, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, setAllPrimaryCopy, 0x1, V, (LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (7835, 425, ((7915, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (7944, 23, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if), (7983, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, lockAll, 0x1, Z, (), (), (), (3122, 193, ())
+m, primaryUpdate, 0x1, V, (), (), (), (4911, 311, ())
+m, go, 0x4, V, (), (), (), (834, 22, ())
+m, setPrimaryCopy, 0x1, V, (LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyOfPrimaryCopyScheme_if), (), (6465, 168, ())
+m, update, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (4628, 32, ())
+m, removeSecondaryCopyOf, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2624, 220, ())

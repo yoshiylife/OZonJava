@@ -1,0 +1,110 @@
+<HTML>
+<HEAD>
+<TITLE>OZ Libraries</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>ユーザ複製プログラム作成方法</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+開発者は以下の手順で管理セルを作成する。
+</P>
+
+<OL>
+<P>
+<LI>複製をプライマリコピー方式で管理するセルを作成する場合<BR>
+<B>cell UserCopyOfPrimaryCopy : *CopyOfPrimaryCopyScheme</B> を作成する
+(他の名前でもよい)。<BR>
+CopyOfPriamryCopySchemeは複製をプライマリ方式で管理するための基本機能を
+備えたセルである。UserCopyOfPrimaryCopyはこのセルを継承し、以下のような
+機能を定義する。<BR>
+UserCopyOfPrimaryCopyでは、最初にオブジェクトをプライマリコピーとして登
+録し、その後作成した複製をセカンダリコピーとして登録していく。<BR>
+UserCopyOfPriamryCopyはユーザ定義のオブジェクトをメンバに持ち、その
+update()等を記述する必要がある。
+
+<UL>
+<LI>initialize<BR>
+initialize()では、super->initialize()を実行した後、super->setCpmGol()
+を呼び出し、セカンダリコピーマネージャを作成するGOLを指定する。
+<LI>セカンダリコピー作成<BR>
+セカンダリコピーとなるオブジェクトを作成した後、複製と複製のGOLを指定
+してsuper->newSecondaryCopyAt()を呼び出し、セカンダリコピーとして登録
+する。
+<LI>update<BR>
+public void update(String gol)<BR>
+アップデートのメソッドは、この形式で定義しなくてはならない。golはアッ
+プデートを行うオブジェクトのgolを指定する。セカンダリコピーのupdate()
+が呼び出されたときはプライマリコピーのupdate()に処理を委譲しなければ
+ならない。そのために、引数で渡されたgolがプライマリコピーのgolのとき
+はそのままアップデート実体を行うが、プライマリコピーのgolでないとき、
+super->primaryUpdate()を呼び出すように定義する。
+変更の反映のメソッド（propagete(), propageteAll()）は、このupdate()を
+実行することにより反映の処理を実現している。
+<LI>アップデート実体<BR>
+ここでオブジェクトのアップデート処理の実体を定義する。
+<LI>セカンダリコピーのアップデート<BR>
+セカンダリコピーは通常アップデートされないのが原則であるので、この処理
+は記述しなくてもよい。セカンダリコピーのアップデートを行うと、プライマ
+リコピーのアップデートに処理を委譲する。<BR>
+update()を行った後にカレントオブジェクトの更新を行うために、後述のオブ
+ジェクトのアップデートを行わなくてはならない。
+<LI>オブジェクトのアップデート<BR>
+アップデートを実行したセカンダリコピーにあるプライマリのオブジェクトを
+カレントのオブジェクトにコピーする。さらに、その他のセカンダリコピーに
+あるプライマリにもそのオブジェクトをセットする。
+</UL>
+</P>
+
+<P>
+<LI>複製をピアコピー方式で管理するセルを作成する場合<BR>
+<B>cell UserCopyOfPeerCopy : *CopyOfPeerCopyScheme</B> を作成する(他の名前でもよい)。<BR>
+CopyOfPeerCopySchemeは複製をピアコピー方式で管理するための基本機能を備え
+たセルである。UserCopyOfPeerCopyはこのセルを継承し、以下のような機能を定
+義する。<BR>
+UserCopyOfPeerCopyでは、最初にオブジェクトを元となる複製として登録し、そ
+の後作成した複製を他の複製として登録していく。
+UserCopyOfPeerCopyはユーザ定義のオブジェクトをメンバに持ち、そのupdate()
+等を記述する必要がある。
+<UL>
+<LI>initialize<BR>
+initialize()では、super->initialize()を実行する。
+<LI>他の複製作成<BR>
+他の複製となるオブジェクトを作成した後、複製と複製のGOL、コピーマネー
+ジャのGOLを指定してsuper->newCopyAt()を呼び出し、他の複製として登録する。
+<LI>update()<BR>
+pulic void update()<BR>
+アップデートのメソッドは、この形式で定義しなくてはならない。
+ここでオブジェクトのアップデート処理の実体を定義する。
+変更の反映のメソッド（propagete(), propageteAll()）は、このupdate()を
+実行することにより反映の処理を実現している。
+<LI>他の複製のpropagateAll()<BR>
+他の複製のpropagateAll()を行う場合は、propagateAll()を呼び出した後で
+カレントオブジェクトの更新を行うために後述のオブジェクトのアップデー
+トを行わなくてはならない。
+<LI>オブジェクトのアップデート<BR>
+propagateall()を実行した他の複製にあるオブジェクトをカレントのオブジ
+ェクトにコピーする。
+</UL>
+</P>
+
+</OL>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

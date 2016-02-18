@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>インスタンスのインポート</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+インスタンスのインポートとは、他の Autonomy セルが保持している
+リソースの代理オブジェクト ResourceProxy を当 Autonomy セルで
+管理することを指す。その目的により、リソースを元に
+対応する ResourceProxy を取得するインタフェースを用意する。
+一旦取得した情報は、再利用を考え、内部キャッシュに
+キャッシングするようにする。
+</P>
+
+<UL>
+
+<P>
+<LI>public ResourceProxy Autonomy#importResource(String resGol, String pivot)<BR>
+引数としてリソースの GOL および中間データタイプをとる。<BR>
+まず引数のリソースの GOL をキーに使用して、
+当 Autonomy セルが管理しているキャッシュを検索する。
+該当するものがなければ、
+Autonomy#getResourceProxy(String, String, String) により、
+新たに ResourceProxy を作成する。<BR>
+この際、リソースの GOL から直接作成することが不可能な場合は、
+中間データ型を利用することとなる。生成したものは、キャッシュに
+キャッシングする。最終的に、取得した ResourceProxy を
+返すようにする。
+</P>
+
+<P>
+<LI>public ResourceProxy Autonomy#importResource(String gol)<BR>
+簡易形式として、このようなメソッドを用意する。<BR>
+引数としてリソースの GOL をとる。<BR>
+これは、中間データタイプをnullとして、
+Autonomy#importResource(String, String) を呼び出すだけである。
+</P>
+
+</UL>
+
+
+<HR NOSHADE>
+
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

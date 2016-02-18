@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.ide.CBSystemMenuListener_cl, 0x10, JP.go.ipa.oz.user.ide.CBSystemMenuListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 244, 33
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 283, 15
+a, cid, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 228, 12
+a, partView, 0x0, LJP.go.ipa.oz.user.ide.CBPartView_if, 203, 21
+c, newCBSystemMenuListener, (LJP.go.ipa.oz.user.ide.CBPartView_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.CBPartView_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.lib.standard._System_cl), (460, 398, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.user.ide.ClassBrowser_if, JP.go.ipa.oz.user.ide.CBCIDInputDialog_if), (JP.go.ipa.oz.user.ide.CBCIDInputDialog_cl), (1016, 562, ((1071, 6, JP.go.ipa.oz.lib.standard._String_if), (1089, 6, JP.go.ipa.oz.user.ide.CIPart_if), (1108, 12, JP.go.ipa.oz.user.ide.ClassBrowser_if), (1290, 16, JP.go.ipa.oz.user.ide.CBCIDInputDialog_if)))

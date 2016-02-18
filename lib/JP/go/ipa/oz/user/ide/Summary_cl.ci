@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.ide.Summary_cl, 0x400, JP.go.ipa.oz.user.ide.Summary_if, JP.go.ipa.oz.lang._Root_cl
+a, theKey, 0x4, LJP.go.ipa.oz.user.garage.Key_if, 635, 22
+a, serverGOL, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 603, 28
+m, getKey, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (), (), (), (931, 49, ())
+m, getLocation, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1062, 60, ())
+m, describe, 0x401, V, (), (), (), (817, 32, ())
+m, setLocation, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1840, 67, ())
+m, setLocation, 0x1, V, (), (), (), (1696, 62, ())
+m, setKey, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if), (), (1558, 56, ())
+m, retreive, 0x1, LJP.go.ipa.oz.user.ide.Summarizable_if, (), (JP.go.ipa.oz.user.garage.SGarage_if, JP.go.ipa.oz.user.ide.Summarizable_if, JP.go.ipa.oz.user.garage.GarageException_if), (JP.go.ipa.oz.user.garage.GarageException_cl, JP.go.ipa.oz.user.garage.SGarage_pcl), (1204, 272, ((1245, 7, JP.go.ipa.oz.user.garage.SGarage_if), (1263, 12, JP.go.ipa.oz.user.ide.Summarizable_if), (1287, 15, JP.go.ipa.oz.user.garage.GarageException_if)))

@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.ide.CBHierarchyMenuListener_cl, 0x10, JP.go.ipa.oz.user.ide.CBHierarchyMenuListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 247, 35
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 288, 15
+a, partView, 0x0, LJP.go.ipa.oz.user.ide.CBPartView_if, 209, 34
+c, newCBHierarchyMenuListener, (LJP.go.ipa.oz.user.ide.CBPartView_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.CBPartView_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.lib.standard._System_cl), (465, 376, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.ClassBrowser_if, JP.go.ipa.oz.user.ide.CIException_if), (), (999, 299, ((1054, 6, JP.go.ipa.oz.lib.standard._String_if), (1072, 12, JP.go.ipa.oz.user.ide.ClassBrowser_if), (1238, 11, JP.go.ipa.oz.user.ide.CIException_if)))

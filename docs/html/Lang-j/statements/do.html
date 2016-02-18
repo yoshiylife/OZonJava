@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="while.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="break.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>do 文（The do Statement）<BR>
+</H3>
+<BR clear="all">
+<P>
+式の値によって、文の実行を制御します。<BR>
+<BR>
+<B>構文</B>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>do {文} while (式);</B></TD></TR>
+</TABLE>
+
+<P>
+式は論理型でなくてはいけません。<BR>
+<BR>
+</P>
+<P>
+<B>LALR(1)文法</B>
+</P>
+<PRE>
+  do_stmt : DO stmt WHILE ( exp ) ;<BR>
+</PRE>
+<P>
+<BR>
+<BR>
+<B>説明</B><BR>
+</P>
+<P>
+式の評価を行う前に文の実行が行われます。文の実行が正常に行われると、式の評価が行われます。そして、その値が
+true ならば、再度文を実行します。式の評価の値がfalseになるまで繰り返します。<BR>
+<BR>
+break文によって、文の実行を中断し、do文を終了することができます。<BR>
+ラベルのないcontinue文によって、文の実行を中断し、式の評価に処理を進めることができます。<BR>
+ラベル付きのbreak文があると、そのラベルまで処理が進みます。<BR>
+ラベル付きのcontinue文があると、そのラベルまで処理が進みます。<BR>
+</P>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+例: do 文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+   do {
+      ;                  // 空文
+    } while (j++ &lt; i);   // iとjはint型です。jがiよりも小さい間ループします。
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="while.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="break.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

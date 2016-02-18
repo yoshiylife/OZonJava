@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.ChoiceSubjectController_cl, 0x0, JP.go.ipa.oz.user.ide.ChoiceSubjectController_if, JP.go.ipa.oz.lib.standard._ItemListener_cl
+a, sbr, 0x0, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, 572, 18
+c, create, (LJP.go.ipa.oz.user.ide.SchoolBrowser_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.SchoolBrowser_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ItemListener_cl), (716, 96, ())
+m, itemStateChanged, 0x1, V, (LJP.go.ipa.oz.lib.standard._ItemEvent_if), (JP.go.ipa.oz.lib.standard._ItemEvent_if, JP.go.ipa.oz.lib.standard._Choice_if), (), (990, 115, ())

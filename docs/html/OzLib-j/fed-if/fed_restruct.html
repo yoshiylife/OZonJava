@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>インスタンスの再構成</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+インスタンスの再構成とは、Autonomy セルが保持している
+リソースの代理オブジェクト ResourceProxy のキャッシュを
+破棄することで再構成する。<BR>
+破棄のためのインタフェースとして、全ての ResourceProxy を
+破棄するものと、指定されたリソースの ResourceProxy のみを
+破棄するものを用意する。
+</P>
+
+<UL>
+
+<P>
+<LI>public void Autonomy#flushCache()<BR>
+当 Autonomy セルが保持しているキャッシュ集合を破棄し、
+新たなキャッシュ集合を生成し、それを保持することとする。
+</P>
+
+<P><LI>public void Autonomy#flushCache(String resGol)<BR>
+引数としてリソースの GOL をとる。<BR>
+Autonomy#getResourceProxyByCache(String) により、
+対応する ResourceProxy オブジェクトを取得し、
+その GOL に対応する ResourceProxy のみをキャッシュ集合から
+削除する。
+</P>
+
+</UL>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

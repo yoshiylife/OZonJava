@@ -1,0 +1,11 @@
+j, JP.go.ipa.oz.user.garage.Garage_cl, 0x0, JP.go.ipa.oz.user.garage.Garage_if, JP.go.ipa.oz.lang._Root_cl
+a, valueTable, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 157, 28
+a, keyGen, 0x0, LJP.go.ipa.oz.user.garage.KeyGenerator_if, 129, 24
+c, create, (), (JP.go.ipa.oz.user.garage.KeyComparator_if), (JP.go.ipa.oz.user.garage.KeyGenerator_cl, JP.go.ipa.oz.user.garage.KeyComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl), (347, 136, ((366, 13, JP.go.ipa.oz.user.garage.KeyComparator_if)))
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if), (), (1312, 67, ())
+m, size, 0x1, I, (), (), (), (1627, 59, ())
+m, replace, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if, LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.lang._Root_if), (), (1461, 84, ())
+m, put, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.user.garage.Key_if), (), (1093, 137, ((1130, 3, JP.go.ipa.oz.user.garage.Key_if)))
+m, keys, 0x1, LJP.go.ipa.oz.lib.standard._Collection_if, (), (), (), (945, 66, ())
+m, iterator, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (791, 72, ())
+m, get, 0x1, LJP.go.ipa.oz.lang._Root_if, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if), (), (641, 68, ())

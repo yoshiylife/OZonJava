@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.IDGenActionListener_cl, 0x0, JP.go.ipa.oz.user.ide.IDGenActionListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dlg, 0x0, LJP.go.ipa.oz.user.ide.IDGenDialog_if, 570, 16
+c, create, (LJP.go.ipa.oz.user.ide.IDGenDialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.IDGenDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl), (708, 96, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Checkbox_if, JP.go.ipa.oz.user.ide.SchoolBrowser_if, JP.go.ipa.oz.lib.standard._Choice_if), (), (982, 684, ())

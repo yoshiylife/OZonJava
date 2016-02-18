@@ -1,0 +1,168 @@
+% 構造仕様書
+\subsection{アプリケーションゲートウェイを介した通信}
+\label{comm:ag}
+
+\basection{機能詳細}
+
+ファイアウォールを越えるメソッド起動を中継する機能である。
+
+インタネットに接続されている{\site}には、 
+IP パケットが直接通らない設定になっているものも多い。
+そのような{\site}で、
+インタネット上の OZ のサービスを利用する場合には、
+適切なプロトコル変換機能を持ったゲートウェイ機能によって
+ファイアウォールを越えるメソッド起動を中継する。
+
+アプリケーションゲートウェイを介した通信に必要な機能は
+以下の三つである。
+
+\begin{description}
+
+\item[サイト間のアドレス解決] \hspace{1mm} \\
+
+DNSドメイン名からサイトへの中継機構のアドレスを解決する機能である。
+
+\item[サイト間のメソッド起動中継] \hspace{1mm} \\
+
+サイト間のメソッド起動を中継する機能である。
+
+WWWサーバから起動されるCGIプログラムと
+アプリケーションゲートウェイによって実装される。
+
+\item[セキュリティ対応機能] \hspace{1mm} \\
+
+サイトによって
+リモートメソッド起動に制限
+を加える機能である。
+
+\end{description}
+
+
+
+\basection{実現方式}
+
+ファイアウォールはセキュリティのためにサイト内を
+インターネットから選択的に隔離するものである。
+ファイアウォールを越えて\oz のリモートメソッド起動を
+中継するためには、ファイアウォール上に\oz 専用の
+中継機構を新たに設けてそれを利用する、もしくは既存のプロトコル中継機構を
+利用するという方法が考えられる。
+
+ファイアウォール上に新たに中継機構を設ける事は
+そのサイトの管理者でなければ行う事ができず、\oz システム
+導入の障害になることが考えられる。
+そこで、
+WWWサーバを中継に利用する方針をとる。
+WWWサーバは広く普及し、また他のサイトのWWWサーバ
+にアクセスするためのファイアウォール上の
+httpプロトコル中継機構(プロクシ)も広く普及しているからである。
+
+WWWサーバとの通信はhttpプロトコルが用いられる。
+そこで、
+エグゼキュータ間の通信をhttpプロトコルに変換してWWWサーバと
+通信する機能が必要となる。
+エグゼキュータとWWWサーバを中継する機構を
+\oz アプリケーションゲートウェイ(以下、アプリケーション
+ゲートウェイ)と呼ぶことにする。
+
+また、WWWサーバ自身には\oz システムとの通信機能はないので、
+CGI(Common Gateway Interface)によって、\oz との通信を
+する必要がある。
+CGIとエグゼキュータの間でプロトコル変換するのも
+アプリケーションゲートウェイである。
+
+アプリケーションゲートウェイを介した通信に必要な機能は
+以下の三つである。
+
+\begin{description}
+
+\item[サイト間のアドレス解決] \hspace{1mm} \\
+
+DNSドメイン名からサイトへの中継機構のアドレスを解決する機能である。
+
+サイトへの中継にWWWサーバを用いるので、そのサイトへの
+通信アドレスはそのサイトのWWWサーバのCGIプログラム
+のURLで表されることになる。
+
+一方、\oz のグローバルオブジェクトの識別子GOLには、
+DNSドメイン名が含まれている
+
+このDNSドメイン名からそのドメインが含まれるサイトの
+中継アドレスであるURLを得る機能である。
+
+\item[サイト間のメソッド起動中継] \hspace{1mm} \\
+
+サイト間のメソッド起動を中継する機能である。
+
+WWWサーバから起動されるCGIプログラムと
+アプリケーションゲートウェイによって実装される。
+サイト内のリモートメソッド起動で行われるエグゼキュータ間の
+通信をファイアウォールを越えて中継することにより
+実現される。
+
+\item[セキュリティ対応機能] \hspace{1mm} \\
+
+他のサイトへのリモートメソッド起動および
+他のサイトからのリモートメソッド起動を
+無制限に許すのはセキュリティの観点から
+望ましくないので、サイトによって
+リモートメソッド起動に制限
+を加える機能である。
+
+\end{description}
+
+
+\basection{制約事項}
+
+特になし。
+
+%通信機構に関連する機能の関係図と
+%サイトのクラス図について、
+%通信機構の機能仕様書で示したものと、
+%通信アドレス管理機構を利用しないように変更を加えたものの両方を
+%以下に示す。
+
+%\begin{figure}[hbt]
+%\begin{center}
+%\epsfile{file=comm/ag/figs/commRelation.eps,scale=0.8}
+
+%\caption{通信機構に関連する機能の関係図(変更前)}
+%\label{comm:ag:relationOrig}
+%\end{center}
+%\end{figure}
+
+%\begin{figure}[hbt]
+%\begin{center}
+%\epsfile{file=comm/ag/figs/commRelationModified.eps,scale=0.8}
+
+%\caption{通信機構に関連する機能の関係図(変更後)}
+%\label{comm:ag:relationMod}
+%\end{center}
+%\end{figure}
+
+%\begin{figure}[hbt]
+%\begin{center}
+%\epsfile{file=comm/ag/figs/commAgSiteOMT.eps,scale=0.8}
+
+%\caption{サイトのクラス図(変更前)}
+%\label{comm:ag:siteOMTOrig}
+%\end{center}
+%\end{figure}
+%\begin{figure}[hbt]
+%\begin{center}
+%\epsfile{file=comm/ag/figs/commAgSiteOMTModified.eps,scale=0.8}
+
+%\caption{サイトのクラス図(変更後)}
+%\label{comm:ag:siteOMTMod}
+%\end{center}
+%\end{figure}
+
+\basection{利用するサブプログラム}
+
+特になし。
+
+\input{comm/ag/siteResolve.tex}
+
+\input{comm/ag/methodRelay.tex}
+
+\input{comm/ag/masking.tex}

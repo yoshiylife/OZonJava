@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD><TITLE>Security Service</TITLE></HEAD>
+
+<BODY>
+
+<CENTER>
+<H3>OZ 認証システムの利用方法</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<UL>
+  <LI> <A HREF="#OZSS">OZ 認証システムを利用するための設定</A>
+  <LI> <A HREF="#OZAS">OZ 認証サーバの設定/起動方法</A>
+</UL>
+<HR>
+
+<A NAME="OZSS"></A>
+<H5>OZ 認証システムを利用するための設定</H5>
+<DL>
+  <DT> <A HREF="ex.html#machine">machine.cipher の設定</A>
+  <DD> 次のエントリを作成する。<BR>
+       <CODE>JP.go.ipa.oz.crypt.DES.OzDESCipher</CODE>
+
+  <DT> <A HREF="ex.html#cell">GOD/.cipher の設定</A>
+  <DD> 次のエントリを作成する。<BR>
+       <CODE>JP.go.ipa.oz.crypt.DES.OzDESCipher</CODE>
+
+  <DT> パスワードファイルの設定
+  <DD> 次のファイルに、パスワードを書く。<BR>
+       <CODE>$OZHOME/secure/password</CODE><BR>
+       パスワードは、任意の (タイプできる) 文字列でよいが、
+       空白や改行を含んではならない。<BR>
+       パスワードファイルは、他のユーザからは秘匿せねばならない。
+       マルチユーザの環境では、ファイルやディレクトリのパーミッションを
+       操作して、秘匿するようにする。
+</DL>
+<HR>
+
+<A NAME="OZAS"></A>
+<H5>OZ 認証サーバの設定/起動方法</H5>
+<DL>
+  <DT> 認証サーバ起動アドレスの設定
+  <DD> 認証サーバの管理下の全ての OZ ホームの
+       <CODE>$OZHOME/lib/oz.properties</CODE>に以下を追加する。<BR>
+       <CODE>oz.authentication.server=認証サーバのIPアドレス:ポート番号</CODE>
+       <BR>
+
+  <DT> 認証サーバの起動
+  <DD> <CODE>oz as</CODE><BR>
+       で認証サーバを起動する。
+       認証サーバを起動するのは特権ユーザ（管理者）のみである。
+
+  <DT> 認証サーバへのユーザの登録
+  <DD> 特権ユーザは認証対称となるユーザから
+       郵便書留等安全な方法で秘密鍵を受け取る。
+       特権ユーザによる認証サーバへの操作は認証サーバと同じOZHOMEでなければならない。<BR>
+       次に以下のコマンドで認証サーバを起動し、ユーザ名、秘密鍵を登録する。<BR>
+       <CODE>addUser userName userKey</CODE><BR>
+       このとき与える userKeyは OZHOME/secure/passwordの内容と同一でなければならない。<BR>
+       次に以下のコマンドでグループを登録する。<BR>
+       <CODE>addGroup groupName ownerName member1 ... memberN</CODE><BR>
+       この他メンテナンスのために以下のコマンドが用意されている。
+       （引数の与え方は <CODE>-h</CODE> で参照のこと）<BR>
+       <DL>
+	 <DT> ユーザ管理用
+	 <DD> <CODE>removeUser</CODE>：ユーザを削除<BR>
+	      <CODE>changeKey</CODE> ：ユーザの秘密鍵を変更
+	      <CODE>showUser</CODE>  ：登録ユーザ一覧を表示
+
+	 <DT> グループ管理用
+	 <DD> <CODE>removeGroup</CODE>：グループを削除<BR>
+	      <CODE>changeOwner</CODE>：グループのオーナを変更<BR>
+	      <CODE>addGroupMember</CODE>：グループにメンバを登録<BR>
+	      <CODE>removeGroupMember</CODE>：グループのメンバを削除<BR>
+	      <CODE>showGroup</CODE>  ：登録グループ一覧を表示
+       </DL>
+</DL>
+</P>
+
+<HR NOSHADE>
+
+<ADDRESS><B> <A href="copyright-j.html">Copyright</A>(c) 1996-1998 IPA,
+ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B></ADDRESS>
+<P>
+<B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+</P>
+</BODY>
+</HTML>

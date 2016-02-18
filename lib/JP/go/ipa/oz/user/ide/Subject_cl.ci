@@ -1,0 +1,35 @@
+j, JP.go.ipa.oz.user.ide.Subject_cl, 0x0, JP.go.ipa.oz.user.ide.Subject_if, JP.go.ipa.oz.user.ide.Summarizable_cl
+a, labels, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 663, 18
+a, released, 0x0, Z, 748, 17
+a, imported, 0x0, Z, 804, 17
+a, releaseMode, 0x0, I, 861, 16
+a, subjectName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 686, 19
+a, ifPkgName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 708, 17
+a, using, 0x0, Z, 913, 14
+a, clPkgName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 728, 17
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl), (1407, 185, ((1499, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+c, create, (), (JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl), (1144, 177, ((1186, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+m, getOzLabel, 0x1, LJP.go.ipa.oz.user.ide.OzLabel_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.OzLabel_if), (), (4000, 114, ((4049, 7, JP.go.ipa.oz.user.ide.OzLabel_if)))
+m, removeAll, 0x1, V, (), (), (), (6099, 49, ())
+m, setReleaseMode, 0x1, V, (I), (), (), (3210, 61, ())
+m, getUsing, 0x1, Z, (), (), (), (1982, 48, ())
+m, removeOzLabel, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (5963, 79, ())
+m, setPackageName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2809, 170, ())
+m, getOzLabelOfInterface, 0x1, LJP.go.ipa.oz.user.ide.OzLabel_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.OzLabel_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (4267, 345, ((4329, 7, JP.go.ipa.oz.user.ide.OzLabel_if), (4352, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, setImported, 0x1, V, (Z), (), (), (2436, 59, ())
+m, putOzLabel, 0x1, V, (LJP.go.ipa.oz.lib.standard._Dictionary_if), (JP.go.ipa.oz.lib.standard._Dictionary_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.OzLabel_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (5525, 331, ((5570, 6, JP.go.ipa.oz.lib.standard._String_if), (5591, 7, JP.go.ipa.oz.user.ide.OzLabel_if), (5614, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, putOzLabel, 0x1, V, (LJP.go.ipa.oz.user.ide.OzLabel_if), (JP.go.ipa.oz.user.ide.OzLabel_if, JP.go.ipa.oz.lib.standard._String_if), (), (5256, 147, ((5302, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, setReleased, 0x1, V, (Z), (), (), (2235, 59, ())
+m, isImported, 0x1, Z, (), (), (), (2349, 53, ())
+m, getOzLabels, 0x1, LJP.go.ipa.oz.lib.standard._Dictionary_if, (), (), (), (3850, 55, ())
+m, setClPackageName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (3675, 68, ())
+m, getClPackageName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (3562, 59, ())
+m, getSubjectName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1728, 59, ())
+m, isReleased, 0x1, Z, (), (), (), (2148, 53, ())
+m, setIfPackageName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (3439, 68, ())
+m, getIfPackageName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (3326, 59, ())
+m, setUsing, 0x1, V, (Z), (), (), (2061, 53, ())
+m, getReleaseMode, 0x1, I, (), (), (), (3067, 56, ())
+m, getOzLabelOfImplementation, 0x1, LJP.go.ipa.oz.user.ide.OzLabel_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.OzLabel_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (4780, 366, ((4852, 7, JP.go.ipa.oz.user.ide.OzLabel_if), (4875, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, getPackageName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2548, 195, ())
+m, setSubjectName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1881, 70, ())

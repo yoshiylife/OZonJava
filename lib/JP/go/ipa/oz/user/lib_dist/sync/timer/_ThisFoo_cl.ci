@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.timer._ThisFoo_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.timer._ThisFoo_if, JP.go.ipa.oz.lang._Root_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 480, 14
+a, dummy, 0x0, N, 497, 16
+c, create, (), (), (JP.go.ipa.oz.lib.standard._System_cl), (520, 30, ())
+m, foo, 0x21, I, (I, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (553, 187, ())

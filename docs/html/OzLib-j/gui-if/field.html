@@ -1,0 +1,1590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>GUI Interface</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>フィールド</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<UL><LI><B>class TextComponent : Component</B><BR>
+テキスト編集を実現するコンポーネントインタフェース
+
+<P>
+<B>メソッド</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void addTextListener(TextListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストコンポーネントからイベントを受け取るための TextListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>TextListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract boolean isEditable()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>編集可能かどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら編集可
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract int getCaretPosition()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャレット位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>キャレット位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract int getSelectionEnd()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストの終了位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract int getSelectionStart()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストの開始位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>開始位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract String getSelectedText()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>選択されたテキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract String getText()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストコンポーネントのピアを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void removeTextListener(TextListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストコンポーネントから TextListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>TextListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void select(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>開始位置
+    <DT><STRONG>arg2</STRONG>
+<DD>終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void selectAll()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>全テキストを選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setCaretPosition(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャレット位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>キャレット位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setEditable(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>編集状態の可不可を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>
+      <DL ><DT><STRONG>true</STRONG>
+<DD>編集可
+      <DT><STRONG>false</STRONG>
+<DD>編集不可
+
+ </DL> 
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setSelectionEnd(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択終了位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setSelectionStart(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択開始位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>開始位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setText(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+<B>備考</B>
+<UL><LI> インタフェースのみ継承可能である。
+</UL></UL>
+
+<P>
+<UL><LI><B>class TextArea : *Component, TextComponent</B><BR>
+複数行にわたるテキストを表示するコンポーネント
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextArea()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextArea(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたテキストを持つテキストエリアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextArea(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された行数および列数を持つテキストエリアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>行数
+    <DT><STRONG>arg2</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextArea(String arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたテキストと行数および列数を持つテキストエリアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+    <DT><STRONG>arg2</STRONG>
+<DD>行数
+    <DT><STRONG>arg3</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextAreaWithHorizontalScrollbar(String arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたテキストと行数、列数、水平スクロールバーを持つテキストエリアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+    <DT><STRONG>arg2</STRONG>
+<DD>行数
+    <DT><STRONG>arg3</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextAreaWithVerticalScrollbar(String arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたテキストと行数、列数、垂直スクロールバーを持つテキストエリアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+    <DT><STRONG>arg2</STRONG>
+<DD>行数
+    <DT><STRONG>arg3</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextAreaWithBothScrollbars(String arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたテキストと行数、列数、水平スクロールバー、垂直スクロールバーを持つテキストエリアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+    <DT><STRONG>arg2</STRONG>
+<DD>行数
+    <DT><STRONG>arg3</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getSCROLLBARS_BOTH()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>両スクロールバーに対応する値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>両スクロールバーに対応する値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getSCROLLBARS_VERTICAL_ONLY()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>垂直スクロールバーに対応する値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>垂直スクロールバーに対応する値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getSCROLLBARS_HORIZONTAL_ONLY()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>水平スクロールバーに対応する値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>水平スクロールバーに対応する値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getSCROLLBARS_NONE()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールバーなしに対応する値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>スクロールバーなしに対応する値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addTextListener(TextListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアからイベントを受け取るための TextListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>TextListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isEditable()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>編集可能かどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら編集可
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getCaretPosition()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャレット位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>キャレット位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getSelectionEnd()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストの終了位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getSelectionStart()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストの開始位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>開始位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getSelectedText()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>選択されたテキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getText()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアのピアを削除する
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeTextListener(TextListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアから TextListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>TextListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void select(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>開始位置
+    <DT><STRONG>arg2</STRONG>
+<DD>終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void selectAll()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>全テキストを選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setCaretPosition(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャレット位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>キャレット位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setEditable(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>編集状態の可不可を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>
+      <DL ><DT><STRONG>true</STRONG>
+<DD>編集可
+      <DT><STRONG>false</STRONG>
+<DD>編集不可
+
+ </DL> 
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSelectionEnd(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択終了位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>選択終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSelectionStart(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択開始位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>選択開始位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setText(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアのピアを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void append(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したテキストを最後に追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getColumns()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアの列数を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMinimumSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアの最小サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>最小サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMinimumSize(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアの最小サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>最小行数
+    <DT><STRONG>arg2</STRONG>
+<DD>最小列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>最小サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getPreferredSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアの推奨サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>推奨サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getPreferredSize(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアの推奨サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>推奨行数
+    <DT><STRONG>arg2</STRONG>
+<DD>推奨列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>推奨サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getRows()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアの行数を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>行数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getScrollbarVisibility()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアのスクロールバーに対応する値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>スクロールバーの表示状況に対応する値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void insert(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定位置にテキストを挿入する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+    <DT><STRONG>arg2</STRONG>
+<DD>挿入位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void replaceRange(String arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>開始位置と終了位置で指定されたテキストを置換する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+    <DT><STRONG>arg2</STRONG>
+<DD>開始位置
+    <DT><STRONG>arg3</STRONG>
+<DD>終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setColumns(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>列数を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setRows(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>行数を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>行数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class TextField : *Component, TextComponent</B><BR>
+一行のテキスト表示するコンポーネント
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextField()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextField(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたテキストを持つテキストフィールドを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextField(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された列数を持つテキストフィールドを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextField(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたテキストと列数を持つテキストフィールドを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+    <DT><STRONG>arg2</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addTextListener(TextListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドからイベントを受け取るための TextListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>TextListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isEditable()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>編集可能かどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら編集可
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getCaretPosition()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャレット位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>キャレット位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getSelectionEnd()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストの終了位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getSelectionStart()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストの開始位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>開始位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getSelectedText()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されたテキストを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>選択されたテキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getText()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドのピアを削除する
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeTextListener(TextListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドから TextListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>TextListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void select(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>開始位置
+    <DT><STRONG>arg2</STRONG>
+<DD>終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void selectAll()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>全テキストを選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setCaretPosition(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャレット位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>キャレット位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setEditable(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>編集状態の可不可を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>
+      <DL ><DT><STRONG>true</STRONG>
+<DD>編集可
+      <DT><STRONG>false</STRONG>
+<DD>編集不可
+
+ </DL> 
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSelectionEnd(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択終了位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>選択終了位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSelectionStart(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択開始位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>選択開始位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setText(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>テキスト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addActionListener(ActionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドからイベントを受け取るための ActionListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ActionListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドのピアを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean echoCharIsSet()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>エコー文字を持つかどうかを判定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真ならエコー文字あり
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getColumns()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドの列数を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public char getEchoChar()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>エコー文字を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>char</STRONG>
+<DD>エコー文字
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMinimumSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドの最小サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>最小サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMinimumSize(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドの最小サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>最小サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getPreferredSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドの推奨サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>推奨サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getPreferredSize(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストフィールドの推奨サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>推奨サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeActionListener(ActionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストエリアから ActionListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ActionListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setColumns(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>列数を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>列数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setEchoChar(char arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>エコー文字を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>エコー文字
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.timer._ThisMethodRunnable_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.timer._ThisMethodRunnable_if, JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_cl
+a, s, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 529, 9
+a, i, 0x0, I, 522, 6
+a, obj, 0x0, LJP.go.ipa.oz.user.lib_dist.sync.timer._ThisFoo_if, 509, 12
+c, create, (LJP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_cl), (545, 36, ())
+m, set, 0x1, V, (LJP.go.ipa.oz.user.lib_dist.sync.timer._ThisFoo_if, I, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._ThisFoo_if, JP.go.ipa.oz.lib.standard._String_if), (), (584, 71, ())
+m, MyMethod, 0x4, LJP.go.ipa.oz.lang._Root_if, (), (JP.go.ipa.oz.lib.standard._Integer_if), (JP.go.ipa.oz.lib.standard._Integer_cl), (658, 95, ((714, 7, JP.go.ipa.oz.lib.standard._Integer_if)))

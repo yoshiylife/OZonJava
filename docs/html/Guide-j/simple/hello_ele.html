@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="s_ide.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_ide.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>アプリケーションの構成</B><BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI><A href="#file">ソースファイルとクラス宣言</A>
+  <LI><A href="#cell">アプリケーションとcell型のクラス</A>
+</OL>
+<P>
+<BR>
+</P>
+<P>
+<IMG src="../../image/line.gif" height="13" width="490">
+</P>
+<BR clear="all">
+<DL>
+  <DT><A name="file"></A><BR>
+１．ソースファイルとクラス宣言
+  <DD><BR>
+Helloウィンドウアプリケーションの定義は、3つのOZソースファイルと1つのスクールファイルから構成されています。<BR>
+<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>Test.oz</TD>
+      <TD nowrap width="8"></TD>
+      <TD nowrap>cell型のTestクラスが定義されています。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap>MyDialog.oz</TD>
+      <TD nowrap></TD>
+      <TD nowrap>class型のMyDialogクラスが定義されています。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap>Quit.oz</TD>
+      <TD nowrap></TD>
+      <TD nowrap>class型のQuitクラスが定義されています。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap>test.s</TD>
+      <TD nowrap></TD>
+      <TD nowrap>上記3つのクラスのスクールファイル。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+この例では１つのソースファイルに1つのクラスが宣言されています。1つのファイルに複数のクラスを宣言することもできます。たとえば、MyDialog.oz
+というソースファイルにMyDialigクラスを格納するというように、ソースファイルの名前は格納クラスと対応させてください。<BR>
+<BR>
+<BR>
+<BR>
+ソースファイルとクラス宣言の例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">$OZHOME/src/launcher/Launcher.oz
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    /*** ....*****/
+    cell Launcher
+   {
+    ....
+    }
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>このファイルには1つのクラスLauncherが宣言されており、ファイル名からそのファイルに格納されているクラスの名前が分かります。
+  </UL>
+<BR>
+<BR>
+ソースファイルとクラス宣言の例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">$OZHOME/src/cda/Runnable.oz
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    /*** ....*****/
+    class ServerSocketRunnable :* Runnable{ ... }
+    class fromExecutorRunnable :* Runnable{ ... }
+    class PollingRunnable :* Runnable{ ... }
+    class CopyOnRightRunnable :* Runnable{ ... }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>意味的なつながりを持つRunnableクラスの下位クラスが宣言されています。
+  </UL>
+<BR>
+<BR>
+ソースファイルとクラス宣言の例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">$OZHOME/src/inet/ozcgi/OzCGI.oz
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    /*** ....*****/
+    cell OzCGI { ... }
+    class RandezvouPoint { ... }
+    class RandezvouTable : *Dictionary { ... }
+    class CGI : *Runnable { ... }
+    class CGISocket : *Runnable { ... }
+    abstract class ReceiveThread : *ExecuteThread { ... }
+    abstract class ExecuteThread : *Runnable { ... }
+    class OzCGIPropertyReader : FilePropertyReader { ... }
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>OzCGIクラスだけが使用するクラス、OzCGIクラスのサービスを享受するときに必要なプロトコル（抽象クラス）を1つのファイルにまとめて宣言しています。
+  </UL>
+<BR>
+  <DL>
+    <DT>Note:
+    <DD>このようにクラス名とファイル名を類推できるものにしておくと、開発者の整理のために役立ちます。また、このようにしておくと、コンパイル時に相互参照しているクラスの情報が存在しない場合でも、OZコンパイラがオンデマンドでその情報を生成することができます。
+  </DL>
+<BR>
+<BR>
+  <DT><A name="cell"></A><BR>
+２．アプリケーションとcell型のクラス
+  <DD><BR>
+OZシステムのアプリケーションは、グローバルオブジェクトとして生成され、その活性化という形で実行されます。<BR>
+グローバルオブジェクトを作成するためには、アプリケーションのソースプログラムに<B>1つ以上のcell型クラスの宣言</B>が行われている必要があります。そのcell型クラスの動作部クラス識別子を指定してグローバルオブジェクトを生成します。<BR>
+<BR>
+cell型クラスのオブジェクトはグローバルオブジェクトと呼ばれ、ネットワークを介してコミュニケーションをする能力を有するオブジェクトです。<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<OL>
+  <LI><A href="hello_ele.html">アプリケーションの構成</A><IMG src="red.gif" height="16" width="13">
+  <LI><A href="hello_ide.html">OZ IDE の起動とプロジェクト、サブジェクトの作成</A>
+  <LI><A href="hello_test.html">Testクラス</A>
+  <LI><A href="hello_my.html">MyDialogクラス</A>
+  <LI><A href="hello_quit.html">Quitクラス</A>
+  <LI><A href="hello_compile.html">OZ IDE を利用したコンパイルとテスト実行</A>
+  <LI><A href="hello_s.html">アプリケーションのスクールファイル</A>
+  <LI><A href="hello_go.html">ランチャを利用するグローバルオブジェクトの生成とその活性化</A>
+  <LI><A href="hello_debug.html">OZプログラムのデバック</A>
+  <LI><A href="hello_rel.html">リリースパッケージの配布</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490">
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_ide.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

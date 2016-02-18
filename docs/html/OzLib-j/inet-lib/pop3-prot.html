@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+<TITLE>Internet class library</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H3><B>POP3</B> プロトコル</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<B>POP3</B> クラスとして実現する。
+</P>
+
+<UL>
+<P>
+<LI>以下のコンストラクタを持つ。
+<UL>
+<LI> create ()
+</UL>
+</P>
+
+<P>
+<LI>インタフェースを以下に示す。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String user (String name)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>USER コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>name</TD> <TD>ユーザネーム</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String pass (String str)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>PASS コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>str</TD> <TD>パスワード文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String quit ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>QUIT コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String stat ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>STAT コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String list ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>LIST コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String list (String msg)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>LIST コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>msg</TD> <TD>メッセージ番号の指定文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String retr (String msg)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>RETR コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>msg</TD> <TD>メッセージ番号の指定文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String dele (String msg)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>DELE コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>msg</TD> <TD>メッセージ番号の指定文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String noop ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>NOOP コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String rset ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>RSET コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String apop (String name_and_digest)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>APOP コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>name_and_digest</TD> <TD>名前およびダイジェスト文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String top (String msg)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>ATOP コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>msg</TD> <TD>メッセージ番号および行数</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String uidl (String msg)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>UIDL コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>msg</TD> <TD>メッセージ番号</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String uidl ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>UIDL コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+</UL>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.ide.Application_if, 0x0, (JP.go.ipa.oz.user.ide.Summarizable_if)
+m, setClassID, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getClassID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

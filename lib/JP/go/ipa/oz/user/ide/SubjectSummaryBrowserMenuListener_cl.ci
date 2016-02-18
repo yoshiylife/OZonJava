@@ -1,0 +1,13 @@
+j, JP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuListener_cl, 0x10, JP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 750, 33
+a, sgBrowser, 0x0, LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, 711, 33
+a, ssBrowser, 0x0, LJP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if, 674, 33
+c, create, (LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, LJP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if), (JP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, JP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl), (945, 233, ((1015, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, doClose, 0x0, V, (), (JP.go.ipa.oz.user.garage.Key_if), (), (2074, 107, ((2099, 3, JP.go.ipa.oz.user.garage.Key_if)))
+m, doCancel, 0x0, V, (), (), (), (1905, 87, ())
+m, isLegalInput, 0x0, Z, (LJP.go.ipa.oz.user.ide.SubjectSummary_if), (JP.go.ipa.oz.user.ide.SubjectSummary_if), (), (3269, 202, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if), (), (1336, 411, ((1391, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, doSave, 0x0, V, (), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.SubjectSummary_if), (), (2855, 332, ((2879, 3, JP.go.ipa.oz.user.garage.Key_if), (2894, 14, JP.go.ipa.oz.user.ide.SubjectSummary_if)))
+m, doImport, 0x0, V, (), (JP.go.ipa.oz.user.ide.SubjectSummary_if), (), (2263, 122, ((2289, 14, JP.go.ipa.oz.user.ide.SubjectSummary_if)))
+m, handleException, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if), (JP.go.ipa.oz.user.misc.gui.ExceptionDialog_cl), (3553, 128, ((3596, 15, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if)))
+m, doExport, 0x0, V, (), (JP.go.ipa.oz.user.ide.SubjectSummary_if), (), (2467, 306, ((2493, 14, JP.go.ipa.oz.user.ide.SubjectSummary_if)))

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Basic of OZ</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H1>OZシステムの基礎知識</H1>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+ここではOZシステムを利用するための基礎知識を紹介する。
+
+<H2><A NAME="ozhome">OZHOME</A></H2>
+INSTALL[.JP]に従ってインストールするとひとつの<A HREF="ozhome.html">
+ディレクトリ</A>ができあがる。
+システムを実行する前にこのディレクトリを環境変数OZHOMEに登録する。
+このディレクトリを<B>OZHOME</B>と呼ぶ。
+
+<P>
+OZHOMEはひとりがひとつづつ所有すべきものである。
+利用者がふたりいればOZHOMEはふたつ作らなければならない。<HR>
+
+<P>
+<H2><A NAME="oz-vm">OZ-VM</A></H2>
+OZはバイトコードマシン上でプログラムを実行するシステムである。
+このバイトコードマシンを<B>OZ-VM(Virtual Machine)</B>と呼ぶ。
+OZを実行するにはOZ-VMを実行する。
+OZ-VMは<B>oz</B>という名前のプログラムである。
+<PRE>
+        例:
+        % oz ide
+</PRE>
+
+最初の引数は<A HREF="#cell">セル</A>の名前である。
+ここで指定できるのは<B>$OZHOME/objects</B>以下にあるディレクトリ名である。
+<B>ide</B>は統合開発環境である。
+<B>launcher</B>はプログラムを実行するランチャーである。
+通常このどちらかを指定すれば用は足りるはずである。<HR>
+
+<P>
+<H2><A NAME="cell">セル</A></H2>
+OZはオブジェクトを実行するシステムである。
+OZのオブジェクトはふたつの種類がある。
+ひとつはプログラム中に現れるオブジェクト指向で言うところの
+いわゆるオブジェクトである。
+このオブジェクトはプログラムの内部にしか現れないので、ここでは述べない。
+もうひとつはオブジェクトの集合をオブジェクトとして実現したもので
+セル、あるいはグローバルオブジェクトと呼ばれる。
+(名前が2種類あるのは開発の歴史的経緯による)
+
+<P>
+セルは永続オブジェクトである。
+すなわちファイルとして保管することができる。
+この永続ファイルが$OZHOME/objects以下にあるディレクトリである。
+OZ-VMは起動時にファイルを読み込みセルとして稼働する。
+
+<P>
+<CENTER>
+<IMAGE SRC="cell.gif">
+</CENTER>
+<HR>
+
+<P>
+<H2><A NAME="god">GODとGOL</A></H2>
+$OZHOME/objects以下にセルのイメージファイルが置かれる。
+$OZHOME/objects相対のパス名を<B>GOD(Global Object Directory)</B>と呼ぶ。
+GODはOZHOME内におけるセルのIDである。
+
+<P>
+GODはセルの通信アドレスの一部となる<A HREF="comm.html#ozhomeid">(参照)</A>。
+OZシステムではOZHOMEもアドレスを持つ。
+これを<B>GOL(Global Object Location)</B>と呼ぶ。
+GODはGOLの一部である。
+
+<HR NOSHADE>
+<!- ------------------------------------------------------------ ->
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact:</B> <A HREF="mailto:oz-admin@etl.go.jp">oz-admin@etl.go.jp</A>
+
+</BODY>
+</HTML>

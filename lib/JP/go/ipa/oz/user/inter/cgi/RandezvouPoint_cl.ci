@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.inter.cgi.RandezvouPoint_cl, 0x0, JP.go.ipa.oz.user.inter.cgi.RandezvouPoint_if, JP.go.ipa.oz.lang._Root_cl
+a, randezvou, 0x0, N, 2598, 20
+a, html_obj, 0x0, LJP.go.ipa.oz.user.inter.cgi.HTMLData_if, 2654, 18
+c, create, (), (), (), (2714, 12, ())
+m, setHtml, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.HTMLData_if), (JP.go.ipa.oz.user.inter.cgi.HTMLData_if), (), (2925, 56, ())
+m, waitRandezvou, 0x21, V, (), (), (), (3025, 57, ())
+m, signalRandezvou, 0x21, V, (), (), (), (3128, 61, ())
+m, getHtml, 0x1, LJP.go.ipa.oz.user.inter.cgi.HTMLData_if, (), (), (), (2802, 47, ())

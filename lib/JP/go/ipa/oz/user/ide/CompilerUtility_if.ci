@@ -1,0 +1,6 @@
+i, JP.go.ipa.oz.user.ide.CompilerUtility_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, getInstanciatedCID, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getDescendantCID, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (LJP.go.ipa.oz.lib.standard._String_if)
+m, replace, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if)
+m, getSubjectName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getReferedCID, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (LJP.go.ipa.oz.lib.standard._String_if)

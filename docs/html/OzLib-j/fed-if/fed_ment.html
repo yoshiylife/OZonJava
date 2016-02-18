@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>メンテナンス</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+メンテナンスとは、Autonomy セルが保持している ResourceProxy 系の
+集合に対する管理を指す。ResourceProxy の情報はインスタンスに
+対する参照とそのタイプを保持することとする。また、Autonomy セルの
+タイプとの比較により、アダプタ、またはサロゲートのどちらかに
+分類しそれぞれの集合に対して処理をする必要がある。
+あり、管理とは具体的には要素の追加、削除を指す。
+</P>
+
+<H4>メソッド説明</H4>
+<UL>
+<P>
+<LI>public void Federation#addResourceProxy(ResourceProxy proxy)<BR>
+引数として ResourceProxy オブジェクトをとる。引数 proxy の
+オートノミタイプが、当 Autonomy セルの保持しているタイプに
+含まれるならばサロゲート集合にインスタンスとリソースタイプを
+追加し、そうでなければアダプタ集合に同様に追加する。
+</P>
+
+<P>
+<LI>public void Federation#removeResourceProxy(ResourceProxy proxy)<BR>
+引数として ResourceProxy オブジェクトをとる。引数 proxy の
+オートノミタイプが、当 Autonomy セルの保持しているタイプに
+含まれるならばサロゲート集合からインスタンスとリソースタイプを
+削除し、そうでなければアダプタ集合から同様に削除する。
+</P>
+
+</UL>
+
+<HR NOSHADE>
+
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

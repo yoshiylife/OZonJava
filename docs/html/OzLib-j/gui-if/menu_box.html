@@ -1,0 +1,1459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>GUI Interface</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>メニュー／メニューボックス</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<UL><LI><B>class MenuComponent : *Root</B><BR>
+メニュー関連コンポーネントのスーパークラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenuComponent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューコンポーネントを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final void dispatchEvent(AWTEvent arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>イベントを振り分ける。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>イベント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Font getFont()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>使用されているフォント、使用されていなければnull
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getName()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>名称を得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>名称文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public MenuContainer getParent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューコンポーネントが属するメニューコンテナを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>メニューコンテナ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean postEvent(Event arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>イベントをポストする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>イベント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>常にfalse
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューコンポーネントのピアを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setFont(Font arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>使用するフォントを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setName(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>名称を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>名称文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class MenuBar : *MenuComponent, MenuContainer</B><BR>
+メニューバーを示すクラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenuBar()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューバーを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Menu add(Menu arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューバーにメニューを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>追加するメニュー
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>追加したメニュー
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューバーのピアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューバーの文字列表現を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>MenuBarを示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void deleteShortcut(MenuShortcut arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューショートカットを削除する
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>削除するメニューショートカット
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Menu getHelpMenu()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ヘルプメニューを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ヘルプメニュー
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Menu getMenu(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定した位置のメニューを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>インデックス
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>メニュー
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getMenuCount()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューの数を得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>メニューの数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public MenuItem getShortcutMenuItem(MenuShortcut arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューショートカットに対応づけられたメニュー項目を得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>メニューショートカット
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>メニュー項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたメニューを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>インデックス
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(MenuComponent arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>削除するメニュー
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューバーのピアを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setHelpMenu(Menu arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ヘルプメニューを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ヘルプメニューとするメニュー
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Iterator shortcuts()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューバー上のすべてのメニューショートカットを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>一覧を得るためのイタレータ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class MenuItem : *MenuComponent</B><BR>
+メニュー項目を示すクラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenuItem()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>からのラベルで、メニューショートカットのないメニュー項目を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenuItem(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルで、メニューショートカットのないメニュー項目を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenuItem(String arg1, MenuShortcut arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルで、メニューショートカット付きのメニュー項目を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+    <DT><STRONG>arg2</STRONG>
+<DD>メニューショートカット
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addActionListener(ActionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アクションリスナを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>アクションリスナ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目のピアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目の文字列表現を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ラベルを示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void deleteShortcut()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目に対応するショートカットを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isEnabled()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>イネーブルかどうかを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>イネーブルであればtrue
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getActionCommand()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このメニュー項目によって起こるアクションイベントのコマンド名を得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>コマンド名文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getLabel()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ラベル文字列を得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public MenuShortcut getShortcut()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目に対応するメニューショートカットを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>メニューショートカット、対応しない場合はnull
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String paramString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>パラメータを文字列にして返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>パラメータを示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeActionListener(ActionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アクションリスナを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>削除するアクションリスナ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setActionCommand(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このメニュー項目によって起こるアクションイベントのコマンド名を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コマンド名文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setEnabled(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目がイネーブルかどうかを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>イネーブルにする場合true
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLabel(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目にラベルを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setShortcut(MenuShortcut arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目に対応するメニューショートカットを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>メニューショートカット
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class CheckboxMenuItem : *MenuItem, ItemSelectable</B><BR>
+メニュー上のチェックボックスを示すクラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newCheckboxMenuItem()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>からのラベルで、チェックボックスメニュー項目を生成する。
+   ステートはfalseとなる。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newCheckboxMenuItem(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルで、チェックボックスメニュー項目を生成する。
+   ステートはfalseとなる。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newCheckboxMenuItem(String arg1, boolean arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルで、チェックボックスメニュー項目を生成する。
+   指定したステートになる。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+    <DT><STRONG>arg2</STRONG>
+<DD>チェックボックスの初期ステート
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>チェックボックスメニュー項目のピアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addItemListener(ItemListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アイテムリスナを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>アイテムリスナ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>チェックボックスメニュー項目の文字列表現を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ラベルとステートを示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Collection getSelectedObjects()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>チェックボックスメニュー項目が選択されていればラベルを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ラベル文字列のコレクション、選択されていないときはnull
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean getState()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ステートを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ステート
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String paramString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>パラメータを文字列にして返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>パラメータを示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeItemListener(ItemListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アイテムリスナを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>アイテムリスナ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setState(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>チェックボックスメニュー項目のステートを設定する
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ステート
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Menu : *MenuItem, MenuContainer</B><BR>
+メニューを示すクラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenu()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>からのラベルでメニューを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenu(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルでメニューを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTearOffMenu(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルでティアオフできるメニューを生成する。
+   このメニューはマウスボタンを放しても表示され続ける。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public MenuItem add(MenuItem arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>追加するメニュー項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>追加したメニュー項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルをもつメニュー項目を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>追加するメニュー項目のラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューのピアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addSeparator()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>セパレータラインを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューの文字列表現を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ラベルと項目数を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void insert(MenuItem arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目を指定した位置に挿入する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>挿入するメニュー項目
+    <DT><STRONG>arg2</STRONG>
+<DD>挿入する位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void insert(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルをもつメニュー項目を、指定した位置に挿入する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>挿入するメニュー項目のラベル文字列
+    <DT><STRONG>arg2</STRONG>
+<DD>挿入する位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void insertSeparator(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>セパレータラインを指定した位置に挿入する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>挿入する位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isTearOff()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ティアオフかどうかを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ティアオフであればtrue
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public MenuItem getItem(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置にあるメニュー項目を得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>インデックス
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>メニュー項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getItemCount()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューの項目数を得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>項目数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String paramString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>パラメータを文字列にして返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>パラメータを示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定した位置のメニュー項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>削除するメニュー項目のインデックス
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(MenuComponent arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニュー項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>削除するメニュー項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeAll()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>すべてのメニュー項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューのピアを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class PopupMenu : *Menu</B><BR>
+ポップアップメニューを示すクラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPopupMenu()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>からのラベルでポップアップメニューを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPopupMenu(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したラベルでポップアップメニューを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポップアップメニューのピアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>文字列表現を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ラベルと項目数を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void show(Component arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポップアップメニューを表示する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD> 相対位置指定の基準となるコンポーネント
+    <DT><STRONG>arg2</STRONG>
+<DD> x 座標
+    <DT><STRONG>arg3</STRONG>
+<DD> y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class MenuContainer : Root</B><BR>
+メニューコンテナを示すクラス。
+
+<P>
+<B>メソッド</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract Font getFont()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract boolean postEvent(Event arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>イベントをポストする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>イベント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>常にfalse
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void remove(MenuComponent arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューコンポーネントを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>削除するメニューコンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+<B>備考</B>
+<UL><LI> インタフェースのみ継承可能である。
+</UL></UL>
+<P>
+
+<UL><LI><B>class MenuShortcut : *Root</B><BR>
+メニューショートカットを示すクラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenuShortcut(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューショートカットを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>キーコード
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMenuShortcut(int arg1, boolean arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューショートカットを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>キーコード
+    <DT><STRONG>arg2</STRONG>
+<DD>シフトキーの押下を要する場合true
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューショットカットの文字列表現を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>メニューショートカットを示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getKey()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キーコードを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>キーコード
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean usesShiftModifier()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>シフトキーの押下を要するかどうかを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>シフトキー押下を要するならtrue
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

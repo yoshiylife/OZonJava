@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.misc.gui.ExceptionDialogListener_cl, 0x0, JP.go.ipa.oz.user.misc.gui.ExceptionDialogListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 230, 34
+a, targetDialog, 0x0, LJP.go.ipa.oz.lib.standard._Dialog_if, 189, 37
+c, create, (LJP.go.ipa.oz.lib.standard._Dialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Dialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl), (426, 141, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if), (), (723, 84, ())

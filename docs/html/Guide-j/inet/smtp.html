@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="lib.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="pop3.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>SMTPクラスの使い方</B><BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>SMTPクラスのコンストラクタ
+  <LI>SMTPクラスのメソッド
+  <LI>SMTPクラスの使用方法
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>１．SMTPクラスのコンストラクタ
+  <DD><BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new create ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>SMTPプロトコルを生成する</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>２．SMTPクラスのメソッド
+  <DD><BR>
+SMTPコマンドに対応したメソッドメンバを持っています。<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String helo (String domain)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String mail (String from)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String rcpt (String to)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String data (String contents)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String send (String from)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String soml (String from)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String saml (String from)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String rset ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String vrfy (String user)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String expn (String ml)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String help ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String help (String str)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String noop ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String quit ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String turn ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>３．SMTPクラスの使用方法
+  <DD><BR>
+コンストラクタ create によりインスタンスを生成し、そのインスタンスに対してインタフェースとして提供されている各メソッドを起動することにより、SMTP
+プロトコルで規定される各コマンドを送信することができます。<BR>
+各メソッドはレスポンスデータ中のステータス文字列を戻り値とします。<BR>
+レスポンスデータ全体を得るには、getResponse メソッドを利用します。<BR>
+<BR>
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell SMTPTester { 
+
+        public void initialize () { 
+        }
+
+        public void go () {
+            SMTPTesterR run=&gt;create ();
+            Thread th=&gt;create (run);
+        }
+
+        public void quiet () {
+            flushCell ();
+        }
+    }
+
+    class SMTPTesterR : *Runnable {
+        new create () {
+        }
+
+        public void run () {
+            SMTP smtp=&gt;create ();
+            System sys=&gt;create ();
+   
+            sys-&gt;println (smtp-&gt;connect (&quot;dorothy&quot;));
+            sys-&gt;println (smtp-&gt;getResponse ());
+
+            sys-&gt;println (smtp-&gt;helo (&quot;dorithy.ipa.go.jp&quot;));
+            sys-&gt;println (smtp-&gt;getResponse ());
+   
+            sys-&gt;println (smtp-&gt;help ());
+            sys-&gt;println (smtp-&gt;getResponse ());
+            sys-&gt;println (smtp-&gt;quit ());
+            sys-&gt;println (smtp-&gt;getResponse ());
+        }
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="lib.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="pop3.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

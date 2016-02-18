@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.ide.CIInterfacePart_cl, 0x10, JP.go.ipa.oz.user.ide.CIInterfacePart_if, JP.go.ipa.oz.user.ide.CIPart_cl
+a, superIfCIDList, 0x0, LJP.go.ipa.oz.lib.standard._Collection_if, 177, 27
+c, newCIInterfacePart, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.CIModifier_if, LJP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CIModifier_if, JP.go.ipa.oz.lib.standard._Collection_if), (), (317, 197, ())
+m, isInterface, 0x1, Z, (), (), (), (964, 56, ())
+m, superInterfaceCIDs, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (1268, 86, ())
+m, addMember, 0x1, V, (LJP.go.ipa.oz.user.ide.CIMember_if), (JP.go.ipa.oz.user.ide.CIMember_if, JP.go.ipa.oz.user.ide.CIMethod_if, JP.go.ipa.oz.lang._Root_if), (), (672, 210, ((718, 8, JP.go.ipa.oz.user.ide.CIMethod_if), (811, 4, JP.go.ipa.oz.lang._Root_if)))
+m, getSuperInterfaceCIDCount, 0x1, I, (), (), (), (1102, 84, ())

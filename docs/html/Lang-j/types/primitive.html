@@ -1,0 +1,676 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="reference.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>基本型（Primitive Types）</B><BR>
+</H3>
+<BR clear="all">
+<P>
+<BR>
+</P>
+<P>
+OZ言語の基本型として以下の型が定義されています。<BR>
+</P>
+<UL>
+  <LI>数値型<BR>
+<BR>
+数値型には
+  <TABLE cellspacing="2">
+    <TR>
+      <TD nowrap width="5"></TD>
+      <TD><A href="#int">整数型</A></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD><A href="#float">浮動少数型</A></TD></TR>
+  </TABLE>
+
+があります。<BR>
+<BR>
+  <LI><A href="#char">文字型</A><BR>
+<BR>
+  <LI><A href="#bool">論理型</A><BR>
+<BR>
+  <LI><A href="#cond">condition型</A>
+</UL>
+<P>
+<BR>
+それぞれの型には、とりうる値の範囲があります。OZ言語では変数もリテラルも型を持っています。すなわり、OZ言語のすべての式には型があります。<BR>
+</P>
+<P>
+<BR>
+<BR>
+ここでは、基本型の種類とその型がとりうる値の範囲と型が持つ操作について説明します。<BR>
+<BR>
+<BR>
+</P>
+<P>
+<IMG src="../../image/line.gif" height="13" width="554">
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><B>数値型</B> （Numeric Types）：<B><A name="int">整数型</A></B><A name="int">
+(Integral Types) </A>
+  <DD>
+  <DIV align="left">
+整数を表す型には以下の4つの型があります。
+  <TABLE width="300" cellspacing="5" cellpadding="4">
+    <TR>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD><B>byte</B></TD>
+      <TD><B>short</B></TD>
+      <TD><B>int</B></TD>
+      <TD><B>long</B></TD></TR>
+  </TABLE>
+
+  </DIV>
+整数型は符号付き整数を表現します。<BR>
+<BR>
+<BR>
+  <P>
+<B>型の値の範囲</B>
+  </P>
+  <DIV align="left">
+  <TABLE cellspacing="3" cellpadding="4">
+    <CAPTION>Table.整数型の値の範囲</CAPTION>
+    <TR bgcolor="#fffdfe">
+      <TH nowrap width="5"></TH>
+      <TH>型</TH>
+      <TH>サイズ</TH>
+      <TH>最小値</TH>
+      <TH>最大値</TH></TR>
+    <TR>
+      <TH nowrap></TH>
+      <TD>byte</TD>
+      <TD align="right">8ビット</TD>
+      <TD align="right">-128</TD>
+      <TD align="right">127</TD></TR>
+    <TR>
+      <TH nowrap width="20"></TH>
+      <TD>short</TD>
+      <TD align="right">16ビット</TD>
+      <TD align="right">-32768</TD>
+      <TD align="right">32767</TD></TR>
+    <TR>
+      <TH nowrap></TH>
+      <TD nowrap>int</TD>
+      <TD nowrap align="right">32ビット</TD>
+      <TD align="right">-2147483648</TD>
+      <TD align="right">2147483647</TD></TR>
+    <TR>
+      <TH nowrap></TH>
+      <TD>long</TD>
+      <TD align="right">64ビット</TD>
+      <TD nowrap>-9223372036854775808</TD>
+      <TD nowrap align="right">9223372036854775807</TD></TR>
+  </TABLE>
+
+  </DIV>
+  <P>
+<BR>
+<BR>
+  </P>
+  <P>
+<B>整数型がもつ操作</B>（Integer Operations）<BR>
+<BR>
+整数型は、以下の操作を持っています。
+  </P>
+  <DL>
+    <DD>
+    <DL>
+      <DT>単項演算子（Unary Operators）
+      <DD><BR>
+整数の演算を行う単項演算子。<BR>
+      <TABLE cellspacing="2">
+        <TR>
+          <TD nowrap>単項演算子</TD>
+          <TD><B>+</B>、 <B>-</B></TD></TR>
+        <TR>
+          <TD nowrap>前置インクリメント</TD>
+          <TD><B>++</B></TD></TR>
+        <TR>
+          <TD nowrap>前置デクリメント</TD>
+          <TD><B>--</B></TD></TR>
+        <TR>
+          <TD nowrap width="110">後置式</TD>
+          <TD><B>++</B>、--</TD></TR>
+      </TABLE>
+
+<BR>
+操作の戻り値の型は整数型。<BR>
+<BR>
+      <DT>算術演算子（Arithmetic Operators）
+      <DD>
+      <TABLE cellspacing="2">
+        <TR>
+          <TD nowrap width="110">乗法演算子</TD>
+          <TD><B>*</B>、<B>/</B>、 <B>%</B></TD></TR>
+        <TR>
+          <TD nowrap>加法演算子</TD>
+          <TD><B>+</B>、 <B>-</B></TD></TR>
+      </TABLE>
+
+<BR>
+操作の戻り値の型は整数型。<BR>
+<BR>
+    </DL>
+    <DL>
+      <DT>関係演算子（Relational Operators)
+      <DD><BR>
+<B>&lt;</B>、 <B>&lt;=</B>、 <B>&gt;</B>、 <B>&gt;=</B><BR>
+<BR>
+返値の型は論理型。<BR>
+<BR>
+      <DT>等値演算子（Equality Operators)<BR>
+      <DD><BR>
+<B>==</B>、 <B>!=</B><BR>
+<BR>
+返値の型は論理型。<BR>
+<BR>
+      <DT>条件演算子 （Conditional Operator）
+      <DD><BR>
+<B>? ：</B><BR>
+<BR>
+操作の戻り値の型は整数型。(条件演算式の型の詳細については「<A href="../expressions/cond.html">条件演算子</A>」を参照してください。)
+    </DL>
+  </DL>
+  <P>
+<BR>
+  </P>
+Note: IEEE 754 の仕様に準拠の値と操作を持ちます。
+  <P>
+<BR>
+<BR>
+<BR>
+例: 整数型<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  </P>
+<PRE>
+     byte  b_infodata;        // byte型のローカル変数の宣言
+     short request_short_num; // short型のローカル変数の宣言
+     int   request_number;    // int型のローカル変数の宣言
+     long  population_number; // long型のローカル変数の宣言
+</PRE>
+<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<IMG src="../../image/line.gif" height="13" width="554">
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><B>数値型</B> （Numeric Types）：<B><A name="int"></A></B><A name="float"><B>浮動小数型</B>
+(Floating-Point Types) </A>
+</DL>
+<DL>
+  <DD>
+  <DIV align="left">
+浮動小数型には以下の2つの型があります。
+  <DIV align="left">
+  <TABLE width="250" cellspacing="5" cellpadding="4">
+    <TR>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD><B>float</B></TD>
+      <TD><B>double</B></TD>
+      <TD></TD></TR>
+  </TABLE>
+
+  </DIV>
+float型は32ビット単精度、double型は64ビット倍精度のIEEE754浮動小数を表現します。<BR>
+<BR>
+<BR>
+  </DIV>
+  <P>
+<B>型の値の範囲</B>
+  </P>
+  <DIV align="left">
+
+  <DL>
+    <DD>
+    <DL>
+      <DT>float型は以下の図の値範囲が許されます。
+      <DD><IMG src="float.gif" height="99" width="294"><BR>
+<BR>
+      <DT>dowble型は以下の図の値範囲が許されます。
+      <DD><IMG src="double.gif" height="99" width="294">
+    </DL>
+  </DL>
+<BR>
+  <DIV align="left">
+  <TABLE cellspacing="3" cellpadding="4">
+    <CAPTION>Table.浮動小数型の値の範囲</CAPTION>
+    <TR bgcolor="#fffdfe">
+      <TH nowrap width="5"></TH>
+      <TH>型</TH>
+      <TH>サイズ</TH>
+      <TH>最小値</TH>
+      <TH>最大値</TH></TR>
+    <TR>
+      <TH nowrap></TH>
+      <TD nowrap>float</TD>
+      <TD nowrap align="right">32ビット</TD>
+      <TD align="right">±3.40282347E+38</TD>
+      <TD align="right">±1.40239846E-45</TD></TR>
+    <TR>
+      <TH nowrap></TH>
+      <TD>double</TD>
+      <TD align="right">64ビット</TD>
+      <TD nowrap>±1.79769313486231570E+308</TD>
+      <TD nowrap align="right">±4.94065645841246544E-324</TD></TR>
+  </TABLE>
+
+  </DIV>
+  </DIV>
+<BR>
+<BR>
+  <P>
+<B>浮動少数型がもつ操作</B>（Floating-Point Operations）<BR>
+<BR>
+浮動少数型は、以下の操作を持っています。
+  </P>
+  <DL>
+    <DD>
+    <DL>
+      <DT>単項演算子（Unary Operators）
+      <DD><BR>
+浮動少数の演算を行う単項演算子。<BR>
+      <TABLE cellspacing="2">
+        <TR>
+          <TD nowrap width="110">単項演算子</TD>
+          <TD><B>+</B>、 <B>-</B></TD></TR>
+        <TR>
+          <TD nowrap>前置インクリメント</TD>
+          <TD><B>++</B></TD></TR>
+        <TR>
+          <TD nowrap>前置デクリメント</TD>
+          <TD><B>--</B></TD></TR>
+        <TR>
+          <TD nowrap>後置式</TD>
+          <TD><B>++</B>、--</TD></TR>
+      </TABLE>
+
+<BR>
+操作の戻り値の型は浮動少数型。<BR>
+<BR>
+      <DT>算術演算子（Arithmetic Operators）
+      <DD>
+      <TABLE cellspacing="2">
+        <TR>
+          <TD>乗法演算子</TD>
+          <TD><B>*</B>、<B>/</B>、 <B>%</B></TD></TR>
+        <TR>
+          <TD nowrap width="110">加法演算子</TD>
+          <TD><B>+</B>、 <B>-</B></TD></TR>
+      </TABLE>
+
+<BR>
+操作の戻り値の型は浮動少数型。<BR>
+<BR>
+    </DL>
+    <DL>
+      <DT>関係演算子（Relational Operators)
+      <DD><BR>
+<B>&lt;</B>、 <B>&lt;=</B>、 <B>&gt;</B>、 <B>&gt;=</B><BR>
+<BR>
+返値の型は論理型。<BR>
+<BR>
+      <DT>等値演算子（Equality Operators)<BR>
+      <DD><BR>
+<B>==</B>、 <B>!=</B><BR>
+<BR>
+返値の型は論理型。<BR>
+<BR>
+      <DT>条件演算子 （Conditional Operator）
+      <DD><BR>
+<B>? ：</B><BR>
+<BR>
+操作の戻り値の型は浮動少数型。(条件演算式の型の詳細については「<A href="../expressions/cond.html">条件演算子</A>」を参照してください。)
+    </DL>
+  </DL>
+  <P>
+<BR>
+  </P>
+Note: IEEE 754 の仕様に準拠の値と操作を持ちます。
+  <P>
+<BR>
+<BR>
+<BR>
+例: 浮動少数型<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  </P>
+<PRE>
+    float  f;    // float型のローカル変数の宣言
+    double d;    // double型のローカル変数の宣言
+</PRE>
+<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<IMG src="../../image/line.gif" height="13" width="554">
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="char"><B>文字型</B> (Character Type)</A>
+</DL>
+<DL>
+  <DD>
+  <DIV align="left">
+
+  <P>
+文字型には以下の1つの型があります。
+  </P>
+  <DIV align="left">
+  <TABLE width="200" cellspacing="5" cellpadding="4">
+    <TR>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD><B>char</B></TD>
+      <TD></TD>
+      <TD></TD></TR>
+  </TABLE>
+
+  </DIV>
+文字型は、Unicodeの文字コードを表現します。<BR>
+<BR>
+<BR>
+  </DIV>
+  <P>
+<B>型の値の範囲</B>
+  </P>
+  <DIV align="left">
+
+  <DL>
+    <DD>この型の値は、 \u0000 から \uFFFF までの値 を持つことができます。<BR>
+(\はバックスラッシュです。）
+  </DL>
+<BR>
+  </DIV>
+<BR>
+  <P>
+<B>文字型がもつ操作</B>（Character Operations）<BR>
+<BR>
+文字型は、以下の操作を持っています。
+  </P>
+  <DL>
+    <DD>
+    <DL>
+      <DT>等値演算子（Equality Operators)<BR>
+      <DD><BR>
+<B>==</B>、 <B>!=</B><BR>
+<BR>
+返値の型は論理型。<BR>
+<BR>
+    </DL>
+  </DL>
+  <P>
+<BR>
+<BR>
+<BR>
+例: 文字型<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  </P>
+<PRE>
+    char sep = ozhome-&gt;startsWith (&quot;/&quot;) ? '/' : '\\';
+        // char型のローカル変数の宣言、初期値の設定
+</PRE>
+<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<IMG src="../../image/line.gif" height="13" width="554"><BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="char"></A><A name="bool"><B>論理型</B> (Boolean Type)</A>
+</DL>
+<DL>
+  <DD>
+  <DIV align="left">
+
+  <P>
+論理型には以下の1つの型があります。
+  </P>
+  <DIV align="left">
+  <TABLE width="200" cellspacing="5" cellpadding="4">
+    <TR>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD><B>bool</B></TD>
+      <TD></TD>
+      <TD></TD></TR>
+  </TABLE>
+
+  </DIV>
+論理型は論理値を表現します。<BR>
+<BR>
+<BR>
+  </DIV>
+  <P>
+<B>型の値の範囲</B>
+  </P>
+  <DIV align="left">
+
+  <DL>
+    <DD>この型の値は、 <TT>true</TT> と <TT>false</TT>です。
+  </DL>
+<BR>
+  </DIV>
+<BR>
+  <P>
+<B>論理型がもつ操作</B>（Boolean Operations）<BR>
+<BR>
+論理型は、以下の操作を持っています。
+  </P>
+  <DL>
+    <DD>
+    <DL>
+      <DT>単項演算子（Unary Operators）
+      <DD><BR>
+論理型の演算を行う単項演算子。<BR>
+      <TABLE cellspacing="2">
+        <TR>
+          <TD nowrap width="110">単項演算子</TD>
+          <TD><B>!</B></TD></TR>
+      </TABLE>
+
+<BR>
+操作の戻り値の型は論理型。<BR>
+<BR>
+    </DL>
+    <DL>
+      <DT>等値演算子（Equality Operators)<BR>
+      <DD><BR>
+<B>==</B>、 <B>!=</B><BR>
+<BR>
+返値の型は論理型。<BR>
+<BR>
+    </DL>
+    <DL>
+      <DT>論理演算子（Logical Operators)<BR>
+      <DD><BR>
+<B>&amp;&amp;</B>、 <B>||</B><BR>
+<BR>
+返値の型は論理型。<BR>
+<BR>
+      <DT>条件演算子 （Conditional Operator）
+      <DD><BR>
+<B>? ：</B><BR>
+<BR>
+操作の戻り値の型は論理型。(条件演算式の型の詳細については「<A href="../expressions/cond.html">条件演算子</A>」を参照してください。)<BR>
+<BR>
+<BR>
+    </DL>
+  </DL>
+  <P>
+<B>論理型の式が用いられる文</B>
+  </P>
+  <UL>
+    <LI>if 文 (The if Statement)
+    <LI>while 文 (The while Statement)
+    <LI>do 文 (The do Statement)
+    <LI>for 文 (The for Statement)
+  </UL>
+  <P>
+<BR>
+<BR>
+<BR>
+例: 論理型<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  </P>
+<PRE>
+   bool eof = false;  // 論理型のローカル変数の宣言、初期値の設定
+</PRE>
+<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<IMG src="../../image/line.gif" height="13" width="554"><BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="char"></A><A name="bool"></A><A name="cond"><B>condition型</B></A>
+</DL>
+<DL>
+  <DD>condition 型には以下の1つの型があります。
+  <DIV align="left">
+  <TABLE width="200" cellspacing="5" cellpadding="4">
+    <TR>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD></TD>
+      <TD><B>condition</B></TD>
+      <TD></TD>
+      <TD></TD></TR>
+  </TABLE>
+
+  </DIV>
+condition 型は並行実行される複数のスレッド間の同期をとるために利用する変数の型です。<BR>
+すなわち、<B>条件変数</B> を表現します。<BR>
+<BR>
+<BR>
+この型の値の範囲、型が持つ操作は実行機構によって規定されます。<BR>
+<BR>
+<BR>
+OZシステムでは実行機構としてOzVMを提供しています。<BR>
+OzVMは、condition型の変数に対して、signal と wait という操作を提供しています。この詳細については「<A href="../sync/index.html">同期機構</A>」を参照してください。<BR>
+<BR>
+<BR>
+<BR>
+例: condition型<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+<PRE>
+  class RandezvouPoint { 
+      condition randezvou;
+
+      public locked void waitRandezvou () {
+          wait (randezvou);
+      }
+      public locked void signalRandezvou () {
+          signal (randezvou);
+      }
+   }
+   // RandezvouPointクラスは 
+   // condition型のアトリビュートを宣言し、
+   // メソッド本体の定義でそれを利用しています。
+</PRE>
+<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<IMG src="../../image/line.gif" height="13" width="554"><BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+参照）<B>基本型の代入</B>
+</P>
+<P>
+基本型の代入 (代入演算式、メソッドおよびコンストラクタの実引数代入)は、すべて値のコピーです。<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="reference.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

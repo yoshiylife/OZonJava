@@ -1,0 +1,3 @@
+rm -r $OZHOME/objects/trader
+oz -n -f trader.e
+

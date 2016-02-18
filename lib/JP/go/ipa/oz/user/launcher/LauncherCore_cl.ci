@@ -1,0 +1,35 @@
+j, JP.go.ipa.oz.user.launcher.LauncherCore_cl, 0x0, JP.go.ipa.oz.user.launcher.LauncherCore_if, JP.go.ipa.oz.lang._Root_cl
+a, currentPath, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 174, 35
+a, GODPathName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 427, 35
+a, ozHomePathName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 385, 38
+a, startScriptName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 507, 57
+a, gui, 0x0, LJP.go.ipa.oz.user.launcher.LauncherGUI_if, 143, 27
+a, createScriptName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 507, 57
+a, fileSepChar, 0x0, C, 310, 35
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 243, 30
+a, startScriptPathName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 568, 65
+a, godOp, 0x0, LJP.go.ipa.oz.user.launcher.GODOperator_if, 277, 29
+a, createScriptPathName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 568, 65
+a, catalogGOL, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 639, 34
+c, create, (), (), (JP.go.ipa.oz.lib.standard._System_cl), (763, 56, ())
+m, getGUI, 0x1, LJP.go.ipa.oz.lib.standard._Frame_if, (), (), (), (2726, 48, ())
+m, setPath, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (3684, 101, ())
+m, init, 0x0, V, (), (), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.launcher.GODOperator_cl), (6170, 171, ())
+m, setCatalogGOL, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (3532, 70, ())
+m, sync, 0x1, V, (), (), (), (5216, 79, ())
+m, startCell, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Process_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.user.launcher.LauncherException_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl, JP.go.ipa.oz.lib.standard._Process_cl), (4174, 710, ((4218, 7, JP.go.ipa.oz.lib.standard._Process_if), (4236, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (4260, 6, JP.go.ipa.oz.lib.standard._String_if), (4282, 17, JP.go.ipa.oz.user.launcher.LauncherException_if)))
+m, startCell, 0x1, V, (), (JP.go.ipa.oz.lib.standard._String_if), (), (3867, 225, ((3901, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, changeDirectory, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (977, 89, ())
+m, createCell, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Process_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.user.launcher.LauncherException_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl, JP.go.ipa.oz.lib.standard._Process_cl), (1452, 1047, ((1509, 7, JP.go.ipa.oz.lib.standard._Process_if), (1527, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (1551, 6, JP.go.ipa.oz.lib.standard._String_if), (1573, 4, JP.go.ipa.oz.lib.standard._File_if), (1596, 17, JP.go.ipa.oz.user.launcher.LauncherException_if)))
+m, createCell, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1288, 44, ())
+m, createCell, 0x1, V, (), (), (), (1148, 58, ())
+m, stop, 0x1, V, (), (), (), (5000, 80, ())
+m, launch, 0x1, V, (), (), (JP.go.ipa.oz.user.launcher.LauncherGUI_cl), (3142, 125, ())
+m, mkScriptFiles, 0x0, V, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (7205, 698, ((7236, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (7270, 6, JP.go.ipa.oz.lib.standard._String_if), (7299, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))
+m, getCatalogGOL, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2581, 63, ())
+m, quit, 0x1, V, (), (), (), (3349, 101, ())
+m, getPath, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2856, 58, ())
+m, installFile, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._FileOutputStream_if, JP.go.ipa.oz.lib.standard._OutputStreamWriter_if, JP.go.ipa.oz.lib.standard._BufferedWriter_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._IOException_if), (JP.go.ipa.oz.lib.standard._File_cl, JP.go.ipa.oz.lib.standard._FileOutputStream_cl, JP.go.ipa.oz.lib.standard._OutputStreamWriter_cl, JP.go.ipa.oz.lib.standard._BufferedWriter_cl), (6453, 609, ((6513, 4, JP.go.ipa.oz.lib.standard._File_if), (6530, 16, JP.go.ipa.oz.lib.standard._FileOutputStream_if), (6559, 18, JP.go.ipa.oz.lib.standard._OutputStreamWriter_if), (6589, 14, JP.go.ipa.oz.lib.standard._BufferedWriter_if), (6614, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (6944, 11, JP.go.ipa.oz.lib.standard._IOException_if)))
+m, resetPath, 0x0, V, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (8133, 776, ((8160, 6, JP.go.ipa.oz.lib.standard._String_if), (8189, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))
+m, installScriptFiles, 0x1, V, (), (), (), (2996, 64, ())
+m, GOD2PathName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (5496, 480, ((5538, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (5563, 6, JP.go.ipa.oz.lib.standard._String_if)))

@@ -1,0 +1,13 @@
+j, JP.go.ipa.oz.user.cda._DeliveryFile_cl, 0x0, JP.go.ipa.oz.user.cda._DeliveryFile_if, JP.go.ipa.oz.lang._Root_cl
+a, topPackageName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 505, 22
+a, time, 0x0, J, 566, 10
+a, contents, 0x0, LJP.go.ipa.oz.lib.standard._ByteArray_if, 544, 19
+a, length, 0x0, I, 530, 11
+a, codePath, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 486, 16
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if, I, LJP.go.ipa.oz.lib.standard._ByteArray_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._ByteArray_if), (), (584, 132, ())
+m, getTopPackageName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (865, 65, ())
+m, time, 0x1, J, (), (), (), (766, 35, ())
+m, getLength, 0x1, I, (), (), (), (934, 46, ())
+m, timeStamp, 0x1, V, (J), (), (), (720, 42, ())
+m, getPackageName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (805, 56, ())
+m, getContents, 0x1, LJP.go.ipa.oz.lib.standard._ByteArray_if, (), (), (), (984, 56, ())

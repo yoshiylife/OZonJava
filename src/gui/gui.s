@@ -1,0 +1,6 @@
+"CenteredDialog", ".user.misc.gui.CenteredDialog", ".user.misc.gui.CenteredDialog"
+"CenteredFrame", ".user.misc.gui.CenteredFrame", ".user.misc.gui.CenteredFrame"
+"ExceptionDialog", ".user.misc.gui.ExceptionDialog", ".user.misc.gui.ExceptionDialog"
+"ExceptionDialogListener", ".user.misc.gui.ExceptionDialogListener", ".user.misc.gui.ExceptionDialogListener"
+"StringInputDialog", ".user.misc.gui.StringInputDialog", ".user.misc.gui.StringInputDialog"
+"StringInputListener", ".user.misc.gui.StringInputListener", ".user.misc.gui.StringInputListener"

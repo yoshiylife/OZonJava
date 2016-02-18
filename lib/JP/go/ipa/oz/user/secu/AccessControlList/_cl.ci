@@ -1,0 +1,11 @@
+j, JP.go.ipa.oz.user.secu.AccessControlList._cl, 0x0, JP.go.ipa.oz.user.secu.AccessControlList_if, JP.go.ipa.oz.lib.standard._Set_cl
+a, asGOL, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 495, 13
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.secu.AuthComparator_if), (JP.go.ipa.oz.user.secu.AuthComparator_cl, JP.go.ipa.oz.lib.standard._Set_cl), (636, 132, ((719, 14, JP.go.ipa.oz.user.secu.AuthComparator_if)))
+c, create, (), (JP.go.ipa.oz.user.secu.AuthComparator_if), (JP.go.ipa.oz.user.secu.AuthComparator_cl, JP.go.ipa.oz.lib.standard._Set_cl), (570, 60, ((581, 14, JP.go.ipa.oz.user.secu.AuthComparator_if)))
+c, ownerOnly, (), (JP.go.ipa.oz.lib.standard._System_if), (JP.go.ipa.oz.lib.standard._Set_cl, JP.go.ipa.oz.lib.standard._System_cl), (849, 80, ((881, 6, JP.go.ipa.oz.lib.standard._System_if)))
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.secu.User_if), (JP.go.ipa.oz.user.secu.User_if), (), (971, 45, ())
+m, authenticateSameGroup, 0x1, V, (), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.user.secu.OzAuthenticationServer_if, JP.go.ipa.oz.user.secu.UnknownUserException_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.user.secu.OzAuthenticationServer_pcl, JP.go.ipa.oz.user.secu.UnknownUserException_cl), (1532, 226, ((1586, 6, JP.go.ipa.oz.lib.standard._System_if), (1607, 22, JP.go.ipa.oz.user.secu.OzAuthenticationServer_if), (1715, 20, JP.go.ipa.oz.user.secu.UnknownUserException_if)))
+m, add, 0x1, V, (LJP.go.ipa.oz.user.secu.User_if), (JP.go.ipa.oz.user.secu.User_if), (), (931, 39, ())
+m, asSet, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (), (), (), (1017, 32, ())
+m, authenticate, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.secu.OzAuthenticationServer_if, JP.go.ipa.oz.user.secu.UnknownUserException_if), (JP.go.ipa.oz.user.secu.OzAuthenticationServer_pcl, JP.go.ipa.oz.user.secu.UnknownUserException_cl), (1288, 214, ((1350, 22, JP.go.ipa.oz.user.secu.OzAuthenticationServer_if), (1459, 20, JP.go.ipa.oz.user.secu.UnknownUserException_if)))
+m, authenticate, 0x1, V, (), (JP.go.ipa.oz.user.secu.UnknownUserException_if), (JP.go.ipa.oz.user.secu.UnknownUserException_cl), (1168, 118, ((1243, 20, JP.go.ipa.oz.user.secu.UnknownUserException_if)))

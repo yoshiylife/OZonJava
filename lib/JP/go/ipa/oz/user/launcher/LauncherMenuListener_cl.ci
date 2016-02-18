@@ -1,0 +1,11 @@
+j, JP.go.ipa.oz.user.launcher.LauncherMenuListener_cl, 0x10, JP.go.ipa.oz.user.launcher.LauncherMenuListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 266, 36
+a, lCore, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCore_if, 192, 32
+a, godOp, 0x0, LJP.go.ipa.oz.user.launcher.GODOperator_if, 228, 32
+c, create, (LJP.go.ipa.oz.user.launcher.LauncherCore_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.launcher.LauncherCore_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.launcher.GODOperator_cl), (464, 167, ())
+m, newCell, 0x0, V, (), (), (), (1910, 50, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if), (), (789, 356, ((844, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, refresh, 0x0, V, (), (), (), (2042, 44, ())
+m, handleException, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (), (1720, 108, ((1763, 15, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if), (1795, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, quit, 0x0, V, (), (JP.go.ipa.oz.user.launcher.AnswerDialog_if, JP.go.ipa.oz.user.launcher.LauncherQuitListener_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.launcher.AnswerDialog_cl, JP.go.ipa.oz.user.launcher.LauncherQuitListener_cl), (1303, 335, ((1325, 12, JP.go.ipa.oz.user.launcher.AnswerDialog_if), (1352, 20, JP.go.ipa.oz.user.launcher.LauncherQuitListener_if), (1389, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, startCell, 0x0, V, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.launcher.LauncherGUI_if), (), (2168, 268, ((2195, 6, JP.go.ipa.oz.lib.standard._String_if), (2214, 6, JP.go.ipa.oz.lib.standard._String_if), (2232, 11, JP.go.ipa.oz.user.launcher.LauncherGUI_if)))

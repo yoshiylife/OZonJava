@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.misc.gui.CenteredFrame_cl, 0x0, JP.go.ipa.oz.user.misc.gui.CenteredFrame_if, JP.go.ipa.oz.lib.standard._Frame_cl
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._Frame_cl), (504, 61, ())
+c, create, (), (), (JP.go.ipa.oz.lib.standard._Frame_cl), (374, 44, ())
+m, pack, 0x1, V, (), (JP.go.ipa.oz.lib.standard._Toolkit_if, JP.go.ipa.oz.lib.standard._Dimension_if), (JP.go.ipa.oz.lib.standard._Toolkit_cl), (723, 379, ((752, 7, JP.go.ipa.oz.lib.standard._Toolkit_if), (770, 9, JP.go.ipa.oz.lib.standard._Dimension_if), (794, 9, JP.go.ipa.oz.lib.standard._Dimension_if)))

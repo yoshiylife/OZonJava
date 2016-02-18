@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.inter.wwps.CompilerCGI_cl, 0x0, JP.go.ipa.oz.user.inter.wwps.CompilerCGI_if, JP.go.ipa.oz.lang._Root_cl
+c, create, (), (), (), (589, 15, ())
+m, startForTest, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.OzCGI_if), (JP.go.ipa.oz.user.inter.cgi.OzCGI_if, JP.go.ipa.oz.user.inter.wwps.CompileReceiver_if, JP.go.ipa.oz.lang._Thread_if), (JP.go.ipa.oz.user.inter.wwps.CompileReceiver_cl, JP.go.ipa.oz.lang._Thread_cl), (403, 144, ((444, 15, JP.go.ipa.oz.user.inter.wwps.CompileReceiver_if), (503, 6, JP.go.ipa.oz.lang._Thread_if)))
+m, start, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.OzCGI_if), (JP.go.ipa.oz.user.inter.cgi.OzCGI_if, JP.go.ipa.oz.user.inter.wwps.CompileReceiver_if, JP.go.ipa.oz.lang._Thread_if), (JP.go.ipa.oz.user.inter.wwps.CompileReceiver_cl, JP.go.ipa.oz.lang._Thread_cl), (207, 113, ((241, 15, JP.go.ipa.oz.user.inter.wwps.CompileReceiver_if), (293, 6, JP.go.ipa.oz.lang._Thread_if)))

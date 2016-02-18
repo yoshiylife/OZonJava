@@ -1,0 +1,9 @@
+j, JP.go.ipa.oz.user.misc.cell.CellStopperCore_cl, 0x0, JP.go.ipa.oz.user.misc.cell.CellStopperCore_if, JP.go.ipa.oz.lang._Root_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 187, 31
+a, gui, 0x0, LJP.go.ipa.oz.user.misc.cell.CellStopperGUI_if, 153, 28
+c, create, (), (), (JP.go.ipa.oz.lib.standard._System_cl), (306, 98, ())
+m, stop, 0x1, V, (), (), (), (1174, 45, ())
+m, launch, 0x1, V, (), (), (JP.go.ipa.oz.user.misc.cell.CellStopperGUI_cl), (692, 164, ())
+m, init, 0x0, V, (), (), (), (1377, 21, ())
+m, quit, 0x1, V, (), (), (), (940, 154, ())
+m, getGUI, 0x1, LJP.go.ipa.oz.lib.standard._Frame_if, (), (), (), (562, 48, ())

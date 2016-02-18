@@ -1,0 +1,21 @@
+j, JP.go.ipa.oz.user.ide.CBLocalHierarchyCanvas_cl, 0x10, JP.go.ipa.oz.user.ide.CBLocalHierarchyCanvas_if, JP.go.ipa.oz.lib.standard._Canvas_cl
+a, levelList, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 217, 17
+a, notPositioned, 0x0, Z, 538, 23
+a, hSpace, 0x0, I, 461, 12
+a, classLabelColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 330, 38
+a, pq, 0x0, LJP.go.ipa.oz.lib.standard._PaintDispatchingQueue_if, 300, 26
+a, graph, 0x0, LJP.go.ipa.oz.user.ide.CBIGraph_if, 197, 16
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 567, 15
+a, vSpace, 0x0, I, 406, 12
+a, fontHeight, 0x0, I, 518, 16
+a, boxInsets, 0x0, LJP.go.ipa.oz.lib.standard._Insets_if, 372, 30
+a, levelWidthList, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 255, 22
+a, areaInsets, 0x0, LJP.go.ipa.oz.lib.standard._Insets_if, 372, 30
+a, classBoxColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 330, 38
+c, newCBLocalHierarchyCanvas, (LJP.go.ipa.oz.user.ide.CBIGraph_if), (JP.go.ipa.oz.user.ide.CBIGraph_if), (JP.go.ipa.oz.lib.standard._PaintDispatchingQueue_cl, JP.go.ipa.oz.lib.standard._Canvas_cl, JP.go.ipa.oz.lib.standard._System_cl), (668, 221, ())
+m, initParams, 0x0, V, (LJP.go.ipa.oz.user.ide.CBIGraph_if), (JP.go.ipa.oz.user.ide.CBIGraph_if), (JP.go.ipa.oz.lib.standard._Insets_cl), (3068, 269, ())
+m, mkPositions, 0x0, V, (LJP.go.ipa.oz.lib.standard._FontMetrics_if), (JP.go.ipa.oz.lib.standard._FontMetrics_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.user.ide.CBIGraphNode_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._Integer_if), (), (5325, 1312, ((5368, 10, JP.go.ipa.oz.lib.standard._Collection_if), (5391, 12, JP.go.ipa.oz.user.ide.CBIGraphNode_if), (5416, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (5548, 7, JP.go.ipa.oz.lib.standard._Integer_if)))
+m, paint, 0x1, V, (LJP.go.ipa.oz.lib.standard._Graphics_if), (JP.go.ipa.oz.lib.standard._Graphics_if, JP.go.ipa.oz.lib.standard._FontMetrics_if), (), (1047, 232, ((1115, 11, JP.go.ipa.oz.lib.standard._FontMetrics_if)))
+m, mkLevels, 0x0, V, (LJP.go.ipa.oz.lib.standard._FontMetrics_if), (JP.go.ipa.oz.lib.standard._FontMetrics_if, JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.user.ide.CBIGraphNode_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._Integer_if), (JP.go.ipa.oz.lib.standard._Array_cl, JP.go.ipa.oz.lib.standard._SList_cl, JP.go.ipa.oz.lib.standard._Integer_cl), (3496, 1747, ((3536, 5, JP.go.ipa.oz.lib.standard._SList_if), (3573, 12, JP.go.ipa.oz.user.ide.CBIGraphNode_if), (3609, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (3695, 7, JP.go.ipa.oz.lib.standard._Integer_if)))
+m, initGUI, 0x0, V, (), (JP.go.ipa.oz.lib.standard._Color_if), (JP.go.ipa.oz.lib.standard._Color_cl), (2725, 261, ((2750, 5, JP.go.ipa.oz.lib.standard._Color_if)))
+m, drawHierarchy, 0x0, V, (LJP.go.ipa.oz.lib.standard._Graphics_if), (JP.go.ipa.oz.lib.standard._Graphics_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.CBIGraphNode_if), (), (1437, 1206, ((1478, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (1506, 12, JP.go.ipa.oz.user.ide.CBIGraphNode_if)))

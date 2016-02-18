@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.launcher.LauncherQuitListener_cl, 0x10, JP.go.ipa.oz.user.launcher.LauncherQuitListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, lCore, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCore_if, 192, 32
+a, answerDialog, 0x0, LJP.go.ipa.oz.user.launcher.AnswerDialog_if, 228, 39
+c, create, (LJP.go.ipa.oz.user.launcher.LauncherCore_if, LJP.go.ipa.oz.user.launcher.AnswerDialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.launcher.LauncherCore_if, JP.go.ipa.oz.user.launcher.AnswerDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl), (429, 208, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if), (), (795, 202, ((850, 6, JP.go.ipa.oz.lib.standard._String_if)))

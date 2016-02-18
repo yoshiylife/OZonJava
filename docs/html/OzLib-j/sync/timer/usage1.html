@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>Usage OZ timer1</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>タイマの使い方1</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<OL>
+<P>
+<LI>例えば次のようにタイマを使いたいとする。<BR>
+
+あるメソッド呼び出しを、タイマをかけて実行したいとする。例えば、次のよ
+うなプログラムで ret = obj -> foo( 1 , "zz" ); の文、すなわち、Foo 型
+のインスタンスの foo メソッド(第一引数は int 型、第二引数は String 型、返
+り値はint 型)をタイマ実行したいとする。
+<PRE>
+\\\\\\\\\\\\\\\\\\\\\ TimerTestBase.oz \\\\\\\\\\\\\\\\\\\
+cell TimerTest {
+  protected void initiallize() {}
+  protected void quiet() {
+    flushCell();
+  }
+  protected void go() {
+    Foo obj => create();
+    int ret;
+    ret = obj -> foo( 1 , "zz" );
+  }
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+</PRE>
+
+<PRE>
+\\\\\\\\\\\\\\\\\\\\\\\\\\ Foo.oz \\\\\\\\\\\\\\\\\\\\\\\\
+class Foo {
+  System system;
+  condition dummy;
+  new create() { system=>create(); }
+  public locked int foo( int i, String S){ 
+    system->println("in Foo"); system->println(S);
+    wait(dummy,1000);
+    return i ;
+  }
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+</PRE>
+
+但し、上の Foo.oz で、メソッド foo が locked になっているのはテスト
+プログラムのしての都合上からであり、タイマをかけて実行したいメソッド
+は locked でなければいけないということではない。
+</P>
+
+<P>
+<LI>まず、TimerTestBase.oz を次のように書き換える。
+<PRE>
+\\\\\\\\\\\\\\\\\\\\\ TimerTest.oz \\\\\\\\\\\\\\\\\\\\\\\\
+cell TimerTest {
+  protected void initiallize() {}
+  protected void quiet() {
+    flushCell();
+  }
+  protected void go() {
+    Foo obj => create();
+    int ret;
+    Timer t => create();
+    MyMethodRunnable mmr => create(t);
+    mmr -> set(obj,1,"zz");
+    try{
+      Integer I;
+      I =| t->invoke(mmr,2000);
+      ret = I->intValue();
+    } catch (TimeOutException e) {
+      System system => create(); system->println("TimeOut");
+    } catch (Exception e) {
+    }
+  }
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+</PRE>
+
+書き換え(追加)は以下の点について行う。
+<UL>
+<LI>Timer オブジェクト生成<BR>
+9 行目にあるように Timer オブジェクトを生成する。
+<LI>MethodRunnable というクラスを継承した Runnable の生成<BR>
+10 行目にあるように、MethodRunnable というクラスを継承した Runnable 
+(ここでは MyMethodRunnable としている) を生成する。<BR>
+このクラスについては後で述べる。
+<LI>そのRunnable にオブジェクトと引数のセット<BR>
+11 行目は、今生成した Runnable に、タイマをかけて実行したいメソッド
+を持つオブジェクト(ここでは obj)と、そのメソッド(ここでは foo メソッ
+ド)の引数をセットするためのメソッドを呼び出している。このメソッドに
+ついては後で述べる。
+<LI>タイマ実行本体<BR>
+12 行目からのように try 節を定義する。タイマをかけて実行したいメソッ
+ドの返り値を wrap した型の変数(ここでは、foo メソッドの返り値が int
+だから Integer 型の変数)を用意する。Timer オブジェクトの invoke メソッド
+を呼び出し、その返り値をこの用意した変数へ強制代入する。invoke メソッ
+ドの第一引数は10行目で生成したオブジェクト、第二引数はタイムアウト時
+間(単位は msec)である。もし foo の返り値が void なら、Root 型のダミーの
+変数を用意し、そこに invoke の返り値を代入する。
+<LI>タイムアウト時の処理<BR>
+TimeOutException の catch 節が、タイムアウトが起きた時に実行される。
+上の例では System に "TimeOut" と表示しているだけである。
+<LI>タイムアウト以外の exception の処理<BR>
+この他、タイマをかけて実行したいメソッドの実行中にあがる exception
+があればその catch 節を続けて定義する。
+</UL>
+</P>
+
+<P>
+<LI>MethodRunnable というクラスを継承した Runnable クラスを用意する。<BR>
+MethodRunnable.oz に MethodRunnable の定義がある。<BR>
+このクラスを継承した Runnable クラスを用意する。今そのクラスを
+MyMethodRunnableとする。
+<PRE>
+\\\\\\\\\\\\\\\\\\\\\ MyMethodRunnable.oz \\\\\\\\\\\\\\\\\
+class MyMethodRunnable :* MethodRunnable {
+  Foo obj; int i; String s;
+  new create(Timer t){ super=>create(t); }
+  public void set(Foo Obj,int I,String S){
+    obj=Obj; i=I; s=S;
+  }
+  protected Root MyMethod(){
+   int ret=obj->foo(i,s);
+   Integer I=>breed(ret);
+   return I;
+  }
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+</PRE>
+このクラス定義に必要な事柄は以下のものである。
+<UL>
+<LI>コンストラクタ定義<BR>
+コンストラクタの引数は Timer 型で、コンストラクタの中は、
+MethodRunnnable のコンストラクタ create をその Timer 型の引数を付けて
+呼び出す。
+<LI>MyMethod メソッド定義<BR>
+アクセスレベル protected 、返り値 Root、無引数 の MyMethod() メソッ
+ドを定義する。これは MethodRunnnable クラスでは abstract メソッドと
+なっているものである。MyMethod の中身は、タイマをかけて実行したいメ
+ソッド呼び出しを行い(ここでは foo メソッド)、返り値を(基本データ型
+なら wrap して)return する、というものである。
+<LI>オブジェクトと引数のセットのためのメンバの定義<BR>
+タイマをかけて実行したいメソッドを呼び出すには、そのメソッドを持つ
+オブジェクトへの参照とメソッドの引数が必要である。そこで、これらの
+値を保持するための属性(ここでは Foo obj; int i; String s;)と、そこ
+へ外から値をセットするためのメソッド(ここでは public void set)を用
+意する。
+<LI>school への追加<BR>
+school に今定義したクラス(ここでは MyMethodRunnable )を足す。
+</UL>
+</OL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

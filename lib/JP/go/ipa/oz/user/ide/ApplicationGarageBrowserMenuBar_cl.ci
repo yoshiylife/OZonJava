@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.ide.ApplicationGarageBrowserMenuBar_cl, 0x0, JP.go.ipa.oz.user.ide.ApplicationGarageBrowserMenuBar_if, JP.go.ipa.oz.lib.standard._MenuBar_cl
+a, menuSystem, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 706, 45
+a, menuApplication, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 755, 50
+a, gBrowser, 0x0, LJP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, 657, 43
+a, listener, 0x0, LJP.go.ipa.oz.user.ide.ApplicationGarageBrowserMenuListener_if, 859, 47
+a, menuCatalog, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 809, 46
+c, create, (LJP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if), (JP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if), (JP.go.ipa.oz.lib.standard._MenuBar_cl, JP.go.ipa.oz.user.ide.ApplicationGarageBrowserMenuListener_cl), (1068, 342, ())
+m, mkApplicationMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (LJP.go.ipa.oz.lib.standard._ActionListener_if), (JP.go.ipa.oz.lib.standard._ActionListener_if, JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if), (JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (2112, 505, ((2170, 4, JP.go.ipa.oz.lib.standard._Menu_if), (2187, 8, JP.go.ipa.oz.lib.standard._MenuItem_if)))
+m, mkSystemMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (LJP.go.ipa.oz.lib.standard._ActionListener_if), (JP.go.ipa.oz.lib.standard._ActionListener_if, JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if), (JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (1644, 388, ((1697, 4, JP.go.ipa.oz.lib.standard._Menu_if), (1714, 8, JP.go.ipa.oz.lib.standard._MenuItem_if)))
+m, mkCatalogMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (LJP.go.ipa.oz.lib.standard._ActionListener_if), (JP.go.ipa.oz.lib.standard._ActionListener_if, JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if), (JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (2699, 479, ((2753, 4, JP.go.ipa.oz.lib.standard._Menu_if), (2779, 8, JP.go.ipa.oz.lib.standard._MenuItem_if)))

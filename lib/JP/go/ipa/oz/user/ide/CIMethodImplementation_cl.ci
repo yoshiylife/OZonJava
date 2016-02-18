@@ -1,0 +1,14 @@
+j, JP.go.ipa.oz.user.ide.CIMethodImplementation_cl, 0x10, JP.go.ipa.oz.user.ide.CIMethodImplementation_if, JP.go.ipa.oz.user.ide.CIMethod_cl
+a, code, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 312, 13
+a, refCIDList, 0x0, LJP.go.ipa.oz.lib.standard._Collection_if, 202, 23
+a, instCIDList, 0x0, LJP.go.ipa.oz.lib.standard._Collection_if, 257, 24
+c, newCIMethodImplementation, (LJP.go.ipa.oz.user.ide.CIAccessLevel_if, LJP.go.ipa.oz.user.ide.CIModifier_if, LJP.go.ipa.oz.user.ide.CIType_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Sequence_if, LJP.go.ipa.oz.lib.standard._Collection_if, LJP.go.ipa.oz.lib.standard._Collection_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIAccessLevel_if, JP.go.ipa.oz.user.ide.CIModifier_if, JP.go.ipa.oz.user.ide.CIType_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Sequence_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIMethod_cl), (487, 499, ())
+c, newCIConstructorImplementation, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Sequence_if, LJP.go.ipa.oz.lib.standard._Collection_if, LJP.go.ipa.oz.lib.standard._Collection_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Sequence_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIMethod_cl), (1072, 421, ())
+m, isProtected, 0x1, Z, (), (), (), (2576, 78, ())
+m, getCode, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1651, 51, ())
+m, referingCIDs, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (2736, 76, ())
+m, getInstantiatingCIDCount, 0x1, I, (), (), (), (1784, 80, ())
+m, isAbstract, 0x1, Z, (), (), (), (2270, 73, ())
+m, getReferingCIDCount, 0x1, I, (), (), (), (1948, 74, ())
+m, instantiatingCIDs, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (2104, 82, ())
+m, isLocked, 0x1, Z, (), (), (), (2425, 69, ())

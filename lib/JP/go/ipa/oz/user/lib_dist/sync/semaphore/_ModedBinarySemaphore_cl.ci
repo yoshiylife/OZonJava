@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.semaphore._ModedBinarySemaphore_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.semaphore._ModedBinarySemaphore_if, JP.go.ipa.oz.user.lib_dist.sync.semaphore._BinarySemaphore_cl
+c, create, (), (), (JP.go.ipa.oz.user.lib_dist.sync.semaphore._BinarySemaphore_cl), (620, 34, ())
+m, exclusiveP, 0x21, V, (), (), (), (512, 50, ())
+m, sharedP, 0x21, V, (), (), (), (565, 48, ())

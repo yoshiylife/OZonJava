@@ -1,0 +1,14 @@
+j, JP.go.ipa.oz.user.lib_dist.tran._TID_cl, 0x0, JP.go.ipa.oz.user.lib_dist.tran._TID_if, JP.go.ipa.oz.lang._Root_cl
+a, GOL, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 571, 11
+a, id, 0x0, I, 562, 7
+a, lockMode, 0x0, I, 584, 13
+c, create, (I, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (525, 35, ())
+c, create, (), (), (), (497, 22, ())
+m, getTidGOL, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (735, 38, ())
+m, equal, 0x1, Z, (LJP.go.ipa.oz.user.lib_dist.tran._TID_if), (JP.go.ipa.oz.user.lib_dist.tran._TID_if, JP.go.ipa.oz.lib.standard._String_if), (), (775, 127, ())
+m, init, 0x1, V, (), (), (), (904, 32, ())
+m, setID, 0x1, V, (I), (), (), (669, 31, ())
+m, set, 0x1, V, (I, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (623, 44, ())
+m, getID, 0x1, I, (), (), (), (702, 31, ())
+m, getLockMode, 0x1, I, (), (), (), (983, 43, ())
+m, setLockMode, 0x1, V, (I), (), (), (938, 43, ())

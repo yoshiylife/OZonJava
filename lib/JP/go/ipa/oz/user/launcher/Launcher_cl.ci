@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.launcher.Launcher_cl, 0x2000, JP.go.ipa.oz.user.launcher.Launcher_if, JP.go.ipa.oz.system.OzCell
+a, core, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCore_if, 134, 29
+m, initialize, 0x1, V, (), (), (JP.go.ipa.oz.user.launcher.LauncherCore_cl), (321, 74, ())
+m, quiet, 0x1, V, (), (), (), (608, 66, ())
+m, go, 0x1, V, (), (), (), (477, 47, ())

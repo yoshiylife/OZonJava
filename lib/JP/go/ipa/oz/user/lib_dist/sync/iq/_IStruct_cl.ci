@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.iq._IStruct_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.iq._IStruct_if, JP.go.ipa.oz.lang._Root_cl
+a, val, 0x0, LJP.go.ipa.oz.lang._Root_if, 531, 9
+a, cond, 0x0, N, 543, 15
+a, flag, 0x0, I, 481, 9
+c, create, (), (), (), (566, 27, ())
+m, write, 0x21, V, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.user.lib_dist.sync.iq._IStructWriteException_if), (JP.go.ipa.oz.user.lib_dist.sync.iq._IStructWriteException_cl), (597, 245, ((655, 21, JP.go.ipa.oz.user.lib_dist.sync.iq._IStructWriteException_if)))
+m, read, 0x21, LJP.go.ipa.oz.lang._Root_if, (), (JP.go.ipa.oz.user.lib_dist.sync.iq._IStructReadException_if), (JP.go.ipa.oz.user.lib_dist.sync.iq._IStructReadException_cl), (846, 223, ((898, 20, JP.go.ipa.oz.user.lib_dist.sync.iq._IStructReadException_if)))

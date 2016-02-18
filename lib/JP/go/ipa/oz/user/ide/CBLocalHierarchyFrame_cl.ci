@@ -1,0 +1,11 @@
+j, JP.go.ipa.oz.user.ide.CBLocalHierarchyFrame_cl, 0x10, JP.go.ipa.oz.user.ide.CBLocalHierarchyFrame_if, JP.go.ipa.oz.user.ide.CBDialog_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 304, 15
+a, hViewContainer, 0x0, LJP.go.ipa.oz.lib.standard._ScrollPane_if, 271, 27
+a, hView, 0x0, LJP.go.ipa.oz.user.ide.CBLocalHierarchyCanvas_if, 237, 30
+a, partView, 0x0, LJP.go.ipa.oz.user.ide.CBPartView_if, 190, 21
+a, titleLabel, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 215, 18
+c, newCBLocalHierarchyFrame, (LJP.go.ipa.oz.user.ide.CBPartView_if, LJP.go.ipa.oz.user.ide.CBIGraph_if), (JP.go.ipa.oz.user.ide.CBPartView_if, JP.go.ipa.oz.user.ide.CBIGraph_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.ide.CBDialog_cl, JP.go.ipa.oz.lib.standard._System_cl), (481, 266, ((543, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, layoutComponents, 0x0, V, (), (JP.go.ipa.oz.lib.standard._GridBagLayout_if, JP.go.ipa.oz.lib.standard._GridBagConstraints_if, JP.go.ipa.oz.lib.standard._Insets_if), (JP.go.ipa.oz.lib.standard._GridBagLayout_cl, JP.go.ipa.oz.lib.standard._GridBagConstraints_cl, JP.go.ipa.oz.lib.standard._Insets_cl), (1843, 689, ((1877, 13, JP.go.ipa.oz.lib.standard._GridBagLayout_if), (1905, 18, JP.go.ipa.oz.lib.standard._GridBagConstraints_if), (1943, 6, JP.go.ipa.oz.lib.standard._Insets_if)))
+m, initParams, 0x0, V, (LJP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.user.ide.CBPartView_if), (), (1703, 60, ())
+m, dispose, 0x1, V, (), (), (), (905, 55, ())
+m, initGUI, 0x0, V, (LJP.go.ipa.oz.user.ide.CBIGraph_if), (JP.go.ipa.oz.user.ide.CBIGraph_if, JP.go.ipa.oz.user.ide.CBWindowClosingListener_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.user.ide.CBLocalHierarchyCanvas_cl, JP.go.ipa.oz.lib.standard._ScrollPane_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.ide.CBWindowClosingListener_cl), (1118, 503, ((1153, 23, JP.go.ipa.oz.user.ide.CBWindowClosingListener_if), (1468, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))

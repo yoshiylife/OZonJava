@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.cda._Test_cl, 0x2000, JP.go.ipa.oz.user.cda._Test_if, JP.go.ipa.oz.system.OzCell
+m, initiallize, 0x4, V, (), (), (), (477, 31, ())
+m, go, 0x4, V, (), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.user.released.test_cda.testclass._CDATestClass_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.user.released.test_cda.testclass._CDATestClass_cl), (559, 178, ((585, 6, JP.go.ipa.oz.lib.standard._System_if), (660, 12, JP.go.ipa.oz.user.released.test_cda.testclass._CDATestClass_if)))
+m, quiet, 0x4, V, (), (), (), (511, 45, ())

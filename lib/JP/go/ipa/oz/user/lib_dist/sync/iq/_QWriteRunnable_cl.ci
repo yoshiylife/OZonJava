@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.iq._QWriteRunnable_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.iq._QWriteRunnable_if, JP.go.ipa.oz.lang._Runnable_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 529, 14
+a, label, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 513, 13
+a, qs, 0x0, LJP.go.ipa.oz.user.lib_dist.sync.iq._QStruct_if, 499, 11
+c, create, (LJP.go.ipa.oz.user.lib_dist.sync.iq._QStruct_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.sync.iq._QStruct_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._System_cl), (550, 82, ())
+m, run, 0x1, V, (), (), (), (635, 87, ())

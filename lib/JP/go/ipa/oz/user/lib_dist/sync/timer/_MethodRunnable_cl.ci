@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_cl, 0x400, JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_if, JP.go.ipa.oz.lang._Runnable_cl
+a, result, 0x0, LJP.go.ipa.oz.lang._Root_if, 522, 12
+a, timer, 0x0, LJP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if, 507, 12
+c, create, (LJP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (), (541, 29, ())
+m, run, 0x1, V, (), (), (), (658, 72, ())
+m, getResult, 0x1, LJP.go.ipa.oz.lang._Root_if, (), (), (), (574, 43, ())
+m, MyMethod, 0x404, LJP.go.ipa.oz.lang._Root_if, (), (), (), (620, 35, ())

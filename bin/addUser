@@ -1,0 +1,5 @@
+rm -r $OZHOME/objects/tmp
+echo "create tmp JP.go.ipa.oz.user.secu.addUser_cl;" | oz -i -s 
+echo "JP.go.ipa.oz.crypt.rotate.OzRotateCipher"> $OZHOME/objects/tmp/.cipher
+echo "go tmp $1 $2;" | oz -i -s
+

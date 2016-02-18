@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.garage.SummarizableIterator_cl, 0x0, JP.go.ipa.oz.user.garage.SummarizableIterator_if, JP.go.ipa.oz.lang._Root_cl
+a, keyList, 0x0, LJP.go.ipa.oz.lib.standard._Collection_if, 171, 22
+a, sgarageGOL, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 222, 25
+a, keyItr, 0x0, LJP.go.ipa.oz.lib.standard._Iterator_if, 197, 21
+a, sgarage, 0x0, LJP.go.ipa.oz.user.garage.SGarage_if, 251, 22
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.user.garage.SGarage_pcl), (674, 151, ())
+c, create, (LJP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.user.garage.SGarage_pcl), (437, 151, ())
+m, nextElement, 0x1, LJP.go.ipa.oz.lang._Root_if, (), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.user.garage.Key_if), (), (1289, 205, ((1325, 4, JP.go.ipa.oz.lang._Root_if), (1341, 3, JP.go.ipa.oz.user.garage.Key_if)))
+m, hasMoreElements, 0x1, Z, (), (), (), (1126, 81, ())
+m, atEnd, 0x1, Z, (), (), (), (983, 61, ())

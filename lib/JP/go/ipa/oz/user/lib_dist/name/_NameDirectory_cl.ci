@@ -1,0 +1,24 @@
+j, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_cl, 0x0, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if, JP.go.ipa.oz.lang._Root_cl
+a, Entries, 0x4, LJP.go.ipa.oz.lib.standard._Dictionary_if, 116, 29
+a, branch, 0x4, Z, 162, 22
+a, SubDirs, 0x4, LJP.go.ipa.oz.lib.standard._Dictionary_if, 52, 29
+c, create, (), (JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl), (192, 124, ((206, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+c, createBranch, (), (), (), (324, 38, ())
+m, DirectoryNameSet, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (), (), (), (4112, 67, ())
+m, EntrySize, 0x1, I, (), (), (), (2425, 61, ())
+m, BranchInOtherCell, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if), (JP.go.ipa.oz.user.lib_dist.name._NameDirectory_cl), (5006, 168, ((5092, 13, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if)))
+m, getEntry, 0x1, LJP.go.ipa.oz.lang._Root_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1980, 75, ())
+m, removeDirectory, 0x1, LJP.go.ipa.oz.user.lib_dist.name._NameDirectory_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if), (), (3820, 168, ((3877, 13, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if)))
+m, containDirectory, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (3578, 89, ())
+m, debugPrint, 0x1, Z, (LJP.go.ipa.oz.user.lib_dist.name._Path_if), (JP.go.ipa.oz.user.lib_dist.name._Path_if, JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._PrintWriter_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._SecurityException_if), (JP.go.ipa.oz.lib.standard._System_cl), (366, 883, ((416, 6, JP.go.ipa.oz.lib.standard._System_if), (449, 11, JP.go.ipa.oz.lib.standard._PrintWriter_if), (640, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (752, 6, JP.go.ipa.oz.lib.standard._String_if), (988, 6, JP.go.ipa.oz.lib.standard._String_if), (1198, 17, JP.go.ipa.oz.lib.standard._SecurityException_if)))
+m, isBranch, 0x1, Z, (), (), (), (5178, 46, ())
+m, DirectorySet, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (), (), (), (4299, 65, ())
+m, getDirectory, 0x1, LJP.go.ipa.oz.user.lib_dist.name._NameDirectory_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if), (), (4669, 115, ((4722, 13, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if)))
+m, overputDirectory, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.lib_dist.name._NameDirectory_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if), (), (3330, 104, ())
+m, removeEntry, 0x1, LJP.go.ipa.oz.lang._Root_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lang._Root_if), (), (2203, 133, ((2245, 4, JP.go.ipa.oz.lang._Root_if)))
+m, DirectorySize, 0x1, I, (), (), (), (4460, 64, ())
+m, EntryNameSet, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (), (), (), (2602, 63, ())
+m, EntrySet, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (), (), (), (2779, 61, ())
+m, putDirectory, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.lib_dist.name._NameDirectory_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._NameDirectory_if, JP.go.ipa.oz.user.lib_dist.name._NameDirectoryDuplicateNameException_if), (JP.go.ipa.oz.user.lib_dist.name._NameDirectoryDuplicateNameException_cl), (2990, 222, ((3092, 35, JP.go.ipa.oz.user.lib_dist.name._NameDirectoryDuplicateNameException_if)))
+m, putEntry, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.user.lib_dist.name._NameDirectoryDuplicateNameException_if), (JP.go.ipa.oz.user.lib_dist.name._NameDirectoryDuplicateNameException_cl), (1413, 209, ((1502, 35, JP.go.ipa.oz.user.lib_dist.name._NameDirectoryDuplicateNameException_if)))
+m, containEntry, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1761, 85, ())

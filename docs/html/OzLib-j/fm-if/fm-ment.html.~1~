@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>スケジューリング機能</H4>
+</CENTER><HR NOSHADE>
+
+<P>
+<UL>
+<LI><A HREF="fm-schedfunc.html">機能概要</A>
+<LI><A HREF="fm-schedreal.html">実現方式</A>
+</UL>
+</P>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href=../../"copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

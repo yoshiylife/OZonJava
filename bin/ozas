@@ -1,0 +1,9 @@
+#
+#as.eのポート番号を設定
+
+set port=8000
+
+#以下改編不可
+rm -r $OZHOME/objects/as
+echo "create as JP.go.ipa.oz.user.secu.OzAuthenticationServer2_cl;stop as;go as $port d;remove as;">as.e
+oz -f as.e

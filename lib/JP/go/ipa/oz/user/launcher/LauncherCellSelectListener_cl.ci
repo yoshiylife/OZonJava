@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.launcher.LauncherCellSelectListener_cl, 0x0, JP.go.ipa.oz.user.launcher.LauncherCellSelectListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 268, 35
+a, lCore, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCore_if, 198, 31
+a, godOp, 0x0, LJP.go.ipa.oz.user.launcher.GODOperator_if, 233, 31
+c, create, (LJP.go.ipa.oz.user.launcher.LauncherCore_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.launcher.LauncherCore_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.user.launcher.GODOperator_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl), (465, 201, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.launcher.LauncherGUI_if), (), (824, 262, ((879, 6, JP.go.ipa.oz.lib.standard._String_if), (898, 6, JP.go.ipa.oz.lib.standard._String_if), (916, 11, JP.go.ipa.oz.user.launcher.LauncherGUI_if)))

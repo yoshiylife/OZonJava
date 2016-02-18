@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ IDE</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="clsbrz-inter.html"><IMG src="../../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="mcl-system.html"><IMG src="../../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>クラスビュー：クラスの情報を表示する</B><BR>
+<BR>
+</H3>
+<BR clear="all">
+<P align="center">
+<IMG src="clsb-imp.gif" height="602" width="572">
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<H4><B>クラスブラウザのメニューバー</B></H4>
+<TABLE>
+  <TR>
+    <TD nowrap width="40"></TD>
+    <TD nowrap valign="top">class ID 表示エリア</TD>
+    <TD width="15"></TD>
+    <TD>ブラウズされているクラスのクラス識別子を表示します。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD nowrap valign="top">interface class 表示エリア</TD>
+    <TD></TD>
+    <TD>ブラウズされているクラスのインタフェース部識別子を表示します。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD nowrap valign="top">super classes(cl) 表示エリア</TD>
+    <TD></TD>
+    <TD>上位実装クラスが存在すれば、そのクラス識別子を表示します。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD nowrap valign="top">protected チェックボックス</TD>
+    <TD></TD>
+    <TD>ブラウズされているクラスのアクセスレベルが protected であると、ここにチェックが付けられます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD nowrap valign="top">cell チェックボックス</TD>
+    <TD></TD>
+    <TD>ブラウズされているクラスがcell型であると、ここにチェックが付けられます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD nowrap valign="top">abstract チェックボックス</TD>
+    <TD></TD>
+    <TD>ブラウズされているクラスが abstract メソッドを持つクラスであると、ここにチェックが付けられます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD nowrap valign="top">final チェックボックス</TD>
+    <TD></TD>
+    <TD>ブラウズされているクラスが final 修飾子を持つクラスであると、ここにチェックが付けられます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD nowrap valign="top">members リスト</TD>
+    <TD></TD>
+    <TD>クラスのメンバを表示しています。<BR>
+メンバのタイプは色で区別されています。<BR>
+    <TABLE cellpadding="3">
+      <TR>
+        <TD nowrap width="40"></TD>
+        <TD nowrap><FONT color="#ff0000">赤</FONT></TD>
+        <TD nowrap width="10"></TD>
+        <TD>アトリビュート</TD></TR>
+      <TR>
+        <TD nowrap></TD>
+        <TD nowrap><FONT color="#ff00ff">ピンク</FONT></TD>
+        <TD nowrap></TD>
+        <TD>コンストラクタ</TD></TR>
+      <TR>
+        <TD nowrap></TD>
+        <TD nowrap><FONT color="#0000ff">ブルー</FONT></TD>
+        <TD nowrap></TD>
+        <TD>メソッド</TD></TR>
+    </TABLE>
+
+<BR>
+細字のメンバは上位実装クラスで宣言されているメンバです。<BR>
+<BR>
+アトリビュートメンバについて、
+    <UL>
+      <LI>アクセスレベル
+      <LI>アトリビュート修飾子
+      <LI>型
+      <LI>メンバ名
+      <LI>定義クラス（*は、このクラスで宣言されているメンバ）
+    </UL>
+の情報が表示されます。<BR>
+<BR>
+コンストラクタメンバについて、
+    <UL>
+      <LI>メンバ名
+      <LI>引数リスト
+      <LI>定義クラス（*は、このクラスで宣言されているメンバ）
+    </UL>
+の情報が表示されます。<BR>
+<BR>
+メソッドメンバについて、
+    <UL>
+      <LI>アクセスレベル
+      <LI>アトリビュート修飾子
+      <LI>返り型
+      <LI>メンバ名
+      <LI>引数リスト
+      <LI>定義クラス（*は、このクラスで宣言されているメンバ）
+    </UL>
+の情報が表示されます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD nowrap valign="top">method/constructor details</TD>
+    <TD></TD>
+    <TD>members リストで選択されたメンバがこのクラスで定義されたメソッドあるいはコンストラクタである場合、以下のような詳細情報を表示します。<BR>
+    <TABLE>
+      <TR>
+        <TD nowrap width="10"></TD>
+        <TD>signature</TD>
+        <TD></TD>
+        <TD>メソッド、コンストラクタのシグネチャを記述。</TD></TR>
+      <TR>
+        <TD></TD>
+        <TD>refering classes</TD>
+        <TD></TD>
+        <TD>メソッド/コンストラクタが参照するクラス。</TD></TR>
+      <TR>
+        <TD></TD>
+        <TD>instantiating classes</TD>
+        <TD></TD>
+        <TD>メソッド/コンストラクタが生成するクラス。</TD></TR>
+      <TR>
+        <TD></TD>
+        <TD>psuede code</TD>
+        <TD></TD>
+        <TD>疑似コード。</TD></TR>
+    </TABLE>
+
+<BR>
+</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="clsbrz-inter.html"><IMG src="../../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="mcl-system.html"><IMG src="../../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

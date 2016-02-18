@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.misc.gui.StringInputListener_if, 0x0, (JP.go.ipa.oz.lib.standard._ActionListener_if)
+m, getDialog, 0x1, LJP.go.ipa.oz.user.misc.gui.StringInputDialog_if, ()
+m, setDialog, 0x1, V, (LJP.go.ipa.oz.user.misc.gui.StringInputDialog_if)

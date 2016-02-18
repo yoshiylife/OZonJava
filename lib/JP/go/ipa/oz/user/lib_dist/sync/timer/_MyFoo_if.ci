@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.lib_dist.sync.timer._MyFoo_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, foo, 0x1, I, (I, LJP.go.ipa.oz.lib.standard._String_if, I)
+m, foo, 0x21, I, (I, LJP.go.ipa.oz.lib.standard._String_if)

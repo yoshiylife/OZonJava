@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Comm</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H1>通信設定</H1>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+OZは分散処理環境であり、
+OZのオブジェクトは通信機能を持つ。
+実際には通信を使わない場合、
+自分が属する組織内（例えば社内）でのみ通信を行う場合、
+インターネットに接続して使う場合等様々な運用が考えられる。
+ここでは順を追ってシステム構成、設定方法を説明する。
+
+<P>
+<H2><A NAME="unit">UNITレベル</A></H2>
+インストールを行うとOZHOMEが作成される。
+じつはこれはひとりだけでOZシステムを利用するための設定が終わったに過ぎない。
+このような運用レベルをUNITレベルと呼ぶ。
+
+<P>
+UNITレベルではOZHOMEがひとつだけ、
+すなわちひとりだけの運用形態である。
+これでも支配下にあるセルは自由に起動することができる。
+このレベルでは特に通信のために設定は必要ない。
+
+<P>
+<CENTER>
+<IMAGE SRC="unit.gif">
+</CENTER>
+<HR>
+
+<P>
+<H2><A NAME="lan">LANレベル</A></H2>
+次に組織内で通信を行う環境を説明する。
+これをLANレベルと呼ぶことにする。
+
+<P>
+LANというからには複数のユーザが存在する。
+OZではひとりのユーザがひとつのOZHOMEを占有することになっているため
+OZHOMEが複数存在する。
+OZHOMEを異にするセル間で通信を行うためには<B>リゾルバ</B>と呼ばれるデーモンが必要である。
+
+<P>
+OZには2種類のリゾルバがある。
+ひとつめは<B>ホームリゾルバ</B>で、
+これは電話機に相当するものでOZ-VMと接続される。
+ふたつめは<B>ドメインリゾルバ</B>で、
+これは交換機に相当するものでホームリゾルバと接続される。
+
+<P>
+<CENTER>
+<IMAGE SRC="lan.gif">
+</CENTER>
+
+<P>
+<DL>
+<DT><A NAME="domain">1.ドメインとドメイン名の決定 </A><DD>
+        LANというからにはネットワークの一定の範囲を想定している。
+        それが何であるかはここでは触れないが、
+        この一定の範囲を<B>ドメイン</B>と呼び、
+        LANレベルではドメイン内部の通信を提供する。<P>
+        先ず<B>ドメイン名</B>を決める。
+        ドメイン名は接続するレベルでユニークでなければならない。
+        将来インターネットに接続する場合、
+        ワールドワイドにユニークなドメイン名であることが要求される。
+        通常これはメールのドメインを利用する。<P>
+
+<DT><A NAME="domain-server">2.ドメインサーバの決定</A><DD>
+        ドメインにはドメインリゾルバがひとつ必要である。
+        ドメインリゾルバを実行するホスト(<B>ドメインサーバ</B>)を
+        ひとつ決定すること。
+        さらにドメインサーバで空いているポート番号をひとつ決定すること。
+        ドメインサーバにはドメインリゾルバと
+        <A href="#agw">アプリケーションゲートウェイ</A>
+        を実行するためにOZHOMEをインストールする。
+        <P>
+
+<DT><A NAME="ozhomeid">3.OZHOME識別子の決定</A><DD>
+        ドメイン内部で通信を行うということはお互いがIDを持って識別しなければ
+        いけないということである。
+        OZではOZHOMEに識別子(ID)を付与して管理する。
+        これを<B>OZHOME識別子</B>と呼ぶ。
+        識別子は任意の文字列であるが当然のことながら
+        ドメインの中でユニークでないといけない。
+        nisでユーザ管理を行っている環境であればユーザ名を用いるのが
+        よいであろう。
+        ホストをひとりで占有できる環境であればホスト名がよいであろう。<P>
+
+<DT>4.OZHOME別に行う設定<DD>
+        <B>$OZHOME/lib/oz.properties</B>というファイルがある。
+        これは属性名とその値を記す構文になっている。
+        以下を指定のこと。
+        <OL>
+        <LI><B>oz.home.name</B>には<A HREF="#domain">ドメイン名</A>と
+                先ほど決定した<A HREF="#ozhomeid">OZHOME識別子</A>を指定する。
+                ドメインを同じくするOZHOMEはここに同じドメイン名を
+                指定しなければならない。
+        <LI><B>oz.home.resolver</B>にはそのホストの
+                IPアドレスとポート番号を指定する。
+                ポート番号は空いていると思われる番号を指定する。
+                これはホームリゾルバのための指定である。
+        <LI><B>oz.domain.resolver</B>には<A HREF="#domain-server">
+                ドメインサーバ</A>のIPアドレスとポート番号を指定する。
+        </OL>
+        <PRE>
+        例）
+        oz.home.name=oz.ipa.go.jp:user1
+        oz.home.resolver=100.1.2.3:7000
+        oz.domain.resolver=100.1.2.4:7001
+        </PRE>
+        この例ではドメイン名はoz.ipa.go.jp、
+        このクライアントのマシンのIPアドレスは100.1.2.3、
+        このクライアントのOZHOME識別子はuser1、
+        ホームリゾルバのポート番号は7000、
+        ドメインリゾルバのポート番号は7001である。
+
+<P>
+<DT>5.ドメインリゾルバの設定<DD>
+        ドメインサーバの<A NAME="ozdr"><B>$OZHOME/bin/ozdr</B></A>
+        というスクリプトを編集する。
+        <OL>
+        <LI>変数<B>domain</B>に<A HREF+"#domain">ドメイン名</A>を代入。
+        <LI>変数<B>port</B>にポート番号を代入。
+                これはクライアントのoz.propertiesのoz.domain.resolverと同じもの
+        </OL>
+        <PRE>
+        例)
+        set domain=oz.ipa.go.jp
+        set port=7001
+        </PRE>
+        <P>
+
+<DT><A NAME="dr-start">6.ドメインリゾルバの起動</A><DD>
+        ドメインサーバで$OZHOME/bin/ozdrを実行する。
+        このプログラムの起動はすべてのホームリゾルバの起動よりも
+        先に行わなければならない。<P>
+
+<DT>7.ホームリゾルバの起動<DD>
+        OZを実行する各ホストでozhrを実行する。
+        これはOZHOMEにひとつ立ち上げればよい。
+</DL>
+<HR>
+
+<P>
+<H2><A NAME="wan">WANレベル</A></H2>
+
+<P>
+LANレベルの次はファイヤウォールを越えてインターネットに接続するレベルである。
+これをWANレベルと呼ぶ。
+OZ-VMからホームリゾルバまではLANレベルと同じである。
+WANレベルで必要なのは<A NAME="agw"><B>アプリケーションゲートウェイ</B></a>である。
+これはドメインの中の世界と外の世界とをつなぐ役割を持つ。
+中の世界とつなげるためにドメインリゾルバと接続する。
+また外からの通信を受け取るためにhttpサーバとCGIが必要である。
+現時点ではhttpサーバはSolaris上の
+<A HREF="http://hoohoo.ncsa.uiuc.edu/docs/">NCSA</A>でだけ動作確認をしている。
+
+<P>
+<A NAME="ozdr2"><H3>ドメインリゾルバの設定</H3></A>
+ドメインサーバの<A HREF="#ozdr"><B>$OZHOME/bin/ozdr</B></A>にアプリケーションゲートウェイの情報を追加する。
+変数<B>apgwAddr</B>にドメインサーバのIPアドレスと
+アプリケーションゲートウェイが提供するポート番号を記す。
+<PRE>
+        例)     
+        set apgwAddr=100.1.2.4:7002
+</PRE>
+LANレベルに戻す場合はこの変数に''を代入する。
+
+<P>
+<H3>アプリケーションゲートウェイの設定</H3>
+アプリケーションゲートウェイはドメインリゾルバと同じ
+<A HREF="#domain-server">ドメインサーバ</A>上に設置する。<BR>
+アプリケーションゲートウェイについての「<A HREF="../Apgw-j/index.html">アプリケーションゲートウェイマニュアル</A>」を参照。<BR>
+アプリケーションゲートウェイを使用するために <B>AGHOME</B> という環境変数の設定や最低限必要な設定がある。それについては「<A HREF="../Apgw-j/install.html">アプリケーションゲートウェイのインストール</A>」を参照。<BR>
+
+<DL>
+<DT>1.ドメインリゾルバ、CGIと接続するための設定<DD>
+        <B>$AGHOME/etc/ag.properties</B>というファイルがある。
+        以下を設定する。
+        <OL>
+        <LI><B>ap.address.executor</B>に
+                このホスト(ドメインサーバ)のIPアドレスと、
+                先ほど<A HREF="#ozdr2">ozdrのapgwAddr</A>と同じ
+                ポート番号を指定する。
+        <LI><A NAME="address-cgi"><B>ap.address.cgi</B></A>に
+                ドメインサーバのIPアドレスと
+                CGIが参照しているポート番号を指定する。
+        <LI><B>oz.domain.resolver</B>にドメインサーバのIPアドレスと
+                ドメインリゾルバのポート番号を指定する。
+                これは<A HREF="#ozdr">ozdrに記述したポート番号</A>を指定する。
+        <LI><B>ag.http.proxy</B>にhttpプロクシのURLを指定する。
+                これは必ずしも必要ではない。
+        <LI><B>ag.master.domainTable</B>は既定値を修正しない。
+        </OL>
+
+        <PRE>
+        ag.address.cgi=100.1.2.4:7003
+        ag.address.executor=100.1.2.4:7002
+        oz.domain.resolver=100.1.2.4:7001
+        ag.master.domainTable=http://www.etl.go.jp:80/etl/bunsan/OZ_Proj/domains.table
+        </PRE>
+
+<P>
+<DT>2.CGIの設定<DD>
+        httpサーバにCGIプログラムを登録する。
+        <OL>
+        <LI><B>$AGHOME/cgi/nph-OzAG</B>を編集する。
+                まず<B>AGHOST</B>にはドメインサーバのIPアドレスを記入する。
+        <LI><B>AGPORT</B>にはポート番号を指定する。
+                これはag.propertiesの<A HREF="#address-cgi">ap.address.cgi</A>
+                で指定したものと同じものを記す。
+        <LI><B>CGIPROG</B>にcgiプログラムをフルパスで記入する。
+        <LI>編集したnph-OzAGをhttpサーバのCGIディレクトリ(cgi-bin等)に
+                コピーする。
+        </OL>
+
+        <PRE>
+        #!/bin/csh -f
+        #
+        # CGI for OZ Application Gateway
+        #
+        # Host name and port number of Application gateway
+
+         set AGHOST=100.1.2.4
+         set AGPORT=7003
+
+        # Absolute path of ozcgi
+         set CGIPROG=/usr/local/bin/ozcgi
+
+        ## Never edit line below
+        $CGIPROG $AGHOST $AGPORT
+        </PRE>
+</DL>
+
+<P>
+<H3>整理</H3>
+ポート番号の設定がやたらと多く、混乱するので図にまとめた。
+矢印の終点がサーバ側である。
+4種類のポートが必要である。
+図中に示したポート番号は本文中の例で用いている番号であって、
+特に推奨しているわけではない。
+同様にIPアドレスも例で用いたものを図中にも記してある。
+<CENTER>
+<IMAGE SRC="port.gif">
+</CENTER>
+
+<P>
+<H3>起動方法</H3>
+ドメインリゾルバの起動方法は<A HREF="#dr-start">LANレベルのときと同じ</A>である。
+アプリケーションゲートウェイの起動方法はターミナルから
+<B>$OZHOME/ag/bin/ag</B>を実行するだけである。
+これはコマンドインタプリタである。
+終了時には <B>exit</B> と入力する。
+
+<P>
+ドメインリゾルバとアプリケーションゲートウェイは
+どちらを先に起動しても構わない。
+
+<P>
+<HR NOSHADE>
+<!- ------------------------------------------------------------ ->
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact:</B> <A HREF="mailto:oz-admin@etl.go.jp">oz-admin@etl.go.jp</A>
+
+</BODY>
+</HTML>

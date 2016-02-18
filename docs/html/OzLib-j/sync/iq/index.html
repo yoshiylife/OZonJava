@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>Manual of OZ IQ struct Lib.</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>同期構造体の使い方</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+<OL>
+<LI>同期構造体として、I 構造体である IStruct と、Q 構造体である QStruct が
+用意されている。
+
+<LI>IStruct は二つのスレッド間での単一の値の受渡しを同期させるためのもの
+である。読み込みは read() メソッドで、書き込みは write() メソッドで行
+われる。読み込みのスレッドは、既に値が到着していれば、それを読み込む
+が、到着していなければ、到着するまでブロックする。到着していない状態
+で二回以上の連続した読み込みが行なわれた場合、例外 IStructReadException
+が発生する。また、ブロックしているスレッドが無い状態での二回以上の連
+続した書き込みが行なわれた場合、例外 IStructWriteException が発生する。
+
+<LI>Q構造体は二つのスレッド間での複数の値の受渡しを同期させるためのもの
+である。読み込みは read() メソッドで、書き込みは write() メソッドで行
+われる。読み込みのスレッドは、キューに値が入っていれば、それを読み込
+むが、空であれば、値が入るまでブロックする。書き込みのスレッドは、値
+をキューする。二回以上の連続した書き込みは、値をキューされ、正常に動
+作する。二回以上の連続した読み込みは、キューされた値を順に読み出す。
+</OL>
+</P>
+
+<P>
+<UL>
+<LI><A HREF="api.html"><B>API</B></A>
+</UL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

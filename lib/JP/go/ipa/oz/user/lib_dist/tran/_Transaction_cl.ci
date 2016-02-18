@@ -1,0 +1,46 @@
+j, JP.go.ipa.oz.user.lib_dist.tran._Transaction_cl, 0x2000, JP.go.ipa.oz.user.lib_dist.tran._Transaction_if, JP.go.ipa.oz.system.OzCell
+a, maxBlockingResource, 0x0, I, 686, 24
+a, tid, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._TID_if, 482, 8
+a, maxLockRetry, 0x0, I, 630, 17
+a, d, 0x4, LJP.go.ipa.oz.user.lib_dist.tran._Debug_if, 712, 18
+a, x, 0x4, I, 732, 16
+a, lockingResources, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 492, 23
+a, timeOut, 0x0, I, 616, 12
+a, maxID, 0x0, I, 649, 10
+a, bx, 0x0, I, 579, 7
+a, size, 0x0, I, 750, 9
+a, blockingResources, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 517, 24
+a, ScanTime, 0x0, I, 787, 13
+a, maxLockingResource, 0x0, I, 661, 23
+a, lx, 0x0, I, 543, 7
+m, checkDeadLock, 0x14, Z, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, JP.go.ipa.oz.user.lib_dist.tran._TIDComparator_if, JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.user.lib_dist.tran._TID_if, JP.go.ipa.oz.user.lib_dist.tran._Transaction_if, JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.user.lib_dist.tran._Transaction_pcl, JP.go.ipa.oz.user.lib_dist.tran._TIDComparator_cl, JP.go.ipa.oz.lib.standard._SList_cl, JP.go.ipa.oz.lib.standard._Array_cl), (5408, 1229, ((5758, 6, JP.go.ipa.oz.lib.standard._String_if), (5787, 19, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if), (5817, 13, JP.go.ipa.oz.user.lib_dist.tran._TIDComparator_if), (5847, 5, JP.go.ipa.oz.lib.standard._SList_if), (5893, 3, JP.go.ipa.oz.user.lib_dist.tran._TID_if), (5901, 11, JP.go.ipa.oz.user.lib_dist.tran._Transaction_if), (6219, 5, JP.go.ipa.oz.lib.standard._Array_if), (6577, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, setMaxLockRetry, 0x14, V, (I), (), (), (1532, 86, ())
+m, unlock, 0x10, V, (), (JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_cl), (6805, 389, ((6857, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (6887, 6, JP.go.ipa.oz.lib.standard._String_if), (6958, 19, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if), (7083, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (7147, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, commit, 0x11, V, (), (JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_if, JP.go.ipa.oz.lang._Exception_if), (), (8178, 189, ((8248, 25, JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_if), (8320, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, initialize, 0x4, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.tran._TID_cl, JP.go.ipa.oz.lib.standard._Array_cl), (841, 385, ())
+m, commitBody, 0x10, V, (), (JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_cl), (8369, 630, ((8429, 19, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if), (8454, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (8511, 6, JP.go.ipa.oz.lib.standard._String_if), (8864, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (8940, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, sharedLock, 0x14, V, (LJP.go.ipa.oz.lib.standard._Array_if, I), (JP.go.ipa.oz.lib.standard._Array_if), (), (3097, 76, ())
+m, sharedLock, 0x14, V, (LJP.go.ipa.oz.lib.standard._Array_if), (JP.go.ipa.oz.lib.standard._Array_if), (), (3025, 70, ())
+m, lockHead, 0x11, V, (LJP.go.ipa.oz.lib.standard._Array_if, I, I), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_if, JP.go.ipa.oz.lang._Exception_if), (), (3176, 488, ((3305, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (3530, 25, JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_if), (3617, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, abortTran, 0x10, V, (), (JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_if, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_cl), (7594, 582, ((7648, 19, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if), (7705, 6, JP.go.ipa.oz.lib.standard._String_if), (8005, 25, JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_if), (8059, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (8129, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, abortTran, 0x11, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_cl), (7239, 353, ((7434, 25, JP.go.ipa.oz.user.lib_dist.tran._TransactionAbortException_if), (7545, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, setLockingResource, 0x11, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lang._Exception_if), (), (4699, 282, ((4934, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, getBlockingResources, 0x11, LJP.go.ipa.oz.lib.standard._Array_if, (), (), (), (1683, 70, ())
+m, setResourceTimeOut, 0x11, V, (I), (), (), (1408, 64, ())
+m, lockRetry, 0x10, V, (I, LJP.go.ipa.oz.lib.standard._Array_if, I, I), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.user.lib_dist.tran._LockRetryOverTimesException_if), (JP.go.ipa.oz.user.lib_dist.tran._LockRetryOverTimesException_cl), (4984, 377, ((5066, 27, JP.go.ipa.oz.user.lib_dist.tran._LockRetryOverTimesException_if), (5261, 27, JP.go.ipa.oz.user.lib_dist.tran._LockRetryOverTimesException_if)))
+m, quiet, 0x4, V, (), (), (), (1293, 36, ())
+m, begin, 0x14, V, (I), (), (), (1956, 62, ())
+m, begin, 0x14, V, (), (), (), (1914, 41, ())
+m, getMaxLockRetry, 0x14, I, (), (), (), (1620, 61, ())
+m, isLock, 0x11, Z, (), (), (), (4625, 72, ())
+m, getResourceTimeOut, 0x14, I, (), (), (), (1474, 57, ())
+m, lockBody, 0x10, V, (LJP.go.ipa.oz.lib.standard._Array_if, I, I), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, JP.go.ipa.oz.lang._Exception_if), (), (3687, 936, ((3793, 6, JP.go.ipa.oz.lib.standard._String_if), (3834, 19, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if), (4576, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, getLx, 0x11, I, (), (), (), (1371, 36, ())
+m, getTID, 0x14, LJP.go.ipa.oz.user.lib_dist.tran._TID_if, (), (), (), (1755, 43, ())
+m, getMaxBlockingResource, 0x11, I, (), (), (), (1800, 72, ())
+m, getResource, 0x21, LJP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_pcl), (2477, 217, ((2570, 19, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if), (2643, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, getResource, 0x1, LJP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, (LJP.go.ipa.oz.lib.standard._String_if, I), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.tran._TranTimer_if, JP.go.ipa.oz.user.lib_dist.tran._TranRun_if), (JP.go.ipa.oz.user.lib_dist.tran._TranTimer_cl, JP.go.ipa.oz.user.lib_dist.tran._TranRun_cl), (2295, 180, ((2384, 9, JP.go.ipa.oz.user.lib_dist.tran._TranTimer_if), (2406, 7, JP.go.ipa.oz.user.lib_dist.tran._TranRun_if)))
+m, go, 0x4, V, (), (), (), (1271, 21, ())
+m, lock, 0x14, V, (LJP.go.ipa.oz.lib.standard._Array_if, I), (JP.go.ipa.oz.lib.standard._Array_if), (), (2817, 70, ())
+m, lock, 0x11, V, (LJP.go.ipa.oz.lib.standard._Array_if), (JP.go.ipa.oz.lib.standard._Array_if), (), (2754, 61, ())
+m, createID, 0x10, V, (), (JP.go.ipa.oz.lang._Exception_if), (), (2019, 227, ((2199, 9, JP.go.ipa.oz.lang._Exception_if)))

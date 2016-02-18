@@ -1,0 +1,17 @@
+#!/bin/csh -f
+# 子(slave)OzDomainResolver設定ファイル
+
+#以下を設定
+ setenv CLASSPATH $CLASSPATH:Resolver.zipのパス/Resolver.zip
+ set domain=ドメイン名
+ set port=ポート番号
+ set parentResolver=親リゾルバのIPアドレス:ポート番号
+
+#例
+#setenv CLASSPATH $CLASSPATH:$OZOME/lib/Resolver.zip
+#set domain=oz.ipa.go.jp
+#set port=8500
+#set parentResolver=192.168.88.50:9000
+
+#以下は改編不可
+java JP.go.ipa.oz.user.res.OzDomainResolver $domain $port -p $parentResolver 

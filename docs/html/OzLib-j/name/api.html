@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>API of OZ naming Lib.</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>OZ ネーミングライブラリ API</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+ネーミングライブラリ API マニュアル
+</P>
+
+<P>
+○cell NameServerTransaction :* Transaction
+
+<UL>
+<LI>public void addNameServer();<BR>
+ネームサーバをネームサービスに登録する。
+
+<LI>public bool containDirectory(Path path);<BR>
+pathがディレクトリとして名称空間に含まれるか調べる。<BR>
+返値 含まれるとtrue、含まれていないとfalse<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public bool containEntry(Path path);<BR>
+pathがエントリとして名称空間に含まれるか調べる。<BR>
+返値 含まれるとtrue、含まれていないとfalse<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void debugPrint();<BR>
+Systemを通して内部状態一部表示
+
+<LI>public Set DirectorySet(Path path);<BR>
+pathで示されたディレクトリに登録されているディレクトリの
+集合をSetとして返す。<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public int DirectorySize(Path path);<BR>
+pathで示されたディレクトリの登録サブディレクトリ数を求める。<BR>
+返値 サブディレクトリの数<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public Set EntrySet(Path path);<BR>
+pathで示されたディレクトリにエントリとして登録されている
+オブジェクトの集合をSetとして返す。<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public int EntrySize(Path path);<BR>
+pathで示されたディレクトリの登録エントリ数を求める。<BR>
+返値 登録エントリ数<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public NameDirectory getDirectory(Path path);<BR>
+pathで指定されたディレクトリを検索し、返す。<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public Root getEntry(Path path);<BR>
+pathで指定されたオブジェクトを検索し、返す。<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void moveBranch( Path path, String toGOL);<BR>
+pathで指定されたディレクトリ階層以下の管理を
+toGOL(NameServerTransactionResourceセルGOL)で示されたネームサーバに
+移転する。そのディレクトリ階層のトップはブランチになる。<BR>
+pathは本ネームサーバの管理名称空間内でなければいけない<BR>
+path:] 移転ブランチのパス<BR>
+toGOL:] 移動先のNameServerTransactionResourceセルのGOL<BR>
+例外 NameServiceSystemMapException toGOLで示されたネームサーバが存在せず<BR>
+例外 NameServerOwnerMapException pathが管理名称空間外<BR>
+例外 PathStringIllegularException pathに文法的誤り<BR>
+
+<LI>public String OwnerNSTR(Path path);<BR>
+パスpathを管理するネームサーバ(NameServerTransactionResourceセル)の
+GOLを返す。<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱かマッピングされているパス
+
+<LI>public void putDirectory(Path path);<BR>
+新規サブディレクトリをpathで示されたディレクトリに追加する。<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void putDirectory(Path path, NameDirectory subdir);<BR>
+ディレクトリsubdirをpathで示されたディレクトリにサブディレクトリ
+として追加する。<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void putDirectoryAsBranch(Path path);<BR>
+ルートパスpathの新しいディレクトリを生成し、ブランチとして
+本ネームサーバに登録する。<BR>
+例外 NameServerOwnerMapException pathがルートパスではない<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void putDirectoryAsBranch(Path path, NameDirectory dir);<BR>
+ディレクトリdirを、ルートパスpathのブランチとして
+本ネームサーバに登録する。<BR>
+例外 NameServerOwnerMapException pathがルートパスではない<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void putDirectoryAsMapping(Path path, Path to, String serverNSTGOL);<BR>
+serverNSTGOLは他ネームサービスに属するNameServerTransactionセルGOL。<BR>
+pathに、そのネームサービスの名称空間のパスtoをマッピングする。<BR>
+path:]マッピング先パス<BR>
+to:]マッピング元パス<BR>
+serverNSTGOL:]他ネームサービスに属するNameServerTransactionセルGOL<BR>
+例外 NameServiceSystemMapException mapping fail
+
+<LI>public void putEntry(Path path, Root ent);<BR>
+オブジェクトentをパスpathでエントリとして登録する。<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public NameDirectory removeDirectory(Path path);<BR>
+pathで指定されたディレクトリを削除する。<BR>
+ディレクトリは空ディレクトリでなければならない。<BR>
+ディレクトリはブランチであってはいけない。<BR>
+返値 削除したディレクトリ<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り<BR>
+例外 NameDirectoryNotEmptyException ディレクトリが空でない<BR>
+例外 NameDirectoryBranchException ディレクトリがブランチである
+
+<LI>public NameDirectory renameDirectory(Path source,Path target);<BR>
+ディレクトリのパスをsourceからtargetに変える。<BR>
+ディレクトリは空ディレクトリでなければならない。<BR>
+ディレクトリはブランチであってはいけない。<BR>
+返値 リネームしたディレクトリ<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り<BR>
+例外 NameDirectoryNotEmptyException ディレクトリが空でない<BR>
+例外 NameDirectoryBranchException ディレクトリがブランチである
+
+<LI>public Root removeEntry(Path path);<BR>
+pathで指定されたオブジェクトの登録を抹消する。<BR>
+返値 削除したオブジェクト<BR>
+例外 NameServiceSystemMapException pathが名称空間逸脱<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public Root renameEntry(Path source, Path target);<BR>
+sourceで指定されたオブジェクトのパスをtargetにリネームする。<BR>
+sourceの親パスとtargetの親パスは同一でなければならない。<BR>
+返り値 リネームしたオブジェクト<BR>
+例外 NameServiceSystemMapException sourceかtargetが名称空間逸脱<BR>
+例外 PathStringIllegularException sourceかtargetに文法的誤り、
+またはsourceの親パスとtargetの親パスが同一でない
+
+<LI>public void removeNameServer();<BR>
+ネームサーバをネームサービスから削除する
+
+<LI>public void unBranched(Path path);<BR>
+ブランチであるpathの親パスが本ネームサーバの管理下にある時に
+pathで示されたディレクトリをブランチでなくす。<BR>
+例外 NameServerOwnerMapException pathかその親パスが管理外、
+またはpathで示されたディレクトリがブランチではない
+</UL>
+</P>
+
+<P>
+○cell NameServerTransactionResource :* TransactionResource
+
+<UL>
+<LI>public bool containDirectory(Path path) ;<BR>
+pathがディレクトリとして名称空間に含まれるか調べる。<BR>
+返値 含まれるとtrue、含まれていないとfalse
+
+<LI>public bool containEntry (Path path);<BR>
+pathがエントリとして名称空間に含まれるか調べる。<BR>
+返値 含まれるとtrue、含まれていないとfalse<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void debugPrint();<BR>
+Systemを通して内部構造の一部を表示
+
+<LI>public Set DirectorySet(Path path) ;<BR>
+pathで示されたディレクトリに登録されているサブディレクトリの
+集合をSetとして返す。<BR>
+例外 NameServerOwnerMapException pathが管理外
+
+<LI>public int DirectorySize(Path path) ;<BR>
+pathで示されたディレクトリの登録サブディレクトリ数を求める。<BR>
+返値 サブディレクトリの数<BR>
+例外 NameServerOwnerMapException pathが管理外
+
+<LI>public Set EntrySet (Path path);<BR>
+pathパスで示されたディレクトリにエントリとして登録されている
+オブジェクトの集合をSetとして返す。<BR>
+返値 オブジェクトのコレクション<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+
+<LI>public int EntrySize (Path path) ;<BR>
+pathで示されたディレクトリの登録エントリ数を求める。<BR>
+返値 オブジェクトの数<BR>
+例外 NameServerOwnerMapException pathが管理外
+
+<LI>public Set getBranches();<BR>
+ネームサーバが管理しているブランチのパス名のSetを返す。
+
+<LI>public NameDirectory getDirectory(Path path) ;<BR>
+pathで指定されたディレクトリを検索し、返す。<BR>
+例外 NameServerOwnerMapException pathが管理外
+
+<LI>public Root getEntry (Path path) ;<BR>
+pathで指定されたオブジェクトを検索し、返す。<BR>
+返値 オブジェクト<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void putDirectory(Path path);<BR>
+新規サブディレクトリをpathで示されたディレクトリに追加する。<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void putDirectory(Path path, NameDirectory subdir);<BR>
+ディレクトリsubdirをpathで示されたディレクトリにサブディレクトリ
+として追加する。<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public void putDirectoryAsBranch(Path path);<BR>
+ルートパスpathの新しいディレクトリを生成し、ブランチとして登録する。<BR>
+例外 NameServerOwnerMapException pathがルートパスではない
+
+<LI>public void putDirectoryAsBranch(Path path, NameDirectory dir);<BR>
+ディレクトリdirをルートパスpathを持つブランチとして登録する。<BR>
+例外 NameServerOwnerMapException pathがルートパスではない
+
+<LI>public void putEntry (Path path, Root ent);<BR>
+オブジェクトentをパスpathでエントリとして登録する。<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public NameDirectory removeDirectory(Path path) ;<BR>
+pathで指定されたディレクトリを削除する。<BR>
+そのサブディレクトリの中が空でなかった場合は例外<BR>
+削除されるディレクトリはブランチであってはいけない<BR>
+返値 削除したディレクトリ<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+例外 NameDirectoryNotEmptyException ディレクトリが空でない<BR>
+例外 NameDirectoryBranchException ディレクトリがブランチである<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public Root removeEntry(Path path);<BR>
+pathで指定されたオブジェクトの登録を抹消する。<BR>
+返値 削除したオブジェクト<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public NameDirectory renameDirectory(Path source, Path target);<BR>
+sourceで指定されたディレクトリのパスをtargetに変更する。<BR>
+ディレクトリは空ディレクトリでなければならない。<BR>
+ディレクトリはブランチであってはいけない。<BR>
+sourceの親パスとtargetの親パスは同じでなければならない。<BR>
+返値 リネームしたディレクトリ<BR>
+例外 NameServerOwnerMapException pathが管理外<BR>
+例外 NameDirectoryNotEmptyException ディレクトリが空でない<BR>
+例外 NameDirectoryBranchException ディレクトリがブランチである<BR>
+例外 PathStringIllegularException pathに文法的誤り
+
+<LI>public Root renameEntry(Path source, Path target);<BR>
+sourceで指定されたオブジェクトのパスをtargetにリネームする。<BR>
+sourceの親パスとtargetの親パスは同一でなければならない。<BR>
+返り値 リネームしたオブジェクト<BR>
+例外 NameServerOwnerMapException sourceが管理外<BR>
+例外 PathStringIllegularException sourceかtargetに文法的誤り、
+またはsourceの親パスとtargetの親パスが同一でない
+</UL>
+</P>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></
+B>
+
+</BODY>
+</HTML>

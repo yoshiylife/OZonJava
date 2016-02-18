@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>Trading manual</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>サービスの取得(ユーザ)</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<UL>
+
+<P>
+<LI>サービスオブジェクトの検索<BR>
+サービス利用者はサービス要求をオブジェクト化し、
+トレーダへ送る(<B>getService(reuest)</B>)ことにより、
+求めるサービスを提供するサービスの <B>Proxy</B> を取得する。
+</P>
+
+<P>
+<LI>検索 - <B>Proxy</B> 取得の例<BR>
+<PRE>
+cell Client{
+  System s;int x;
+  protected void initialize(){d=>create();x=1;}
+  public void go(){
+    try{
+      Trader t=>bind("trader");//TraderのGOL
+
+      //サービス要求作成
+      UserServiceRequest req=>create();
+      req->setServiceName("svc1");
+
+      //トレーダへ検索依頼
+      TestService ts;//このサービスの型名はUserServiceRequestからわかる
+      ts=|t->getService(req);//proxyを取得し down castして使用
+      s->prinln("Proxy ts=",ts->getName());
+      //proxyがサーバへアクセスしてサービスする
+    }catch(Exception e){d->write(1,"Exception occured.");}
+  }
+  protected void quiet(){flushCell();}
+}
+</PRE>
+
+</P>
+
+</UL>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

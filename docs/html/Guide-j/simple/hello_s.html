@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="hello_compile.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_go.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>アプリケーションのスクールファイル<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+スクールファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+test.s
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+&quot;Test&quot;,&quot;.user.sample.Test&quot;,&quot;.user.sample.Test&quot;
+&quot;MyDialog&quot;,&quot;.user.sample.MyDialog&quot;,&quot;.user.sample.MyDialog&quot;
+&quot;Quit&quot;,&quot;.user.sample.Quit&quot;,&quot;.user.sample.Quit&quot;
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>スクール
+  <LI>クラスのインタフェース部と動作部
+  <LI>サブジェクトスクール
+  <LI>コンパイラが用いるスクールファイル
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+</P>
+<DL>
+  <DT><BR>
+１．スクール
+  <DD><BR>
+スクールはダブルクォーテーション( &quot; )で囲まれ、コンマで区切られた３つのエントリから構成されます。<BR>
+<BR>
+Testクラスのスクール <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &quot;Test&quot;,&quot;.user.sample.Test&quot;,&quot;.user.sample.Test&quot;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+最初の項目&quot;Test&quot; は、コンパイル単位に含まれているクラス名です。<BR>
+次の項目&quot;.user.sample.Test&quot;は、<B>インタフェース部クラス識別子</B>の一部です。<BR>
+そして、最後の&quot;.user.sample.Test&quot;は<B>動作部クラス識別子</B>の一部です。<BR>
+<BR>
+<BR>
+  <DT>２．クラスのインタフェース部と動作部
+  <DD><BR>
+OZコンパイラは分散環境での開発をより利便にするために、クラスのインタフェース部だけのコンパイルを行う機能を備えています。オブジェクト指向プログラミングでアプリケーションを開発するとはクラスを開発することですが、クラスの目的、サービスとそれを実現するメソッドの型とシグネチャが明確に定義されていれば、そのメソッド本体の開発は複数の開発者が平行して個別に行うことができます。<BR>
+その目的のために、インタフェースとして定義しておくべきものは以下の要素です。<BR>
+  <UL>
+    <LI>クラス名
+    <LI>上位クラス名
+    <LI>publicメソッドの型とシグネチャ
+  </UL>
+<BR>
+publicメソッドとは任意のオブジェクトからアクセスできるメソッドのことです。メソッドの型は戻り値の型になります。<BR>
+OZコンパイラはこの要素を<B>インタフェース部</B>という単位で管理します。<BR>
+<BR>
+このインタフェース部をコンパイルしたコンパイラは、それを全世界の他のクラスと区別するために<B>インタフェース部クラス識別子</B>をつけて管理します。クラス識別子自身はプログラマが決定します。その識別子によってクラスを分類することが可能だからです。<BR>
+<BR>
+クラス識別子はドット（ . ）で区切られた文字列で表現されます。<BR>
+たとえば、ドメイン名が JP.ipa.go で、ユーザ名が oz だとしましょう。そのときには、上記スクールの表現するインタフェース部クラス識別子は、<BR>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    JP.ipa.go.oz.user.sample.Test_if
+</PRE>
+</TD></TR>
+  </TABLE>
+
+になります(末尾は_if)。<BR>
+<BR>
+インタフェース部を利用して開発された部分、すなわち、クラス宣言のインタフェース部以外の部分を<B>動作部</B>といいます。動作部はインタフェース部とは別に管理されるので、動作部にもクラス識別子を付与します。<BR>
+たとえば、ドメイン名が JP.ipa.go で、ユーザ名が oz だとしましょう。そのときには、上記スクールの表現する<B>動作部クラス識別子</B>は、<BR>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    JP.ipa.go.oz.user.sample.Test_cl
+</PRE>
+</TD></TR>
+  </TABLE>
+
+になります(末尾は_cl)。<BR>
+<BR>
+  <DT>３．サブジェクトスクール
+  <DD><BR>
+test.s には３つのクラス定義しかありませんでしたが、この3つのクラスをサブジェクトに登録してコンパイルするとOZ
+IDE でうまくコンパイルすることができました。サブジェクトに対応するスクールファイルを「<B>サブジェクトスクール</B>」と呼びます。コンパイルが成功したのは、すでにOZ標準クラスライブラリがOZ
+IDE に登録されているからです。スクールブラウザのSubject:メニューでlibを選択すると、ウィンドウ左側にリストされるエントリがOZ標準クラスライブラリのクラスです。<BR>
+<BR>
+  <DT><BR>
+４．コンパイラが用いるスクールファイル
+  <DD><BR>
+以下のスクールファイルを用いると、コマンドプロンプトから ozc コマンドでコンパイラで起動する方法でコンパイルを行うことができます。<BR>
+<BR>
+スクールファイル<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">school.s
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+&quot;Test&quot;,&quot;.user.sample.Test&quot;,&quot;.user.sample.Test&quot;
+&quot;MyDialog&quot;,&quot;.user.sample.MyDialog&quot;,&quot;.user.sample.MyDialog&quot;
+&quot;Quit&quot;,&quot;.user.sample.Quit&quot;,&quot;.user.sample.Quit&quot;
+&quot;ActionEvent&quot;,&quot;.lib.standard._ActionEvent&quot;,&quot;.lib.standard._ActionEvent&quot;
+&quot;ActionListener&quot;,&quot;.lib.standard._ActionListener&quot;,&quot;.lib.standard._ActionListener&quot;
+&quot;BorderLayout&quot;,&quot;.lib.standard._BorderLayout&quot;,&quot;.lib.standard._BorderLayout&quot;
+&quot;Button&quot;,&quot;.lib.standard._Button&quot;,&quot;.lib.standard._Button&quot;
+&quot;EventDispatchingQueue&quot;,&quot;.lib.standard._EventDispatchingQueue&quot;,&quot;.lib.standard._EventDispatchingQueue&quot;
+&quot;FlowLayout&quot;,&quot;.lib.standard._FlowLayout&quot;,&quot;.lib.standard._FlowLayout&quot;
+&quot;Frame&quot;,&quot;.lib.standard._Frame&quot;,&quot;.lib.standard._Frame&quot;
+&quot;Label&quot;,&quot;.lib.standard._Label&quot;,&quot;.lib.standard._Label&quot;
+&quot;Panel&quot;,&quot;.lib.standard._Panel&quot;,&quot;.lib.standard._Panel&quot;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+<BR>
+<BR>
+ここには、Test.oz、MyDialog.oz、 Quit.oz の中で記述されたクラス名だけが記述されています。たとえば、FrameはWindowの下位クラスで、さらにWindowの祖先クラスが存在しましたが、それを記述しなくてもコンパイルすることができます。FrameはWindowの下位クラスであるという情報をOZコンパイラが管理しているからです。既にコンパイルされているクラスを利用してクラスをコンパイルするときには、そのクラスのメンバ宣言で<B>直接利用されているクラスのスクール記述</B>だけでコンパイルすることができます。<BR>
+<BR>
+<BR>
+参考: コマンドプロンプトからのコンパイル<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">school.s
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; ozc -v -s school.s Test.oz
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+<BR>
+<BR>
+</DL>
+<P>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<OL>
+  <LI><A href="hello_ele.html">アプリケーションの構成</A>
+  <LI><A href="hello_ide.html">OZ IDE の起動とプロジェクト、サブジェクトの作成</A>
+  <LI><A href="hello_test.html">Testクラス</A>
+  <LI><A href="hello_my.html">MyDialogクラス</A>
+  <LI><A href="hello_quit.html">Quitクラス</A>
+  <LI><A href="hello_compile.html">OZ IDE を利用したコンパイルとテスト実行</A>
+  <LI><A href="hello_s.html">アプリケーションのスクールファイル</A><IMG src="red.gif" height="16" width="13">
+  <LI><A href="hello_go.html">ランチャを利用するグローバルオブジェクトの生成とその活性化</A>
+  <LI><A href="hello_debug.html">OZプログラムのデバック</A>
+  <LI><A href="hello_rel.html">リリースパッケージの配布</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490">
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="hello_compile.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_go.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

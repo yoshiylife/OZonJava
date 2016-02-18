@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="rel.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="logical.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>等値演算子（Equality Operators)<BR>
+</H3>
+<BR clear="all">
+<P>
+<BR>
+</P>
+<P>
+ここでは、OZ言語の等値演算子について説明しています。<BR>
+<BR>
+<BR>
+OZ言語には、以下の2つの等値演算子があります。
+</P>
+<TABLE cellspacing="3">
+  <TR>
+    <TD width="15"></TD>
+    <TD width="15"><B>==</B></TD>
+    <TD width="15"><B>!=</B></TD></TR>
+</TABLE>
+
+<P>
+<BR>
+等値演算子は左結合的（left-associative）です。すなわち、i==j==k は( i==j)==k)と解釈されます。<BR>
+<BR>
+<BR>
+等値演算子を用いる式は二項演算式を形成し、式の値は論理型です。
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<BR>
+<B>等値演算子</B>
+</P>
+<DL>
+  <DD>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" valign="top" width="15"><B>==</B></TD>
+      <TD>第1オペランドの値と第2オペランドの値が等しいとき true、それ以外は false
+の値を持ちます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>!=</B></TD>
+      <TD>第1オペランドの値と第2オペランドの値が等しくないとき true、それ以外は
+false の値を持ちます。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+<PRE>
+  binary_exp_3 : binary_exp_3 binary_operator_3 binary_exp_2
+                 binary_exp_2
+                    
+  binary_operator_3 : ==
+                      != 
+</PRE>
+<BR>
+<BR>
+<B>説明</B><BR>
+<BR>
+等値演算子の2つのオペランドの型は同一で、数値型、文字型、論理型、クラス型のいずれかでなければいけません。<BR>
+<BR>
+式の値は、論理型になります。<BR>
+<BR>
+<BR>
+オペランドの型が数値型の場合はオペランドに対して型の昇格が行われます。<BR>
+float型、あるいは、double型であれば、浮動少数等値比較（a floating-point
+equality test）が行われます。その他の数値型であれば整数等値比較（an integer
+equality test）が行われます。（IEEE 754 準拠）<BR>
+<BR>
+オペランドの型が論理型の場合の == の評価は、両オペランドがともにtrue、あるいは、ともに
+falseの場合に true になります。<BR>
+オペランドの型が論理型の場合の != の評価は、片方が true で他方が false
+の場合に true になります。<BR>
+<BR>
+オペランドの型がクラス型の場合は、もう一方のオぺランドとして null リテラルだけが可能です。<BR>
+クラス型のオペランドの値がnull のときに、式の値は true になります。<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+例: 等値演算子<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+オペランドが基本型の場合
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+  char fileSepChar;  
+      ...
+  if (fileSepChar == '/') {
+      cmd =&gt; breed(&quot;oz -f &quot;);
+  } 
+      ...
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>char型の変数 fileSepCharの値が文字 / に等しいとき、式の値はtrueになります。
+  </UL>
+<BR>
+<BR>
+<BR>
+例: 等値演算子<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+オペランドがクラス型の場合
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+1:  void refreshServerGOL(String gol)  {
+2:      if (gol != null) {
+3:          serverGOL = gol;
+4:          serverGOLView-&gt;setText(serverGOL);
+5:      }
+6:  }
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>2行目で等値演算子が使用されています。オペランドの型がクラス型の場合は、もう一方が
+null リテラルだけが可能です。gol が <B>null</B> でなければ式の値はtrueになります。
+  </UL>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="rel.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="logical.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

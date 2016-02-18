@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>インスタンスの活性化</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+インスタンスの活性化とは、他の Autonomy セルが保持している
+リソースの代理オブジェクト ResourceProxy を当 Autonomy セルで
+利用する際、ResourceProxy 自身が個別の状態を保持する
+可能性があることから、コピーを作成して利用することになる。
+そのコピーの ResourceProxy を介して、リソースを活用することが
+できる。これをインスタンスの活性化という。<BR>
+実際には、コピーの方法はサブクラスによりさまざまであることから、
+このインタフェースはサブクラスによりオーバライドされることを
+前提とする。
+</P>
+
+<UL>
+
+<P>
+<LI>public ResourceProxy ResourceProxy#instanciate()<BR>
+新たなインスタンスを生成して返す。<BR>
+このインタフェースはサブクラスによりオーバライドされることを
+前提とする。
+</P>
+
+<P>
+<LI>public ResourceProxy ResourceProxy#instanciate(ResourceProxy prev)<BR>
+引数として、連結する ResourceProxy をとる。<BR>
+まず、instanciate()を呼び出し、コピーのインスタンスを生成した後、
+ResourceProxy#setPrevious(ResourceProxy) により連結を行う。
+</P>
+
+</UL>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

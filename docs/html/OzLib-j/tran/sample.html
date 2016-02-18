@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>Sample of user transaction</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>ユーザトランザクション管理プログラム作成方法</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+開発者は以下の手順でリソースクラスとその管理セル、トランザクションを作成する。
+尚、ユーザ作成部分のクラスの作成は同名の ozファイルを参考に書き換えること。
+</P>
+
+<P>
+1. リソースの作成<BR>
+class<A HREF="UserResource.oz">UserResource</A> を作成する。
+<UL>
+<LI>UserResource(他の名前でもよい)はユーザが作成する管理対象リソースクラスである。
+<LI>Resource のメンバとすることによりコミットの際ファイル書き出しの対象となる。
+<LI>Resource に属する管理対象リソース(UserResource 等)は複数記述してもよい。
+</UL>
+</P>
+
+<P>
+2. リソースを管理するセルの作成<BR>
+cell<A HREF="UserTransactionResource.oz">UserTransactionResource</A> : *TransactionResource を作成する。
+<UL>
+<LI>TransactionResource は class UserResource をトランザクションとして管理するための基本機能を備えたセルであり、class Status,Resouce をメンバに持つ。
+<LI>Status はリソースの状態(lock,preCommit,commit,unlock)を保持するクラスである。
+<LI>UserTransactionResource は UserResource の更新等を定義するためのセルである。
+<LI>管理対象リソースへは必ずこのセルを介してアクセスする。
+ 尚、管理に際してリソースの状態と、リソース(リカバリ用に二つ)をファイルに
+ 書出すため、このファイル名を指定する必要がある。
+</UL>
+</P>
+
+<P>
+3. トランザクションを管理するセルの作成<BR>
+cell<A HREF="UserTransaction.oz">UserTransaction</A> : *Transaction を作成する。
+<UL>
+<LI>Transaction はトランザクション管理の基本機能を備えたセルであり、内部でグローバルな Transaction ID(TID) を保時しており、一つのセルで繰り返しトランザクションを生成することができる。
+<LI>UserTransaction は UserResource をトランザクションとして管理するためにユーザが作成するセルである。
+<LI>Transaction は同じ TID で複数回ロックした場合 unlock() は最後に一回だけ行う。
+</UL>
+</P>
+
+<P>
+<DL>
+<DT>使用に際して：
+<DD>Resource,UserResource を書き換え、再コンパイルした場合は
+実行前に必ず旧バージョンで作成したリソース保存用ファイルを削除しておくこと。
+</DL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+

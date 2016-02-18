@@ -1,0 +1,30 @@
+j, JP.go.ipa.oz.user.ide.CIImplementationPart_cl, 0x10, JP.go.ipa.oz.user.ide.CIImplementationPart_if, JP.go.ipa.oz.user.ide.CIPart_cl
+a, OZCELL_CID, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 604, 29
+a, accessLevel, 0x0, LJP.go.ipa.oz.user.ide.CIAccessLevel_if, 187, 30
+a, publicMethodList, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 416, 35
+a, constructorList, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 349, 34
+a, attributeList, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 284, 32
+a, protectedMethodList, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 478, 38
+a, privateMethodList, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 540, 36
+a, ifCID, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 221, 24
+a, superImplCID, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 249, 31
+c, newCIImplementationPart, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.CIAccessLevel_if, LJP.go.ipa.oz.user.ide.CIModifier_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CIAccessLevel_if, JP.go.ipa.oz.user.ide.CIModifier_if), (JP.go.ipa.oz.lib.standard._SList_cl), (816, 543, ())
+m, isProtected, 0x1, Z, (), (), (), (4058, 78, ())
+m, getConstructorCount, 0x1, I, (), (), (), (2457, 79, ())
+m, addMember, 0x1, V, (LJP.go.ipa.oz.user.ide.CIMember_if), (JP.go.ipa.oz.user.ide.CIMember_if, JP.go.ipa.oz.user.ide.CIAttribute_if, JP.go.ipa.oz.user.ide.CIMethod_if), (), (1517, 377, ((1596, 11, JP.go.ipa.oz.user.ide.CIAttribute_if), (1708, 8, JP.go.ipa.oz.user.ide.CIMethod_if), (1817, 8, JP.go.ipa.oz.user.ide.CIMethod_if)))
+m, constructors, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (2294, 81, ())
+m, getInterfaceCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (3618, 60, ())
+m, isRoot, 0x1, Z, (), (), (), (4218, 206, ())
+m, addAttribute, 0x0, V, (LJP.go.ipa.oz.user.ide.CIAttribute_if), (JP.go.ipa.oz.user.ide.CIAttribute_if), (), (4586, 79, ())
+m, attributes, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (1978, 77, ())
+m, getProtectedMethodCount, 0x1, I, (), (), (), (3117, 87, ())
+m, isInterface, 0x1, Z, (), (), (), (3919, 57, ())
+m, getPrivateMethodCount, 0x1, I, (), (), (), (3453, 83, ())
+m, getSuperImplementationCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (3760, 77, ())
+m, protectedMethods, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (2946, 89, ())
+m, privateMethods, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (3286, 85, ())
+m, getPublicMethodCount, 0x1, I, (), (), (), (2783, 81, ())
+m, publicMethods, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (2618, 83, ())
+m, getAttributeCount, 0x1, I, (), (), (), (2137, 75, ())
+m, addMethod, 0x4, V, (LJP.go.ipa.oz.user.ide.CIMethod_if), (JP.go.ipa.oz.user.ide.CIMethod_if, JP.go.ipa.oz.user.ide.CIMethodImplementation_if), (), (4911, 400, ((4963, 22, JP.go.ipa.oz.user.ide.CIMethodImplementation_if)))
+m, addConstructor, 0x0, V, (LJP.go.ipa.oz.user.ide.CIMethod_if), (JP.go.ipa.oz.user.ide.CIMethod_if), (), (4749, 82, ())

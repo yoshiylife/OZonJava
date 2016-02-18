@@ -1,0 +1,21 @@
+j, JP.go.ipa.oz.user.apl.fed.ResourceProxy_cl, 0x0, JP.go.ipa.oz.user.apl.fed.ResourceProxy_if, JP.go.ipa.oz.lang._Root_cl
+a, system, 0x4, LJP.go.ipa.oz.lib.standard._System_if, 269, 24
+a, autoType, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 207, 26
+a, previous, 0x4, LJP.go.ipa.oz.user.apl.fed.ResourceProxy_if, 169, 33
+a, resource, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 138, 26
+a, resType, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 238, 25
+c, create, (), (), (JP.go.ipa.oz.lib.standard._System_cl), (303, 118, ())
+m, instanciate, 0x1, LJP.go.ipa.oz.user.apl.fed.ResourceProxy_if, (LJP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (JP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (), (3182, 293, ((3305, 13, JP.go.ipa.oz.user.apl.fed.ResourceProxy_if)))
+m, instanciate, 0x1, LJP.go.ipa.oz.user.apl.fed.ResourceProxy_if, (), (JP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (JP.go.ipa.oz.user.apl.fed.ResourceProxy_cl), (2793, 383, ((2893, 13, JP.go.ipa.oz.user.apl.fed.ResourceProxy_if)))
+m, getAutonomyType, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1774, 131, ())
+m, isEqual, 0x1, Z, (LJP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (JP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (), (4043, 218, ())
+m, getResource, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1095, 436, ())
+m, getPrevious, 0x1, LJP.go.ipa.oz.user.apl.fed.ResourceProxy_if, (), (), (), (659, 130, ())
+m, setResource, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (795, 294, ())
+m, setAutonomyType, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1537, 231, ())
+m, setPrevious, 0x1, V, (LJP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (JP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (), (427, 226, ())
+m, isAcceptable, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2282, 505, ())
+m, getResourceType, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2146, 130, ())
+m, toGreen, 0x1, V, (), (), (), (3644, 393, ())
+m, setResourceType, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1911, 229, ())
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._String_if), (), (3481, 157, ())

@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if, JP.go.ipa.oz.lang._Root_cl
+a, end, 0x4, N, 502, 24
+a, isDone, 0x4, Z, 477, 22
+c, create, (), (), (), (533, 10, ())
+m, MethodDone, 0x21, V, (), (), (), (620, 63, ())
+m, invoke, 0x1, LJP.go.ipa.oz.lang._Root_if, (LJP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_if, I), (JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_if, JP.go.ipa.oz.lang._Thread_if, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (JP.go.ipa.oz.lang._Thread_cl, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_cl), (686, 210, ((759, 6, JP.go.ipa.oz.lang._Thread_if), (853, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if)))
+m, endWait, 0x24, V, (I), (), (), (546, 71, ())

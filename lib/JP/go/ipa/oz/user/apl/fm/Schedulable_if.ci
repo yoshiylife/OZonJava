@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.apl.fm.Schedulable_if, 0x0, (JP.go.ipa.oz.user.apl.fm.FMObject_if)
+m, cancel, 0x21, V, (LJP.go.ipa.oz.user.apl.fm.Reserve_if)
+m, getBoard, 0x1, LJP.go.ipa.oz.user.apl.fm.ScheduleBoard_if, ()
+m, reserve, 0x21, Z, (LJP.go.ipa.oz.user.apl.fm.Reserve_if)
+m, confirm, 0x21, LJP.go.ipa.oz.lib.standard._SList_if, (LJP.go.ipa.oz.user.apl.fm.Reserve_if)

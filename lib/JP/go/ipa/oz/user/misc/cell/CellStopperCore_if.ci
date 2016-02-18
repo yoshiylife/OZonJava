@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.misc.cell.CellStopperCore_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, stop, 0x1, V, ()
+m, launch, 0x1, V, ()
+m, quit, 0x1, V, ()
+m, getGUI, 0x1, LJP.go.ipa.oz.lib.standard._Frame_if, ()

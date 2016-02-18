@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> </FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H3>グローバルオブジェクト間メッセージ送受信のプログラミング<BR>
+</H3>
+<P>
+<BR>
+</P>
+<OL>
+  <LI>ServerCellクラスを ServerCell.oz 、ClientCellクラスを ClientCell.oz、LocalClientクラスを
+LocalClient.ozというファイルに格納します。スクールファイルの名前は任意ですが、school.s
+とします。<BR>
+<BR>
+  <LI>すべてのクラスのインタフェースコンパイルを行います。<BR>
+<BR>
+インタフェースコンパイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+ &gt; ozc -v -i -s school.s *.oz
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+<BR>
+  <LI>すべてのクラスをコンパイルします。<BR>
+<BR>
+インタフェースコンパイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+ &gt; ozc -v -s school.s *.oz
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+</OL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

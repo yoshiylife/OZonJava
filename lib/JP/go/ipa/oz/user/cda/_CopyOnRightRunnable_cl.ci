@@ -1,0 +1,15 @@
+j, JP.go.ipa.oz.user.cda._CopyOnRightRunnable_cl, 0x0, JP.go.ipa.oz.user.cda._CopyOnRightRunnable_if, JP.go.ipa.oz.lang._Runnable_cl
+a, isWriteInValid, 0x0, Z, 7550, 20
+a, cond, 0x4, N, 7522, 25
+a, dfCache, 0x0, LJP.go.ipa.oz.user.cda._DeliveryFileCache_if, 7493, 26
+a, millors, 0x0, LJP.go.ipa.oz.user.cda._MillorTarget_if, 7416, 21
+a, interval, 0x0, I, 7391, 13
+c, create, (LJP.go.ipa.oz.user.cda._MillorTarget_if, LJP.go.ipa.oz.user.cda._DeliveryFileCache_if, Z), (JP.go.ipa.oz.user.cda._MillorTarget_if, JP.go.ipa.oz.user.cda._DeliveryFileCache_if, JP.go.ipa.oz.user.cda._CDAdebug_if), (JP.go.ipa.oz.user.cda._CDAdebug_cl), (7578, 287, ((7645, 8, JP.go.ipa.oz.user.cda._CDAdebug_if)))
+m, modeWIV, 0x1, V, (), (), (), (7926, 47, ())
+m, modeCOW, 0x1, V, (), (), (), (7976, 48, ())
+m, copyStart, 0x21, V, (), (), (), (8080, 117, ())
+m, beforeCopy, 0x24, V, (), (), (), (8028, 49, ())
+m, isMillorOK, 0x4, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (11274, 64, ())
+m, isSecurityOKasMillorClient, 0x4, Z, (), (), (), (11212, 59, ())
+m, setInterval, 0x1, V, (I), (), (), (7869, 53, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._Set_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Dictionary_if, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_if, JP.go.ipa.oz.user.cda._DeliveryFile_if, JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._Long_if, JP.go.ipa.oz.lib.standard._FileInputStream_if, JP.go.ipa.oz.lib.standard._ByteArray_if, JP.go.ipa.oz.lang._Exception_if, JP.go.ipa.oz.lib.standard._UserException_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_pcl, JP.go.ipa.oz.lib.standard._FileInputStream_cl, JP.go.ipa.oz.lib.standard._ByteArray_cl, JP.go.ipa.oz.user.cda._DeliveryFile_cl), (8201, 3007, ((8224, 6, JP.go.ipa.oz.lib.standard._System_if), (8314, 3, JP.go.ipa.oz.lib.standard._Set_if), (8330, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (8728, 6, JP.go.ipa.oz.lib.standard._String_if), (8763, 10, JP.go.ipa.oz.lib.standard._Dictionary_if), (8781, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (8813, 18, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_if), (9334, 6, JP.go.ipa.oz.lib.standard._String_if), (9392, 12, JP.go.ipa.oz.user.cda._DeliveryFile_if), (9421, 4, JP.go.ipa.oz.lib.standard._File_if), (9582, 4, JP.go.ipa.oz.lib.standard._Long_if), (10089, 15, JP.go.ipa.oz.lib.standard._FileInputStream_if), (10142, 9, JP.go.ipa.oz.lib.standard._ByteArray_if), (10253, 6, JP.go.ipa.oz.lib.standard._String_if), (11077, 9, JP.go.ipa.oz.lang._Exception_if), (11142, 13, JP.go.ipa.oz.lib.standard._UserException_if)))

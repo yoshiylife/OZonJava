@@ -1,0 +1,327 @@
+<HTML>
+<HEAD>
+<TITLE>OZ Libraries</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>複製ライブラリ API</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+複製ライブラリには、プライマリコピー方式とピアコピー方式の二種類がある。
+<UL>
+<LI>プライマリコピー方式のセル<BR><A HREF="#SEC1">CopyOfPrimaryCopyScheme</A>
+<LI>ピアコピー方式のセル<BR><A HREF="#SEC2">CopyOfPeerCopyScheme</A>
+</UL>
+</P>
+
+<P>
+両方式に共通の処理は、スーパーセルである<A HREF="#SEC3">CopyScheme</A>に
+定義されているが、ユーザはこのスーパーセルを意識する必要はない。<BR>
+ここでは共通の <B>API</B> も両方式にそれぞれ記述してある。<BR>
+以下に <B>API</B> を示す。
+</P>
+
+<P>
+<UL>
+<LI><A NAME="SEC1">プライマリコピー方式の機能を備えたセル</A>
+<PRE>
+cell CopyOfPrimaryCopyScheme : *CopyScheme {
+  protected OtherCopyManeger cpManeger    セカンダリコピー マネージャ
+  protected String cpmGol                 セカンダリコピー マネージャGOL
+  protected bool status                   コピーの生存が確認できない場合false
+  protected Set otherCopies               複製のリスト
+  protected Set crushedCopies             故障した複製のリスト
+  protected String ownGOL                 カレントGOL
+  protected bool primaryFlag              プライマリフラグ
+                                            true:プライマリコピー
+                                            false:セカンダリコピー
+  protected CopyOfPrimaryCopyScheme primaryCopy
+                                          プライマリコピー
+                                          セカンダリコピーのときのみ有効
+  protected String primaryGOL             プライマリコピーGOL
+                                          セカンダリコピーのときのみ有効
+
+
+  public final void setCpmGol(String gol)
+    プライマリコピーがセカンダリコピーマネージャを作成するGOLを設定する。
+    プライマリコピー方式でプライマリコピーを作成した後、必ずこのメソッドを
+    呼び出さなければならない。
+      String gol    セカンダリコピーマネージャを作成するGOL
+
+  public bool newSecondaryCopyAt(CopyOfPrimaryCopyScheme copy, String gol)
+    指定された複製を登録する。
+      CopyOfPrimaryCopyScheme copy  登録する複製
+      String gol                    複製のGOL
+
+  public bool removeSecondaryCopyOf(String delGol)
+    delGolで指定される複製をリストから削除する。実際のオブジェクトイメージの
+    削除はユーザが行う。
+      String delGol  削除する複製のGOL
+
+  public final void setTimeOut(int time)
+    タイムアウトの設定。
+      int time  タイムアウト値（単位：ミリ秒）
+
+  public final int getTimeOut()
+    タイムアウト値の取得（単位：ミリ秒）。
+
+  public final void setResourceTimeLimit(int time)
+    TransactionResource の LockingTimeLimitをセット。
+      int time  タイムアウト値（単位：ミリ秒）
+
+  public final bool lock()
+    複製対象セルをロック。
+
+  public bool lockAll()
+   全ての複製対象セルをロック。
+
+  public final bool propagate()
+    変更を複製に反映。
+
+  public bool propagateAll()
+    変更を全ての複製に反映。処理中にエラーの発生した複製は、複製リストから
+    削除し、故障リストに登録される。
+
+  public final bool commit()
+    変更を確定。
+
+  public bool commitAll()
+    全ての変更を確定。
+
+  public void update(String gol)
+    アップデート。ここでは何もせず、サブセルのupdate(String gol)に処理を
+    渡す。
+    ユーザはサブセル（UserCopyOfPrimaryCopy）のupdate(String gol)に処理を
+    記述する。
+
+  public void primaryUpdate()
+    プライマリコピーのupdate()を呼び出す。
+
+  public CopyOfPrimaryCopyScheme getClientStub()
+    クライアントスタブを得る。
+
+  public final bool isLive()
+    生存確認。
+
+  public final void printCrushList()
+    故障リスト一覧。
+
+  public final void printCopyList()
+    複製リスト一覧。
+
+  public CopyOfPrimaryCopyScheme getPrimaryCopy()
+    プライマリコピーを返す。
+
+  public void setAllPrimaryCopy(CopyOfPrimaryCopyScheme newprim, String gol)
+  public void setAllPrimaryCopy(CopyOfPrimaryCopyScheme newprim)
+    更新されたプライマリコピーを各セカンダリコピーに通知する。
+      CopyOfPrimaryCopyScheme newprim  更新されたプライマリコピー
+      String gol                       プライマリコピーのGOL
+
+  public void setPrimaryFlag(bool flag)
+    プライマリフラグをセットする。
+
+  public void setPrimaryCopy(CopyOfPrimaryCopyScheme cp)
+    プライマリコピーをセットする。
+
+  public void setPrimaryGOL(String gol)
+    プライマリコピーのGOLをセットする。
+}
+</PRE>
+
+<LI><A NAME="SEC2">ピアコピー方式の機能を備えたセル</A>
+<PRE>
+cell CopyOfPeerCopyScheme : *CopyScheme {
+  protected OtherCopyManeger cpManeger    コピー マネージャ
+  protected String cpmGol                 コピー マネージャGOL
+  protected bool status                   コピーの生存が確認できない場合false
+  protected Set otherCopies               複製のリスト
+  protected Set crushedCopies             故障した複製のリスト
+  protected String ownGOL                 カレントGOL
+
+
+  public void newCopyAt(CopyOfPeerCopyScheme newCopy, String gol, String mngGol )
+    指定された複製を登録し、mngGolにコピーマネージャを作成する。
+      CopyOfPeerCopyScheme newcopy  登録する複製
+      String gol                    複製のGOL
+      String mngGol                 コピーマネージャを作成するGOL
+
+  public final bool removeCopyOf(String delGol)
+    delGolで指定される複製をリストから削除する。実際のオブジェクトイメージの
+    削除はユーザが行う。
+      String delGol  削除する複製のGOL
+
+  public final void setTimeOut(int time)
+    タイムアウトの設定。
+      int time  タイムアウト値（単位：ミリ秒）
+
+  public final int getTimeOut()
+    タイムアウト値の取得（単位：ミリ秒）。
+
+  public final void setResourceTimeLimit(int time)
+    TransactionResource の LockingTimeLimitをセット。
+      int time  タイムアウト値（単位：ミリ秒）
+
+  public final bool lock()
+    複製対象セルをロック。
+
+  public bool lockAll()
+    全ての複製対象セルをロック。
+
+  public bool propagateAll()
+    変更を全ての複製に反映。処理中にエラーの発生した複製は、複製リストから
+    削除し、故障リストに登録される。
+
+  public final bool commit()
+    変更を確定。
+
+  public bool commitAll()
+    全ての変更を確定。
+
+  public void update()
+    アップデート。ここでは何もせず、サブセルのupdate()に処理を渡す。
+    ユーザはサブセル（UserCopyOfPeerCopy）のupdate()に処理を記述する。
+
+  public CopyOfPeerCopyScheme getClientStub()
+    クライアントスタブを得る。
+
+  public CopyOfPeerCopyScheme getCopy(String cpGol)
+    複製リストからcpGolに一致する複製を取り出す。
+
+  public void makeList(Set list, CopyResource parent)
+    複製リストを作成する。
+
+  public void addOtherCopy(CopyResource newRes)
+    複製リストに複製を追加する。
+}
+</PRE>
+
+<LI><A NAME="SEC3">参考：プライマリコピー方式・ピアコピー方式の共通機能を備えたセル</A>
+<PRE>
+cell CopyScheme : *TransactionResource {
+  protected OtherCopyManeger cpManeger    コピー マネージャ
+  protected String cpmGol                 コピー マネージャGOL
+  protected bool status                   コピーの生存が確認できない場合false
+  protected Set otherCopies               複製のリスト
+  protected Set crushedCopies             故障した複製のリスト
+  protected String ownGOL                 カレントGOL
+
+
+  public final void setCpmGol(String gol)
+    コピーマネージャを作成するGOLを設定する。
+
+  public final bool removeCopyOf(String delGol)
+    delGolで指定される複製をリストから削除する。実際のオブジェクトイメージの
+    削除はユーザが行う。
+
+  public final void setTimeOut(int time)
+    タイムアウトの設定。
+      int time  タイムアウト値（単位：ミリ秒）
+
+  public final int getTimeOut()
+    タイムアウト値の取得（単位：ミリ秒）。
+
+  public final void setResourceTimeLimit(int time)
+    TransactionResource の LockingTimeLimitをセット。
+      int time  タイムアウト値（単位：ミリ秒）
+
+  public final bool lock()
+    複製対象セルをロック。
+
+  public bool lockAll()
+    全ての複製対象セルをロック。
+
+  public final bool propagate()
+    変更を複製に反映。
+
+  public bool propagateAllCP(int type)
+    変更を全ての複製に反映。処理中にエラーの発生した複製は、複製リストから
+    削除し、故障リストに登録される。
+
+  public final bool commit()
+    変更を確定。
+
+  public bool commitAll()
+    全ての変更を確定。
+
+  public void update(String gol)   (for primaryCopy)
+  public void update()             (for peerCopy)
+    アップデート。ここでは何もせず、サブセルのupdate()に処理を渡す。
+
+  public final CopyScheme getClientStubCP()
+    クライアントスタブを得る。
+
+  public final bool isLive()
+    生存確認。
+
+  public final void printCrushList()
+    故障リスト一覧。
+
+  public final void printCopyList()
+    複製リスト一覧。
+
+  public final void setTid(int id)
+    tidをセットする。
+
+  protected final void printCrushedCopy(String gol)
+    故障した複製のGOLを表示する。
+}
+</PRE>
+
+<LI>参考：コピーマネージャのセル
+<PRE>
+cell OtherCopyManeger : *Transaction {
+}
+</PRE>
+
+<LI>参考：複製リスト／故障リストの管理対象クラス
+<PRE>
+class CopyResource {
+  CopyScheme copy       複製
+  String gol            複製のGOL
+  Date date             故障日時
+
+  public final void setCopy(CopyScheme c, String st)
+    複製とGOLのセットする。
+
+  public final CopyScheme getCopy()
+    複製を取り出す。
+
+  public final String getGol()
+    複製のGOLを取り出す。
+
+  public final void setDate()
+    故障日時のセットする。
+
+  public final String getDate()
+    故障日時を取り出す。
+}
+</PRE>
+
+<LI>参考：プライマリコピー方式例外クラス
+<PRE>
+class InvalidCallofPrimaryException :* RuntimeException {
+}
+</PRE>
+
+</UL>
+</P>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

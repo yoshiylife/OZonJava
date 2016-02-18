@@ -1,0 +1,13 @@
+j, JP.go.ipa.oz.user.inter.cgi.ExecuteThread_cl, 0x400, JP.go.ipa.oz.user.inter.cgi.ExecuteThread_if, JP.go.ipa.oz.lang._Runnable_cl
+a, operation_count, 0x4, I, 11563, 30
+a, html, 0x4, LJP.go.ipa.oz.user.inter.cgi.HTMLData_if, 11395, 24
+a, cgi, 0x4, LJP.go.ipa.oz.user.inter.cgi.OzCGI_if, 11336, 20
+a, test_mode, 0x4, Z, 11497, 25
+a, threads, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 11450, 14
+c, create, (LJP.go.ipa.oz.user.inter.cgi.OzCGI_if, LJP.go.ipa.oz.user.inter.cgi.HTMLData_if), (JP.go.ipa.oz.user.inter.cgi.OzCGI_if, JP.go.ipa.oz.user.inter.cgi.HTMLData_if), (JP.go.ipa.oz.lib.standard._Array_cl), (11697, 92, ())
+m, createPath, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._StringBuffer_cl, JP.go.ipa.oz.lib.standard._File_cl), (13376, 648, ((13436, 6, JP.go.ipa.oz.lib.standard._System_if), (13463, 6, JP.go.ipa.oz.lib.standard._String_if), (13556, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (13807, 4, JP.go.ipa.oz.lib.standard._File_if)))
+m, createPath, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (13175, 88, ())
+m, createThread, 0x4, LJP.go.ipa.oz.lang._Thread_if, (LJP.go.ipa.oz.lang._Runnable_if), (JP.go.ipa.oz.lang._Runnable_if, JP.go.ipa.oz.lang._Thread_if), (JP.go.ipa.oz.lang._Thread_cl), (14028, 471, ((14079, 6, JP.go.ipa.oz.lang._Thread_if)))
+m, sendFile, 0x4, V, (LJP.go.ipa.oz.lib.standard._InputStream_if, LJP.go.ipa.oz.lib.standard._String_if, I), (JP.go.ipa.oz.lib.standard._InputStream_if, JP.go.ipa.oz.lib.standard._String_if), (), (12898, 191, ())
+m, sendResult, 0x4, V, (LJP.go.ipa.oz.lib.standard._Writer_if), (JP.go.ipa.oz.lib.standard._Writer_if), (), (12310, 438, ())
+m, sendResult, 0x4, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (11866, 371, ())

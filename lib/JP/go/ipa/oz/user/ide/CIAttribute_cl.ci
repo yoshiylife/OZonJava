@@ -1,0 +1,14 @@
+j, JP.go.ipa.oz.user.ide.CIAttribute_cl, 0x10, JP.go.ipa.oz.user.ide.CIAttribute_if, JP.go.ipa.oz.user.ide.CIMember_cl
+a, type, 0x0, LJP.go.ipa.oz.user.ide.CIType_if, 177, 13
+c, newCIAttribute, (LJP.go.ipa.oz.user.ide.CIAccessLevel_if, LJP.go.ipa.oz.user.ide.CIModifier_if, LJP.go.ipa.oz.user.ide.CIType_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIAccessLevel_if, JP.go.ipa.oz.user.ide.CIModifier_if, JP.go.ipa.oz.user.ide.CIType_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CIPart_if), (), (352, 196, ())
+m, isFinal, 0x1, Z, (), (), (), (2525, 67, ())
+m, isProtected, 0x1, Z, (), (), (), (2810, 78, ())
+m, getType, 0x1, LJP.go.ipa.oz.user.ide.CIType_if, (), (), (), (1785, 51, ())
+m, isConstructor, 0x1, Z, (), (), (), (2384, 59, ())
+m, isAttribute, 0x1, Z, (), (), (), (2246, 56, ())
+m, isMethod, 0x1, Z, (), (), (), (2674, 54, ())
+m, isTransient, 0x1, Z, (), (), (), (2970, 75, ())
+m, getTypeAsString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.user.ide.School_if), (), (2071, 93, ())
+m, getTypeAsString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1918, 71, ())
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.user.ide.CIClassType_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (1065, 638, ((1113, 6, JP.go.ipa.oz.lib.standard._String_if), (1130, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (1153, 11, JP.go.ipa.oz.user.ide.CIClassType_if)))
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (706, 277, ((741, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))

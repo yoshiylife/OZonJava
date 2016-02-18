@@ -1,0 +1,7 @@
+i, JP.go.ipa.oz.user.cda._DeliveryFile_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, getTopPackageName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, time, 0x1, J, ()
+m, getLength, 0x1, I, ()
+m, timeStamp, 0x1, V, (J)
+m, getPackageName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, getContents, 0x1, LJP.go.ipa.oz.lib.standard._ByteArray_if, ()

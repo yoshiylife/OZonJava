@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="behavior.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../names/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>クラスの構造とバージョン管理<BR>
+</H3>
+<BR clear="all">
+<P>
+ここではクラス宣言と関わるOZコンパイラの機能について概略しています。<BR>
+OZコンパイラの機能については、「<A href="../../folder/i_guide.html" target="_parent">プログラミングガイド</A>」のコンパイラの説明を参照してください。<BR>
+<BR>
+<BR>
+<BR>
+<B>インタフェース部と動作部 <IMG src="../../image/h_glass.gif" height="30" width="25"></B><BR>
+<BR>
+OZコンパイラは、クラス宣言をインタフェース部と動作部に分けて扱います。<BR>
+</P>
+<TABLE cellspacing="1">
+  <TR>
+    <TD nowrap width="5"></TD>
+    <TD valign="top">インタフェース部</TD>
+    <TD>
+    <UL>
+      <LI>publicメソッドのシグネチャ
+      <LI>上位クラスの情報。
+    </UL>
+</TD></TR>
+  <TR>
+    <TD nowrap></TD>
+    <TD valign="top">動作部</TD>
+    <TD>インタフェース部以外の部分。すなわち、<BR>
+    <UL>
+      <LI>アトリビュート
+      <LI>メソッド本体の定義
+      <LI>public以外のアクセスレベルを持つメソッドのシグネチャと本体定義
+      <LI>コンストラクタのシグネチャと本体定義
+    </UL>
+</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+「<A href="inherit.html">クラスの継承</A>」で説明しているように、下位クラスは上位実装クラスからインタフェース部と動作部を継承し、上位実装クラス以外の上位クラスからインタフェース部を継承します。<BR>
+インタフェース部と動作部はそれぞれ識別子を持っています。これを<B>クラス識別子</B>と呼びます。<BR>
+クラス名、インタフェース部のクラス識別子、動作部のクラス識別子を対応づける情報をクラス情報といいます。OZコンパイラにはバージョン管理機能があり、インタフェース部と動作部を別々にバージョン管理します。<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<B>クラス識別子 <IMG src="../../image/h_glass.gif" height="30" width="25"></B><BR>
+<BR>
+インタフェース部と動作部はそれぞれ識別子を持っています。これを<B>クラス識別子</B>と呼びます。<BR>
+OZクラスをユニークに識別するのがクラス識別子です。この識別子は全世界でユニークなものでなければいけません。<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>クラス名 <IMG src="../../image/h_glass.gif" height="30" width="25"></B><BR>
+<BR>
+OZシステムでは1つのクラスは1つのクラス名に加えて2つのクラス識別子を持っています。<BR>
+<BR>
+クラス名のスコープはソースファイルです。別のソースファイル、同一名のクラスがOZシステム空間で定義されていてもかまいません。しかし、この制約の緩和はクラス名がOZクラスをユニークに識別するものではないことを意味しています。<BR>
+<BR>
+そこで、上述のクラス識別子を割り振り、クラスを識別するのです。<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>スクール <IMG src="../../image/h_glass.gif" height="30" width="25"></B><BR>
+<BR>
+クラス宣言とクラス識別子の対応付けを行うために、OZシステムにはスクールという概念が存在します。<BR>
+<BR>
+スクールは、各クラスについて、
+</P>
+<UL>
+  <LI>ソースプログラム中でのクラス名
+  <LI>インタフェース部に対するクラス識別子
+  <LI>動作部に対するクラス識別子
+</UL>
+<P>
+の情報を保持するものです。<BR>
+<BR>
+スクールを記述したファイルを「スクールファイル」といいます。スクールファイルについては「<A href="../../folder/i_guide.html" target="_parent">プログラミングガイド</A>」のスクールファイルの説明を参照してください。
+</P>
+<P align="right">
+<EM><A href="ozlib.s">スクールファイルの例</A></EM> （テキストファイル
+ozlib.s）<BR>
+標準クラスライブラリのスクール<BR>
+</P>
+<P>
+ソースファイルのコンパイル時に、OZコンパイラは実行形式のファイルとともにクラス情報を出力します。クラス情報とは、クラス名、インタフェース部のクラス識別子、動作部のクラス識別子を対応づける情報です。<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>OZコンパイラのバージョン管理機能 <IMG src="../../image/h_glass.gif" height="30" width="25"></B><BR>
+<BR>
+OZコンパイラにはバージョン管理機能があり、インタフェース部と動作部を別々にバージョン管理します。<BR>
+<BR>
+バージョン管理を行うソースプログラムがある場合、そのソースプログラムのバージョンごとに異なるスクールファイルを準備します。<BR>
+スクールファイルで、インタフェース部のクラス識別子を同一にして、動作部のクラス識別子だけを変更してコンパイルすると、新たに生成される動作部は、そのインタフェース部に互換性のある新しいバージョンの動作部になります。
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="behavior.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../names/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

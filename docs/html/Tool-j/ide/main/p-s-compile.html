@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ IDE</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="p-i-compile.html"><IMG src="../../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="p-r-compile.html"><IMG src="../../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>サブジェクトコンパイル</B><BR>
+<BR>
+</H3>
+<BR clear="all">
+<P>
+プロジェクトマネージャでサブジェクトを構成する全クラスのコンパイルを行うことができます。コンパイルに必要なスクール情報はスクールブラウザから獲得します。
+</P>
+<P>
+<BR>
+</P>
+<P>
+<IMG src="../../../image/line.gif" height="13" width="490">
+</P>
+<DL>
+  <DT>&lt;サブジェクトコンパイルを行うための事前条件&gt;
+  <DD>サブジェクトコンパイルを行う前に以下の作業が行われている必要があります。<BR>
+  <OL>
+    <LI>対象サブジェクトの全クラスを格納しているソースファイルがプロジェクトディレクトリに格納されている。
+    <LI>そのソースファイルに含まれる全クラスをサブジェクトに登録し、インタフェース識別子と動作部識別子を付与している。
+    <LI>ソースファイルのコンパイルのために必要なサブジェクトを選択している。
+    <LI>スクールブラウザのカレントサブジェクトがコンパイル対象サブジェクトになっている。<BR>
+  </OL>
+1つのプロジェクトに対してさまざまなコンパイルを行うことができますが、3．のサブジェクト選択処理は1度行えば毎回行う必要はありません。<BR>
+<BR>
+別のプロジェクトで処理を行う場合には、サブジェクトを選択し直してください。<BR>
+</DL>
+<P>
+<BR>
+</P>
+<DL>
+  <DT>&lt;サブジェクトの選択&gt;
+  <DD>１．スクールブラウザのSchoolメニューから select subjects... を選択します。
+  <P align="center">
+<IMG src="schlmenu-ss.gif" height="231" width="173">
+  </P>
+  <DL>
+    <DT>２．コンパイルのために必要なサブジェクトを選択します。
+  </DL>
+  <P align="center">
+<IMG src="sel-subj-d.gif" height="362" width="312">
+  </P>
+<BR>
+複数のサブジェクトを選択することができます。開発クラスが利用しているすべてのサブジェクトを選択してください。<BR>
+すべてのサブジェクトを選択したら、OKボタンをクリックしてください。（OKボタンクリック後、ダイアログが消去されるまでに時間がかかります。）<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>&lt;OZソースファイルのサブジェクトコンパイル&gt;
+</DL>
+<DL>
+  <DD>１．プロジェクトマネージャの Compile メニューから compile subject メニュー項目を選択します。
+</DL>
+<P align="center">
+<IMG src="compmenu-cs.gif" height="141" width="152">
+</P>
+<DL>
+  <DD>コンパイル情報を表示するウィンドウが表示されます。
+</DL>
+<P align="center">
+<IMG src="comp-info.gif" height="239" width="512">
+</P>
+<DL>
+  <DD>サブジェクトコンパイルでは、コンパイルが成功したかどうかのメッセージだけが返されます。<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="100"></TD>
+      <TD>MyDialog.oz compiled successfully.&quot;<BR>
+Quit.oz compiled successfully.&quot;<BR>
+Test.oz compiled successfully.&quot;</TD>
+      <TD valign="bottom">(すべて成功した場合の例)</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+コンパイルが終了すると、OKボタンがアクティブになります。 このボタンをクリックするまで、コンパイル情報を表示するウィンドウは表示されています。
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="p-i-compile.html"><IMG src="../../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="p-r-compile.html"><IMG src="../../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

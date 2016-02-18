@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>リソースの探索</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+FMObjectは関連を持つ他のFMObjectとRelationに
+よって結ばれている(リソースのアタッチ参照)。
+関連先のFMObjectは以下の手順により取得される。
+</P>
+
+<P>
+<OL>
+<LI> Stringによって表現された関連名により findRelation(String)を実行し対象となる Relationオブジェクトのリストを取得する
+<LI> 取得したリストからRelationオブジェクトを取り出す
+<LI> Relationオブジェクトに対しdestination()を実行し関連先オブジェクトのPointerを取得する
+<LI> 取得したPointerに対しstuff()を実行することで関連先のFMObjectのコピーを得る
+<LI> destination()
+</OL>
+</P>
+
+<P>
+以上の手順によりFMObjectのチェインを辿ることにより、
+メンテナンス対象のFMObjectの探索を行う。
+</P>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

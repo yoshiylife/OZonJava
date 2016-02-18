@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="protocolrec.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="ozcgi.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>NetworkProtocol クラスの使い方<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+NetworkProtocol クラスはインタネット上の標準的な通信プロトコルを扱うクラスを実現するためのクラスです。<BR>
+<BR>
+このクラスで処理可能な通信プロトコルは以下の条件を満たすものです。
+</P>
+<UL>
+  <LI>コマンドデータがパラメータを含む場合は、コマンド文字列の後に一つスペース文字があり、それに続いてパラメータがある形式である。ただし、パラメータの形式は任意でよい。
+  <LI>レスポンスデータが、ステータスを表す文字列の後に一つのスペース文字があり、それに続い 
+てステータスの内容を示す文字列がある形式である。
+  <LI>データの終端が CR ('\r')、LF ('\n') が連続した文字列である。
+</UL>
+<P>
+この条件を満たさないプロトコルの場合には、NetworkClientクラスを利用することができます。<BR>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>NetworkProtocolクラスのコンストラクタ
+  <LI>NetworkProtocolクラスのメソッド
+  <LI>NetworkProtocolクラスの使用方法
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>１．NetworkProtocolクラスの上位クラスとコンストラクタ
+  <DD><BR>
+  <DL>
+    <DT>abstract class NetworkProtocol : *NetworkClient {...}
+    <DD>NetworkClient クラスが上位実装クラスです。<BR>
+<BR>
+  </DL>
+  <TABLE>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new create (int port)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>port：デフォルトポート番号</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>２．NetworkProtocolクラスのメソッド
+  <DD><BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">protected String sendCommand (String command, String
+param)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>引数付きコマンドの送信とその戻り値の受信。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">protected String sendCommand (String command)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コマンドの送信とその戻り値の受信。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String sendCommand ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コマンドの送信とその戻り値の受信。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">protected String recvMultilineResponse ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>データの送信とその戻り値の受信。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">protected String decodeResponse (String data)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>レスポンスデータの受信。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">protected abstract boolean isLastLine (String data)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>３．NetworkProtocolクラスの使用方法
+  <DD><BR>
+このクラスを継承する下位クラスを宣言して使用します。<BR>
+<BR>
+<B>コンストラクタ宣言</B>では、well-known のポート番号を引数として、このクラスのコンストラクタcretaeを起動してください。<BR>
+<BR>
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">NetworkProtocolクラスのコンストラクタ
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    abstract class NetworkProtocol : *NetworkProtocol { 
+        new create (int port) {
+            <B>super=&gt;create (&quot;COMMAND PARAM&quot;,</B>
+                           <B>&quot;STATUS MESSAGE&quot;,</B>
+                           <B>&quot;\r\n&quot;,</B>
+                           <B>port);</B>
+        }
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+通信の開始、コマンドデータの送信、データのみの送信、レスポンスデータの受信、通信路の制御のためのメソッドを使用できます。<BR>
+<BR>
+<BR>
+  <DL>
+    <DT><B>コマンドデータの送信</B>
+    <DD><BR>
+パラメータを伴うコマンドデータの送信には、2引数の sendCommand メソッドを利用します。<BR>
+<BR>
+パラメータがないコマンドデータの送信には、1 引数の sendCommand メソッドを利用します。<BR>
+<BR>
+<BR>
+    <DT><B>レスポンスデータの処理</B>
+    <DD><BR>
+レスポンスデータを処理するためのフックメソッドとして以下の2つのメソッドがあります。<BR>
+    <DL>
+      <DT>String decodeResponse (String data)
+      <DD>例えば POP3 プロトコルなどでは複数行のレスポンスデータではデータの終端を
+'.' + CRLF という文字列で表すため、 '.' で始まる行には '.' を一つ冗長に付加されたものを受信します。そのため、受信したクライアントはこの冗長な
+'.' を取り除くという処理を行う必要がありますが、それをこのメソッドに実装します。<BR>
+<BR>
+デフォルトでは、引数のデータを返す処理だけを行っています。<BR>
+<BR>
+      <DT>abstract boolean isLastLine (String data)
+      <DD>複数行のレスポンスデータを受信するためのメソッド recvMultilineResponse
+は、レスポンスデータの最終行かどうかを判定するためにこのメソッドを起動します。<BR>
+<BR>
+受信したレスポンスデータが複数行データの最終行を含んでいるかどうかを判定するための処理を各プロトコルに応じて実装してください。そして、最終行の場合に
+true を、それ以外の場合にfalse を返すようにします。<BR>
+<BR>
+    </DL>
+<BR>
+  </DL>
+<BR>
+<BR>
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">POP3クラス
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class POP3 : *NetworkProtocol {
+        ...
+        /*** override ***/
+        protected boolean isLastLine (String data) {
+            if (data == null) return false;
+            int idx = data-&gt;lastIndexOf (&quot;\r\n.\r\n&quot;);
+            if (idx == -1) return false;
+            return (idx + 5 == data-&gt;length ());
+        }
+
+        /*** override ***/
+        protected String decodeResponse (String data) {
+            StringReader sr=&gt;breed (data);
+            BufferedReader lr=&gt;breed (sr);
+            StringBuffer buf=&gt;breed ();
+            System sys=&gt;create ();
+
+            while (true) {
+                String line = lr-&gt;readLine ();
+                if (line == null)  break;
+                if (line-&gt;startsWith (&quot;.\r\n&quot;) &amp;&amp; line-&gt;charAt (0) == '.')
+                    buf-&gt;append (line-&gt;substring (1));
+                else
+                    buf-&gt;append (line);
+                buf-&gt;append (&quot;\r\n&quot;);
+            }
+            return buf-&gt;asString ();
+        }
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="protocolrec.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="ozcgi.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

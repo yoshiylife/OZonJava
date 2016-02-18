@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="text.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="process.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H3>ソケット通信</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>ソケット通信のためのクラス
+  <LI>Socketクラス
+  <LI>ソケット通信のプログラミング
+</OL>
+<UL>
+  <LI>補足：ソケット通信の例
+</UL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="stdout"></A><BR>
+１．ソケット通信のためのクラス
+  <DD><BR>
+ソケット通信を行うためのクラスがOZ標準クラスライブラリの「入出力ライブラリ」に用意されています。<BR>
+<BR>
+  <DL>
+    <DT>InetAddress : *Root
+    <DD>IPアドレス。<BR>
+<BR>
+    <DT>InetAddressComparator : *Root
+    <DD>IPアドレスの比較するためのクラス。<BR>
+<BR>
+    <DT>ServerSocket : *Root
+    <DD>ネットワーク上でプログラムの間に通信チャネルを構成するクラス。<BR>
+<BR>
+    <DT>SocketImplFactory : Root
+    <DD>ソケット実装ファクトリを定義する抽象クラス。<BR>
+<BR>
+    <DT>Socket : *Root
+    <DD>ソケット。<BR>
+  </DL>
+<BR>
+<BR>
+  <DT>２．Socketクラス
+  <DD><BR>
+上位クラス： *Root<BR>
+<BR>
+主なコンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new breed()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。<BR>
+無接続ソケットを生成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(SocketImpl arg1)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+引数のソケットハンドルを使用して無接続ソケットを生成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(String arg1, int arg2)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+指定マシン上の指定ポートを接続するストリームソケットを生成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(InetAddress arg1, int arg2)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+指定IPアドレスの指定ポートを接続するストリームソケットを生成します。</TD></TR>
+  </TABLE>
+
+<BR>
+主なメソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public InetAddress getInetAddress()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケットのIPアドレスを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public InetAddress getLocalAddress()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ローカルソケットのIPアドレスを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public int getPort()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケットのリモートポート番号を答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public int getLocalPort()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケットのローカルポート番号を答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public InputStream getInputStream()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケットの入力ストリームを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public OutputStream getOutputStream()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケットの出力ストリームを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setSocketImplFactory(SocketImplFactory
+arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケット実装ファクトリを設定します。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>３．ServerSocketクラス
+  <DD><BR>
+上位クラス： *Root<BR>
+<BR>
+主なコンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new breed(int arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。<BR>
+指定ポートにサーバソケットを生成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(int arg1, int arg2)<BR>
+arg2=待ち列の最大値</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+待ち列の最大値を設定して指定ポート上にサーバソケットを作成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(int arg1, int arg2, InetAddress arg3)<BR>
+</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+待ち列の最大値を設定、ローカルIPアドレスとポートを指定して<BR>
+サーバソケットを作成します。</TD></TR>
+  </TABLE>
+
+<BR>
+主なメソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public InetAddress getInetAddress()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケットのローカルIPアドレスを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public int getLocalPort()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケットのローカルポート番号を答えます。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public Socket accept()</TD>
+      <TD nowrap></TD>
+      <TD nowrap>接続する要求を受け取り、通信用のソケットを返します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public void setSoTimeout(int arg1)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>acceptメソードの待ち時間を設定します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public void close()</TD>
+      <TD nowrap></TD>
+      <TD nowrap>ソケットをクローズします。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setSocketImplFactory(SocketImplFactory
+arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ソケット実装ファクトリを設定します。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>４．ソケット通信のプログラミング
+  <DD><BR>
+ソケット通信をするためには、IPアドレスとポートを獲得し、ソケットを作成して、そのソケットとストリームを結び付けてデータを送信/受信します。<BR>
+<BR>
+手順）<BR>
+  <OL>
+    <LI>特定マシンの特定ポートと結び付けてソケットを作成します。
+    <LI>ソケットから入力を受け取るときにはソケットの入力ストリームを獲得します。出力をするときにはソケットの出力ストリームを獲得します。
+    <LI>ストリームに対して、読込み（あるいは、書込み）をします。
+    <LI>ストリームをクローズします。
+    <LI>ソケットをクローズします。
+  </OL>
+<BR>
+<BR>
+ソケットへの出力 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    void server(String filename, File sfile, int port) {        
+         ServerSocket ss=&gt;breed(port);
+         Socket s = ss-&gt;accept();
+         DataOutputStream dos=&gt;breed(s-&gt;getOutputStream());
+         try {
+             FileInputStream fis=&gt;breed(sfile);
+             dos-&gt;writeUTF(filename);
+             int data;
+             while ((data = fis-&gt;read()) != -1) {
+                dos-&gt;write(data);
+             }
+         } catch (IOException e) {
+             System sys=&gt;create();
+             sys-&gt;println(&quot;IOException read/write is BAD&quot;);
+        } finally {
+             dos-&gt;close();
+             s-&gt;close();
+       }
+                
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT><A name="system"></A>ソケット通信のためのクラスのAPIについては、ツールリファレンスの「クラスライブラリ」を参照してください。<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>補足：ソケット通信の例
+  <DD><BR>
+FTPクラスでSocketクラスとServerSocketクラスの使いかたを調べてみましょう。<BR>
+<BR>
+  <UL>
+    <LI><A href="socket_ex.html">例</A>
+  </UL>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="text.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="process.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

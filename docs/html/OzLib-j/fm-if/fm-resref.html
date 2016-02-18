@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>予約の照会</H4>
+</CENTER><HR NOSHADE>
+
+<P>
+予約の照会を行うには、照会したい時間の
+開始時刻と終了時刻を設定したReserveを
+用意し、Schedulerオブジェクトのconfirm(Reserve)
+メソッドを起動する。Schedulerは受け取った
+Reserveを用いて、Schedulableのconfirm(Reserve)
+を起動する。
+Schedulableは指定された時間帯のタイムテーブルの
+状況を予約状況として返す。
+また、あるリソースのすべての予約状況は
+Schedulerに対しすべてのgetAllRelations()メソッドを用いて、
+すべてのReserveを返すよう要求すればよい。
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B> <A href=../../"copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

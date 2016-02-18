@@ -1,0 +1,37 @@
+j, JP.go.ipa.oz.user.apl.fm.Relation_cl, 0x0, JP.go.ipa.oz.user.apl.fm.Relation_if, JP.go.ipa.oz.lang._Root_cl
+a, available, 0x0, Z, 393, 15
+a, dstRole, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 350, 15
+a, name, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 200, 12
+a, srcRole, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 264, 15
+a, src, 0x0, LJP.go.ipa.oz.user.apl.fm.Pointer_if, 229, 12
+a, dst, 0x4, LJP.go.ipa.oz.user.apl.fm.Pointer_if, 302, 22
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.apl.fm.Pointer_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.apl.fm.Pointer_if, LJP.go.ipa.oz.lib.standard._String_if, Z), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.apl.fm.Pointer_cl), (676, 584, ((827, 6, JP.go.ipa.oz.lib.standard._String_if), (872, 6, JP.go.ipa.oz.lib.standard._String_if), (1039, 6, JP.go.ipa.oz.lib.standard._String_if), (1084, 6, JP.go.ipa.oz.lib.standard._String_if)))
+c, create, (), (), (JP.go.ipa.oz.lib.standard._String_cl), (476, 143, ())
+m, detach, 0x21, V, (), (JP.go.ipa.oz.user.apl.fm.FMObject_if, JP.go.ipa.oz.user.apl.fm.Relation_if), (), (3363, 259, ((3456, 8, JP.go.ipa.oz.user.apl.fm.FMObject_if), (3508, 8, JP.go.ipa.oz.user.apl.fm.Relation_if)))
+m, getRole, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.user.apl.fm.Pointer_if), (), (5112, 150, ())
+m, disable, 0x1, V, (), (), (), (5944, 43, ())
+m, get, 0x1, LJP.go.ipa.oz.user.apl.fm.FMObject_if, (), (), (), (1911, 85, ())
+m, getDstRole, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (4663, 50, ())
+m, setName, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (4036, 53, ())
+m, setSrcRole, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (4272, 59, ())
+m, toGreen, 0x1, V, (), (JP.go.ipa.oz.user.apl.fm.Overseer_if), (JP.go.ipa.oz.user.apl.fm.Overseer_cl), (8425, 191, ((8451, 8, JP.go.ipa.oz.user.apl.fm.Overseer_if)))
+m, isAvailable, 0x1, Z, (), (), (), (6095, 50, ())
+m, setRole, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.apl.fm.Pointer_if), (), (4845, 139, ())
+m, getObj, 0x4, LJP.go.ipa.oz.user.apl.fm.FMObject_if, (), (JP.go.ipa.oz.user.apl.fm.FMContainer_if, JP.go.ipa.oz.user.apl.fm.Overseer_if, JP.go.ipa.oz.user.apl.fm.FMObject_if), (JP.go.ipa.oz.user.apl.fm.Overseer_cl), (1999, 321, ((2117, 11, JP.go.ipa.oz.user.apl.fm.FMContainer_if), (2179, 8, JP.go.ipa.oz.user.apl.fm.Overseer_if), (2212, 8, JP.go.ipa.oz.user.apl.fm.FMObject_if)))
+m, attach, 0x21, V, (LJP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.user.apl.fm.Pointer_if, JP.go.ipa.oz.user.apl.fm.Overseer_if, JP.go.ipa.oz.user.apl.fm.FMObject_if, JP.go.ipa.oz.user.apl.fm.Relation_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.apl.fm.Overseer_cl), (2433, 872, ((2580, 8, JP.go.ipa.oz.user.apl.fm.Overseer_if), (2628, 8, JP.go.ipa.oz.user.apl.fm.FMObject_if), (2798, 8, JP.go.ipa.oz.user.apl.fm.Relation_if), (3065, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, destination, 0x1, LJP.go.ipa.oz.user.apl.fm.Pointer_if, (), (), (), (3741, 47, ())
+m, setSource, 0x21, V, (LJP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.user.apl.fm.Pointer_if), (), (1633, 55, ())
+m, enableWithoutLock, 0x0, V, (Z), (JP.go.ipa.oz.user.apl.fm.FMObject_if, JP.go.ipa.oz.user.apl.fm.Relation_if), (), (5624, 206, ((5676, 8, JP.go.ipa.oz.user.apl.fm.FMObject_if), (5725, 8, JP.go.ipa.oz.user.apl.fm.Relation_if)))
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (8034, 388, ((8063, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))
+m, enable, 0x1, V, (), (), (), (5867, 41, ())
+m, enable, 0x21, V, (Z), (JP.go.ipa.oz.user.apl.fm.FMObject_if, JP.go.ipa.oz.user.apl.fm.Relation_if), (), (5412, 209, ((5467, 8, JP.go.ipa.oz.user.apl.fm.FMObject_if), (5516, 8, JP.go.ipa.oz.user.apl.fm.Relation_if)))
+m, getSrcRole, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (4407, 49, ())
+m, trace, 0x1, V, (I), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._System_cl), (8619, 165, ((8651, 6, JP.go.ipa.oz.lib.standard._System_if)))
+m, setDstRole, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (4528, 59, ())
+m, isEqualRelation, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (7961, 69, ())
+m, isEqualRelation, 0x1, Z, (LJP.go.ipa.oz.user.apl.fm.Relation_if), (JP.go.ipa.oz.user.apl.fm.Relation_if, JP.go.ipa.oz.user.apl.fm.Pointer_if), (), (7050, 785, ((7132, 7, JP.go.ipa.oz.user.apl.fm.Pointer_if), (7166, 7, JP.go.ipa.oz.user.apl.fm.Pointer_if)))
+m, getName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (4157, 43, ())
+m, getSource, 0x1, LJP.go.ipa.oz.user.apl.fm.Pointer_if, (), (), (), (1770, 45, ())
+m, delete, 0x21, V, (), (JP.go.ipa.oz.user.apl.fm.FMObject_if, JP.go.ipa.oz.user.apl.fm.Relation_if), (), (1295, 236, ((1394, 8, JP.go.ipa.oz.user.apl.fm.FMObject_if), (1443, 8, JP.go.ipa.oz.user.apl.fm.Relation_if)))
+m, setDestination, 0x21, V, (LJP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.user.apl.fm.Pointer_if), (), (3912, 60, ())
+m, cloneRelation, 0x1, LJP.go.ipa.oz.user.apl.fm.Relation_if, (), (JP.go.ipa.oz.user.apl.fm.Relation_if), (JP.go.ipa.oz.user.apl.fm.Relation_cl), (6148, 699, ((6692, 8, JP.go.ipa.oz.user.apl.fm.Relation_if)))

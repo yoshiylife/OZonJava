@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.ide.CBCIDInputDialogListener_cl, 0x10, JP.go.ipa.oz.user.ide.CBCIDInputDialogListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 271, 33
+a, targetDialog, 0x0, LJP.go.ipa.oz.user.ide.CBCIDInputDialog_if, 211, 31
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 310, 15
+a, partView, 0x0, LJP.go.ipa.oz.user.ide.CBPartView_if, 246, 21
+c, newCBCIDInputDialogListener, (LJP.go.ipa.oz.user.ide.CBPartView_if, LJP.go.ipa.oz.user.ide.CBCIDInputDialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.CBPartView_if, JP.go.ipa.oz.user.ide.CBCIDInputDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.lib.standard._System_cl), (487, 461, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.user.ide.CBExceptionDialog_if, JP.go.ipa.oz.user.ide.ClassBrowser_if, JP.go.ipa.oz.user.ide.CIException_if), (JP.go.ipa.oz.user.ide.CBExceptionDialog_cl), (1106, 812, ((1161, 6, JP.go.ipa.oz.lib.standard._String_if), (1179, 6, JP.go.ipa.oz.lib.standard._String_if), (1197, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (1221, 17, JP.go.ipa.oz.user.ide.CBExceptionDialog_if), (1460, 11, JP.go.ipa.oz.user.ide.CIException_if)))

@@ -1,0 +1,32 @@
+j, JP.go.ipa.oz.user.launcher.LauncherGUI_cl, 0x0, JP.go.ipa.oz.user.launcher.LauncherGUI_if, JP.go.ipa.oz.lib.standard._Frame_cl
+a, directoryListView, 0x0, LJP.go.ipa.oz.lib.standard._List_if, 446, 43
+a, currentDir, 0x0, LJP.go.ipa.oz.lib.standard._File_if, 186, 36
+a, activeCellListView, 0x0, LJP.go.ipa.oz.lib.standard._List_if, 493, 44
+a, directoryChoiceView, 0x0, LJP.go.ipa.oz.lib.standard._Choice_if, 397, 45
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 634, 15
+a, inactiveCellListView, 0x0, LJP.go.ipa.oz.lib.standard._List_if, 541, 46
+a, godOp, 0x0, LJP.go.ipa.oz.user.launcher.GODOperator_if, 306, 31
+a, lCore, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCore_if, 151, 31
+a, fileSeparator, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 263, 39
+a, titlePrefix, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 591, 37
+a, menubar, 0x0, LJP.go.ipa.oz.user.launcher.LauncherMenuBar_if, 360, 33
+a, topPath, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 226, 33
+c, create, (LJP.go.ipa.oz.user.launcher.LauncherCore_if), (JP.go.ipa.oz.user.launcher.LauncherCore_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._Frame_cl), (811, 125, ())
+m, getSelectedCell, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2546, 94, ())
+m, setPath, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2900, 42, ())
+m, setDirectoryChoice, 0x0, V, (LJP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._String_if), (), (10047, 1523, ((10091, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, init, 0x0, V, (LJP.go.ipa.oz.user.launcher.LauncherCore_if), (JP.go.ipa.oz.user.launcher.LauncherCore_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.lib.standard._File_cl, JP.go.ipa.oz.user.launcher.GODOperator_cl), (4837, 715, ((4874, 6, JP.go.ipa.oz.lib.standard._String_if), (4912, 4, JP.go.ipa.oz.lib.standard._File_if)))
+m, checkDirectory, 0x0, Z, (LJP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._File_if), (), (3343, 167, ())
+m, isActiveGOD, 0x0, Z, (LJP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._File_if), (), (7999, 89, ())
+m, hasSubDirectory, 0x0, Z, (LJP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._File_cl), (4294, 461, ((4338, 5, JP.go.ipa.oz.lib.standard._Array_if), (4360, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (4380, 4, JP.go.ipa.oz.lib.standard._File_if), (4400, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, getSelectedDirectory, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2722, 96, ())
+m, resetTitle, 0x0, V, (), (JP.go.ipa.oz.lib.standard._String_if), (), (9805, 160, ((9833, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, sync, 0x1, V, (), (JP.go.ipa.oz.lib.standard._String_if), (), (3024, 161, ((3053, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, initGUI, 0x0, V, (), (JP.go.ipa.oz.lib.standard._Label_if, JP.go.ipa.oz.lib.standard._GridBagLayout_if, JP.go.ipa.oz.lib.standard._GridBagConstraints_if, JP.go.ipa.oz.lib.standard._Insets_if, JP.go.ipa.oz.user.launcher.LauncherDirectorySelectListener_if, JP.go.ipa.oz.user.launcher.LauncherCellSelectListener_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._List_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.launcher.LauncherDirectorySelectListener_cl, JP.go.ipa.oz.user.launcher.LauncherCellSelectListener_cl, JP.go.ipa.oz.lib.standard._GridBagLayout_cl, JP.go.ipa.oz.lib.standard._GridBagConstraints_cl, JP.go.ipa.oz.lib.standard._Insets_cl, JP.go.ipa.oz.user.launcher.LauncherMenuBar_cl), (5634, 2283, ((5659, 5, JP.go.ipa.oz.lib.standard._Label_if), (5709, 13, JP.go.ipa.oz.lib.standard._GridBagLayout_if), (5737, 18, JP.go.ipa.oz.lib.standard._GridBagConstraints_if), (5775, 6, JP.go.ipa.oz.lib.standard._Insets_if), (5796, 31, JP.go.ipa.oz.user.launcher.LauncherDirectorySelectListener_if), (5847, 26, JP.go.ipa.oz.user.launcher.LauncherCellSelectListener_if), (5894, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, changeDirectory, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._File_cl), (1094, 547, ((1148, 4, JP.go.ipa.oz.lib.standard._File_if), (1164, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, createCell, 0x1, V, (), (JP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_cl), (1723, 238, ((1758, 29, JP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_if), (1806, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, isInactiveGOD, 0x0, Z, (LJP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._File_if), (), (8170, 91, ())
+m, clearList, 0x0, V, (), (), (), (4071, 141, ())
+m, checkGODActivity, 0x0, Z, (LJP.go.ipa.oz.lib.standard._File_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (3592, 397, ((3652, 10, JP.go.ipa.oz.lib.standard._Collection_if), (3673, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (3693, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, getPath, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._String_if), (), (2043, 421, ((2077, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, list, 0x0, V, (LJP.go.ipa.oz.lib.standard._File_if), (JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Iterator_if), (JP.go.ipa.oz.lib.standard._File_cl), (8343, 1380, ((8373, 4, JP.go.ipa.oz.lib.standard._File_if), (8393, 5, JP.go.ipa.oz.lib.standard._Array_if), (8415, 6, JP.go.ipa.oz.lib.standard._String_if), (8444, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))

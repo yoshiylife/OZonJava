@@ -1,0 +1,4159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>GUI Interface</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>グラフィック／フォント</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<UL><LI><B>class Graphics : *Root</B><BR>
+すべてのグラフィックコンテキストの抽象クラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newGraphics()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>グラフィックスを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void clearRect(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形を背景色で塗りつぶす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void clipRect(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形でクリップする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void copyArea(int arg1, int arg2, int arg3, int arg4, 
+  int arg5, int arg6)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形を、指定された距離にコピーする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+    <DT><STRONG>arg5</STRONG>
+<DD>水平距離
+    <DT><STRONG>arg6</STRONG>
+<DD>垂直距離
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract Graphics create()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>グラフィックスのコピーを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Graphics</STRONG>
+<DD>コピーされたグラフィックス
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void dispose()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>システムリソースを破棄する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void draw3DRect(int arg1, int arg2, int arg3, int arg4, 
+  boolean arg5)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>立体的外観を持つ矩形を描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+    <DT><STRONG>arg5</STRONG>
+<DD>
+      <DL ><DT><STRONG>true</STRONG>
+<DD>浮き上がる外観
+      <DT><STRONG>false</STRONG>
+<DD>沈み込む外観
+
+ </DL> 
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void drawArc(int arg1, int arg2, int arg3, int arg4, 
+  int arg5, int arg6)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>円弧を描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>弧の幅
+    <DT><STRONG>arg4</STRONG>
+<DD>弧の高さ
+    <DT><STRONG>arg5</STRONG>
+<DD>開始角度
+    <DT><STRONG>arg6</STRONG>
+<DD>展開角度
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void drawBytes(ByteArray arg1, int arg2, int arg3, int arg4, 
+  int arg5)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>バイトストリームを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>データ
+    <DT><STRONG>arg2</STRONG>
+<DD>開始オフセット
+    <DT><STRONG>arg3</STRONG>
+<DD>バイト数
+    <DT><STRONG>arg4</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg5</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void drawChars(CharArray arg1, int arg2, int arg3, int arg4, 
+  int arg5)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>文字データを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>データ
+    <DT><STRONG>arg2</STRONG>
+<DD>開始オフセット
+    <DT><STRONG>arg3</STRONG>
+<DD>バイト数
+    <DT><STRONG>arg4</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg5</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void drawLine(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>線を描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg4</STRONG>
+<DD>X1 座標
+    <DT><STRONG>arg5</STRONG>
+<DD>Y1 座標
+    <DT><STRONG>arg4</STRONG>
+<DD>X2 座標
+    <DT><STRONG>arg5</STRONG>
+<DD>Y2 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void drawOval(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>楕円を描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void drawPolygon(Sequence arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポリゴンを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void drawPolygon(Polygon arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポリゴンを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ポリゴン
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void drawPolyline(Sequence arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>連結直線を描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void drawRect(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形を描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void drawRoundRect(int arg1, int arg2, int arg3, 
+  int arg4, int arg5, int arg6)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>丸角矩形を描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+    <DT><STRONG>arg5</STRONG>
+<DD>弧の水平方向直径
+    <DT><STRONG>arg6</STRONG>
+<DD>弧の垂直方向直径
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void drawString(String arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>文字列を描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字列
+    <DT><STRONG>arg2</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void fill3DRect(int arg1, int arg2, int arg3, int arg4, 
+  boolean arg5)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>立体的外観を持つ矩形を塗りつぶす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+    <DT><STRONG>arg5</STRONG>
+<DD>
+      <DL ><DT><STRONG>true</STRONG>
+<DD>浮き上がる外観
+      <DT><STRONG>false</STRONG>
+<DD>沈み込む外観
+
+ </DL> 
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void fillArc(int arg1, int arg2, int arg3, int arg4, 
+  int arg5, int arg6)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>円弧を塗りつぶす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>弧の幅
+    <DT><STRONG>arg4</STRONG>
+<DD>弧の高さ
+    <DT><STRONG>arg5</STRONG>
+<DD>開始角度
+    <DT><STRONG>arg6</STRONG>
+<DD>展開角度
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void fillOval(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>楕円を塗りつぶす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void fillPolygon(Sequence arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポリゴンを塗りつぶす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void fillPolygon(Polygon arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポリゴンを塗りつぶす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ポリゴン
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void fillRect(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形を塗りつぶす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void fillRoundRect(int arg1, int arg2, int arg3, 
+  int arg4, int arg5, int arg6)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>丸角矩形を塗りつぶす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+    <DT><STRONG>arg5</STRONG>
+<DD>弧の水平方向直径
+    <DT><STRONG>arg6</STRONG>
+<DD>弧の垂直方向直径
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void finalize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>参照がなくなったグラフィックスコンテキストを破棄する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract Shape getClip()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クリップ領域を表すシェイプオブジェクトを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Shape</STRONG>
+<DD>シェイプ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract Rectangle getClipBounds()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クリップ領域を囲む矩形を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Rectangle</STRONG>
+<DD>矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract Color getColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>現在の設定色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract Font getFont()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>現在の設定フォントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Font</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract FontMetrics getFontMetrics(Font arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>現在の設定フォントメトリックを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>FontMetrics</STRONG>
+<DD>フォントメトリック
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setClip(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形にクリップを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setClip(Shape arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたクリップを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>シェイプ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setColor(Color arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>色を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setFont(Font arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setPaintMode()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>論理演算をペイントモードに設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void setXORMode(Color arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>論理演算を指定された色との XOR モードに設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public abstract void translate(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標に、描画の原点を変換する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Polygon : *Root, Shape</B><BR>
+ポリゴン
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPolygon()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポリゴンを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPolygon(Sequence arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標情報のポリゴンを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Sequence getPoints()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標情報を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Sequence</STRONG>
+<DD>座標情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setPoints(Sequence arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標情報を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addPoint(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addPoint(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean contains(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標が、ポリゴンの内側かどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら、内側にある。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean contains(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標が、ポリゴンの内側かどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら、内側にある。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Rectangle getBounds()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポリゴンが収まる矩形を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Rectangle</STRONG>
+<DD>矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getNumberOfPoints()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>頂点の数を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>頂点数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Point getPointAt(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の頂点を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Point</STRONG>
+<DD>頂点
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void translate(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標に、描画の原点を変換する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Point : *Root</B><BR>
+座標を表す点
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPoint()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>点を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPoint(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標を持つ点を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPoint(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標を持つ点を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Point getLocation()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Point</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getX()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>X 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getY()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void move(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標に、座標を移動する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLocation(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLocation(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setX(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setY(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void translate(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標に、描画の原点を変換する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Rectangle : *Root, Shape</B><BR>
+矩形
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newRectangle()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newRectangle(Rectangle arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形により、矩形を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newRectangle(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形情報により、矩形を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newRectangle(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形情報により、矩形を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>幅
+    <DT><STRONG>arg2</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newRectangle(Point arg1, Dimension arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形情報により、矩形を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+    <DT><STRONG>arg2</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newRectangle(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標に、矩形を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newRectangle(Dimension arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたサイズの矩形を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形に座標を追加し、サイズを更新する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形に座標を追加し、サイズを更新する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(Rectangle arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形に矩形を追加し、サイズを更新する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean contains(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標が矩形の内側にあるかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら、内側にある。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean contains(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標が矩形の内側にあるかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら、内側にある。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Rectangle getBounds()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形の境界を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Rectangle</STRONG>
+<DD>境界矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getHeight()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>高さを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Point getLocation()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形の位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Point</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形のサイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getWidth()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getX()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>X 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getY()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void grow(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された値分、矩形の幅と高さを増やす。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>幅方向の増分
+    <DT><STRONG>arg2</STRONG>
+<DD>高さ方向の増分
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean intersects(Rectangle arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形と重なりがあるかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら重なる部分がある。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Rectangle intersection(Rectangle arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形と重なる部分の矩形を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Rectangle</STRONG>
+<DD>重なり部分の矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isEmpty()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形が空かどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら、空
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setBounds(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形の境界を指定された矩形情報に設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setBounds(Rectangle arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>矩形の境界を指定された矩形情報に設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>矩形情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setHeight(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>高さを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLocation(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLocation(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSize(Dimension arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サイズを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSize(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サイズを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>幅
+    <DT><STRONG>arg2</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setWidth(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>幅を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setX(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setY(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>座標を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void translate(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標に、描画の原点を変換する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Rectangle union(Rectangle arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された矩形を結合した矩形を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Rectangle</STRONG>
+<DD>結合矩形
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Font : *Root</B><BR>
+フォント
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newFont(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたフォント名とサイズの標準スタイルフォントを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>フォント名
+    <DT><STRONG>arg2</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newFontAsBold(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたフォント名とサイズのボールドスタイルフォントを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>フォント名
+    <DT><STRONG>arg2</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newFontAsItalic(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたフォント名とサイズのイタリックスタイルフォントを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>フォント名
+    <DT><STRONG>arg2</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newFontAsBoldItalic(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたフォント名とサイズのイタリックボールドスタイルフォントを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>フォント名
+    <DT><STRONG>arg2</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getPLAIN()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>標準スタイル値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>スタイル値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getBOLD()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ボールドスタイル値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>スタイル値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getITALIC()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>イタリックスタイル値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>スタイル値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Font decode(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された文字列から、フォントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Font</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getFamily()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントファミリー名を取得する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>フォントファミリー名
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Font getFont(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された名前により、フォントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>名前
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Font</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Font getFont(String arg1, Font arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された名前により、フォントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>名前
+    <DT><STRONG>arg2</STRONG>
+<DD>フォントがない時に返されるフォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Font</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getName()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォント名を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>フォント名
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントサイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isBold()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ボールドスタイルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真ならボールドスタイル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isItalic()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>イタリックスタイルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真ならイタリックスタイル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isPlain()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>標準スタイルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら標準スタイル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class FontMetrics : *Root</B><BR>
+フォントメトリック
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newFontMetrics()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントメトリックを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int bytesWidth(ByteArray arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたバイトデータをこのフォントで表示するための幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>バイトデータ
+    <DT><STRONG>arg2</STRONG>
+<DD>開始オフセット
+    <DT><STRONG>arg3</STRONG>
+<DD>バイト数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>有効幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int charWidth(char arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された文字をこのフォントで表示するための幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>有効幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int charWidth(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された文字をこのフォントで表示するための幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>有効幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int charsWidth(CharArray arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された文字データをこのフォントで表示するための幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字データ
+    <DT><STRONG>arg2</STRONG>
+<DD>開始オフセット
+    <DT><STRONG>arg3</STRONG>
+<DD>文字数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>有効幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getAscent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントの ascent を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>ascent
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getDescent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントの descent を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>descent
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Font getFont()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Font</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getHeight()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントの標準的な高さを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getLeading()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントの行間を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>行間の高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getMaxAdvance()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントの最大有効幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>最大有効幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getMaxAscent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントの最大 ascent を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>最大 ascent
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getMaxDescent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントの最大 descent を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>最大 descent
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Sequence getWidths()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォントの最初の 256 文字の有効幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Sequence</STRONG>
+<DD>有効幅集合
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int stringWidth(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された文字列を表示するための有効幅の合計を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>有効幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Color : *Root</B><BR>
+RGB 色
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColor(int arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された値で、色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>赤
+    <DT><STRONG>arg2</STRONG>
+<DD>緑
+    <DT><STRONG>arg3</STRONG>
+<DD>青
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColor(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された値で、色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>RGB 値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColor(float arg1, float arg2, float arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された値で、色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>赤
+    <DT><STRONG>arg2</STRONG>
+<DD>緑
+    <DT><STRONG>arg3</STRONG>
+<DD>青
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsWhite()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>白色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsBlack()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>黒色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsRed()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>赤色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsPink()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ピンク色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsOrange()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>オレンジ色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsYellow()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>黄色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsGreen()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>緑色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsMagenta()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>マゼンタ色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsCyan()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>シアン色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newColorAsBlue()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>青色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color brighter()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>より明るい色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color darker()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>より暗い色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color decode(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>色名
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD> 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getBlue()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>青成分値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>青成分値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color getColor(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>色名
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color getColor(String arg1, Color arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>色名
+    <DT><STRONG>arg2</STRONG>
+<DD>指定色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color getColor(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>色名
+    <DT><STRONG>arg2</STRONG>
+<DD>指定 RGB 値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getGreen()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>緑成分値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>緑成分値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color getHSBColor(float arg1, float arg2, float arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された HSB 色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>色相
+    <DT><STRONG>arg2</STRONG>
+<DD>彩度
+    <DT><STRONG>arg3</STRONG>
+<DD>明度
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getRed()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>赤成分値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>赤成分値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getRGB()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>RGB 値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int HSBtoRGB(float arg1, float arg2, float arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>値を RGB 値に変換する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>色相
+    <DT><STRONG>arg2</STRONG>
+<DD>彩度
+    <DT><STRONG>arg3</STRONG>
+<DD>明度
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>RGB 値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public HSBColorValue RGBtoHSB(int arg1, int arg2, int arg3, <BR> 
+  HSBColorValue arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>値を HSB 値に変換する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>赤成分値
+    <DT><STRONG>arg2</STRONG>
+<DD>緑成分値
+    <DT><STRONG>arg3</STRONG>
+<DD>青成分値
+    <DT><STRONG>arg4</STRONG>
+<DD>HSB 値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>HSBColorValue</STRONG>
+<DD>HSB 値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class SystemColor : *Color</B><BR>
+システム関係色
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newSystemColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>システム関係色を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getDesktopColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>デスクトップの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getActiveCaptionColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アクティブキャプションの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getActiveCaptionTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アクティブキャプションのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getActiveCaptionBorderColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アクティブキャプションの境界色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getInactiveCaptionColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>非アクティブキャプションの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getInactiveCaptionTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>非アクティブキャプションのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getInactiveCaptionBorderColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>非アクティブキャプションの境界色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getWindowColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ウィンドウの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getWindowBorderColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ウィンドウの境界色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getWindowTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ウィンドウのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getMenuColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getMenuTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メニューのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getTextTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getTextHighlightColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ハイライトテキストの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getTextHighlightTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ハイライトテキストのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getTextInactiveTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>非アクティブテキストのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getControlColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コントロールの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getControlTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コントロールのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getControlHighlightColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コントロールの標準ハイライト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getControlLtHighlightColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コントロールのライトハイライト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getControlShadowColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コントロールの標準シャドウ色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getControlDkShadowColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コントロールのダークシャドウ色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getScrollbarColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールバーの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getInfoColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>情報テキストの背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final Color getInfoTextColor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>情報テキストのテキスト色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getRGB()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>値を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>RGB 値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Cursor : *Root</B><BR>
+マウスカーソル
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newDefaultCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>標準カーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newCrossHairCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>十字カーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newTextCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newWaitCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>待ち状態カーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newSWResizeCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>南西方向リサイズカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newSEResizeCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>南東方向リサイズカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newNWResizeCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>北西方向リサイズカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newNEResizeCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>北東方向リサイズカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newNResizeCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>東方向リサイズカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newSResizeCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>南方向リサイズカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newWResizeCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>西方向リサイズカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newEResizeCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>東方向リサイズカーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newHandCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>手形カーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newMoveCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>移動カーソルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Cursor getDefaultCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>標準カーソルを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Cursor</STRONG>
+<DD>カーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>int getType()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>カーソルタイプを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>カーソルタイプ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isDefault()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>標準カーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら標準カーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isCrossHair()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>十字カーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら十字カーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isText()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>テキストカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真ならテキストカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isWait()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>待ち状態カーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら待ち状態カーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isSWResize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>南西方向リサイズカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら南西方向リサイズカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isSEResize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>南東方向リサイズカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら南東方向リサイズカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isNWResize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>北西方向リサイズカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら北西方向リサイズカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isNEResize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>北東方向リサイズカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら北東方向リサイズカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isNResize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>北方向リサイズカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら北方向リサイズカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isSResize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>南方向リサイズカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら南方向リサイズカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isWResize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>西方向リサイズカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら西方向リサイズカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isEResize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>東方向リサイズカーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら東方向リサイズカーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isHand()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>手形カーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら手形カーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isMove()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>移動カーソルかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら移動カーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Dimension : *Root</B><BR>
+幅と高さで構成される面
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newDimension(Dimension arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたサイズを持つ面を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newDimension(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された幅と高さを持つ面を生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>幅
+    <DT><STRONG>arg2</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getHeight()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>高さを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getWidth()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setHeight(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>高さを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSize(Dimension arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サイズを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSize(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>幅と高さを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>幅
+    <DT><STRONG>arg2</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setWidth(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>幅を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

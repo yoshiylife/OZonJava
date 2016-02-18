@@ -1,0 +1,12 @@
+j, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_cl, 0x0, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lang._Root_cl
+a, date, 0x0, LJP.go.ipa.oz.lib.standard._Date_if, 16963, 10
+a, gol, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 16926, 11
+a, copy, 0x0, LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, 16894, 16
+c, create, (LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, JP.go.ipa.oz.lib.standard._String_if), (), (17076, 81, ())
+c, create, (), (), (), (17004, 65, ())
+m, setDate, 0x11, V, (), (), (JP.go.ipa.oz.lib.standard._Date_cl), (17556, 43, ())
+m, getCopy, 0x11, LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, (), (), (), (17404, 47, ())
+m, setCopy, 0x11, V, (LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, JP.go.ipa.oz.lib.standard._String_if), (), (17318, 83, ())
+m, getDate, 0x11, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (17498, 55, ())
+m, getGol, 0x11, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (17454, 41, ())
+m, equal, 0x11, Z, (LJP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._String_if), (), (17160, 154, ((17206, 6, JP.go.ipa.oz.lib.standard._String_if)))

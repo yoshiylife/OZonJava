@@ -1,0 +1,9 @@
+j, JP.go.ipa.oz.user.ide.CIAccessLevel_cl, 0x10, JP.go.ipa.oz.user.ide.CIAccessLevel_if, JP.go.ipa.oz.lang._Root_cl
+a, iAmProtected, 0x0, Z, 205, 22
+a, iAmPublic, 0x0, Z, 166, 19
+a, UPPER, 0x0, I, 244, 11
+c, newCIAccessLevel, (I), (), (), (441, 59, ())
+m, isPublic, 0x1, Z, (), (), (), (918, 58, ())
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (658, 178, ())
+m, initParams, 0x0, V, (I), (), (), (1280, 357, ())
+m, isProtected, 0x1, Z, (), (), (), (1058, 64, ())

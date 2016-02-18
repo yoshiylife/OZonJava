@@ -1,0 +1,39 @@
+j, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_cl, 0x2000, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_cl
+a, tid, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._TID_if, 729, 8
+a, cpManeger, 0x4, LJP.go.ipa.oz.user.lib_dist.replica.OtherCopyManeger_if, 207, 37
+a, debug, 0x4, LJP.go.ipa.oz.user.lib_dist.tran._Debug_if, 740, 22
+a, mgrFlag, 0x4, Z, 268, 23
+a, crushedCopies, 0x4, LJP.go.ipa.oz.lib.standard._Set_if, 502, 28
+a, timeOut, 0x0, I, 677, 12
+a, otherCopies, 0x4, LJP.go.ipa.oz.lib.standard._Set_if, 455, 26
+a, cpmGol, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 328, 24
+a, status, 0x4, Z, 385, 22
+a, MAX_ID, 0x4, I, 604, 21
+a, ownGOL, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 650, 24
+a, debugFlag, 0x4, I, 765, 24
+a, idnum, 0x4, I, 557, 20
+m, getTimeOut, 0x11, I, (), (), (), (4077, 54, ())
+m, printCrushedCopy, 0x14, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_cl), (15762, 143, ((15817, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, commitAll, 0x1, Z, (), (), (), (11932, 106, ())
+m, initialize, 0x4, V, (), (JP.go.ipa.oz.user.lib_dist.replica.CopyRes_Comparator_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.lib_dist.tran._Debug_cl, JP.go.ipa.oz.user.lib_dist.tran._TID_cl, JP.go.ipa.oz.user.lib_dist.replica.CopyRes_Comparator_cl, JP.go.ipa.oz.lib.standard._Set_cl), (1035, 665, ((1403, 18, JP.go.ipa.oz.user.lib_dist.replica.CopyRes_Comparator_if)))
+m, setCpmGol, 0x11, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2117, 62, ())
+m, commit, 0x11, Z, (), (JP.go.ipa.oz.lang._Exception_if), (), (11335, 327, ((11554, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, getClientStubCP, 0x11, LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, (), (JP.go.ipa.oz.lib.standard._Long_if, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if, JP.go.ipa.oz.user.lib_dist.replica.CopyFoo_if, JP.go.ipa.oz.user.lib_dist.replica.CopyMethodRunnable_if, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_cl, JP.go.ipa.oz.user.lib_dist.replica.CopyFoo_cl, JP.go.ipa.oz.user.lib_dist.replica.CopyMethodRunnable_cl, JP.go.ipa.oz.lib.standard._Long_cl), (12603, 1243, ((12675, 4, JP.go.ipa.oz.lib.standard._Long_if), (12691, 10, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if), (12721, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (12750, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (12773, 6, JP.go.ipa.oz.lib.standard._String_if), (12803, 5, JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (12826, 7, JP.go.ipa.oz.user.lib_dist.replica.CopyFoo_if), (12853, 18, JP.go.ipa.oz.user.lib_dist.replica.CopyMethodRunnable_if), (13583, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (13680, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, printCrushList, 0x11, V, (), (JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (14357, 321, ((14397, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (14426, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, setResourceTimeLimit, 0x11, V, (I), (), (), (4436, 91, ())
+m, propagateAllCP, 0x1, Z, (I), (JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if, JP.go.ipa.oz.user.lib_dist.replica.CopyFoo_if, JP.go.ipa.oz.user.lib_dist.replica.CopyMethodRunnable_if, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_cl, JP.go.ipa.oz.user.lib_dist.replica.CopyFoo_cl, JP.go.ipa.oz.user.lib_dist.replica.CopyMethodRunnable_cl), (6932, 4136, ((7037, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (7066, 10, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if), (7087, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (7181, 5, JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (7204, 7, JP.go.ipa.oz.user.lib_dist.replica.CopyFoo_if), (7231, 18, JP.go.ipa.oz.user.lib_dist.replica.CopyMethodRunnable_if), (7449, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (7585, 9, JP.go.ipa.oz.lang._Exception_if), (8201, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (8346, 9, JP.go.ipa.oz.lang._Exception_if), (8610, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (8704, 9, JP.go.ipa.oz.lang._Exception_if), (9203, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (9326, 9, JP.go.ipa.oz.lang._Exception_if), (9761, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (9894, 9, JP.go.ipa.oz.lang._Exception_if), (10205, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (10338, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, isLive, 0x11, Z, (), (), (), (14073, 48, ())
+m, setTid, 0x11, V, (I), (), (), (15418, 57, ())
+m, quiet, 0x4, V, (), (), (), (1767, 36, ())
+m, printCopyList, 0x11, V, (), (JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (14913, 262, ((14952, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (14981, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, propagate, 0x11, Z, (), (JP.go.ipa.oz.lang._Exception_if), (), (6237, 342, ((6468, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, println, 0x4, V, (I), (JP.go.ipa.oz.lib.standard._Integer_if, JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._PrintWriter_if), (JP.go.ipa.oz.lib.standard._Integer_cl, JP.go.ipa.oz.lib.standard._System_cl), (16554, 151, ((16589, 7, JP.go.ipa.oz.lib.standard._Integer_if), (16615, 6, JP.go.ipa.oz.lib.standard._System_if), (16641, 11, JP.go.ipa.oz.lib.standard._PrintWriter_if)))
+m, println, 0x4, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._PrintWriter_if), (JP.go.ipa.oz.lib.standard._System_cl), (16169, 131, ((16209, 6, JP.go.ipa.oz.lib.standard._System_if), (16235, 11, JP.go.ipa.oz.lib.standard._PrintWriter_if)))
+m, setTimeOut, 0x11, V, (I), (), (), (3693, 147, ())
+m, removeCopyOf, 0x11, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (2915, 512, ((3018, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (3047, 6, JP.go.ipa.oz.lib.standard._String_if), (3085, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, lockAll, 0x1, Z, (), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.lib.standard._Array_cl), (5329, 632, ((5356, 5, JP.go.ipa.oz.lib.standard._Array_if), (5376, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (5405, 6, JP.go.ipa.oz.lib.standard._String_if), (5421, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (5852, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, go, 0x4, V, (), (), (), (1704, 22, ())
+m, update, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (12284, 32, ())
+m, update, 0x1, V, (), (), (), (12259, 22, ())
+m, lock, 0x11, Z, (), (JP.go.ipa.oz.lang._Exception_if), (), (4802, 249, ((4945, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, setCpManeger, 0x11, V, (), (), (JP.go.ipa.oz.user.lib_dist.replica.OtherCopyManeger_pcl), (2421, 161, ())

@@ -1,0 +1,13 @@
+j, JP.go.ipa.oz.user.ide.CIRecordTokenizer_cl, 0x10, JP.go.ipa.oz.user.ide.CIRecordTokenizer_if, JP.go.ipa.oz.lang._Root_cl
+a, record, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 176, 15
+a, LIST_END, 0x10, C, 280, 21
+a, length, 0x0, I, 235, 12
+a, current, 0x0, I, 218, 13
+a, LIST_BEGIN, 0x10, C, 253, 23
+a, delimiters, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 195, 19
+c, newCIRecordTokenizer, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (385, 206, ())
+m, skipDelimiters, 0x0, V, (), (), (), (3125, 149, ())
+m, nextList, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CIException_if), (JP.go.ipa.oz.user.ide.CIException_cl), (1400, 965, ((1486, 6, JP.go.ipa.oz.lib.standard._String_if), (1614, 11, JP.go.ipa.oz.user.ide.CIException_if)))
+m, hasMoreTokens, 0x1, Z, (), (), (), (744, 95, ())
+m, nextToken, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.user.ide.CIException_if), (JP.go.ipa.oz.user.ide.CIException_cl), (919, 401, ((1035, 11, JP.go.ipa.oz.user.ide.CIException_if)))
+m, countTokens, 0x1, I, (), (), (), (2445, 524, ())

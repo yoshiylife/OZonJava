@@ -1,0 +1,9 @@
+j, JP.go.ipa.oz.user.ide.CIClassType_cl, 0x10, JP.go.ipa.oz.user.ide.CIClassType_if, JP.go.ipa.oz.user.ide.CIType_cl
+a, cid, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 178, 12
+c, newCIClassType, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (354, 58, ())
+m, isPrimitive, 0x1, Z, (), (), (), (703, 57, ())
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (570, 51, ())
+m, initParams, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1462, 80, ())
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1253, 49, ())
+m, isOzInternalClass, 0x1, Z, (), (), (), (976, 195, ())
+m, isClass, 0x1, Z, (), (), (), (842, 52, ())

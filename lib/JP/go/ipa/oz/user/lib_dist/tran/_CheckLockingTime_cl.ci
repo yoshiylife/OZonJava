@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.lib_dist.tran._CheckLockingTime_cl, 0x0, JP.go.ipa.oz.user.lib_dist.tran._CheckLockingTime_if, JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_cl
+a, tr, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, 11810, 23
+c, create, (LJP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_cl), (11840, 36, ())
+m, set, 0x1, V, (LJP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if), (JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if), (), (11879, 49, ())
+m, MyMethod, 0x4, LJP.go.ipa.oz.lang._Root_if, (), (), (), (11931, 73, ())

@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>インスタンスへの情報伝搬</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+Autonomy セル間でリソースを利用する場合は、そのポリシーを
+変換するための代理オブジェクトを介在する。<BR>
+この代理オブジェクトは、ResourceProxy オブジェクトにより
+実現する。複数の ResourceProxy オブジェクトを連結し、
+変換を行うことも可能とする。<BR>
+実際の変換処理はリソースの種類によりさまざまであることから、
+サブクラスによって記述するものとする。
+</P>
+
+<UL>
+
+<P>
+<LI>public void ResourceProxy#setPrevious(ResourceProxy prev)<BR>
+引数として、連結する ResourceProxy オブジェクトをとる。<BR>
+このオブジェクトへの参照を保持する。
+</P>
+
+<P>
+<LI>public ResourceProxy ResourceProxy#getPrevious()<BR>
+保持している ResourceProxy オブジェクトを返す。
+</P>
+
+<P>
+<LI>public void ResourceProxy#setResource(String resGol)<BR>
+引数として、リソースの GOL をとる。<BR>
+引数を保持すると同時に、連結された ResourceProxy オブジェクトが
+ある場合は、そのオブジェクトに対して setResource(String) を
+呼び出す。このメソッドは、サブクラスでオーバライドされることを
+想定している。
+</P>
+
+<P>
+<LI>public String ResourceProxy#getResource()<BR>
+リソースの GOL が保持されていればそれを返す。<BR>
+保持されてなく、かつ連結された ResourceProxy オブジェクトが
+ある場合は、そのオブジェクトに対して getResource() を
+呼び出す。このメソッドは、サブクラスでオーバライドされることを
+想定している。
+</P>
+
+</UL>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

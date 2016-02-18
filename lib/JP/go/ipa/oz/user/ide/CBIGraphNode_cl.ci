@@ -1,0 +1,19 @@
+j, JP.go.ipa.oz.user.ide.CBIGraphNode_cl, 0x10, JP.go.ipa.oz.user.ide.CBIGraphNode_if, JP.go.ipa.oz.lib.standard._Rectangle_cl
+a, level, 0x0, I, 353, 22
+a, marked, 0x0, Z, 326, 23
+a, superNodeList, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 210, 30
+a, subNodeList, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 268, 28
+a, thisPart, 0x0, LJP.go.ipa.oz.user.ide.CIPart_if, 181, 25
+c, newCBIGraphNode, (LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.lib.standard._Rectangle_cl, JP.go.ipa.oz.lib.standard._SList_cl), (537, 199, ())
+m, getLabelName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1472, 76, ())
+m, setMark, 0x1, V, (Z), (), (), (2352, 59, ())
+m, setLevel, 0x1, V, (I), (), (), (2211, 61, ())
+m, getSuperClassCount, 0x1, I, (), (), (), (1784, 76, ())
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1326, 64, ())
+m, subNodes, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (2491, 73, ())
+m, isMarked, 0x1, Z, (), (), (), (2074, 55, ())
+m, getLevel, 0x1, I, (), (), (), (1942, 50, ())
+m, getSubClassCount, 0x1, I, (), (), (), (1630, 72, ())
+m, addSuperNode, 0x1, V, (LJP.go.ipa.oz.user.ide.CBIGraphNode_if), (JP.go.ipa.oz.user.ide.CBIGraphNode_if), (), (1107, 137, ())
+m, superNodes, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (2644, 77, ())
+m, addSubNode, 0x1, V, (LJP.go.ipa.oz.user.ide.CBIGraphNode_if), (JP.go.ipa.oz.user.ide.CBIGraphNode_if), (), (894, 131, ())

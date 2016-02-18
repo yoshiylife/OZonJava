@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="../names/scope.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="element.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H2>例外処理（Exceptions）<BR>
+</H2>
+<BR clear="all">
+<P>
+<BR>
+<BR>
+OZ言語では例外をハンドルすることができます。OZ言語の例外とはオブジェクトです。任意のオブジェクトを例外として扱うことができます。<BR>
+<BR>
+OZシステムはシステム定義の例外をクラスライブラリとして提供しています。またユーザが例外を定義することもできます。<BR>
+<BR>
+<BR>
+例外が発生する原因としては以下の場合が存在します。<BR>
+<BR>
+</P>
+<UL>
+  <LI>OzVMが異常な実行を検知した場合。<BR>
+  <TABLE cellspacing="2">
+    <TR>
+      <TD width="8"></TD>
+      <TD>整数をゼロで割るというように、構文的には正しいにも関わらず異常な式の評価が行われた場合。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>リソースの制約を超えるような使用要求が行われた場合。</TD></TR>
+  </TABLE>
+
+<BR>
+  <LI>throw文が実行された場合。<BR>
+<BR>
+  <LI>同期機構が正しく使用されなかった場合。<BR>
+</UL>
+<P>
+<BR>
+例外を発生させるためには、throw文を用います。<BR>
+例外の捕獲してハンドルするためには、try文を記述します。
+</P>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+ここでは、例外処理に関わる文法規則、OZクラスライブラリを説明します。<BR>
+<BR>
+</P>
+<UL>
+  <LI><A href="element.html">例外処理のための言語要素</A><BR>
+<BR>
+  <LI><A href="handle.html">OZシステムにおける例外の扱い</A><BR>
+<BR>
+  <LI><A href="sysex.html">システム例外</A><BR>
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="../names/scope.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="element.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

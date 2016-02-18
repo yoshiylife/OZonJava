@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.lib_dist.replica.CopyMethodRunnable_cl, 0x0, JP.go.ipa.oz.user.lib_dist.replica.CopyMethodRunnable_if, JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_cl
+a, fooObj, 0x0, LJP.go.ipa.oz.user.lib_dist.replica.CopyFoo_if, 18257, 15
+a, primaryGOL, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 18306, 18
+a, copy, 0x0, LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, 18275, 16
+a, flag, 0x0, I, 18294, 9
+c, create, (LJP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._Timer_if), (JP.go.ipa.oz.user.lib_dist.sync.timer._MethodRunnable_cl), (18332, 42, ())
+m, set, 0x11, V, (LJP.go.ipa.oz.user.lib_dist.replica.CopyFoo_if, LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, I, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyFoo_if, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, JP.go.ipa.oz.lib.standard._String_if), (), (18377, 150, ())
+m, MyMethod, 0x14, LJP.go.ipa.oz.lang._Root_if, (), (JP.go.ipa.oz.lib.standard._Long_if), (JP.go.ipa.oz.lib.standard._Long_cl), (18530, 126, ((18619, 4, JP.go.ipa.oz.lib.standard._Long_if)))

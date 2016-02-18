@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="hello_ide.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_my.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>Testクラス</B><BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+OZプログラム <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+Test.oz
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    cell Test {
+        MyDialog myDlg;
+
+        public void initialize() {
+            myDlg=&gt;create();
+            myDlg-&gt;setVisible(true);
+        }
+
+        public void go() {
+            EventDispatchingQueue queue =&gt; create();
+            myDlg-&gt;activateListeners(queue);
+            myDlg-&gt;setVisible(true);
+        }
+
+        public void quiet() {
+            myDlg-&gt;deleteListeners();
+            flushCell();
+        }
+    }
+
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI><A href="#parent">Testクラスの上位クラス</A>
+  <LI><A href="#mem">Testクラスのメンバ</A>
+  <LI><A href="#cell">cell型クラスのメソッド</A>
+</OL>
+<UL>
+  <LI><A href="#app">補足：cell型クラスのメソッドとOzVMコマンド</A>
+</UL>
+<P>
+<BR>
+</P>
+<P>
+<IMG src="../../image/line.gif" height="13" width="490">
+</P>
+<BR clear="all">
+<DL>
+  <DT><A name="parent"></A><BR>
+１．Testクラスの上位クラス
+  <DD><BR>
+OZ言語では<B>クラスの継承</B>を行うことができます。親クラスを上位クラス、親クラスを継承する子クラスを下位クラスと呼びます。上位クラスの指定はクラス名の後にコロン（
+: ）をつけ上位クラスの名前を指定することによって行いますが、Testクラスでは上位クラスの指定がありません。クラス名を表わす識別子（この場合はTest）のあとに、クラス本体の定義が行われています。<BR>
+<BR>
+Testクラスの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell Test {
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+上位クラスの指定が行われないときには、暗黙クラスが上位クラスとして宣言されていることになります。<BR>
+<BR>
+<BR>
+  <DT><A name="mem"></A><BR>
+２．Testクラスのメンバ
+  <DD>Testクラスには４つのメンバが宣言されています。<BR>
+<BR>
+Testクラスのメンバ <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell Test {
+        MyDialog myDlg;
+        public void initialize() { ... }        
+        public void go() { ... }          
+        public void quiet() { ... }
+    }
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<FONT color="#400040"><TT>MyDialog myDlg;</TT></FONT>は、<B>アトリビュート宣言</B>です。MyDialogクラスのアトリビュートが宣言されています。<BR>
+<BR>
+アトリビュートはそのクラスのオブジェクトが保持する情報を表現しています。クラス型のアトリビュートだけではなく、int型、char型などの基本型のアトリビュートを宣言することができます。<BR>
+<BR>
+<BR>
+あとの３つのメンバはメソッドです。<BR>
+<BR>
+initializeメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31"><BR>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    public void initialize() { 
+        myDlg=&gt;create();
+        myDlg-&gt;setVisible(true);
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<TT><FONT color="#400040">myDlg=&gt;create();</FONT></TT>でアトリビュートのインスタンス生成を行っています。create()
+は<FONT color="#400040"><TT>MyDialogクラスの</TT></FONT>コンストラクタです。この文の実行によって、それまで<B>null</B>を保持していたアトリビュートmyDlg
+が生成されたオブジェクトへのリファレンスを保持します。<BR>
+そして、<TT><FONT color="#400040">myDlg-&gt;setVisible(true);</FONT></TT>で、myDlgが保持するオブジェクトのメソッドが起動されています。メソッド名から推測ができるとおり、画面に視覚的に表示するためのメソッドです。<BR>
+<BR>
+goメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31"><BR>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    public void go() {
+        EventDispatchingQueue queue =&gt; create();
+        myDlg-&gt;activateListeners(queue);
+        myDlg-&gt;setVisible(true); 
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<TT><FONT color="#400040">EventDispatchingQueue queue =&gt; create();</FONT></TT>で、EventDispatchingQueueクラスのオブジェクトを生成しています。EventDispatchingQueueクラスはOZ標準ライブラリに定義されているクラスです。<BR>
+そのオブジェクトを引数にして、アトリビュートのactivateListenersメソッドを起動しています（<TT><FONT color="#400040">myDlg-&gt;activateListeners(queue);</FONT></TT>）。activateListenersメソッドはMyDialogクラスで定義されています。イベント処理で利用するリスナを活性化するメソッドです。<BR>
+そして、<TT><FONT color="#400040">myDlg-&gt;setVisible(true);</FONT></TT>で、myDlgが保持するオブジェクトを画面に表示しています。<BR>
+<BR>
+quietメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31"><BR>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    public void quiet() { 
+        myDlg-&gt;deleteListeners();
+        flushCell();
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+アトリビュートのdeleteListenersメソッドを起動した（<TT><FONT color="#400040">myDlg-&gt;deleteListeners();</FONT></TT>）あと、グローバルオブジェクトを保存しています。deleteListenersはMyDialogクラスで定義されています。リスナを非活性化するメソッドです。<BR>
+<BR>
+<BR>
+  <DT><A name="cell"></A><BR>
+３．cell型クラスのメソッド
+  <DD>OZ言語のクラス型には、cell型とclass型があります。cell型のクラスから生成されたオブジェクトだけがネットワークを介したコミュニケーションを行うことができます。そのために、cell型のクラスには、コンストラクタを宣言することができません。システム定義のコンストラクタが起動されます。そして、特別なメソッド、
+  <UL>
+    <LI>initialize
+    <LI>go
+    <LI>quiet
+  </UL>
+を宣言する必要があります。<BR>
+<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD><B>initialize</B></TD>
+      <TD nowrap width="10"></TD>
+      <TD>グローバルオブジェクトが生成されたときに起動されます。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD><B>go</B></TD>
+      <TD></TD>
+      <TD>グローバルオブジェクトが活性化されるときに起動されます。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD><B>quiet</B></TD>
+      <TD></TD>
+      <TD>グローバルオブジェクトが非活性化されるときに起動されます。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+cell型のクラスから生成されたオブジェクトはネットワークを介して世界中からアクセスできるので、グローバルオブジェクトと呼ばれます。<BR>
+<BR>
+<BR>
+cell型クラスの宣言で、上位クラスが指定されない場合、以下のメソッドを持つ暗黙クラスが上位クラスとみなされます。<BR>
+<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>
+      <DL>
+        <DT>protected void initialize()
+        <DD>生成時起動メソッド。<BR>
+暗黙クラスのメソッド本体定義では何も実行しません。
+        <DT>protected void go()
+        <DD>活性時起動メソッド。<BR>
+暗黙クラスのメソッド本体定義では何も実行しません。
+        <DT>protected void quiet()
+        <DD>不活性時起動メソッド<BR>
+暗黙クラスのメソッド本体定義では何も実行しません。
+        <DT>protected final String getName()
+        <DD>グローバルオブジェクト（グローバルオブジェクト）のGODを返すメソッド。
+        <DT>protected final void flushCell()
+        <DD>グローバルオブジェクトを永続化（=保存）するメソッド。
+      </DL>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+  <DT><A name="app"></A><BR>
+補足：cell型クラスのメソッドとOzVMコマンド
+  <DD>「Helloプログラムとその実行」でOzVMを直接利用して、グローバルオブジェクトを生成、起動、停止を行いました。<BR>
+<BR>
+<BR>
+OzVMコマンドファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+hello.ins
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    create hello JP.go.ipa.oz.user.hello.Hello_cl;
+    stop hello;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+(createが生成のコマンド、stopが停止のコマンドです。)<BR>
+<BR>
+OzVMコマンドファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+hello.e
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    go hello;
+    sleep 500;
+    stop hello;
+    ...
+</PRE>
+</TD></TR>
+  </TABLE>
+
+(goが起動のコマンド、stopが停止のコマンドです。)<BR>
+<BR>
+OzVMに対してcreateコマンドが発行されると、グローバルオブジェクトを生成しますが、このとき、cell型クラスのinitializeメソッドが起動されます。同様に、goコマンドが発行されるときにgoメソッドが、stopコマンドが発行されるときにquietメソッドが起動されます。<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<OL>
+  <LI><A href="hello_ele.html">アプリケーションの構成</A>
+  <LI><A href="hello_ide.html">OZ IDE の起動とプロジェクト、サブジェクトの作成</A>
+  <LI><A href="hello_test.html">Testクラス</A><IMG src="red.gif" height="16" width="13">
+  <LI><A href="hello_my.html">MyDialogクラス</A>
+  <LI><A href="hello_quit.html">Quitクラス</A>
+  <LI><A href="hello_compile.html">OZ IDE を利用したコンパイルとテスト実行</A>
+  <LI><A href="hello_s.html">アプリケーションのスクールファイル</A>
+  <LI><A href="hello_go.html">ランチャを利用するグローバルオブジェクトの生成とその活性化</A>
+  <LI><A href="hello_debug.html">OZプログラムのデバック</A>
+  <LI><A href="hello_rel.html">リリースパッケージの配布</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490">
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="hello_ide.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_my.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

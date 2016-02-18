@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.lib_dist.tran._Resource_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, setUserResource, 0x11, V, (LJP.go.ipa.oz.lang._Root_if)
+m, getUserResource, 0x11, LJP.go.ipa.oz.lang._Root_if, ()

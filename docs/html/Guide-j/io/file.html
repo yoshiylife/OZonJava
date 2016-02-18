@@ -1,0 +1,313 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="system.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="byte.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H3>ファイルへの入出力操作</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>ファイルへの入出力
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="stdout"></A><BR>
+１．ファイルへの入出力
+  <DD>ファイルへの入出力のためには、入力ストリームクラス、出力ストリームクラスを使用します。<BR>
+<BR>
+ファイルへの入出力 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    String src = &quot;srcdir&quot;;
+    String dst = &quot;target&quot;;
+
+    <B>File sdir=&gt;breed(src);</B>
+    if (!sdir-&gt;exists() || !sdir-&gt;isDirectory()) {
+        ti-&gt;message(src-&gt;concat(&quot; is BAD&quot;));
+        return false;
+    }
+    <B>File ddir=&gt;breed(dst);</B>
+    Array list = sdir-&gt;list();
+                
+    String filename;
+    Iterator iter = list-&gt;iterator();
+    while (iter-&gt;hasMoreElements()) {
+        filename =| iter-&gt;nextElement();
+         //copy &lt;filename&gt;
+         <B>File sfile=&gt;breed(sdir, filename);</B>
+         <B>File dfile=&gt;breed(ddir, filename);</B>
+         <B>FileInputStream fis;</B>
+         <B><FONT color="#400040">FileOutputStream fos;</FONT></B>
+         try {
+             <B>fis=&gt;breed(sfile);</B>
+             <B><FONT color="#400040">fos=&gt;breed(dfile);</FONT></B>
+             int data;
+             while ((data = <B>fis-&gt;read()</B>) != -1) {
+                  <B><FONT color="#400040">fos-&gt;write(data)</FONT></B>;
+             }
+         } catch (IOException e) {
+             System sys=&gt;create();
+             sys-&gt;println(&quot;IOException read/write is BAD&quot;);                    
+         } finally {
+            <B>fis-&gt;close()</B>;
+            <B><FONT color="#400040">fos-&gt;close()</FONT></B>;
+        }
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+ファイル操作を行うためにファイルディスクリプタオブジェクトを生成します。ファイルディスクリプタオブジェクト（=
+Fileクラスのオブジェクト）を生成するコンストラクタは <B>breed</B> という名前です。引数としてパス名の文字列を渡します。<BR>
+<BR>
+上位クラス： *Root<BR>
+<BR>
+コンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new breed(String arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。引数のパス名で指定したファイル。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(String arg1, String arg2)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。引数はディレクトリ名とファイル名。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(File arg1, String arg2)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。引数はディレクトリとファイル名。</TD></TR>
+  </TABLE>
+
+<BR>
+主なメソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String getName()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ファイル名を答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String getPath()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>パス名を答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean exists()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>存在を判別します。存在すると、trueを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean isDirectory()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ディレクトリの判別を行います。<BR>
+ディレクトリのときtrueを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean canWrite()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>書込みできるかを判別します。<BR>
+書込み可能のときtrueを答えます。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+ファイルを読み込むためには、ファイル記述子を引数にして <B>FileInputStream</B>クラスのオブジェクトを生成します。FileInputStreamクラスのコンストラクタの名前も
+<B>breed</B> です。実際の読込みは <B>read</B> メソッドを使用します。ファイルのクローズは
+<B>close</B> メソッドを使用します。（FileInputStreamクラスはバイト単位で読込みを行うクラスです。）<BR>
+<BR>
+<B>FileInputStream</B>クラス<BR>
+上位クラス： *InputStream<BR>
+<BR>
+コンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new breed(String arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。<BR>
+ファイル名を指定してストリームオブジェクトを生成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(File arg1)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+ファイルオブジェクトを指定してストリームオブジェクトを生成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(FileDescriptor arg1)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+ファイルディスクリプタを指定してストリームオブジェクトを生成します。</TD></TR>
+  </TABLE>
+
+<BR>
+主なメソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public int read()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>バイト入力ストリームから1バイトデータを読み込みます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public int read(ByteArray arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>指定したバイトアレイを使用して、バイト入力ストリームからデータを読み込みます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void close()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>バイト入力ストリームをクローズします。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+ファイルにデータを書き込むためには、ファイル記述子を引数にして <B>FileOutputStream</B>クラスのオブジェクトを生成します。FileInputStreamクラスのコンストラクタの名前も
+<B>breed</B> です。実際の書込みは<B>write</B>メソッドを使用します。引数は書き込むデータです。ファイルのクローズは
+<B>close</B> メソッドを使用します。<BR>
+<BR>
+<B>FileOutputStream</B>クラス<BR>
+上位クラス： *OutputStream<BR>
+<BR>
+コンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new breed(String arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。<BR>
+ファイル名を指定してストリームオブジェクトを生成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(String arg1, boolean arg2)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+ファイル名を指定してストリームオブジェクトを生成します。<BR>
+2つ目の引数が trueのときには、追加で書き込みします。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(File arg1)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+ファイルオブジェクトを指定してストリームオブジェクトを生成します。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">new breed(FileDescriptor arg1)</TD>
+      <TD nowrap></TD>
+      <TD nowrap>コンストラクタ。<BR>
+ファイルディスクリプタを指定してストリームオブジェクトを生成します。</TD></TR>
+  </TABLE>
+
+<BR>
+主なメソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void write(int arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>バイト出力ストリームへデータを書き込みます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void write(ByteArray arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>指定したバイトアレイを使用して、バイト出力ストリームへデータを書き込みます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void close()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>バイト出力ストリームをクローズします。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+  <DT>２．ファイル操作のためのクラス
+  <DD><BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">class FileDescriptor : *Root</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ファイル記述子を表現するクラス。<BR>
+</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">class RandomAccessFile : *Root</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ファイルに対してランダムアクセスするクラス。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">class File : *Root</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ファイルに関する処理を行うクラス。<BR>
+</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">abstract class FilenameFilter : Root</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>ファイル名をフィルタを処理するクラス。抽象クラス。</TD></TR>
+  </TABLE>
+
+  <DT><A name="system"></A><BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="system.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="byte.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

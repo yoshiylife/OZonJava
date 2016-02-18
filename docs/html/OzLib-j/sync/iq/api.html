@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>API of OZ IQ struct</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>同期構造体 API マニュアル</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+<UL>
+<LI>class IStruct
+  <UL>
+  <LI>new create();<BR>
+  IStructを生成する。
+  <LI>public locked void write(Root val);<BR>
+  val の書き込みを行う。<BR>
+  例外 IStructWriteException:二回以上の連続した書き込み
+  <LI>public locked Root read();<BR>
+  読み込みを行う。<BR>
+  例外 IStructReadException:二回以上の連続した読み込み
+  </UL>
+<LI>class QStruct
+  <UL>
+  <LI>new create();<BR>
+  QStructを生成する。
+  <LI>public locked void write(Root val);<BR>
+  val の書き込みを行う。
+  <LI>public locked Root read();<BR>
+  読み込みを行う。
+  </UL>
+</UL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

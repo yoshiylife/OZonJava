@@ -1,0 +1,7 @@
+i, JP.go.ipa.oz.user.secu.AccessControlList_if, 0x0, (JP.go.ipa.oz.lib.standard._Set_if)
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.secu.User_if)
+m, authenticateSameGroup, 0x1, V, ()
+m, add, 0x1, V, (LJP.go.ipa.oz.user.secu.User_if)
+m, asSet, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, ()
+m, authenticate, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, authenticate, 0x1, V, ()

@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.inter.wwps.RemoteExecutor_cl, 0x0, JP.go.ipa.oz.user.inter.wwps.RemoteExecutor_if, JP.go.ipa.oz.lang._Root_cl
+c, create, (), (), (), (594, 15, ())
+m, startForTest, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.OzCGI_if), (JP.go.ipa.oz.user.inter.cgi.OzCGI_if, JP.go.ipa.oz.user.inter.wwps.RemoteReceiver_if, JP.go.ipa.oz.lang._Thread_if), (JP.go.ipa.oz.user.inter.wwps.RemoteReceiver_cl, JP.go.ipa.oz.lang._Thread_cl), (408, 144, ((449, 14, JP.go.ipa.oz.user.inter.wwps.RemoteReceiver_if), (507, 6, JP.go.ipa.oz.lang._Thread_if)))
+m, start, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.OzCGI_if), (JP.go.ipa.oz.user.inter.cgi.OzCGI_if, JP.go.ipa.oz.user.inter.wwps.RemoteReceiver_if, JP.go.ipa.oz.lang._Thread_if), (JP.go.ipa.oz.user.inter.wwps.RemoteReceiver_cl, JP.go.ipa.oz.lang._Thread_cl), (213, 112, ((247, 14, JP.go.ipa.oz.user.inter.wwps.RemoteReceiver_if), (298, 6, JP.go.ipa.oz.lang._Thread_if)))

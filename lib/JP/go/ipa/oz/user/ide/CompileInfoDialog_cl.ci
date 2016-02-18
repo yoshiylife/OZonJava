@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.ide.CompileInfoDialog_cl, 0x0, JP.go.ipa.oz.user.ide.CompileInfoDialog_if, JP.go.ipa.oz.lib.standard._Dialog_cl
+a, editCtrl, 0x0, LJP.go.ipa.oz.user.ide.CompileInfoActionListener_if, 596, 35
+a, txtInfo, 0x0, LJP.go.ipa.oz.lib.standard._TextArea_if, 560, 17
+a, btnOK, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 580, 13
+c, create, (LJP.go.ipa.oz.lib.standard._Frame_if, Z, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Frame_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, JP.go.ipa.oz.lib.standard._BorderLayout_if, JP.go.ipa.oz.lib.standard._FlowLayout_if, JP.go.ipa.oz.lib.standard._Panel_if), (JP.go.ipa.oz.lib.standard._Dialog_cl, JP.go.ipa.oz.lib.standard._BorderLayout_cl, JP.go.ipa.oz.lib.standard._TextArea_cl, JP.go.ipa.oz.lib.standard._Button_cl, JP.go.ipa.oz.lib.standard._FlowLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.user.ide.CompileInfoActionListener_cl), (751, 677, ((880, 12, JP.go.ipa.oz.lib.standard._BorderLayout_if), (1071, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (1108, 5, JP.go.ipa.oz.lib.standard._Panel_if)))
+m, setButtonEnabled, 0x1, V, (Z), (), (), (3090, 70, ())
+m, appendText, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2878, 107, ())
+m, getTxtInfo, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2699, 62, ())
+m, setTxtInfo, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2522, 66, ())
+m, setVisible, 0x1, V, (Z), (JP.go.ipa.oz.lib.standard._Rectangle_if, JP.go.ipa.oz.lib.standard._Container_if), (), (1618, 311, ((1659, 9, JP.go.ipa.oz.lib.standard._Rectangle_if), (1709, 9, JP.go.ipa.oz.lib.standard._Rectangle_if)))

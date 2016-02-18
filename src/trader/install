@@ -1,0 +1,19 @@
+
+ozc -i -s t.s Debug.oz
+ozc -i -s t.s UserBroker.oz
+ozc -i -s t.s UserSvcReq.oz
+ozc -i -s t.s Broker.oz
+ozc -i -s t.s SvcReq.oz
+ozc -i -s t.s Trader.oz
+ozc -i -s t.s setAttr.oz
+ozc -i -s t.s TraderStub.oz
+
+ozc  -s t.s Debug.oz
+ozc  -s t.s UserBroker.oz
+ozc  -s t.s UserSvcReq.oz
+ozc  -s t.s Broker.oz
+ozc  -s t.s SvcReq.oz
+ozc  -s t.s Trader.oz
+ozc  -s t.s setAttr.oz
+ozc  -s t.s TraderStub.oz
+

@@ -1,0 +1,99 @@
+#!/bin/sh -e
+#
+# Copyright(c) 1996-1998
+# IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+#
+# All rights reserved.  No guarantee.
+# This technology is a result of the Advanced Software  Enrichment 
+# Project of Information-technology Promotion Agency, Japan (IPA).
+#
+# Permissions  to  use,  copy, modify and distribute this software
+# are governed by the terms and conditions set forth in  the  file 
+# COPYRIGHT, located on the top directory of this software.
+#
+
+cmd_name=$0;
+main_class=JP.go.ipa.oz.system.Executor;
+java_cmd=java;
+ozex_mode=;
+#java_cmd=jre; # need CLASSPATH=jdk/classes;
+java_opts=-noverify;
+ozex_opts=;
+ozhome=${OZHOME:=$HOME/oz};
+CLASSPATH=${CLASSPATH}${CLASSPATH:+:}$ozhome/lib;
+export CLASSPATH;
+
+# Java opt
+for opt in $*
+do
+	case $opt in
+		-help)				java_opts="$java_opts $opt"; ozex_mode=shell; shift;;
+		-version)			java_opts="$java_opts $opt"; ozex_mode=shell; shift;;
+		-verbose)			java_opts="$java_opts $opt"; shift;;
+		-debug)				java_opts="$java_opts $opt"; shift;;
+		-noasyncgc)			java_opts="$java_opts $opt"; shift;;
+		-verbosegc)			java_opts="$java_opts $opt"; shift;;
+		-noclassgc)			java_opts="$java_opts $opt"; shift;;
+		-cs | -checksource)	java_opts="$java_opts $opt"; shift;;
+		-ss*)				java_opts="$java_opts $opt"; shift;;
+		-oss*)				java_opts="$java_opts $opt"; shift;;
+		-ms*)				java_opts="$java_opts $opt"; shift;;
+		-mx*)				java_opts="$java_opts $opt"; shift;;
+		-D*)				java_opts="$java_opts $opt"; shift;;
+		-classpath)			java_opts="$java_opts $opt"; shift;
+							java_opts="$java_opts $1"; shift;;
+		-prof)				java_opts="$java_opts $opt"; shift;;
+		-verify)			java_opts="$java_opts $opt"; shift;;
+		-verifyremote)		java_opts="$java_opts $opt"; shift;;
+		-noverify)			java_opts="$java_opts $opt"; shift;;
+		-G)					java_cmd=java_g; shift;
+							for opt_g in $*
+							do
+								case $opt_g in
+									-t)		java_opts="$java_opts $opt_g"; shift;;
+									-tm)	java_opts="$java_opts $opt_g"; shift;;
+									*)		break;;
+								esac
+							done
+							;;
+		*)					break;;
+	esac
+done
+
+# Executor option
+for opt in $*
+do
+	case $opt in
+		-i)	ozex_opts="$ozex_opts $opt"; ozex_mode=shell; shift;;
+		-s)	ozex_opts="$ozex_opts $opt"; shift;;
+		-q)	ozex_opts="$ozex_opts $opt"; shift;;
+		-e)	ozex_opts="$ozex_opts $opt"; shift;;
+		-f)	ozex_opts="$ozex_opts $opt"; ozex_mode=shell; shift;
+			ozex_opts="$ozex_opts $1"; shift;;
+		-g)	ozex_opts="$ozex_opts $opt"; shift;;
+		-v)	ozex_opts="$ozex_opts $opt"; shift;;
+		-h)	ozex_opts="$ozex_opts $opt"; ozex_mode=shell; shift;;
+		-t)	ozex_opts="$ozex_opts $opt"; shift;;
+		-n)	ozex_opts="$ozex_opts $opt"; shift;;
+		-*) echo "Invalid option: $opt"; exit 1;;
+		*)	break;;
+	esac
+done
+
+case $ozex_mode in
+	shell)
+		cmd="$java_cmd $java_opts -Doz.home=$ozhome $main_class $ozex_opts $cmd_name $*";
+		eval "exec $cmd";
+		;;
+	*)
+		if [ $# -lt 1 ]
+		then
+			echo "Usage: oz <god> [arg1 [arg2 [...]]]";
+			exit 1;
+		fi
+		god=$1; shift;
+		cmd="$java_cmd $java_opts -Doz.home=$ozhome $main_class $ozex_opts -o $god $cmd_name $*";
+		eval "exec $cmd";
+esac
+
+#end of file

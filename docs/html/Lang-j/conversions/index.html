@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="../expressions/assign.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="kinds.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H2>型変換（Type Conversions）<BR>
+</H2>
+<BR clear="all">
+<P>
+ここでは、OZ言語の型変換について説明しています。<BR>
+<BR>
+<BR>
+OZ言語ではすべての式は型を持っています。演算子や文の構造が特定の型を要求します。その型と一致した型を持つものでなければ認められない場合もありますが、代入等価な型に解釈されて実行可能な場合もあります。演算子、メソッド起動とその戻り値、仮引数と実引数は型の等価性が要求されます。<BR>
+<BR>
+OZ言語の型変換には5つの種類があります。
+</P>
+<UL>
+  <LI>恒等変換 (Identity conversions)
+  <LI>基本型のワイドニング変換 (Widening primitive conversions)
+  <LI>基本型のナローイング変換 (Narrowing primitive conversions)
+  <LI>クラス型のワイドニング変換 (Widening class conversions)
+  <LI>クラス型のナローイング変換 (Narrowing class conversions)
+</UL>
+<P>
+<BR>
+以下の2つの場面で型変換が行われます。<BR>
+</P>
+<UL>
+  <LI>代入変換
+  <LI>メソッド起動変換
+</UL>
+<P>
+<BR>
+<BR>
+OZ言語には、キャスト演算子はありませんが、それに代替するものとして強制代入演算子があります。強制代入演算子のために、基本型やクラス型の代入が容易になっています。
+</P>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="554"><BR>
+<BR>
+<BR>
+</P>
+<UL>
+  <LI><A href="kinds.html">型変換の種類</A><BR>
+<BR>
+  <LI><A href="equiv.html">型の等価性と代入変換規則</A><BR>
+<BR>
+  <LI><A href="conv.html">メソッド起動変換規則</A><BR>
+<BR>
+  <LI><A href="prom.html">数値の昇格</A>
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="../expressions/assign.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="kinds.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

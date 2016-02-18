@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.misc.gui.StringInputDialog_if, 0x0, (JP.go.ipa.oz.user.misc.gui.CenteredDialog_if)
+m, setString, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, clear, 0x1, V, ()
+m, addStringInputListener, 0x1, V, (LJP.go.ipa.oz.user.misc.gui.StringInputListener_if)
+m, getInputString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

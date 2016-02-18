@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.inter.cgi.OzCGIPropertyReader_if, 0x0, (JP.go.ipa.oz.user.inter.cgi.FilePropertyReader_if)
+m, getPort, 0x1, I, ()
+m, read, 0x1, V, ()

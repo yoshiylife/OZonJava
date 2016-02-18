@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="nntp.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="protocolrec.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>NetworkClient クラスの使い方<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+NetworkClient クラスは任意の通信プロトコルを扱うクラスを実現するためのクラスです。<BR>
+<BR>
+インタネット上の標準的な通信プロトコルを扱うクラスは、NetworkProtocol クラスを利用して実装することができます。NetworkProtocol
+クラスで仮定しているプロトコルの条件を満たさないプロトコルの場合には、このクラスを上位実装クラスとして継承して利用することができます。<BR>
+<BR>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>NetworkClientクラスのコンストラクタ
+  <LI>NetworkClientクラスのメソッド
+  <LI>NetworkClientクラスの使用方法
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>１．NetworkClientクラスの上位クラスとコンストラクタ
+  <DD><BR>
+  <DL>
+    <DT>abstract class NetworkClient {...}
+    <DD>明示的な上位クラスは宣言していません。<BR>
+<BR>
+  </DL>
+  <TABLE>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">
+<PRE>
+new create (String send_format, 
+            String recv_format, 
+            String lt,
+            int port)
+</PRE>
+</TD>
+      <TD nowrap></TD>
+      <TD nowrap>send_format： コマンドデータフォーマット<BR>
+recv_format： レスポンスデータのフォーマット<BR>
+lt： 終端文字列<BR>
+port：デフォルトポート番号</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new create ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>２．NetworkClientクラスのメソッド
+  <DD><BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String connect (String h, int p)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サーバへの接続。ポート指定。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String connect (String host)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サーバへの接続。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String sendCommand ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コマンドの送信とその戻り値の受信。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String sendData (String data)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>データの送信とその戻り値の受信。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String getResponse ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>レスポンスデータの受信。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">protected String readResponse ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">protected String moreResponse ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public void setTimeout (int t)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public int getTimeout ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>３．NetworkClientクラスの使用方法
+  <DD><BR>
+このクラスを継承する下位クラスを宣言して使用します。<BR>
+<BR>
+<B>コンストラクタ宣言</B>では、以下の4つの引数を指定してこのクラスのコンストラクタcretaeを起動してください。<BR>
+<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="30"></TD>
+      <TD>
+      <DL>
+        <DT>第１引数：コマンドデータのフォーマット
+        <DD><BR>
+コマンドデータとして送信するデータのフォーマットを指定する文字列を設定します。<BR>
+フォーマットは、英数文字からなる文字列をコマンドデータの属性のラベルとして、その他を属性の区切り文字として抽出する。<BR>
+<BR>
+コマンドデータの中のコマンド名は、COMMAND というラベルで指定します。<BR>
+<BR>
+        <DT>第2引数：レスポンスデータのフォーマット
+        <DD><BR>
+レスポンスデータとして受信するデータのフォーマットを指定する文字列を設定します。<BR>
+フォーマットは、英数文字からなる文字列をレスポンスデータの属性のラベルとして、その他を属性の区切り文字として抽出する。<BR>
+<BR>
+レスポンスデータの中のステータスコードは、STATUS というラベルで指定します。<BR>
+<BR>
+        <DT>第3引数：送受信データの終端文字列
+        <DD><BR>
+        <DT>第4引数：ポート番号
+        <DD><BR>
+そのプロトコルで使用する well-known なポート番号を設定します。<BR>
+<BR>
+      </DL>
+</TD></TR>
+  </TABLE>
+
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">NetworkProtocolクラスのコンストラクタ
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    abstract class NetworkProtocol : *NetworkClient { 
+        new create (int port) {
+            <B>super=&gt;create (&quot;COMMAND PARAM&quot;,</B>
+                           <B>&quot;STATUS MESSAGE&quot;,</B>
+                           <B>&quot;\r\n&quot;,</B>
+                           <B>port);</B>
+        }
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+通信の開始、コマンドデータの送信、データのみの送信、レスポンスデータの受信、通信路の制御のためのメソッドを使用できます。<BR>
+<BR>
+  <DL>
+    <DT><B>通信の開始</B>
+    <DD><BR>
+well-known のポート番号を利用する場合は、接続先ホスト名のみを引数として与えるconnect
+メソッド <TT><FONT color="#400040">public String connect (String host)</FONT></TT>
+を利用してください。<BR>
+<BR>
+well-known のポート番号を利用しない場合は、接続先ホスト名とポート番号を引数として与えるconnect
+メソッド <TT><FONT color="#400040">public String connect (String h, int
+p)</FONT></TT> を利用してください。<BR>
+<BR>
+<BR>
+    <DT><B>コマンドデータの送信</B>
+    <DD><BR>
+コマンドデータの送信には、ProtocolRecord クラスのアトリビュートを利用します。<BR>
+<BR>
+ProtocolRecord クラスのインスタンスである record アトリビュートに、送信するコマンドデータ（コマンド文字列、パラメータなど）を設定し、sendCommand
+メソッドによって送信します。<BR>
+<BR>
+<BR>
+    <DT><B>データのみの送信</B>
+    <DD><BR>
+例えば SMTP プロトコルの、DATA コマンドでは送信するデータはコマンドデータの送信とは別に扱います。このような場合のデータの送信には、sendData
+メソッドを利用します。<BR>
+<BR>
+sendData メソッドはデータの送信の前に、フックメソッド encodeData を呼び出すようになっています。送信するデータに付加的な処理が必要な場合には、下位クラスで再定義することによって、その処理を実装します。<BR>
+<BR>
+<BR>
+    <DT><B>レスポンスデータの受信</B>
+    <DD><BR>
+送信したデータに対するレスポンスデータを受信し、それをレスポンスデータのフォーマットにしたがってデコードする処理を、readResponse
+メソッドによって行うことができます。<BR>
+レスポンスデータが複数行からなる場合には、2行目以降のデータを moreResponse
+メソッドによって受信します。<BR>
+<BR>
+受信したレスポンスデータ中のステータスコードについては、デコード後 getResponse
+メソッドによって取り出すことができるようになっています。<BR>
+<BR>
+<BR>
+    <DT><B>通信路の制御</B>
+    <DD><BR>
+通信路における読み出しのタイムアウト値（ミリ秒）を setTimeout メソッドで設定できます。<BR>
+そして、getTimeout メソッドによりその値の参照ができます。<BR>
+  </DL>
+<BR>
+<BR>
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">NetworkProtocolクラス
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    abstract class NetworkProtocol : *NetworkClient {  
+        new create (int port) {
+            super=&gt;create (&quot;COMMAND PARAM&quot;,
+                           &quot;STATUS MESSAGE&quot;,
+                           &quot;\r\n&quot;,
+                           port);
+        }
+
+        protected String sendCommand (String command, String param) {
+            record-&gt;setCommand (command);
+            record-&gt;set (&quot;PARAM&quot;, param);
+            return sendCommand ();
+        }
+ 
+        protected String sendCommand (String command) {
+            return sendCommand (command, null);
+        }
+
+        public String sendCommand () {
+            return super-&gt;sendCommand ();
+        }
+
+        protected String recvMultilineResponse () {
+            if (!isLastLine (getResponse ())) {
+                while (!isLastLine (moreResponse ()));
+            }
+            return decodeResponse (record-&gt;getStatus ());
+        }
+
+        protected String decodeResponse (String data) {
+            return data; 
+        }
+
+        protected abstract boolean isLastLine (String data);
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="nntp.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="protocolrec.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

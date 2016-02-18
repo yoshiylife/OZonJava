@@ -1,0 +1,14 @@
+#!/bin/csh -f
+#
+# CGI for OZ Application Gateway
+#
+# Host name and port number of Application gateway
+
+ set AGHOST=host_name
+ set AGPORT=0
+
+# Absolute path of ozcgi
+ set CGIPROG=/usr/local/bin/ozcgi
+
+## Never edit line below
+$CGIPROG $AGHOST $AGPORT

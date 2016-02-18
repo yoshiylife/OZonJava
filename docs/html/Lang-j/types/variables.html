@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="reference.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../classes/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>変数<B>（Variables）</B><BR>
+</H3>
+<BR clear="all">
+<P>
+変数とはプログラムにおけるストレージ（storage）で、必ず1つの型を持っています。<BR>
+<BR>
+<BR>
+型に注目すると、変数は2種類に分類することができます。基本型の変数とクラス型の変数です。基本型（primitive
+type） の変数は、１つの基本型の値を常時保持しています。クラス型の変数は、変数の型に適合するクラス型のオブジェクトへのリファレンス、あるいは、<TT>null</TT>を保持しています。<BR>
+<BR>
+<BR>
+使用方法に注目すると、変数を5種類に分類することができます。
+</P>
+<UL>
+  <LI><I>インスタンス変数</I><BR>
+インスタンス変数は、クラス宣言の中のアトリビュートのことです。<BR>
+<BR>
+  <LI><I>メソッド引数</I><BR>
+メソッドに引き渡される値の名前として定義されます。<BR>
+<BR>
+  <LI><I>コンストラクタ引数</I><BR>
+コンストラクタに引き渡される値の名前として定義されます。<BR>
+<BR>
+  <LI><I>例外ハンドラ引数</I><BR>
+try文のcatch節で宣言されます。<BR>
+<BR>
+  <LI><I>ローカル変数</I><BR>
+ローカル変数宣言文あるいはfor文の中で宣言された変数です。<BR>
+<BR>
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>変数の初期化</B><BR>
+<BR>
+インスタンス変数はオブジェクト生成時に初期化されます。<BR>
+<BR>
+基本型とクラス型のデフォルトの初期値を以下の表に示します。<BR>
+</P>
+<CENTER>
+<TABLE border="1" cellpadding="3">
+  <TR>
+    <TH>型</TH>
+    <TH>デフォルト値</TH></TR>
+  <TR>
+    <TD width="70">byte型</TD>
+    <TD align="center">0</TD></TR>
+  <TR>
+    <TD>short型</TD>
+    <TD align="center">0</TD></TR>
+  <TR>
+    <TD>int型</TD>
+    <TD align="center">0</TD></TR>
+  <TR>
+    <TD>long型</TD>
+    <TD align="center">0</TD></TR>
+  <TR>
+    <TD>float型</TD>
+    <TD align="center">0.0f</TD></TR>
+  <TR>
+    <TD>double型</TD>
+    <TD align="center">0.0</TD></TR>
+  <TR>
+    <TD>char型</TD>
+    <TD align="center">\u0000</TD></TR>
+  <TR>
+    <TD>bool型</TD>
+    <TD align="center">false</TD></TR>
+  <TR>
+    <TD>クラス型</TD>
+    <TD align="center">null</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<BR>
+その他の変数の初期化を説明します。<BR>
+<BR>
+</P>
+<DL>
+  <DT>インスタンス変数
+  <DD>そのクラスのメソッド本体の定義、コンストラクタ本体の定義中で有効です。<BR>
+<BR>
+  <DT>メソッド引数
+  <DD>メソッドが起動された（invoke）ときに、引き渡された値で初期化されます。<BR>
+<BR>
+  <DT>コンストラクタ引数
+  <DD>インスタンス生成式、あるいは、明示的なコンストラクタの呼出しで初期化されます。<BR>
+<BR>
+  <DT>例外ハンドラ引数
+  <DD>例外を表わすオブジェクトで初期化されます。<BR>
+<BR>
+  <DT>ローカル変数
+  <DD>宣言時の初期化（initialization）、あるいは、代入（assignment）によって値が設定されます。
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>変数の名前のスコープ</B><BR>
+変数の名前は種類ごとに異なるスコープを持っています。<BR>
+<BR>
+</P>
+<DL>
+  <DT>メソッド引数名
+  <DD>そのメソッド本体の定義の中で有効です。<BR>
+<BR>
+  <DT>コンストラクタ引数名
+  <DD>そのコンストラクタ本体の定義の中で有効です。<BR>
+<BR>
+  <DT>例外ハンドラ引数名
+  <DD>そのcatch節の複文で有効です。<BR>
+<BR>
+  <DT>ローカル変数
+  <DD>宣言された複文で有効です。（但し、その宣言文以降に有効になります。）
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>変数の動的な型</B>
+</P>
+<P>
+クラス型は動的な型を持つと言われます。クラス型は実行時に宣言クラス型のインスタンスだけではなくその下位クラスのインスタンスも参照することができます。<BR>
+それに対して基本型の変数は、実行時にも宣言されたときと同じ型を持っています。<BR>
+<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="reference.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../classes/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

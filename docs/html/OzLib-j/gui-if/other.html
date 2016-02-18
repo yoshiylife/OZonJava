@@ -1,0 +1,3558 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>GUI Interface</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>その他の画面構成部品</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<UL><LI><B>class Component : *ImageObserver, MenuContainer, Serializable</B><BR>
+OZにおけるGUIコンポーネント
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newComponent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(PopupMenu arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ポップアップメニューをコンポーネントに追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ポップアップメニュー
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addComponentListener(ComponentListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントからイベントを受け取る ComponentListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ComponentListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addFocusListener(FocusListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントからイベントを受け取る FocusListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>FocusListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addKeyListener(KeyListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントからイベントを受け取る KeyListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>KeyListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addMouseListener(MouseListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントからイベントを受け取る MouseListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>MouseListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addMouseMotionListener(MouseMotionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントからイベントを受け取る MouseMotionListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>MouseMotionListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントのピアを作成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean contains(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントが指定した座標を含むかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら座標を含む。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean contains(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントが指定した座標を含むかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら座標を含む。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void dispatchEvent(AWTEvent arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>イベントをコンポーネント内に配送する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>イベント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void doLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを配置する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isEnabled()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントが使用できるかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら使用可能
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isFocusTraversable()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントがキーによるフォーカス移動ができるかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真ならキーによるフォーカス移動可能
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isShowing()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントが表示されているかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら表示中
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isValid()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントが有効かどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら有効
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isVisible()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントが表示可能かどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら表示可能
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public float getAlignmentX()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>軸方向の配置方法を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>float</STRONG>
+<DD>0 から 1 の間の相対値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public float getAlignmentY()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>軸方向の配置方法を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>float</STRONG>
+<DD>0 から 1 の間の相対値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color getBackground()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>背景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>背景色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Rectangle getBounds()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの境界を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Rectangle</STRONG>
+<DD>境界情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Component getComponentAt(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標を含んでいるコンポーネントまたはサブコンポーネントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Component</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Component getComponentAt(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標を含んでいるコンポーネントまたはサブコンポーネントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Component</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Cursor getCursor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントに対応したカーソルを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Cursor</STRONG>
+<DD>カーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Font getFont()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントに対応したフォントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Font</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Color getForeground()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>前景色を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Color</STRONG>
+<DD>前景色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Point getLocation()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Point</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Point getLocationOnScreen()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクリーンを基準にしたコンポーネントの位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Point</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMaximumSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの最大サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMinimumSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの最小サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getName()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの名前を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>名前
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Container getParent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>親コンポーネントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Container</STRONG>
+<DD>親コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getPreferredSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの推奨サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントのサイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void invalidate()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを無効にする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void list()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>標準出力に一覧を出力する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void list(PrintWriter arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された PrintWriter に一覧を出力する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>PrintWriter
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void list(PrintWriter arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された PrintWriter に字下げつきで一覧を出力する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>PrintWriter
+    <DT><STRONG>arg2</STRONG>
+<DD>字下げ幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void paint(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>描画領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void paintAll(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントとそのサブコンポーネントを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>描画領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void print(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを印刷する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>印刷領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void printAll(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントとそのサブコンポーネントを印刷する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>印刷領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(MenuComponent arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントからポップアップメニューを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ポップアップメニュー
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeComponentListener(ComponentListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントから ComponentListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ComponentListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeFocusListener(FocusListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントから FocusListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>FocusListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeKeyListener(KeyListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントから KeyListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>KeyListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeMouseListener(MouseListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントから MouseListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>MouseListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeMouseMotionListener(MouseMotionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントから MouseMotionListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>MouseMotionListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントからピアを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void repaint()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを再描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void repaint(long arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを再描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>更新間隔(ms)
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void repaint(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの一部を再描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void repaint(long arg1, int arg2, int arg3, int arg4, int arg5)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの一部を再描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>更新間隔(ms)
+    <DT><STRONG>arg2</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg4</STRONG>
+<DD>幅
+    <DT><STRONG>arg5</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void requestFocus()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フォーカスを要求する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setBackground(Color arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>背景色を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>背景色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setBounds(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>境界を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+    <DT><STRONG>arg3</STRONG>
+<DD>幅
+    <DT><STRONG>arg4</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setBounds(Rectangle arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>境界を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>境界情報
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setCursor(Cursor arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>カーソルを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>カーソル
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setEnabled(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの使用可能状態を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>
+      <DL ><DT><STRONG>true</STRONG>
+<DD>使用可
+      <DT><STRONG>false</STRONG>
+<DD>使用不可
+
+ </DL> 
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setFont(Font arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントのフォントを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>フォント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setForeground(Color arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>前景色を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>前景色
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLocation(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLocation(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの位置を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setName(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの名前を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>名前
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSize(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントのサイズを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>幅
+    <DT><STRONG>arg2</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setSize(Dimension arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントのサイズを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setVisible(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントの表示状態を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>
+      <DL ><DT><STRONG>true</STRONG>
+<DD>表示可
+      <DT><STRONG>false</STRONG>
+<DD>表示不可
+
+ </DL> 
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void transferFocus()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>次のコンポーネントにフォーカスを移す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void update(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを更新する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>更新領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Container : *Component</B><BR>
+他のコンポーネントを含むことができるコンポーネント
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newContainer()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Component add(Component arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナにコンポーネントを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Component</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Component add(String arg1, Component arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナにコンポーネントを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>名前
+    <DT><STRONG>arg2</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Component</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Component add(Component arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントリストの指定された位置にコンポーネントを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コンポーネント
+    <DT><STRONG>arg2</STRONG>
+<DD>指定位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Component</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(Component arg1, Root arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>配置条件に従いコンポーネントを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コンポーネント
+    <DT><STRONG>arg2</STRONG>
+<DD>配置条件
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(Component arg1, Root arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>配置条件に従い指定された位置にコンポーネントを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コンポーネント
+    <DT><STRONG>arg2</STRONG>
+<DD>配置条件
+    <DT><STRONG>arg3</STRONG>
+<DD>指定位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addContainerListener(ContainerListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナからイベントを受け取る ContainerListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ContainerListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナのピアを作成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void doLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナを配置する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public float getAlignmentX()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>軸方向の配置方法を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>float</STRONG>
+<DD>0 から 1 の間の相対値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public float getAlignmentY()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>軸方向の配置方法を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>float</STRONG>
+<DD>0 から 1 の間の相対値
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Component getComponent(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナ内の指定されたコンポーネントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>リスト内の位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Component</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Component getComponentAt(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標を含んでいるコンポーネントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Component</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Component getComponentAt(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された座標を含んでいるコンポーネントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Component</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getComponentCount()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナ内のコンポーネント数を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>コンポーネント数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Array getComponents()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナ内の全コンポーネントを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Array</STRONG>
+<DD>全コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Insets getInsets()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナのインセットを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Insets</STRONG>
+<DD>インセット
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public LayoutManager getLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナのレイアウトマネージャを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>LayoutManager</STRONG>
+<DD>レイアウトマネージャ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMaximumSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナの最大サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMinimumSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナの最小サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getPreferredSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナの推奨サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void invalidate()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナを無効にする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isAncestorOf(Component arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントがコンテナに含まれているかを評価する。 
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら含まれる。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void list(PrintWriter arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された PrintWriter に字下げつきで一覧を出力する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>PrintWriter
+    <DT><STRONG>arg2</STRONG>
+<DD>字下げ幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void paint(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>描画領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void paintComponents(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナ内のコンポーネントを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>描画領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void print(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナを印刷する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>印刷領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void printComponents(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナ内のコンポーネントを印刷する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>印刷領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定位置のコンポーネントを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>指定位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(Component arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたコンポーネントを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コンポーネント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeAll()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>全コンポーネントを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeContainerListener(ContainerListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナから ContainerListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ContainerListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナからピアを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLayout(LayoutManager arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナのレイアウトマネージャを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>レイアウトマネージャ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setDefaultLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>デフォルトのレイアウトマネージャを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void validate()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナを有効にする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Canvas : *Component</B><BR>
+キャンバスコンポーネント
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newCanvas()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャンバスを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャンバスのピアを作成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void paint(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>キャンバスを描画する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>描画領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Choice : *Component, ItemSelectable</B><BR>
+選択用ポップアップメニュー
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newChoice()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択用ポップアップメニューを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択用ポップアップメニューに項目を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addItem(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択用ポップアップメニューに項目を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addItemListener(ItemListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択用ポップアップメニューからイベントを受け取る ItemListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ItemListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択用ポップアップメニューのピアを作成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getItem(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の項目を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getItemCount()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>項目数を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>項目数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getSelectedIndex()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されている項目の位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getSelectedItem()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されている項目を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Collection getSelectedObjects()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されている項目のコレクションを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Collection</STRONG>
+<DD>コレクション
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void insert(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置に項目を挿入する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+    <DT><STRONG>arg2</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeAll()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>全項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeItemListener(ItemListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択用ポップアップメニューから ItemListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ItemListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void select(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の項目を選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void select(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された項目を選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class List : *Component, ItemSelectable</B><BR>
+スクロール可能なリスト
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newList()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newList(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された表示行数のリストを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>表示行数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newList(int arg1, boolean arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された表示行数と複数行選択の指定を持つリストを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>表示行数
+    <DT><STRONG>arg2</STRONG>
+<DD>複数行選択の可不可
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストに項目を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void add(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストの指定された位置に項目を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+    <DT><STRONG>arg2</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addActionListener(ActionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストからイベントを受け取る ActionListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ActionListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addItem(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストに項目を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addItem(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストの指定された位置に項目を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+    <DT><STRONG>arg2</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addItemListener(ItemListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストからイベントを受け取る ItemListener を追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ItemListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストのピアを作成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void delItem(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストの指定された位置の項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void deselect(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストの指定された位置の項目を選択解除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getItem(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストの指定された位置の項目を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getItemCount()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>項目数を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>項目数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Collection getItems()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>全項目のコレクションを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Collection</STRONG>
+<DD>コレクション
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMinimumSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストの最小サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getMinimumSize(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された行数のリストの最小サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>リストの最小行数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getPreferredSize(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された行数のリストの推奨サイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>リストの推奨行数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getRows()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>表示行数を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>表示行数
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getSelectedIndex()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されている項目の位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Collection getSelectedIndexes()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されている全項目の位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Collection</STRONG>
+<DD>コレクション
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getSelectedItem()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されている項目を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Collection getSelectedItems()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されている全項目のコレクションを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Collection</STRONG>
+<DD>コレクション
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Collection getSelectedObjects()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>選択されている全項目のコレクションを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Collection</STRONG>
+<DD>コレクション
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getVisibleIndex()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>メソッド makeVisible によって最後に表示された項目の位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isIndexSelected(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の項目が選択されているかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら選択されている。
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public boolean isMultipleMode()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>複数行選択モードかどうかを評価する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>boolean</STRONG>
+<DD>真なら複数行選択モード
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void makeVisible(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の項目を強制的に表示する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>項目
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void remove(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeActionListener(ActionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストから ActionListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ActionListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeAll()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>全項目を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeItemListener(ItemListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストから ItemListener を削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ItemListener
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>リストからピアを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void replaceItem(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の項目を置換する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>新しい項目
+    <DT><STRONG>arg2</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void select(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置の項目を選択する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setMultipleMode(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>複数行選択モードを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>
+      <DL ><DT><STRONG>true</STRONG>
+<DD>複数行選択モード
+      <DT><STRONG>false</STRONG>
+<DD>一行選択モード
+
+ </DL> 
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class Panel : *Container</B><BR>
+パネルコンテナ
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPanel()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>パネルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newPanel(LayoutManager arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したレイアウトマネージャをもつパネルを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>レイアウトマネージャ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>パネルのピアを作成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class ScrollPane : *Container</B><BR>
+単一のコンポーネントに自動水平または垂直スクロールを実装するコンテナ
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newScrollPane()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールペインを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newScrollPaneWithScrollbars()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールバーつきのスクロールペインを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newScrollPaneWithNoScrollbars()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールバーなしのスクロールペインを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getSCROLLBARS_AS_NEEDED()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>必要時にスクロールバーを表示するという表示方針を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>表示方針
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getSCROLLBARS_ALWAYS()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>常にスクロールバーを表示するという表示方針を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>表示方針
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final int getSCROLLBARS_NEVER()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>常にスクロールバーを表示しないという表示方針を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>表示方針
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールペインのピアを作成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラス固有の情報を文字列として返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>クラス固有の情報を示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void doLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールペインを配置する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Adjustable getHAdjustable()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>水平スクロールバーの状態を表すオブジェクトを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Adjustable</STRONG>
+<DD>Adjustable オブジェクト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getHScrollbarHeight()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>水平スクロールバーの高さを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>高さ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getScrollbarDisplayPolicy()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールバーの表示方針を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>表示方針
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Point getScrollPosition()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ビューポート内のコンポーネントの表示位置を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Point</STRONG>
+<DD>表示位置
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Dimension getViewportSize()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ビューポートのサイズを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Dimension</STRONG>
+<DD>サイズ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public Adjustable getVAdjustable()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>垂直スクロールバーの状態を表すオブジェクトを返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>Adjustable</STRONG>
+<DD>Adjustable オブジェクト
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public int getVScrollbarWidth()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>垂直スクロールバーの幅を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>int</STRONG>
+<DD>幅
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String paramString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンテナのパラメータ文字列を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>String</STRONG>
+<DD>パラメータ文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void printComponents(Graphics arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>コンポーネントを印刷する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>印刷領域
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final void setLayout(LayoutManager arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>スクロールペインのレイアウトマネージャを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>レイアウトマネージャ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public final void setDefaultLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>デフォルトのレイアウトマネージャを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setScrollPosition(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置へスクロールする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>X 座標
+    <DT><STRONG>arg2</STRONG>
+<DD>Y 座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setScrollPosition(Point arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された位置へスクロールする。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>座標
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<UL><LI><B>class LayoutManager : Root</B><BR>
+コンテナのレイアウトマネージャ
+
+<P>
+<B>メソッド</B><BR>
+なし
+<P>
+<B>備考</B>
+<UL><LI> インタフェースのみ継承可能である。
+</UL></UL>
+
+<UL><LI><B>class LayoutManager2 : LayoutManager</B><BR>
+コンテナの拡張レイアウトマネージャ
+
+<P>
+<B>メソッド</B><BR>
+なし
+<P>
+<B>備考</B>
+<UL><LI> インタフェースのみ継承可能である。
+</UL></UL>
+
+<UL><LI><B>class BorderLayout : *Root, LayoutManager2</B><BR>
+TNT スタイルのボーダーレイアウト
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newBorderLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ボーダーレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newBorderLayout(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ギャップを指定して、ボーダーレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>水平ギャップ
+    <DT><STRONG>arg2</STRONG>
+<DD>垂直ギャップ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+<B>メソッド</B><BR>
+なし
+</UL>
+
+<UL><LI><B>class CardLayout : *Root, LayoutManager2</B><BR>
+複数のカードを持つコンテナ用のレイアウトマネージャ
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newCardLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>カードレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newCardLayout(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ギャップを指定して、カードレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>水平ギャップ
+    <DT><STRONG>arg2</STRONG>
+<DD>垂直ギャップ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B><BR>
+なし
+</UL>
+
+<UL><LI><B>class FlowLayout : *Root, LayoutManager</B><BR>
+左から右に向かってボタンを配置するレイアウトマネージャ
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newFlowLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>フローレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newFlowLayout(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アラインメントを指定して、フローレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>アラインメント
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newFlowLayout(int arg1, int arg2, int arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アラインメントとギャップを指定して、フローレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>アラインメント
+    <DT><STRONG>arg2</STRONG>
+<DD>水平ギャップ
+    <DT><STRONG>arg3</STRONG>
+<DD>垂直ギャップ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B><BR>
+なし
+</UL>
+
+<UL><LI><B>class GridLayout : *Root, LayoutManager</B><BR>
+グリッド配置を行うコンテナ用のレイアウトマネージャ
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newGridLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>グリッドレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newGridLayout(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された行と列をもつグリッドレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>行
+    <DT><STRONG>arg2</STRONG>
+<DD>列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newGridLayout(int arg1, int arg2, int arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された行と列、およびギャップをもつグリッドレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>行
+    <DT><STRONG>arg2</STRONG>
+<DD>列
+    <DT><STRONG>arg3</STRONG>
+<DD>水平ギャップ
+    <DT><STRONG>arg4</STRONG>
+<DD>垂直ギャップ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+<B>メソッド</B><BR>
+なし
+</UL>
+
+<UL><LI><B>class GridBagLayout : *Root, LayoutManager2</B><BR>
+大きさの異なるコンポーネントを配置するレイアウトマネージャ
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newGridBagLayout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>グリッドバッグレイアウトを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setConstraints(Component arg1, GridBagConstraints arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定されたコンポーネントに対して制約を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コンポーネント
+    <DT><STRONG>arg2</STRONG>
+<DD>制約
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

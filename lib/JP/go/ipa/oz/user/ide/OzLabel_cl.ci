@@ -1,0 +1,16 @@
+j, JP.go.ipa.oz.user.ide.OzLabel_cl, 0x0, JP.go.ipa.oz.user.ide.OzLabel_if, JP.go.ipa.oz.lang._Root_cl
+a, labelName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 718, 17
+a, interfaceID, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 771, 19
+a, subjectName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 896, 19
+a, implementationID, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 831, 24
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1499, 167, ())
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1213, 75, ())
+c, create, (), (), (), (1062, 41, ())
+m, setOzLabelName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1945, 66, ())
+m, setSubjectName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (3099, 70, ())
+m, getInterfaceID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2127, 59, ())
+m, getImplementationID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2505, 69, ())
+m, getOzLabelName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1798, 57, ())
+m, setInterfaceID, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2313, 68, ())
+m, setImplementationID, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2713, 82, ())
+m, getSubjectName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2903, 59, ())

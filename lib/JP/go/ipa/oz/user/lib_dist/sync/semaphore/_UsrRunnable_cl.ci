@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.semaphore._UsrRunnable_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.semaphore._UsrRunnable_if, JP.go.ipa.oz.lang._Runnable_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 553, 14
+a, mode, 0x0, Z, 512, 10
+a, label, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 496, 13
+a, mbs, 0x0, LJP.go.ipa.oz.user.lib_dist.sync.semaphore._ModedBinarySemaphore_if, 525, 25
+c, create, (LJP.go.ipa.oz.user.lib_dist.sync.semaphore._ModedBinarySemaphore_if, LJP.go.ipa.oz.lib.standard._String_if, Z), (JP.go.ipa.oz.user.lib_dist.sync.semaphore._ModedBinarySemaphore_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._System_cl), (574, 118, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.user.lib_dist.sync.semaphore._Monit_if), (JP.go.ipa.oz.user.lib_dist.sync.semaphore._Monit_cl), (695, 330, ((734, 5, JP.go.ipa.oz.user.lib_dist.sync.semaphore._Monit_if)))

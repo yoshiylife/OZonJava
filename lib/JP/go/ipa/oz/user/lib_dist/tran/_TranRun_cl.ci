@@ -1,0 +1,9 @@
+j, JP.go.ipa.oz.user.lib_dist.tran._TranRun_cl, 0x0, JP.go.ipa.oz.user.lib_dist.tran._TranRun_if, JP.go.ipa.oz.lang._Runnable_cl
+a, result, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, 959, 27
+a, tran, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._Transaction_if, 988, 17
+a, timer, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._TranTimer_if, 941, 16
+a, rg, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 1005, 10
+c, create, (LJP.go.ipa.oz.user.lib_dist.tran._TranTimer_if), (JP.go.ipa.oz.user.lib_dist.tran._TranTimer_if), (), (1021, 29, ())
+m, set, 0x11, V, (LJP.go.ipa.oz.user.lib_dist.tran._Transaction_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.tran._Transaction_if, JP.go.ipa.oz.lib.standard._String_if), (), (1186, 71, ())
+m, run, 0x1, V, (), (), (), (1108, 76, ())
+m, getResult, 0x1, LJP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, (), (), (), (1052, 54, ())

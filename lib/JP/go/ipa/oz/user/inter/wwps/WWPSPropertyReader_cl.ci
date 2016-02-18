@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.inter.wwps.WWPSPropertyReader_cl, 0x0, JP.go.ipa.oz.user.inter.wwps.WWPSPropertyReader_if, JP.go.ipa.oz.lang._Root_cl
+a, ozcgi_god, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 1582, 17
+c, create, (), (), (), (1641, 15, ())
+m, eval, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1983, 122, ())
+m, getOzCGI, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1904, 47, ())
+m, read, 0x1, V, (), (JP.go.ipa.oz.user.inter.cgi.FileProperty_if), (JP.go.ipa.oz.user.inter.cgi.FileProperty_cl), (1740, 97, ((1766, 12, JP.go.ipa.oz.user.inter.cgi.FileProperty_if)))

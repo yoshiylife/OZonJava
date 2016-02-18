@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.cda._ServerSocketRunnable_cl, 0x0, JP.go.ipa.oz.user.cda._ServerSocketRunnable_if, JP.go.ipa.oz.lang._Runnable_cl
+a, port, 0x0, I, 504, 9
+a, targets, 0x0, LJP.go.ipa.oz.user.cda._TargetCDAList_if, 543, 22
+a, listen, 0x0, LJP.go.ipa.oz.lib.standard._ServerSocket_if, 568, 20
+a, cache, 0x0, LJP.go.ipa.oz.user.cda._DeliveryFileCache_if, 516, 24
+c, create, (I, LJP.go.ipa.oz.user.cda._DeliveryFileCache_if, LJP.go.ipa.oz.user.cda._TargetCDAList_if), (JP.go.ipa.oz.user.cda._DeliveryFileCache_if, JP.go.ipa.oz.user.cda._TargetCDAList_if), (), (595, 88, ())
+m, close, 0x1, V, (), (), (), (686, 45, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.user.cda._CDAdebug_if, JP.go.ipa.oz.lib.standard._IOException_if, JP.go.ipa.oz.lib.standard._Socket_if, JP.go.ipa.oz.user.cda._fromExecutorRunnable_if, JP.go.ipa.oz.lang._Thread_if, JP.go.ipa.oz.lang._Exception_if, JP.go.ipa.oz.lib.standard._UserException_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.user.cda._CDAdebug_cl, JP.go.ipa.oz.lib.standard._ServerSocket_cl, JP.go.ipa.oz.user.cda._fromExecutorRunnable_cl, JP.go.ipa.oz.lang._Thread_cl), (734, 765, ((757, 6, JP.go.ipa.oz.lib.standard._System_if), (786, 8, JP.go.ipa.oz.user.cda._CDAdebug_if), (862, 11, JP.go.ipa.oz.lib.standard._IOException_if), (1011, 6, JP.go.ipa.oz.lib.standard._Socket_if), (1087, 20, JP.go.ipa.oz.user.cda._fromExecutorRunnable_if), (1155, 6, JP.go.ipa.oz.lang._Thread_if), (1202, 9, JP.go.ipa.oz.lang._Exception_if), (1350, 13, JP.go.ipa.oz.lib.standard._UserException_if)))

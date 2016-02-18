@@ -1,0 +1,57 @@
+<HTML>
+
+<HEAD>
+<TITLE>Trader</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>トレーダ</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+ トレーダは、OZのセルで提供されるサービスをOZプログラムから検索する
+検索エンジン オブジェクトである。
+ ユーザはサービス要求オブジェクトをトレーダに投じることによって
+柔軟にサービスを検索し、該当サービスを提供するセルのProxyを
+取得することができる。
+</P>
+
+<P>
+<UL>
+<LI>トレーダの設定<BR>
+<B>$OZHOME/lib/trader.gol</B> にトレーダの <A HREF="../oz_gol-j.html"><B>GOL</B></A> を記述する。
+
+<LI>トレーダの起動<BR>
+一つの <B>OZ</B> ホームに一つのトレーダを <B>trader</B> という名前で起動する。
+一つの <B>OZ</B> ホームにトレーダを二つ以上起動することはできない。<BR>
+
+トレーダは予め設定した他のトレーダに検索を委譲することができる。
+これを<B>インターワーキング</B>と呼ぶ。
+インターワーキングの機能を使う場合は、各トレーダに他のトレーダの <A HREF="../oz_gol-j.html"><B>GOL</B></A> を設定しなければならない。
+
+<LI>サイトとトレーダの関係<BR>
+サイト(ファイアウォール内)とトレーダの関係は、サイトの管理方針に依存するが、以下のような関係にするのが望ましい。<BR>
+<B>OZ</B> ホーム（群）に一つのトレーダを置く。
+ファイアウォール内に一つの（インターワーキングの際ゲートウェイとなる）親トレーダを置く。
+<B>OZ</B> ホームのトレーダの検索委譲対象は親トレーダに設定する。
+親トレーダの検索委譲対象としてファイアウォール外のトレーダを指定する。
+</UL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact:</B> <A HREF="mailto:oz-admin@etl.go.jp">oz-admin@etl.go.jp</A>
+
+</BODY>
+</HTML>
+

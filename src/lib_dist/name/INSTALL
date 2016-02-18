@@ -1,0 +1,3 @@
+transaction library をインストール
+ozc -i -s school.s *.oz
+ozc -s school.s *.oz

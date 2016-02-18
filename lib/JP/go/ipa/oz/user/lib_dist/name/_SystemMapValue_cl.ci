@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.lib_dist.name._SystemMapValue_cl, 0x0, JP.go.ipa.oz.user.lib_dist.name._SystemMapValue_if, JP.go.ipa.oz.lang._Root_cl
+a, tranpath, 0x0, LJP.go.ipa.oz.user.lib_dist.name._Path_if, 117, 14
+a, nameserverGOL, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 93, 21
+a, ismapping, 0x0, Z, 134, 15
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.lib_dist.name._Path_if, Z), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._Path_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.lib_dist.name._Path_cl), (286, 144, ())
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.lib_dist.name._Path_cl), (156, 123, ())
+m, debugPrint, 0x1, V, (LJP.go.ipa.oz.lib.standard._PrintWriter_if), (JP.go.ipa.oz.lib.standard._PrintWriter_if), (), (433, 144, ())
+m, tranpath, 0x1, LJP.go.ipa.oz.user.lib_dist.name._Path_if, (), (), (), (637, 42, ())
+m, nameserverGOL, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (580, 54, ())
+m, ismapping, 0x1, Z, (), (), (), (682, 45, ())

@@ -1,0 +1,7 @@
+i, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, setDate, 0x11, V, ()
+m, getCopy, 0x11, LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, ()
+m, setCopy, 0x11, V, (LJP.go.ipa.oz.user.lib_dist.replica.CopyScheme_if, LJP.go.ipa.oz.lib.standard._String_if)
+m, getDate, 0x11, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, getGol, 0x11, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, equal, 0x11, Z, (LJP.go.ipa.oz.user.lib_dist.replica.CopyResource_if)

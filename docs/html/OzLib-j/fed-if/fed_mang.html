@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>フェデレーションの管理</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+フェデレーションの管理とは、 Federation セルが保持している
+集合に対する管理を指す。集合の要素は、 Autonomy セルの GOL で
+あり、管理とは具体的には要素の追加、削除を指す。
+<BR>
+また、この機構は Federation セルと Autonomy セルの相互参照に
+よって実現されるので、追加、削除の処理において両方の集合を
+更新する必要がある。
+</P>
+
+
+<H4>メソッド説明</A></H4>
+<UL>
+<P>
+<LI>public void Federation#addAutonomy(String autonomy)<BR>
+引数として Autonomy セルの GOL をとる。引数 autonomy が、
+Federation 内の Autonomy 集合に含まれていなければ、
+集合に追加する。
+さらに、引数で指定された Autonomy セルの Federation 集合に
+当 Federation セルの GOL を Autonomy#attachToFederation(String) により
+追加する。この処理は相互に再帰的に行われるので、
+デッドロックを避けるために最初に登録状況を判定する必要がある。
+</P>
+
+<P>
+<LI>public void Federation#removeAutonomy(String autonomy)<BR>
+引数として Autonomy セルの GOL をとる。引数 autonomy が、
+Federation 内の Autonomy 集合に含まれていれば、
+集合から削除する。
+さらに、引数で指定された Autonomy セルの Federation 集合から
+当 Federation セルの GOL を Autonomy#detachFromFederation(String) により
+削除する。この処理は相互に再帰的に行われるので、
+デッドロックを避けるために最初に登録状況を判定する必要がある。
+</P>
+</UL>
+
+<HR NOSHADE>
+
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

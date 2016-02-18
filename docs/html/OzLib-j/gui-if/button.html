@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>GUI Interface</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>ボタン</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<UL><LI><B>class Button : *Component</B><BR>
+ボタンを生成するクラス
+
+<P>
+<B>コンストラクタ</B>
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newButton()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ラベル無しのボタンを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>new newButton(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ラベル付きのボタンを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+<B>メソッド</B>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addActionListener(ActionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アクションリスナを追加する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>アクションリスナ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void addNotify()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ボタンのピアを生成する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>文字列表現を返す。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ラベルとサイズを示す文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getActionCommand()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このボタンによって起こるアクションイベントのコマンド名を得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>コマンド名文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public String getLabel()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ラベルを得る。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void removeActionListener(ActionListener arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アクションリスナを削除する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>アクションリスナ
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setActionCommand(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このボタンによって起こるアクションイベントのコマンド名を設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コマンド名文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+
+
+<P><TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2><TR><TD COLSPAN=2>public void setLabel(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ボタンにラベルを設定する。
+</TD></TR><TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ラベル文字列
+
+ </DL>
+</TD></TR><TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE></P>
+
+</UL>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

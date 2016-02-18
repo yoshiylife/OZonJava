@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="ex_cc.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../inet/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>グローバルオブジェクト間メッセージ送受信アプリケーションの構築</B><BR>
+</H3>
+<P>
+<BR>
+<BR>
+<BR>
+グローバルオブジェクトには世界中のOZシステムで完全にユニークな識別子GOLが付与されます。アプリケーション間のコミュニケーションはこのグローバルオブジェクトを介して行います。グローバルオブジェクトの扱いはリモートであろうとローカルであろうと統一したインタフェースで行うことができます。<BR>
+</P>
+<DL>
+  <DT>プログラミングの概要
+  <DD>
+  <OL>
+    <LI>グローバルオブジェクトをアトリビュートとして宣言します。
+    <LI>goメソッドの起動の中で、アトリビュートとグローバルオブジェクトを結び付けます。
+    <LI>グローバルオブジェクトのメソッドを起動します。。<BR>
+  </OL>
+<BR>
+  <DT>アトリビュート宣言
+  <DD><BR>
+グローバルオブジェクトのクラスを持つアトリビュートを宣言します。<BR>
+<BR>
+例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell ClientCell {
+        ServerCell servercell;
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>グローバルオブジェクトのバインド
+  <DD><BR>
+goメソッドの起動の中で、アトリビュートとグローバルオブジェクトを結び付けます。<BR>
+そのためには、まず、バインドしたいグローバルオブジェクトのGOLを獲得します。そして、そのGOLを引数にしてbindコンストラクタを用いて、アトリビュートを生成します。<BR>
+<BR>
+例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="593" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell ClientCell {
+        ServerCell servercell;
+        ...
+        public void go () {            
+            gol = &quot;JP.go.ipa.oz.serve&quot;;
+            <B>servercell=&gt;bind (gol);</B>
+    
+            try {
+                <B>servercell-&gt;ping ();</B>
+            } catch (CellNotFoundException e) {
+                System sys=&gt;create ();
+                StringBuffer msg=&gt;breed (&quot;Not found cell: &quot;);
+                msg-&gt;append (gol);
+                sys-&gt;println (msg-&gt;asString ());
+                stopCell ();
+            }
+        }      
+   }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+この例では、goメソッド自身がグローバルオブジェクトのバインドを行っていますが、goメソッドから起動されるローカルオブジェクトのメソッドの中で行ってもかまいません。<BR>
+グローバルオブジェクトのGOLをファイルなどから獲得するようにすると、同じクラスのさまざまなグローバルオブジェクトと交信できるようになります。
+</DL>
+<P align="right">
+ファイルからGOLを獲得する例 <IMG src="../../image/h_glass.gif" height="23" width="19"><BR>
+</P>
+<DL>
+  <DD>この例ではServerCellクラスにpingメソッドが定義されており、GOLで指摘したグローバルオブジェクトが存在しない場合の例外を捕獲し、例外発生の処理として自分自身を非活性化（stopCellメソッド）しています。
+  <DD><BR>
+  <DT>グローバルオブジェクトのメソッド起動
+  <DD><BR>
+通常のメソッド起動と同様におこなうことができます。（上の例のpingメソッドの起動を参照してください。）<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="ex_cc.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../inet/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

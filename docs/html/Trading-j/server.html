@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>Trading manual</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>ブローカの作成(サービス提供者)</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<UL>
+
+<P>
+<LI>ブローカの作成<BR>
+サーバ提供者は、サービスの機能と <B>Proxy</B> 発行機能を有するブローカ
+<B>UserBroker</B> を作成し、トレーダに登録する。<BR>
+また、そのサービスに応じたサービス要求クラス <B>UserServiceRequest</B> を
+作成し、コンポーネントカタログに登録する。
+</P>
+
+<P>
+<LI><B>UserBroker</B> の例<BR>
+<PRE>
+class UserBroker : *Broker{
+  System s;
+  new create(){}
+  new create(String str){
+    s=>create();
+    serviceName=str;}
+  public Root getService(UserServiceRequest req){
+    return getService();
+  }
+  public Root getService(){
+    TestServerProxy ts=>create();//PROXYの発行
+    return ts;
+  }
+  public void refreshServerInfo(){
+    TestService ts;ts=|getService();
+    if(ts==null){
+      s->println("Can't create service instance.");
+    }
+  }
+  //サービスの条件
+  public bool keyWordSearch(){return true;} 
+  public bool wholeText(){return true;} 
+  public bool japanese(){return true;} 
+}
+class TestServerProxy{
+  new create(){}
+  public String getName(){ 
+    TestService ts=>bind("ts");
+    //故障への対応
+    return ts->getNameOfServer();
+  }
+}
+</PRE>
+
+</P>
+</UL>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+
+

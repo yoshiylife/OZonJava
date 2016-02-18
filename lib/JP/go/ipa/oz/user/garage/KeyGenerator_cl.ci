@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.garage.KeyGenerator_cl, 0x0, JP.go.ipa.oz.user.garage.KeyGenerator_if, JP.go.ipa.oz.lang._Root_cl
+a, theKey, 0x0, I, 141, 12
+c, create, (), (), (), (241, 35, ())
+m, generate, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (), (JP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_cl), (360, 110, ((392, 3, JP.go.ipa.oz.user.garage.Key_if)))

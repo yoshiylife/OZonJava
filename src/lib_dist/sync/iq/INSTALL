@@ -1,0 +1,4 @@
+ozc -s school.s IStructReadException.oz IStructWriteException.oz
+ozc -s school.s IStruct.oz QStruct.oz
+ozc -s school.s Monit.oz
+ozc -s school.s IReadRunnable.oz IReadRunnableTwice.oz IWriteRunnable.oz QReadRunnable.oz QWriteRunnable.oz

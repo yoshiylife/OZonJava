@@ -1,0 +1,8 @@
+i, JP.go.ipa.oz.user.ide.Summary_if, 0x400, (JP.go.ipa.oz.lang._Root_if)
+m, getKey, 0x1, LJP.go.ipa.oz.user.garage.Key_if, ()
+m, getLocation, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, describe, 0x401, V, ()
+m, setLocation, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, setLocation, 0x1, V, ()
+m, setKey, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if)
+m, retreive, 0x1, LJP.go.ipa.oz.user.ide.Summarizable_if, ()

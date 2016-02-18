@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>Network Protocol Class</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4><B>NetworkProtocol</B> クラス</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+インタネット上の標準的なプロトコルである、<B>SMTP</B> や <B>FTP</B> 
+プロトコルは、コマンドデータおよびレスポンスデータに以下のような共通点がある。
+</P>
+
+<P>
+<UL>
+<LI> コマンドデータ<BR>
+パラメータを含む場合は、コマンド文字列の後に一つのスペース文字が
+あり、それに続いてパラメータがある。ただし、パラメータの形式は
+様々である。
+<LI> レスポンスデータ<BR>
+ステータスを表す文字列の後に一つのスペース文字があり、それに続い
+てステータスの内容を示す文字列がある。
+<LI> データの終端<BR>
+CR ('<code>\r</code>')、LF ('<code>\n</code>') が連続した文字列である。
+</UL>
+このような共通点を抽象化し、実際のプロトコルの実装を支援するクラスを 
+<A HREF="net_prot.html"><B>NetworkProtocol</B> クラス</A>として実現する。
+</P>
+
+<UL>
+<P>
+<LI>以下のコンストラクタを持つ。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>create (int port)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>コマンドデータのフォーマットとして ``COMMAND PARAM'' 
+を、レスポンスデータのフォーマットとして ``STATUS
+MESSAGE'' 、さらにデータの終端として ``\r\n</code>'' を指定する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>port</TD>
+<TD>デフォルトのポート番号</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<LI>以下の protected メソッドを持つ。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String sendCommand (String command, String param)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>指定したコマンドおよびパラメータ文字列からコマンドデータを生成し、送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=2>引数</TD>
+<TD>command</TD> <TD>コマンド文字列</TD></TR>
+<TR><TD>param</TD> <TD>パラメータ文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String sendCommand (String command)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>指定したコマンド文字列からコマンドデータを生成し、送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>command</TD> <TD>コマンド文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String recvMultilineResponse ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>複数行のレスポンスデータをすべて受信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String decodeResponse (String data)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>受信したレスポンスデータに対する後処理を行う。<BR>
+具体的な処理としては、例えば POP3 プロトコルなどでは複数行のレス
+ポンスデータではデータの終端を '.' + CRLF という文字列で表すため、
+'.' で始まる行には '.' を一つ冗長に付加されたものを受信する。その
+ため、受信したクライアントはこの冗長な '.' を取り除くという処理を
+ここで行う必要がある。<BR>
+デフォルトの実装では単に引数のデータを返すだけであり、必要に応じて
+下位クラスで再定義する必要がある。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>data</TD> <TD>レスポンスデータ</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>処理後のレスポンスデータ</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>abstract boolean isLastLine (String data)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>受信したレスポンスデータが複数行データの最終行を含んでいるかどうかを調べる。<BR>
+このメソッドはフックメソッドであり、下位クラスでプロトコルの仕様に基づいた実装を行なう必要がある。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>data</TD> <TD>レスポンスデータ</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>最終行を含んでいれば true を、そうでなければ false を返す。</TD></TR>
+</TABLE>
+</P>
+
+</UL>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

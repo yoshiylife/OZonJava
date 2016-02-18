@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="globalobj.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="../compile/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>ローカルオブジェクトの振舞い<BR>
+</H3>
+<P>
+<BR>
+</P>
+<H4>ローカルオブジェクトを生成するクラス</H4>
+<P>
+ローカルオブジェクトは clas s型クラスから生成されます。<BR>
+<BR>
+class 型クラスの宣言で上位実装クラスを定義しない場合には、Rootクラスを継承するクラスだと解釈されます。<BR>
+他のclass型クラスを上位実装クラスとして宣言することができます。<BR>
+<BR>
+</P>
+<H4>ローカルオブジェクトの振舞い</H4>
+<P>
+Rootクラスを継承したclass型クラスから生成されるローカルオブジェクトは必ず以下の振舞いを持っています。さらに、そのクラス独特の振舞いを定義することができます。<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+１．ローカルオブジェクト固有の振舞い
+</P>
+<DL>
+  <DD>
+  <DL>
+    <DT>public final boolean equals(Root obj)
+    <DD><BR>
+引数オブジェクトと自分自身が等しいかどうかを答えます。<BR>
+<BR>
+    <DT>public final int hashCode()
+    <DD><BR>
+オブジェクトのハッシュ値を答えます。<BR>
+<BR>
+    <DT>public String asString()
+    <DD><BR>
+オブジェクトの文字列表現を答えます。<BR>
+必ず、class型クラスでこれを再定義します。<BR>
+<BR>
+    <DT>protected final void wait(condition value)
+    <DD><BR>
+引数の条件変数を待ちます。<BR>
+<BR>
+  </DL>
+<BR>
+</DL>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+２．グローバルオブジェクトと共有する振舞い
+</P>
+<DL>
+  <DD>
+  <DL>
+    <DT>protected final void flushCell()
+    <DD><BR>
+そのオブジェクトが属するセルを永続化させます（= 保存）。<BR>
+<BR>
+    <DT>protected final void stopCell()
+    <DD><BR>
+そのオブジェクトが属するセルのグローバルオブジェクトを非活性化させます。結果的にそのセルを構成するすべてのオブジェクトが非活性化します。<BR>
+<BR>
+    <DT>protected final boolean runningIsRed()
+    <DD><BR>
+実行しているメソッドがセキュリティ的に危険かどうかを答えます。（危険= true
+）<BR>
+    <DT>protected final boolean runningIsGreen()
+    <DD><BR>
+実行しているメソッドがセキュリティ的に安全かどうかを答えます。<BR>
+<BR>
+    <DT>public final boolean isRed()
+    <DD><BR>
+そのオブジェクト自身がセキュリティ的に危険かどうかを答えます。（危険= true
+）<BR>
+<BR>
+    <DT>public final boolean isGreen()
+    <DD><BR>
+そのオブジェクト自身がセキュリティ的に安全かどうかを答えます。<BR>
+<BR>
+    <DT>protected final void changeObjectToRed( OzSecure obj )
+    <DD><BR>
+そのオブジェクトをセキュリティ的に危険にします。<BR>
+<BR>
+    <DT>protected final void changeObjectToGreen( OzSecure obj )
+    <DD><BR>
+そのオブジェクトをセキュリティ的に安全にします。<BR>
+<BR>
+    <DT>protected final void changeRunningToGreen()
+    <DD><BR>
+実行しているメソッドをセキュリティ的に安全にします。<BR>
+<BR>
+    <DT>protected final void changeRunningToRed()
+    <DD><BR>
+実行しているメソッドをセキュリティ的に危険にします。<BR>
+<BR>
+    <DT>protected final void checkSecureInvocation()
+    <DD><BR>
+呼び出されたメソッド側でこのメソッドを呼び出します。<BR>
+セキュリティの侵害がないかを調べます。<BR>
+<BR>
+    <DT>protected final boolean changeThreadRedIfNecessary(Object callee)
+    <DD><BR>
+呼び出されたメソッド側でこのメソッドを呼び出します。<BR>
+必要ならプロセスの色を赤に変更します。<BR>
+<BR>
+    <DT>protected final void yieldThread()
+    <DD><BR>
+メソッドを切り替えます。<BR>
+<BR>
+    <DT>protected final void sleepThread(int time)
+    <DD><BR>
+メソッドを休止させます。<BR>
+<BR>
+    <DT>protected final String _getGOD()
+    <DD><BR>
+グローバルオブジェクトのGODを答えます。<BR>
+<BR>
+    <DT>protected final String _getGOL()
+    <DD><BR>
+グローバルオブジェクトのGOLを答えます。<BR>
+<BR>
+    <DT>public String toString()
+    <DD><BR>
+セキュリティの色とともに自分の名前を通知します。<BR>
+<BR>
+  </DL>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="globalobj.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="../compile/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

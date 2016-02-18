@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.lib_dist.name._Path_cl, 0x10, JP.go.ipa.oz.user.lib_dist.name._Path_if, JP.go.ipa.oz.lang._Root_cl
+a, pathstring, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 21, 18
+c, breed, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_cl), (47, 48, ())
+m, asString, 0x11, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (99, 58, ())
+m, isequal, 0x11, Z, (LJP.go.ipa.oz.user.lib_dist.name._Path_if), (JP.go.ipa.oz.user.lib_dist.name._Path_if, JP.go.ipa.oz.lib.standard._String_if), (), (161, 117, ((203, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, isEmpty, 0x11, Z, (), (), (), (1510, 90, ())
+m, makeLowerPath, 0x11, LJP.go.ipa.oz.user.lib_dist.name._Path_if, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._Path_if), (JP.go.ipa.oz.user.lib_dist.name._Path_cl), (700, 188, ((774, 6, JP.go.ipa.oz.lib.standard._String_if), (851, 4, JP.go.ipa.oz.user.lib_dist.name._Path_if)))
+m, UpperPath, 0x11, LJP.go.ipa.oz.user.lib_dist.name._Path_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._Path_if), (JP.go.ipa.oz.user.lib_dist.name._Path_cl), (282, 224, ((386, 4, JP.go.ipa.oz.user.lib_dist.name._Path_if)))
+m, translateWith, 0x11, LJP.go.ipa.oz.user.lib_dist.name._Path_if, (LJP.go.ipa.oz.user.lib_dist.name._Path_if, LJP.go.ipa.oz.user.lib_dist.name._Path_if), (JP.go.ipa.oz.user.lib_dist.name._Path_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.name._Path_cl), (954, 552, ((1162, 6, JP.go.ipa.oz.lib.standard._String_if), (1199, 6, JP.go.ipa.oz.lib.standard._String_if), (1309, 6, JP.go.ipa.oz.lib.standard._String_if), (1388, 6, JP.go.ipa.oz.lib.standard._String_if), (1459, 4, JP.go.ipa.oz.user.lib_dist.name._Path_if)))
+m, LowerName, 0x11, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (510, 186, ())

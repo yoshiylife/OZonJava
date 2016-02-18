@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>API of OZ Transaction Lib.</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>分散トランザクション管理ライブラリ API</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+以下に <B>API</B> を示す。尚、指定するタイムアウトの単位は全て秒である。
+
+<OL>
+<LI>リソース管理の基本機能を備えたセル<BR>
+public method は transaction または内部 thread が呼ぶものである。
+<PRE>
+cell TransactionResource{ //lock,unlock,commit,rollback は private
+  protected void  initialize()//初期化
+  protected Status st;//リソースの状態を保持するオブジェクト
+  protected Resource r;//リソースオブジェクト
+  protected final void setMaxBlockingTransaction(int)
+                   //BlockingTransactionの最大数
+  protected final void setLockigTimeLimit(int time)
+                   //ロック～アンロック間許容処理時間
+  protected final int  getMaxBlockingTransaction()
+  protected final int  getLockMode()//0:unlock,1:排他モード,2:共有モード
+
+  public final int lock(TID t)//排他ロック 0:unlocked,1:locked,2:blocked
+  public final int sharedLock(TID t)//共有ロック 0:unlocked,1:locked,2:blocked
+  public final void unlock(TID t)
+  public final boolean commit(TID t)
+
+  protected void  userRecover()
+/* ユーザが定めるリカバリの方法サブセルでオーバーライドしてもよい
+   リソースのコミット後アンロック前トランザクションの指示が来なくなったとき、
+   またはこの時点でリソースが落ちて再起動したときuserRecoverが呼ばれる
+   userRecoverの結果、トランザクションの一貫性が保たれているか否かは
+   保証されない */
+  protected final void rollbackForRecover()//userRecover()実装のため
+  protected final void unlockForRecover()  ////同上
+  public final SList getLockingTransaction()//デッドロックチェック用
+  public final void checkLockingTimeBody()//locking time計測用
+}
+</PRE>
+
+<LI>分散トランザクション管理のための基本機能を備えたセル
+<PRE>
+cell Transaction{
+  protected void  initialize()//初期化
+  protected final void setResourceTimeOut(int time)
+  //lock,commit,abort等リソースRMIタイムアウトの設定
+  protected final int  getResourceTimeOut()
+  protected final void setMaxLockRetry(int n)//ロックの試行回数
+  protected final int  getMaxLockRetry()
+  protected final TID  getTid();//TransactionIDを返す
+  protected final void lock(Set TransactionResource,int time)
+  //排他モードロック:他のトランザクションは参照も更新もできない
+  protected final void sharedLock(Set TransactionResource,int time)
+  //共有モードロック:共有モードのトランザクション同士ではread onlyで
+    リソースを共有できる 
+
+  protected final void begin();//トランザクション開始、TIDの発行
+  protected final void begin(int time)//同上、リソースタイムアウト付
+  protected final bool commit()
+
+  public final Array getBlockingResources()//デッドロックチェックのため
+  public final int getLx()//同上
+  public final int getMaxBlockingResource()//同上
+  public final void setLockingResource(String rg)//同上
+}
+</PRE>
+
+<LI>参考：トランザクションをグローバルに識別するためのクラス
+<PRE>
+class TID{//Transaction ID
+  String GOL;
+  int ID;
+}
+</PRE>
+
+</OL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+

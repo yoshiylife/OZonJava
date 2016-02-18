@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="thread.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>モニタと条件変数<BR>
+</H3>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>モニタ（Monitor）
+  <DD><BR>
+プログラミング言語要素として同期機構を提供するのがモニタという概念です。<BR>
+モニタとは、内部にモニタロックを持ち、モニタロックの獲得と解放の2種類の操作（operations）を提供しているデータ構造です。特定のプログラム区間
+(クリティカルセクション) への進入の際にロックを獲得し、退出の際にロックを解放することによって排他制御を実現します。<BR>
+<BR>
+OZでは、ひとつのOZオブジェクトに対してひとつのモニタを対応させています。そして、任意のタイミングでモニタロックの獲得と解放を試みることができます。<BR>
+<BR>
+<BR>
+<BR>
+  <DT>条件変数（Condition Variable）
+  <DD><BR>
+モニタと対応する同期操作を行うために条件変数を用います。<BR>
+条件変数とは、同期のための条件を抽象化したものです。ひとつの条件変数ごとにそれが表現している条件があります。<BR>
+スレッドは、ある条件が成立するまで待ち合わせるために、条件変数に対して
+wait 操作を実行することができます。wait 操作によって、モニタロックが解放されます。そのスレッドは実行を停止して待ち状態に入ります。<BR>
+また、その条件を成立させたスレッドは、その条件変数に対して signal 操作を行うことにより、その条件を待っているスレッドに対して条件の成立を通知することができます。<BR>
+このようにしてスレッド間の同期を実現することができます。<BR>
+<BR>
+<BR>
+  <TABLE width="32">
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TH nowrap align="center">Thread_1</TH>
+      <TH align="center">Thread_2</TH>
+      <TD nowrap></TD>
+      <TD nowrap>時間軸</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap>排他的制御権を獲得する<BR>
+条件をテストする<BR>
+「偽」<BR>
+排他的制御権を解放する<BR>
+条件変数に対して待ち状態になる</TD>
+      <TD></TD>
+      <TD nowrap width="20"></TD>
+      <TD nowrap align="center"><IMG src="t_arro15.gif" height="42" width="32"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap></TD>
+      <TD nowrap>排他的制御権を獲得する<BR>
+条件を変更する<BR>
+Thread_1に合図する<BR>
+排他的制御権を解放する</TD>
+      <TD nowrap></TD>
+      <TD nowrap align="center"><IMG src="t_arro15.gif" height="42" width="32"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap>排他的制御権を獲得する<BR>
+条件をテストする<BR>
+「真」<BR>
+処理を実行する<BR>
+排他的制御権を解放する</TD>
+      <TD></TD>
+      <TD nowrap></TD>
+      <TD nowrap align="center"><IMG src="t_arro15.gif" height="42" width="32"></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+条件変数は、モニタに対して複数定義することができます。そして、その条件を
+wait しているすべてのスレッドの wait を解除できるsignalAllという操作を提供しています。<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="thread.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,12 @@
+j, JP.go.ipa.oz.user.ide.Ozc_cl, 0x0, JP.go.ipa.oz.user.ide.Ozc_if, JP.go.ipa.oz.lang._Root_cl
+a, ozc, 0x0, LJP.go.ipa.oz.compiler.OzOzc_if, 508, 10
+c, create, (), (), (JP.go.ipa.oz.compiler.OzOzc_cl), (528, 75, ())
+m, compile, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if, LJP.go.ipa.oz.lib.standard._Writer_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._Writer_if), (), (986, 135, ())
+m, compile, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if, LJP.go.ipa.oz.lib.standard._Writer_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._Writer_if), (), (860, 118, ())
+m, compile, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if), (), (740, 112, ())
+m, compile, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if), (), (637, 95, ())
+m, displayUsage, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1712, 70, ())
+m, compileInterface, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if, LJP.go.ipa.oz.lib.standard._Writer_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._Writer_if), (), (1530, 153, ())
+m, compileInterface, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if, LJP.go.ipa.oz.lib.standard._Writer_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._Writer_if), (), (1388, 136, ())
+m, compileInterface, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if), (), (1250, 130, ())
+m, compileInterface, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if), (), (1129, 113, ())

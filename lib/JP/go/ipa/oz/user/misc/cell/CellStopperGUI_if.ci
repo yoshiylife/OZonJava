@@ -1,0 +1,2 @@
+i, JP.go.ipa.oz.user.misc.cell.CellStopperGUI_if, 0x0, (JP.go.ipa.oz.user.misc.gui.CenteredFrame_if)
+m, getInputGOD, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

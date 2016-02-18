@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.secu.Authenticator_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, authenticate, 0x1, V, ()
+m, authorize, 0x1, V, (LJP.go.ipa.oz.lang._Root_if)

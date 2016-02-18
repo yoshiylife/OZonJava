@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="attribute.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="construct.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>メソッド宣言<BR>
+</H3>
+<BR clear="all">
+<P>
+ここでは、メソッド宣言、メソッド名のスコープ、メソッド修飾子について説明しています。<BR>
+<BR>
+<BR>
+OZクラスのメソッドは次の宣言文で宣言します。
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>[アクセスレベル] [メソッド修飾子] 型名 メソッド名(引数リスト)[{文}];</B></TD></TR>
+</TABLE>
+
+<P>
+<BR>
+アクセスレベル、修飾子を省略することができます。その場合には、省略時の指定が行われます。<BR>
+メソッド修飾子に abstract を指定した場合には、{文} を省略します。
+</P>
+<P>
+<BR>
+<BR>
+<B>アクセスレベル</B><BR>
+<BR>
+以下の指定ができます。
+</P>
+<TABLE cellspacing="5" cellpadding="2" height="104">
+  <TR>
+    <TD></TD>
+    <TD valign="top"><B>public</B></TD>
+    <TD>任意のクラスからアクセスできます。</TD></TR>
+  <TR>
+    <TD width="30"></TD>
+    <TD valign="top"><B>protected</B></TD>
+    <TD>定義クラスのオブジェクトのメンバおよび子孫クラスのオブジェクトのメンバからアクセスできます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD valign="top" width="80">（なし）</TD>
+    <TD>定義クラスのオブジェクトのメンバからアクセスできます。</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+<BR>
+<B>メソッド修飾子</B><BR>
+<BR>
+以下の指定ができます。複数のメソッド修飾子を指定することができます。
+</P>
+<TABLE cellspacing="5" cellpadding="2">
+  <TR>
+    <TD></TD>
+    <TD valign="top"><B>static</B></TD>
+    <TD>クラスメソッド。すなわち、このメソッドはクラスに対して実行することができます。<BR>
+このメソッド内ではオブジェクト自身へのリファレンスで ある this を使用できません。また、アトリビュートを参照することはできません。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD valign="top"><B>abstract</B></TD>
+    <TD>抽象メソッド。実装定義を持たないメソッドの宣言です。</TD></TR>
+  <TR>
+    <TD width="30"></TD>
+    <TD valign="top"><B>final</B></TD>
+    <TD>このクラスの下位クラスで再定義 (オーバーライ ド) することができないという指定です。この修飾子は、abstract
+修飾子と共に指定することができません。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD valign="top" width="80"><B>locked</B></TD>
+    <TD>このメソッドに対するメソッド起動はモニタによる排他制御が行われます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD valign="top"><B>once</B></TD>
+    <TD>このメソッドの実装が評価されるのは一回目のメソッド起動時のみです。<BR>
+戻り値を持つメソッドの場合、二回目以降のメソッド起動時には一回目のメ ソッド起動時の値が戻り値となります。</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+<BR>
+<B>型名</B><BR>
+<BR>
+メソッドの型を指定します。<BR>
+メソッドの型は基本型あるいはクラス型です。<BR>
+<BR>
+<BR>
+<B>メソッド名</B><BR>
+<BR>
+同一クラス内で、メソッド名の重複が認められます。(多重定義)<BR>
+<BR>
+<BR>
+<B>引数リスト</B><BR>
+<BR>
+引数のリストです。<BR>
+１つの引数は
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD width="150"><B><FONT>型名 仮引数名</FONT></B></TD></TR>
+</TABLE>
+
+<P>
+で表現します。
+</P>
+<P>
+<BR>
+<BR>
+<B>{文}</B><BR>
+<BR>
+メソッド定義を表わす複文です。一連の文から構成されメソッドの振舞いが定義されます。<BR>
+abstract修飾子を持つメソッドはこの部分を省略します。<BR>
+<BR>
+注意）<BR>
+この｛文｝で定義されるメソッド本体のreturn文の式の型と、メソッドの型は等価でなくてはいけません。<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+例: メソッド宣言<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">locked
+修飾子
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    class Timer{
+        protected bool isDone;    // アトリビュート宣言
+        protected condition end;  // アトリビュート宣言
+        new create(){}            // コンストラクタ宣言
+        protected locked void endWait(int time){ 
+        //メソッド宣言 起動時に排他制御が行われます。
+            if(!isDone) wait(end,time);
+        }
+        public locked void MethodDone() {     
+        //メソッド宣言、任意クラスからのアクセスできます。
+        //起動時に排他制御が行われます。
+            isDone = true;
+            signal(end); 
+        }
+        public Root invoke(MethodRunnable mr, int time){
+        // メソッド宣言、任意クラスからのアクセスできます。
+            isDone = false;
+            Thread t =&gt; create(mr);
+            endWait(time);
+            if(isDone) return(mr-&gt;getResult());
+            else { TimeOutException e =&gt;init();
+            throw e;
+        }
+    }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P align="left">
+例: メソッド宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">abstract修飾子を持つメソッドと抽象クラス
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    abstract class BinaryPredicate{  
+        public abstract boolean execute(Root obj1, Root obj2);
+    }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>abstract修飾子を持つメソッドが定義されているクラスには、abstract修飾子が必要です。
+</UL>
+<P>
+<BR>
+</P>
+<P>
+例: メソッド宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+多重定義
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    class LauncherCore{
+        LauncherGUI            gui;
+        ...
+        public void createCell() {
+            gui-&gt;createCell();
+        }
+
+        public void createCell(String cid) {
+        }
+
+        public void createCell(String god, String cid) {
+            Process  oz;
+            StringBuffer  cmd;
+            ....
+        }
+    }   
+
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>1つのクラスに同一の名前を持つメソッドを複数宣言できます。（シグネチャは異なります。）
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+
+method_declaration : 
+    access_modifier modifier_list type_name  IDENTIFIER ( argument_declarations ) method_body
+    access_modifier modifier_list VOID IDENTIFIER ( argument_declarations ) method_body
+
+
+access_modifier :
+     /* empty */
+     PUBLIC
+     PROTECTED
+
+
+modifier_list : 
+    /* empty */
+    modifier_list modifier
+
+
+modifier : 
+    FINAL
+    STATIC
+    LOCKED
+    ONCE
+    ABSTRACT
+    TRANSIENT
+
+
+type_name :
+    BYTE
+    CHAR
+    SHORT
+    INT
+    LONG
+    FLOAT
+    DOUBLE
+    BOOL
+    CONDITION
+    IDENTIFIER
+    CLASS IDENTIFIER
+    CELL IDENTIFIER
+
+
+argument_declarations :
+    /* empty */
+    argument_declarations , type_name IDENTIFIER
+    type_name IDENTIFIER
+
+
+identifier_list : 
+    identifier_list , IDENTIFIER 
+    IDENTIFIER
+
+method_body :
+    ;
+    non_empty_method_body
+
+non_empty_method_body :
+    { stmt_list }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="attribute.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="construct.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

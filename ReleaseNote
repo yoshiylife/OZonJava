@@ -1,0 +1,137 @@
+/*
+ Copyright(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+
+ All rights reserved.  No guarantee.
+ This technology is a result of the Advanced Software  Enrichment 
+ Project of Information-technology Promotion Agency, Japan (IPA).
+
+ Permissions  to  use,  copy, modify and distribute this software
+ are governed by the terms and conditions set forth in  the  file 
+ COPYRIGHT, located on the top directory of this software.
+
+ But CUP was created by Scott Hudson who is part of the Graphics 
+ Visualization and Usability Center and the College of Computing 
+ at Georgia Tech.
+ (URL: http://www.cc.gatech.edu/gvu/people/Faculty/hudson/java_cup/
+ home.html)
+ */
+
+OZ system No. 1 release note
+
+This document describes what the OZ system is, what kind of structure it 
+is established from as well as the characteristics of this release.
+
+1. What is OZ
+OZ is a system that transfers, shares and circulates not only information 
+(data) but softwares (programs) and services (functions provided by a 
+server) on networks for the sharing and reutilization of softwares on 
+computers and by users scattered worldwide, which in turn the expanded and 
+improved softwares are recirculated on networks. By programmers using 
+softwares on networks as software components, program development becomes 
+easier and by recirculating the expanded and improved software as 
+components on networks again, they are distributed and shared.
+  Furthermore, with use of these softwares by various programmers for 
+different applications, bugs are discovered and programs are improved, 
+raising the quality of softwares on networks.
+
+2. OZ system configuration
+This system is structured as follows. Below are the final configurations 
+and this release includes only a partial installment. 
+
+  (1) Distributed object-oriented language executor
+      Mechanism that executes translated OZ language on a single node. The 
+      role of this mechanism is to provide functions of OS and installed 
+      language to the upper layer. It also holds a security function to 
+      protect the executor from damaging codes.
+
+  (2) Object sharing/transferring mechanism
+      Mechanism that realizes sharing and transferring of objects on 
+      a distributed environment. It also holds a security mechanism that 
+      identifies objects and processes entered from the outside by 
+      "marking". In addition, it holds scalability for sharing/transferring 
+      of objects in the same manner from WAN to LAN, regardless 
+      of the network scale.
+
+  (3) Distributed object-oriented language compiler
+      Mechanism that translates OZ programs to a language that the 
+      distributed object-oriented language executor can comprehend. The 
+      language function for the joint ownership and exchange of objects on 
+      a network translates using the function of the object joint 
+      ownership/exchange mechanism. In this case, conversion is made so 
+      that the byte code is secure and can be checked for safety at the 
+      receiving end. 
+
+  (4) Distributed object management system
+      Object group that supports the basic operations of an OZ object. 
+      Features to be provided are: communication address solution for 
+      objects, class accumulation and transfer, certification service and 
+      trading service. 
+
+  (5) Distributed system development environment 
+      Environment to develop software components for the release to 
+      distributed environments for means of joint ownership.
+      To offer scalable compatibility during development on a global 
+      environment, it is equipped with a school mechanism to avoid conflict 
+      in class name spaces.
+      Furthermore, it is important for components that are widely released 
+      to be properly managed of its versions. Development must take in 
+      consideration whether problems will arise when applying new versions 
+      to existing instances as well as when using new versions along with 
+      existing codes. 
+
+  (6) OZ class library
+      The OZ class library is a group of class libraries holding various 
+      functions. 
+      Functions included are basic functions such as the collection 
+      function and GUI function, wrapping function for the runtime service 
+      provided by the executor as a library using the OZ language, as well 
+      as the naming function, security function, transaction management 
+      function and copy function for building of a secure and scalable 
+      distributed system. 
+
+  (7) Distributed application management
+      Management system that manages an entire distributed system built 
+      using an environment holding a certain range as a single unit rather 
+      than individual objects. Since the size of management can vary, it 
+      holds scalability to use proper management method appropriate for 
+      each management unit. Management method of security can be specified 
+      per management unit. Furthermore, a flexible management is realized 
+      with appropriate operations even when cutting off objects from 
+      system or reconnecting.
+
+  (8) Existing environment interface
+      Function group to utilize existing network services on the Internet.
+
+3. Concerning this release
+This release includes the following contents:
+  - Executor
+  - OZ compiler
+  - IDE(Integrated Development Environment)
+  - OZ Launcher
+  - Class Delivery Mechanism
+  - OZ Distributed Management Objects
+  - Application Management
+  - OZ class library
+  - Existing environment interface
+
+This release includes a sample program of OZ that allows an user to 
+experience processes involved from the OZ development environment to 
+compiling as well as execution. For details, see the OZ development 
+environment manual found in HTML under the docs/html directory.
+
+4. Known bugs
+
+An OZ system for Solaris sometimes aborts in X11R6.
+We haven't made the reason clear yet.
+Please see it in openwin or CDE.
+
+The grapics libraly in Solaris has some problems.
+It doesn't sometimes draw graphic items collectly.
+Refreshing the window, for example resizing the window, 
+sometimes makes it clear.
+
+OZ system uses Java system.
+OZ system executes Java system with '-noverify' option,
+because a verify error often happens in Java system.
+

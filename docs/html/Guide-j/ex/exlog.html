@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="exshell.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../io/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>OzVM実行ログ</B><BR>
+</H3>
+<BR clear="all">
+<P>
+ここでは、OzVM実行ログについて説明しています。<BR>
+</P>
+<P>
+<BR>
+<BR>
+OzVMを起動すると必ずログファイルが作成されます。コマンドプロンプトで、OzVMを起動するためのコマンド<BR>
+oz を起動すると最初に表示されるメッセージがログファイル名です。<BR>
+<BR>
+OzVMの起動とログファイル名 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    &gt; oz -f hello.ins
+    Logging file F:\oz\logs\dorothy01080.log
+    ...
+</PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+ログファイルには、OzVMの出力するメッセージが表示されます。<BR>
+<BR>
+ログファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+Fri Feb 27 08:41:49 OZ Executor start on Java 1.1.4
+Fri Feb 27 08:41:49 ExClassLoader#ExClassLoader: oz.classloader.deliveryAgent.url is null
+Fri Feb 27 08:41:50 ExSecurityManager#greeting: ExSecurityManager is ready.
+Fri Feb 27 08:41:53 ***** SHUTDOWN: CellManager *****
+Fri Feb 27 08:41:53 ***** SHUTDOWN: CommManager *****
+Fri Feb 27 08:41:54 OZ Executor exit(0)
+</PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+世界標準時で事象が起こった日時が表示されます。<BR>
+<BR>
+アプリケーションがログファイルにメッセージ出力することもできます。<BR>
+<BR>
+アプリケーション実行中に異常が発生した場合、実行時エラーメッセージも出力されます。<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><B>ログメッセージを出力するアプリケーションの構築</B>
+  <DD><BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+  <DT><B>ログファイルに記録される実行時エラーメッセージ</B>
+</DL>
+<P>
+<BR>
+ログファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+Wed Feb 25 12:01:52 OZ Executor start on Java 1.1.4
+Wed Feb 25 12:01:52 ExClassLoader#ExClassLoader: oz.classloader.deliveryAgent.url is null
+Wed Feb 25 12:01:53 ExSecurityManager#greeting: ExSecurityManager is ready.
+Wed Feb 25 12:03:08 ExRunnable#run:  run of OzRunnable treminated with exception
+Wed Feb 25 12:03:08 java.lang.NullPointerException: 
+Wed Feb 25 12:03:08     at JP.go.ipa.oz.lib.standard._<B>File</B>_cl._<B>new_breed</B>(_File_cl.java:16)
+Wed Feb 25 12:03:08     at <B>JP.go.ipa.oz.user.proj1.RefreshController_cl</B>.<B><FONT color="#400040">actionPerformed</FONT></B>(RefreshController_cl.java:131)
+Wed Feb 25 12:03:08     at JP.go.ipa.oz.lib.standard._ActionListener_cl.dispatch(_ActionListener_cl.java:53)
+Wed Feb 25 12:03:08     at JP.go.ipa.oz.lib.standard._EventDispatcher_cl.dispatch(_EventDispatcher_cl.java:88)
+Wed Feb 25 12:03:08     at JP.go.ipa.oz.lib.standard._EventDispatcher_cl.run(_EventDispatcher_cl.java:35)
+Wed Feb 25 12:03:08     at JP.go.ipa.oz.lang._Thread_cl$Runnable.run(_Thread_cl.java:16)
+Wed Feb 25 12:03:08     at JP.go.ipa.oz.system.ExRunnable.run(ExRunnable.java:29)
+Wed Feb 25 12:03:08     at java.lang.Thread.run(Thread.java:474)
+Wed Feb 25 12:03:49 ExCellManager#quit: ***** DEACTIVATE ExCell@2090f2[name=ide,maxpri=5,status=ACTIVE]
+Wed Feb 25 12:03:53 ***** SHUTDOWN: CellManager *****
+Wed Feb 25 12:03:53 ***** SHUTDOWN: CommManager *****
+Wed Feb 25 12:03:53 ExCellManager#quit: ***** COMPLETE   ExCell@2090f2[name=ide,maxpri=5,status=FREE]
+Wed Feb 25 12:03:54 OZ Executor exit(0)
+</PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+(例外 <TT><FONT color="#400040">NullPointerException</FONT></TT> が発生しています。クラス識別子JP.go.ipa.oz.user.proj1.RefreshController_cl
+でユニークに識別されるクラスの<TT><FONT color="#400040">actionPerformed</FONT></TT>
+メソッドで、Fileクラスのコンストラクタが起動されるときにこの例外が発生しました。)
+</P>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="exshell.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../io/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

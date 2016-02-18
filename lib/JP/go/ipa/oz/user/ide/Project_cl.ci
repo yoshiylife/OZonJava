@@ -1,0 +1,16 @@
+j, JP.go.ipa.oz.user.ide.Project_cl, 0x0, JP.go.ipa.oz.user.ide.Project_if, JP.go.ipa.oz.lang._Root_cl
+a, projectName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 700, 19
+a, projectDir, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 766, 18
+a, files, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 751, 12
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.lib.standard._Array_cl), (1026, 147, ())
+c, create, (), (), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.lib.standard._Array_cl), (894, 83, ())
+m, addFile, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2291, 169, ())
+m, setProjectDir, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1818, 71, ())
+m, setFiles, 0x1, V, (LJP.go.ipa.oz.lib.standard._Array_if), (JP.go.ipa.oz.lib.standard._Array_if), (), (2128, 50, ())
+m, setProjectName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1484, 75, ())
+m, removeAllFiles, 0x21, V, (), (), (), (3007, 62, ())
+m, removeFile, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_cl), (2578, 424, ((2706, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, getNumOfFiles, 0x1, I, (), (), (), (3165, 57, ())
+m, getFiles, 0x1, LJP.go.ipa.oz.lib.standard._Array_if, (), (), (), (1987, 46, ())
+m, getProjectName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1317, 59, ())
+m, getProjectDir, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1654, 57, ())

@@ -1,0 +1,6 @@
+i, JP.go.ipa.oz.user.apl.fm.Archiver_if, 0x2000, ()
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.apl.fm.Pointer_if)
+m, initialize, 0x1, V, ()
+m, add, 0x1, V, (LJP.go.ipa.oz.user.apl.fm.Pointer_if, LJP.go.ipa.oz.user.apl.fm.Pointer_if)
+m, quiet, 0x1, V, ()
+m, find, 0x1, LJP.go.ipa.oz.user.apl.fm.Pointer_if, (LJP.go.ipa.oz.user.apl.fm.Pointer_if)

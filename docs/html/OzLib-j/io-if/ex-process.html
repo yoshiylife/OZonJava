@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>I/O Interface</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>外部プロセス</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<UL>
+<LI><B>class Process : *Root</B><BR>
+外部動作するプロセスを表すクラスである。
+<P>
+<B>コンストラクタ</B>
+<P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new create(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定した文字列コマンドのサブプロセスを生成する。
+</TD></TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>コマンド
+<P>
+ </DL>
+</TD></TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<P>
+<B>メソッド</B>
+<P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public OutputStream getOutputStream()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サブプロセスの標準入力に接続されている出力ストリームを得る。
+</TD></TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>サブプロセスの標準入力に接続されている出力ストリーム
+<P>
+ </DL>
+</TD></TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public InputStream getInputStream()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サブプロセスの標準出力に接続されている入力ストリームを得る。
+</TD></TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>サブプロセスの標準出力に接続されている入力ストリーム
+<P>
+ </DL>
+</TD></TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public InputStream getErrorStream()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サブプロセスの標準エラーストリームに接続されている入力ストリームを得る。
+</TD></TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>サブプロセスのエラーストリームに接続されている入力ストリーム
+<P>
+ </DL>
+</TD></TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int waitFor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サブプロセスが完了するまで待機する。
+</TD></TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>サブプロセスの終了コード
+<P>
+ </DL>
+</TD></TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+  例外 InterruptedException: waitFor メソッドが中断された。 
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int exitValue()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サブプロセスの終了コードを返す。
+</TD></TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>サブプロセスの終了コード
+<P>
+ </DL>
+</TD></TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+   IllegalThreadStateExecption: サブプロセスが終了していない状態。
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void destroy()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サブプロセスを終了する。
+</TD></TR><TD NOWRAP><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TD NOWRAP><STRONG>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TD NOWRAP><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+</UL>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

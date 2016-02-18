@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.secu.ASTimer_cl, 0x0, JP.go.ipa.oz.user.secu.ASTimer_if, JP.go.ipa.oz.lang._Root_cl
+a, end, 0x4, N, 40, 24
+a, isDone, 0x4, Z, 16, 22
+c, create, (), (), (), (70, 10, ())
+m, MethodDone, 0x21, V, (), (), (), (151, 57, ())
+m, invoke, 0x1, V, (LJP.go.ipa.oz.user.secu._Conncection_if, I), (JP.go.ipa.oz.user.secu._Conncection_if, JP.go.ipa.oz.lang._Thread_if, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if), (JP.go.ipa.oz.lang._Thread_cl, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_cl), (210, 154, ((272, 6, JP.go.ipa.oz.lang._Thread_if), (325, 16, JP.go.ipa.oz.user.lib_dist.sync.timer._TimeOutException_if)))
+m, endWait, 0x24, V, (I), (), (), (82, 67, ())

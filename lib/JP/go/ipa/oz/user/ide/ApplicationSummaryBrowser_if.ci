@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if, 0x0, (JP.go.ipa.oz.lib.standard._Frame_if)
+m, getKey, 0x1, LJP.go.ipa.oz.user.garage.Key_if, ()
+m, show, 0x1, V, (LJP.go.ipa.oz.user.ide.ApplicationSummary_if)
+m, getInputSummary, 0x1, LJP.go.ipa.oz.user.ide.ApplicationSummary_if, ()
+m, getSummary, 0x1, LJP.go.ipa.oz.user.ide.ApplicationSummary_if, ()

@@ -1,0 +1,4 @@
+i, JP.go.ipa.oz.user.launcher.Launcher_if, 0x2000, ()
+m, initialize, 0x1, V, ()
+m, quiet, 0x1, V, ()
+m, go, 0x1, V, ()

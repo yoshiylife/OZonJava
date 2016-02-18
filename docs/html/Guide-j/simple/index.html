@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="../index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="s_native.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H2>はじめてのOZアプリケーション<BR>
+</H2>
+<P>
+<BR>
+</P>
+<P>
+ここではOZシステムを利用するアプリケーションの構築の初歩として簡単なプログラムを紹介し、それをコンパイル、実行する方法を説明しています。<BR>
+<BR>
+さらに、OZシステムが提供している統合開発環境を利用してコンパイルをする方法をご紹介します。<BR>
+<BR>
+<BR>
+次に示す Hello.oz がここで説明をするもっとも簡単なOZプログラムです。<BR>
+<BR>
+<BR>
+OZプログラム <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+Hello.oz
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    cell Hello{
+        public void initialize(){;}
+
+        public void go(){
+            println(&quot;Hello!&quot;);
+        }
+         
+        public void println(String str){
+            System system=&gt;create();  
+            system-&gt;println(str);
+        }
+
+        protected void quiet(){
+            flushCell();
+        }
+    }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<P>
+以下の「Helloプログラムとその実行」では、OZ言語によるプログラミングの基礎的事項を説明しています。「統合開発環境を利用したアプリケーション開発」では、Helloプログラムをアプリケーションとしてリリースするまでの手順を説明しています。<BR>
+<BR>
+</P>
+<UL>
+  <LI><A href="s_native.html">Helloプログラムとその実行</A><BR>
+<BR>
+  <LI><A href="s_ide.html">統合開発環境を利用したアプリケーション開発</A><BR>
+<BR>
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="../index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="s_native.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

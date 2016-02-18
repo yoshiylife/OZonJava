@@ -1,0 +1,11 @@
+j, JP.go.ipa.oz.user.inter.cgi.CGISocket_cl, 0x0, JP.go.ipa.oz.user.inter.cgi.CGISocket_if, JP.go.ipa.oz.lang._Runnable_cl
+a, port, 0x0, I, 8011, 9
+a, input_randezvou_table, 0x0, LJP.go.ipa.oz.user.inter.cgi.RandezvouTable_if, 8168, 37
+a, server, 0x0, LJP.go.ipa.oz.lib.standard._ServerSocket_if, 8351, 20
+a, output_randezvou_table, 0x0, LJP.go.ipa.oz.user.inter.cgi.RandezvouTable_if, 8265, 38
+a, test_mode, 0x0, Z, 8404, 15
+a, no_requests, 0x0, I, 8093, 16
+c, create, (I, LJP.go.ipa.oz.user.inter.cgi.RandezvouTable_if, LJP.go.ipa.oz.user.inter.cgi.RandezvouTable_if), (JP.go.ipa.oz.user.inter.cgi.RandezvouTable_if), (), (9466, 171, ())
+c, createForTest, (I, LJP.go.ipa.oz.user.inter.cgi.RandezvouTable_if, LJP.go.ipa.oz.user.inter.cgi.RandezvouTable_if), (JP.go.ipa.oz.user.inter.cgi.RandezvouTable_if), (), (9825, 200, ())
+m, stop, 0x1, V, (), (), (), (10080, 47, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._IOException_if, JP.go.ipa.oz.lib.standard._Socket_if, JP.go.ipa.oz.user.inter.cgi.CGI_if, JP.go.ipa.oz.lang._Thread_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.inter.cgi.CGI_cl, JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._ServerSocket_cl, JP.go.ipa.oz.lang._Thread_cl), (8452, 837, ((8477, 6, JP.go.ipa.oz.lib.standard._System_if), (8595, 11, JP.go.ipa.oz.lib.standard._IOException_if), (8618, 6, JP.go.ipa.oz.lib.standard._System_if), (8819, 6, JP.go.ipa.oz.lib.standard._Socket_if), (8886, 3, JP.go.ipa.oz.user.inter.cgi.CGI_if), (8905, 6, JP.go.ipa.oz.lang._Thread_if), (9089, 11, JP.go.ipa.oz.lib.standard._IOException_if), (9168, 6, JP.go.ipa.oz.lib.standard._System_if)))

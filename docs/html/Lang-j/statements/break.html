@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="do.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="continue.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>break 文（The break Statement）<BR>
+</H3>
+<BR clear="all">
+<P>
+状況によって文の実行を制御できます。<BR>
+<BR>
+</P>
+<P>
+<B>構文</B>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD width="150"><B>break [ラベル名] ;</B></TD></TR>
+</TABLE>
+
+<P>
+ラベル名を省略することができます。ラベル名を省略したbreak文を<TT>ラベルなしbreak文</TT>と呼びます。ラベル名が省略されていないbreak文を<TT>ラベル付きbreak文</TT>と呼びます。<BR>
+<BR>
+</P>
+<P>
+<BR>
+<B>LALR(1)文法</B>
+</P>
+<PRE>
+  jump_stmt : BREAK identifier_or_empty ; 
+
+  identifier_or_empty : /* empty */
+                        IDENTIFIER<BR>
+</PRE>
+<P>
+<BR>
+<BR>
+<B>説明</B><BR>
+</P>
+<P>
+ラベルなしbreak文は、最も内側のswitch文,、while文,、do文、for文の正常に終了させます。このbreak文は
+switch文,、while文,、do文、for文の内側に定義しなくてはいけません。<BR>
+<BR>
+ラベル付きbreak文は、ラベル文の中の任意の場所で記述できます。このbreak
+文の実行後、そのラベルを指定したラベル文の次の文に制御が移動します。<BR>
+<BR>
+<BR>
+</P>
+<P>
+例: 繰返し文に記述されたラベルなしbreak文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    Iterator iter = pool-&gt;iterator();
+    FMObject obj;
+    Pointer point;
+
+    while (iter-&gt;hasMoreElements()) {
+        point =| iter-&gt;nextElement();
+        obj = point-&gt;stuff();
+        if (obj-&gt;getName()-&gt;isequal(name)) {
+            pool-&gt;remove(point);
+            break;        // while文の繰返しを終了する
+        }
+    }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+例: ラベル付きbreak文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+ 1:  for_loop:
+ 2:    for (int i = 0; i &lt; a; i++)
+ 3:      if (i % 2 == 0) 
+ 4:          continue for_loop;
+ 5:      else 
+ 6:          switch (i % 5) {
+ 7:          case 0:
+ 8:              break;
+ 9:          case 1:
+10:              j++;
+11:              break;
+12:          case 2:
+13:              j += 2;
+14:              break;
+15:          default:
+16:              break for_loop;
+17:          }
+18:      while (j &gt; a)
+19:           j--;
+20:      do {
+21:           ;
+22:      } while (j++ &lt; i);
+23:      return j + i;
+24:  }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>8行目と11行目のラベルなしbreak文が実行されると、18行目に制御が移ります。
+  <LI>16行目のラベル付きbreak文が実行されると、1行目に制御が移ります。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="do.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="continue.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

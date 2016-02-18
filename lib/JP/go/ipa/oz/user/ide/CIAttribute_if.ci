@@ -1,0 +1,7 @@
+i, JP.go.ipa.oz.user.ide.CIAttribute_if, 0x10, (JP.go.ipa.oz.user.ide.CIMember_if)
+m, isFinal, 0x1, Z, ()
+m, isProtected, 0x1, Z, ()
+m, getType, 0x1, LJP.go.ipa.oz.user.ide.CIType_if, ()
+m, isTransient, 0x1, Z, ()
+m, getTypeAsString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.user.ide.School_if)
+m, getTypeAsString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

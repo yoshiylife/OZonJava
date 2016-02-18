@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="identifier.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="literals.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>キーワード (Keywords)<BR>
+</H3>
+<BR clear="all">
+<P>
+以下の文字列はキーワード (予約語) として扱います。
+</P>
+<P>
+<BR>
+</P>
+<CENTER>
+<TABLE cellpadding="3">
+  <TR>
+    <TD><TT>abstract </TT></TD>
+    <TD>const</TD>
+    <TD>float</TD>
+    <TD>native</TD>
+    <TD>super</TD></TR>
+  <TR>
+    <TD>bool</TD>
+    <TD>continue</TD>
+    <TD>for</TD>
+    <TD>new</TD>
+    <TD>syncronized</TD></TR>
+  <TR>
+    <TD>boolean</TD>
+    <TD>default</TD>
+    <TD>goto</TD>
+    <TD>package</TD>
+    <TD>this</TD></TR>
+  <TR>
+    <TD>break</TD>
+    <TD>do</TD>
+    <TD>if</TD>
+    <TD>private</TD>
+    <TD>throw</TD></TR>
+  <TR>
+    <TD>byte</TD>
+    <TD>double</TD>
+    <TD>implements</TD>
+    <TD>protected</TD>
+    <TD>throws</TD></TR>
+  <TR>
+    <TD>case</TD>
+    <TD>else</TD>
+    <TD>import</TD>
+    <TD>public</TD>
+    <TD>true</TD></TR>
+  <TR>
+    <TD>catch</TD>
+    <TD>extends</TD>
+    <TD>int</TD>
+    <TD>return</TD>
+    <TD>try</TD></TR>
+  <TR>
+    <TD>char</TD>
+    <TD>false</TD>
+    <TD>interface</TD>
+    <TD>short</TD>
+    <TD>void</TD></TR>
+  <TR>
+    <TD>class</TD>
+    <TD>final</TD>
+    <TD>locked</TD>
+    <TD>static</TD>
+    <TD>volatile</TD></TR>
+  <TR>
+    <TD>condition</TD>
+    <TD>finally</TD>
+    <TD>long</TD>
+    <TD>switch</TD>
+    <TD>while</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<BR>
+例: キーワード<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<PRE>
+     1:/**
+     2: * FMObjectは、Facility Manageidentifiernt Systemでの管理対象である
+     3: *「リソース」を表すオブジェクトである。
+     4: */
+     5: 
+     6:class FMObject : *Root {
+     7:        protected Pointer identifier;
+     8:        String name;
+     9:        Set relations;
+    10:        RelationComparator rc;
+    11:
+    12:        //FMObjectの生成
+    13:        new create() {
+    14:                rc=&gt;create();
+    15:                relations =&gt; create(rc);
+    16:                name =&gt; breed(&quot;UnKnown&quot;); //UnKnownは初期値
+    17:        }
+      :      ....
+      : }
+</PRE>
+<P>
+<BR>
+</P>
+<UL>
+  <LI>6行目の class はキーワードです。
+  <LI>7行目の protected はキーワードです。
+  <LI>13行目の new は識別子です。
+  <LI>14行目のrc、create は識別子です。
+</UL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="identifier.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="literals.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,11 @@
+j, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_cl, 0x2000, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if, JP.go.ipa.oz.user.lib_dist.replica.CopyScheme_cl
+m, getCopy, 0x1, LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (4524, 428, ((4579, 20, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if), (4615, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (4644, 6, JP.go.ipa.oz.lib.standard._String_if), (4660, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, getClientStub, 0x1, LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if, (), (JP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if), (), (4020, 143, ((4069, 20, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if)))
+m, update, 0x1, V, (), (), (), (3707, 22, ())
+m, go, 0x4, V, (), (), (), (510, 22, ())
+m, propagateAll, 0x1, Z, (), (), (), (3242, 244, ())
+m, makeList, 0x1, V, (LJP.go.ipa.oz.lib.standard._Set_if, LJP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (JP.go.ipa.oz.lib.standard._Set_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (), (2479, 110, ())
+m, newCopyAt, 0x1, V, (LJP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if, JP.go.ipa.oz.lib.standard._Iterator_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyResource_cl), (1060, 1085, ((1527, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (1732, 20, JP.go.ipa.oz.user.lib_dist.replica.CopyOfPeerCopyScheme_if), (1763, 12, JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (1787, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, quiet, 0x4, V, (), (), (), (573, 36, ())
+m, addOtherCopy, 0x1, V, (LJP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (JP.go.ipa.oz.user.lib_dist.replica.CopyResource_if), (), (2883, 80, ())
+m, initialize, 0x4, V, (), (), (), (449, 57, ())

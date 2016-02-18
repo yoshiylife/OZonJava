@@ -1,0 +1,1002 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>I/O Interface</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>ネットワーク</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<UL>
+<LI><B>class InetAddress : *Root</B><BR>
+IPアドレスを示すクラス。
+<P>
+<B>コンストラクタ</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new getByName(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したホストのIPアドレスオブジェクトを作成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ホスト名
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:指定したホストIPアドレスが見つからない。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new getLocalHost()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ローカルホストのIPアドレスオブジェクトを作成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:指定したホストIPアドレスが見つからない。 
+</TD></TR>
+</TABLE>
+</P>
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public boolean isMulticastAddress()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>マルチキャストアドレスかどうかを判別する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>マルチキャストアドレスであればtrue
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public String getHostName()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このIPアドレスのホスト名を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ホスト名
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public ByteArray getAddress()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アドレスオブジェクトのIPアドレスを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>IPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public String getHostAddress()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アドレスのドット10進形式を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>IPアドレス文字列
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public boolean equalTo(Root arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このIPアドレスオブジェクトと指定しているオブジェクトを比較する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>指定しているオブジェクト
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>同じであればtrue
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このIPアドレスの文字列を変換する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>IPアドレス文字列
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public InetAddress getByName(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したホストのIPアドレスを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>指定したホスト名
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>指定したホストのIPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:指定したホストのIPアドレスが見つからない。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public Collection getAllByName(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したホストのIPアドレスをすべて返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>指定したホスト名
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>すべてのIPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:指定したホストのIPアドレスが見つからない。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public InetAddress getLocalHost()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ローカルホストのIPアドレスを返す
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ローカルホストのIPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:ローカルホストのIPアドレスが見つからない。 
+</TD></TR>
+</TABLE>
+</P>
+</UL>
+<UL>
+<LI><B>class InetAddressComparator : *Root</B><BR>
+IPアドレスの比較クラス。
+<P>
+<B>コンストラクタ</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new create()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アドレス比較クラスを作成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int hash(Root arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アドレスのハッシュコードを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>IPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ハッシュコード
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public boolean compare(Root arg1, Root arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>二つIPアドレスを比較する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>比較するオブジェクト
+    <DT><STRONG>arg2</STRONG>
+<DD>比較するオブジェクト
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>同じであればtrue
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public Comparator duplicate()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>新しいInetAddressComparatorオブジェクトを生成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>新しいInetAddressComparatorオフジェクト
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+</UL>
+<UL>
+<LI><B>class ServerSocket : *Root</B><BR>
+ネットワーク上でプログラムの間に通信チャネルを構成するクラス。
+<P>
+<B>コンストラクタ</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したポート上にサーバソケットを作成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:I/Oエラーが発生した。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>待ち列の最大値を明示して指定したポート上にサーバソケットを作成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ポート番号
+    <DT><STRONG>arg2</STRONG>
+<DD>待ち列の最大値
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:I/Oエラーが発生した。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(int arg1, int arg2, InetAddress arg3)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>待ち列の最大値及びローカルIPアドレスを明示して指定したポート上にサーバソケットを作成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ポート番号
+    <DT><STRONG>arg2</STRONG>
+<DD>待ち列の最大値
+    <DT><STRONG>arg3</STRONG>
+<DD>ローカルIPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:I/Oエラーが発生した。 
+</TD></TR>
+</TABLE>
+</P>
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public InetAddress getInetAddress()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サーバソケットのローカルアドレスを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>サーバソケットのローカルアドレス。サーバソケットは接続されていない場合に null である。
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int getLocalPort()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>接続されたソケットのポートを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public Socket accept()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>接続する要求を受け取り、通信用のソケットを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>通信用のソケット
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:接続中にI/Oエラーが発生した。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>protected final void implAccept(Socket arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットのサブクラスを得るため、サーバソケットのサブクラスがこのメソードを使ってaccept() をオーバーライドする。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>指定したソケットオブジェクト
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void close()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットをクローズする。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:ソケットをクローズする際にI/Oエラーが発生した。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void setSoTimeout(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>()メソードの待ち時間を設定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>待ち時間
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>: accept()メソードが発生した。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int getSoTimeout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>設定したaccept()メソードの待ち時間を得る。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>待ち時間
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:I/Oエラーが発生 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットのアドレス及びポートを文字列として返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>文字列
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void setSocketFactory(SocketImplFactory arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>サーバソケット実装ファクトリを設定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>使用するファクトリ
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:ソケットファクトリの設定中にI/Oエラーが発生した 
+</TD></TR>
+</TABLE>
+</P>
+</UL>
+<UL>
+<LI><B>class SocketImplFactory : Root</B><BR>
+ソケット実装ファクトリを定義するクラスで、抽象クラスである。
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public abstract SocketImpl createSocketImpl()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>クラスのインスタンスを作成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>SocketImplクラスのインスタンス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<B>備考</B>
+<UL><LI> インタフェースのみ継承可能である。
+</UL></UL>
+<UL>
+<LI><B>class SocketImpl : *Root</B><BR>
+ソケットを実装するクラスのスーパークラス。抽象クラスである。
+<P>
+<B>コンストラクタ</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>を生成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>protected FileDescriptor getFileDescriptor()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>オープンソケットのハンドルオブジェクトを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ハンドルオブジェクト
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>protected InetAddress getInetAddress()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットのIPアドレスを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>IPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>protected int getPort()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットの接続先のリモートホスト上にあるポート番号を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>リモートホスト上にあるポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>protected int getLocalPort()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>接続されたソケットのローカルポート番号を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ローカルポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットのアドレスとポートを文字列として返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>文字列
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+</UL>
+<UL>
+<LI><B>class Socket : *Root</B><BR>
+ネットワーク上でプログラムの間に通信チャネルを構成するクラス。
+<P>
+<B>コンストラクタ</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>無接続ソケットを生成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(SocketImpl arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したソケットハンドルを使用して無接続ソケットを生成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>指定したソケットハンドル
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(String arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したホスト上での指定のポートを接続するストリームソケットを生成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ホスト名
+    <DT><STRONG>arg2</STRONG>
+<DD>ポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:ソケットを生成する際にI/Oエラーが発生 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(InetAddress arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したIPアドレスでの指定のポートを接続するストリームソケットを生成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>IPアドレス
+    <DT><STRONG>arg2</STRONG>
+<DD>ポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:ソケットを生成する際にI/Oエラーが発生 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(String arg1, int arg2, InetAddress arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したリモートホスト上に指定のリモートポート番号を接続するストリームを生成する。このソケットは指定したIPアドレスでのポートに接続される。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>リモートホスト名
+    <DT><STRONG>arg2</STRONG>
+<DD>リモートポート番号
+    <DT><STRONG>arg3</STRONG>
+<DD>ローカルIPアドレス
+    <DT><STRONG>arg4</STRONG>
+<DD>ローカルポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:ソケットを生成する際にI/Oエラーが発生 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(InetAddress arg1, int arg2, InetAddress arg3, int arg4)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したリモートIPアドレスでの指定のリモートポート番号を接続するストリームを生成する。このソケットは指定したローカルIPアドレスでのローカルポートに接続される。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>リモートアドレス
+    <DT><STRONG>arg2</STRONG>
+<DD>リモートポート番号
+    <DT><STRONG>arg3</STRONG>
+<DD>ローカルアドレス
+    <DT><STRONG>arg4</STRONG>
+<DD>ローカルポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:ソケットを生成する際にI/Oエラーが発生 
+</TD></TR>
+</TABLE>
+</P>
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public InetAddress getInetAddress()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットのIPアドレスを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>IPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public InetAddress getLocalAddress()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>接続されたローカルソケットのIPアドレスを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ローカルIPアドレス
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int getPort()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>接続されたソケットのリモートポート番号を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>リモートポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int getLocalPort()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>接続されたソケットのローカルポート番号を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ローカルポート番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public InputStream getInputStream()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このソケットの入力ストリームを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>入力ストリーム
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:入力ストリームの作成する際にI/Oエラーが発生した 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public OutputStream getOutputStream()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このソケットの出力ストリームを返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>出力ストリーム
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:出力ストリームの作成する際にI/Oエラーが発生した 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void setTcpNoDelay(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>_NODELAY の有効または無効を設定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>有効であれば true
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>SocketException: ソケット例外状態 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public boolean getTcpNoDelay()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>_NODELAY の有効または無効を判別する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>有効であれば true
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>: ソケット例外状態 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void setSoLinger(boolean arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>残り時間を指定された SO_LINGER の有効または無効を設定する。 
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>有効であれば true
+    <DT><STRONG>arg2</STRONG>
+<DD>指定した残り時間
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>SocketException: ソケット例外状態 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int getSoLinger()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>残り時間を指定された SO_LINGER 値を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>残り時間
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>: ソケット例外状態 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void setSoTimeout(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>read()メソードの待ち時間の SO_TIMEOUT を設定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>待ち時間
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>SocketException: ソケット例外状態 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int getSoTimeout()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>read()メソードの待ち時間の SO_TIMEOUT 値を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>待ち時間
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>: ソケット例外状態 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void close()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットを閉める。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>:I/Oエラーが発生した。 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ソケットを文字列に変換する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>文字列
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void setSocketImplFactory(SocketImplFactory arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>アプリケーションのクライアントソケット実装ファクトリを設定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>使用するファクトリ
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+</UL>
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

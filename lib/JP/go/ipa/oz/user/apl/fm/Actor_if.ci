@@ -1,0 +1,7 @@
+i, JP.go.ipa.oz.user.apl.fm.Actor_if, 0x0, (JP.go.ipa.oz.user.apl.fm.FMObject_if)
+m, setAccess, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getPlace, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, setPlace, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, setRole, 0x1, V, (LJP.go.ipa.oz.user.apl.fm.Actor_if)
+m, setRole, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getAccess, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

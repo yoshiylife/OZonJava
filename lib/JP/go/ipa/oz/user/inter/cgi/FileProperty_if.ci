@@ -1,0 +1,2 @@
+i, JP.go.ipa.oz.user.inter.cgi.FileProperty_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, read, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.inter.cgi.FilePropertyReader_if)

@@ -1,0 +1,1255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="../inet/ozcgi.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="../message/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H2>OZ言語クイックリファレンス<BR>
+</H2>
+<P>
+<BR>
+</P>
+<DL>
+  <DT><B>Contents</B>
+  <DD>１．<A href="#lexicals">字句</A><BR>
+２．<A href="#types">型と変数</A><BR>
+３．<A href="#classes">クラス</A><BR>
+４．<A href="#names">名前</A><BR>
+５．<A href="#exceptions">例外処理</A><BR>
+６．<A href="#statements">文</A><BR>
+７．<A href="#expressions">式</A><BR>
+８．<A href="#conv">型変換</A><BR>
+９．<A href="#sync">同期機構</A><BR>
+</DL>
+<P>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<P>
+<A name="lexicals"></A>
+</P>
+<DL>
+  <DT><B>１．字句</B>
+  <DD><BR>
+OZ言語では、以下の字句を規定しています。
+  <UL>
+    <LI>コメント
+    <LI>識別子
+    <LI>キーワード
+    <LI>リテラル
+    <LI>演算子
+    <LI>区切子
+    <LI>空白文字
+  </UL>
+<BR>
+  <DT>１．１ コメント
+  <DD>2種類の形式でコメントが記述できます。
+  <UL>
+    <LI>/* から */ までの文字列
+    <LI>// から改行文字 までの文字列
+  </UL>
+コメントは字句の区切りとしてのみ扱われます。<BR>
+<BR>
+  <DT>１．２ 識別子
+  <DD>英字 (a-zA-Z) から始まり英数字 (a-zA-Z0-9) およびアンダースコア (_)
+からなる任意の長さの文字列で、キーワード、空白文字の字句を含まないものが識別子です。<BR>
+<BR>
+  <DT>１．３ キーワード
+  <DD>
+  <TABLE cellpadding="3">
+    <TR>
+      <TD nowrap>abstract<TT> </TT></TD>
+      <TD nowrap>const</TD>
+      <TD nowrap>float</TD>
+      <TD nowrap>native</TD>
+      <TD nowrap>super</TD></TR>
+    <TR>
+      <TD nowrap>bool</TD>
+      <TD nowrap>continue</TD>
+      <TD nowrap>for</TD>
+      <TD nowrap>new</TD>
+      <TD nowrap>syncronized</TD></TR>
+    <TR>
+      <TD nowrap>boolean</TD>
+      <TD nowrap>default</TD>
+      <TD nowrap>goto</TD>
+      <TD nowrap>package</TD>
+      <TD nowrap>this</TD></TR>
+    <TR>
+      <TD nowrap>break</TD>
+      <TD nowrap>do</TD>
+      <TD nowrap>if</TD>
+      <TD nowrap>private</TD>
+      <TD nowrap>throw</TD></TR>
+    <TR>
+      <TD nowrap>byte</TD>
+      <TD nowrap>double</TD>
+      <TD nowrap>implements</TD>
+      <TD nowrap>protected</TD>
+      <TD nowrap>throws</TD></TR>
+    <TR>
+      <TD nowrap>case</TD>
+      <TD nowrap>else</TD>
+      <TD nowrap width="75">import</TD>
+      <TD nowrap>public</TD>
+      <TD nowrap>true</TD></TR>
+    <TR>
+      <TD nowrap>catch</TD>
+      <TD nowrap>extends</TD>
+      <TD nowrap>int</TD>
+      <TD nowrap>return</TD>
+      <TD nowrap>try</TD></TR>
+    <TR>
+      <TD nowrap>char</TD>
+      <TD nowrap>false</TD>
+      <TD nowrap>interface</TD>
+      <TD nowrap>short</TD>
+      <TD nowrap width="75">void</TD></TR>
+    <TR>
+      <TD nowrap width="75">class</TD>
+      <TD nowrap width="75">final</TD>
+      <TD nowrap width="65">locked</TD>
+      <TD nowrap width="75">static</TD>
+      <TD nowrap>volatile</TD></TR>
+    <TR>
+      <TD nowrap width="65">condition</TD>
+      <TD nowrap width="65">finally</TD>
+      <TD nowrap>long</TD>
+      <TD nowrap>switch</TD>
+      <TD nowrap>while</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>１．４ リテラル
+  <DD><BR>
+OZ言語がリテラルとして扱う字句には次のものがあります。
+  <UL>
+    <LI>整数リテラル
+    <LI>浮動小数リテラル
+    <LI>文字リテラル
+    <LI>文字列リテラル
+    <LI>論理型リテラル
+    <LI>NULL リテラル
+  </UL>
+<BR>
+<BR>
+  <DD>
+  <DL>
+    <DT>整数リテラル
+    <DD>
+    <TABLE width="491" height="88">
+      <TR>
+        <TD nowrap width="5"></TD>
+        <TD nowrap valign="top">10進数整数定数</TD>
+        <TD>0 でない数字 (1-9) から始まる、数字 (0-9) のゼロ個以上の列</TD></TR>
+      <TR>
+        <TD nowrap></TD>
+        <TD nowrap valign="top">16進数整数定数</TD>
+        <TD>0x または 0X から始まる、数字 (0-9) および A から F までの英字の大文字または小文字 
+の1個以上の列</TD></TR>
+      <TR>
+        <TD nowrap></TD>
+        <TD nowrap valign="top">8進数整数定数</TD>
+        <TD>0から始まる、0から7までの数字 (0-7) の ゼロ 個以上の列</TD></TR>
+    </TABLE>
+
+<BR>
+int型として扱われます。<BR>
+<BR>
+<BR>
+    <DT>浮動小数リテラル
+    <DD>
+    <DL>
+      <DT>非指数表現
+      <DD>整数部 (10進数整数定数)、小数点文字 (.)、小数部 (10進数整 数定数) の列
+      <DT>指数表現
+      <DD>非指数表現に加えて、 e または E、指数部 (+ または -、10進数整数定数の列)
+の列
+    </DL>
+<BR>
+サフィックスとして f または F が存在する場合は、float 型、サフィックスがなければ、
+doulbe 型として扱われます。<BR>
+<BR>
+<BR>
+    <DT>文字リテラル
+    <DD>文字をシングルクォーテーション (') で囲んだ文字列は、その文字(character)そのものを表す文字リテラルです。<BR>
+非グラフィック文字に対しては、エスケープ表現(escape sequences)を用います。<BR>
+<BR>
+char 型として扱われます。<BR>
+<BR>
+＜エスケープ表現＞<BR>
+<IMG src="charlit.gif" alt="エスケープ表現" height="260" width="365"><BR>
+<BR>
+    <DT>文字列リテラル
+    <DD>ゼロ個以上の文字の列をダブルクォーテーション (&quot;) でを囲んだ列 
+は、その文字の列を表す文字列リテラルです。非グラフィック文字に対しては、文字リテラルと同様にエスケープ表現を用います。<BR>
+<BR>
+文字列定数はシステム定義のクラス型であるString型として扱われます。<BR>
+<BR>
+<BR>
+    <DT>論理型リテラル
+    <DD>次のキーワードは論理型リテラルです。
+    <UL>
+      <LI>false
+      <LI>true
+    </UL>
+<BR>
+論理型の定数値として扱われます。<BR>
+<BR>
+<BR>
+    <DT>NULLリテラル
+    <DD>次のキーワードはNULLリテラルです。
+    <UL>
+      <LI>null
+    </UL>
+<BR>
+NULL リテラルは任意のクラス型の値となります。<BR>
+<BR>
+<BR>
+  </DL>
+  <DT>１．５ 演算子
+  <DD>
+  <TABLE cellspacing="1">
+    <TR>
+      <TD width="10"></TD>
+      <TD align="center" width="25">++</TD>
+      <TD align="center" width="25">--</TD>
+      <TD align="center" width="25">+</TD>
+      <TD align="center" width="25">-</TD>
+      <TD align="center" width="25">!</TD>
+      <TD align="center" width="25">*</TD>
+      <TD align="center" width="25">/</TD>
+      <TD align="center" width="25">%</TD>
+      <TD align="center" width="25">=</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center">&lt;</TD>
+      <TD align="center">&gt;</TD>
+      <TD align="center">&lt;=</TD>
+      <TD align="center">&gt;=</TD>
+      <TD align="center">==</TD>
+      <TD align="center">!=</TD>
+      <TD align="center">&amp;&amp;</TD>
+      <TD align="center">||</TD>
+      <TD align="center">=|</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center">*=</TD>
+      <TD align="center">/=</TD>
+      <TD align="center">%=</TD>
+      <TD align="center">+=</TD>
+      <TD align="center">-=</TD>
+      <TD align="center">&amp;&amp;=</TD>
+      <TD align="center">||=</TD>
+      <TD align="center">? :</TD>
+      <TD align="center"></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>１．６ 区切子
+  <DD>
+  <TABLE cellspacing="1">
+    <TR>
+      <TD width="10"></TD>
+      <TD align="center" width="25">(</TD>
+      <TD align="center" width="25">)</TD>
+      <TD align="center" width="25">{</TD>
+      <TD align="center" width="25">}</TD>
+      <TD align="center" width="25">;</TD>
+      <TD align="center" width="25">'</TD>
+      <TD align="center" width="25">&quot;</TD>
+      <TD align="center" width="25">,</TD>
+      <TD align="center" width="25"></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>１．７ 空白文字
+  <DD>
+  <UL>
+    <LI>スペースキャラクタ (space character)
+    <LI>水平タブ (horizontal tab)
+    <LI>改行 (CR, LF, CR + LF のすべて)
+    <LI>紙送り (FF)
+  </UL>
+空白文字は字句の区切りとしてのみ扱われます。
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="types"></A>
+</P>
+<DL>
+  <DT><B>２．型と変数</B>
+  <DD><BR>
+OZシステムの型には、基本型とクラス型があります。OZ言語の式は必ず型を持っています。初期化されない変数(ローカル変数、メソッドの仮引数、アトリビュート参照)は、型のデフォルト値を持っています。<BR>
+<BR>
+  <DT>２．１ 基本型
+  <DD>
+  <TABLE border="1">
+    <TR>
+      <TD>型</TD>
+      <TD align="center">値</TD>
+      <TD align="center">デフォルト</TD>
+      <TD align="center">サイズ</TD>
+      <TD align="center">最小値</TD>
+      <TD align="center">最大値</TD></TR>
+    <TR>
+      <TD>byte</TD>
+      <TD>符号付き整数</TD>
+      <TD align="center">0</TD>
+      <TD align="right">8 bits</TD>
+      <TD align="right">-128</TD>
+      <TD align="right">127</TD></TR>
+    <TR>
+      <TD>short</TD>
+      <TD>符号付き整数</TD>
+      <TD align="center">0</TD>
+      <TD align="right">16 bits</TD>
+      <TD align="right">-32768</TD>
+      <TD align="right">32767</TD></TR>
+    <TR>
+      <TD>int</TD>
+      <TD>符号付き整数</TD>
+      <TD align="center">0</TD>
+      <TD align="right">32 bits</TD>
+      <TD align="right">-2147483648</TD>
+      <TD align="right">2147483647</TD></TR>
+    <TR>
+      <TD>long</TD>
+      <TD>符号付き整数</TD>
+      <TD align="center">0</TD>
+      <TD align="right">64 bits</TD>
+      <TD align="right">-9223372036854775808</TD>
+      <TD align="right">9223372036854775807</TD></TR>
+    <TR>
+      <TD>float</TD>
+      <TD>IEEE754 浮動小数</TD>
+      <TD align="center">0.0ｆ</TD>
+      <TD align="right">32 bits</TD>
+      <TD align="right">±3.40282347E+38</TD>
+      <TD align="right">±1.40239846E-45</TD></TR>
+    <TR>
+      <TD>double</TD>
+      <TD>IEEE754 浮動小数</TD>
+      <TD align="center">0.0</TD>
+      <TD align="right">64 bits</TD>
+      <TD nowrap align="right">±1.79769313486231570E+308</TD>
+      <TD nowrap align="right">±4.94065645841246544E-324</TD></TR>
+    <TR>
+      <TD>char</TD>
+      <TD>Unicode文字</TD>
+      <TD align="center">\u0000</TD>
+      <TD align="center">(16 bits)</TD>
+      <TD align="center">\u0000</TD>
+      <TD align="center">\uFFFF</TD></TR>
+    <TR>
+      <TD>bool</TD>
+      <TD>true、false</TD>
+      <TD align="center">false</TD>
+      <TD align="center">(1 bit)</TD>
+      <TD align="center">－</TD>
+      <TD align="center">－</TD></TR>
+    <TR>
+      <TD>condition</TD>
+      <TD>実行環境依存</TD>
+      <TD align="center">－</TD>
+      <TD align="center">－</TD>
+      <TD align="center">－</TD>
+      <TD align="center">－</TD></TR>
+  </TABLE>
+
+（表中の\は、バックスラッシュです）<BR>
+<BR>
+condition型については「９．<A href="#sync">同期機構</A>」を参照してください。<BR>
+<BR>
+  <DT>２．２ クラス型
+  <DD><BR>
+2種類のクラス型があります。
+  <UL>
+    <LI>class型
+    <LI>cell型
+  </UL>
+クラス型からオブジェクトが生成されます。クラス型はリファレンスで操作されます。<BR>
+<BR>
+クラス型は以下の値を持つことができます。
+  <UL>
+    <LI>クラス型への参照
+    <LI><TT>null</TT>
+  </UL>
+<BR>
+初期化されないクラス型の変数のデフォルト値は<B>null</B>です 。すなわち、<BR>
+初期化の行われないクラス型の変数は、どのオブジェクトリファレンスも保持していません。これをnull状態と呼びます。
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="classes"></A>
+</P>
+<DL>
+  <DT><B>３．クラス</B>
+  <DD><BR>
+OZシステムにはネットワークを介してメソッド起動ができるオブジェクトとローカル環境で利用されるオブジェクトが存在します。ネットワークを介してメソッド起動できるオブジェクトを<B>グローバルオブジェクト</B>と呼びます。グローバルオブジェクトはcell型のクラスのインスタンスです。<BR>
+<BR>
+<BR>
+  <DT>３．１ クラス宣言
+  <DD><BR>
+<EM>クラス宣言文:</EM><BR>
+<B>[クラス修飾子] class クラス名 ［上位クラス］ { メンバリスト};</B><BR>
+cell型の場合には、キーワード<B>class</B> の代わりに キーワード <B>cell</B>
+を用います。<BR>
+<BR>
+<EM><TT>クラス修飾子</TT>:</EM>
+  <TABLE cellspacing="5" cellpadding="2">
+    <TR>
+      <TD width="30"></TD>
+      <TD valign="top"><B>abstract</B></TD>
+      <TD>抽象クラス。このクラスを直接の型とするオブジェクトを生成することができません。<BR>
+abstract メソッドを持つクラスはこの属性を持たなければいけません。<BR>
+<BR>
+逆に、 この属性を持たないクラスは、上位クラスで定義されたすべてのabstract
+メソッドに対して、再定義により実装定義を行う必要があります。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD valign="top" width="80"><B>final</B></TD>
+      <TD>このクラスを上位クラスとして宣言することができません。すなわち、このクラスの下位クラスを定義することができません。<BR>
+この修飾子を abstract 属性と共に指定することはできません。<BR>
+<BR>
+逆に、この属性を持たないクラスはその下位クラスを定義することができます。</TD></TR>
+  </TABLE>
+
+注) cell型の抽象クラスは宣言できません。<BR>
+<BR>
+<EM>クラス名:</EM><BR>
+コンパイル単位でユニークな識別子を用います。<BR>
+<BR>
+<EM>上位クラス:</EM><BR>
+<B>: [*] クラス名［, クラス名］</B><BR>
+複数のクラスを上位クラスとして宣言できます。上位クラスを宣言することにより、クラス宣言文で定義しているクラスがそのクラスのオブジェクトとしても振る舞うことができるようになります。<BR>
+上位クラスの直前に*をつけると、上位実装クラスの指定になります。下位クラスは上位実装クラスの動作部を継承し、その他の上位クラスのインタフェース部を継承します。上位実装クラスはたかだか１つです。<BR>
+<BR>
+<EM>{メンバリスト}</EM><BR>
+メンバの宣言。メンバとしてアトリビュート、メソッド、コンストラクタが定義でき、定義のためには各々の宣言文を用います。<BR>
+<BR>
+注)<BR>
+cell型のメンバとして開発者がコンストラクタを宣言することはできません。システムがcell型のコンストラクタを規定しています。<BR>
+<BR>
+<BR>
+  <DT>３．２ アトリビュート宣言
+  <DD><BR>
+<EM>アトリビュート宣言文:</EM><BR>
+<B>[アクセスレベル] [アトリビュート修飾子] 型名 アトリビュート名;</B><BR>
+<BR>
+<EM>アクセスレベル:</EM>
+  <TABLE cellspacing="5" cellpadding="2">
+    <TR>
+      <TD width="30"></TD>
+      <TD><B>protected</B></TD>
+      <TD>定義クラスのオブジェクトのメンバおよび子孫クラスのオブジェクトのメンバからアクセスできます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD width="80">（なし）</TD>
+      <TD>定義クラスのオブジェクトのメンバからアクセスできます。</TD></TR>
+  </TABLE>
+
+<BR>
+<EM><TT>アトリビュート修飾子</TT>:</EM>
+  <TABLE cellspacing="5" cellpadding="2">
+    <TR>
+      <TD width="30"></TD>
+      <TD valign="top"><B>final</B></TD>
+      <TD>コンストラクタ本体の定義文でのみ、このアトリビュートへの代入を行うことができます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD valign="top" width="80"><B>transient</B></TD>
+      <TD>オブジェクトが永続化される場合にこのアトリビュートは切り離されます。<BR>
+オブジェクトが再起動された後の値は保証されません。</TD></TR>
+  </TABLE>
+
+<BR>
+<EM>型名:</EM><BR>
+基本型あるいはクラス型を指定します。<BR>
+<BR>
+<EM>アトリビュート名:</EM><BR>
+クラス単位でユニークな識別子を用います。<BR>
+<BR>
+<BR>
+  <DT>３．３ メソッド宣言
+  <DD><BR>
+<EM>メソッド宣言文:</EM><BR>
+<B>[アクセスレベル] [メソッド修飾子] 型名 メソッド名(引数リスト)[{文}];</B><BR>
+<BR>
+<EM>アクセスレベル:</EM>
+  <TABLE cellspacing="5" cellpadding="2" height="104">
+    <TR>
+      <TD></TD>
+      <TD valign="top"><B>public</B></TD>
+      <TD>任意のクラスからアクセスできます。</TD></TR>
+    <TR>
+      <TD width="30"></TD>
+      <TD valign="top"><B>protected</B></TD>
+      <TD>定クラスのオブジェクトのメンバおよびおよび子孫クラスのオブジェクトからアクセスできます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD valign="top" width="80">（なし）</TD>
+      <TD>定義クラスのオブジェクトのメンバからアクセスできます。</TD></TR>
+  </TABLE>
+
+<BR>
+<EM><TT>メソッド修飾子</TT>:</EM>
+  <TABLE cellspacing="5" cellpadding="2">
+    <TR>
+      <TD></TD>
+      <TD valign="top"><B>static</B></TD>
+      <TD>クラスメソッド。すなわち、このメソッドはクラスに対して実行することができます。<BR>
+このメソッド内ではオブジェクト自身へのリファレンスで ある this を使用できません。また、アトリビュートを参照することはできません。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD valign="top"><B>abstract</B></TD>
+      <TD>抽象メソッド。実装定義を持たないメソッドの宣言です。</TD></TR>
+    <TR>
+      <TD width="30"></TD>
+      <TD valign="top"><B>final</B></TD>
+      <TD>このクラスの下位クラスで再定義 (オーバーライ ド) することができないという指定です。この修飾子は、abstract
+修飾子と共に指定することができません。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD valign="top" width="80"><B>locked</B></TD>
+      <TD>このメソッドに対するメソッド起動はモニタによる排他制御が行われます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD valign="top"><B>once</B></TD>
+      <TD>このメソッドの実装が評価されるのは一回目のメソッド起動時のみです。<BR>
+戻り値を持つメソッドの場合、二回目以降のメソッド起動時には一回目のメ ソッド起動時の値が戻り値となります。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<EM>型名:</EM><BR>
+基本型あるいはクラス型を指定します。<BR>
+型名に void を指定することができますが、これは戻り値のないことを意味しています。<BR>
+<BR>
+<EM>メソッド名:</EM><BR>
+クラス単位でユニークな識別子を用います。<BR>
+<BR>
+<EM>引数リスト</EM><BR>
+引数のリスト。<BR>
+１つの引数は <B><FONT>型名 仮引数名</FONT></B> で表現します。<BR>
+<BR>
+<EM>{文<B>}</B></EM><BR>
+メソッド本体の定義を表わす複文です。一連の文から構成されメソッドの振舞いが表現されます。<BR>
+abstract修飾子を持つメソッドはこの部分を省略します。<BR>
+<BR>
+<BR>
+  <DT>３．４ コンストラクタ宣言
+  <DD><BR>
+注意） cell型クラス宣言の場合、開発者がコンストラクタ宣言を行うことはできません。システム定義のコンストラクタが用意されており、インスタンス生成時にそのコンストラクタが起動されます。<BR>
+<BR>
+<EM>コンストラクタ宣言文:</EM><BR>
+<B>new コンストラクタ名 (引数リスト) {文};</B><BR>
+new はキーワードです。<BR>
+<BR>
+注意）コンストラクタにはアクセスレベルを指定することができません。任意のクラスからアクセスできます。<BR>
+<BR>
+<BR>
+<EM>コンストラクタ名:</EM><BR>
+同一クラス内で、メソッド名と重複するコンストラクタ名を指定してはいけません。<BR>
+<BR>
+<EM>引数リスト</EM><BR>
+引数のリスト。<BR>
+１つの引数は <B><FONT>型名 仮引数名</FONT></B> で表現します。<BR>
+<BR>
+<EM><EM>{文<B>}</B></EM></EM><BR>
+コンストラクタ本体の定義を表わす複文です。一連の文から構成されコンストラクタの振舞いが表現されます。<BR>
+<BR>
+<BR>
+  <DT>３．５ class型とcell型の相違
+  <DD><BR>
+<EM>クラス宣言文の相違</EM>
+  <UL>
+    <LI>class型はclass，cell型はcellというキーワードを、型の指定に用います。
+    <LI>class型の宣言では、cell型のクラスを上位クラスに指定することができません。逆に、cell型のクラスはclass型のクラスを上位クラスに指定することができません。
+    <LI>cell型のコンストラクタはシステムが定義しているので、コンストラクタメンバをクラス定義のメンバリストに記述することはできません。
+  </UL>
+<BR>
+<EM>アトリビュート宣言文の相違</EM>
+  <UL>
+    <LI>(相違はありません。)
+  </UL>
+<BR>
+<EM>メソッド宣言文の相違</EM><BR>
+  <UL>
+    <LI>cell型のメソッド定義では、abstract修飾子を指定することができません。
+    <LI>cell型のメソッド本体の定義では、自分自身への参照を表わす <B>this</B>
+を指定することができません。
+  </UL>
+<BR>
+<EM>コンストラクタ宣言文の相違</EM>
+  <UL>
+    <LI>cell型のコンストラクタ宣言はできません。
+  </UL>
+<BR>
+<BR>
+  <DT>３．６ オブジェクトの生成
+  <DD><BR>
+オブジェクトを生成するためにはそのクラス型の変数を用意し、変数に対してコンストラクタを実行します<BR>
+(インスタンス生成式： <B>クラス型変数 ＝＞ コンストラクタ名( [ 引数リスト
+] )</B>)。<BR>
+<BR>
+コンストラクタは以下の特徴を持っています。
+  <UL>
+    <LI>コンストラクタは下位クラスに継承されません。
+    <LI>abstractクラスに対してコンストラクタを呼び出すことはできません。
+    <LI>上位実装クラスを持つクラスのコンストラクタは上位実装クラスのコンストラクタを１つ呼び出さなければいけません。<BR>
+  </UL>
+<BR>
+<BR>
+  <DT>３．７ オブジェクトの動作
+  <DD><BR>
+オブジェクトはメソッド起動によって動作します。オブジェクトへのリファレンスを保持する式に対して、実行するメソッドを指定することで、オブジェクトを動作させることができます。<BR>
+（メソッド起動式:<B>[ クラス型の式 －＞ ] メソッド名( [ 引数リスト ] )
+</B>）<BR>
+<BR>
+<BR>
+  <DT>３．８ クラスの構造とバージョン管理
+  <DD><BR>
+OZコンパイラは、クラス宣言をインタフェース部と動作部に分けて扱います。<BR>
+  <TABLE cellspacing="1">
+    <TR>
+      <TD nowrap width="5"></TD>
+      <TD valign="top">インタフェース部</TD>
+      <TD>
+      <UL>
+        <LI>publicメソッドのシグネチャ
+        <LI>上位クラスの情報。
+      </UL>
+</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD valign="top">動作部</TD>
+      <TD>インタフェース部以外の部分。すなわち、<BR>
+      <UL>
+        <LI>アトリビュート
+        <LI>メソッド本体の定義
+        <LI>public以外のアクセスレベルを持つメソッドのシグネチャと本体定義
+        <LI>コンストラクタのシグネチャと本体定義
+      </UL>
+</TD></TR>
+  </TABLE>
+
+<BR>
+下位クラスは上位実装クラスからインタフェース部と動作部を継承し、上位実装クラス以外の上位クラスからインタフェース部を継承します。<BR>
+インタフェース部と動作部はそれぞれ識別子を持っています。これを<B>クラス識別子</B>と呼びます。<BR>
+クラス名、インタフェース部のクラス識別子、動作部のクラス識別子を対応づける情報をクラス情報といいます。OZコンパイラにはバージョン管理機能があり、インタフェース部と動作部を別々にバージョン管理します。<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<A name="names"></A>
+</P>
+<DL>
+  <DT><B>４． 名前</B>
+  <DD>
+  <P>
+OZ 言語では、以下の識別子はすべて異なる名前空間を持ちます。
+  </P>
+  <UL>
+    <LI>クラス名
+    <LI>メソッド名およびコンストラクタ名
+    <LI>アトリビュート名
+    <LI>メソッド、コンストラクタ、catch 節の仮引数、ローカル変数
+    <LI>ラベル
+  </UL>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="exceptions"></A>
+</P>
+<DL>
+  <DT><B>５．例外処理</B>
+  <DD><BR>
+throw文とtry文を用いると、プログラムで発生する例外をプログラマが制御することができます。<BR>
+例外にはシステム例外とユーザ定義例外があります。任意のクラスをユーザ定義例外として扱うことができます。<BR>
+<BR>
+  <DT>５．１ throw 文
+  <DD><BR>
+throw文により例外を発生させることができます。ｔhrow文は任意のオブジェクトを１つ投げることができ、それが例外として扱われます。<BR>
+<BR>
+<BR>
+例外の送出<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+<PRE>
+    UserException  e;
+    
+    if (exp1 == null) {
+      e =&gt; create(&quot;exp1 failed.&quot;);
+      throw e;
+    }
+
+</PRE>
+UserExceptionというクラスのオブジェクトを生成し、exp1の値がnullの場合に例外を発生させています。このUserExceptionクラスは以下のように定義されています。<BR>
+<BR>
+例外のユーザ定義 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+<PRE>
+    class UserException: *RuntimeException {
+        new create(String msg) {
+            super-&gt;init(msg);
+        }
+    }
+</PRE>
+<BR>
+<BR>
+  <DT>５．２ try 文
+  <DD><BR>
+try文により任意の例外を捕捉することができます。例外は任意のオブジェクトです。<BR>
+<BR>
+例外処理のプログラミング<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+<PRE>
+  try {
+      文1;
+      ...
+      文n;
+    } catch (例外A e) {
+      // 例外Aが発生した場合の処理
+      文A1;
+      ...
+      文A2;
+    } catch (例外B e) { 
+      // 例外Bが発生した場合の処理
+      文B1;
+       ... 
+      文B2;
+    } catch (NullPointerException e) {
+      // システム例外
+      文S1;
+       ... 
+      文S2;
+    }
+    finally {
+      // 例外が発生した場合に必ず実行される処理
+      文F1;
+       ...
+      文F2;
+    }
+  }  
+</PRE>
+<BR>
+<BR>
+文1から文nに向かって順番に処理が行われます。途中で例外が発生したら、それが捕獲されます。<BR>
+捕獲した例外の型がAであると、文A1; ... 文A2;、そして、文F1; ... 文F2;が実行されます。<BR>
+捕獲した例外の型がBであると、文B1; ... 文B2;、そして、文F1; ... 文F2;が実行されます。<BR>
+捕獲した例外の型がNullPointerExceptionであると、文S1; ... 文S2;、そして、文F1;
+... 文F2;が実行されます。<BR>
+finally節は記述しなくてもかまいません。finally節を記述すると、必ずそれが実行されます。<BR>
+<BR>
+  <DT>５．３ システム例外
+  <DD>
+  <TABLE>
+    <TR>
+      <TD nowrap width="5"></TD>
+      <TH align="center">例 外</TH>
+      <TD nowrap width="8"></TD>
+      <TH align="center">意 味</TH></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD>RuntimeException</TD>
+      <TD nowrap width="5"></TD>
+      <TD>実行時例外が発生しました。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD>ArithmeticException</TD>
+      <TD nowrap></TD>
+      <TD>ゼロによる整数の除算、剰余算など、算術上の例外状況が発生しました。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD>ArrayStoreException</TD>
+      <TD nowrap></TD>
+      <TD>配列の構成要素に、その配列の構成要素の型と代入等価でない値を代入しようとしました。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD>ClassCastException</TD>
+      <TD nowrap></TD>
+      <TD>クラス型への変換が要求されましたが、実際にリファレンスする値が型に適合しません</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD>NullPointerException</TD>
+      <TD nowrap></TD>
+      <TD>オブジェクトをリファレンスする必要がある場所で、null参照が行われました。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD>SecurityException</TD>
+      <TD nowrap></TD>
+      <TD>セキュリティ違反を検知しました。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD>CellNotFoundException</TD>
+      <TD nowrap></TD>
+      <TD>セルが検出できませんでした。</TD></TR>
+  </TABLE>
+
+<BR>
+システム例外は、try文の catch節以外では明示的に発生させること（throw）ができません。<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="statements"></A>
+</P>
+<DL>
+  <DT><B>６．文</B>
+</DL>
+<DL>
+  <DT>６．１ 複文
+  <DD><B>{ [文] }</B><BR>
+<BR>
+  <DT>６．２ ローカル変数宣言文
+  <DD><B>型名 ローカル変数名［ = 初期値 ］;</B><BR>
+<BR>
+  <DT>６．３ 空文
+  <DD><B>;</B><BR>
+<BR>
+  <DT>６．４ ラベル文
+  <DD><B>ラベル名 : 文</B><BR>
+<BR>
+  <DT>６．５ 式文
+  <DD><B>式 ;</B><BR>
+<BR>
+  <DT>６．６ if 文
+  <DD><B>if (式) 文;</B><BR>
+<B>if (式) 文1 else 文２</B><BR>
+<BR>
+  <DT>６．７ switch 文
+  <DD><B>switch (式) {文}</B><BR>
+<BR>
+switch(式) {<BR>
+case 定数式: 文<BR>
+case 定数式: 文<BR>
+...<BR>
+default: 文<BR>
+}<BR>
+<BR>
+  <DT>６．８ while文
+  <DD><B>while (式) 文</B><BR>
+<BR>
+  <DT>６．９ do文
+  <DD><B>do {文} while (式);</B><BR>
+<BR>
+  <DT>６．１０ for文
+  <DD><B>for ([文Init]; [式]; 式文Update) 文</B><BR>
+<BR>
+  <DT>６．１１ break文
+  <DD><B>break [ラベル名] ;</B><BR>
+<BR>
+  <DT>６．１２ continue文
+  <DD><B>continue [ラベル名] ;</B><BR>
+<BR>
+  <DT>６．１３ return文
+  <DD><B>return [式] ;</B><BR>
+<BR>
+  <DT>６．１４ throw文
+  <DD><B>throw [式];</B><BR>
+<BR>
+cauch節で用いられた場合、式を省略することができます。<BR>
+<BR>
+  <DT>６．１５ ｔｒｙ文
+  <DD><B>try 複文1 [catch(型名 変数名)｛文｝［,..., finally 複文］]</B><BR>
+<BR>
+try文の中でthrow文を記述することができます。
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="expressions"></A>
+</P>
+<DL>
+  <DT><B>７．式</B>
+  <DD>式は左から評価されます。<BR>
+<BR>
+  <DT>７．１ 一次式
+  <DD>
+  <TABLE cellspacing="2">
+    <TR>
+      <TD nowrap width="5"></TD>
+      <TD nowrap valign="top">識別子</TD>
+      <TD><B>ローカル変数名</B><BR>
+メソッドの<B>仮引数名</B><BR>
+<BR>
+</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">アトリビュート参照</TD>
+      <TD><B>アトリビュート名</B><BR>
+そのアトリビュートが定義されたクラスのメソッド本体で、アトリビュートを参照するために用いられる式<BR>
+<BR>
+</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">リテラル</TD>
+      <TD>「1．字句」で定義されているリテラル<BR>
+<BR>
+</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top"><B>this</B></TD>
+      <TD><B>this</B><BR>
+実行中のメソッドを持つオブジェクトを参照する式<BR>
+<BR>
+</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">括弧で囲んだ式</TD>
+      <TD><B>（ ）</B><BR>
+任意の式を括弧記号で囲んだ式<BR>
+<BR>
+</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">メソッド起動式</TD>
+      <TD><B>[ クラス型の式 －＞ ] メソッド名( [ 引数リスト ] ) </B><BR>
+<BR>
+クラス型のメソッド起動を行なう式<BR>
+<BR>
+-&gt;から左を省略するとメソッドを持つオブジェクトに対するメソッド起動式。<BR>
+<BR>
+</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">インスタンス生成式</TD>
+      <TD><B>クラス型変数 ＝＞ コンストラクタ名( [ 引数リスト ] ) </B><BR>
+<BR>
+オブジェクト（クラス型のインスタンス）を生成する式<BR>
+<BR>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+</DL>
+<DL>
+  <DT>７．２ 演算子とその評価順序
+  <DD><BR>
+  <TABLE border="1">
+    <TR>
+      <TD valign="top">優先<BR>
+順位</TD>
+      <TD>演算子</TD>
+      <TD nowrap>オペランドの型</TD>
+      <TD align="center">結合的</TD>
+      <TD nowrap align="center">意 味</TD></TR>
+    <TR>
+      <TD rowspan="5" valign="top">1.</TD>
+      <TD>++</TD>
+      <TD nowrap>数値型</TD>
+      <TD>右</TD>
+      <TD nowrap>前置インクリメント（単項演算子）<BR>
+後置インクリメント（単項演算子）</TD></TR>
+    <TR>
+      <TD>--</TD>
+      <TD nowrap>数値型</TD>
+      <TD>右</TD>
+      <TD nowrap>前置デクリメント（単項演算子）<BR>
+後置デクリメント（単項演算子）</TD></TR>
+    <TR>
+      <TD>+</TD>
+      <TD nowrap>数値型</TD>
+      <TD>右</TD>
+      <TD nowrap>正を表わす<BR>
+＝オペランドの値（単項演算子）</TD></TR>
+    <TR>
+      <TD>-</TD>
+      <TD nowrap>数値型</TD>
+      <TD>右</TD>
+      <TD nowrap>負を表わす<BR>
+＝オペランドの値に(-1)を乗じたもの（単項演算子）</TD></TR>
+    <TR>
+      <TD>!</TD>
+      <TD nowrap>論理型</TD>
+      <TD>右</TD>
+      <TD nowrap>論理的な余数<BR>
+=オペランドの値がtrueならばfalse，falseならばtrue．<BR>
+（単項演算子）</TD></TR>
+    <TR>
+      <TD rowspan="3" valign="top">2．</TD>
+      <TD>*</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>乗算（算術演算子の乗法演算子）</TD></TR>
+    <TR>
+      <TD>/</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>除算（算術演算子の乗法演算子）</TD></TR>
+    <TR>
+      <TD>%</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>剰余算（算術演算子の乗法演算子）</TD></TR>
+    <TR>
+      <TD rowspan="2" valign="top">3.</TD>
+      <TD>+</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>加算（算術演算子の加法演算子）</TD></TR>
+    <TR>
+      <TD>-</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>引算（算術演算子の加法演算子）</TD></TR>
+    <TR>
+      <TD rowspan="4" valign="top">4.</TD>
+      <TD>&gt;</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>より大きい（関係演算子）</TD></TR>
+    <TR>
+      <TD>&lt;</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>より小さい（関係演算子）</TD></TR>
+    <TR>
+      <TD>&gt;=</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>以上（関係演算子）</TD></TR>
+    <TR>
+      <TD>&lt;=</TD>
+      <TD nowrap>数値型, 数値型</TD>
+      <TD>左</TD>
+      <TD nowrap>以下（関係演算子）</TD></TR>
+    <TR>
+      <TD rowspan="4" valign="top">5.</TD>
+      <TD>==</TD>
+      <TD nowrap>基本型, 同一の基本型</TD>
+      <TD>左</TD>
+      <TD nowrap>等しい（等値演算子）</TD></TR>
+    <TR>
+      <TD>==</TD>
+      <TD nowrap>クラス型, null</TD>
+      <TD>左</TD>
+      <TD nowrap>等しい（等値演算子）</TD></TR>
+    <TR>
+      <TD>!=</TD>
+      <TD nowrap>基本型, 同一の基本型</TD>
+      <TD>左</TD>
+      <TD nowrap>等しくない（等値演算子）</TD></TR>
+    <TR>
+      <TD>!=</TD>
+      <TD nowrap>クラス型, null</TD>
+      <TD>左</TD>
+      <TD nowrap>等しくない（等値演算子）</TD></TR>
+    <TR>
+      <TD valign="top">6.</TD>
+      <TD>&amp;&amp;</TD>
+      <TD nowrap>論理型, 論理型</TD>
+      <TD>左</TD>
+      <TD nowrap>論理積（論理演算子の論理積演算子）</TD></TR>
+    <TR>
+      <TD valign="top">7.</TD>
+      <TD>||</TD>
+      <TD nowrap>論理型, 論理型</TD>
+      <TD>左</TD>
+      <TD nowrap>論理積（論理演算子の論理積演算子）</TD></TR>
+    <TR>
+      <TD valign="top">8.</TD>
+      <TD>? :</TD>
+      <TD nowrap>論理型, 型, 同一の型</TD>
+      <TD>右</TD>
+      <TD nowrap>論理型がtrueならば第2オペランドを評価し、<BR>
+falseならば第3オペランドを評価する（条件演算子）</TD></TR>
+    <TR>
+      <TD rowspan="4" valign="top">9.</TD>
+      <TD>=</TD>
+      <TD nowrap>識別子or<BR>
+アトリビュート参照式,<BR>
+型</TD>
+      <TD>右</TD>
+      <TD nowrap>単純な代入（代入演算子）</TD></TR>
+    <TR>
+      <TD>=|</TD>
+      <TD nowrap>識別子or<BR>
+アトリビュート参照式,<BR>
+型</TD>
+      <TD>右</TD>
+      <TD nowrap>強制代入（代入演算子）</TD></TR>
+    <TR>
+      <TD>*=<BR>
+/=<BR>
+%=<BR>
++=<BR>
+-=</TD>
+      <TD nowrap>識別子or<BR>
+アトリビュート参照式,<BR>
+数値型</TD>
+      <TD>右</TD>
+      <TD nowrap>複合代入（代入演算子）</TD></TR>
+    <TR>
+      <TD>&amp;&amp;=<BR>
+||=</TD>
+      <TD nowrap>識別子or<BR>
+アトリビュート参照式,<BR>
+論理型</TD>
+      <TD>右</TD>
+      <TD nowrap>複合代入（代入演算子）</TD></TR>
+  </TABLE>
+
+表中の「型」というのは、基本型あるいはクラス型を意味します。<BR>
+「基本型」には、condition型は含まれません。
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="conv"></A>
+</P>
+<DL>
+  <DT><B>８．型変換</B>
+  <DD><BR>
+代入や比較、あるいはメソッド起動の戻り値、引数は、代入等価な型に対して有効です。恒等変換、基本型のワイドニング変換、クラス型のワイドニング変換によって可能な型は代入等価です。<BR>
+強制代入演算子を使用すると、代入等価な型に加えて、基本型のナローイング変換、クラス型のナローイング変換によって可能な型にも代入を行うことができます。<BR>
+<BR>
+  <DT>８．１数値型の昇格と変換
+  <DD><BR>
+代入や比較に対して、以下の変換は暗黙に行われます。(型の昇格)<BR>
+  <UL>
+    <LI>整数型同士で桁数の小さな型から大きな型への変換
+    <LI>floatからdoubleへの変換
+    <LI>整数型から浮動小数型への変換<BR>
+  </UL>
+以下の変換を強制代入演算子を利用して明示的に行うことができます。<BR>
+  <UL>
+    <LI>整数型同士で桁数の大きな型から小さな型への変換
+    <LI>double型からfloat型への変換
+    <LI>浮動小数型から整数型への変換
+  </UL>
+<BR>
+  <DT>８．２ クラス型の変換
+  <DD><BR>
+以下の代入は暗黙的に行われます。<BR>
+  <UL>
+    <LI>クラス型 Tの子孫クラスの型 を S とすると、S を T に代入すること。
+  </UL>
+<BR>
+以下の代入を強制代入演算子を利用して明示的に行うことができます。<BR>
+  <UL>
+    <LI>クラス型 Tの子孫クラスの型 を S とすると、T を S に代入すること。
+  </UL>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="sync"></A>
+</P>
+<DL>
+  <DT><B>９．同期機構</B>
+  <DD><BR>
+同期機構によってマルチスレッドプログラミングが可能になります。OZシステムはモニタと条件変数いう機構を採用して、排他制御と同期を行います。<BR>
+<BR>
+排他制御の単位はオブジェクトです。<BR>
+<BR>
+</DL>
+<P>
+９．１ モニタによる排他制御
+</P>
+<DL>
+  <DD><BR>
+排他制御を行って起動したいメソッドには、修飾子 locked を指定して宣言します。<BR>
+そのメソッドが起動されているときには、そのオブジェクトへのアクセスがブロックされます。<BR>
+<BR>
+例: locked修飾子 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class Project {      
+        Array files;// files in this Project
+        
+        new create(){ .... }
+            
+        public Array getFiles() { .... }
+        public void setFiles(Array f) { .... }
+        public void addFile(String fileName) { .... }
+        public locked void removeFile(String fileName) { .... }
+        public locked void removeAllFiles() { .... }
+        public int getNumOfFiles() { .... }
+    }   
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+  <UL>
+    <LI>ProjectクラスのオブジェクトaProjectが管理しているファイルを削除するメソッドremoveFile、removeAllFiles
+が起動されるときには、モニタによる排他制御がかかります。<BR>
+ファイルを削除するメソッドが起動されているときには、オブジェクトaProjectに対するメソッド起動がロックされています。
+  </UL>
+<BR>
+<BR>
+</DL>
+<DL>
+  <DT>９．２ 条件変数による同期機構
+  <DD><BR>
+condition型の変数は条件変数を表わします。<BR>
+OZシステムの条件変数には、wait、signal、signalAllの操作が提供されています。<BR>
+  <UL>
+    <LI>wait： 実行を停止して、モニタの実行権を解放します。
+    <LI>signal： 同じ条件変数で wait を実行しているスレッドの実行を再開します。
+    <LI>signalAll： 同じ条件変数で wait を実行しているすべてのスレッドの実行を再開します。
+  </UL>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="../inet/ozcgi.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="../message/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

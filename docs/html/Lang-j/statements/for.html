@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="switch.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="while.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>for 文（The for Statement）<BR>
+</H3>
+<BR clear="all">
+<P>
+式の値によって、文の実行を制御します。<BR>
+<BR>
+<B>構文</B>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>for ([文Init]; [式]; 式文Update) 文</B></TD></TR>
+</TABLE>
+
+<P>
+式は論理型でなくてはいけません。<BR>
+<BR>
+<BR>
+<B>LALR(1)文法</B> （以下の\ は次の行への継続を示しています）
+</P>
+<PRE>
+  for_stmt : FOR ( for_initialize_stmt exp_or_empty ; comma_exp ) stmt
+                    
+  no_short_if_for_stmt : FOR ( for_initialize_stmt exp_or_empty ; \
+                           comma_exp ) no_short_if_stmt
+                    
+  for_initialize_stmt : type_name \
+                          identifier_only_or_with_initializer_list ;
+                        comma_exp ;
+
+  exp_or_empty : /* empty */
+                 exp
+
+  comma_exp : /* empty */
+              comma_exp , exp_of_exp_stmt 
+              exp_of_exp_stmt<BR>
+</PRE>
+<P>
+<BR>
+<B>説明</B><BR>
+まず、文Initが実行されます。文Initには、式文あるいはローカル変数宣言文を記述することができます。<BR>
+文Initが複数の式文から構成されている場合には、左から右へ評価されます。<BR>
+文Initとしてローカル変数宣言文が記述されている場合には、それが実行されます。文Initで宣言されたローカル変数のスコープは、それが宣言されている
+for 文の文Init、式、式文Update、文です。<BR>
+文Initが記述されない場合には、何も行われません。<BR>
+<BR>
+次に式の評価が行われます。<BR>
+式が記述されていない場合には、式の値はtrueだとみなされます。<BR>
+<BR>
+その後、繰返し部分、すなわち、文が実行されます。<BR>
+</P>
+<TABLE cellspacing="4" cellpadding="2">
+  <TR>
+    <TD width="20"></TD>
+    <TD>文が正常に実行されると式文Updateが実行されます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD>文にラベルのないbreak文が含まれると、そこで for 文が正常終了します。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD>文にラベルのないcontinue文が含まれると、そこで式文Updateの実行に処理が移されます。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD>ラベルのつけられたcontinue文が含まれてそのラベルがfor文に含まれているとそこに処理を移します。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD>ラベルのつけられたcontinue文が含まれてそのラベルがfor文の外部に存在すると、for文を終了し、そこに処理を移します。</TD></TR>
+</TABLE>
+
+<P>
+式文Updateが記述されていないと、次の繰返しのために式の評価が行われます。<BR>
+<BR>
+文の実行が終了すると、次の繰返しのために式の評価が行われます。<BR>
+<BR>
+式が評価され、その値がfalseであるとfor文を終了します。<BR>
+<BR>
+</P>
+<P>
+<BR>
+例: for 文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+1:  for (int i = 0; i &lt; len; i++) {
+2:      int found = str-&gt;indexOf (original_chars-&gt;at (i), from);
+3:      if (found != -1 &amp;&amp; found &lt; idx) {
+4:          idx = found;
+5:          found_char = i;
+6:      }
+7:  }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>2行目から5行目は複文です。{文}として複文が指定されています。
+  <LI>1行目の&quot;int i = 0&quot;が最初に実行されます。
+  <LI>次に&quot;i &lt; len&quot;が評価されます。最初のこの式の値はtrueですから、2行目から5行目の文が実行されます。
+  <LI>文の実行が終了すると1行目の&quot;i++&quot;が実行されます。
+  <LI>そして、再度1行目の&quot;i &lt; len&quot;が評価されます。この値がfalseになると、すなわち
+i の値が len の値以上になると、上記 for文の次の文に制御が移ります。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="switch.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="while.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

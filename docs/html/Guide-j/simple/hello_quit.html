@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="hello_my.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_compile.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>Quitクラス</B><BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+OZプログラム <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+Quit.oz
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    class Quit : *ActionListener {
+        MyDialog mydialog;
+
+        // Constructor of the class &quot;Quit&quot;
+        new create(MyDialog dlg, EventDispatchingQueue q) {
+            super=&gt;newActionListener(q);
+            mydialog = dlg;
+        }
+
+        // Invoked when button click actions occur. 
+        public void actionPerformed(ActionEvent event) {
+            if ( event-&gt;getActionCommand()-&gt;compareTo(&quot;OK&quot;)==0 ) {
+                mydialog-&gt;dispose();
+                mydialog-&gt;setVisible(false);                      
+                stopCell();                               
+            }
+        }
+    }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI><A href="#up">Quitクラスの上位クラス</A>
+  <LI><A href="#attr">Quitクラスのアトリビュート</A>
+  <LI><A href="#cons">Quitクラスのコンストラクタ</A>
+  <LI><A href="#method">Quitクラスのメソッド</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="up"></A><BR>
+１．Quitクラスの上位クラス
+  <DD><BR>
+Quitクラスは、ActionListenerクラスの下位クラスとして宣言されています。<BR>
+<BR>
+Quitクラスの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class Quit : *ActionListener {
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+ActionListenerクラスはOZ標準クラスライブラリのGUIライブラリに含まれるクラスです。<BR>
+<BR>
+<BR>
+OZでは、GUIライブラリとして、基本的な画面構成部品とそのイベントを取り扱うためのクラス、および基本グラフィックを支援するクラスを提供しています。イメージ処理、ペーストボードなどはOZ標準クラスライブラリに含まれていません。<BR>
+<BR>
+利用者がイベントを扱うために利用できるクラスとして、<BR>
+  <UL>
+    <LI>ActionListener
+    <LI>EventListener
+    <LI>EventDispatchingQueue
+  </UL>
+  <DD>などが定義されています。<BR>
+<BR>
+ActionListenerクラスはアクションイベントを受け取るためのリスナです。ディスパッチャオブジェクトがこのクラスのオブジェクトのメソッドactionPerformedを呼び出します。<BR>
+<BR>
+ActionListenerクラスのコンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new newActionListener(EventDispatchingQueue <FONT color="#800080">arg1</FONT>)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。<BR>
+<FONT color="#800080">arg1</FONT>にイベント配送キューを指定します。</TD></TR>
+  </TABLE>
+
+<BR>
+ActionListenerクラスのメソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void actionPerformed(ActionEvent <FONT color="#800080">arg1</FONT>)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>アクション用のコールバックを設定します。<BR>
+<FONT color="#800080">arg1</FONT> は、アクションイベントです。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+Quitクラスのオブジェクトも、上記のメソッドメンバを持っています。<BR>
+<BR>
+<BR>
+  <DT><A name="attr"></A><BR>
+２．Quitクラスのアトリビュート
+  <DD>Quitクラスには1つのアトリビュートメンバが宣言されています。<BR>
+<BR>
+Quitクラスのアトリビュート <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class Quit : *ActionListener {
+        MyDialog mydialog;
+        ... 
+    }
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+MyDialogクラスは、このサブジェクトのクラスの１つとして宣言、定義されています。<BR>
+<BR>
+<BR>
+  <DT><A name="cons"></A><BR>
+３．Quitクラスのコンストラクタ
+  <DD><BR>
+コンストラクタメンバは、名前の前にキーワード <B>new</B> をつけます。コンストラクタには、メソッド名と重複しなければ、任意の名前をつけることができます。Quitクラスのコンストラクタは
+create という名前です。<BR>
+<BR>
+コンストラクタ <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31"><BR>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    new create( MyDialog dlg, EventDispatchingQueue q) { 
+        super=&gt;newActionListener(q);
+        mydialog = dlg; 
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<TT><FONT color="#400040">super=&gt;newActionListener(q);</FONT></TT>は上位クラスのメソッド起動です。<BR>
+コンストラクタメンバを宣言するときには、<B>必ず上位クラスのコンストラクタを起動する</B>必要があります。<BR>
+<BR>
+このコンストラクタでは、アトリビュートmydialogの初期設定を行っています（<TT><FONT color="#400040">mydialog
+= dlg;</FONT></TT>）。<BR>
+<BR>
+<BR>
+  <DT><A name="method"></A><BR>
+４．Quitクラスのメソッド
+  <DD><BR>
+Quitクラスには、１つのメソッドメンバが宣言されています。<BR>
+<BR>
+actionPerformed メソッド<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    public void actionPerformed(ActionEvent event) {
+        if ( event-&gt;getActionCommand()-&gt;compareTo(&quot;OK&quot;)==0 ) {
+            mydialog-&gt;dispose();
+            mydialog-&gt;setVisible(false);                     
+            stopCell();                   
+        }
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+<BR>
+<BR>
+上位クラスのActionLisnerに、<TT>public void actionPerformed(ActionEvent
+event)</TT>が宣言されていましたから、この定義は上位クラスのメソッドの<B>再定義</B>になります。<BR>
+<BR>
+ActionEventクラスのオブジェクトを受け取って、そのイベントオブジェクトのコマンド名を得ています（<TT><FONT color="#400040">event-&gt;getActionCommand()</FONT></TT>）。<BR>
+そして、その名前が&quot;OK&quot;という文字列に等しいかどうかを調べています（<TT><FONT color="#400040">compareTo(&quot;OK&quot;)</FONT></TT>）。<BR>
+<BR>
+compareToメソッドはStringクラスのメソッドで、そのクラスのオブジェクトが持っている文字列とcompareToメソッドの引数の文字列とを辞書式に比較します。引数の文字列の方が先なら
+0 未満の値、同一なら 0、後なら 1 以上の整数値が返されます。<BR>
+<BR>
+ここでは、OKボタンが押されたとき（compareToメソッドの戻り値が 0 のとき）に、
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+            mydialog-&gt;dispose();
+            mydialog-&gt;setVisible(false);                     
+            stopCell();                   
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+が実行されます。<BR>
+<TT><FONT color="#400040">mydialog-&gt;dispose();</FONT></TT>は、mydialogを破棄するメソッドの起動です。<BR>
+<TT><FONT color="#400040">mydialog-&gt;setVisible(false);</FONT></TT>は、mydialogを非表示にするメソッドの起動です。<BR>
+stopCell() は このオブジェクトを含むグローバルオブジェクトを停止するメソッドです。これは上位クラスに宣言されているメソッドで<B>再定義できません</B>。<BR>
+<BR>
+再定義できないメソッドを宣言するときには、メソッド名の前に <B>final</B>
+修飾子をつけます。<BR>
+<BR>
+final メソッド<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    public final void addCoWorkingTraders(String trad){  //GOL
+        coWorkingTraders=coWorkingTraders-&gt;add(trad);
+        d-&gt;write(x,&quot;added coWorkingTrader:&quot;,trad);
+    }
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+下位クラスでこのメソッドを再定義することはできません。<BR>
+<BR>
+参考: final クラス<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    final class CBLocalHierarchyFrame : *CBDialog {
+    ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+このクラスの下位クラスを宣言することができません。<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<OL>
+  <LI><A href="hello_ele.html">アプリケーションの構成</A>
+  <LI><A href="hello_ide.html">OZ IDE の起動とプロジェクト、サブジェクトの作成</A>
+  <LI><A href="hello_test.html">Testクラス</A>
+  <LI><A href="hello_my.html">MyDialogクラス</A>
+  <LI><A href="hello_quit.html">Quitクラス</A><IMG src="red.gif" height="16" width="13">
+  <LI><A href="hello_compile.html">OZ IDE を利用したコンパイルとテスト実行</A>
+  <LI><A href="hello_s.html">アプリケーションのスクールファイル</A>
+  <LI><A href="hello_go.html">ランチャを利用するグローバルオブジェクトの生成とその活性化</A>
+  <LI><A href="hello_debug.html">OZプログラムのデバック</A>
+  <LI><A href="hello_rel.html">リリースパッケージの配布</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490">
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="hello_my.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_compile.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.inter.wwps.DownloadThread_cl, 0x0, JP.go.ipa.oz.user.inter.wwps.DownloadThread_if, JP.go.ipa.oz.user.inter.wwps.WWPSExecuteThread_cl
+a, class_id, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 4875, 16
+a, compiler_server, 0x0, LJP.go.ipa.oz.user.inter.wwps.CompilerServer_if, 4812, 31
+c, create, (LJP.go.ipa.oz.user.inter.cgi.OzCGI_if, LJP.go.ipa.oz.user.inter.cgi.HTMLData_if, LJP.go.ipa.oz.user.inter.wwps.CompilerServer_if), (JP.go.ipa.oz.user.inter.cgi.OzCGI_if, JP.go.ipa.oz.user.inter.cgi.HTMLData_if, JP.go.ipa.oz.user.inter.wwps.CompilerServer_if), (JP.go.ipa.oz.user.inter.wwps.WWPSExecuteThread_cl), (5957, 105, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.lib.standard._FileNotFoundException_if), (), (4929, 245, ((5094, 21, JP.go.ipa.oz.lib.standard._FileNotFoundException_if)))
+m, extractClassID, 0x0, V, (), (), (), (5227, 70, ())
+m, sendFile, 0x0, V, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._ClassProperty_if, JP.go.ipa.oz.lib.standard._DataInputStream_if, JP.go.ipa.oz.lib.standard._IOException_if), (JP.go.ipa.oz.lib.standard._ClassProperty_cl, JP.go.ipa.oz.lib.standard._DataInputStream_cl), (5333, 488, ((5399, 6, JP.go.ipa.oz.lib.standard._String_if), (5467, 13, JP.go.ipa.oz.lib.standard._ClassProperty_if), (5515, 15, JP.go.ipa.oz.lib.standard._DataInputStream_if), (5685, 11, JP.go.ipa.oz.lib.standard._IOException_if)))

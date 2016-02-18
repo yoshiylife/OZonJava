@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="primary_e.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>式の評価順序（Evaluation Order)<BR>
+</H3>
+<BR clear="all">
+<P>
+OZ言語の式の評価順序について説明します。以下の規則で、式が評価されます。<BR>
+<BR>
+</P>
+<P>
+<BR>
+</P>
+<DL>
+  <DT><B>1．</B>OZ言語では、演算子（operator）のオペランドが現れた順に評価されます。
+  <DD>すなわち、左側のオペランドが先に評価されて右へと評価が進んでいきます。二項演算子の左側のオペランドの評価が正常に終了しなければ右側のオペランドは評価されません。<BR>
+</DL>
+<P>
+<BR>
+</P>
+<P>
+例: 式の評価順序<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  int i = 2;
+  int j = (i = 3) * i;
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>この2つの文の実行後、jの値は9になります。まず、&quot;i = 3&quot; が実行されて、その値に
+* i が行われます。
+</UL>
+<P>
+<BR>
+</P>
+<P>
+例: 式の評価順序<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  int i = 6;
+  i += (i = 3);
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>この2つの文の実行後、iの値は9になります。&quot;i = i + (i = 3);&quot;と同様に、まず+の左のiが評価され、次に<BR>
+i への代入が行われます。
+</UL>
+<P>
+<BR>
+</P>
+<DL>
+  <DT><B>2．</B>演算子が評価される前に、オペランドが評価されます。
+  <DD>ただし、条件演算子 <B>？：</B> はこの規則には当てはまりません。条件演算子の場合には第1オペランドが評価されたあと、第2オペランド、第3オペランドが評価される前に演算子が評価されます。<BR>
+<BR>
+もし、演算子の評価で例外が発生しても、それ以前に評価されたオペランドの値は有効です。
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><B>3．</B>引数リストも、左から評価されます。
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><B>4．</B>演算子には評価の優先順位があります。
+  <DD>もっとも優先順位が高いほうから演算子を列挙します。（同一種類の演算子間に優先順位はありません。左から評価されます。）<BR>
+<BR>
+  <TABLE cellspacing="2">
+    <TR>
+      <TD width="10"></TD>
+      <TD>単項演算子</TD>
+      <TD align="center" width="25">++</TD>
+      <TD align="center" width="25">--</TD>
+      <TD align="center" width="25">+</TD>
+      <TD align="center" width="25">-</TD>
+      <TD align="center" width="25">!</TD>
+      <TD align="center" width="25"></TD>
+      <TD align="center" width="25"></TD>
+      <TD align="center" width="25"></TD>
+      <TD align="center" width="25"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>乗法演算子</TD>
+      <TD align="center">*</TD>
+      <TD align="center">/</TD>
+      <TD align="center">%</TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>加法演算子</TD>
+      <TD align="center">+</TD>
+      <TD align="center">-</TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>関係演算子</TD>
+      <TD align="center">&lt;</TD>
+      <TD align="center">&gt;</TD>
+      <TD align="center">&lt;=</TD>
+      <TD align="center">&gt;=</TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>等値演算子</TD>
+      <TD align="center">==</TD>
+      <TD align="center">!=</TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>論理積演算子</TD>
+      <TD align="center">&amp;&amp;</TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>論理和演算子</TD>
+      <TD align="center">||</TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>条件演算子</TD>
+      <TD align="center">? :</TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD>代入演算子</TD>
+      <TD align="center">=</TD>
+      <TD align="center">*=</TD>
+      <TD align="center">/=</TD>
+      <TD align="center">%=</TD>
+      <TD align="center">+=</TD>
+      <TD align="center" width="25">-=</TD>
+      <TD align="center">&amp;&amp;=</TD>
+      <TD align="center">||=</TD>
+      <TD align="center">=|</TD></TR>
+  </TABLE>
+
+<BR>
+単項演算子の優先順位がもっとも高く代入演算子がもっとも低いので、たとえば、単項演算子の++は代入演算子=よりも先に評価されます。<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+例: 式の評価順序<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+1: bool_1 = i == 0;
+2: bool_2 = i &gt; 0 &amp;&amp; i &lt; 10;
+3: bool_3 = i &gt;= 0 ?  true : false;
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>1行目： 等値演算子==の評価が代入演算子=よりも先に評価されます。<BR>
+変数 i の値が7だとすると、変数bool_1の値は false です。
+  <LI>2行目： 関係演算子&gt;が評価され、その結果が true であれば、関係演算子&lt;が評価されます。そして、論理積演算子&amp;&amp;が評価されて、最後に代入演算子=が評価されます。<BR>
+変数 i の値が7だとすると、変数bool_2の値は true です。
+  <LI>3行目： 関係演算子&gt;=が評価されます。そして、条件演算子が評価されます。その値がtrueであれば、t条件演算子の第2オペランドが、falseであれば第3オペランドが評価されます。そして、最後に代入演算子が評価されます。<BR>
+変数 i の値が7だとすると、変数bool_3の値は true です。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="primary_e.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

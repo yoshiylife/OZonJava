@@ -1,0 +1,4 @@
+i, JP.go.ipa.oz.user.garage.ApplicationGarage_if, 0x2000, (JP.go.ipa.oz.user.garage.SGarage_if)
+m, getApplication, 0x1, LJP.go.ipa.oz.user.ide.Application_if, (LJP.go.ipa.oz.user.garage.Key_if)
+m, putApplication, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (LJP.go.ipa.oz.user.ide.Application_if)
+m, replaceApplication, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if, LJP.go.ipa.oz.user.ide.Application_if)

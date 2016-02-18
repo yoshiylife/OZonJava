@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.launcher.GODOperator_cl, 0x0, JP.go.ipa.oz.user.launcher.GODOperator_if, JP.go.ipa.oz.lang._Root_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 193, 19
+a, topPath, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 169, 20
+a, fileSepChar, 0x0, C, 141, 24
+c, create, (), (), (), (374, 31, ())
+m, toGOD, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.lib.standard._StringBuffer_cl), (1890, 422, ((1946, 6, JP.go.ipa.oz.lib.standard._String_if), (1969, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))
+m, toGOD, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_cl), (1212, 596, ((1255, 6, JP.go.ipa.oz.lib.standard._String_if), (1277, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, toPath, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (563, 194, ((606, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, init, 0x0, V, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._StringBuffer_cl), (2470, 349, ((2492, 6, JP.go.ipa.oz.lib.standard._String_if), (2513, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))
+m, toFullPath, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (839, 291, ((886, 6, JP.go.ipa.oz.lib.standard._String_if), (905, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))

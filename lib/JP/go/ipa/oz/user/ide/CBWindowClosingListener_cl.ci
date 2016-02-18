@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.ide.CBWindowClosingListener_cl, 0x10, JP.go.ipa.oz.user.ide.CBWindowClosingListener_if, JP.go.ipa.oz.lib.standard._WindowListener_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 233, 15
+a, targetWindow, 0x0, LJP.go.ipa.oz.lib.standard._Window_if, 206, 21
+c, newCBWindowClosingListener, (LJP.go.ipa.oz.lib.standard._Window_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Window_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._WindowListener_cl, JP.go.ipa.oz.lib.standard._System_cl), (410, 169, ())
+m, windowClosing, 0x1, V, (LJP.go.ipa.oz.lib.standard._WindowEvent_if), (JP.go.ipa.oz.lib.standard._WindowEvent_if), (), (737, 154, ())

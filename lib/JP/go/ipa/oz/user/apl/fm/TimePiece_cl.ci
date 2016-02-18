@@ -1,0 +1,11 @@
+j, JP.go.ipa.oz.user.apl.fm.TimePiece_cl, 0x0, JP.go.ipa.oz.user.apl.fm.TimePiece_if, JP.go.ipa.oz.lang._Root_cl
+a, reservable, 0x0, Z, 131, 16
+a, name, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 117, 12
+c, create, (), (), (JP.go.ipa.oz.lib.standard._String_cl), (155, 59, ())
+m, isEqualTimePiece, 0x1, Z, (LJP.go.ipa.oz.user.apl.fm.TimePiece_if), (JP.go.ipa.oz.user.apl.fm.TimePiece_if, JP.go.ipa.oz.lib.standard._String_if), (), (686, 280, ((817, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, setName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (218, 50, ())
+m, isReservable, 0x1, Z, (), (), (), (630, 52, ())
+m, toGreen, 0x1, V, (), (JP.go.ipa.oz.user.apl.fm.Overseer_if), (JP.go.ipa.oz.user.apl.fm.Overseer_cl), (969, 83, ((995, 8, JP.go.ipa.oz.user.apl.fm.Overseer_if)))
+m, getName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (271, 43, ())
+m, cancel, 0x1, V, (), (), (), (483, 46, ())
+m, reserve, 0x1, V, (), (), (), (369, 48, ())

@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.lib_dist.replica.OtherCopyManeger_cl, 0x2000, JP.go.ipa.oz.user.lib_dist.replica.OtherCopyManeger_if, JP.go.ipa.oz.user.lib_dist.tran._Transaction_cl
+m, initialize, 0x4, V, (), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.lib_dist.tran._Debug_cl), (20043, 164, ((20128, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, quiet, 0x4, V, (), (), (), (20273, 47, ())
+m, go, 0x4, V, (), (), (), (20210, 22, ())

@@ -1,0 +1,12 @@
+j, JP.go.ipa.oz.user.ide.CBIGraph_cl, 0x10, JP.go.ipa.oz.user.ide.CBIGraph_if, JP.go.ipa.oz.lang._Root_cl
+a, diameter, 0x0, I, 253, 14
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 273, 15
+a, primaryNode, 0x0, LJP.go.ipa.oz.user.ide.CBIGraphNode_if, 157, 26
+a, nodeList, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 187, 21
+c, newCBIGraph, (LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl, JP.go.ipa.oz.user.ide.CBIGraphNode_cl), (450, 272, ((492, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+m, clearMarks, 0x1, V, (), (JP.go.ipa.oz.user.ide.CBIGraphNode_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (1828, 223, ((1863, 12, JP.go.ipa.oz.user.ide.CBIGraphNode_if), (1888, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, addPart, 0x1, V, (LJP.go.ipa.oz.user.ide.CIPart_if, LJP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.user.ide.CBIGraphNode_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Iterator_if), (JP.go.ipa.oz.user.ide.CBIGraphNode_cl), (880, 866, ((946, 12, JP.go.ipa.oz.user.ide.CBIGraphNode_if), (986, 6, JP.go.ipa.oz.user.ide.CIPart_if), (1010, 6, JP.go.ipa.oz.lib.standard._String_if), (1042, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, getNode, 0x1, LJP.go.ipa.oz.user.ide.CBIGraphNode_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CBIGraphNode_if), (), (2131, 129, ((2181, 12, JP.go.ipa.oz.user.ide.CBIGraphNode_if)))
+m, size, 0x1, I, (), (), (), (2642, 57, ())
+m, nodes, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (2493, 67, ())
+m, getPrimaryNode, 0x1, LJP.go.ipa.oz.user.ide.CBIGraphNode_if, (), (), (), (2340, 71, ())

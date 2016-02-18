@@ -1,0 +1,8 @@
+i, JP.go.ipa.oz.user.garage.Garage_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if)
+m, size, 0x1, I, ()
+m, replace, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if, LJP.go.ipa.oz.lang._Root_if)
+m, put, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (LJP.go.ipa.oz.lang._Root_if)
+m, keys, 0x1, LJP.go.ipa.oz.lib.standard._Collection_if, ()
+m, iterator, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, ()
+m, get, 0x1, LJP.go.ipa.oz.lang._Root_if, (LJP.go.ipa.oz.user.garage.Key_if)

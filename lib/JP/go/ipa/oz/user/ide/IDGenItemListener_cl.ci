@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.IDGenItemListener_cl, 0x0, JP.go.ipa.oz.user.ide.IDGenItemListener_if, JP.go.ipa.oz.lib.standard._ItemListener_cl
+a, dlg, 0x0, LJP.go.ipa.oz.user.ide.IDGenDialog_if, 566, 16
+c, create, (LJP.go.ipa.oz.user.ide.IDGenDialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.IDGenDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ItemListener_cl), (702, 94, ())
+m, itemStateChanged, 0x1, V, (LJP.go.ipa.oz.lib.standard._ItemEvent_if), (JP.go.ipa.oz.lib.standard._ItemEvent_if, JP.go.ipa.oz.lib.standard._Checkbox_if, JP.go.ipa.oz.lib.standard._Choice_if), (), (974, 205, ())

@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="ftp.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="netclient.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>NNTPクラスの使い方</B><BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>NNTPクラスのコンストラクタ
+  <LI>NNTPクラスのメソッド
+  <LI>NNTPクラスの使用方法
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>１．NNTPクラスのコンストラクタ
+  <DD><BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new create ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>NNTPプロトコルを生成する</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>２．NNTPクラスのメソッド
+  <DD><BR>
+NNTPコマンドに対応したメソッドメンバを持っています。<BR>
+<BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String article (String msg)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String article ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String body (String msg)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String body ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String head (String msg)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String head()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String stat (String msg)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String group (String group)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String help ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String ihave (String msg, String contents)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String last ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String list ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String newgroups (String param)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String newnews (String param)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String next ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String post (String contents)</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String quit ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String slave ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>３．NNTPクラスの使用方法
+  <DD><BR>
+コンストラクタ create によりインスタンスを生成し、そのインスタンスに対してインタフェースとして提供されている各メソッドを起動することにより、NNTP
+プロトコルで規定される各コマンドを送信することができます。<BR>
+各メソッドはレスポンスデータ中のステータス文字列を戻り値とします。<BR>
+レスポンスデータ全体を得るには、getResponse メソッドを利用します。<BR>
+<BR>
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell NNTPTester { 
+
+        public void initialize () { 
+        }
+
+        public void go () {
+            NNTPTesterR run=&gt;create ();
+            Thread th=&gt;create (run);
+        }
+
+        public void quiet () {
+            flushCell ();
+        }
+    }
+
+    class NNTPTesterR : *Runnable {
+        new create () {
+        }
+
+        public void run () {
+            NNTP nntp=&gt;create ();
+            System sys=&gt;create ();
+
+            try {
+                sys-&gt;println (nntp-&gt;connect (&quot;dorothy&quot;));
+            } catch (IOException e) {
+                return;
+            }
+            sys-&gt;println (nntp-&gt;getResponse ());
+            sys-&gt;println (nntp-&gt;group (&quot;junk&quot;));
+            sys-&gt;println (nntp-&gt;getResponse ());
+            sys-&gt;println (nntp-&gt;post (&quot;Subject: test\r\nNewsgroups:
+                junk\r\nFrom: otokawa@slab.thr.sharp.co.jp\r\n\r\ntest\r\n&quot;));
+            sys-&gt;println (nntp-&gt;getResponse ());
+            sys-&gt;println (nntp-&gt;head (&quot;1&quot;));
+            sys-&gt;println (nntp-&gt;getResponse ());
+            sys-&gt;println (nntp-&gt;next ());
+            sys-&gt;println (nntp-&gt;getResponse ());
+            sys-&gt;println (nntp-&gt;article ());
+            sys-&gt;println (nntp-&gt;getResponse ());
+            sys-&gt;println (nntp-&gt;last ());
+            sys-&gt;println (nntp-&gt;getResponse ());
+            sys-&gt;println (nntp-&gt;quit ());
+            sys-&gt;println (nntp-&gt;getResponse ());
+        }
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="ftp.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="netclient.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

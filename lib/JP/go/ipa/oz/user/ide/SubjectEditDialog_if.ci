@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.ide.SubjectEditDialog_if, 0x0, (JP.go.ipa.oz.lib.standard._Dialog_if)
+m, getBtnOK, 0x1, LJP.go.ipa.oz.lib.standard._Button_if, ()
+m, removeSubject, 0x1, V, ()

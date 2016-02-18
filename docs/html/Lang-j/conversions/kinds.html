@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="equiv.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>型変換の種類</B><BR>
+</H3>
+<BR clear="all">
+<P>
+ここでは、OZ言語の型変換の種類について説明しています。<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><B>恒等変換</B> (Identity conversions)
+  <DD><BR>
+同じ型への変換を恒等変換といいます。<BR>
+任意の型は、それと同一の型へ変換することができます。<BR>
+<BR>
+<BR>
+  <DT><B>基本型のワイドニング変換</B> (Widening primitive conversions)
+  <DD><BR>
+以下の基本型の変換を基本型のワイドニング変換といいます。<BR>
+<BR>
+  <TABLE>
+    <TR align="center">
+      <TD width="10"></TD>
+      <TH nowrap align="center">From</TH>
+      <TD></TD>
+      <TH colspan="5" align="center">To</TH></TR>
+    <TR align="center">
+      <TD></TD>
+      <TD nowrap align="center" width="50">byte</TD>
+      <TD></TD>
+      <TD align="center" width="50">short</TD>
+      <TD nowrap align="center" width="50">int</TD>
+      <TD align="center" width="50">long</TD>
+      <TD align="center" width="50">float</TD>
+      <TD nowrap align="center" width="50">double</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap align="center">short</TD>
+      <TD></TD>
+      <TD nowrap align="center">int</TD>
+      <TD nowrap align="center">long</TD>
+      <TD nowrap align="center">float</TD>
+      <TD nowrap align="center">double</TD>
+      <TD nowrap align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap align="center">int</TD>
+      <TD></TD>
+      <TD align="center">long</TD>
+      <TD nowrap align="center">float</TD>
+      <TD align="center">double</TD>
+      <TD align="center"></TD>
+      <TD nowrap align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap align="center">long</TD>
+      <TD></TD>
+      <TD align="center">float</TD>
+      <TD nowrap align="center">double</TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD nowrap align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap align="center">float</TD>
+      <TD width="10"></TD>
+      <TD align="center">double</TD>
+      <TD nowrap align="center"></TD>
+      <TD align="center"></TD>
+      <TD align="center"></TD>
+      <TD nowrap align="center"></TD></TR>
+  </TABLE>
+
+<BR>
+たとえば、単純な代入演算子によって基本型のワイドニング変換が行われます。<BR>
+<BR>
+<BR>
+  <DT><B>基本型のナローイング変換</B> (Narrowing primitive conversions)
+  <DD><BR>
+以下の基本型の変換を基本型のナローイング変換といいます。<BR>
+<BR>
+  <TABLE>
+    <TR align="center">
+      <TD width="10"></TD>
+      <TH nowrap align="center">From</TH>
+      <TD></TD>
+      <TD nowrap colspan="5" align="center">To</TD></TR>
+    <TR align="center">
+      <TD></TD>
+      <TD nowrap align="center" width="50">short</TD>
+      <TD></TD>
+      <TD nowrap align="center" width="50">byte</TD>
+      <TD nowrap align="center" width="50"></TD>
+      <TD nowrap align="center" width="50"></TD>
+      <TD nowrap align="center" width="50"></TD>
+      <TD nowrap align="center" width="50"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap align="center">int</TD>
+      <TD></TD>
+      <TD nowrap align="center">byte</TD>
+      <TD nowrap align="center">short</TD>
+      <TD nowrap align="center"></TD>
+      <TD nowrap align="center"></TD>
+      <TD nowrap align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap align="center">long</TD>
+      <TD></TD>
+      <TD nowrap align="center">byte</TD>
+      <TD nowrap align="center">short</TD>
+      <TD nowrap align="center">int</TD>
+      <TD nowrap align="center"></TD>
+      <TD nowrap align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap align="center">float</TD>
+      <TD></TD>
+      <TD nowrap align="center">byte</TD>
+      <TD nowrap align="center">short</TD>
+      <TD nowrap align="center">int</TD>
+      <TD nowrap align="center">long</TD>
+      <TD nowrap align="center"></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD nowrap align="center">double</TD>
+      <TD width="10"></TD>
+      <TD nowrap align="center">byte</TD>
+      <TD nowrap align="center">short</TD>
+      <TD nowrap align="center">int</TD>
+      <TD nowrap align="center">long</TD>
+      <TD nowrap align="center">float</TD></TR>
+  </TABLE>
+
+<BR>
+強制代入演算子によって基本型のナローイング変換が行われます。<BR>
+<BR>
+<BR>
+  <DT><B>クラス型のワイドニング変換</B> (Widening class conversions)
+  <DD><BR>
+以下のクラス型の変換をクラス型のワイドニング変換といいます。<BR>
+<BR>
+  <UL>
+    <LI>子孫クラスSからその上位クラスTへの変換<BR>
+<BR>
+    <LI>null から任意のクラスへの変換<BR>
+  </UL>
+<BR>
+<BR>
+強制代入演算子によって子孫クラスSからその上位クラスTへの変換が行われます。<BR>
+<BR>
+<BR>
+  <DT><B>クラス型のナローイング変換</B> (Narrowing class conversions)
+  <DD><BR>
+以下のクラス型の変換をクラス型のナローイング変換といいます。<BR>
+<BR>
+  <UL>
+    <LI>上位クラスTからその子孫クラスSへの変換<BR>
+<BR>
+    <LI>null から任意のクラスへの変換<BR>
+  </UL>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+クラス型への変換で、実際にリファレンスする値が型に適合しない場合には、システム例外ClassCastExceptionが発生します。<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="equiv.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

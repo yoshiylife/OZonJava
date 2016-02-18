@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.lib_dist.tran._TransactionWaitLock_cl, 0x0, JP.go.ipa.oz.user.lib_dist.tran._TransactionWaitLock_if, JP.go.ipa.oz.lang._Runnable_cl
+a, t, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._Transaction_if, 1362, 14
+a, i, 0x0, I, 1354, 6
+a, d, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._Debug_if, 1344, 8
+c, create, (LJP.go.ipa.oz.user.lib_dist.tran._Transaction_if), (JP.go.ipa.oz.user.lib_dist.tran._Transaction_if), (JP.go.ipa.oz.user.lib_dist.tran._Debug_cl), (1382, 45, ())
+m, set, 0x11, V, (I), (), (), (1429, 34, ())
+m, run, 0x11, V, (), (), (), (1465, 260, ())

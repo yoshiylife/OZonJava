@@ -1,0 +1,8 @@
+i, JP.go.ipa.oz.user.ide.CIModifier_if, 0x10, (JP.go.ipa.oz.lang._Root_if)
+m, isFinal, 0x1, Z, ()
+m, isStatic, 0x1, Z, ()
+m, isAbstract, 0x1, Z, ()
+m, isOnce, 0x1, Z, ()
+m, isCell, 0x1, Z, ()
+m, isTransient, 0x1, Z, ()
+m, isLocked, 0x1, Z, ()

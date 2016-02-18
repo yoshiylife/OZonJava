@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="class.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="cell.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>クラス識別子<BR>
+</H3>
+<P>
+<BR>
+</P>
+<H4>OZシステムのクラス識別子</H4>
+<P>
+OZシステムは以下の形式でクラス識別子を付与してクラスを管理します。
+</P>
+<TABLE cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  DNS形式のドメイン名,OZホーム名,開発者が付ける識別子
+</PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+たとえば、JP.go.ipa.oz.user.ide.OzIDE_if は OZ IDEのインタフェース識別子、JP.go.ipa.oz.user.ide.OzIDE_cl
+はクラス識別子です。<BR>
+<BR>
+末尾が _if の識別子は、インタフェースの識別子です。 _cl はクラス本体の識別子です。<BR>
+<BR>
+</P>
+<H4>クラス識別子とスクールファイル</H4>
+<P>
+クラス識別子は、スクールファイルに記述されるエントリと対応づけられます。<BR>
+スクールファイルは行単位で以下の情報を記述したエントリから構成されます。
+</P>
+<TABLE cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  &quot;クラス名&quot;,&quot;インタフェース定義部&quot;,&quot;動作定義部&quot;
+</PRE>
+</TD></TR>
+</TABLE>
+
+<P>
+ダブルクォーテーション( &quot; )で囲まれた3つの文字列をコンマで区切っています。最初の文字列がクラス名です。2番目にインタフェース定義部、3番目に動作定義部を指定しますが、これらはOZプログラムで使用されているクラスをユニークに指定するものです。<BR>
+<BR>
+</P>
+<P>
+<B>OzVMとクラス識別子</B>
+</P>
+<P>
+ＯｚVMでオブジェクトを生成するときには、cell型クラスのクラス識別子(_cl)を指定します。<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="class.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="cell.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.inter.wwps.CompilerCGI_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, startForTest, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.OzCGI_if)
+m, start, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.OzCGI_if)

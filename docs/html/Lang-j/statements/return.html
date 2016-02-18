@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="continue.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="throw.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>return 文（The return Statement）<BR>
+</H3>
+<BR clear="all">
+<P>
+return文によってメソッド起動を制御できます。<BR>
+<BR>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD width="150"><B>return [式] ;</B></TD></TR>
+</TABLE>
+
+<P>
+式を省略することができます。式が省略できるのは、メソッド宣言の返り値が
+void と宣言されている場合です。<BR>
+<BR>
+</P>
+<P>
+<BR>
+<B>LALR(1)文法</B>
+</P>
+<PRE>
+  jump_stmt : RETURN exp_or_empty ;
+
+  exp_or_empty : /* empty */
+                 exp<BR>
+</PRE>
+<P>
+<BR>
+<BR>
+<B>説明</B><BR>
+return文はメソッド本体の定義、あるいは、コンストラクタ本体の定義の中で使用されます。<BR>
+<BR>
+式が省略された場合には、return文によって返される値はありません。したがって、メソッド宣言の返り値が
+void と宣言されていなくてはいけません。<BR>
+<BR>
+式を持つreturn文では、メソッド宣言でその式の値の型が返り値として宣言されている必要があります。この場合、return文の式でその型の値や変数が指定されていなくてはいけません。<BR>
+<BR>
+<BR>
+まず、式の評価が行われ、それが正常に評価されると、その値を返り値として、起動されていたメソッドから呼出しを行ったメソッドに処理を移します。<BR>
+</P>
+<P>
+<BR>
+<BR>
+return 文に記述された式について、その式とその式が記述れたメソッドを呼び出したメソッドの返り値型は代入等価でなくてはいけません。<BR>
+</P>
+<DL>
+  <DT>メソッドの返り値がない場合 (<CODE>void</CODE>)
+  <DD>式を持たない return 文のみが有効です。<BR>
+<BR>
+  <DT>コンストラクタ
+  <DD>式を持たない return 文のみが有効です。<BR>
+<BR>
+  <DT>その他の場合
+  <DD>return 文に式が必要です。<BR>
+その式の型とメソッドの返り値の型 は代入等価でなければいけません。
+</DL>
+<P>
+<BR>
+</P>
+<P>
+返り値を持つメソッドの実装の最後に実行されるものとして記述 した文は return
+文でなければいけません。<BR>
+</P>
+<P>
+<BR>
+</P>
+<P>
+例: 式を持つreturn文が必要なメソッド本体の定義<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  public DeliveryFile leaveToSearchAndDelivery(String codePath){
+      DeliveryFile df = searchAndDelivery(codePath); /* first myself*/
+    
+      if( df != null ) return df;
+      int RetryNum = 0;
+      String targetCDAGOL;
+    
+      while( (targetCDAGOL = targets-&gt;next(RetryNum)) != null ){
+          ClassDeliveryAgent targetCDA; targetCDA =&gt; bind(targetCDAGOL);
+          df = targetCDA-&gt;searchAndDelivery(codePath); /* next others */
+          if(df!=null) break;
+          RetryNum++;
+      }
+      return df;
+  }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>return文の式 df の型は、DeliveryFile です。
+</UL>
+<P>
+<BR>
+<BR>
+例: 式を持つreturn文が必要なメソッド本体の定義<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  public Iterator getLabels () {
+    return input_data-&gt;keys ()-&gt;iterator ();
+  }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+例: return文がなくてもよいメソッド本体の定義<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  public void quiet()  {
+      core-&gt;quit();
+      flushCell();
+  }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>返り値がvoidなので、return文がなくてもかまいません。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="continue.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="throw.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>インスタンスのエクスポート</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+インスタンスのエクスポートとは、当 Autonomy セルが保持している
+リソースを他の Autonomy セルで利用する目的で、指定された
+中間データタイプに適合した ResourceProxy を返すことを指す。
+<P>
+
+<UL>
+
+<P>
+<LI>public ResourceProxy Autonomy#exportResource(Set pivots)<BR>
+引数として中間データタイプの集合をとる。<BR>
+まず引数の中間データタイプの要素を取り出し、
+それと当 Autonomy セルのタイプをキーとして、
+Autonomy#findAdapter(String, String) により
+当 Autonomy セルが管理しているアダプタ集合を検索する。<BR>
+該当するものがあれば、そのコピーを返す。<BR>
+なければ、 null を返す。
+</P>
+
+</UL>
+
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href="../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

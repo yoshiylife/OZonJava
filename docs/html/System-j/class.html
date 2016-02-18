@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Class Delivery</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H1>クラス配送</H1>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+分散システムであるOZの特徴として通信の他にクラス配送がある。
+実行時に手元に存在しないクラスに対するアクセスが発生すると
+システムはネットワークを介して自動的にクラス(実行コード)を
+配送し、ファイルとして保存する。
+
+<P>
+クラス配送を行うためには<B>クラス配送エージェント(CDAと呼ぶ)</B>を
+セットアップする必要がある。
+CDAはOZの<A HREF="basic.html#cell">セル</A>として提供される。
+クラス配送が必要のない運用であればこのセルを起動する必要はない。
+<HR>
+
+<P>
+<H2>基本的な設定</H2>
+CDAには様々な運用形態が考えられるが、
+ここでは基本的なパターンを紹介する。
+<A HREF="cda/index.html">これ以外の詳しい説明はこちらを参照。</A>
+
+<P>
+<CENTER>
+<IMAGE SRC="cda.gif">
+</CENTER>
+
+<DL>
+<DT>1.CDAマスターの決定<DD>
+        ドメインにCDAを管理するためのCDAをひとつ設置する。
+        これをCDAマスターと呼ぶことにする。
+        CDAマスターはその役割の名前であり、
+        プログラムは一般のCDAと同一である。
+        CDAマスターを起動するホストをひとつ決定する。
+        CDAはOZのセルであるためOZのインストールが必要であることは言うまでもない。
+
+<P>
+<DT>2.クライアント側の設定<DD>
+        クラスの共有を受ける場合、
+        クラスを供給する場合、
+        いずれの場合もそのOZHOMEにひとつCDAを起動する。
+        
+        <P>
+        まずOZ-VMとCDAとを結び付ける必要がある。
+        これは<B>$OZHOME/lib/oz.properties</B>の
+        <B>oz.classloader.deliveryAgent.url</B>という属性を設定する。
+        urlのプロトコルは<B>ozclass</B>である。
+        <PRE>
+        例)oz.classloader.deliveryAgent.url = ozclass://host1:6010/
+        </PRE>
+        この例ではホスト名がhost1、ポート番号が6010である。
+
+        <P>
+        次に同じoz.propertiesに<B>oz.cda.target</B>という属性を指定する。
+        ここにはCDAマスターの<A href="comm.html#ozhomeid">OZHOME識別子</A>を
+        設定する。
+        <PRE>
+        例)
+        oz.cda.target = oz.ipa.go.jp:domainmaster
+        </PRE>
+        
+<P>
+<DT>3.CDAマスターの設定<DD>
+        まず2のoz.classloader.deliveryAgent.urlの設定は
+        CDAマスターにも必要である。
+
+        <P>
+        CDAマスターのoz.cda.targetにはドメイン内のすべてのCDAを登録する。
+        複数あるのでカンマ(,)で区切る
+        <PRE>
+        例)
+        oz.cda.target = oz.ipa.go.jp:host1,oz.ipa.go.jp:host2
+        </PRE>
+</DL>
+<HR>
+
+<P>
+<H2>CDAの起動と停止</H2>
+サーバはセルとして実現してあるため、一般のセルと同様に実行できる。
+<PRE>
+        例)
+        % oz cda
+</PRE>
+
+<P>
+サーバの停止は以下の方法で行う。
+<OL>
+<LI>セル <B>stopper</B> を起動する。
+        <PRE>
+        例)
+        % oz stopper
+        </PRE>
+        <CENTER>
+        <IMAGE SRC="view1.gif"></CENTER><P>
+<LI>cdaのGODを入力する。
+        <CENTER>
+        <IMAGE SRC="view2.gif"></CENTER><P>
+<LI>Stop Cellボタンを押す。
+<LI>Quitボタンを押す。(画面が消える)
+</OL>
+停止処理を行わないでホストをシャットダウンした場合、
+再起動できない。
+
+<HR NOSHADE>
+<!- ------------------------------------------------------------ ->
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact:</B> <A HREF="mailto:oz-admin@etl.go.jp">oz-admin@etl.go.jp</A>
+
+</BODY>
+</HTML>

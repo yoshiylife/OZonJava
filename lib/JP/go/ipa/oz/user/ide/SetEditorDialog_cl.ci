@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.ide.SetEditorDialog_cl, 0x0, JP.go.ipa.oz.user.ide.SetEditorDialog_if, JP.go.ipa.oz.lib.standard._Dialog_cl
+a, txtEditor, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 578, 20
+a, projectManager, 0x0, LJP.go.ipa.oz.user.ide.ProjectManager_if, 674, 30
+a, editorAL, 0x0, LJP.go.ipa.oz.user.ide.SetEditorActionListener_if, 638, 33
+a, btnSet, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 601, 14
+a, lblMessage, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 558, 17
+a, btnCancel, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 618, 17
+c, create, (LJP.go.ipa.oz.lib.standard._Frame_if, Z, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Frame_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, JP.go.ipa.oz.lib.standard._GridLayout_if, JP.go.ipa.oz.lib.standard._Font_if, JP.go.ipa.oz.lib.standard._FlowLayout_if, JP.go.ipa.oz.lib.standard._Panel_if), (JP.go.ipa.oz.lib.standard._Dialog_cl, JP.go.ipa.oz.lib.standard._GridLayout_cl, JP.go.ipa.oz.lib.standard._Font_cl, JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._FlowLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._TextField_cl, JP.go.ipa.oz.lib.standard._Button_cl, JP.go.ipa.oz.user.ide.SetEditorActionListener_cl), (822, 1263, ((982, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (1088, 4, JP.go.ipa.oz.lib.standard._Font_if), (1242, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (1286, 5, JP.go.ipa.oz.lib.standard._Panel_if), (1563, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (1607, 5, JP.go.ipa.oz.lib.standard._Panel_if)))
+m, setEditor, 0x1, V, (), (JP.go.ipa.oz.lib.standard._String_if), (), (3138, 166, ())
+m, setVisible, 0x1, V, (Z), (JP.go.ipa.oz.lib.standard._Rectangle_if, JP.go.ipa.oz.lib.standard._Container_if), (), (2275, 305, ((2314, 9, JP.go.ipa.oz.lib.standard._Rectangle_if), (2362, 9, JP.go.ipa.oz.lib.standard._Rectangle_if)))

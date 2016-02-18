@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN"><HTML>
+<HEAD>
+<TITLE>OZ Programming Guide: Compile</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="mech.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="withide.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>コマンドプロンプトからのコンパイル</B><BR>
+</H3>
+<BR clear="all">
+<P>
+ここでは、OZコンパイラのコマンドラインの起動とコマンドライン引数について説明しています。<BR>
+</P>
+<P>
+<BR>
+<BR>
+OZコンパイラは、入力パラメータとして、
+</P>
+<UL>
+  <LI>ソースファイル
+  <LI>スクール
+</UL>
+<P>
+の二つが必要です。<BR>
+<BR>
+ソースファイルは、複数を同時に指定することができます。<BR>
+<BR>
+</P>
+<P>
+<BR>
+<BR>
+<B>コマンド</B>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>ozc [オプション] -school school.s source1.oz [ source2.oz .....]</B></TD></TR>
+</TABLE>
+
+<UL>
+  <LI><B>-school</B> の代わりに <B>-s</B> を指定することもできます。
+</UL>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><B>オプション</B>
+  <DD>
+  <DL>
+    <DT>-<B>school &lt;file&gt;</B> または <B>-s &lt;file&gt;</B>
+    <DD><BR>
+スクールファイルを指定します。<BR>
+<BR>
+<BR>
+    <DT><B>-log &lt;file&gt;</B>
+    <DD><BR>
+OZコンパイラの画面出力の出力先をファイルに変更します。デフォルトはプラットフォーム環境の標準エラー出力です。<BR>
+<BR>
+<BR>
+    <DT><B>-interface</B>
+    <DD><BR>
+インタフェース部のみのコンパイルを実行する。<BR>
+<BR>
+<BR>
+    <DT><B>-verbose</B> または <B>-v</B>
+    <DD><BR>
+コンパイルの実行経過を表示します。<BR>
+<BR>
+<BR>
+    <DT><B>-version</B>
+    <DD><BR>
+バージョン情報を表示する。<BR>
+<BR>
+<BR>
+    <DT><B>-help</B> または <B>-h</B>
+    <DD><BR>
+コンパイルオプションの簡単な説明を表示します。<BR>
+<BR>
+<BR>
+    <DT><B>-domain</B> または <B>-d</B>
+    <DD><BR>
+クラスIDの先頭に付加するJavaのパッケージのドメイン名を指定する。<BR>
+<BR>
+  </DL>
+<BR>
+<BR>
+  <DT><B>エラー</B>
+  <DD><BR>
+1つのスクールファイルと、1つ以上のソースファイル（= 拡張子が.ozのファイル）が指定されないとエラーになります<BR>
+また、不正なプログラムコードが記述されている場合には、コンパイルメッセージを表示し、処理を中断します。<BR>
+  <DD><BR>
+</DL>
+<P>
+<BR>
+例: コマンドプロンプトからのOZコンパイルの実行<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+＞ ozc -s test.s Test.oz 
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="mech.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="withide.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

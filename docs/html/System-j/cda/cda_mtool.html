@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<TITLE>MaintenunceTool of CDA</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>CDA メンテナンスツール</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+
+○起動と基本設定<BR>
+
+メテナンスツールを使うには起動と基本設定がまず必要である。
+
+<OL>
+<LI>起動<BR>
+CDAのメンテナンスツールはセルである。そのGOLを maintenunce と
+すれば、executor において以下のようにして起動する。
+<PRE>
+create maintenunce JP.go.ipa.oz.user.cda._MaintenunceTool_cl;
+</PRE>
+
+<LI>基本設定<BR>
+メンテツールがメンテを担当するCDA(担当CDAと呼ぶ)を設定する。
+一つのメンテツールは一つのCDAしか担当できない。
+メンテツールは担当CDAと同じ executor 上になければならない。
+go maintenunce setCDAGOL に続けて担当CDAの GOL を入力する。
+   例えば、oz.ipa.go.jp:localoz:test_cda というGOLのCDAの場合は、
+<PRE>
+stop maintenunce; go maintenunce setCDAGOL oz.ipa.go.jp:localoz:test_cda;
+</PRE>
+</OL>
+
+<A HREF="SERACH"></A>
+○検索方針の設定<BR>
+
+検索方針(CDAが他のCDAにクラス検索・配送要求を出す場合に、その要求を出していく
+CDAの順番)の設定の行ない方である。尚、検索方針の設定の前に前項の「起動」と
+「基本設定」がなされている必要がある。
+
+<OL>
+
+<LI>クラス配送サーバとなるCDAの登録<BR>
+go maintenunce SearchPolicy setTarget に続けて、担当CDAから
+クラス配送サーバとして利用可能なCDAのGOLを入力する。
+例えば、GOL が oz.ipa.go.jp:remoteoz:test_cda のCDAを
+設定する場合は以下のようになる。
+<PRE>
+stop maintenunce; go maintenunce SearchPolicy setTarget oz.ipa.go.jp:remoteoz:test_cda;
+</PRE>
+クラス配送サーバを複数設定する場合はこの入力を繰り返す。
+クラス検索・配送の際にはクラス配送サーバをこの入力順に当たることになる。
+
+</OL>
+
+<A HREF="MILLOR"></A>
+○ミラー機能の設定(ポーリングモード)<BR>
+
+CDAのミラー機能設定用のメンテルーツの使い方を続いてのべる。
+尚、本版ではミラーモードはミラークライアントからの
+ポーリング(一定時間間隔毎に、ミラークライアントからミラーサーバに要求
+を出し、ミラーサーバ側のオリジナルが変更を受けていたなら、ミラークライアント側
+にそれを反映させる)
+しか実装されていない(ポーリングの時間間隔は本版ではテ
+スト用に1000msec で固定、将来メンテツールから設定可能にする予定)。<BR>
+
+まず、CDAをミラーサーバとしてしか動かさないのなら特に何も設定する必要はない。
+
+CDAをミラークライアントとして動かす場合には、前々項の「起動」と「基本設定」
+を行なった後に、次のことを行なう必要がある。
+
+<OL>
+
+<LI>ミラーサーバの登録。<BR>
+go maintenunce Milloring setMillorServer に続けて担当CDAに対して
+ミラーサーバとなるCDAのGOLを入力する。例えば
+<PRE>
+stop maintenunce; go maintenunce Milloring setMillorServer oz.ipa.go.jp:remoteoz:test_cda;
+</PRE>
+複数のCDAをミラーサーバとして登録したい場合はこれを繰り返す。
+
+<LI>ミラーパッケージの登録<BR>
+ミラーサーバに対して、どのパッケージをミラーしてもらうかを登録
+する。go maintenunce Milloring setMillorPackage に続けて
+ミラーサーバのGOLとクラスアーカイブファイルのトップパッケージ名
+を入力する。例えば、
+<PRE>
+stop maintenunce; go maintenunce Milloring setMillorPackage oz.ipa.go.jp:remoteoz:test_cda "JP.go.ipa.oz.user.released.test_cda";
+</PRE>
+この時、ミラーサーバは既に登録したものでなければならない。また、当然、
+そのミラーサーバが存在するexecutorの管理下にないクラスアーカイブファイル
+を設定してはならない。また、本版ではそのクラスアーカイブファイル
+のトップパッケージ名を入力することとする。
+
+<LI>ポーリングスタート<BR>
+ミラーサーバとミラーパッケージの登録が終わったら、ミラークライ
+アントのポーリングをスタートする。これは次のようにする。
+<PRE>
+stop maintenunce; go maintenunce Milloring pollingStart;
+</PRE>
+</OL>
+
+<A HREF="OTHER"></A>
+○その他の機能<BR>
+
+検索方針の設定やミラー機能の設定に必須ではないが、メンテナンスツールが用意
+している命令が幾つかある。それらを述べる。尚、「起動」と「基本設定」は当然
+これらの命令の前に行なわれている必要はある。
+
+<OL>
+
+<LI>メンテナンスツールを executor から対話的に使っている場合は問題
+ないが、oz -f で executor を動かしている場合は、executor を終了
+させないために(終了するとCDAが止まるから)、
+go maintenunce wait に続けて msec 単位でメンテナンスツール待機時間
+を設定する。例えば、
+<PRE>
+stop maintenunce; go maintenunce wait 600000;
+</PRE>
+
+<LI>go maintenunce SearchPolicy setLeaveTo whom<BR>
+クラス検索・配送を全面的に他CDAに委譲することが可能である。
+つまり、どこにどのようなクラスファイルがあるか分からず、
+検索方針を有効に設定することが不可能な場合は、
+そのような「どこにどのようなクラスファイルがあるか」を知っていそうなCDAに、
+クラスの検索・配送を全面的に委譲した方が良い。
+whom がその委譲相手の GOL である。
+このクラス検索の委譲は本版においては多段に設定することはできない。
+
+<LI>go maintenunce SearchPolicy getLeaveTo<BR>
+クラス検索・配送を委譲している場合にその委譲相手の CDA の GOL を表示する。
+
+<LI>go maintenunce SearchPolicy getTargets<BR>
+担当CDAからクラス配送サーバとして利用可能なCDAの GOL を表示する。
+
+<LI>go maintenunce SearchPolicy setTargetAt GOL at<BR>
+GOL で示された CDA を、担当CDAからの検索順序 at 番目のクラス配送サーバ
+として登録する。もともと at 番目にあったクラス配送サーバは登録をキャンセル
+される。
+
+<LI>go maintenunce SearchPolicy removeTarget GOL<BR>
+GOLで示されたクラス配送サーバCDAを担当CDAの検索方針から除去する。
+
+<LI>go maintenunce Milloring removeMillorPackage GOL name<BR>
+GOL で示されたミラーサーバから受けていたnameで示されたパッケージの
+ミラーリングを解除する。
+
+</OL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></
+B>
+
+</BODY>
+</HTML>
+

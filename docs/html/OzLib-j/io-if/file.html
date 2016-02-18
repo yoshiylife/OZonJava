@@ -1,0 +1,551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>I/O Interface</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H4>ファイル</H4>
+</CENTER>
+
+<HR NOSHADE>
+<P>
+<UL>
+<LI><B>class File : *Root</B><BR>
+ファイルに関することを処理するクラス。
+<P>
+<B>コンストラクタ</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>new breed(String arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルパス名を指定したファイルのインスタンスを生成する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ファイルパス名
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>new breed(String arg1, String arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ディレクトリパス名とファイルパス名を指定したファイルのインスタンスを生成する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ディレクトリパス名
+    <DT><STRONG>arg2</STRONG>
+<DD>ファイルパス名
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>new breed(File arg1, String arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ディレクトリとファイル名を指定したファイルのインスタンスを生成する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ディレクトリ
+    <DT><STRONG>arg2</STRONG>
+<DD>ファイル名
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public String getName()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイル名を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ファイル名
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public String getPath()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>パス名を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>パス名
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public String getAbsolutePath()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>絶対パス名を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>絶対パス名
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public String getCanonicalPath()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトのパス名の正規の形式を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>パス名の正規の形式
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public String getParent()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>パス名の親の部分を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>パス名の親の部分
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean exists()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルの存在を判別する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>trueは存在する
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean canWrite()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルを書き込みできることを判別する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>trueは書き込みできる
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean canRead()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルを読み込みできることを判別する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>trueは読み込みできる
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean isFile()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルを通常ファイルを判別する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>trueは通常ファイル
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean isDirectory()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルをディレクトリを判別する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>true はディレクトリ
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean isAbsolute()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルを絶対パス名を判別する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>trueは絶対パス名
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public long lastModified()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルが最後に変更された時間を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>最後に変更された時間
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public long length()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルの長さをバイト単位で返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ファイルの長さ
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean mkdir()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するパス名のディレクトリを作成する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD> 成功すればtrue
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean renameTo(File arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルの名前を替る。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>替るファイル名前
+ </DL>
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>成功すれば
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean mkdirs()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが親ディレクトリを含めって、指定するパス名のディレクトリを作成する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>成功すればtrue
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public Array list()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するディレクトリにあるファイルのリストを返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ファイルリスト
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public Array list(FilenameFilter arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するディレクトリにあるファイルのリストを返す。ただし、引数としてフィルタに含まれたファイルだけを返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>指定したフィルタ
+ </DL>
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>ファイルリスト
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean delete()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトが指定するファイルを削除する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>成功すればtrue
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public boolean isequal(Root arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>引数として指定したオブジェクトを比較する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>比較するオブジェクト
+ </DL>
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>同じであればtrue
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルオブジェクトの文字列を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>文字列
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public String getSeparator()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ディレクトリとファイル名の間であるセパレーター文字列を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>セパレーター文字列
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public char getSeparatorChar()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ディレクトリとファイル名の間あるセパレーター文字列の先頭文字を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>セパレーター文字列の先頭文字
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public String getPathSeparator()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルリストにファイルのセパレーター文字列を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>セパレーター文字列
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</P>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public char getPathSeparatorChar()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ファイルリストにファイルのセパレーター文字列の先頭文字を返す。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>セパレーター文字列の先頭文字
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</UL>
+</P>
+
+<P>
+<UL>
+<LI><B>class FilenameFilter : Root</B><BR>
+ファイル名をフィルタを処理するクラス。抽象クラスである。
+</P>
+
+<P>
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD COLSPAN=2>public abstract boolean accept(File arg1, String arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定したファイルが指定したディレクトリに存在することを判別する。
+</TD></TR><TR><TD><STRONG>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>ディレクトリ名
+    <DT><STRONG>arg2</STRONG>
+<DD>ファイル名
+ </DL>
+</TD></TR><TR><TD><STRONG>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>存在であればtrue
+ </DL>
+</TD></TR><TR><TD><STRONG>例外</STRONG>
+</TD><TD>なし 
+</TD></TR></TABLE>
+</UL>
+</P>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

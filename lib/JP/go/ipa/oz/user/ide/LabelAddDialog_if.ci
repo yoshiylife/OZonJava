@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.ide.LabelAddDialog_if, 0x0, (JP.go.ipa.oz.lib.standard._Dialog_if)
+m, getChoSubject, 0x1, LJP.go.ipa.oz.lib.standard._Choice_if, ()
+m, getBtnOK, 0x1, LJP.go.ipa.oz.lib.standard._Button_if, ()
+m, getSchoolBrowser, 0x1, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, ()
+m, putLabel, 0x1, V, ()

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="../exceptions/sysex.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="blocks.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H2>文（Statements）<BR>
+</H2>
+<BR clear="all">
+<P>
+ここでは、OZ言語の文について説明しています。<BR>
+<BR>
+文はOZプログラムの実行を制御するものです。そして、値を持ちません。指示された場合以外は順次実行されます。<BR>
+<BR>
+文が別の文を構成要素として持つこともできます。<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>文の種類</B><BR>
+OZ言語が規定する文Oとしては以下のものがあります。LALR(1)文法で記述しています。LALR(1)文法による構文記述は「LALR(1)文法」にまとめてあります。<BR>
+<BR>
+</P>
+<PRE>
+  stmt : no_subsequent_stmt
+         label_stmt
+         if_then_stmt
+         if_then_else_stmt
+         while_stmt
+         for_stmt
+
+  no_subsequent_stmt : empty_statement
+                       exp_stmt
+                       compound_stmt
+                       switch_stmt
+                       do_stmt
+                       jump_stmt
+                       throw_stmt
+                       try_stmt
+
+  no_short_if_stmt : no_subsequent_stmt
+                     no_short_if_label_stmt
+                     no_short_if_if_then_else_stmt
+                     no_short_if_while_stmt
+                     no_short_if_for_stmt
+</PRE>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="554"><BR>
+<BR>
+<BR>
+</P>
+<UL>
+  <LI><A href="blocks.html">複文(ブロック)</A><BR>
+<BR>
+  <LI><A href="declar.html">ローカル変数宣言文</A><BR>
+<BR>
+  <LI><A href="empty.html">空文</A><BR>
+<BR>
+  <LI><A href="labeled.html">ラベル文</A><BR>
+<BR>
+  <LI><A href="expre.html">式文</A><BR>
+<BR>
+  <LI><A href="if.html">ｉｆ文</A><BR>
+<BR>
+  <LI><A href="switch.html">switch文</A><BR>
+<BR>
+  <LI><A href="while.html">while文</A><BR>
+<BR>
+  <LI><A href="do.html">do文</A><BR>
+<BR>
+  <LI><A href="for.html">for文</A><BR>
+<BR>
+  <LI><A href="break.html">break文</A><BR>
+<BR>
+  <LI><A href="continue.html">continue文</A><BR>
+<BR>
+  <LI><A href="return.html">return文</A><BR>
+<BR>
+  <LI><A href="throw.html">throw文</A><BR>
+<BR>
+  <LI><A href="try.html">try文</A>
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="../exceptions/sysex.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="blocks.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

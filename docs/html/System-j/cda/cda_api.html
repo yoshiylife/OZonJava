@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Delivery of class</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>CDA --- API</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+ポーリングモードのミラー機能設定のために、ミラークライアントのCDAに対して
+最低限必要なメソッド呼びだしは次の通りである。尚、ミラーサーバとしてのCDA
+に対する設定は特に必要ない。
+
+<OL>
+
+<LI>public void millorsAdd(String)メソッドを呼び出すことによってミラーサーバ
+を登録する。これを登録するミラーサーバごとに繰り返す。
+
+<LI>public void millorsAddTopPackageName(String,String)メソッドを呼び出すこ
+とによってミラーサービスを要求するクラスアーカイブファイルを指定する。
+これをクラスアーカイブファイルごとに繰り返す。
+
+<LI>public void millorsPollingStart()メソッドを呼び出すことによって、
+ポーリングをスタートする。
+
+</OL>
+
+
+<LI>ミラー機能の設定のためのメソッド<BR>
+
+<UL>
+<LI>public void millorsAdd(String target)<BR>
+ミラークライアントとして、GOLがtargetのCDAをミラーサーバとして登録する。<BR>
+または、ミラーサーバとして、GOLがtargetのCDAをミラークライアントとして登録する。<BR>
+targetがnullの場合は何もしない。<BR>
+Parametors: target - CDAのGOL
+
+<LI>public void millorsAddTopPackageName(String target, String name)<BR>
+ミラークライアントとして、GOLがtargetのミラーサーバに対して、
+トップパッケージネームがnameのクラスアーカイブファイルのミラーサービス
+を設定する。<BR>
+または、ミラーサーバとして、GOLがtargetのミラークライアントに対して、
+トップパッケージネームがnameのクラスアーカイブファイルのミラーサービス
+を設定する。<BR>
+targetかnameがnullの場合は何もしない。<BR>
+targetが既にミラーサーバとして登録されたものでないなら何もしない。<BR>
+Parametors: target - ミラーサーバのGOL<BR>
+name - ミラーサービス対象となるクラスアーカイブファイルのトップパッケージネーム
+
+<LI>public void millorsRemoveTopPackageName(String target, String name)<BR>
+millorsAddTopPackageName(String target, String name)の設定を取り消す。<BR>
+targetかnameがnullの場合は何もしない。<BR>
+targetが既にミラーサーバとして登録されたものでないなら何もしない。<BR>
+Parametors: target - ミラーサーバのGOL<BR>
+name - ミラーサービス対象となるクラスアーカイブファイルのトップパッケージネーム<BR>
+
+<LI>public Dictionary millorsGet(String target)<BR>
+ミラークライアントとして、GOLがtargetのミラーサーバに対して
+ミラーサービスを要求しているクラスアーカイブファイルがあるが、
+そのトップパッケージネームとミラークライアント側における最終更新時刻の
+対を表示する。<BR>
+Parametors: target - CDAのGOL<BR>
+Returns: そのトップパッケージネーム(String型)とミラークライアント側における最終更新時刻(Long型)の対をassociationとするDeictionary
+
+<LI>public void millorsPollingStart()<BR>
+ポーリングミラーモードにおいて呼ばれるメソッドである。<BR>
+ミラークライアントとして、ポーリングをスタートする。
+
+</UL>
+
+<LI>検索方針の設定のためのメソッド
+
+<UL>
+<LI>public String targetsLeaveToWhom()<BR>
+クラス配送クライアントとして、クラスの検索配送の他のCDAへの全面委譲状況を返す。<BR>
+Returns: 全面委譲しているのなら委譲相手のCDAのGOL、していないのならnull
+
+<LI>public int targetsPut(String target)<BR>
+クラス配送クライアントとして、GOLがtargetのCDAをクラス配送サーバとして
+検索方針の末尾に登録する。targetがnullの場合は何もしない。<BR>
+Parametors: target - CDAのGOL<BR>
+Returns: 検索方針のサイズ(何個のCDAが検索方針として登録されているか)
+
+<LI>public int targetsPutAt(int at, String target)<BR>
+クラス配送クライアントとして、GOLがtargetのCDAをクラス配送サーバ検索
+方針のat番目に登録する。atが検索方針のサイズ(何個のCDAが検索方針とし
+て設定されているか)より大きい場合は、検索方針の末尾に登録される。<BR>
+targetがnullの場合は何もしない。<BR>
+Parametors: whom - CDAのGOL<BR>
+at - 検索方針の何番目に登録するか<BR>
+Returns: 検索方針のサイズ(何個のCDAが検索方針として登録されているか)
+
+<LI>public void targetsSetLeaveTo(String whom)<BR>
+クラス配送クライアントとして、クラスの検索配送の他のCDAへの全面委譲
+を設定する。whomがnullの場合は何もしない。<BR>
+Parametors: whom - 委譲相手のCDAのGOL
+
+<LI>public Array targetsTargets()<BR>
+クラス配送クライアントとして、検索方針を返す。<BR>
+Returns: 検索方針(検索順にならべたCDAのGOL(String型)の配列)
+
+<LI>public void targetsRemove(String target)<BR>
+クラス配送クライアントとして、GOLがtargetのCDAを検索方針から削除する。<BR>
+GOLがtargetのCDAが検索方針の中に無かったら何もしない。<BR>
+targetがnullの場合は何もしない。
+
+</UL>
+
+<LI>以上のメソッドが検索方針の設定やミラー機能の設定のためにユーザから
+呼ばれるメソッドである。以下のメソッドはユーザが呼ぶことはない。
+
+<UL>
+
+<LI>public DeliveryFile leaveToSearchAndDelivery(String codePath)<BR>
+他CDAからcodePathで示されたクラスの検索配送を全面委譲されて実行する。<BR>
+このメソッドをユーザが呼ぶことはない。<BR>
+Parametors: codePath - 検索配送するクラスのコードパス<BR>
+Returns: そのクラスのデリバリファイル
+
+<LI>public DeliveryFile searchAndDelivery(String codePath)<BR>
+他CDAから要求された、codePathで示されたクラスの検索配送を実行する。<BR>
+このメソッドをユーザが呼ぶことはない。<BR>
+Parametors: codePath - 検索配送するクラスのコードパス<BR>
+Returns: そのクラスのデリバリファイル
+
+<LI>public DeliveryFile millor(String topPackageName, long time)<BR>
+ポーリングミラーモードにおいて呼ばれる。<BR>
+ミラーサーバとして、topPackageNameで示されたパッケージがtime以降に変更
+を受けているのならそれをデリバリファイル形式で返す。<BR>
+このメソッドをユーザが呼ぶことはない。<BR>
+Parametors: topPackageName - ミラー対象のパッケージ名<BR>
+time - ミラークライアント側でのミラー対象の最終更新時刻<BR>
+Returns: ミラー対象のデリバリファイル
+
+<LI>public bool thisCopyOnRight(DeliveryFile df)<BR>
+コピーオンライトミラーモードにおいて呼ばれる。<BR>
+ミラークライアントとして、df中のクラスアーカイブファイルが最新のもの
+であるのでそれをローカルのexecutorへ反映させる。<BR>
+このメソッドをユーザが呼ぶことはない。<BR>
+Parametors: df - ミラー対象のクラスアーカイブファイルを中身とするデリバリファイル<BR>
+Returns: 反映が成功した場合はtrue、そうでない場合はfalse
+
+<LI>public bool thisWriteInValid(DeliveryFile df)<BR>
+ライトインバリデートミラーモードにおいて呼ばれる。<BR>
+ミラークライアントとして、df中のクラスアーカイブファイルが最新のもの
+であるのでそのことをローカルのexecutorに通知する(即座に反映はしない)。<BR>
+このメソッドをユーザが呼ぶことはない。<BR>
+Parametors: df - ミラー対象のクラスアーカイブファイルを中身とするデリバリファイル<BR>
+Returns: 通知が成功した場合はtrue、そうでない場合はfalse
+
+<LI>public ClassProperty getClassProperty(String codePath,String name)<BR>
+codePath で示されたクラスの name で示されたクラスプロパティを
+ローカルに探索して返す。<BR>
+このメソッドをユーザが呼ぶことはない。<BR>
+Parametors: codePath - クラスのコードパス<BR>
+name - クラスプロパティの相対ファイル名<BR>
+Returns: クラスプロパティファイル
+
+<LI>public ClassFile getClassFile(String codePath)<BR>
+codePath で示されたクラスファイルをローカルに探索して返す。<BR>
+このメソッドをユーザが呼ぶことはない。<BR>
+Parametors: codePath - クラスファイルのコードパス<BR>
+Returns: クラスファイル
+
+</UL>
+
+</UL>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></
+B>
+
+</BODY>
+</HTML>

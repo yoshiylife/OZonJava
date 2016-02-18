@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.secu.StringComparator_cl, 0x0, JP.go.ipa.oz.user.secu.StringComparator_if, JP.go.ipa.oz.lang._Root_cl
+c, create, (), (), (), (2354, 10, ())
+m, duplicate, 0x1, LJP.go.ipa.oz.lib.standard._Comparator_if, (), (), (), (2496, 44, ())
+m, compare, 0x1, Z, (LJP.go.ipa.oz.lang._Root_if, LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.lib.standard._String_if), (), (2366, 128, ((2409, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, hash, 0x1, I, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if), (), (2542, 35, ())

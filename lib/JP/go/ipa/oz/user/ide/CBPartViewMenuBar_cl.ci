@@ -1,0 +1,13 @@
+j, JP.go.ipa.oz.user.ide.CBPartViewMenuBar_cl, 0x10, JP.go.ipa.oz.user.ide.CBPartViewMenuBar_if, JP.go.ipa.oz.lib.standard._MenuBar_cl
+a, partView, 0x0, LJP.go.ipa.oz.user.ide.CBPartView_if, 190, 21
+a, menuSystem, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 341, 32
+a, menuHierarchy, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 341, 32
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 505, 15
+a, targetImplPart, 0x0, LJP.go.ipa.oz.user.ide.CIImplementationPart_if, 462, 37
+a, hierarchyEventQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 215, 57
+a, targetIfPart, 0x0, LJP.go.ipa.oz.user.ide.CIInterfacePart_if, 428, 30
+a, isImpl, 0x0, Z, 408, 16
+a, systemEventQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 215, 57
+c, newCBPartFrameMenuBar, (LJP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.lib.standard._MenuBar_cl), (675, 219, ())
+m, mkSystemMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (), (JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if, JP.go.ipa.oz.user.ide.CBSystemMenuListener_if), (JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.ide.CBSystemMenuListener_cl), (974, 712, ((1004, 4, JP.go.ipa.oz.lib.standard._Menu_if), (1021, 8, JP.go.ipa.oz.lib.standard._MenuItem_if), (1071, 20, JP.go.ipa.oz.user.ide.CBSystemMenuListener_if)))
+m, mkHierarchyMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (), (JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if, JP.go.ipa.oz.user.ide.CBHierarchyMenuListener_if), (JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.ide.CBHierarchyMenuListener_cl), (1768, 512, ((1801, 4, JP.go.ipa.oz.lib.standard._Menu_if), (1818, 8, JP.go.ipa.oz.lib.standard._MenuItem_if), (1848, 23, JP.go.ipa.oz.user.ide.CBHierarchyMenuListener_if)))

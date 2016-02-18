@@ -1,0 +1,2 @@
+i, JP.go.ipa.oz.user.ide.CBCIDInputDialog_if, 0x10, (JP.go.ipa.oz.user.ide.CBDialog_if)
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

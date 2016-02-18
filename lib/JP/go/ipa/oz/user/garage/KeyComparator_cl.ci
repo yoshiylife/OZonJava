@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.garage.KeyComparator_cl, 0x0, JP.go.ipa.oz.user.garage.KeyComparator_if, JP.go.ipa.oz.lang._Root_cl
+c, create, (), (), (), (238, 18, ())
+m, duplicate, 0x1, LJP.go.ipa.oz.lib.standard._Comparator_if, (), (JP.go.ipa.oz.user.garage.KeyComparator_if), (JP.go.ipa.oz.user.garage.KeyComparator_cl), (819, 104, ((859, 13, JP.go.ipa.oz.user.garage.KeyComparator_if)))
+m, compare, 0x1, Z, (LJP.go.ipa.oz.lang._Root_if, LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.user.garage.Key_if), (), (414, 150, ((469, 3, JP.go.ipa.oz.user.garage.Key_if)))
+m, hash, 0x1, I, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.user.garage.Key_if), (), (646, 91, ((682, 3, JP.go.ipa.oz.user.garage.Key_if)))

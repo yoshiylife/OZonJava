@@ -1,0 +1,7 @@
+i, JP.go.ipa.oz.user.inter.cgi.OzCGI_if, 0x2000, ()
+m, receiveRequest, 0x1, LJP.go.ipa.oz.user.inter.cgi.HTMLData_if, (LJP.go.ipa.oz.lib.standard._String_if)
+m, ping, 0x1, V, ()
+m, quit, 0x1, V, ()
+m, quiet, 0x1, V, ()
+m, go, 0x1, V, ()
+m, sendResult, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.HTMLData_if)

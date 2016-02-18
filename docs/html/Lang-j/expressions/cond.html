@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="logical.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="assign.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>条件演算子（Conditional Operator)<BR>
+</H3>
+<BR clear="all">
+<P>
+<BR>
+</P>
+<P>
+ここでは、OZ言語の条件演算子について説明しています。<BR>
+<BR>
+<BR>
+OZ言語の条件演算子は
+</P>
+<TABLE cellspacing="3">
+  <TR>
+    <TD width="15"></TD>
+    <TD><B>? :</B></TD></TR>
+</TABLE>
+
+<P>
+と表記されます。<BR>
+<BR>
+条件演算子は右結合的（right-associative）です。<BR>
+すなわち、a ? b : c ? d : e ? f : g は a ? b : (c ? d : ( e ? f : g) )
+と解釈されます。<BR>
+<BR>
+<BR>
+条件演算子を用いる式は三項演算式を形成します。<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>条件演算子</B>
+</P>
+<DL>
+  <DD>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" valign="top" width="25"><B>? :</B></TD>
+      <TD>第1オペランドの値がtrueならば第2オペランドが評価されます。<BR>
+第1オペランドの値がfalseならば第3オペランドが評価されます。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+<PRE>
+  conditional_exp : binary_exp_5 ? conditional_exp : conditional_exp
+                    binary_exp_5
+ 
+</PRE>
+<BR>
+<BR>
+<B>説明</B><BR>
+<BR>
+  <P>
+第1オペランドは論理型でなければいけません。<BR>
+また第2、第3オペランドは両方が同じ型で、数値型、論理型、クラス型のいずれかでなければいけません。<BR>
+（片方のオペランドがクラス型の場合には、他方がnullリテラルでもかまいません。）<BR>
+<BR>
+条件演算子を用いる三項演算式の型は、第2、第3オペランドの型によって以下のように規定されています。
+  </P>
+  <UL>
+    <LI>第2オペランドと第3オペランドが同じ型であればその型を持ちます。
+    <LI>第2オペランドと第3オペランドが数値型で、一方がbyte 型、他方が short
+型の場合、short 型を持ちます。
+    <LI>第2オペランドと第3オペランドが数値型で、一方が byte 型またはshort 型であり、他方の整数定数を表現可能であれば、その型を持ちます。<BR>
+そうでなければ、型の昇格が行われ、その昇格後の型を持ちます。
+    <LI>片方のオペランドがクラス型で他方がnullリテラルであれば、式の型はそのクラス型になります。
+    <LI>それ以外の場合は、代入等価でなければいけません。型はその代入等価 な型となります。
+  </UL>
+<BR>
+<BR>
+まず、第1オペランドが評価されます。その値は論理型でなくてはいけません。<BR>
+第1オペランドの値がtrueであれば第2オペランドが評価されます。第1オペランドの値がfalseであれば第3オペランドが評価されます。<BR>
+そして、その評価の結果が上記の型に変換されます。<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+例: 条件演算子<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+  public FMContainer federation() {
+      return (identifier != null) ? identifier-&gt;container() : null;
+  }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>まず、(identifier != null) が評価されます。その値がtrueであればメソッド起動式
+identifier-&gt;container() が評価されます。false であれば、式の値は null
+になります。
+    <LI>federation()メソッドの戻り値は、条件演算式の値になります。identifier-&gt;container()の型はFMContainerです。
+  </UL>
+<BR>
+<BR>
+例: 条件演算子<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+  char sep = ozhome-&gt;startsWith(&quot;/&quot;) ? '/' : '\\';
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>まず、ozhome-&gt;startsWith(&quot;/&quot;) が評価されます。その値がtrueであれば一次式である文字リテラル'/'が評価されます。その場合の条件演算式の値は
+'/' です。false であれば、条件演算式の値は '\\' になります。
+    <LI>条件演算式の値がchar型の変数 sep に代入されます。
+  </UL>
+<BR>
+<BR>
+例: 条件演算子<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+   c += j == 0 ? b * 0x10 : b;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>まず、j == 0 が評価されます。その値がtrueであれば第2オペランドの式
+b * 0x10 が評価されます。0x10は16進数の整数リテラルです。false であれば、条件演算式の値は変数bの保持する値になります。
+    <LI>条件演算式の値が変数cの保持する値に加算されて、変数cに代入されます。
+  </UL>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="logical.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="assign.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

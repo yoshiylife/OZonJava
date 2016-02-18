@@ -1,0 +1,12 @@
+j, JP.go.ipa.oz.user.secu.User_cl, 0x0, JP.go.ipa.oz.user.secu.User_if, JP.go.ipa.oz.lang._Root_cl
+a, edate, 0x0, LJP.go.ipa.oz.lib.standard._Date_if, 517, 12
+a, name, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 477, 12
+a, ticketKey, 0x0, LJP.go.ipa.oz.lib.standard._OzKey_if, 532, 16
+a, key, 0x0, LJP.go.ipa.oz.lib.standard._OzKey_if, 491, 10
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._OzKey_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._OzKey_if), (), (591, 66, ())
+m, setExDate, 0x1, V, (LJP.go.ipa.oz.lib.standard._Date_if), (JP.go.ipa.oz.lib.standard._Date_if), (), (734, 53, ())
+m, getKey, 0x1, LJP.go.ipa.oz.lib.standard._OzKey_if, (), (), (), (698, 34, ())
+m, getTicketKey, 0x1, LJP.go.ipa.oz.lib.standard._OzKey_if, (), (), (), (900, 46, ())
+m, setTicketKey, 0x1, V, (LJP.go.ipa.oz.lib.standard._OzKey_if), (JP.go.ipa.oz.lib.standard._OzKey_if), (), (829, 69, ())
+m, getExDate, 0x1, LJP.go.ipa.oz.lib.standard._Date_if, (), (), (), (789, 38, ())
+m, getName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (659, 37, ())

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>MaintenunceTool of OZ naming Lib.</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>メンテナンスツールの使い方</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+メンテナンスツールの使い方
+</P>
+
+<DL>
+<P>
+<DT>○カレントネームサーバ
+<DD>
+メンテナンスツールはカレントネームサーバという状態を持つ。これは、
+メンテナンスツールが直接継っているネームサーバで、メンテナンスツール
+からの命令はここに対して発行される。シングルネームサーバモードの時は、
+NameServerTransactionResource セルであり、マルチネームサーバモード
+の時は複数いる NameServerTransaction セルのうちの一つである。
+<DT>○カレントパス
+<DD>
+メンテナンスツールはカレントパスという状態を持つ。これは、メンテナンス
+名称空間の中のメンテナンスツール参照点で、メンテナンスツールからの命令
+の引数に相対パスが渡される場合は、このカレントパスに対する相対パスとなる。
+<DT>○命令の発行
+<DD>
+MaintenunceTool セルに対する go に幾つかの引数をつけることでメンテナンス
+ツールの命令を発行する。例えば、addNameServer 命令発行は次のような入力を
+エグゼキュータに対して行なう(mt はMaintenunceTool セルの GOL)。
+<PRE>
+    go mt addNameServer ;
+</PRE>
+以下にメンテナンスツールの命令を列挙し、エグゼキュータに対する入力
+(go mtは省く)と命令の説明を示す。
+</DL>
+</P>
+
+<P>
+カレント設定
+<UL>
+<LI>currentNameServer nameservergol<BR>
+カレントのネームサーバをnameservergolに変える
+<LI>currentPath path<BR>
+カレントパスをpathに変える
+</UL>
+</P>
+
+<P>
+ブランチ関係
+<UL>
+<LI>moveBranch path toGOL<BR>
+pathで指定されたディレクトリ階層以下の管理を
+toGOL(NameServerTransactionResourceセルで示されたネームサーバに
+移転する。<BR>
+pathはカレントネームサーバの管理名称空間内でなければいけない
+<LI>putDirectoryAsRoot dirname<BR>
+名前 dirname の新規ルートディレクトリを作り、
+ブランチとしてカレントネームサーバに登録する。
+<LI>unBranched path<BR>
+カレントネームサーバ管理下にある、pathで示されたブランチ
+ディレクトリをブランチでなくする。
+</UL>
+</P>
+
+<P>
+マッピング
+<UL>
+<LI>putDirectoryAsMapping path to serverGOL<BR>
+serverGOLは他ネームサービスに属するネームサーバ(NameServer
+Transactionセル)のGOLである。<BR>
+pathに、そのネームサービスの名称空間のパスtoをマッピングする。
+</UL>
+</P>
+
+<P>
+ネームサーバ管理
+<UL>
+<LI>addNameServer<BR>
+カレントネームサーバをネームサービスに登録する
+<LI>removeNameServer<BR>
+カレントネームサーバをネームサービスから削除する
+</UL>
+</P>
+
+<P>
+エントリ管理
+<UL>
+<LI>containEntry path<BR>
+指定した名称(カレントパスからの相対パス)が
+エントリとして名称空間に含まれるか調べる。
+<LI>removeEntry path<BR>
+カレントパスからの相対パスで指定されたオブジェクトの登録を抹消する
+<LI>renameEntry source target<BR>
+source(カレントパスからの相対パス)で指定された
+オブジェクトの名称をtarget(カレントパスからの相対パス)に
+リネームする。
+<LI>EntrySize path<BR>
+カレントディレクトリの登録エントリ数を求める。
+</UL>
+</P>
+
+<P>
+サブディレクトリの名称管理
+<UL>
+<LI>putDirectory dirname<BR>
+名前dirnameの新規サブディレクトリをカレントディレクトリに追加する。
+<LI>containDirectory path<BR>
+指定した名称(カレントパスからの相対パス)がディレクトリとして
+名称空間に含まれるか調べる。
+<LI>removeDirectory path<BR>
+カレントパスからの相対パスで指定されたディレクトリを削除する。
+<LI>renameDirectory sourcename targetname<BR>
+カレントディレクトリ下の名前がsourceディレクトリに対して
+名前をtargetに変更する。
+<LI>DirectorySize<BR>
+カレントディレクトリの登録ディレクトリ数を求める。
+</UL>
+</P>
+
+<P>
+その他(メンテナンスツールの仕様にはないが、あると便利な命令)
+<UL>
+<LI>debugPrint<BR>
+カレントネームサーバの内部状態を表示する。
+<LI>debugPrintSM<BR>
+ネームサービスの内部状態を表示する。
+<LI>debugPrintND<BR>
+カレントパスのディレクトリの内部状態を表示する。
+<LI>putEntry name object<BR>
+カレントパスのディレクトリに String オブジェクトを名前nameの
+エントリとして登録する。
+<LI>getEntry name<BR>
+カレントパスのディレクトリの、 String オブジェクトである名前nameの
+エントリを取り、表示する。
+</UL>
+</P>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></
+B>
+
+</BODY>
+</HTML>

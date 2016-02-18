@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>Usage of timer2</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>タイマの使い方2</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+「タイマの使い方 1」を理解していることを前提とする。<BR>
+タイマをかけて実行したいメソッドを持つクラス(ここでは Foo)の
+定義をタイマユーザが書き換えてもよい場合のタイマの使い方である。
+</P>
+
+<OL>
+<P>
+<LI>例えば次のようにタイマを使いたいとする。<BR>
+「タイマの使い方 1」と全く同様とする。
+</P>
+
+<P>
+<LI>MethodRunnable というクラスを継承した Runnable クラスを用意する。<BR>
+「タイマの使い方1」と全く同様である。
+</P>
+
+<P>
+<LI>タイマをかけて実行したいメソッドを持つクラスの定義にメソッドを追加する。<BR>
+今の場合、タイマをかけて実行したいメソッドが 2 引数の foo なので、以下にある
+ような 3 引数の foo を追加するのが良い。中身としては、「タイマの使い方1」での
+<UL>
+<LI>Timer オブジェクト生成
+<LI>MethodRunnable というクラスを継承した Runnable の生成
+<LI>Runnable にオブジェクトと引数のセット
+</UL>
+の部分と、タイマの invoke メソッド呼びだしと返り値の処理である。
+<PRE>
+\\\\\\\\\\\\\\\\\\\\\\\\ MyFoo.oz \\\\\\\\\\\\\\\\\\\\\
+class Foo {
+  System system;
+  condition dummy;
+  new create() { system=>create(); }
+  public locked int foo( int i, String S){ 
+    system->println("in Foo"); system->println(S);
+    wait(dummy,3000);
+    return i ;
+  }
+  public int foo(int i,String s,int time){
+    Timer t=>create();
+    MyMethodRunnable mmr=>create(t);
+    mmr->set(this,i,s);
+    Integer i; i=|t->invoke(mmr,time);
+    return i->intValue();
+  }
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+</PRE>
+</P>
+
+<P>
+<LI>そして、TimerTestBase.oz を次のように書き換える
+<PRE>
+\\\\\\\\\\\\\\\\\\\\\ MyTimerTest.oz \\\\\\\\\\\\\\\\\\\\\\\\
+cell TimerTest {
+  protected void initialize() {}
+  protected void quiet() {
+    flushCell();
+  }
+  protected void go() {
+    Foo obj => create();
+    int ret;
+    try{
+      ret = obj->foo(1,"zz",2000);
+    } catch (TimeOutException e) {
+      System system=>create(); system->println("TimeOut");
+    } catch (Exception e) {
+    }
+ }
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+</PRE>
+タイマをかけて実行したいメソッド(ここでは 2 引数の foo)の代わりに、
+先ほど、追加したメソッド(ここでは 3 引数の foo)を、TimeOutException
+の catch 節を持つ try 節の中で呼び出すようにする。
+</OL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+

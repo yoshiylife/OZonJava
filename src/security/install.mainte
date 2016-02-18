@@ -1,0 +1,21 @@
+
+ozc -s t.s -i addGroup.oz
+ozc -s t.s -i addGroupMember.oz
+ozc -s t.s -i addUser.oz
+ozc -s t.s -i changeKey.oz
+ozc -s t.s -i changeOwner.oz
+ozc -s t.s -i removeGroup.oz
+ozc -s t.s -i removeGroupMember.oz
+ozc -s t.s -i removeUser.oz
+echo "interface compiled"
+
+ozc -s t.s acl.oz
+ozc -s t.s addGroup.oz
+ozc -s t.s addGroupMember.oz
+ozc -s t.s addUser.oz
+ozc -s t.s changeKey.oz
+ozc -s t.s changeOwner.oz
+ozc -s t.s removeGroup.oz
+ozc -s t.s removeGroupMember.oz
+ozc -s t.s removeUser.oz
+echo "compiled all"

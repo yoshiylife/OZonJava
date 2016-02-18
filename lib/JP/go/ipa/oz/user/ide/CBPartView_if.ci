@@ -1,0 +1,4 @@
+i, JP.go.ipa.oz.user.ide.CBPartView_if, 0x10, (JP.go.ipa.oz.lib.standard._Frame_if)
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, showLocalHierarchy, 0x1, V, ()
+m, getClassBrowser, 0x1, LJP.go.ipa.oz.user.ide.ClassBrowser_if, ()

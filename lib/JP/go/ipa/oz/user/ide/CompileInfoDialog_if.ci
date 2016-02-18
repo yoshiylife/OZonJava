@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.ide.CompileInfoDialog_if, 0x0, (JP.go.ipa.oz.lib.standard._Dialog_if)
+m, setButtonEnabled, 0x1, V, (Z)
+m, appendText, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getTxtInfo, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, setTxtInfo, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)

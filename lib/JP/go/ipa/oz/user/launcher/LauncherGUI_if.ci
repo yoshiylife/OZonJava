@@ -1,0 +1,8 @@
+i, JP.go.ipa.oz.user.launcher.LauncherGUI_if, 0x0, (JP.go.ipa.oz.lib.standard._Frame_if)
+m, getSelectedDirectory, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, setPath, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getSelectedCell, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, changeDirectory, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, createCell, 0x1, V, ()
+m, sync, 0x1, V, ()
+m, getPath, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

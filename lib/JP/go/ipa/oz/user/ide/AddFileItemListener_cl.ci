@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.AddFileItemListener_cl, 0x0, JP.go.ipa.oz.user.ide.AddFileItemListener_if, JP.go.ipa.oz.lib.standard._ItemListener_cl
+a, dlg, 0x0, LJP.go.ipa.oz.user.ide.AddFileDialog_if, 568, 18
+c, create, (LJP.go.ipa.oz.user.ide.AddFileDialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.AddFileDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ItemListener_cl), (708, 96, ())
+m, itemStateChanged, 0x1, V, (LJP.go.ipa.oz.lib.standard._ItemEvent_if), (JP.go.ipa.oz.lib.standard._ItemEvent_if), (), (982, 74, ())

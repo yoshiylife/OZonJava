@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.ide.ProjectSaveAsDialog_if, 0x0, (JP.go.ipa.oz.lib.standard._Dialog_if)
+m, saveAsProject, 0x1, V, ()
+m, getProjectName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

@@ -1,0 +1,14 @@
+j, JP.go.ipa.oz.user.lib_dist.name._NameResource_cl, 0x0, JP.go.ipa.oz.user.lib_dist.name._NameResource_if, JP.go.ipa.oz.lang._Root_cl
+a, systemmap, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 974, 21
+a, branches, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 748, 20
+a, ownermap, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 610, 20
+a, servers, 0x0, LJP.go.ipa.oz.lib.standard._Set_if, 1081, 12
+c, create, (), (JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl, JP.go.ipa.oz.lib.standard._Set_cl), (1101, 183, ((1115, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+m, setSystemmap, 0x11, V, (LJP.go.ipa.oz.lib.standard._Dictionary_if), (JP.go.ipa.oz.lib.standard._Dictionary_if), (), (1634, 60, ())
+m, getSystemmap, 0x11, LJP.go.ipa.oz.lib.standard._Dictionary_if, (), (), (), (1403, 57, ())
+m, getBranches, 0x11, LJP.go.ipa.oz.lib.standard._Dictionary_if, (), (), (), (1345, 55, ())
+m, setBranches, 0x11, V, (LJP.go.ipa.oz.lib.standard._Dictionary_if), (JP.go.ipa.oz.lib.standard._Dictionary_if), (), (1573, 58, ())
+m, getOwnerMap, 0x11, LJP.go.ipa.oz.lib.standard._Dictionary_if, (), (), (), (1287, 55, ())
+m, getServers, 0x11, LJP.go.ipa.oz.lib.standard._Set_if, (), (), (), (1463, 46, ())
+m, setServers, 0x11, V, (LJP.go.ipa.oz.lib.standard._Set_if), (JP.go.ipa.oz.lib.standard._Set_if), (), (1697, 47, ())
+m, setOwnerMap, 0x11, V, (LJP.go.ipa.oz.lib.standard._Dictionary_if), (JP.go.ipa.oz.lib.standard._Dictionary_if), (), (1512, 58, ())

@@ -1,0 +1,8 @@
+i, JP.go.ipa.oz.user.inter.lib.NetworkClient_if, 0x400, (JP.go.ipa.oz.lang._Root_if)
+m, sendCommand, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, connect, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if)
+m, connect, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if, I)
+m, getResponse, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, sendData, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getTimeout, 0x1, I, ()
+m, setTimeout, 0x1, V, (I)

@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>インスタンスの生成、登録と維持管理</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+ここでいうインスタンスとは、フェデレーションで扱う
+リソースのことである。扱われるリソースは、すべて FedRoot セルを
+継承する。インスタンスの生成は、セルの create(GOL) により
+行われ、また Autonomy セルはインスタンスの登録および維持を
+行うインタフェースを提供する。
+</P>
+
+<UL>
+
+<P>
+<LI>public Proxy create(String gol)<BR>
+セルのコンストラクタインタフェースである。
+引数として、リソースの GOL をとる。<BR>
+</P>
+
+<P>
+<LI>public void Autonomy#addResource(String resource)<BR>
+引数として、リソースの GOL をとる。<BR>
+引数とログレコード ResourceLog を、
+Autonomy セルの保持するリソース集合に追加する。
+</P>
+
+<P>
+<LI>public void Autonomy#removeResource(String resource)<BR>
+引数として、リソースの GOL をとる。<BR>
+引数とログレコード ResourceLog を、
+Autonomy セルの保持するリソース集合から取り出す。
+</P>
+
+<P>
+<LI>public boolean Autonomy#containsResource(String resource)<BR>
+引数として、リソースの GOL をとる。<BR>
+引数とログレコード ResourceLog を、
+Autonomy セルの保持するリソース集合から取り出し、
+まだリソース集合に保持されていることを判定する。<BR>
+判定には、ログレコードのログアウト時間が未設定であるかどうかを
+確認する。未設定の時にのみ、真を返す。
+</P>
+
+</UL>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

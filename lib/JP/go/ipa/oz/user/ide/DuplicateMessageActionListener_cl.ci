@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.DuplicateMessageActionListener_cl, 0x0, JP.go.ipa.oz.user.ide.DuplicateMessageActionListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dlg, 0x0, LJP.go.ipa.oz.user.ide.DuplicateMessageDialog_if, 581, 27
+c, create, (LJP.go.ipa.oz.user.ide.DuplicateMessageDialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.DuplicateMessageDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl), (741, 107, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if), (), (1000, 163, ())

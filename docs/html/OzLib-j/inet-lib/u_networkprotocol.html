@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>inet lib</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+
+<H3>NetworkProtocol クラスの使い方</H3>
+</CENTER>
+<HR noshade>
+<P>
+このクラスはインタネット上の標準的な通信プロトコルを扱うクラスを実現するためのクラスであり、このクラスを上位実装クラスとして継承して利用する。以後、このクラスを継承して新たに作成するクラスを、下位クラスと呼ぶ。<BR>
+<BR>
+このクラスで処理可能な通信プロトコルは以下の条件を満たすものである。<BR>
+</P>
+<UL>
+  <LI>コマンドデータが、パラメータを含む場合は、コマンド文字列の後に一つスペース文字が 
+あり、それに続いてパラメータがある形式である。ただし、パラメータの形式は任意でよい。
+  <LI>レスポンスデータが、ステータスを表す文字列の後に一つのスペース文字があり、それに続い 
+てステータスの内容を示す文字列がある形式である。
+  <LI>データの終端が CR ('\r')、LF ('\n') が連続した文字列である。
+</UL>
+<P>
+<BR>
+</P>
+<H4>*コンストラクタ</H4>
+<P>
+下位クラスのコンストラクタでは、well-known のポート番号を引数として <B>create
+</B>コンストラクタを呼び出す。<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<H4>*メソッド</H4>
+<DL>
+  <DT>-コマンドデータの送信
+  <DD>パラメータを伴うコマンドデータの送信には、2 引数の <B>sendCommand</B>
+メソッドを利用する。<BR>
+<BR>
+パラメータがないコマンドデータの送信には、1 引数の <B>sendCommand</B> メソッドを利用する。<BR>
+<BR>
+<BR>
+  <DT>-レスポンスデータの処理
+  <DD><B>String decodeResponse (String data)</B><BR>
+<BR>
+例えば <B>POP3</B> プロトコルなどでは複数行のレス ポンスデータではデータの終端を<BR>
+'.' + CRLF という文字列で表すため、 '.' で始まる行には '.' を一つ冗長に付<BR>
+加されたものを受信する。そのため、受信したクライアントはこの冗長な '.'
+を<BR>
+取り除くという処理をこのメソッドに実装する。なお、デフォルトでは単に引数の<BR>
+データを返す。<BR>
+<BR>
+<BR>
+<B>abstract boolean isLastLine (String data)</B><BR>
+<BR>
+複数行のレスポンスデータを受信するためのメソッド <B>recvMultilineResponse</B>
+は、<BR>
+レスポンスデータの最終行かどうかを判定するためにこのメソッドを呼び出す。<BR>
+このメソッドでは受信したレスポンスデータが複数行データの最終行を含んでいる<BR>
+かどうかを判定するための処理を各プロトコルに応じて実装し、最終行の場合に<BR>
+true を、それ以外の場合にfalse を返すようにする。
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<H4>*利用例<BR>
+</H4>
+<P>
+このクラスの利用例としては、<B>SMTP</B>, <B>POP3</B>, <B>FTP</B>, <B>NNTP</B>
+の各クラスのソースコードを参照のこと。<BR>
+<BR>
+<BR>
+</P>
+<HR noshade>
+<ADDRESS><B><A href="../../copyright-j.html">Copyright</A>(c) 1996-1998
+IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B></ADDRESS>
+<P>
+<B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+</P>
+</BODY>
+</HTML>

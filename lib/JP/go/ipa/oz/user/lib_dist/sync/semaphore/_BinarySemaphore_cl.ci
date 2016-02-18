@@ -1,0 +1,9 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.semaphore._BinarySemaphore_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.semaphore._BinarySemaphore_if, JP.go.ipa.oz.lang._Root_cl
+a, ex, 0x0, N, 669, 17
+a, co, 0x0, N, 669, 17
+a, sem, 0x4, I, 489, 18
+a, notCoEmpty, 0x0, Z, 689, 16
+c, create, (), (), (), (1468, 75, ())
+m, V, 0x21, V, (), (), (), (1160, 300, ())
+m, P, 0x4, V, (Z), (), (), (775, 381, ())
+m, P, 0x21, V, (), (), (), (730, 41, ())

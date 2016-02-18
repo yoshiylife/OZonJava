@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.garage.SubjectGarage_cl, 0x2000, JP.go.ipa.oz.user.garage.SubjectGarage_if, JP.go.ipa.oz.user.garage.SGarage_cl
+a, classLoader, 0x0, LJP.go.ipa.oz.lib.standard._ClassLoader_if, 154, 25
+m, initialize, 0x4, V, (), (), (), (1239, 63, ())
+m, getSubject, 0x1, LJP.go.ipa.oz.user.ide.Subject_if, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.Subject_if), (), (339, 113, ((384, 7, JP.go.ipa.oz.user.ide.Subject_if)))
+m, replaceSubject, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if, LJP.go.ipa.oz.user.ide.Subject_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.Subject_if), (), (990, 89, ())
+m, putSubject, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (LJP.go.ipa.oz.user.ide.Subject_if), (JP.go.ipa.oz.user.ide.Subject_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._ClassNotFoundException_if), (), (651, 257, ((696, 6, JP.go.ipa.oz.lib.standard._String_if), (820, 22, JP.go.ipa.oz.lib.standard._ClassNotFoundException_if)))
+m, quiet, 0x4, V, (), (), (), (1543, 78, ())
+m, go, 0x4, V, (), (), (JP.go.ipa.oz.lib.standard._ClassLoader_cl), (1384, 77, ())

@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>I/O Interface</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>字句解析</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<UL>
+<LI><B>class StreamTokenizer : *Root</B><BR>
+StreamTokenizer クラスは入力ストリームまたは文字列ストリームを受け取り、トークンを生成する。
+<P>
+<B>コンストラクタ</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(InputStream arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定している入力ストリームを解析するストリームトークナイザを生成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>入力ストリームクラス引数
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>new breed(Reader arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定の文字ストリームを解析するトークナイザを生成する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字ストリームクラス引数
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<B>メソッド</B>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void resetSyntax()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>の構文をリセットする。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void wordChars(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>1&lt;=c&lt;=arg2 の範囲内のすべての 文字 c がワード文字であることを
+      指定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>範囲の最小値
+    <DT><STRONG>arg2</STRONG>
+<DD>範囲の最大値
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void whitespaceChars(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>1&lt;=c&lt;=arg2 の範囲内のすべての文字 c が、空白文字であると指定する。 
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>範囲の最小値
+    <DT><STRONG>arg2</STRONG>
+<DD>範囲の最大値
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void ordinaryChars(int arg1, int arg2)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>1&lt;=c&lt;=arg2 の範囲内のすべての文字 c が、このトークナイザの 
+   通常状態であると指定する。 
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>範囲の最小値
+    <DT><STRONG>arg2</STRONG>
+<DD>範囲の最大値
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void ordinaryChar(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>文字引数が通常状態であると指定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void commentChar(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>指定された文字以降は、コメント行であることを指定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void quoteChar(int arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>引数文字に一致するペアで、このトークナイザの文字列定数を区切るように指定
+  する。 
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>文字
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void parseNumbers()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>このトークンをワードではなく数値として扱い、数値を解析するように指定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void eolIsSignificant(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>行の終わりをトークンとして処理するかどうかを判別する。 
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD> 処理する場合 true
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void slashStarComments(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>
+<B>/*</B> と <B>*/</B> で囲まれた範囲をコメントとして扱うかどうかを設定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD> 
+<B>/*</B> と<B>*/</B> で囲まれた範囲をコメントとして扱う場合 true
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void slashSlashComments(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>
+<B>//</B> と行末で囲まれた範囲をコメントとして扱うかどうかを設定する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD>
+<B>//</B> と行末で囲まれた範囲をコメントとして扱う場合 true
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void lowerCaseMode(boolean arg1)</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>ワードトークンを自動的に小文字にすることを判断する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>arg1</STRONG>
+<DD> ワードトークンを小文字にする場合 true
+ </DL>
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int nextToken()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>次のトークンを解析する。 
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>次のトークンの型
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>: I/Oエラーが発生した。 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public void pushBack()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>次の nextToken メソッドを呼び出す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int lineno()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>現在の行番号を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>行番号
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public String asString()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>現在のストリームトークンの文字列表示を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>文字列
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public int getttype()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>トークンの型を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>トークンの型
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public boolean ttypeisEOF()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>トークンは EOF かどうかを判別する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD> EOF であれば true
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public boolean ttypeisEOL()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>トークンは EOL かどうかを判別する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD> EOLであれば true
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public boolean ttypeisNUMBER()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>トークンは数値かどうかを判別する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD> 数値であれば true
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public boolean ttypeisWORD()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>トークンは文字かどうかを判別する。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD> 文字であれば true
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public String getsval()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>文字トークンの内容を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>文字トークンの内容
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>public double getnval()</TD></TR>
+<TR><TD NOWRAP><STRONG>機能</STRONG>
+</TD><TD>数字トークンの内容を返す。
+</TD></TR><TR><TD NOWRAP>引数</STRONG>
+</TD><TD>なし
+</TD></TR><TR><TD NOWRAP>返値</STRONG>
+</TD><TD>
+    <DL ><DT><STRONG>returncode</STRONG>
+<DD>数字トークンの内容
+ </DL>
+</TD></TR><TR><TD NOWRAP>例外</STRONG>
+</TD><TD>なし 
+</TD></TR>
+</TABLE>
+</P>
+</UL>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

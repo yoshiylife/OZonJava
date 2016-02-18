@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.inter.wwps.WWPSPropertyReader_if, 0x0, (JP.go.ipa.oz.user.inter.cgi.FilePropertyReader_if)
+m, getOzCGI, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, read, 0x1, V, ()

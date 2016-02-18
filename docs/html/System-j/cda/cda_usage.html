@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Delivery of class</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>CDAの使用に当たり必要なこと</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+このページを読むには、<A HREF="cda_basic.html"><B>CDA</B>の基本事項</A>
+のページを読んでおく必要がある。
+また最も簡単なCDAの使用方法は
+<A HREF="cda_simple.html"><B>CDA</B>の最も単純な使い方</A>のページにある。
+
+<UL>
+
+<LI>ソケットの設定<BR>
+
+CDAはエグゼキュータとの通信の一部には <B>ozclass</B> というプロトコル
+によるソケット通信を使用する。各CDAはこの通信用のソケットを一つ持つ。
+<A HREF="cda_usage.html"><B>CDA</B>の基本事項</A>の最後に記したように、
+executorとCDAは一般的に多対1の関係にあり、「1」のCDAと「多」の各executor
+には、どのホスト上のどのポート番号のソケット
+をこの通信用に使うのかを指定してやる必要がある。
+そこで、libディレクトリ下のoz.propertiesに次のような
+プロパティを加える。
+
+<P>
+<DL>
+<DT><B>oz.properties</B>
+<DD>
+<TABLE BORDER=2 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD><B>oz.classloader.deliveryAgent.url=ozclass</B>プロトコルによるソケット通信用のソケットのホスト名とポート番号</TD>
+</TR>
+</TABLE>
+例えば、host1 というマシン上の 6010 番ポートのソケットを通じて通信するのなら、
+<PRE>
+<B>oz.classloader.deliveryAgent.url=ozclass://host1:6010/</B>
+</PRE>
+<DD>
+また、エグゼキュータから CDA へのクラス配送要求繰り返し回数を
+指定することができる。
+<TABLE BORDER=2 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD><B>oz.classloader.deliveryAgent.retry=</B>サーチ回数</TD>
+</TR>
+</TABLE>
+例えば、その回数を二回と指定する場合は次のような記述となる。
+<PRE>
+<B>oz.classloader.deliveryAgent.retry=2</B>
+</PRE>
+デフォルトは5回である。
+</DL>
+</P>
+
+<LI>検索方針の設定<BR>
+
+executorは実行に必要なクラスがローカルリポジトリに見当たらない場合は、
+ローカルシステム上のCDAに対してそのクラスをリモートシステムから検索して
+くるように要求する。
+CDAは検索方針に従っていくつかのリモートシステムのCDAに順番に打診を行なっていく。
+ここで検索方針とは、打診を行なっていく順番
+であり、打診とは、リモートシステム
+のリポジトリに目的のクラスがあるかどうかを聞くことである。
+libディレクトリ下のoz.propertiesのプロパティoz.cda.targetの値は
+この検索方針である。
+すなわち、打診を行なっていくリモートシステムのドメイン名:OZHOME識別子を','をデリミタとして並べたものである。
+例えば、oz.ipa.go.jp:remoteoz、oz.ipa.go.jp:farozという順で打診を
+行なっていくのなら次のようなプロパティ設定になる。<BR>
+oz.cda.target=oz.ipa.go.jp:remoteoz,oz.ipa.go.jp:faroz <BR>
+尚、このプロパティoz.cda.targetを設定しない場合は、クラスの検索は行なわれない。
+<BR><BR>
+検索方針の設定は、OZのプログラムの中からセルCDAの<BR>
+ public int targetsPut(String)メソッドの
+呼びだしによっても行なえる(<A HREF="cda_api.html"><B>CDA</B>のAPI</A>参照)。
+
+<LI>ミラー機能の設定<BR>
+
+この設定はCDAのクラス配送機能を使うだけの場合は必要ない。
+ミラー機能の設定はやはり、libディレクトリ下のoz.propertiesのプロパティ
+として設定する。
+プロパティoz.cda.millorがそのプロパティである。
+まず、どのミラーサイト(そのサイトのドメイン名:OZHOME識別子)から
+どのパッケージ(トップパッケージ名)をミラーするのかをデリミタ","でもって
+並べた文字列をミラーサイト毎に作る。そしてこれら文字列を"&"をデリミタとして
+並べる。例えば、oz.ipa.go.jp:remoteozからJP.go.ipa.oz.user.released.test_cdaと
+JP.go.ipa.oz.user.released.zzを、oz.ipa.go.jp:farozからJP.go.ipa.oz.user.released.test_cda.testclassとJP.go.ipa.oz.user.released.zzをミラーリングするのなら、
+以下のようなプロパティ設定になる。<BR>
+
+oz.cda.millor=oz.ipa.go.jp:remoteoz, JP.go.ipa.oz.user.released.test_cda, JP.go.ipa.oz.user.released.zz&oz.ipa.go.jp:faroz, JP.go.ipa.oz.user.released.test_cda.testclass, JP.go.ipa.oz.user.released.zz
+
+OZのプログラムの中からセルCDAの<BR>
+public void millorsAdd(String) や<BR>
+public void millorsAddTopPackageName(String,String)
+のメソッドのコールによって行なう
+(<A HREF="cda_api.html"><B>CDA</B>のAPI</A>参照)こともできる。
+
+ミラーリングの時間間隔はプロパティoz.cda.millorIntervalの値(単位はmsec)として
+設定する。デフォルトの時間間隔は60000(msec)である。
+
+oz.cda.millorStart=tureというプロパティを設定することで、実際にミラーリングが
+CDA起動時から行なわれる。このプロパティが設定ないと、ミラー機能の設定は行な
+われるが、
+ミラーリングは行なわれない(CDAのpublic void millorsPollingStart()メソッドを
+呼び出せばミラーリングが開始される)。
+
+<LI>リゾルバ<BR>
+
+CDAを動かすにはリゾルバが必要である。リゾルバの設定を
+リゾルバのドキュメントに従って適切に行なっておく。
+設定の際には、ポート番号を上述のozclassプロトコル
+によるソケットのポート番号にぶつからないように注意。
+
+<LI>CDAの起動<BR>
+
+CDAは"cda"というGODのセルであり、CDAの起動は(ランチャからの)セルcdaの起動である。
+
+<LI>CDAの停止<BR>
+
+CDAの停止は(ランチャからの)セルcdaの停止である。
+</UL>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></
+B>
+
+</BODY>
+</HTML>
+
+

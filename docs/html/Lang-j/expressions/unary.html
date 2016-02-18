@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="primary_e.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="num.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>単項演算子（Unary Operators）<BR>
+</H3>
+<BR clear="all">
+<P>
+ここでは、OZ言語の単項式について説明しています。<BR>
+</P>
+<P>
+<BR>
+OZの単項式には以下のものがあります。
+</P>
+<UL>
+  <LI>単項演算子を用いる式
+  <LI>前置インクリメント式・前置デクリメント式
+  <LI>後置式
+</UL>
+<P>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+</P>
+<PRE>
+  unary_exp : unary_operator unary_exp
+              pre_increment_or_decrement_exp
+              postfix_exp<BR>
+</PRE>
+<P>
+<BR>
+<BR>
+<BR>
+<B>単項演算子を用いる式</B>
+</P>
+<DL>
+  <DD>OZ言語の次の3つの単項演算子があります。
+  <DD>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" width="15"><B>+</B></TD>
+      <TD></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center"><B>-</B></TD>
+      <TD></TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center"><B>!</B></TD>
+      <TD></TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+<PRE>
+  
+  unary_operator : +
+                   -
+                   !
+
+</PRE>
+<BR>
+<B>説明</B><BR>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" valign="top" width="15"><B>+</B></TD>
+      <TD>オペランドは数値型でなければいけません。<BR>
+オペランドに対して型の昇格が行われ、式は昇格後の型を持ちます。<BR>
+また、式の値は昇格後のオペランドの値になります。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>-</B></TD>
+      <TD>オペランドは数値型でなければいけません。<BR>
+オペランドに対して型の昇格が行われ、式は昇格後の型を持ちます。<BR>
+また、式の値は符号が逆にした（negative）昇格後のオペランドの値になります。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>!</B></TD>
+      <TD>オペランドには論理型の式を記述します。<BR>
+論理型の式です。<BR>
+式の値は、オペランドの値が<B>true</B>の場合には<B>false</B>、<B>false</B>の場合には<B>true</B>になります。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+例: 単項演算子<B> ! </B><IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+  
+  if (! queue-&gt;isDestroyed()) queue-&gt;destroy(); // !の使用
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<B>前置インクリメント式・前置デクリメント式</B>
+</P>
+<DL>
+  <DD>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" valign="top" width="15"><B>++</B></TD>
+      <TD>オペランドが評価され、それが正常に実行されると、オペランドの変数の値に1が加算されます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>--</B></TD>
+      <TD>オペランドが評価され、それが正常に実行されると、オペランドの変数の値から1が除算されます。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+<PRE>
+
+  pre_increment_or_decrement_exp : increment_or_decrement_operator unary_exp
+
+</PRE>
+<BR>
+<BR>
+<B>説明</B>
+  <DD><BR>
+オペランドは識別子またはアトリビュート参照の一次式で、かつ、型が数値型でなければいけません。値１が加算されたり除算されたりする前に、型の昇格が適用されます。<BR>
+<BR>
+前置インクリメント式、前置デクリメント式はオペランドの型と同じ型を持ちます。<BR>
+そして、前置インクリメント式、前置デクリメント式の値は、新しい値が変数に貯えられての後の値、すなわち加算や除算が適用された値になります。<BR>
+<BR>
+<BR>
+副作用を伴う式なので、式文として記述することができます。<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<B>後置式</B>
+</P>
+<DL>
+  <DD>次の演算子がオペランドの式に後置されます。
+  <DD>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" valign="top" width="15"><B>++</B></TD>
+      <TD>オペランドが評価され、それが正常に実行されると、オペランドの変数の値に1が加算されます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>--</B></TD>
+      <TD>オペランドが評価され、それが正常に実行されると、オペランドの変数の値から1が除算されます。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+<PRE>
+
+  postfix_exp : post_increment_or_decrement_exp
+                primary
+                    
+  post_increment_or_decrement_exp : postfix_exp  increment_or_decrement_operator
+</PRE>
+<BR>
+<BR>
+<B>説明</B>
+  <DD><BR>
+オペランドは識別子またはアトリビュート参照の一次式で、かつ、型が数値型でなければいけません。<BR>
+値１が加算されたり除算されたりする前に、型の昇格が適用されます。<BR>
+<BR>
+後置式はオペランドの型と同じ型を持ちます。<BR>
+後置式の値は、新しい値が変数に貯えられるよりも以前の値になります。<BR>
+<BR>
+<BR>
+副作用を伴う式なので、式文として記述することができます。<BR>
+<BR>
+<BR>
+例: 後置式 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <CENTER>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+  for (int i = 0; i &lt; len; pos++) {
+      char ch = orig-&gt;charAt (i++);   // iの値を引数として渡して後
+                                      // iに１を加算。
+      if (ch == '%') {
+          ...
+      } else if (ch == '+') {
+        buf-&gt;setAt (pos, ' ');
+      } else 
+        buf-&gt;setAt (pos, ch);
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  </CENTER>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="primary_e.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="num.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

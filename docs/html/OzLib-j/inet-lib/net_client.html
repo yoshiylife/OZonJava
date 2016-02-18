@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>Network Client Class</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4><B>NetworkClient</B> クラス</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+具体的なプロトコルを実装するために利用する抽象クラスで、下位クラスで利用
+するための <A HREF="prot_record.html"><B>ProtocolRecord</B> クラス</A>の
+インスタンスをアトリビュート(record) として持つ。また、コマ
+ンドデータの送信後に受け取るレスポンスデータを格納するためのアトリビュー
+ト (reposnse_message) を持つ。
+</P>
+
+<P>
+<UL>
+<LI>以下のコンストラクタを持つ。
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>create (String send_format, String recv_format, String lt, int port)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>プロトコルの処理に利用するための <B>ProtocolRecord</B> のインスタンスを生成する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=4>引数</TD>
+<TD>send_format</TD>
+<TD>コマンドデータのフォーマット</TD></TR>
+<TR><TD>recv_format</TD>
+<TD>レスポンスデータのフォーマット</TD></TR>
+<TR><TD>lt</TD>
+<TD>データの終端文字列</TD></TR>
+<TR><TD>port</TD>
+<TD>デフォルトポート番号</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<LI>以下のインタフェースを持つ。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String connect (String host, int port)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>指定したホストおよびポートへのコネクションを確立する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=2>引数</TD>
+<TD>host</TD> <TD>接続先ホスト</TD></TR>
+<TD>port</TD> <TD>接続先ホストのポート</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String connect (String host)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>指定したホストおよびデフォルトのポートへのコネクションを確立する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>host</TD> <TD>接続先ホスト</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String getResponse ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>レスポンスデータ文字列を返す。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>レスポンスデータ文字列</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>void setTimeout (int t)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>コネクション上での読み出しのタイムアウト値を設定する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>t</TD> <TD>タイムアウト値 (ミリ秒)</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>int getTimeout ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>設定されいるコネクション上での読み出しのタイムアウト値を返す。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>タイムアウト値 (ミリ秒)</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<LI>以下の <B>protected</B> メソッドを持つ。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String sendCommand ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>ProtocolRecord クラスのインスタンスを利用してコマンドデータを送信し、レスポンスデータを受信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String sendData (String data)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>データ文字列を送信し、レスポンスデータを受信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>data</TD> <TD>データ文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String encodeData (String data)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>送信データに対する付加処理を行う。<BR>
+具体的な処理としては、例えば SMTP プロトコルなどでは複数行の送信
+データではデータの終端を '.' + CRLF という文字列で表すため、
+'.' で始まる行には '.' を一つ冗長に付加する必要がある。<BR>
+デフォルトの実装では単に引数のデータを返すだけであり、必要に応じて
+下位クラスで再定義する必要がある。
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>data</TD> <TD>送信データ</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>処理後の送信データ</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String readResponse ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>レスポンスデータを受信し、それをデコードして格納する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String moreResponse ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>複数行のレスポンスデータを受信する場合に、二行目以降の
+データを受信し、それをデコードして格納する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+</UL>
+<P>
+なお、コネクション上で検出された異常は、<B>IOException</B> または 
+<B>SocketException</B> の例外オブジェクトの送出により検出する。
+</P>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

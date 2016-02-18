@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.cda._CopyOnRightRunnable_if, 0x0, (JP.go.ipa.oz.lang._Runnable_if)
+m, copyStart, 0x21, V, ()
+m, modeWIV, 0x1, V, ()
+m, setInterval, 0x1, V, (I)
+m, modeCOW, 0x1, V, ()

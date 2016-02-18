@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.apl.fed.ResourceLog_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, in, 0x1, V, ()
+m, out, 0x1, V, ()
+m, getOutTime, 0x1, LJP.go.ipa.oz.lib.standard._Date_if, ()
+m, getInTime, 0x1, LJP.go.ipa.oz.lib.standard._Date_if, ()

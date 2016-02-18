@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ libraries (GUI interface)</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>GUI interface</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+本節では、GUI アプリケーションを実現するためのライブラリを
+作成するためのインタフェースを示す。
+OZ では、GUI ライブラリとして、基本的な画面構成部品とそのイベントを
+取り扱うためのクラス、および基本グラフィックを支援するクラスを
+提供する。これには、イメージ処理、ペーストボードなどは含まれない。
+ライブラリは、Java の JDK によって配布される AWT クラスライブラリを
+ベースに、OZ の処理系で要求されるセキュリティ、オブジェクトシステムを
+考慮した機能を実装する。
+<P>
+
+<P>
+<UL>
+<LI><A HREF="window.html">ウィンドウ</A>
+<LI><A HREF="button.html">ボタン</A>
+<LI><A HREF="check_box.html">チェックボックス</A>
+<LI><A HREF="label.html">ラベル</A>
+<LI><A HREF="menu_box.html">メニュー／メニューボックス</A>
+<LI><A HREF="scroll_bar.html">スクロールバー</A>
+<LI><A HREF="field.html">フィールド</A>
+<LI><A HREF="event.html">イベント</A>
+<LI><A HREF="g_font.html">グラフィック／フォント</A>
+<LI><A HREF="other.html">その他の画面構成部品</A>
+</UL>
+</P>
+
+<P>
+[サンプルクラス]<BR>
+次のクラスは便宜上作成したサンプルプログラムであり、動作の保証はしていない。詳細はソースプログラムを参照。
+<CENTER>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD ALIGN=CENTER>クラス</TD>
+<TD ALIGN=CENTER>内　　容</TD>
+</TR>
+<TR>
+<TD><B>Image</B></TD>
+<TD>イメージ表現を取り扱うクラス</TD>
+</TR>
+<TR>
+<TD><B>Local</B></TD>
+<TD>L10N 制御用のクラス</TD>
+</TR>
+<TR>
+<TD><B>MediaTracker</B></TD>
+<TD>ネットワーク経由でロードされるメディアオブジェクトの状態を
+追跡するクラス。</TD>
+</TR>
+<TR>
+<TD><B>PrintJob</B></TD>
+<TD>印刷ジョブ実行用の抽象クラス</TD>
+</TR>
+<TR>
+<TD><B>Toolkit</B></TD>
+<TD>AWT をプラットフォーム依存のツールキットに結合するためのクラス</TD>
+</TR>
+</TABLE>
+</CENTER>
+</P>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+

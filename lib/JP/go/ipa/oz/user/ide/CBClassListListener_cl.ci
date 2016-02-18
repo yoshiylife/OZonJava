@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.ide.CBClassListListener_cl, 0x10, JP.go.ipa.oz.user.ide.CBClassListListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 253, 33
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 292, 15
+a, partView, 0x0, LJP.go.ipa.oz.user.ide.CBPartView_if, 201, 21
+a, classList, 0x0, LJP.go.ipa.oz.user.ide.CBClassList_if, 226, 23
+c, newCBClassListListener, (LJP.go.ipa.oz.user.ide.CBClassList_if, LJP.go.ipa.oz.user.ide.CBPartView_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.CBClassList_if, JP.go.ipa.oz.user.ide.CBPartView_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._System_cl), (467, 217, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CBExceptionDialog_if, JP.go.ipa.oz.user.ide.ClassBrowser_if, JP.go.ipa.oz.user.ide.CIException_if), (JP.go.ipa.oz.user.ide.CBExceptionDialog_cl), (840, 556, ((912, 6, JP.go.ipa.oz.lib.standard._String_if), (930, 17, JP.go.ipa.oz.user.ide.CBExceptionDialog_if), (1278, 11, JP.go.ipa.oz.user.ide.CIException_if)))
+m, initParam, 0x0, V, (LJP.go.ipa.oz.user.ide.CBClassList_if, LJP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.user.ide.CBClassList_if, JP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl), (1556, 128, ())

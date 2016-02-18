@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.misc.cell.CellStopper_cl, 0x2000, JP.go.ipa.oz.user.misc.cell.CellStopper_if, JP.go.ipa.oz.system.OzCell
+a, core, 0x0, LJP.go.ipa.oz.user.misc.cell.CellStopperCore_if, 145, 32
+m, initialize, 0x1, V, (), (), (JP.go.ipa.oz.user.misc.cell.CellStopperCore_cl), (335, 74, ())
+m, quiet, 0x1, V, (), (), (), (622, 66, ())
+m, go, 0x1, V, (), (), (), (491, 47, ())

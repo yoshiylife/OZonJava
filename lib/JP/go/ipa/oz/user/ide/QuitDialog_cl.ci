@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.ide.QuitDialog_cl, 0x0, JP.go.ipa.oz.user.ide.QuitDialog_if, JP.go.ipa.oz.lib.standard._Dialog_cl
+a, qal, 0x0, LJP.go.ipa.oz.user.ide.QuitActionListener_if, 606, 23
+a, lblConfirm, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 586, 17
+a, btnNo, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 570, 13
+a, btnYes, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 553, 14
+c, create, (LJP.go.ipa.oz.lib.standard._Frame_if, Z, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Frame_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, JP.go.ipa.oz.lib.standard._BorderLayout_if, JP.go.ipa.oz.lib.standard._Font_if, JP.go.ipa.oz.lib.standard._FlowLayout_if, JP.go.ipa.oz.lib.standard._Panel_if), (JP.go.ipa.oz.lib.standard._Dialog_cl, JP.go.ipa.oz.lib.standard._BorderLayout_cl, JP.go.ipa.oz.lib.standard._Font_cl, JP.go.ipa.oz.lib.standard._FlowLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._Button_cl, JP.go.ipa.oz.user.ide.QuitActionListener_cl), (742, 1020, ((872, 12, JP.go.ipa.oz.lib.standard._BorderLayout_if), (975, 4, JP.go.ipa.oz.lib.standard._Font_if), (1016, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (1054, 5, JP.go.ipa.oz.lib.standard._Panel_if), (1257, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (1313, 5, JP.go.ipa.oz.lib.standard._Panel_if)))
+m, processWindowEvent, 0x1, V, (LJP.go.ipa.oz.lib.standard._WindowEvent_if), (JP.go.ipa.oz.lib.standard._WindowEvent_if), (), (2332, 258, ())
+m, getBtnNo, 0x1, LJP.go.ipa.oz.lib.standard._Button_if, (), (), (), (2858, 47, ())
+m, getBtnYes, 0x1, LJP.go.ipa.oz.lib.standard._Button_if, (), (), (), (2700, 49, ())
+m, setVisible, 0x1, V, (Z), (JP.go.ipa.oz.lib.standard._Rectangle_if, JP.go.ipa.oz.lib.standard._Container_if), (), (1955, 170, ((1994, 9, JP.go.ipa.oz.lib.standard._Rectangle_if)))

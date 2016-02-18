@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ IDE</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="../index.html"><IMG src="../../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="../main/index.html"><IMG src="../../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H2>OZ IDE によるソフトウェア開発<BR>
+</H2>
+<BR clear="all">
+<P>
+OZ IDEでは複数のOZアプリケーション、複数のクラスライブラリを同時に開発管理することができます。<BR>
+<BR>
+OZソフトウェアを作成するときにはスクールファイルが必要です。OZ IDEを使用すると、スクールブラウザから必要なスクールを選択できるので簡単にコンパイルを行うことができます。<BR>
+</P>
+<P>
+<BR>
+OZ IDEを利用する一般的な開発手順をご照会します。各ウィンドウの機能の利用詳細は該当ページで確認してください。<BR>
+<BR>
+<BR>
+</P>
+<H4>OZ IDE利用の前に：OZ IDE のカスタマイズ</H4>
+<P>
+OZ IDEを利用してソフトウェア開発を行う前に、<B>必ず</B>このカスタマイズを行ってください。
+</P>
+<P>
+ソースファイルの編集に利用するエディタを設定します。
+</P>
+<OL>
+  <LI>$OZHOME/secure/availableCommands をテキストエディタで開いて利用エディタを登録してください。
+  <LI>プロジェクトマネージャのEditメニューから <B>set editor...</B> を選択するとエディタを設定するためのダイアログが開きます。1.で登録したエディタを入力してOKボタンをクリックすると、プロジェクトマネージャからそのエディタでファイル操作ができるようになります。
+</OL>
+<P align="right">
+「<A href="../main/p-seteditor.html">外部エディタを設定する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19">
+</P>
+<P>
+<BR>
+</P>
+<H4>新規プロジェクトを作成する</H4>
+<P>
+開発ソースファイルとその中で定義、利用されているサブジェクトを管理するのがプロジェクトです。OZ
+IDE はプロジェクトを名前で管理します。<BR>
+<BR>
+</P>
+<OL>
+  <LI>プロジェクトマネージャの Project メニューの new メニュー 項目を選択してプロジェクトを作成してください（「新規プロジェクトを作成する」）。
+  <LI>そして、Edit メニューから set directory メニュー項目を選択してプロジェクトディレクトリを設定してください。（「プロジェクトディレクトリを設定する」。）プロジェクトディレクトリに存在するOZソースファイル(エクステンションが.oz
+のファイル）がプロジェクトを構成するソースファイルになります。プロジェクトディレクトリの位置は制約がありません。任意のディレクトリを設定できます。
+</OL>
+<P align="right">
+「<A href="../main/p-newproj.html">新規プロジェクトを作成する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+<BR>
+「<A href="../main/p-setdir.html">プロジェクトディレクトリを設定する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19">
+</P>
+<P>
+<BR>
+</P>
+<H4>プロジェクトファイルを編集する</H4>
+<P>
+プロジェクトディレクトリに格納されたOZソースファイル(エクステンションが.oz
+のファイル）がプロジェクトファイルです。ファイルの生成、編集は、通常のOS操作で行うことができます。OZソースファイルの名前は、そのファイル内で定義されているクラスの名前と同じであるとOZコンパイラの機能をよりよく利用することができます。ファイルの生成後は、OZ
+IDE を利用して編集を行うことができます。OZ IDEを利用すると、クラスライブラリとして提供されているクラスなど、すでに開発されたクラスを参照しながら開発を行うことができるので開発を効率よく行うことができます。<BR>
+<BR>
+</P>
+<OL>
+  <LI>プロジェクトディレクトリのファイルをプロジェクトマネージャから編集することができます。プロジェクトマネージャで開発対象プロジェクトを開くと、プロジェクトファイルがProject
+Files にリストされます。プロジェクトファイルの1つを選んで、プロジェクトマネージャEditメニューのedit
+file を選択すると、上述の「OZ IDE のカスタマイズ」で設定したエディタが開き、ファイルの編集を行うことができます。
+</OL>
+<P align="right">
+「<A href="../main/p-file.html">OZソースファイルを編集する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19">
+</P>
+<P>
+<BR>
+</P>
+<H4>クラスを登録する</H4>
+<P>
+OZクラスは識別子で管理されています。インタフェースとクラス本体定義に対して別々の識別子を付与します。同一インタフェース識別子に対して、異なるクラス識別子を付与することによって、クラスの
+version を表現することができます。<BR>
+プロジェクトファイル中で宣言されているクラスに対して、クラスと識別子の対応関係を作成する必要があります。<BR>
+プロジェクトで定義されるクラスは何らかのまとまりを持つものであると考えられるので、識別子を付与するときにそのつながりが分かるような識別子を付与することでしょう。たとえば、クラスAとクラスBを開発するプロジェクトでは、この２つのクラスに結びつきがあることを、
+</P>
+<UL>
+  <LI>A objective.A objective.A
+  <LI>B objective.B objective.B
+</UL>
+<P>
+といったようなクラス名－識別子対で表現することでしょう。<BR>
+OZ IDEでは、プロジェクトで開発する単位を「サブジェクト」と呼んでいます。そして、サブジェクト単位で同一のクラス識別子を付与するなどの利便性を考慮したサービスを提供しています。<BR>
+また、カタログサーバにサブジェクト単位で実行形式クラスを格納することができるので、カタログサーバから必要なアプリケーションを取り出して実行したり、他のOZ
+IDEにクラスライブラリとして提供したりすることができます。<BR>
+<BR>
+OZ IDEでは、スクールブラウザの「クラスの登録」機能を利用してクラスと識別子を対応付けを行います。OZ
+IDEのスクールブラウザはサブジェクト単位でクラス名と識別子の対応を管理するためのツールです。
+</P>
+<OL>
+  <LI>プロジェクトで新規開発するクラス群から構成される新規サブジェクトを定義します。スクールブラウザの
+School メニューから add subject.. を選択すると、新規サブジェクトを定義することができます（サブジェクトを登録する）。<BR>
+  <LI>次に、そのサブジェクトにクラスを登録します。School メニューから add
+class.. を選択すると、新規クラスを定義することができます（サブジェクトにクラスを登録する）。この時にクラス識別子を付与するのですが、サブジェクト単位で統一された識別子を付与するのであれば、ここではクラス名の登録だけを行うこともできます。そして、あとから、クラス識別子自動付与の機能を利用して識別子を付与してください。School
+メニューの Class ID Generate... でそれを行うことができます(クラス識別子を自動付与する)。<BR>
+</OL>
+<P align="right">
+「<A href="../main/s-registsubj.html">サブジェクトを登録する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+<BR>
+「<A href="../main/s-addclass.html">サブジェクトにクラスを登録する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+<BR>
+「<A href="../main/s-genid.html">クラス識別子を自動付与する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+</P>
+<P>
+テキストファイルに格納された個々のクラスの対応表を読み込むことで、クラスを登録する方法もあります。
+</P>
+<P align="right">
+「<A href="../main/s-import.html">スクールをインポートする</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+</P>
+<P>
+<BR>
+</P>
+<H4>サブジェクトを選択する</H4>
+<P>
+プログラミングをするときには、新規開発クラスだけではなく標準クラスライブラリやその他のクラスライブラリを利用します。OZクラスはRootクラスを必ず継承しないといけませんから、標準クラスライブラリやそれに相当するクラスライブラリの利用を決定しなくてはいけません。<BR>
+OZ IDE には、あらかじめ lib 、ide、sample というサブジェクトが定義されています。libというサブジェクトには、Rootクラスを持つクラスライブラリが設定されることを想定しています(通常は、標準クラスライブラリ)。<BR>
+このlibサブジェクトには、OZ IDE を生成するときに、システム提供のクラスライブラリを設定しています(「<A href="../main/i-create.html">OZ
+IDE を生成する</A>」)。これはRootクラスを持つ別のクラスライブラリに置換え可能です。<BR>
+ideサブジェクト には、OZ IDE のクラスのサブジェクトを設定します。sample
+サブジェクトは空です。<BR>
+最初はこれだけのサブジェクトしか登録されていませんが、OZ IDE を利用して開発を行うとプロジェクトの数のサブジェクトが定義されます。また、カタログサーバからカタログをインポートして、サブジェクトが増えることもあります。<BR>
+しかし、開発で利用するサブジェクトはその一部です。<BR>
+利用するクラスの存在するサブジェクトを選択してください。少なくとも、libサブジェクトと、2で定義した開発クラスのサブジェクトを選択することになるでしょう。利用するクラスがそれ以外のサブジェクトに定義されているのであれば、そのサブジェクトも選択してください。<BR>
+<BR>
+</P>
+<OL>
+  <LI>プロジェクトで利用するサブジェクトを選択します。スクールブラウザの
+School メニューから select subject.. を選択すると、利用サブジェクトを定義することができます（利用サブジェクトを選択する）。
+</OL>
+<P align="right">
+「<A href="../main/s-selectsubj.html">利用サブジェクトを選択する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19">
+</P>
+<P>
+<BR>
+</P>
+<H4>ソースファイルをコンパイルする</H4>
+<P>
+クラスを登録し利用サブジェクトを選択すると、ソースファイルをコンパイルすることができます。あるソースファイルをコンパイルしていて、利用されているクラスの実行形式クラスが存在しない場合には、それが同一プロジェクト<BR>
+のファイル中に存在すれば、そのファイルのコンパイルも行います。<BR>
+コンパイルは大きく分けて、開発用コンパイルとリリース用コンパイルがあります。開発用コンパイルを行うと、実行形式ファイルはOZホームに格納されます。リリース用コンパイルを行うと、OZホームが記憶され、カタログサーバへのエクスポートを行うことができます。
+</P>
+<OL>
+  <LI>スクールブラウザのカレントサブジェクト(画面に表示されているサブジェクト)として、開発クラスと対応付けられるサブジェクトを選択してください。
+  <LI>開発用コンパイルを行う場合には、ラジオボタンを for Development に設定します。
+  <LI>プロジェクトマネージャのProject Files リストからコンパイルを行うOZ
+ソースファイルを選択し、Compile メニューから compile を選択してください。コンパイルが開始されメッセージウィンドウが表示されます。<BR>
+利用クラスが存在しないというメッセージが表示されたら、インタフェースコンパイルを先に行ってから、クラスのコンパイルを行ってください。<BR>
+サブジェクトコンパイルを利用するとすべてのソースファイルをコンパイルすることができますが、詳細なメッセージは表示されません。
+</OL>
+<P align="right">
+「<A href="../main/p-compile.html">クラスコンパイル</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+<BR>
+「<A href="../main/p-i-compile.html">インタフェースコンパイル</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+<BR>
+「<A href="../main/p-s-compile.html">サブジェクトコンパイル</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19">
+</P>
+<P>
+<BR>
+</P>
+<H4>コンパイル結果をテスト実行する</H4>
+<P>
+ｃｅｌｌ型クラスを含むファイルをコンパイルした結果をテスト実行することができます。ただし、OZ
+IDE はデバック機能がありません。テスト実行を行う場合には、 OzVMのインタラクティブモードでOZ
+IDEを起動（=活性化)してください。そして、コンパイル後、プロジェクトを保存してください(プロジェクトマネージャのProject
+メニューから save を選択してください)。
+</P>
+<OL>
+  <LI>サブジェクトコンパイルを行ってください。
+  <LI>スクールブラウザの左側のリストからcell型クラスを選択してください。そして、Run
+メニューから run を選択すると、テスト実行が行われます。
+</OL>
+<P align="right">
+「<A href="../main/p-saveproj.html">プロジェクトを保存する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+<BR>
+「<A href="../main/s-run.html">OZ アプリケーションをテスト実行する</A>」を参照<IMG src="../../../image/h_glass.gif" height="23" width="19"><BR>
+</P>
+<P>
+テスト結果がハングアップしてしまったときには、OzVMのshutdownコマンドを利用して、OZ
+IDEを終了させてください。<BR>
+</P>
+<P>
+<BR>
+</P>
+<H4>クラスをリリースする</H4>
+<P>
+以上で開発は終了です。開発結果を他のOZホームで利用できるようにするためには、リリース用コンパイルを行います。現在はカタログサーバを介してのリリースを行うことができます。
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="../index.html"><IMG src="../../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="../index.html"><IMG src="../../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="../main/index.html"><IMG src="../../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

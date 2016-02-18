@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>フェデレーションの階層的管理</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+引数に入ってくるフェデレーションの GOL を元に、
+まず当 Autonomy セルが管理している Federation 情報の集合を検索し、
+登録または削除を行う。<BR>
+更新は、 Federation セルと Autonomy セルの両方で
+再帰的に行い、お互いの保持する情報の整合性を維持する必要がある。
+そのために、実装においては引数の GOL をバインドし、
+GOL に対応する Federation セルの更新用のインタフェースを
+呼び出すこととする。これは再帰的な呼び出しとなるが、
+集合の要素を判定することで、無限ループによるデッドロックを
+回避することとする。
+</P>
+
+<UL>
+
+<P>
+<LI>public void Autonomy#attachToFederation(String gol)<BR>
+引数として Federation セルの GOL をとる。引数 gol が、
+Autonomy 内の Federation 集合に含まれていなければ、
+集合に追加する。<BR>
+さらに、引数で指定された Federation セルの Autonomy 集合に
+当 Autonomy セルの GOL を Federation#addAutonomy(String) により
+追加する。この処理は相互に再帰的に行われるので、
+デッドロックを避けるために最初に登録状況を判定する必要がある。
+</P>
+
+<P>
+<LI>public void Autonomy#detachFromFederation(String gol)<BR>
+引数として Federation セルの GOL をとる。引数 gol が、
+Autonomy 内の Federation 集合に含まれていれば、
+集合から削除する。<BR>
+さらに、引数で指定された Federation セルの Autonomy 集合から
+当 Autonomy セルの GOL を Federation#removeAutonomy(String) により
+削除する。この処理は相互に再帰的に行われるので、
+デッドロックを避けるために最初に登録状況を判定する必要がある。
+</P>
+
+</UL>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

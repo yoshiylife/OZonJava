@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.apl.fm.Archiver_cl, 0x2000, JP.go.ipa.oz.user.apl.fm.Archiver_if, JP.go.ipa.oz.system.OzCell
+a, overseer, 0x0, LJP.go.ipa.oz.user.apl.fm.Overseer_if, 402, 18
+a, list, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 384, 16
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.user.apl.fm.Pointer_if), (), (737, 82, ())
+m, initialize, 0x1, V, (), (JP.go.ipa.oz.user.apl.fm.PointerComparator_if), (JP.go.ipa.oz.user.apl.fm.PointerComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl, JP.go.ipa.oz.user.apl.fm.Overseer_cl), (423, 109, ((452, 17, JP.go.ipa.oz.user.apl.fm.PointerComparator_if)))
+m, add, 0x1, V, (LJP.go.ipa.oz.user.apl.fm.Pointer_if, LJP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.user.apl.fm.Pointer_if, JP.go.ipa.oz.lib.standard._Association_if), (JP.go.ipa.oz.lib.standard._Association_cl), (577, 157, ((673, 11, JP.go.ipa.oz.lib.standard._Association_if)))
+m, quiet, 0x1, V, (), (), (), (535, 39, ())
+m, find, 0x1, LJP.go.ipa.oz.user.apl.fm.Pointer_if, (LJP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.user.apl.fm.Pointer_if), (), (822, 116, ((884, 7, JP.go.ipa.oz.user.apl.fm.Pointer_if)))

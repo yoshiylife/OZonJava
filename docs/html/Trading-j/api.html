@@ -1,0 +1,68 @@
+<HTML>
+
+<HEAD>
+<TITLE>Trading service API</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>トレーディングサービス API</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<DL>
+<DT><B>cell Trader</B><BR>
+<DT>　パブリックメソッド：（時間の単位は milli sec）
+<DD>final void setMaxBrokers(int i)：ブローカ登録最大値
+<DD>final int  getMaxBrokers()
+<DD>final void setMaxCoWorkingTraders(int i)：検索委譲トレーダ最大値
+<DD>final int  getMaxCoWorkingTraders()
+<DD>final void setIntervalTime(int time)：ブローカ情報のリフレッシュ時間
+<DD>final int  getIntervalTime()
+<DD>final void setTimeOut(int time)：検索委譲時デフォルトタイムアウト
+<DD>inal int  getTimeOut()         （トレーダのスレッドの節約のため）
+<DD>final void setCoWorkingTraders(Set trad)：検索委譲トレーダの設定
+<DD>final void addCoWorkingTraders(String GOL)
+<DD>final Set  getCoWorkingTraders()
+<DD>final int  putBroker(Broker br)：ブローカの登録
+<DD>final void removeBroker(int ID)：ブローカの削除
+<DD>final Root getService(UserServiceRequest req)：サービスの取得
+<DD>final void refreshServerInfo()：ブローカ情報のリフレッシュ
+
+<DT><B>abstarct class Broker</B>
+<DT>　プロテクテッド属性：
+<DD>String serviceName
+<DT>　プロテクテッドメソッド：
+<DD>abstract Root getService(ServiceRequest req)
+<DT>　パブリックメソッド：
+<DD>final int getID()
+<DD>final String getServiceName()
+<DD>final bool equal(Broker br)
+<DD>final bool equalServiceName(Broker br)
+<DD>final void refreshServerInfo()
+
+<DT><B>abstract class ServiceRequest</B>
+<DT>　プロテクテッド属性：
+<DD>String serviceName
+<DT>　パブリックメソッド：
+<DD>final String getServiceName()
+<DD>abstract int preference(Broker br)
+</DL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact:</B> <A HREF="mailto:oz-admin@etl.go.jp">oz-admin@etl.go.jp</A>
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,20 @@
+j, JP.go.ipa.oz.user.ide.GarageBrowser_cl, 0x0, JP.go.ipa.oz.user.ide.GarageBrowser_if, JP.go.ipa.oz.lang._Root_cl
+a, server, 0x0, LJP.go.ipa.oz.user.garage.SGarage_if, 628, 20
+a, serverGOL, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 601, 23
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (916, 50, ())
+c, create, (), (), (), (812, 18, ())
+m, getServer, 0x1, LJP.go.ipa.oz.user.garage.SGarage_if, (), (), (), (1774, 56, ())
+m, isValidGOL, 0x4, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (3378, 158, ())
+m, replace, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if, LJP.go.ipa.oz.user.ide.Summarizable_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.Summarizable_if), (), (2680, 108, ())
+m, getServerGOL, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1631, 61, ())
+m, replaceSummary, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if, LJP.go.ipa.oz.user.ide.Summary_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.Summary_if), (), (2870, 115, ())
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if), (), (2515, 83, ())
+m, bindServer, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._IllegalArgumentException_if), (JP.go.ipa.oz.user.garage.SGarage_pcl, JP.go.ipa.oz.lib.standard._IllegalArgumentException_cl), (1126, 249, ((1172, 24, JP.go.ipa.oz.lib.standard._IllegalArgumentException_if)))
+m, checkKey, 0x0, V, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.lib.standard._IllegalArgumentException_if), (JP.go.ipa.oz.lib.standard._IllegalArgumentException_cl), (3694, 157, ((3727, 24, JP.go.ipa.oz.lib.standard._IllegalArgumentException_if)))
+m, quit, 0x1, V, (), (), (), (2405, 28, ())
+m, setVisible, 0x1, V, (Z), (), (), (3067, 43, ())
+m, get, 0x1, LJP.go.ipa.oz.user.ide.Summarizable_if, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if), (), (1457, 92, ())
+m, launch, 0x1, V, (), (), (), (1912, 30, ())
+m, sync, 0x1, V, (), (), (), (3192, 28, ())
+m, put, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (LJP.go.ipa.oz.user.ide.Summarizable_if, LJP.go.ipa.oz.user.ide.Summary_if), (JP.go.ipa.oz.user.ide.Summarizable_if, JP.go.ipa.oz.user.ide.Summary_if, JP.go.ipa.oz.user.garage.Key_if), (), (2178, 145, ((2233, 3, JP.go.ipa.oz.user.garage.Key_if)))
+m, put, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (LJP.go.ipa.oz.user.ide.Summarizable_if), (JP.go.ipa.oz.user.ide.Summarizable_if), (), (2024, 72, ())

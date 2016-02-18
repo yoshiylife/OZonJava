@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.inter.lib.NetworkProtocol_cl, 0x400, JP.go.ipa.oz.user.inter.lib.NetworkProtocol_if, JP.go.ipa.oz.user.inter.lib.NetworkClient_cl
+c, create, (I), (), (JP.go.ipa.oz.user.inter.lib.NetworkClient_cl), (280, 107, ())
+m, sendCommand, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (970, 68, ())
+m, sendCommand, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (847, 91, ())
+m, sendCommand, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (537, 160, ())
+m, decodeResponse, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1490, 62, ())
+m, recvMultilineResponse, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1137, 189, ())
+m, isLastLine, 0x404, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1646, 52, ())

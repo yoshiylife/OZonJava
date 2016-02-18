@@ -1,0 +1,8 @@
+"Autonomy",".user.apl.fed.Autonomy",".user.apl.fed.Autonomy"
+"FedRoot",".user.apl.fed.FedRoot",".user.apl.fed.FedRoot"
+"Federation",".user.apl.fed.Federation",".user.apl.fed.Federation"
+"GenusCategory",".user.apl.fed.GenusCategory",".user.apl.fed.GenusCategory"
+"Authenticator",".user.apl.fed.Authenticator",".user.apl.fed.Authenticator"
+"ResourceLog",".user.apl.fed.ResourceLog",".user.apl.fed.ResourceLog"
+"ResourceProxy",".user.apl.fed.ResourceProxy",".user.apl.fed.ResourceProxy"
+"ResourceProxyComparator",".user.apl.fed.ResourceProxyComparator",".user.apl.fed.ResourceProxyComparator"

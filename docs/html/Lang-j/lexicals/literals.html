@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="keyword.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="operator.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>リテラル(Literals)<BR>
+</H3>
+<BR clear="all">
+<P>
+リテラルとは、ソースコードの中で基本型(primitive type) の値を表現したものです。基本型については「型」の節の「<A href="../types/primitive.html">基本型</A>」を参照してください。<BR>
+<BR>
+OZ言語がリテラルとして扱う字句には次のものがあります。
+</P>
+<OL>
+  <LI><A href="#integer">整数リテラル (整数定数、Integer Literals)</A>
+  <LI><A href="#float">浮動小数リテラル (浮動小数定数、Floating-Point Literals)</A>
+  <LI><A href="#char">文字リテラル (文字定数、Character Literals)</A>
+  <LI><A href="#string">文字列リテラル (文字列定数、String Literals)</A>
+  <LI><A href="#boolean">論理型リテラル (論理型定数、boolean literals)</A>
+  <LI><A href="#null">NULL リテラル (The Null leteral)</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="integer"><B>整数リテラル</B> (整数定数、Integer Literals)<B><BR>
+</B></A>
+</P>
+<P>
+<BR>
+3種類の整数リテラルが記述できます。<BR>
+<BR>
+</P>
+<DL>
+  <DT>i) 10進数整数定数 (Decimal Integer Literals)
+  <DD>0 でない数字 (1-9) から始まる、数字 (0-9) のゼロ個以上の列<BR>
+<BR>
+  <DT>ii) 16進数整数定数 (Hexadecimal Integer Literals)
+  <DD>0x または 0X から始まる、数字 (0-9) および A から F までの英字の大文字または小文字 
+の1個以上の列<BR>
+<BR>
+  <DT>iii) 8進数整数定数 (Octal Integer Literals)
+  <DD>0から始まる、0から7までの数字 (0-7) の 0 個以上の列<BR>
+<BR>
+</DL>
+<P>
+<BR>
+整数リテラルは<TT>int型</TT>として扱われます。<BR>
+<BR>
+<BR>
+例: 整数リテラル<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<PRE>
+     123 // int型の10進数の123
+    0173 // int型の123(10進数)の8進数表記
+    0x76 // int型の123(10進数)の16進数表記
+</PRE>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<B><A name="float">浮動小数リテラル</A></B><A name="float"> (浮動小数定数、Floating-Point
+Literals)</A><BR>
+</P>
+<P>
+<BR>
+2種類の浮動少数リテラルを記述できます。<BR>
+<BR>
+</P>
+<DL>
+  <DT>i） 非指数表現
+  <DD>整数部 (10進数整数定数)、小数点文字 (.)、小数部 (10進数整 数定数) の列
+  <DT>ii） 指数表現
+  <DD>非指数表現に加えて、 e または E、指数部 (+ または -、10進数整数定数の列)
+の列
+</DL>
+<P>
+<BR>
+浮動小数リテラルは、指数表現、非指数表現ともに
+</P>
+<UL>
+  <LI>サフィックスとして f または F が存在する場合は、 float 型
+  <LI>サフィックスがなければ、 doulbe 型
+</UL>
+<P>
+として扱われます。<BR>
+<BR>
+<BR>
+例: 浮動少数リテラル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<PRE>
+     1.23        // double型
+     1.23E-1     // double型
+     1.23F       // float型 
+     1.23E-1F    // float型
+</PRE>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="char"><B>文字リテラル</B> (文字定数、Character Literals)</A><BR>
+</P>
+<P>
+<BR>
+文字をシングルクォーテーション (') で囲んだ文字列は、その文字(character)そのものを表す文字リテラルです。<BR>
+<BR>
+非グラフィック文字に対しては、次のようなエスケープ表現(escape sequences)を用います。<BR>
+<BR>
+</P>
+<P align="center">
+<IMG src="charlit.gif" height="260" width="365"><BR>
+</P>
+<P>
+<BR>
+文字リテラルは char型として扱われます。<BR>
+<BR>
+<BR>
+例: 文字リテラル<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<PRE>
+    'a'         // 文字a
+    '\n'        // 改行文字
+</PRE>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<B><A name="string">文字列リテラル</A></B><A name="string"> (文字列定数、String
+Literals)</A><BR>
+</P>
+<P>
+<BR>
+ゼロ個以上の文字の列をダブルクォーテーション (&quot;) でを囲んだ列 は、その文字の列を表す文字列リテラルです。非グラフィック文字に対しては、文字リテラルと同様にエスケープ表現(escape
+sequences)を用います。<BR>
+<BR>
+文字列リテラルはシステム定義のクラス型である String型として扱われます。<BR>
+<BR>
+<BR>
+例: 文字列リテラル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<PRE>
+    &quot;Place&quot;         // 文字列
+    &quot;Thank you\n&quot;   // エスケープ表現を含む文字列: WindowsNT
+</PRE>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<A name="boolean"><B>論理型リテラル</B> (論理型定数、boolean literals)</A>
+</P>
+<P>
+<BR>
+次のキーワードは論理型リテラルです。
+</P>
+<UL>
+  <LI>false
+  <LI>true
+</UL>
+<P>
+論理型リテラルは論理型（bool型）の定数値として扱われます。<BR>
+<BR>
+<BR>
+例: 論理型リテラル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<PRE>
+    true         // 真を表わす論理型の値
+    false        // 偽を表わす論理型の値
+</PRE>
+<P>
+<BR>
+<BR>
+</P>
+<H4><A name="null">NULL リテラル (The Null leteral)</A></H4>
+<P>
+<BR>
+<B>null</B>のことをNULLリテラルと呼びます。<BR>
+<BR>
+NULL リテラルは任意のクラス型の値となります。 この値は、クラス型の変数が、どのインスタンスも参照していないことを表します。<BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="keyword.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="operator.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

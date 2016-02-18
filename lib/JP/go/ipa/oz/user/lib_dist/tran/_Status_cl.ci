@@ -1,0 +1,36 @@
+j, JP.go.ipa.oz.user.lib_dist.tran._Status_cl, 0x0, JP.go.ipa.oz.user.lib_dist.tran._Status_if, JP.go.ipa.oz.lang._Root_cl
+a, d, 0x0, LJP.go.ipa.oz.user.lib_dist.tran._Debug_if, 915, 8
+a, x, 0x0, I, 923, 6
+a, lockingTimeLimit, 0x0, I, 702, 21
+a, MaxLockingTransaction, 0x0, I, 757, 26
+a, commit, 0x0, I, 624, 11
+a, waitUnlock, 0x0, I, 663, 15
+a, blockingTransaction, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 575, 26
+a, gol, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 478, 11
+a, lockingTransaction, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 508, 25
+a, MaxBlockingTransaction, 0x0, I, 811, 27
+a, lockMode, 0x0, I, 864, 13
+c, create, (I, I, LJP.go.ipa.oz.lib.standard._String_if, I), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.lib_dist.tran._Debug_cl), (975, 111, ())
+m, blockToLock, 0x11, V, (), (JP.go.ipa.oz.user.lib_dist.tran._TID_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.tran._Transaction_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.user.lib_dist.tran._Transaction_pcl), (3069, 514, ((3184, 3, JP.go.ipa.oz.user.lib_dist.tran._TID_if), (3412, 6, JP.go.ipa.oz.lib.standard._String_if), (3440, 11, JP.go.ipa.oz.user.lib_dist.tran._Transaction_if), (3536, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, unlock, 0x11, V, (LJP.go.ipa.oz.user.lib_dist.tran._TID_if), (JP.go.ipa.oz.user.lib_dist.tran._TID_if, JP.go.ipa.oz.lang._Exception_if), (), (2677, 390, ((3020, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, init0, 0x11, V, (), (JP.go.ipa.oz.user.lib_dist.tran._TIDComparator_if), (JP.go.ipa.oz.user.lib_dist.tran._TIDComparator_cl, JP.go.ipa.oz.lib.standard._SList_cl), (1193, 139, ((1222, 13, JP.go.ipa.oz.user.lib_dist.tran._TIDComparator_if)))
+m, getWaitUnlock, 0x11, I, (), (), (), (1885, 53, ())
+m, isInLockingTransaction, 0x11, Z, (LJP.go.ipa.oz.user.lib_dist.tran._TID_if), (JP.go.ipa.oz.user.lib_dist.tran._TID_if, JP.go.ipa.oz.lang._Exception_if), (), (4198, 323, ((4461, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, setMaxBlockingTransaction, 0x11, V, (I), (), (), (2223, 77, ())
+m, getMaxBlockingTransaction, 0x11, I, (), (), (), (2301, 77, ())
+m, init, 0x11, V, (), (), (), (1334, 87, ())
+m, init, 0x11, V, (I, I), (), (), (1087, 104, ())
+m, getLockingTransaction, 0x11, LJP.go.ipa.oz.lib.standard._SList_if, (), (), (), (2479, 70, ())
+m, setLockingTimeLimit, 0x11, V, (I), (), (), (1939, 65, ())
+m, setBlockingTransaction, 0x11, Z, (LJP.go.ipa.oz.user.lib_dist.tran._TID_if), (JP.go.ipa.oz.user.lib_dist.tran._TID_if), (), (1552, 185, ())
+m, getLockMode, 0x11, I, (), (), (), (2429, 49, ())
+m, setCommit, 0x11, V, (I), (), (), (1739, 45, ())
+m, setLockMode, 0x11, V, (I), (), (), (2379, 49, ())
+m, lockBody, 0x11, I, (LJP.go.ipa.oz.user.lib_dist.tran._TID_if, I), (JP.go.ipa.oz.user.lib_dist.tran._TID_if, JP.go.ipa.oz.lang._Exception_if), (), (3585, 611, ((4140, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, getBlockingTransaction, 0x11, LJP.go.ipa.oz.lib.standard._SList_if, (), (), (), (2550, 72, ())
+m, getLockingTransactionSize, 0x11, I, (), (), (), (1468, 82, ())
+m, getLockingTimeLimit, 0x11, I, (), (), (), (2005, 65, ())
+m, setMaxLockingTransaction, 0x11, V, (I), (), (), (2071, 75, ())
+m, getMaxLockingTransaction, 0x11, I, (), (), (), (2147, 75, ())
+m, setWaitUnlock, 0x11, V, (I), (), (), (1831, 53, ())
+m, getCommit, 0x11, I, (), (), (), (1785, 45, ())

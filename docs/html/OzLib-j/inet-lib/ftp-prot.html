@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>Internet class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4><B>FTP</B> プロトコル</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<B>FTP</B> クラスとして実現する。<B>FTP</B> プロトコルでは、制御用のコマ
+ンドおよびその
+レスポンスの送受信のためのコネクションに加えて、<B>RETR</B> や <B>STOR</B>
+ コマンド等
+でデータの送受信を行なうためのコネクションが必要である。またそのデータ用
+のコネクションのポートは、クライアント側で <B>listen</B> 状態にある必要がある。
+したがって、このコネクションは <B>ServerSocket</B> クラスを利用して実現する。
+</P>
+
+<UL>
+<P>
+<LI>以下のコンストラクタを持つ。
+<UL>
+<LI> create ()
+</UL>
+</P>
+
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String sendCommand (String command)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>指定したコマンド文字列からコマンドデータを生成し、送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>command</TD> <TD>コマンド文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<LI>インタフェースを以下に示す。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String user (String name)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>USER コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>name</TD> <TD>ユーザネーム</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String pass (String str)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>PASS コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>str</TD> <TD>パスワード文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String acct (String user)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>ACCT コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>user</TD> <TD>アカウント情報を調べる文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String cwd (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>CWD コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String cdup ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>CDUP コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String smnt (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>SNMT コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String quit ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>QUIT コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String rein ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>REIN コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String port (String host_port)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>PORT コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>host_port</TD> <TD>ホストおよびポートの指定文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String pasv ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>PASV コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String type (String type_code)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>TYPE コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>type_code</TD> <TD>タイプコード文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String stru (String structure)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>STRU コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>structure</TD> <TD>ストラクチャコード文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String mode (String mode_code)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>MODE コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>mode_code</TD> <TD>モードコード文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String retr (String pathname, Outputstream out)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>RETR コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=2>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD>out</TD> <TD>受信データの書き込み先ストリーム</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String stor (String pathname, InputStream in)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>STOR コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=2>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD>in</TD> <TD>送信データの読み込み用ストリーム</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String stou (InputStream in)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>STOU コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>in</TD> <TD>送信データの読み込み用ストリーム</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String appe (String pathname, InputStream in)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>APPE コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=2>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD>in</TD> <TD>送信データの読み込み用ストリーム</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String allo (String integer)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>ALLO コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>integer</TD> <TD>サイズ指定文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String rest (String marker)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>rest コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>integer</TD> <TD>マーカー文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String rnfr (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>RNFR コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String rnto (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>RNTO コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String abor ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>ABOR コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String dele (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>DELE コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String rmd (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>RMD コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String mkd (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>MKD コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String pwd ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>PWD コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String list (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>LIST コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String list ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>LIST コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String nlst (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>NLST コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String nlst ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>NLST コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String site (String str)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>SITE コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>str</TD> <TD>文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String syst ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>SYST コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String stat (String pathname)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>STAT コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>pathname</TD> <TD>パス文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String stat ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>STAT コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String help (String str)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>HELP コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>str</TD> <TD>文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String help ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>HELP コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String noop ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>NOOP コマンドを送信する。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String getRecvData ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>RETR コマンドで受信したデータを返す。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+</UL>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

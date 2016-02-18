@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD><TITLE>Security Service</TITLE></HEAD>
+
+<BODY>
+
+<CENTER>
+<H3>認証システムの利用方法</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<A NAME="kernelconf"></A>
+<UL>
+  <LI> <A HREF="#howto">認証システムを利用するための設定</A>
+  <LI> <A HREF="#change">設定の変更方法</A>
+</UL>
+<HR>
+
+<A NAME="howto"></A>
+<H5>認証システムを利用するための設定</H5>
+<DL>
+  <DT> <A NAME="machine"></A>
+       <A HREF="sum.html#howtouse">マシンごとの設定</A>
+  <DD> マシン myhost が使用可能な認証システムを、
+       <A HREF="form.html">
+       <CODE>$OZHOME/etc/encoders/myhost.cipher</CODE> ファイルに列挙する。
+       </A>
+       "myhost" は、ドメイン名を含まない、ホスト名のみの表記とする。
+
+  <DT> <A NAME="cell"></A>
+       <A HREF="sum.html#howtouse">セルごとの設定</A>
+  <DD> そのセルが利用してよい認証システムを、
+       <A HREF="form.html">
+       <CODE>GOD/.cipher</CODE> ファイルに列挙する。
+       </A>
+       GOD は、そのセルのグローバルオブジェクトディレクトリである。
+</DL>
+<HR>
+
+<A NAME="change"></A>
+<H5>設定の変更方法</H5>
+以下を順に実行することで設定を変更できる。
+<OL>
+  <LI> 設定ファイル (
+       <A HREF="#machine"><CODE>$OZHOME/etc/encoders/machine.cipher</CODE></A>
+       または <A HREF="#cell">GOD/.cipher</A>
+       ) を編集する。
+  <LI> 変更を反映させたいセルの
+       キャッシュファイル <CODE>GOD/.ciphercache</CODE> を削除する。
+  <LI> そのセルを一旦停止させてから、再起動させる。
+</OL>
+</P> 
+
+<HR NOSHADE>
+
+<ADDRESS><B> <A href="copyright-j.html">Copyright</A>(c) 1996-1998 IPA,
+ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B></ADDRESS>
+<P>
+<B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+</P>
+</BODY>
+</HTML>

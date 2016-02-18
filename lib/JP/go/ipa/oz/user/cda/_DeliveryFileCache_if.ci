@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.cda._DeliveryFileCache_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, put, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.cda._DeliveryFile_if)
+m, get, 0x21, LJP.go.ipa.oz.user.cda._DeliveryFile_if, (LJP.go.ipa.oz.lib.standard._String_if)

@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.cda._PollingRunnable_cl, 0x0, JP.go.ipa.oz.user.cda._PollingRunnable_if, JP.go.ipa.oz.lang._Runnable_cl
+a, cond, 0x4, N, 4608, 25
+a, dfCache, 0x0, LJP.go.ipa.oz.user.cda._DeliveryFileCache_if, 4579, 26
+a, millors, 0x0, LJP.go.ipa.oz.user.cda._MillorTarget_if, 4502, 21
+a, interval, 0x0, I, 4477, 13
+c, create, (LJP.go.ipa.oz.user.cda._MillorTarget_if, LJP.go.ipa.oz.user.cda._DeliveryFileCache_if), (JP.go.ipa.oz.user.cda._MillorTarget_if, JP.go.ipa.oz.user.cda._DeliveryFileCache_if), (), (4641, 116, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.lib.standard._Set_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.cda._CDAdebug_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Dictionary_if, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_if, JP.go.ipa.oz.user.cda._DeliveryFile_if, JP.go.ipa.oz.lib.standard._Long_if, JP.go.ipa.oz.lib.standard._IOException_if, JP.go.ipa.oz.lib.standard._SecurityException_if, JP.go.ipa.oz.lib.standard._UserException_if, JP.go.ipa.oz.lib.standard._System_if), (JP.go.ipa.oz.user.cda._CDAdebug_cl, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_pcl, JP.go.ipa.oz.lib.standard._System_cl), (4819, 2377, ((4874, 3, JP.go.ipa.oz.lib.standard._Set_if), (4890, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (4995, 8, JP.go.ipa.oz.user.cda._CDAdebug_if), (5279, 6, JP.go.ipa.oz.lib.standard._String_if), (5314, 10, JP.go.ipa.oz.lib.standard._Dictionary_if), (5332, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (5364, 18, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_if), (5883, 6, JP.go.ipa.oz.lib.standard._String_if), (5941, 12, JP.go.ipa.oz.user.cda._DeliveryFile_if), (6111, 4, JP.go.ipa.oz.lib.standard._Long_if), (6450, 11, JP.go.ipa.oz.lib.standard._IOException_if), (6544, 17, JP.go.ipa.oz.lib.standard._SecurityException_if), (7105, 13, JP.go.ipa.oz.lib.standard._UserException_if), (7129, 6, JP.go.ipa.oz.lib.standard._System_if)))
+m, beforePolling, 0x24, V, (), (), (), (7200, 52, ())
+m, pollingStart, 0x21, V, (), (), (), (7255, 90, ())
+m, setInterval, 0x1, V, (I), (), (), (4761, 53, ())

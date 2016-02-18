@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>実現方式</H4>
+</CENTER><HR NOSHADE>
+
+<P>
+スケジューリング機能は前項で示した予約一般のオブジェクトモデルを
+利用して実現される。
+スケジューリングを行うモノはSchedulableとして実現される。
+スケジューリングを行うにはreserve(Reserve)メソッドを
+利用し、スケジューリング対象物のスケジュールに従い
+Reserveオブジェクトを生成し、Schedulableのスケジュールを
+設定する。
+<BR>
+具体的に、個人のスケジューリングを行う場合を例に挙げる。
+ある個人のスケジューリングを行う場合、ある個人のに対し、
+Schedulableを生成しアタッチする。アタッチされたSchedulableは
+その個人に対するスケジュール表として機能する。
+スケジューリングを行う際は、各個人のもつスケジュール表に対し
+reserve(Reserve)を行うことでスケジューリングを行っていく。
+また、リソースの予約と同様にスケジュールの確認、キャンセルも
+行うことが可能である。
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B> <A href=../../"copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

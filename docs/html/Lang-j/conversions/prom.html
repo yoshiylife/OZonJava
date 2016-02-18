@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="conv.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../sync/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>数値の昇格（Numeric Promotion）</B><BR>
+</H3>
+<P>
+<BR>
+<BR>
+</P>
+<BR clear="all">
+<P>
+数値型をオペランドにする単項演算式および二項演算式の中には、オペランドの型を、共通の型 
+に変換して処理されるものがあります。この時オペランドに対して行 う型変換を 
+「数値の昇格」と呼びます。<BR>
+<BR>
+以下に、各演算式に関する「数値の昇格」規則を示します。<BR>
+<BR>
+<BR>
+</P>
+<H4>単項演算式</H4>
+<UL>
+  <LI>オペランドの型が byte型、short型 であれば、int型 に変換されます。
+  <LI>それ以外は、オペランドの型そのものが用いられます。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<H4>二項演算式<BR>
+</H4>
+<OL>
+  <LI>一方の型が double 型であれば、他方も double 型に変換されます。
+  <LI>1 でない場合、一方の型が float型であれば、他方も float型 に変換されます。
+  <LI>3.2 でない場合、一方の型が long 型であれば、他方も long 型に変換されます。
+  <LI>4.3 でない場合、両方の型を int 型に変換されます。<BR>
+</OL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="conv.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../sync/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

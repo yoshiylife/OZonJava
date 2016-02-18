@@ -1,0 +1,36 @@
+j, JP.go.ipa.oz.user.ide.CIPrimitiveType_cl, 0x10, JP.go.ipa.oz.user.ide.CIPrimitiveType_if, JP.go.ipa.oz.user.ide.CIType_cl
+a, CHARACTER, 0x0, C, 295, 16
+a, DOUBLE, 0x0, C, 278, 13
+a, BOOLEAN, 0x0, C, 315, 14
+a, CONDITION, 0x0, C, 333, 16
+a, FLOAT, 0x0, C, 262, 12
+a, LONG, 0x0, C, 247, 11
+a, BYTE, 0x0, C, 198, 11
+a, SHORT, 0x0, C, 213, 12
+a, INTEGER, 0x0, C, 229, 14
+a, VOID, 0x0, C, 183, 11
+c, newDoubleType, (), (), (), (1295, 62, ())
+c, newConditionType, (), (), (), (1741, 68, ())
+c, newIntegerType, (), (), (), (861, 64, ())
+c, newShortType, (), (), (), (717, 60, ())
+c, newCharacterType, (), (), (), (1441, 68, ())
+c, newByteType, (), (), (), (575, 58, ())
+c, newFloatType, (), (), (), (1151, 60, ())
+c, newVoidType, (), (), (), (433, 58, ())
+c, newBooleanType, (), (), (), (1593, 64, ())
+c, newLongType, (), (), (), (1009, 58, ())
+m, isBoolean, 0x1, Z, (), (), (), (3917, 65, ())
+m, isLong, 0x1, Z, (), (), (), (3345, 59, ())
+m, isPrimitive, 0x1, Z, (), (), (), (4344, 56, ())
+m, isCondition, 0x1, Z, (), (), (), (4062, 69, ())
+m, isByte, 0x1, Z, (), (), (), (2920, 59, ())
+m, typeIs, 0x0, Z, (C), (), (), (4889, 67, ())
+m, isFloat, 0x1, Z, (), (), (), (3484, 61, ())
+m, init, 0x0, V, (), (), (), (4556, 251, ())
+m, isClass, 0x1, Z, (), (), (), (4211, 53, ())
+m, isShort, 0x1, Z, (), (), (), (3059, 61, ())
+m, isVoid, 0x1, Z, (), (), (), (2781, 59, ())
+m, isInteger, 0x1, Z, (), (), (), (3200, 65, ())
+m, isCharacter, 0x1, Z, (), (), (), (3768, 69, ())
+m, isDouble, 0x1, Z, (), (), (), (3625, 63, ())
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.user.ide.CIException_if), (JP.go.ipa.oz.user.ide.CIException_cl), (1964, 737, ((2617, 11, JP.go.ipa.oz.user.ide.CIException_if)))

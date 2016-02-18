@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="socket.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="../gui/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H3>外部プロセス起動</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>ソケット通信のためのクラス
+  <LI>Socketクラス
+  <LI>ソケット通信のプログラミング
+</OL>
+<UL>
+  <LI>補足：ソケット通信の例
+</UL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="stdout"></A><BR>
+１．外部プロセス通信のためのクラス
+  <DD><BR>
+外部プロセス通信を行うためのクラスがOZ標準クラスライブラリの「入出力ライブラリ」に用意されています。<BR>
+<BR>
+  <DL>
+    <DT>class Process : *Root
+    <DD>外部動作するプロセスを表現するクラス。<BR>
+<BR>
+  </DL>
+<BR>
+<BR>
+  <DT>２．Processクラス
+  <DD><BR>
+上位クラス： *Root<BR>
+<BR>
+コンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new create(String arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。<BR>
+引数で指定した文字列コマンドのサブプロセスを生成します。</TD></TR>
+  </TABLE>
+
+<BR>
+主なメソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public OutputStream getOutputStream()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サブプロセスの標準入力に接続されている出力ストリームを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public InputStream getInputStream()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サブプロセスの標準出力に接続されている入力ストリームを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public InputStream getErrorStream()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サブプロセスの標準エラーストリームに接続されている入力ストリームを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public int waitFor()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サブプロセスが完了するまで待機します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public int exitValue()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サブプロセスの終了コードを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void destroy()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サブプロセスを終了します。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>３．外部プロセス通信のプログラミング
+  <DD><BR>
+外部プロセスをサブプロセスとして起動し、その結果を反映させるプログラムを作成することができます。<BR>
+<BR>
+手順）<BR>
+  <OL>
+    <LI>外部プロセスのコマンド名を決定します。
+    <LI>外部プロセスをサブプロセスとして生成します。
+    <LI>必要であれば、入力ストリームを作成して外部プロセスの結果を受け取ります。<BR>
+（あるいは、出力ストリームを作成してデータを送ります。）
+    <LI>サブプロセスの終了を待ちます。<BR>
+（あるいは、強制終了させます。）
+    <LI>終了コードで正常に終了したことを確認します。
+  </OL>
+<BR>
+<BR>
+サブプロセスの起動 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    bool trytest(int port) {
+        
+        Process p=&gt;create(&quot;java SubProcess &quot;-&gt;concat(&quot;&quot;-&gt;valueOf(port)));
+
+        /* wait subprocess */
+        InputStreamReader outR=&gt;breed(p-&gt;getInputStream());
+        BufferedReader outBR=&gt;breed(outR);
+        String str = outBR-&gt;readLine();
+
+        InetAddress localIP=&gt;getLocalHost();
+        
+        bool result = myfunc(localIP, port, str);
+
+        int exitcode = p-&gt;waitFor();
+        if (exitcode != 0) {
+            System sys=&gt;create();
+           sys-&gt;println(&quot;IOException read/write is BAD&quot;);
+        }       
+        return result;  
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT><A name="system"></A>外部プロセス起動のためのクラスのAPIについては、ツールリファレンスの「クラスライブラリ」を参照してください。<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="socket.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="../gui/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.ExtensionFilter_cl, 0x0, JP.go.ipa.oz.user.ide.ExtensionFilter_if, JP.go.ipa.oz.lang._Root_cl
+a, extension, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 565, 17
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (700, 42, ())
+m, accept, 0x1, Z, (LJP.go.ipa.oz.lib.standard._File_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._File_cl), (1090, 159, ((1140, 4, JP.go.ipa.oz.lib.standard._File_if)))

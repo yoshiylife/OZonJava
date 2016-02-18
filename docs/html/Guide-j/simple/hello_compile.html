@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="hello_quit.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_s.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>OZ IDE を利用したコンパイルとテスト実行<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+ここでは、OZ IDE を利用して、このクラスのコンパイルを行います。<BR>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI><A href="#compile">OZ IDEによるコンパイル</A>
+  <LI><A href="#run">OZ IDEによるテスト実行</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="compile"></A><BR>
+１．OZ IDEによるコンパイル
+  <DD><BR>
+コンパイルはプロジェクトマネージャを使用します。まず、サブジェクトの生成と暮らす登録を確認してください。（「<A href="hello_ide.html">OZ
+IDE の起動とプロジェクト、サブジェクトの作成</A>」で行いました。）<BR>
+<BR>
+Subject:メニューリストをmydialogに合わせてください。3つのクラスがエントリされており、クラス識別子が付与されているでしょうか。
+</DL>
+<P align="center">
+<IMG src="samp-class.gif" height="488" width="510"><BR>
+<BR>
+</P>
+<DL>
+  <DD>その確認ができたら、いよいよコンパイルです。プロジェクト名がプロジェクトマネージャのタイトルに表示されますが、「<A href="hello_ide.html">OZ
+IDE の起動とプロジェクト、サブジェクトの作成</A>」で作成したプロジェクト（MyProj）を選択してください。<FONT color="#800080">Project
+files:</FONT> リストに、 Test.oz、Quit.oz、MyDialog.ozがリストされています。<BR>
+</DL>
+<P align="center">
+<IMG src="samp-proj.gif" height="478" width="410">
+</P>
+<DL>
+  <DD><BR>
+cell型のクラスを宣言しているソースファイルTest.oz をクリックしてください。Test,ozの文字が反転し、そのファイルが選択されたことを示します。<BR>
+そして、Compile メニューの <B>compile</B> を選択してください。コンパイルが開始され、コンパイルメッセージを表示するウィンドウが表示されます。
+</DL>
+<P align="center">
+<IMG src="samp-comp-info.gif" height="512" width="512"><BR>
+</P>
+<DL>
+  <DD>このメッセージの後半をみると、MyDialog、Test、Quitという文字列が表示されています。上記の操作で、このプロジェクトに属するすべてのファイルがコンパイルされます。（このウィンドウを消去する場合には、OKボタンをクリックしてください。）<BR>
+<BR>
+  <DT><A name="run"></A><BR>
+２．OZ IDEによるテスト実行
+  <DD><BR>
+いまコンパイルしたアプリケーションをテスト実行してみましょう。アプリケーションの実行は、スクールブラウザから行います。<BR>
+スクールブラウザのRunメニューの <B>run</B> を選択してください。
+</DL>
+<P align="center">
+<IMG src="run-run.gif" height="53" width="64">
+</P>
+<DL>
+  <DD>コマンドプロンプトが開き、mydialogサブジェクトのアプリケーション、すなわち、Helloウィンドウを表示するアプリケーションがテスト実行されます。実行結果表示されるのは、次のウィンドウです。
+</DL>
+<P align="center">
+<IMG src="hellowin.gif" height="150" width="220"><BR>
+</P>
+<DL>
+  <DD><BR>
+</DL>
+<P>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<OL>
+  <LI><A href="hello_ele.html">アプリケーションの構成</A>
+  <LI><A href="hello_ide.html">OZ IDE の起動とプロジェクト、サブジェクトの作成</A>
+  <LI><A href="hello_test.html">Testクラス</A>
+  <LI><A href="hello_my.html">MyDialogクラス</A>
+  <LI><A href="hello_quit.html">Quitクラス</A>
+  <LI><A href="hello_compile.html">OZ IDE を利用したコンパイルとテスト実行</A><IMG src="red.gif" height="16" width="13">
+  <LI><A href="hello_s.html">アプリケーションのスクールファイル</A>
+  <LI><A href="hello_go.html">ランチャを利用するグローバルオブジェクトの生成とその活性化</A>
+  <LI><A href="hello_debug.html">OZプログラムのデバック</A>
+  <LI><A href="hello_rel.html">リリースパッケージの配布</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490">
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="hello_quit.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_s.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

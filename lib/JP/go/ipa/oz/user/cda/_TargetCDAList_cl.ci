@@ -1,0 +1,14 @@
+j, JP.go.ipa.oz.user.cda._TargetCDAList_cl, 0x0, JP.go.ipa.oz.user.cda._TargetCDAList_if, JP.go.ipa.oz.lang._Root_cl
+a, targetList, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 22538, 17
+a, targetListSize, 0x0, I, 22558, 19
+a, leaveTo, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 22580, 15
+c, create, (), (JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Array_cl), (22603, 147, ((22617, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+m, leaveToWhom, 0x21, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (22792, 59, ())
+m, setLeaveTo, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (22855, 86, ())
+m, targetsSize, 0x21, I, (), (), (), (23006, 63, ())
+m, remove, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (23993, 415, ((24182, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, targets, 0x21, LJP.go.ipa.oz.lib.standard._Array_if, (), (), (), (22945, 57, ())
+m, next, 0x21, LJP.go.ipa.oz.lib.standard._String_if, (I), (JP.go.ipa.oz.lib.standard._String_if), (), (23073, 443, ((23461, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, setDefaults, 0x21, V, (), (), (), (22754, 34, ())
+m, putAt, 0x21, I, (I, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (23600, 389, ())
+m, put, 0x1, I, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (23520, 76, ())

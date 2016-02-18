@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="netprotocol.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../quick/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>OZCGI サーバを利用するアプリケーションの構築<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+OZCGIサーバとは、CGI(Common Gateway Interface)を介してOZアプリケーションのサービスを利用することを可能とするサーバです。OZシステムはこのサーバを利用してリモートコンパイル、リモート実行などを行うことができるワールドワイドプログラミングサーバを提供しています。ワールドワイドプログラミングサーバに相当する機能を持つアプリケーションを構築するためのインタフェースを提供しています。
+</P>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>OZCGIサーバの設定
+  <LI>OZCGIサーバを利用するためのプログラミングインタフェース
+  <LI>OZCGIサーバを利用するアプリケーションの実行
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>１．OZCGIサーバの設定
+  <DD><BR>
+OZCGIサーバはoz.cgiというCGIプログラム（Ｐｅｒｌ言語で書かれています）を利用してWWWサーバ機能を利用します。<BR>
+制限事項として、WWWクライアントはHTML 3.2をサポートするものである必要があります。<BR>
+<BR>
+設定：
+  <DD>
+  <OL>
+    <LI>$OZHOME/lib/inet/oz.cgi をHTTP サーバの CGI プログラム格納ディレクトリにコピーし、先頭部分にある
+them, port の変数の値を、OzCGI を実行するホスト、ポート番号に変更してください。
+    <LI>$OZHOME/lib/ozcgi.properties の中の port の値を 1. の設定値に変更してください。
+  </OL>
+<BR>
+</DL>
+<P align="right">
+<A href="school.html">oz.cgi </A><IMG src="../../image/h_glass.gif" height="23" width="19">
+</P>
+<DL>
+  <DT>２．OZCGIサーバを利用するためのプログラミングインタフェース
+  <DD><BR>
+OZCGIサーバは以下の機能を持っています。<BR>
+  <OL>
+    <LI>WWWクライアントからCGIを経由して渡されるデータを解釈する機能。
+    <LI>CGIを経由してOZプログラムを動作させる機能。
+    <LI>OZプログラムからWWWクライアントへ結果を出力する機能。
+    <LI>OZプログラムが結果を出力する際にHTML文法やContent-typeヘッダを意識せずに出力できる機能。
+  </OL>
+<BR>
+このうち、1、4をOZプログラム通信機能（oz.cgi）、2、3をHTMLクラスで提供しています。<BR>
+OZCGIサーバのグローバルオブジェクトはOzCGIクラスから生成されます。<BR>
+<BR>
+<BR>
+<B>OzCGIクラスのプログラミングインタフェース</B><BR>
+  <DL>
+    <DT>public HTMLData receiveRequest (String form_id)
+    <DD><BR>
+form_id を NAME 属性とするレコードとして、HTMLのフォームIDが指定されます。<BR>
+form_id へのリクエストが来るのを待ちます。<BR>
+リクエストが届くと、HTML オブジェクトが返されます 。<BR>
+この得た HTML オブジェクトに結果の HTML データを格納し、sendResult により返信します。<BR>
+<BR>
+    <DT>public void sendResult (HTMLData result)
+    <DD><BR>
+result の HTML オブジェクトの内容をリクエスト元に返信します。<BR>
+<BR>
+<BR>
+  </DL>
+<BR>
+<B>HTMLData クラスのプログラミングインタフェース</B><BR>
+  <DL>
+    <DT>public Root getValue (String label)
+    <DD><BR>
+label の文字列を NAME 属性とするレコードのデータ (String or ByteArray)
+を返します。なければ null を返します。<BR>
+<BR>
+    <DT>public Iterator getLabels ()
+    <DD><BR>
+すべての NAME 属性にアクセスするための iterator を返します。<BR>
+    <DT>public void startOutput (String content)
+    <DD><BR>
+返信用 HTML データの作成を開始する。content は Content-Type を指定します。<BR>
+<BR>
+    <DT>public void startOutput (String content, String name)
+    <DD><BR>
+返信用 HTML データの作成を開始する。content は Content-Type を指定し、name
+は Content-Disposiiton の filename を指定します。<BR>
+<BR>
+    <DT>public void beginTag (String tag)
+    <DD><BR>
+tag の文字列を開始タグとして挿入します。<BR>
+ただし、ここで指定するタグは終了タグを持つもののみとします。<BR>
+<BR>
+例: beginTag (&quot;html&quot;) の場合、 &lt;html&gt; が挿入されます。<BR>
+<BR>
+    <DT>public void addOutput (String str)
+    <DD><BR>
+str を挿入します。<BR>
+<BR>
+    <DT>public void addOutput (InputStream in, int size)
+    <DD><BR>
+in から size 分のファイルデータをファイル送信用データとして読み込みます。<BR>
+<BR>
+    <DT>public void endTag ()
+    <DD><BR>
+最後に beginTag により挿入した開始タグに対応する終了タグを挿入します。<BR>
+<BR>
+    <DT>public void endOutput ()
+    <DD><BR>
+終了タグが挿入されていないすべての開始タグに対応する終了タグを挿入します。<BR>
+<BR>
+    <DT>public String output ()
+    <DD><BR>
+返信用 HTML データの String オブジェクトを返す。<BR>
+<BR>
+    <DT>public String getRequestID ()
+    <DD><BR>
+付与されている リクエスト ID を返します。<BR>
+<BR>
+    <DT>public String getFormID ()
+    <DD><BR>
+フォーム ID を返します。<BR>
+<BR>
+  </DL>
+<BR>
+<BR>
+OZCGIアプリケーションを作成する場合には、OZアプリケーションとともにそれを利用するためのHTML文書も作成してください。（HTML文書はWWWクライアントに配布します。）<BR>
+</DL>
+<P align="right">
+<A href="school.html">スクールファイル </A><IMG src="../../image/h_glass.gif" height="23" width="19">
+</P>
+<DL>
+  <DT>３．OZCGIサーバを利用するアプリケーションの実行
+  <DD><BR>
+OzCGI クラスを利用するアプリケーションの生成、活性化は通常の方法で行うことができます。<BR>
+生成を行うときに活性状態を保つというアプリケーション構造の場合には、OZCGIサーバオブジェクトが生成されている必要があります。<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="netprotocol.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../quick/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

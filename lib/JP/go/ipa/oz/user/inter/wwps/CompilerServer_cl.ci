@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.inter.wwps.CompilerServer_cl, 0x0, JP.go.ipa.oz.user.inter.wwps.CompilerServer_if, JP.go.ipa.oz.lang._Root_cl
+a, schools, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 185, 19
+c, create, (), (JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl), (1055, 83, ((1071, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+m, compile, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if, LJP.go.ipa.oz.lib.standard._Writer_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._Writer_if, JP.go.ipa.oz.user.inter.wwps.CompilerAgent_if), (JP.go.ipa.oz.user.inter.wwps.CompilerAgent_cl), (355, 144, ((427, 13, JP.go.ipa.oz.user.inter.wwps.CompilerAgent_if)))
+m, registerSchool, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if), (), (618, 174, ())
+m, searchSchool, 0x1, LJP.go.ipa.oz.user.ide.School_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.School_if), (), (903, 110, ((953, 6, JP.go.ipa.oz.user.ide.School_if)))

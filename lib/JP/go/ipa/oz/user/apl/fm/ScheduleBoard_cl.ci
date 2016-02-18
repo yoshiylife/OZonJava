@@ -1,0 +1,35 @@
+j, JP.go.ipa.oz.user.apl.fm.ScheduleBoard_cl, 0x0, JP.go.ipa.oz.user.apl.fm.ScheduleBoard_if, JP.go.ipa.oz.lang._Root_cl
+a, initTime, 0x0, I, 148, 13
+a, pieceNum, 0x0, I, 174, 13
+a, table, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 211, 12
+a, days, 0x0, I, 189, 9
+a, span, 0x0, I, 163, 9
+a, grid, 0x0, I, 200, 9
+c, create, (I, I), (), (JP.go.ipa.oz.lib.standard._SList_cl), (232, 160, ())
+m, makePieceLabel, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (I), (JP.go.ipa.oz.lib.standard._Integer_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._Integer_cl), (1408, 392, ((1507, 7, JP.go.ipa.oz.lib.standard._Integer_if), (1523, 7, JP.go.ipa.oz.lib.standard._Integer_if), (1541, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, cloneSelf, 0x1, LJP.go.ipa.oz.user.apl.fm.ScheduleBoard_if, (), (JP.go.ipa.oz.user.apl.fm.ScheduleBoard_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (JP.go.ipa.oz.user.apl.fm.ScheduleBoard_cl), (7897, 909, ((7934, 13, JP.go.ipa.oz.user.apl.fm.ScheduleBoard_if), (8071, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (8120, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (8234, 5, JP.go.ipa.oz.lib.standard._SList_if), (8249, 5, JP.go.ipa.oz.lib.standard._SList_if), (8332, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (8370, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (8484, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (8502, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if)))
+m, cancel, 0x1, V, (LJP.go.ipa.oz.user.apl.fm.Reserve_if), (JP.go.ipa.oz.user.apl.fm.Reserve_if, JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (), (5558, 394, ((5683, 5, JP.go.ipa.oz.lib.standard._SList_if), (5696, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (5813, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if)))
+m, makeADay, 0x4, LJP.go.ipa.oz.lib.standard._SList_if, (), (JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (JP.go.ipa.oz.lib.standard._SList_cl), (839, 231, ((870, 5, JP.go.ipa.oz.lib.standard._SList_if), (973, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if)))
+m, setGrid, 0x1, V, (I), (), (), (6170, 62, ())
+m, setDays, 0x1, V, (I), (), (), (6037, 49, ())
+m, toGreen, 0x1, V, (), (JP.go.ipa.oz.user.apl.fm.Overseer_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (JP.go.ipa.oz.user.apl.fm.Overseer_cl), (7460, 386, ((7486, 8, JP.go.ipa.oz.user.apl.fm.Overseer_if), (7544, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (7618, 5, JP.go.ipa.oz.lib.standard._SList_if), (7688, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (7767, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if)))
+m, getInitTime, 0x1, I, (), (), (), (7002, 48, ())
+m, setInitTime, 0x1, V, (I), (), (), (6520, 57, ())
+m, getTable, 0x1, LJP.go.ipa.oz.lib.standard._SList_if, (), (), (), (7850, 44, ())
+m, timeToPiece, 0x1, I, (I, I), (), (), (7297, 160, ())
+m, getSpan, 0x1, I, (), (), (), (6888, 40, ())
+m, reset, 0x1, V, (), (), (JP.go.ipa.oz.lib.standard._SList_cl), (426, 57, ())
+m, isEqualScheduleBoard, 0x1, Z, (LJP.go.ipa.oz.user.apl.fm.ScheduleBoard_if), (JP.go.ipa.oz.user.apl.fm.ScheduleBoard_if, JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (), (8810, 982, ((9063, 5, JP.go.ipa.oz.lib.standard._SList_if), (9238, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (9275, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (9350, 5, JP.go.ipa.oz.lib.standard._SList_if), (9365, 5, JP.go.ipa.oz.lib.standard._SList_if), (9500, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (9538, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (9617, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (9635, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if)))
+m, confirm, 0x1, LJP.go.ipa.oz.lib.standard._SList_if, (LJP.go.ipa.oz.user.apl.fm.Reserve_if), (JP.go.ipa.oz.user.apl.fm.Reserve_if), (), (3463, 73, ())
+m, makeATimePiece, 0x4, LJP.go.ipa.oz.user.apl.fm.TimePiece_if, (I), (JP.go.ipa.oz.user.apl.fm.TimePiece_if), (JP.go.ipa.oz.user.apl.fm.TimePiece_cl), (1160, 154, ((1211, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if)))
+m, trace, 0x1, V, (I), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._PrintWriter_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._PrintWriter_cl), (9796, 944, ((9828, 6, JP.go.ipa.oz.lib.standard._System_if), (9855, 11, JP.go.ipa.oz.lib.standard._PrintWriter_if), (10269, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (10343, 5, JP.go.ipa.oz.lib.standard._SList_if), (10474, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (10553, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if)))
+m, reserve, 0x1, Z, (I, I, I), (JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (), (2569, 784, ((2665, 5, JP.go.ipa.oz.lib.standard._SList_if), (2683, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (3014, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if), (3247, 9, JP.go.ipa.oz.user.apl.fm.TimePiece_if)))
+m, reserve, 0x1, Z, (LJP.go.ipa.oz.user.apl.fm.Reserve_if), (JP.go.ipa.oz.user.apl.fm.Reserve_if), (), (1912, 460, ())
+m, getPieceNum, 0x1, I, (), (), (), (7118, 48, ())
+m, getSelectedSchedule, 0x1, LJP.go.ipa.oz.lib.standard._SList_if, (I, I, I), (JP.go.ipa.oz.lib.standard._SList_if, JP.go.ipa.oz.lib.standard._Sequence_if), (), (4449, 1020, ((4816, 5, JP.go.ipa.oz.lib.standard._SList_if), (4830, 5, JP.go.ipa.oz.lib.standard._SList_if)))
+m, getSelectedSchedule, 0x1, LJP.go.ipa.oz.lib.standard._SList_if, (LJP.go.ipa.oz.user.apl.fm.Reserve_if), (JP.go.ipa.oz.user.apl.fm.Reserve_if, JP.go.ipa.oz.lib.standard._SList_if), (), (3697, 522, ((3771, 5, JP.go.ipa.oz.lib.standard._SList_if)))
+m, setPieceNum, 0x4, V, (), (), (), (698, 64, ())
+m, setSpan, 0x1, V, (I), (), (), (6338, 62, ())
+m, getGrid, 0x1, I, (), (), (), (6754, 40, ())
+m, setTable, 0x4, V, (), (JP.go.ipa.oz.lib.standard._SList_if), (), (517, 142, ((593, 5, JP.go.ipa.oz.lib.standard._SList_if)))
+m, getDays, 0x1, I, (), (), (), (6652, 40, ())

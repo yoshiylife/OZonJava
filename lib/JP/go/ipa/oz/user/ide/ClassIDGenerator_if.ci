@@ -1,0 +1,7 @@
+i, JP.go.ipa.oz.user.ide.ClassIDGenerator_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, generateImplementationID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getRuleOfImplementationID, 0x1, LJP.go.ipa.oz.lib.standard._Array_if, ()
+m, getRuleOfInterfaceID, 0x1, LJP.go.ipa.oz.lib.standard._Array_if, ()
+m, setRuleOfImplementationID, 0x1, V, (LJP.go.ipa.oz.lib.standard._Array_if)
+m, setRuleOfInterfaceID, 0x1, V, (LJP.go.ipa.oz.lib.standard._Array_if)
+m, generateInterfaceID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if)

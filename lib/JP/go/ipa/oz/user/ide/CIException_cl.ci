@@ -1,0 +1,9 @@
+j, JP.go.ipa.oz.user.ide.CIException_cl, 0x10, JP.go.ipa.oz.user.ide.CIException_if, JP.go.ipa.oz.lang._Root_cl
+a, message, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 160, 16
+a, cid, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 180, 12
+c, newCIException, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (377, 96, ())
+c, newCIException, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (275, 90, ())
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (554, 206, ((589, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (829, 49, ())
+m, getMessage, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (766, 57, ())
+m, setCID, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (884, 62, ())

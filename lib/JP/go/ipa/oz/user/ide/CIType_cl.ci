@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.CIType_cl, 0x400, JP.go.ipa.oz.user.ide.CIType_if, JP.go.ipa.oz.lang._Root_cl
+a, typeCode, 0x4, C, 155, 25
+m, isPrimitive, 0x401, Z, (), (), (), (262, 38, ())
+m, isClass, 0x401, Z, (), (), (), (304, 34, ())

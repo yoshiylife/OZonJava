@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="return.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="try.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>throw 文（The throw Statement）<BR>
+</H3>
+<BR clear="all">
+<P>
+throw文によって例外を明示的に発生させることができます。<BR>
+throw文で発生させた例外を、try文によって処理することができます。try文については「try文」を参照してください。例外処理については「例外処理」に説明しています。<BR>
+<BR>
+</P>
+<P>
+<B>構文</B>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD width="150"><B>throw [式];</B></TD></TR>
+</TABLE>
+
+<P>
+式は、クラス型の変数、あるいはクラス型の値でなくてはいけません。<BR>
+<BR>
+try文のcatch節では、式を省略することができます。省略された場合には、catch節で捕獲された例外が<BR>
+発生します。
+</P>
+<P>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+</P>
+<PRE>
+  jump_stmt : RETURN exp_or_empty ;
+
+  exp_or_empty : /* empty */
+                 exp<BR>
+</PRE>
+<P>
+<BR>
+<BR>
+<B>説明</B>
+</P>
+<P>
+式の評価が行われて、その後例外が発生します。<BR>
+<BR>
+例外として任意のオブジェクトを投げる（throw）ことができます。<BR>
+式で表現されるのが例外で投げられる例外です。<BR>
+<BR>
+<BR>
+</P>
+<P>
+例: throw文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+1: public Root invoke(MethodRunnable mr, int time){
+2:     isDone = false;
+3:     Thread t =&gt; create(mr);
+4:     endWait(time);
+5:     if (isDone) return(mr-&gt;getResult());
+6:     else { TimeOutException e =&gt;init(); throw e; }
+7: }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>5行目のif文で判定結果がfalseの場合、TimeOutExceptionクラスのインスタンスが作成され、そして、例外が明示的に発生されます。例外として、TimeOutExceptionクラスのインスタンスが投げられます。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="return.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="try.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,15 @@
+j, JP.go.ipa.oz.user.garage.SGarage_cl, 0x2000, JP.go.ipa.oz.user.garage.SGarage_if, JP.go.ipa.oz.user.lib_dist.tran._TransactionResource_cl
+a, garage, 0x4, LJP.go.ipa.oz.user.garage.Garage_if, 164, 25
+m, iterator, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (JP.go.ipa.oz.user.garage.SummarizableIterator_if, JP.go.ipa.oz.lib.standard._Collection_if), (JP.go.ipa.oz.user.garage.SummarizableIterator_cl), (859, 166, ((896, 20, JP.go.ipa.oz.user.garage.SummarizableIterator_if), (928, 10, JP.go.ipa.oz.lib.standard._Collection_if)))
+m, go, 0x4, V, (), (), (), (2624, 29, ())
+m, replace, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if, LJP.go.ipa.oz.user.ide.Summarizable_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.Summarizable_if), (), (1538, 88, ())
+m, getSummary, 0x1, LJP.go.ipa.oz.user.ide.Summary_if, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.Summarizable_if, JP.go.ipa.oz.user.ide.Summary_if), (), (570, 205, ((615, 12, JP.go.ipa.oz.user.ide.Summarizable_if), (639, 7, JP.go.ipa.oz.user.ide.Summary_if)))
+m, summaries, 0x0, LJP.go.ipa.oz.lib.standard._Collection_if, (), (JP.go.ipa.oz.lib.standard._Set_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.Summarizable_if, JP.go.ipa.oz.user.ide.Summary_if), (JP.go.ipa.oz.lib.standard._Set_cl), (2947, 347, ((2980, 3, JP.go.ipa.oz.lib.standard._Set_if), (2997, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (3039, 12, JP.go.ipa.oz.user.ide.Summarizable_if), (3063, 7, JP.go.ipa.oz.user.ide.Summary_if)))
+m, stop, 0x1, V, (), (), (), (2054, 45, ())
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if), (), (1393, 63, ())
+m, replaceSummary, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if, LJP.go.ipa.oz.user.ide.Summary_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.Summary_if, JP.go.ipa.oz.user.ide.Summarizable_if), (), (1708, 264, ((1766, 12, JP.go.ipa.oz.user.ide.Summarizable_if)))
+m, quiet, 0x4, V, (), (), (), (2735, 50, ())
+m, initialize, 0x4, V, (), (), (JP.go.ipa.oz.user.garage.Garage_cl), (2463, 79, ())
+m, summaryIterator, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (JP.go.ipa.oz.user.garage.SummaryIterator_if), (JP.go.ipa.oz.user.garage.SummaryIterator_cl), (2181, 122, ((2225, 15, JP.go.ipa.oz.user.garage.SummaryIterator_if)))
+m, get, 0x1, LJP.go.ipa.oz.user.ide.Summarizable_if, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.Summarizable_if), (), (371, 117, ((414, 12, JP.go.ipa.oz.user.ide.Summarizable_if)))
+m, put, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (LJP.go.ipa.oz.user.ide.Summarizable_if), (JP.go.ipa.oz.user.ide.Summarizable_if, JP.go.ipa.oz.user.ide.Summary_if, JP.go.ipa.oz.user.garage.Key_if), (), (1107, 204, ((1150, 7, JP.go.ipa.oz.user.ide.Summary_if), (1169, 3, JP.go.ipa.oz.user.garage.Key_if)))

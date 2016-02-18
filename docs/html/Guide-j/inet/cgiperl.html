@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN"><HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> </FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H3>oz.cgi<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+oz.cgi <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+5行目と6行目を変更します。
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>#!/usr/local/bin/perl<BR>
+<BR>
+umask 000;<BR>
+<BR>
+<B>$port = 5000;</B><BR>
+<B>$them = 'kazuto';</B><BR>
+<BR>
+#<BR>
+# Using on James Tappin &lt;sjt@xun8.sr.bham.ac.uk&gt;'s cgi_handlers.pl<BR>
+#<BR>
+<BR>
+####################################################################<BR>
+<BR>
+# The CGI_HANDLERS deal with basic CGI POST or GET method request<BR>
+# elements such as those delivered by an HTTPD form, i.e. a url<BR>
+# encoded line of &quot;=&quot; separated key=value pairs separated by
+&amp;'s<BR>
+<BR>
+# Routines:<BR>
+# get_request: reads the request and returns both the raw and<BR>
+# processed version.<BR>
+# url_decode: URL decodes a string or array of strings<BR>
+# html_header: Transmits a HTML header back to the caller<BR>
+# html_trailer: Transmits a HTML trailer back to the caller<BR>
+<BR>
+# Author:<BR>
+# James Tappin: sjt@xun8.sr.bham.ac.uk<BR>
+# School of Physics &amp; Space Research University of Birmingham<BR>
+# Feb 1993.<BR>
+<BR>
+# Copyright &amp; Disclaimer.<BR>
+# This set of routines may be freely distributed, modified and<BR>
+# used, provided this copyright &amp; disclaimer remains intact.<BR>
+# This package is used at your own risk, if it does what you<BR>
+# want, good; if it doesn't, modify it or use something else--but<BR>
+# don't blame me. Support level = negligable (i.e. mail bugs but<BR>
+# not requests for extensions)<BR>
+<BR>
+# Usage:<BR>
+# needs a 'require &quot;cgi_handlers.pl&quot;;' line in the main script<BR>
+#<BR>
+# &amp;get_request; will get the request and decode it into an<BR>
+# indexed array %rqpairs, the raw request is in<BR>
+# $request<BR>
+#<BR>
+# ... = &amp;url_decode(LIST); will return a URL decoded version of<BR>
+# the contents of LIST<BR>
+#<BR>
+# &amp;html_header(TITLE); will write to standard output an HTML<BR>
+# header (including the content-type<BR>
+# field) giving the document the title<BR>
+# specified by TITLE.<BR>
+#<BR>
+# &amp;html_trailer; Writes a trailer to the html document<BR>
+# with the name of the script generating<BR>
+# it and the date (in UT).<BR>
+<BR>
+sub get_request {<BR>
+<BR>
+# Subroutine get_request reads the POST or GET form request from STDIN<BR>
+# into the variable $request, and then splits it into its<BR>
+# name=value pairs in the associative array %rqpairs.<BR>
+# The number of bytes is given in the environment variable<BR>
+# CONTENT_LENGTH which is automatically set by the request generator.<BR>
+<BR>
+# Encoded HEX values and spaces are decoded in the values at this<BR>
+# stage.<BR>
+<BR>
+# $request will contain the RAW request. N.B. spaces and other<BR>
+# special characters are not handler in the name field.<BR>
+<BR>
+if ($ENV{'REQUEST_METHOD'} eq &quot;POST&quot;) {<BR>
+$length=$ENV{'CONTENT_LENGTH'};<BR>
+$sum=0;<BR>
+binmode STDIN;<BR>
+while ($sum &lt; $length) {<BR>
+$sum += read(STDIN, $request, $ENV{'CONTENT_LENGTH'},$sum);<BR>
+}<BR>
+} elsif ($ENV{'REQUEST_METHOD'} eq &quot;GET&quot; ) {<BR>
+$request = $ENV{'QUERY_STRING'};<BR>
+}<BR>
+<BR>
+#$request = &quot;text=%83e%83X%83g&amp;.formId=OZCGI_TEST&quot;;<BR>
+<BR>
+# &amp;url_decode ();<BR>
+}<BR>
+<BR>
+sub url_decode {<BR>
+<BR>
+# Decode a URL encoded string or array of strings<BR>
+# + -&gt; space<BR>
+# %xx -&gt; character xx<BR>
+<BR>
+$_ = $request;<BR>
+tr/+/ /;<BR>
+s/%(..)/pack(&quot;c&quot;,hex($1))/ge;<BR>
+$request= $_;<BR>
+}<BR>
+<BR>
+sub html_header {<BR>
+<BR>
+# Subroutine html_header sends to Standard Output the necessary<BR>
+# material to form an HHTML header for the document to be<BR>
+# returned, the single argument is the TITLE field.<BR>
+<BR>
+local($title) = @_;<BR>
+<BR>
+print &quot;Content-type: text/html\n\n&quot;;<BR>
+print &quot;&lt;html&gt;\n&quot;;<BR>
+print &quot;&lt;head&gt;\n&quot;;<BR>
+print &quot;&lt;title&gt;$title&lt;/title&gt;\n&quot;;<BR>
+print &quot;&lt;/head&gt;\n&lt;body&gt;\n&quot;;<BR>
+}<BR>
+<BR>
+sub html_trailer {<BR>
+<BR>
+# subroutine html_trailer sends the trailing material to the HTML<BR>
+# on STDOUT.<BR>
+<BR>
+# local($sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst)<BR>
+# = gmtime;<BR>
+<BR>
+# local($mname) = (&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;,
+&quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;,<BR>
+# &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;)[$mon];<BR>
+# local($dname) = (&quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;Wed&quot;,
+&quot;Thu&quot;, &quot;Fri&quot;,<BR>
+# &quot;Sat&quot;)[$wday];<BR>
+<BR>
+# print &quot;&lt;p&gt;\nGenerated by: &lt;var&gt;$0&lt;/var&gt;&lt;br&gt;\n&quot;;<BR>
+# print &quot;Date: $hour:$min:$sec UT on $dname $mday $mname $year.&lt;p&gt;\n&quot;;<BR>
+print &quot;&lt;/body&gt;\n&quot;;<BR>
+print &quot;&lt;/html&gt;\n&quot;;<BR>
+}<BR>
+<BR>
+sub html_result {<BR>
+&amp;html_header(&quot;Thanks...&quot;);<BR>
+print &quot;&lt;pre&gt;&quot;;<BR>
+print &quot;$request&quot;;<BR>
+print &quot;&lt;/pre&gt;\n&quot;;<BR>
+&amp;html_trailer;<BR>
+}<BR>
+<BR>
+get_request; # receiving data from WWW client<BR>
+<BR>
+use Socket;<BR>
+<BR>
+$AF_INET = &amp;Socket'PF_INET;<BR>
+$SOCK_STREAM = &amp;Socket'SOCK_STREAM;<BR>
+<BR>
+$SIG{'INT'} = 'dokill';<BR>
+sub dokill {<BR>
+kill 9, $child if $child;<BR>
+}<BR>
+<BR>
+$sockaddr = 'S n a4 x8';<BR>
+<BR>
+chop($hostname = `hostname`);<BR>
+<BR>
+($name, $aliases, $proto) = getprotobyname ('tcp');<BR>
+($name, $aliases, $port) = getservbyname ($port, 'tcp')<BR>
+unless $port =~ /^\d+$/;;<BR>
+($name, $aliases, $type, $len, $thisaddr) =<BR>
+gethostbyname ($hostname);<BR>
+($name, $aliases, $type, $len, $thataddr) =<BR>
+gethostbyname ($them);<BR>
+<BR>
+$this = pack($sockaddr, $AF_INET, 0, $thisaddr);<BR>
+$that = pack($sockaddr, $AF_INET, $port, $thataddr);<BR>
+<BR>
+socket(S, $AF_INET, $SOCK_STREAM, $proto) || die &quot;socket: $!&quot;;<BR>
+bind (S, $this) || die &quot;bind $!&quot;;<BR>
+connect (S, $that) || die &quot;connect $!&quot;;<BR>
+<BR>
+binmode S;<BR>
+binmode STDOUT;<BR>
+<BR>
+select(S); $| = 1; select (STDOUT);<BR>
+<BR>
+print S &quot;$request&quot;;<BR>
+<BR>
+while (&lt;S&gt;) {<BR>
+print &quot;$_&quot;;<BR>
+}<BR>
+<BR>
+close(S);<BR>
+<BR>
+# EOF<BR>
+<BR>
+<BR>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

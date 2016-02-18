@@ -1,0 +1,48 @@
+<HTML>
+<HEAD><TITLE>Application Gateway Manual</TITLE></HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>アプリケーションゲートウェイのインストール</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+アプリケーションゲートウェイは、アプリケーションゲートウェイ
+本体と <B>CGI</B> プログラムが必要である。<br>
+アプリケーションゲートウェイは <B>Java</B> プログラムであり、<B>OzVM</B>
+とは独立である。
+<br>
+アプリケーションゲートウェイは、環境変数 <B>AGHOME</B> で
+指定されるディレクトリをワークディレクトリに用いる。
+ワークディレクトリには、設定用ファイルを格納するディレクトリ"etc"、
+実行用ファイルを格納するディレクトリ"bin"およびログを格納する
+ディレクトリ"logs"がある("logs"は初めてアプリケーションゲートウェイが
+起動される際に自動的に生成される)。<br>
+パッケージは <B>jp.go.ipa.oz.system</B> であり、クラスファイルは
+<B>$AGHOME/lib/ApplicationGateway.zip</B> を用いる。
+<br>
+配布パッケージでは、ワークディレクトリのイメージを <B>$OZHOME/ag</B> に
+作成してある。
+ワークディレクトリが <B>OZHOME</B> のサブディレクトリである必要はないので、
+適当なディレクトリにコピーしてかまわない。<BR>
+例えば、<B>$OZHOME/ag</B> を <B>/etc/ag</B> としてコピーした場合、環境変数
+<B>AGHOME</B> を <B>/etc/ag</B> に設定する。
+但し、<B>OZHOME</B> と <B>AGHOME</B> を一致させると、ログファイルを格納するディレクトリが共通になるので避けたほうがよい。
+</P>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

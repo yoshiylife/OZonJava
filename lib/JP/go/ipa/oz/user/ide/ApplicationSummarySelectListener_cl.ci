@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.ApplicationSummarySelectListener_cl, 0x0, JP.go.ipa.oz.user.ide.ApplicationSummarySelectListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, agBrowser, 0x0, LJP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, 660, 39
+c, create, (LJP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if), (JP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl), (861, 160, ((908, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if), (), (1179, 85, ())

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="class.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="attribute.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>クラスの継承<BR>
+</H3>
+<BR clear="all">
+<P>
+ここでは、ＯＺクラスの継承に関する概念について説明します。<BR>
+<BR>
+<BR>
+<BR>
+<B>上位クラス</B> <IMG src="../../image/h_glass.gif" height="30" width="25">
+</P>
+<P>
+クラスの宣言は、
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>[修飾子] class 識別子［上位クラス］ { メンバリスト};</B></TD></TR>
+</TABLE>
+
+<P>
+と記述しますが、インタフェース部、動作部を継承する既定義のクラスを上位クラスと呼びます。<BR>
+ここでインタフェース部とは、
+</P>
+<UL>
+  <LI>そのクラスに宣言されている publicメソッドのシグネチャと戻り値の型
+  <LI>そのクラスの上位クラス（親クラス）
+</UL>
+<P>
+であり、動作部はそれ以外の部分、すなわち、
+</P>
+<UL>
+  <LI>アトリビュート
+  <LI>メソッド本体の定義
+  <LI>public以外のアクセスレベルを持つメソッドのシグネチャと本体定義
+  <LI>コンストラクタのシグネチャと本体定義
+</UL>
+<P>
+です。
+</P>
+<P>
+OZ言語では、0 個以上のクラスを上位クラスと して宣言することができます。上位クラスの宣言が行われない場合には暗黙のクラスを上位クラスとみなすことになります。（Rootクラスがこの暗黙のクラスです。）<BR>
+上位クラスには上位実装クラスが含まれます。上位実装クラスの動作部を除いて、上位クラスはクラス宣言対象のクラスのインタフェース部になります。<BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<H4>上位実装クラス <IMG src="../../image/h_glass.gif" height="30" width="25"></H4>
+<P>
+インタフェース部と動作部の両方を継承する上位クラスを 上位実装クラス と呼びます。上位実装クラスと 
+して宣言できるクラスはたかだか1つです。<BR>
+<BR>
+クラスのインタフェース部の宣言には、上位クラスの宣言が含まれています。上位実装クラスの動作部は、そのクラスのインタフェース部の宣言には含まれません。上位クラスの動作部はそのクラスの動作部に含まれることになります。<BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<H4>祖先クラス、子孫クラス、下位クラス <IMG src="../../image/h_glass.gif" height="30" width="25"></H4>
+<P>
+継承と関連して、祖先クラス、子孫クラス、下位クラスというOZの概念があります。<BR>
+</P>
+<P>
+上位クラスが各々のクラス宣言において上位クラスを宣言することができるので、上位クラスの再帰的連鎖が形成されます。上位クラスの連鎖に含まれるクラスを総称して、<TT>祖先クラス</TT>
+と呼びます。逆に、上位クラスを宣言したクラスはその上位クラスに対する <TT>下位クラス</TT>
+と呼びます。すべての下位クラスの連鎖に含まれるクラスを 総称して、子孫クラス 
+と呼びます。<BR>
+<BR>
+子孫クラスのいずれかを祖先クラスとするような継承関係を宣言することはできません。したがって、OZクラスは1つのクラス、すなわち、Rootクラスをルートとする階層構造を形成します。<BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<H4>クラスの継承 <IMG src="../../image/h_glass.gif" height="30" width="25"></H4>
+<P>
+下位クラスは上位クラスからインタフェース部を継承します。また、上位実装クラスから
+priveteメンバ以外を継承します。継承したメソッド（シグネチャ、あるいはシグネチャと本体）を再定義することができます。<BR>
+再定義とは、継承したメソッドのメソッド本体の定義を新たに行うことです。上位クラスが定義しているメソッドのシグネチャと同一のシグネチャを持たなくてはいけません。
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="class.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="attribute.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

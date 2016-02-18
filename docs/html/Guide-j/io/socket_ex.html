@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> </FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H3>ソケット通信の例</H3>
+<P>
+<BR>
+</P>
+<DL>
+  <DT><BR>
+<BR>
+ソケット通信をするためには、IPアドレスとポートを獲得し、ソケットを作成して、そのソケットとストリームを結び付けてデータを送信/受信します。<BR>
+<BR>
+ソケット通信を行うFTPクラスを利用する以下のテストプログラムを使って、ソケット通信のプログラミングを調べてみましょう。（ここに記述しているリストは必要部分以外を大幅にカットしています。ソースコードを参照してください。）<BR>
+<BR>
+テストプログラム <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <DD>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell Tester {  
+        public void initialize () { ; }  
+        public void go () {
+            TesterR run=&gt;create ();
+            Thread th=&gt;create (run);
+        }
+        public void quiet () {
+            flushCell ();
+        }
+    }
+
+    class TesterR : *Runnable {
+        new create () { ; }
+
+        public void run () {
+            <B>FTP ftp=&gt;create ();</B>
+            System sys=&gt;create ();
+        
+            sys-&gt;println (ftp-&gt;connect (&quot;dorothy&quot;));
+            sys-&gt;println (ftp-&gt;getResponse ());
+            sys-&gt;println (ftp-&gt;user (&quot;toto&quot;));
+            sys-&gt;println (ftp-&gt;getResponse ());
+            sys-&gt;println (ftp-&gt;pass (&quot;kansas10&quot;));
+            sys-&gt;println (ftp-&gt;getResponse ());
+            sys-&gt;println (ftp-&gt;list (dir));
+            sys-&gt;println (ftp-&gt;getResponse ());
+            sys-&gt;println (ftp-&gt;getRecvData ());
+            sys-&gt;println (ftp-&gt;quit ());
+            sys-&gt;println (ftp-&gt;getResponse ());
+        }
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<B><U> connect </U></B><BR>
+<BR>
+まず、FTPクラスのconnectメソッドを起動しています（ ftp-&gt;connect (&quot;dorothy&quot;)
+）。<BR>
+<BR>
+FTPクラスはNetworkProtocolクラスを継承し、NetworkProtocolクラスはNetworkClientクラスを継承しています。<BR>
+<BR>
+connentメソッドはNetworkClientクラスで定義されています。ソケットのオブジェクトを作成し、そのソケットに入力ストリームがあるとそれを読み込みステータスを戻します。getResponseメソッドもNetworkClientクラスで定義されていて、ソケットからの入力の最新文字列を戻します。<BR>
+<BR>
+NetworkClient クラス <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    abstract class NetworkClient {
+        <B>protected Socket server;</B>
+        protected String response_message;
+
+        public String connect (String h, int p) {
+            <B>server=&gt;breed (h, p);</B>
+            return readResponse ();
+        }
+ 
+       protected String readResponse () {
+            String buf = read_response ();
+            if (buf == null)  return null;
+            response_message = buf;
+            record-&gt;decode (response_message);
+            return record-&gt;getStatus ();
+        }
+
+        String read_response () {
+            <B>InputStream in = server-&gt;getInputStream ();</B>
+            ByteArray buf=&gt;create (1024);
+
+            try {
+                StringBuffer sbuf=&gt;breed ();
+ 
+                while (true) {
+                    int size = <B>in-&gt;read (buf, 0, 1024)</B>;
+                    if (size &lt;= 0) return &quot;server error&quot;;
+
+                    String str=&gt;breed (buf, 0, size);
+                    sbuf-&gt;append (str);
+
+                    if (str-&gt;indexOf (line_terminator) == -1)
+                        continue;
+
+                    return sbuf-&gt;asString ();
+                }
+            } catch (IOException e) {      
+                return &quot;server error&quot;;
+            }
+        }
+
+        public String getResponse () { return response_message; }
+ 
+        public String sendCommand () {
+            String buf = record-&gt;encode ();
+
+            OutputStreamWriter out=&gt;breed (<B>server-&gt;getOutputStream ()</B>);
+            <B>out-&gt;write (buf, 0, buf-&gt;length ())</B>;
+            out-&gt;flush ();
+            return readResponse ();
+        }
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+Socketクラスを利用するときには、そのソケットと特定マシンの特定ポートと結び付ける必要があります。この例ではマシン名が
+dorothyです。そして、ポート番号は（ここでは明示的にはわかりませんが）21です。<BR>
+<BR>
+ソケットオブジェクトにgetInputStreamメッセージを送る（=メソッドを起動する）と、そのソケットからストリームデータを読み込むことができます。<BR>
+<BR>
+<BR>
+<B><U> user ＆ pass </U></B><BR>
+<BR>
+ftpコマンドを実現するのがFTPクラスです。connectが成功すると次に行うのはユーザIDとパスワードの入力です。userメソッドがユーザIDの入力を行い、passメソッドがパスワードの入力を行います。<BR>
+<BR>
+<BR>
+FTPクラス(1) <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class FTP : *NetworkProtocol {
+        ServerSocket data_connection;
+        Socket data_socket;
+        String received_data;
+
+        new create () {
+             super=&gt;create (<B>21</B>);
+        }
+        public String user (String username) {
+            return sendCommand (&quot;USER&quot;, username);
+        }
+        public String pass (String password) {
+            sendCommand (&quot;PASS&quot;, password);
+            return recvMultilineResponse ();
+        }
+        ．．．
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+コンストラクタcreate () で、上位クラスのコンストラクタを引数 <TT><FONT color="#400040">21</FONT></TT>で起動していますが、<TT><FONT color="#400040">21</FONT></TT>
+はFTPのポート番号です。<BR>
+<BR>
+<BR>
+sendCommandメソッドは、NetworkProtocolクラスで定義されています。<BR>
+<BR>
+NetworkProtocolクラス <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    abstract class NetworkProtocol : *NetworkClient {
+        new create (int port) {
+            super=&gt;create (&quot;COMMAND PARAM&quot;,
+                           &quot;STATUS MESSAGE&quot;,
+                           &quot;\r\n&quot;,
+                            port);
+        }
+        
+        protected String sendCommand (String command, String param) {
+            record-&gt;setCommand (command);
+            record-&gt;set (&quot;PARAM&quot;, param);
+            return sendCommand ();
+        }
+        public String sendCommand () {
+            return <B>super-&gt;sendCommand ()</B>;
+        }
+        ．．．
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+NetworkProtocolクラスのsendCommandメソッドは、NetworkProtocolクラスで確定するデータを設定して上位クラスNetworkClientクラスのsendCommandメソッドを起動しています。そのsendCommandメソッドの中ではソケットへのストリームの出力が行われます。（上のNetworkClientクラスを参照してください。）ここでは
+dorothyというマシンに「ユーザID toto」という情報が送られ（ftp-&gt;user
+(&quot;toto&quot;)）、その結果「パスワードを問う文字列」が返されます（ftp-&gt;getResponse
+()）。そして、パスワードが送られます。（データ変換の詳細はここでは説明していないrecordオブジェクトが行っています。）<BR>
+<BR>
+<BR>
+<B><U> list </U></B><BR>
+<BR>
+ユーザ名とパスワードの入力処理の後、起動しているlistメソッド は、listコマンドに相当します。<BR>
+<BR>
+FTPクラス(2) <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class FTP : *NetworkProtocol {
+        ServerSocket data_connection;
+        Socket data_socket;
+        String received_data;
+        ．．．
+
+        public String list (String pathname) {
+            return send_command_and_recv_data (&quot;LIST&quot;, pathname);
+        }
+
+       String send_command_and_recv_data (String command, String param) {
+           open_data_connection ();
+           String status = sendCommand (command, param);
+           if (!isOk (status)) return status;
+           return receive_data ();
+       }
+        ．．．
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+FTPクラスのsend_command_and_recv_dataメソッドは、コマンドを送りデータを受け取るメソッドです。listコマンドに相当するメソッドだけでなく、たとえばstatコマンドなど結果の受取りが必要なこコマンドに相当するメソッド（ここには記載していませんがstatメソッドなど）も
+send_command_and_recv_dataメソッドを起動します。<BR>
+<BR>
+send_command_and_recv_dataメソッドは、まず、open_data_connectionメソッドを起動してサーバソケットを生成します。このサーバソケットはアトリビュートで、その後のメソッドの中で利用されます。open_data_connectionメソッドはさらに自分のローカルポートをFTPサーバ（この場合はdorothy
+）に伝えています。<BR>
+そして、最後に receive_dataメソッドを起動しています。receive_dataメソッドは、サーバソケットに通信ソケットを問い合わせて、その入力ストリームを開いてデータを受信します。<BR>
+<BR>
+FTPクラス(3) <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class FTP : *NetworkProtocol {
+        <B>ServerSocket data_connection;</B>
+        Socket data_socket;
+        String received_data;
+        ．．．
+        void open_data_connection () {
+            try {
+                if (data_connection != null)
+                    data_connection-&gt;close ();
+                <B>data_connection=&gt;breed (0, 1);</B>
+            } catch (IOException e) {
+                System sys=&gt;create ();
+                sys-&gt;println (e-&gt;getMessage ());
+            }
+            send_local_port ();
+        }
+
+        void send_local_port () {
+            int port = <B>data_connection-&gt;getLocalPort ()</B>;
+            String addr = <B>data_connection-&gt;getInetAddress () 
+             -&gt;getLocalHost ()-&gt;getHostAddress ()</B>;
+            StringBuffer buf=&gt;breed ();
+            buf-&gt;append (addr-&gt;replace ('.', ','));
+            buf-&gt;append (',');
+            buf-&gt;append (&quot;&quot;-&gt;valueOf (port / 256));
+            buf-&gt;append (',');
+            buf-&gt;append (&quot;&quot;-&gt;valueOf (port % 256));
+            port (buf-&gt;asString ());
+        }
+        public String port (String host_port) {
+            return sendCommand (&quot;PORT&quot;, host_port);
+        }
+
+        String receive_data () {
+            <B>data_socket = data_connection-&gt;accept ()</B>;
+            <B>InputStream in = data_socket-&gt;getInputStream ();</B>
+            ByteArray buf=&gt;create (1024);
+            StringBuffer sbuf=&gt;breed ();
+         
+            while (true) {
+                int size = in-&gt;read (buf, 0, 1024);
+                if (size == -1)  break;
+                String s=&gt;breed (buf, 0, size);
+                sbuf-&gt;append (s);
+            }
+           data_socket-&gt;close ();
+        
+           received_data = sbuf-&gt;asString ();
+           return readResponse ();
+        }
+       ．．．
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+  <DT><A name="system"></A>ソケット通信のためのクラスのAPIについては、ツールリファレンスの「クラスライブラリ」を参照してください。<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

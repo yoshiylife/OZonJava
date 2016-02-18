@@ -1,0 +1,22 @@
+j, JP.go.ipa.oz.user.ide.CBPartView_cl, 0x10, JP.go.ipa.oz.user.ide.CBPartView_if, JP.go.ipa.oz.lib.standard._Frame_cl
+a, hierarchyFrame, 0x0, LJP.go.ipa.oz.user.ide.CBLocalHierarchyFrame_if, 434, 38
+a, memberListView, 0x0, LJP.go.ipa.oz.user.ide.CBMemberListView_if, 344, 33
+a, targetCID, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 507, 18
+a, ancestorPartList, 0x0, LJP.go.ipa.oz.lib.standard._Collection_if, 198, 29
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 626, 15
+a, targetPart, 0x0, LJP.go.ipa.oz.user.ide.CIPart_if, 175, 19
+a, classView, 0x0, LJP.go.ipa.oz.user.ide.CBClassView_if, 317, 23
+a, targetImplPart, 0x0, LJP.go.ipa.oz.user.ide.CIImplementationPart_if, 583, 37
+a, menubar, 0x0, LJP.go.ipa.oz.user.ide.CBPartViewMenuBar_if, 286, 27
+a, targetIfPart, 0x0, LJP.go.ipa.oz.user.ide.CIInterfacePart_if, 549, 30
+a, classBrowser, 0x0, LJP.go.ipa.oz.user.ide.ClassBrowser_if, 253, 27
+a, methodView, 0x0, LJP.go.ipa.oz.user.ide.CBMethodView_if, 381, 25
+a, isImpl, 0x0, Z, 529, 16
+a, panelColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 410, 18
+c, newCBPartView, (LJP.go.ipa.oz.user.ide.CIPart_if, LJP.go.ipa.oz.lib.standard._Collection_if, LJP.go.ipa.oz.user.ide.ClassBrowser_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.user.ide.ClassBrowser_if, JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._Frame_cl), (803, 561, ((907, 6, JP.go.ipa.oz.user.ide.School_if), (928, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, initParams, 0x0, V, (LJP.go.ipa.oz.user.ide.CIPart_if, LJP.go.ipa.oz.lib.standard._Collection_if, LJP.go.ipa.oz.user.ide.ClassBrowser_if), (JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.user.ide.ClassBrowser_if), (JP.go.ipa.oz.lib.standard._Color_cl), (3895, 453, ())
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1522, 55, ())
+m, initGUI, 0x0, V, (), (JP.go.ipa.oz.lib.standard._GridBagLayout_if, JP.go.ipa.oz.lib.standard._GridBagConstraints_if, JP.go.ipa.oz.lib.standard._Insets_if), (JP.go.ipa.oz.user.ide.CBPartViewMenuBar_cl, JP.go.ipa.oz.lib.standard._GridBagLayout_cl, JP.go.ipa.oz.lib.standard._GridBagConstraints_cl, JP.go.ipa.oz.lib.standard._Insets_cl, JP.go.ipa.oz.user.ide.CBClassView_cl, JP.go.ipa.oz.user.ide.CBMethodView_cl, JP.go.ipa.oz.user.ide.CBMemberListView_cl), (2211, 1602, ((2236, 13, JP.go.ipa.oz.lib.standard._GridBagLayout_if), (2264, 18, JP.go.ipa.oz.lib.standard._GridBagConstraints_if), (2302, 6, JP.go.ipa.oz.lib.standard._Insets_if)))
+m, showLocalHierarchy, 0x1, V, (), (JP.go.ipa.oz.user.ide.CBIGraph_if), (JP.go.ipa.oz.user.ide.CBLocalHierarchyFrame_cl), (1814, 239, ((1857, 8, JP.go.ipa.oz.user.ide.CBIGraph_if)))
+m, mkLocalHierarchyGraph, 0x0, LJP.go.ipa.oz.user.ide.CBIGraph_if, (), (JP.go.ipa.oz.user.ide.CBIGraph_if, JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lib.standard._Set_if, JP.go.ipa.oz.lib.standard._Collection_if, JP.go.ipa.oz.lib.standard._Iterator_if), (JP.go.ipa.oz.user.ide.CBIGraph_cl, JP.go.ipa.oz.lib.standard._Set_cl), (4432, 700, ((4475, 8, JP.go.ipa.oz.user.ide.CBIGraph_if), (4497, 6, JP.go.ipa.oz.user.ide.CIPart_if), (4516, 3, JP.go.ipa.oz.lib.standard._Set_if), (4552, 10, JP.go.ipa.oz.lib.standard._Collection_if), (4584, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))
+m, getClassBrowser, 0x1, LJP.go.ipa.oz.user.ide.ClassBrowser_if, (), (), (), (1659, 73, ())

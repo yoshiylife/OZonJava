@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="num.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="equ.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>関係演算子（Relational Operators)<BR>
+</H3>
+<BR clear="all">
+<P>
+<BR>
+</P>
+<P>
+ここでは、OZ言語の関係演算子について説明しています。<BR>
+<BR>
+<BR>
+OZ言語には、以下の4つの関係演算子があります。
+</P>
+<TABLE cellspacing="3">
+  <TR>
+    <TD width="15"></TD>
+    <TD width="15"><B>&lt;</B></TD>
+    <TD width="15"><B>&gt;</B></TD>
+    <TD width="15"><B>&lt;=</B></TD>
+    <TD width="15"><B>&gt;=</B></TD></TR>
+</TABLE>
+
+<P>
+<BR>
+関係演算子は左結合的（left-associative）です。すなわち、i&lt;j&lt;k は(
+i&lt;j)&lt;k)と解釈されます。<BR>
+<BR>
+<BR>
+関係演算子を用いる式は二項演算式を形成し、式の値は論理型です。<BR>
+<BR>
+<BR>
+</P>
+<P>
+<BR>
+<B>関係演算子</B>
+</P>
+<DL>
+  <DD>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" valign="top" width="15"><B>&lt;</B></TD>
+      <TD>左のオペランドの値が右のオペランドの値より小さいとき true、それ以外は
+false の値を持ちます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>&gt;</B></TD>
+      <TD>左のオペランドの値が右のオペランドの値より大きいとき true、それ以外は
+false の値を持ちます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>&lt;=</B></TD>
+      <TD>左のオペランドの値が右のオペランドの値より小さいか等しいとき true、それ以外は
+false の値を持ちます。</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>&gt;=</B></TD>
+      <TD>左のオペランドの値が右のオペランドの値より大きいか等しいとき true、それ以外は
+falseの値を持ちます。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+<PRE>
+  binary_exp_2 : binary_exp_2 binary_operator_2 binary_exp_1
+                 binary_exp_1
+                    
+  binary_operator_2 : &lt;
+                      &gt;
+                      &lt;=
+                      &gt;=
+ 
+</PRE>
+<BR>
+<BR>
+<B>説明</B><BR>
+<BR>
+関係演算子の2つのオペランドはともに数値型でなくてはいけません。<BR>
+オペランド間で型の昇格が発生します。そして、式はその昇格された型を持ちます。<BR>
+その型がfloat型、あるいは、double型であれば、浮動少数比較 (floating-point
+comparison)が行われます。その他の数値型であれば符号付き整数比較(signed
+integer comparison)が行われます。<BR>
+<BR>
+式の値は、論理型になります。<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+例: 関係演算子<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+1:  while (true) {
+2:      int size = is-&gt;available ();
+3:      if (size &gt;= 3) break;
+4:  }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+  <UL>
+    <LI>3行目でint型の変数sizeが値3よりも大きければ、この関係演算子を利用した式の値は
+true になります。そうでなければ式の値はfalseです。
+  </UL>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="num.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="equ.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

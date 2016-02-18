@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.iq._Monit_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.iq._Monit_if, JP.go.ipa.oz.lang._Root_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 477, 14
+a, dummy, 0x0, N, 494, 16
+c, create, (), (), (JP.go.ipa.oz.lib.standard._System_cl), (517, 30, ())
+m, monit, 0x21, V, (J), (), (), (550, 63, ())

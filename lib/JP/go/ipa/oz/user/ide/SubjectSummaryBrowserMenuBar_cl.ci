@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuBar_cl, 0x0, JP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuBar_if, JP.go.ipa.oz.lib.standard._MenuBar_cl
+a, menuSystem, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 731, 36
+a, sgBrowser, 0x0, LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, 651, 35
+a, ssBrowser, 0x0, LJP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if, 690, 35
+c, createExportMenu, (LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, LJP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if), (JP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, JP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if), (JP.go.ipa.oz.lib.standard._MenuBar_cl), (1228, 214, ())
+c, createBrowseMenu, (LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, LJP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if), (JP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, JP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if), (JP.go.ipa.oz.lib.standard._MenuBar_cl), (929, 213, ())
+m, mkSystemMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (Z), (JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if, JP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuListener_if), (JP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuListener_cl, JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (1676, 1003, ((1723, 4, JP.go.ipa.oz.lib.standard._Menu_if), (1740, 8, JP.go.ipa.oz.lib.standard._MenuItem_if), (1765, 8, JP.go.ipa.oz.lib.standard._MenuItem_if), (1794, 33, JP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuListener_if)))

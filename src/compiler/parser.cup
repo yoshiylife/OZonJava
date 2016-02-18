@@ -1,0 +1,2106 @@
+/*
+ * $Id: parser.cup,v 0.33 1998-02-02 08:31:47+09 otokawa Exp $
+ */
+
+/*
+ * created by Hideyuki OTOKAWA, Sharp corp.
+ * 1996.11.12
+ */
+
+/* parser for OZ language compiler */
+
+import java_cup.runtime.*;
+
+/* Preliminaries to set up and use the scanner.  */
+
+action code {:
+  ParserAction action;
+
+  /* initialization */
+  final void init (int mode) {
+    action = new ParserAction (mode);
+  }
+
+  /* processing after parsing */
+  final ClassList after () {
+    return action.after ();
+  }
+:};
+
+parser code {:
+  /* scanner object */
+  private scanner scanner_obj;
+
+  /* mode of parser, see also 'action code' */
+  int parser_mode;
+
+  public void syntax_error (token cur_token) {
+    OzcError.print ("syntaxError");
+  }
+
+  public void unrecovered_syntax_error (token cur_token) {}
+
+  /* set parser_mode (flag) of action object */
+  public void user_init () {
+    action_obj.init (parser_mode);
+  }
+
+  /* parse */
+  private synchronized ClassList parse (String file) {
+    OzcError.initialize (file);
+    Emitter.reset ();
+
+    try {
+      scanner_obj = new scanner (file);
+      try {
+	if (ozc.isDebug ()) 
+	  debug_parse ();
+	else
+	  parse ();
+      } catch (StopCompilation e) {
+	OzcError.cannotCompileInterface (file);
+      } catch (Exception e) {
+	ozc.catchException (e);
+      }
+
+      /* important */
+      ClassList class_list = action_obj.after ();
+
+      int no_errors = OzcError.getNoErrors ();
+      if (no_errors > 0) {
+	ozc.debugln (file + ": " + no_errors + " errors occured.");
+
+	for (int i = 0, size = class_list.size (); i < size; i++) {
+	  ClassType c = class_list.get (i);
+	  c.status = ClassType.CLS_CANNOT_COMPILE;
+	}	
+
+	return null;
+      } 
+	
+      return class_list;
+    } catch (java.io.IOException e) {
+      OzcError.cannotOpenFile (file);
+      return null;
+    } finally {
+      OzcError.finish ();
+    }
+
+  }
+
+  boolean parseDebug (String file, boolean only_if) {
+    parser_mode = ParserAction.PM_DEBUG;
+    if (only_if)
+      parser_mode |= ParserAction.PM_INTERFACE;
+    if (parse (file) == null)
+      return false;
+    else
+      return true;
+  }
+
+  ClassList parseInterface (String file) {
+    if (ozc.isVerbose ())
+      ozc.debugln (file + ": compiling for interface.");
+
+    parser_mode = ParserAction.PM_INTERFACE;
+    ClassList cl = parse (file);
+
+    return cl;
+  }
+
+  ClassList parseImplementation (String file) {
+    if (ozc.isVerbose ())
+      ozc.debugln (file + ": compiling for implementation.");
+
+    parser_mode = ParserAction.PM_IMPLEMENTATION;
+    ClassList cl = parse (file);
+
+    return cl;
+  }
+
+:};
+
+scan with {:
+    return scanner_obj.getNextToken();
+:};
+
+/* Terminals (tokens returned by the scanner). */
+
+/* the reserved words */
+terminal OzToken      ABSTRACT, BOOL, BREAK, BYTE;
+terminal OzToken      CASE, CATCH, CELL, CHAR, CLASS;
+terminal OzToken      CONDITION, CONTINUE, DEFAULT, DO, DOUBLE, ELSE, FINAL;
+terminal OzToken      FINALLY, FLOAT, FOR;
+terminal OzToken      IF, INT, LOCKED, LONG, NEW, ONCE;
+terminal OzToken      PROTECTED, PUBLIC;
+terminal OzToken      THROW, RETURN, SHORT, STATIC, SUPER, SWITCH;
+terminal OzToken      THIS, TRANSIENT, TRY, VOID, WHILE, JAVA;
+terminal OzStrToken   TRUE, FALSE, NULL;
+
+/* the delimiter marks */
+terminal OzToken      LPAREN, RPAREN, LBRACE, RBRACE, SEMI, COLON, COMMA, DOT;
+terminal OzToken      QUESTION, POINTSTAT, INSTANTIATE, ANDAND, OROR;
+terminal OzStrToken   EXCLAM, PLUS, MINUS, PLUSPLUS, MINUSMINUS;
+terminal OzStrToken   TIMES, DIVIDE, MOD, LANGLE, RANGLE, EQUAL;
+terminal OzStrToken   LTE, GTE, EQUALEQUAL;
+terminal OzStrToken   NOTEQUAL, PLUSEQUAL, MINUSEQUAL;
+terminal OzStrToken   TIMESEQUAL, DIVIDEEQUAL;
+terminal OzStrToken   ANDANDEQUAL, OROREQUAL, MODEQUAL;
+terminal OzStrToken   EQUALBAR;
+terminal OzStrToken   POSTPLUSPLUS, POSTMINUSMINUS;
+
+terminal OzStrToken  INT_LITERAL, LONG_LITERAL;
+terminal OzStrToken  FLOAT_LITERAL, DOUBLE_LITERAL;
+terminal OzStrToken  CHAR_LITERAL;
+terminal OzStrToken  STRING_LITERAL;
+terminal OzStrToken  IDENTIFIER;
+
+/* Non terminals */
+non terminal symbol class_declarations, class_declaration;
+non terminal symbol super_classes, super_class_list, interface_list;
+non terminal symbol class_body;
+non terminal symbol member_declarations, member_declaration;
+non terminal symbol attribute_declaration, method_declaration;
+non terminal symbol constructor_declaration;
+non terminal symbol method_body, non_empty_method_body;
+non terminal TypeSym type_name;
+non terminal int_token class_modifier_list, class_modifier;
+non terminal OzToken access_modifier;
+non terminal OzToken modifier_list, modifier, class_or_cell;
+
+non terminal ListSym argument_declarations;
+non terminal ListSym identifier_list;
+non terminal ListSym identifier_only_or_with_initializer_list;
+non terminal IdentifierSym identifier_only_or_with_initializer;
+non terminal OzStrToken identifier_or_empty;
+
+non terminal StatementSym stmt, label_stmt, exp_stmt;
+non terminal StatementSym compound_stmt, if_stmt, switch_stmt;
+non terminal StatementSym declaration_stmt, while_stmt, do_stmt, for_stmt;
+non terminal StatementSym for_initialize_stmt, jump_stmt;
+non terminal StatementSym throw_stmt, try_stmt;
+non terminal StatementSym switch_block, block_stmt;
+non terminal ListSym catch_list;
+non terminal TryBodySym try_body;
+non terminal IfBodySym if_body;
+non terminal StatementSym switch_label;
+non terminal OzStrToken stmt_list, switch_block_stmts, switch_block_stmt;
+non terminal OzStrToken switch_labels_or_empty;
+non terminal OzStrToken switch_labels;
+
+non terminal ExpressionSym exp, exp_or_empty, primary, postfix_exp, unary_exp;
+non terminal ExpressionSym conditional_exp, stmt_exp_list;
+non terminal ExpressionSym instantiate_exp_for_local_variable;
+non terminal ExpressionSym method_invoke_exp, instantiate_exp;
+non terminal ExpressionSym binary_exp_0, binary_exp_1, binary_exp_2;
+non terminal ExpressionSym binary_exp_3, binary_exp_4, binary_exp_5;
+non terminal ExpressionSym literal, name, assign_exp, attribute_access;
+non terminal ExpressionSym pre_increment_or_decrement_exp;
+non terminal ExpressionSym post_increment_or_decrement_exp;
+non terminal ExpressionSym exp_of_exp_stmt;
+non terminal ListSym argument_list;
+
+non terminal OzStrToken binary_operator_0, binary_operator_1;
+non terminal OzStrToken binary_operator_2, binary_operator_3;
+non terminal OzStrToken unary_operator;
+non terminal OzStrToken assign_operator1, assign_operator2, assign_operator3;
+non terminal OzStrToken increment_or_decrement_operator;
+
+/* The grammar */
+
+class_declarations  ::= class_declarations class_declaration
+			{:
+			   action.classDeclarations ();
+			:}
+                    |   class_declaration
+			{:	
+			   action.classDeclarations ();
+			:}
+                    |   error
+                    ;
+
+class_declaration   ::= class_modifier_list:m class_or_cell:c IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) {
+			     if (c.int_val == sym.CELL)
+			       Emitter.emit ("cell " + i.str_val);
+			     else
+			       Emitter.emit ("class " + i.str_val);
+			   } else 
+			     action.classDeclaration (m.int_val, c.int_val,
+						      i);
+                        :}
+                        super_classes class_body
+                        {:
+                        :}
+                    ;
+
+class_or_cell	    ::= CLASS 
+			{:
+			   RESULT.int_val = sym.CLASS;
+			:}
+		    |	CELL
+			{:
+			   RESULT.int_val = sym.CELL;
+			:}
+                    ;
+
+class_modifier_list ::=
+                        {:
+			   RESULT.int_val = 0;
+                        :}
+		    |   class_modifier_list:m_list class_modifier:m
+                        {:
+			   RESULT.int_val = m_list.int_val |= m.int_val;
+                        :}
+		    ;
+
+class_modifier      ::= ABSTRACT:m
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("abstract ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.ABSTRACT;
+                        :}
+                    |   FINAL:m
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("final ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.FINAL;
+                        :}
+                    |   PROTECTED:m
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("protected ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.PROTECTED;
+                        :}
+                    ;
+
+super_classes       ::=
+                        {:
+			   action.superClasses ();
+                        :}
+                    |   COLON 
+                        {:
+		
+			   if (action.isDebug ()) {
+			     Emitter.emit (" : ");
+			     return CUP$result;
+			   }
+                        :}
+			super_class_list
+                    ;
+
+super_class_list    ::= TIMES IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("*" + i.str_val);
+			     return CUP$result;
+			   }
+
+			   action.superClassList (i);
+                        :}
+		    |   TIMES IDENTIFIER:i COMMA 
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("*" + i.str_val + ", ");
+			     return CUP$result;
+			   }
+			   action.superClassList (i);
+                        :}
+			interface_list
+		    |   interface_list
+                        {:
+			   if (action.isDebug ()) {
+			     return CUP$result;
+			   }
+			   action.superClassList ();
+                        :}
+		    ;
+
+interface_list      ::= interface_list COMMA IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit (", " + i.str_val);
+			     return CUP$result;
+			   }
+
+			   action.superInterfaceList (i);
+                        :}
+                    |   IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit (i.str_val);
+			     return CUP$result;
+			   }
+
+			   action.superInterfaceList (i);
+                        :}
+                    ;
+
+class_body          ::= LBRACE 
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit (" {");
+			     Emitter.indentPush ();
+			     Emitter.emitln ();
+			   }
+                        :}
+			member_declarations RBRACE
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.indentPop ();
+			     Emitter.emitln ();
+			     Emitter.emitln ("}");
+			     Emitter.emitln ();
+			   }
+                        :}
+                    |   error RBRACE
+                    ;
+
+member_declarations ::=
+                    |   member_declarations member_declaration
+                    ;
+
+member_declaration  ::= attribute_declaration
+                    |   method_declaration
+                    |   constructor_declaration
+                    |   error SEMI
+                    |   error RBRACE
+                    ;
+
+attribute_declaration   ::= access_modifier:am modifier_list:m type_name:t identifier_list:i_list SEMI:s
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emitln (t.str_val + i_list.str_val + ";");
+			     Emitter.emitln ();
+			   }
+
+			   int pos = am.int_val == 0 ? m.int_val == 0 ? t.getOffset () : m.getOffset () : am.getOffset ();
+
+			   action.attributeDeclaration (am.int_val, m.int_val, 
+							t.type,
+							(IdentifierList) i_list.list, pos, s.offset);
+			:}
+                        ;
+
+method_declaration  ::= access_modifier:am modifier_list:m type_name:t IDENTIFIER:i LPAREN argument_declarations:a_list RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit (t.str_val + i.str_val + 
+					   " (" + a_list.str_val + ")");
+			     return CUP$result;
+			   }
+
+			   int pos = am.int_val == 0 ? m.int_val == 0 ? t.getOffset () : m.getOffset () : am.getOffset ();
+
+			   action.methodDeclaration (am.int_val, m.int_val,
+						     t.type, i.str_val,
+						     (ExpressionList) a_list.list, pos);
+                        :}
+			method_body
+		    |	access_modifier:am modifier_list:m VOID:t IDENTIFIER:i LPAREN argument_declarations:a_list RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("void " + i.str_val + " (" + 
+					   a_list.str_val + ")");
+			     return CUP$result;
+			   }
+
+			   int pos = am.int_val == 0 ? m.int_val == 0 ? t.getOffset () : m.getOffset () : am.getOffset ();
+
+			   action.methodDeclaration (am.int_val, m.int_val,
+						     PrimitiveType.VOID, 
+						     i.str_val,
+						     (ExpressionList) a_list.list, pos);
+                        :}
+			method_body
+                    ;
+
+constructor_declaration  ::= NEW IDENTIFIER:i LPAREN argument_declarations:a_list RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("new " + i.str_val + " (" +
+					   a_list.str_val + ")");
+			     return CUP$result;
+			   }
+
+			   action.constructorDeclaration (Constants.NEW, 0, 
+							  PrimitiveType.VOID,
+							  i.str_val, 
+							  (ExpressionList) a_list.list, i.getOffset ());
+                        :}
+			non_empty_method_body
+                    ;
+
+access_modifier     ::=
+			{:
+			   RESULT.int_val = Constants.PRIVATE;
+			:}
+                    |   PUBLIC:m
+			{:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("public ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.PUBLIC;
+			   RESULT.offset = m.getOffset ();
+			:}
+                    |   PROTECTED:m
+			{:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("protected ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.PROTECTED;
+			   RESULT.offset = m.getOffset ();
+			:}
+                    ;
+
+modifier_list	    ::= 
+			{:
+			   RESULT.int_val = 0;
+			:}
+		    |   modifier_list:m_list modifier:m
+			{:
+			   RESULT.int_val = m_list.int_val |= m.int_val;
+			   if (m_list.offset == 0)  
+			     RESULT.offset = m.getOffset ();
+			:}
+		    ;
+
+modifier            ::= FINAL:m
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("final ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.FINAL;
+			   RESULT.offset = m.getOffset ();
+                        :}
+                    |   STATIC:m    /* only for method */
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("static ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.STATIC;
+			   RESULT.offset = m.getOffset ();
+                        :}
+                    |   LOCKED:m    /* only for method */
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("locked ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.LOCKED;
+			   RESULT.offset = m.getOffset ();
+                        :}
+                    |   ONCE:m      /* only for method */
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("once ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.ONCE;
+			   RESULT.offset = m.getOffset ();
+                        :}
+                    |   ABSTRACT:m  /* only for method */
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("abstract ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.ABSTRACT;
+			   RESULT.offset = m.getOffset ();
+                        :}
+                    |   TRANSIENT:m /* only for attribute */
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emit ("transient ");
+			     return CUP$result;
+			   }
+
+			   RESULT.int_val = Constants.TRANSIENT;
+			   RESULT.offset = m.getOffset ();
+                        :}
+                    ;
+
+type_name           ::= BYTE:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "byte ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.BYTE;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   CHAR:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "char ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.CHAR;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   SHORT:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "short ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.SHORT;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   INT:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "int ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.INT;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   LONG:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "long ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.LONG;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   FLOAT:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "float ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.FLOAT;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   DOUBLE:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "double ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.DOUBLE;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   BOOL:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "bool ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.BOOL;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   CONDITION:t
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "condition ";
+			     return CUP$result;
+			   }
+
+			   RESULT.type = PrimitiveType.CONDITION;
+			   RESULT.line_no = t.line_no;
+			   RESULT.offset = t.getOffset ();
+                        :}
+                    |   IDENTIFIER:i  /* class */
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (i.str_val);
+			     RESULT.append (" ");
+			     return CUP$result;
+			   }
+
+			   RESULT.type = i;
+			   RESULT.line_no = i.line_no;
+			   RESULT.offset = i.getOffset ();
+                        :}
+                    |   class_or_cell:c IDENTIFIER:i  /* class */
+                        {:
+			   if (action.isDebug ()) {
+			     if (c.int_val == sym.CELL)
+			       RESULT.append ("cell ");
+			     else
+			       RESULT.append ("class ");
+			     RESULT.append (i.str_val);
+			     RESULT.append (" ");
+			     return CUP$result;
+			   }
+
+			   RESULT.type = i;
+			   RESULT.line_no = i.line_no;
+			   RESULT.offset = c.getOffset ();
+                        :}
+                    ;
+
+method_body         ::= SEMI:s    /* abstract method */
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.emitln (";");
+			     Emitter.emitln ();
+			     return CUP$result;
+			   }
+
+			   action.emptyMethodBody (s.offset);
+                        :}
+                    |   non_empty_method_body
+		    ;
+			
+non_empty_method_body	::= LBRACE:l
+			{:
+			   if (action.isDebug ()) {
+			     Emitter.emit (" {");
+			     Emitter.indentPush ();
+			   }
+
+			   action.nonEmptyMethodBodyBefore (l.line_no);
+			:}
+			    stmt_list:s RBRACE:r
+			{:
+			   if (action.isDebug ()) {
+			     if (s.str_val.length () == 0) {
+			       Emitter.indentPop ();
+			     } else {
+			       Emitter.emit (s.str_val);
+			       Emitter.indentPop ();
+			       Emitter.emitln ();
+			     }
+			     Emitter.emitln ("}");
+			     Emitter.emitln ();
+			     return CUP$result;
+			   }
+			   action.nonEmptyMethodBodyAfter (r.offset);
+			:}
+	                    ;
+
+argument_declarations   ::=
+			{:
+			   action.argumentDeclarations (RESULT);
+			:}
+                        |   argument_declarations:a_list COMMA type_name:t IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (a_list.str_val);
+			     RESULT.append (", ");
+			     RESULT.append (t.str_val);
+			     RESULT.append (i.str_val);
+			     return CUP$result;
+			   }
+
+			   action.argumentDeclarations (RESULT, (IdentifierList) a_list.list, t.type, i);
+                        :}
+                        |   type_name:t IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (t.str_val);
+			     RESULT.append (i.str_val);
+			     return CUP$result;
+			   }
+
+			   action.argumentDeclarations (RESULT, t.type, i);
+                        :}
+                        ;
+
+identifier_list     ::= identifier_list:i_list COMMA IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (i_list.str_val);
+			     RESULT.append (", ");
+			     RESULT.append (i.str_val);
+			   }
+
+			  action.identifierList (RESULT, (IdentifierList) i_list.list, i.str_val, i.line_no);
+                        :}
+                    |   IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = i.str_val;
+
+			   action.identifierList (RESULT, i.str_val, i.line_no);
+                        :}
+                    ;
+
+identifier_only_or_with_initializer_list    ::= identifier_only_or_with_initializer_list:i_list COMMA identifier_only_or_with_initializer:i
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (i_list.str_val);
+			     RESULT.append (", ");
+			     RESULT.append (i.str_val);
+			   }
+
+			   action.identifierOnlyOrWithInitializerList (RESULT, (IdentifierList) i_list.list, i.id);
+			:}
+                                            |   identifier_only_or_with_initializer:i
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = i.str_val;
+
+			   action.identifierOnlyOrWithInitializerList (RESULT, i.id);
+			:}
+			;
+
+identifier_only_or_with_initializer ::= IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = i.str_val;
+			   
+			   action.identifierOnlyOrWithInitializer (RESULT, i);
+			:}
+	                            |   IDENTIFIER:i EQUAL exp:e
+			{:
+			   if (action.isDebug ()) {
+			     RESULT.append (i.str_val);
+			     RESULT.append (" = ");
+			     RESULT.append (e.str_val);
+			   }
+			   
+			   action.identifierWithInitializer (RESULT, i, e.exp);
+			:}
+				    | instantiate_exp_for_local_variable:i
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = i.str_val;
+			   
+			   action.identifierWithInitializer (RESULT, i.exp);
+			:}
+                                    ;
+
+identifier_or_empty ::=
+                    |   IDENTIFIER:i /* for jump label */
+                        {:
+			   if (action.isDebug ())
+			     RESULT.str_val = i.str_val;
+
+			   action.identifierOrEmpty (RESULT, i.str_val);
+                        :}
+                    ;
+
+/* statement */
+stmt                ::= label_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   exp_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   compound_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   if_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   switch_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   while_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   do_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   for_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   jump_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   throw_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   try_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   SEMI:s    /* null statement */
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append (";");
+			     return CUP$result;
+			   }
+
+			   action.stmt (RESULT, s.line_no);
+                        :}
+                    |   error SEMI:s
+                        {:
+			   action.stmt (RESULT, s.line_no);
+                        :}
+                    |   error RBRACE:r
+                        {:
+			   action.stmt (RESULT, r.line_no);
+                        :}
+                    ;
+
+block_stmt          ::= declaration_stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+                    |   stmt:s
+                        {:
+			   action.stmt (RESULT, 
+					s.str_val, s.st);
+                        :}
+		    ;
+
+stmt_list           ::=
+                    |   stmt_list:s_list block_stmt:s
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (s_list.str_val);
+			     RESULT.append (s.str_val);
+			   }
+
+			   action.stmtList (s.st);
+                        :}
+                    ;
+
+label_stmt	    ::= IDENTIFIER:i COLON
+                        {:
+			   action.labelStmtFirst (i.str_val);
+                        :}
+			stmt:s     
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append (i.str_val);
+			     RESULT.append (":");
+			     RESULT.append (s.str_val);
+			   }
+
+			   action.labelStmtSecond (RESULT, i.str_val, s.st, i.line_no);
+                        :}
+                    ;
+
+exp_stmt            ::= exp_of_exp_stmt:e SEMI
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append (e.str_val);
+			     RESULT.append (";");
+			   }
+
+			   action.expStmt (RESULT, e.exp);
+                        :}
+                    ;
+
+compound_stmt        ::= LBRACE:l
+                        {:
+			   if (action.isDebug ()) 
+			     Emitter.indentPush ();
+			   
+			   action.compoundStmtFirst (l.line_no);
+			:}
+                        stmt_list:s RBRACE
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.indentPop ();
+
+			     RESULT.append ("{");
+			     RESULT.append (s.str_val);
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("}");
+			   }
+
+			   action.compoundStmtSecond (RESULT);
+                        :}
+                    ;
+
+declaration_stmt    ::= type_name:t
+			{:
+			   if (!action.isParseImplementation ()) 
+			     return CUP$result;
+
+			   action.declarationStmtFirst (t.type);
+                        :}
+                        identifier_only_or_with_initializer_list:i_list SEMI
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append (t.str_val);
+			     RESULT.append (i_list.str_val);
+			     RESULT.append (";");
+			   }
+
+			   action.declarationStmtSecond (RESULT, (IdentifierList) i_list.list, t.line_no);
+                        :}
+                    ;
+
+if_stmt             ::= IF:is LPAREN exp:e RPAREN if_body:b
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("if (");
+			     RESULT.append (e.str_val);
+			     RESULT.append (")");
+			     RESULT.append (b.str_val);
+			   }
+
+			   action.ifStmt (RESULT, e.exp, b.if_st, b.else_st, is.line_no);
+                        :}
+                    ;
+
+if_body             ::= stmt:s
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.checkBlock (s.str_val);
+
+			   action.ifBody (RESULT, s.st);
+                        :}
+                    |   stmt:s1 ELSE stmt:s2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.checkBlock (s1.str_val);
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("else ");
+			     RESULT.checkBlock (s2.str_val);
+			   }
+
+			   action.ifBody (RESULT, s1.st, s2.st);
+                        :}
+                    ;
+
+switch_stmt         ::= SWITCH:ss LPAREN exp:e RPAREN 
+                        {:
+			   action.switchStmtFirst ();
+                        :}
+			switch_block:s
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("switch (");
+			     RESULT.append (e.str_val);
+			     RESULT.append (") ");
+			     RESULT.append (s.str_val);
+			   }
+
+			   action.switchStmtSecond (RESULT, e.exp, (CompoundSt) s.st, ss.line_no);
+                        :}
+                    ;
+
+switch_block	    ::= LBRACE:l
+                        {:
+			   if (action.isDebug ()) 
+			     Emitter.indentPush ();
+
+			   action.compoundStmtFirst (l.line_no);
+                        :}
+		        switch_block_stmts:s switch_labels_or_empty:e RBRACE
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.indentPop ();
+
+			     RESULT.append ("{");
+			     RESULT.append (s.str_val);
+			     RESULT.append (e.str_val);
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("}");
+			   }
+
+			   action.compoundStmtSecond (RESULT);
+                        :}
+		    ;
+
+switch_block_stmts  ::= 
+                    |   switch_block_stmts:s_list switch_block_stmt:s
+			{:
+			   if (action.isDebug ()) {
+			     RESULT.append (s_list.str_val);
+			     RESULT.append (s.str_val);
+			   }
+                        :}
+                    ;
+
+switch_block_stmt   ::= switch_labels:l_list stmt:s
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (l_list.str_val);
+			     RESULT.append (s.str_val);
+			     return CUP$result;
+			   }
+
+			   action.stmtList (s.st);
+                        :}
+		    |   stmt:s
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = s.str_val;
+
+			   action.stmtList (s.st);
+                        :}
+		    ;
+
+switch_labels_or_empty ::= 	
+		       |   switch_labels:l_list
+			{:
+			   RESULT.str_val = l_list.str_val;
+			:}
+			;
+
+switch_labels	    ::= switch_label:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.stmtList (l.st);
+                        :}
+
+		    | 	switch_labels:l_list switch_label:l
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (l_list.str_val);
+			     RESULT.append (l.str_val);
+			   }
+
+			   action.stmtList (l.st);
+                        :}
+		    ;
+
+switch_label        ::= CASE:c exp:e COLON
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.indentPop ();
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("case ");
+			     RESULT.append (e.str_val);
+			     RESULT.append (":");
+			     Emitter.indentPush ();
+			   }
+
+			   action.switchLabel (RESULT, e.exp, c.line_no);
+                        :}
+                    |   DEFAULT:d COLON
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.indentPop ();
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("default:");
+			     Emitter.indentPush ();
+			   }
+
+			   action.switchLabel (RESULT, d.line_no);
+                        :}
+		    ;
+
+while_stmt          ::= WHILE:ws LPAREN exp:e RPAREN 
+                        {:
+			   action.loopStmtBefore ();
+                        :}
+			stmt:s
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("while (");
+			     RESULT.append (e.str_val);
+			     RESULT.append (")");
+			     RESULT.checkBlock (s.str_val);
+			   }
+
+			   action.whileStmt (RESULT, e.exp, s.st, ws.line_no);
+                        :}
+                    ;
+
+do_stmt             ::= DO:ds
+                        {:
+ 			   action.loopStmtBefore ();
+                        :}
+			stmt:s WHILE LPAREN exp:e RPAREN SEMI
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("do ");
+			     RESULT.checkBlock (s.str_val);
+			     /* RESULT.appendLineBreak (); */
+			     RESULT.append (" while (");
+			     RESULT.append (e.str_val);
+			     RESULT.append (");");
+			   }
+
+			   action.doStmt (RESULT, e.exp, s.st, ds.line_no);
+			:}
+                    ;
+
+for_stmt            ::= FOR:fs 
+                        {:
+			   action.loopStmtBefore ();
+			   action.enterBlock (fs.line_no);
+                        :}
+			LPAREN for_initialize_stmt:i_st exp_or_empty:e1 SEMI stmt_exp_list:e2 RPAREN stmt:s
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("for (");
+			     RESULT.append (i_st.str_val);
+			     RESULT.append (e1.str_val);
+			     RESULT.append ("; ");
+			     RESULT.append (e2.str_val);
+			     RESULT.append (") ");
+			     RESULT.checkBlock (s.str_val);
+			   }
+
+			   action.forStmt (RESULT, i_st.st, 
+					   e1.exp, e2.exp, s.st,
+					   fs.line_no);
+                        :}
+                    ;
+
+for_initialize_stmt ::= type_name:t 
+                        {:
+			   action.declarationStmtFirst (t.type);
+                        :}
+			identifier_only_or_with_initializer_list:i_list SEMI
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (t.str_val);
+			     RESULT.append (i_list.str_val);
+			     RESULT.append ("; ");
+			   }
+
+			   action.forInitializeStmt (RESULT, (IdentifierList) i_list.list, t.line_no);
+                        :}
+                    |   stmt_exp_list:e SEMI:s
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e.str_val);
+			     RESULT.append ("; ");
+			   }
+
+			   action.forInitializeStmt (RESULT, e.exp, s.line_no);
+                        :}
+                    ;
+
+jump_stmt           ::= BREAK:b identifier_or_empty:i SEMI 
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("break");
+			     if (i.str_val.length () > 0)
+			       RESULT.append (" " + i.str_val);
+			     RESULT.append (";");
+			   }
+
+			   action.jumpStmt (RESULT, i.str_val, b.sym, b.line_no);
+                        :}
+                    |   CONTINUE:c identifier_or_empty:i SEMI 
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("continue");
+			     if (i.str_val.length () > 0)
+			       RESULT.append (" " + i.str_val);
+			     RESULT.append (";");
+			   }
+
+			   action.jumpStmt (RESULT, i.str_val, c.sym, c.line_no);
+                        :}
+                    |   RETURN:r exp_or_empty:e SEMI
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("return");
+			     if (e.str_val.length () > 0)
+			       RESULT.append (" " + e.str_val);
+			     RESULT.append (";");
+			   }
+
+			   action.jumpStmt (RESULT, e.exp, r.line_no);
+                        :}
+                    ;
+
+throw_stmt          ::= THROW:t exp_or_empty:e SEMI /* empty only in CATCH */
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("throw ");
+			     RESULT.append (e.str_val);
+			     RESULT.append (";");
+			   }
+
+			   action.throwStmt (RESULT, e.exp, t.line_no);
+                        :}
+                    ;
+
+try_stmt            ::= TRY:ts compound_stmt:s try_body:c_list
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("try ");
+			     RESULT.append (s.str_val);
+			     RESULT.append (c_list.str_val);
+			   }
+
+			   action.tryStmt (RESULT, s.st, c_list.catch_list,
+					   c_list.finally_st, 
+					   ts.line_no);
+                        :}
+                    ;
+
+try_body            ::= catch_list:c
+                        {:
+			   if (action.isDebug ()) RESULT.str_val = c.str_val;
+
+			   action.tryBody (RESULT, (CatchStList) c.list);
+                        :}
+                    |   catch_list:c FINALLY compound_stmt:s
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (c.str_val);
+			     RESULT.append (" finally ");
+			     RESULT.append (s.str_val);
+			   }
+
+			   action.tryBody (RESULT, (CatchStList) c.list, s.st);
+                        :}
+                    ;
+
+catch_list          ::=
+			{:
+			   action.catchList (RESULT);
+			:}
+                    |   catch_list:c_list CATCH LPAREN type_name:t IDENTIFIER:i RPAREN LBRACE
+                        {:
+			   if (action.isDebug ()) 
+			     Emitter.indentPush ();
+
+			   action.catchListFirst ((CatchStList) c_list.list,
+						  t.type, 
+						  i, t.line_no);
+                        :}
+                        stmt_list:s RBRACE
+                        {:
+			   if (action.isDebug ()) {
+			     Emitter.indentPop ();
+
+			     RESULT.append (c_list.str_val);
+			     RESULT.append (" catch (");
+			     RESULT.append (t.str_val);
+			     RESULT.append (i.str_val);
+			     RESULT.append (") {");
+			     RESULT.append (s.str_val);
+			     RESULT.appendLineBreak ();
+			     RESULT.append ("}");
+			   }
+
+			   action.catchListSecond (RESULT, (CatchStList) c_list.list, i.str_val);
+                        :}
+                    ;
+
+/* expression */
+exp_or_empty        ::=
+                    |   exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+primary		    ::= name:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+		    |	THIS:e
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = "this";
+
+			   action.primary (RESULT, e.line_no);
+                        :}
+                    |   literal:l
+                        {:
+			   action.expOrEmpty (RESULT, l.str_val, l.exp);
+                        :}
+                    |   LPAREN exp:e RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append ("(");
+			     RESULT.append (e.str_val);
+			     RESULT.append (")");
+			   }
+
+			   action.primary (RESULT, e.exp);
+                        :}
+                    |   method_invoke_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    |   instantiate_exp_for_local_variable:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+instantiate_exp_for_local_variable ::= IDENTIFIER:i1 
+                        {:
+			   action.instantiateExpFirst (i1.str_val, i1.line_no);
+                        :}
+			INSTANTIATE IDENTIFIER:i2 LPAREN argument_list:a_list RPAREN
+                        {:    
+			   if (action.isDebug ()) {
+			     RESULT.append (i1.str_val);
+			     RESULT.append ("=>");
+			     RESULT.append (i2.str_val);
+			     RESULT.append (" (");
+			     RESULT.append (a_list.str_val);
+			     RESULT.append (")");
+			   }
+
+			   action.instantiateExpSecond (RESULT, i1.str_val, i2.str_val, (ExpressionList) a_list.list, i1.line_no);
+                        :}
+		    ;
+
+literal             ::= CHAR_LITERAL:l
+                        {:
+			   if (action.isDebug ())
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val,
+					   PrimitiveType.CHAR,
+					   l.line_no);
+                        :}
+                    |   INT_LITERAL:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val, 
+					   PrimitiveType.INT,
+					   l.line_no);
+                        :}
+                    |   LONG_LITERAL:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val, 
+					   PrimitiveType.LONG,
+					   l.line_no);
+                        :}
+                    |   FLOAT_LITERAL:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val, 
+					   PrimitiveType.FLOAT,
+					   l.line_no);
+                        :}
+                    |   DOUBLE_LITERAL:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val, 
+					   PrimitiveType.DOUBLE,
+					   l.line_no);
+                        :}
+                    |   STRING_LITERAL:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val, 
+					   l.line_no);
+                        :}
+                    |   TRUE:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val, 
+					   PrimitiveType.BOOL,
+					   l.line_no);
+                        :}
+                    |   FALSE:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val, 
+					   PrimitiveType.BOOL,
+					   l.line_no);
+                        :}
+                    |   NULL:l
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = l.str_val;
+
+			   action.literal (RESULT, l.str_val, 
+					   ClassType.NULL,
+					   l.line_no);
+                        :}
+                    ;
+
+name                ::= IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = i.str_val;
+
+			   action.name (RESULT, i);
+                        :}
+		    | 	attribute_access:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+		    ;
+
+attribute_access    ::= primary:e POINTSTAT IDENTIFIER:i
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e.str_val);
+			     RESULT.append ("->");
+			     RESULT.append (i.str_val);
+			   }
+
+			   action.attributeAccess (RESULT, e.exp, i.str_val);
+                        :}
+		    ;
+
+method_invoke_exp   ::= primary:e POINTSTAT IDENTIFIER:i LPAREN argument_list:a_list RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e.str_val);
+			     RESULT.append ("->");
+			     RESULT.append (i.str_val);
+			     RESULT.append (" (");
+			     RESULT.append (a_list.str_val);
+			     RESULT.append (")");
+			   }
+
+			   action.methodInvokeExp (RESULT, i.str_val, e.exp, (ExpressionList) a_list.list);
+                        :}
+                    |   IDENTIFIER:i LPAREN argument_list:a_list RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (i.str_val);
+			     RESULT.append (" (");
+			     RESULT.append (a_list.str_val);
+			     RESULT.append (")");
+			   }
+
+			   action.methodInvokeExp (RESULT, i.str_val, (ExpressionList) a_list.list, i.line_no);
+                        :}
+                    |   SUPER POINTSTAT IDENTIFIER:i LPAREN argument_list:a_list RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append ("super->");
+			     RESULT.append (i.str_val);
+			     RESULT.append (" (");
+			     RESULT.append (a_list.str_val);
+			     RESULT.append (")");
+			   }
+
+			   action.superMethodInvokeExp (RESULT, i.str_val, (ExpressionList) a_list.list, i.line_no);
+                        :}
+                    ;
+
+instantiate_exp		::= instantiate_exp_for_local_variable:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+			| attribute_access:e INSTANTIATE IDENTIFIER:i LPAREN argument_list:a_list RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e.str_val);
+			     RESULT.append ("=>");
+			     RESULT.append (i.str_val);
+			     RESULT.append (" (");
+			     RESULT.append (a_list.str_val);
+			     RESULT.append (")");
+			   }
+
+			   action.instantiateExp (RESULT, i.str_val, e.exp, (ExpressionList) a_list.list);
+                        :}
+			| SUPER INSTANTIATE IDENTIFIER:i LPAREN argument_list:a_list RPAREN
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append ("super=>");
+			     RESULT.append (i.str_val);
+			     RESULT.append (" (");
+			     RESULT.append (a_list.str_val);
+			     RESULT.append (")");
+			   }
+
+			   action.instantiateExp (RESULT, i.str_val, (ExpressionList) a_list.list, i.line_no);
+                        :}
+		        ;
+
+argument_list       ::=
+                        {:
+			   action.argumentList (RESULT);
+                        :}
+                    |   argument_list:a_list COMMA exp:e
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (a_list.str_val);
+			     RESULT.append (", ");
+			     RESULT.append (e.str_val);
+			   }
+
+			   action.argumentList (RESULT, (ExpressionList) a_list.list, e.exp);
+                        :}
+                    |   exp:e
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = e.str_val;
+
+			   action.argumentList (RESULT, e.exp);
+                        :}
+                    ;
+
+post_increment_or_decrement_exp	::= postfix_exp:e increment_or_decrement_operator:o
+			{:
+			   if (action.isDebug ()) {
+			     RESULT.append (e.str_val);
+			     RESULT.append (o.str_val);
+			     return CUP$result;
+			   }
+
+			   if (o.sym == sym.PLUSPLUS)
+			     o.sym = sym.POSTPLUSPLUS;
+			   else
+			     o.sym = sym.POSTMINUSMINUS;
+
+			   action.unaryExp (RESULT, e.exp, o.sym);
+			:}
+				;
+
+increment_or_decrement_operator	::= PLUSPLUS:o
+			{:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "++";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = sym.PLUSPLUS;
+			:}
+				|   MINUSMINUS:o
+			{:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "--";
+			     return CUP$result;
+			   }
+			   
+			   RESULT.sym = sym.MINUSMINUS;
+			:}
+		                ;
+
+postfix_exp	    ::= post_increment_or_decrement_exp:e
+			{:
+			   RESULT.str_val = e.str_val;
+			   RESULT.exp = e.exp;
+			:}
+		    |   primary:e
+                        {:
+			   if (action.isDebug ()) 
+			     RESULT.str_val = e.str_val;
+
+			   action.postfixExp (RESULT, e.exp);
+                        :}
+		    ;
+
+pre_increment_or_decrement_exp	::= increment_or_decrement_operator:o unary_exp:e
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (o.str_val);
+			     RESULT.append (e.str_val);
+			     return CUP$result;
+			   }
+
+			   action.unaryExp (RESULT, e.exp, o.sym);
+			:}
+				;
+
+unary_exp           ::= unary_operator:o unary_exp:e
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (o.str_val);
+			     RESULT.append (e.str_val);
+			   }
+
+			   action.unaryExp (RESULT, e.exp, o.sym);
+                        :}
+                    |   pre_increment_or_decrement_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    |   postfix_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+unary_operator      ::= PLUS:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "+";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   MINUS:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "-";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   EXCLAM:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = "!";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    ;
+
+binary_exp_0        ::= binary_exp_0:e1 binary_operator_0:o unary_exp:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (o.str_val);
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.binaryExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+                    |   unary_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+binary_operator_0   ::= TIMES:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " * ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   DIVIDE:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " / ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   MOD:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " % ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    ;
+
+binary_exp_1        ::= binary_exp_1:e1 binary_operator_1:o binary_exp_0:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (o.str_val);
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.binaryExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+                    |   binary_exp_0:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+binary_operator_1   ::= PLUS:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " + ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   MINUS:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " - ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    ;
+
+binary_exp_2        ::= binary_exp_2:e1 binary_operator_2:o binary_exp_1:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (o.str_val);
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.binaryExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+                    |   binary_exp_1:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+binary_operator_2   ::= LANGLE:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " < ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   RANGLE:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " > ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   LTE:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " <= ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   GTE:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " >= ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    ;
+
+binary_exp_3        ::= binary_exp_3:e1 binary_operator_3:o binary_exp_2:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (o.str_val);
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.binaryExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+                    |   binary_exp_2:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+binary_operator_3   ::= EQUALEQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " == ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   NOTEQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " != ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    ;
+
+binary_exp_4        ::= binary_exp_4:e1 ANDAND:o binary_exp_3:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (" && ");
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.binaryBoolExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+                    |   binary_exp_3:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+binary_exp_5        ::= binary_exp_5:e1 OROR:o binary_exp_4:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (" || ");
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.binaryBoolExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+                    |   binary_exp_4:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+conditional_exp     ::= binary_exp_5:e1 QUESTION conditional_exp:e2 COLON conditional_exp:e3
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (" ? ");
+			     RESULT.append (e2.str_val);
+			     RESULT.append (" : ");
+			     RESULT.append (e3.str_val);
+			   }
+
+			   action.conditionalExp (RESULT, e1.exp, e2.exp, e3.exp);
+                        :}
+                    |   binary_exp_5:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+assign_exp	    ::= name:e1 assign_operator1:o exp:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (o.str_val);
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.assignExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+		    |   name:e1 assign_operator2:o exp:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (o.str_val);
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.assignNumericExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+		    |   name:e1 assign_operator3:o exp:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (o.str_val);
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.assignBoolExp (RESULT, e1.exp, e2.exp, o.sym);
+                        :}
+		    ;
+
+assign_operator1    ::= EQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " = ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   EQUALBAR:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " =| ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+		    ;
+
+assign_operator2    ::= PLUSEQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " += ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   MINUSEQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " -= ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   TIMESEQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " *= ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   DIVIDEEQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " /= ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   MODEQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " %= ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+		    ;
+
+assign_operator3    ::= ANDANDEQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " &&= ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    |   OROREQUAL:o
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.str_val = " ||= ";
+			     return CUP$result;
+			   }
+
+			   RESULT.sym = o.sym;
+                        :}
+                    ;
+
+exp	            ::= assign_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    |   conditional_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+stmt_exp_list 	    ::= 
+	            |   stmt_exp_list:e1 COMMA exp_of_exp_stmt:e2
+                        {:
+			   if (action.isDebug ()) {
+			     RESULT.append (e1.str_val);
+			     RESULT.append (", ");
+			     RESULT.append (e2.str_val);
+			   }
+
+			   action.stmtExpList (RESULT, e1.exp, e2.exp);
+                        :}
+                    |   exp_of_exp_stmt:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+                    ;
+
+exp_of_exp_stmt     ::= assign_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+		    |	pre_increment_or_decrement_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+		    |	post_increment_or_decrement_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+		    |   method_invoke_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+		    |   instantiate_exp:e
+                        {:
+			   action.expOrEmpty (RESULT, e.str_val, e.exp);
+                        :}
+		    ;
+
+/* EOF */

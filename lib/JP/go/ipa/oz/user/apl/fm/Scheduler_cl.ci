@@ -1,0 +1,9 @@
+j, JP.go.ipa.oz.user.apl.fm.Scheduler_cl, 0x0, JP.go.ipa.oz.user.apl.fm.Scheduler_if, JP.go.ipa.oz.user.apl.fm.FMObject_cl
+c, create, (LJP.go.ipa.oz.user.apl.fm.Scheduler_if), (JP.go.ipa.oz.user.apl.fm.Scheduler_if), (JP.go.ipa.oz.user.apl.fm.FMObject_cl), (1506, 97, ())
+c, create, (), (), (JP.go.ipa.oz.user.apl.fm.FMObject_cl), (180, 32, ())
+m, confirm, 0x1, LJP.go.ipa.oz.lib.standard._SList_if, (LJP.go.ipa.oz.user.apl.fm.Reserve_if), (JP.go.ipa.oz.user.apl.fm.Reserve_if, JP.go.ipa.oz.user.apl.fm.Schedulable_if), (), (974, 132, ((1012, 11, JP.go.ipa.oz.user.apl.fm.Schedulable_if)))
+m, bindEntity, 0x1, V, (LJP.go.ipa.oz.user.apl.fm.Schedulable_if), (JP.go.ipa.oz.user.apl.fm.Schedulable_if, JP.go.ipa.oz.user.apl.fm.Overseer_if), (JP.go.ipa.oz.user.apl.fm.Overseer_cl), (277, 137, ((324, 8, JP.go.ipa.oz.user.apl.fm.Overseer_if)))
+m, trace, 0x1, V, (I), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._PrintWriter_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._PrintWriter_cl), (1606, 239, ((1638, 6, JP.go.ipa.oz.lib.standard._System_if), (1665, 11, JP.go.ipa.oz.lib.standard._PrintWriter_if)))
+m, cloneSelf, 0x1, LJP.go.ipa.oz.user.apl.fm.FMObject_if, (), (JP.go.ipa.oz.user.apl.fm.Scheduler_if), (JP.go.ipa.oz.user.apl.fm.Scheduler_cl), (1372, 127, ((1450, 9, JP.go.ipa.oz.user.apl.fm.Scheduler_if)))
+m, cancel, 0x1, V, (LJP.go.ipa.oz.user.apl.fm.Reserve_if), (JP.go.ipa.oz.user.apl.fm.Reserve_if, JP.go.ipa.oz.user.apl.fm.Schedulable_if), (), (1188, 181, ((1224, 11, JP.go.ipa.oz.user.apl.fm.Schedulable_if)))
+m, reserve, 0x1, Z, (LJP.go.ipa.oz.user.apl.fm.Reserve_if), (JP.go.ipa.oz.user.apl.fm.Reserve_if, JP.go.ipa.oz.user.apl.fm.Schedulable_if), (), (542, 319, ((594, 11, JP.go.ipa.oz.user.apl.fm.Schedulable_if)))

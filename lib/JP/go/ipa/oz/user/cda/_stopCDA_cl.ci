@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.cda._stopCDA_cl, 0x2000, JP.go.ipa.oz.user.cda._stopCDA_if, JP.go.ipa.oz.system.OzCell
+m, initiallize, 0x4, V, (), (), (), (479, 31, ())
+m, go, 0x4, V, (), (JP.go.ipa.oz.user.cda._CDAdebug_if, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_if), (JP.go.ipa.oz.user.cda._CDAdebug_cl, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_pcl), (555, 248, ((581, 8, JP.go.ipa.oz.user.cda._CDAdebug_if), (651, 18, JP.go.ipa.oz.user.cda._ClassDeliveryAgent_if)))
+m, quiet, 0x4, V, (), (), (), (513, 39, ())

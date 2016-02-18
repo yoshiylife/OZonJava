@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>論理的リソース管理</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+論理的リソース管理とは、リソースの論理的代替である ResourceProxy の管理を指す。
+ResourceProxy は、キャッシュ集合により管理される。<BR>
+インタフェースとして、キャッシュ集合への追加と
+キャッシュ集合からの取得を用意する。
+</P>
+
+<UL>
+
+<P>
+<LI>public void Autonomy#setResourceProxyToCache(ResourceProxy proxy)<BR>
+引数として、ResourceProxy オブジェクトをとる。<BR>
+キャッシュ集合に、そのオブジェクトを追加する。
+</P>
+
+<P>
+<LI>public ResourceProxy Autonomy#getResourceProxyByCache(String resGol)<BR>
+引数としてリソースの GOL をとる。<BR>
+キャッシュ集合を検索し、ResourceProxy#getResource() の
+戻り値と引数の GOL が一致した最初の要素を返す。<BR>
+一致しない場合は、null を返す。
+</P>
+
+</UL>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

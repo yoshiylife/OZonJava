@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.iq._QStruct_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.iq._QStruct_if, JP.go.ipa.oz.lang._Root_cl
+a, vals, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 481, 11
+a, cond, 0x0, N, 495, 15
+c, create, (), (), (JP.go.ipa.oz.lib.standard._SList_cl), (518, 35, ())
+m, write, 0x21, V, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if), (), (557, 79, ())
+m, read, 0x21, LJP.go.ipa.oz.lang._Root_if, (), (JP.go.ipa.oz.lang._Root_if), (), (640, 157, ((672, 4, JP.go.ipa.oz.lang._Root_if)))

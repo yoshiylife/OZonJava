@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.ide.CIInterfacePart_if, 0x10, (JP.go.ipa.oz.user.ide.CIPart_if)
+m, superInterfaceCIDs, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, ()
+m, getSuperInterfaceCIDCount, 0x1, I, ()

@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>リソース内部情報の取得と変更</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+リソースであるFMObjectからの内部情報の
+取得はgetName()を用いて行う。
+FMObjectを継承し属性を追加した場合には
+その属性へのアクセスメソッドを用意しなければならない。
+<BR>
+リソース内部の情報の変更を行うには、
+setName(String)メソッドを用いる。
+FMObjectを継承し属性を追加した場合には
+その属性の変更を行うメソッドを用意しなければならない。
+また、変更しただけでは元リソースに反映
+されないのため、commit()メソッドを用いて
+リソースに対する変更を元リソースに反映している。
+</P>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

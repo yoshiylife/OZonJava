@@ -1,0 +1,20 @@
+j, JP.go.ipa.oz.user.ide.CIPart_cl, 0x400, JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lang._Root_cl
+a, ROOT_IF_CID, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 335, 49
+a, labelName, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 149, 34
+a, cid, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 187, 28
+a, ROOT_CL_CID, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 335, 49
+a, methodList, 0x4, LJP.go.ipa.oz.lib.standard._SList_if, 256, 35
+a, modifier, 0x4, LJP.go.ipa.oz.user.ide.CIModifier_if, 219, 33
+m, initParams, 0x4, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.ide.CIModifier_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CIModifier_if), (JP.go.ipa.oz.lib.standard._SList_cl), (2304, 247, ())
+m, isFinal, 0x1, Z, (), (), (), (1249, 67, ())
+m, methods, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (1762, 71, ())
+m, getLabelName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (802, 61, ())
+m, getMethodCount, 0x1, I, (), (), (), (1915, 69, ())
+m, addMember, 0x401, V, (LJP.go.ipa.oz.user.ide.CIMember_if), (JP.go.ipa.oz.user.ide.CIMember_if), (), (544, 45, ())
+m, isAbstract, 0x1, Z, (), (), (), (945, 73, ())
+m, isInterface, 0x401, Z, (), (), (), (1398, 38, ())
+m, isRoot, 0x1, Z, (), (), (), (1518, 162, ())
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (671, 49, ())
+m, isCell, 0x1, Z, (), (), (), (1102, 65, ())
+m, setLabelName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2068, 78, ())
+m, addMethod, 0x4, V, (LJP.go.ipa.oz.user.ide.CIMethod_if), (JP.go.ipa.oz.user.ide.CIMethod_if), (), (2633, 86, ())

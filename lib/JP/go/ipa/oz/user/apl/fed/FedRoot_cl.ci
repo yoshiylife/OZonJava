@@ -1,0 +1,14 @@
+j, JP.go.ipa.oz.user.apl.fed.FedRoot_cl, 0x2000, JP.go.ipa.oz.user.apl.fed.FedRoot_if, JP.go.ipa.oz.system.OzCell
+a, className, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 323, 27
+a, debug, 0x4, Z, 293, 24
+a, system, 0x4, LJP.go.ipa.oz.lib.standard._System_if, 230, 24
+a, auth, 0x4, LJP.go.ipa.oz.user.apl.fed.Authenticator_if, 259, 29
+m, god, 0x11, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1083, 126, ())
+m, debug, 0x1, V, (Z), (), (), (1374, 58, ())
+m, init, 0x1, V, (), (), (JP.go.ipa.oz.user.apl.fed.Authenticator_cl), (421, 87, ())
+m, setClassName, 0x11, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (561, 244, ())
+m, gol, 0x11, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (951, 126, ())
+m, debugInit, 0x1, V, (), (), (JP.go.ipa.oz.lib.standard._System_cl), (1296, 72, ())
+m, getClassName, 0x11, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (811, 134, ())
+m, quiet, 0x1, V, (), (), (), (514, 41, ())
+m, initialize, 0x1, V, (), (), (), (369, 45, ())

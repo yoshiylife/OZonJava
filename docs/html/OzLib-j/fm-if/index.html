@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>ファシリティ管理</H4>
+</CENTER><HR NOSHADE>
+
+<P>
+<UL>
+<LI><A HREF="fm-func.html">機能概要</A>
+<LI><A HREF="fm-realize.html">実現方式</A>
+<LI>利用するサブプログラム<BR>
+コレクションライブラリを利用する。
+</UL>
+</P>
+
+<P>
+以下にファシリティ管理が提供する基本的なサービスの概要を示す。
+</P>
+
+<UL>
+
+<P>
+<LI><A HREF="fm-api.html">ファシリティ管理 <B>API</B></A><BR>
+ファシリティ管理における基本的な管理対象であるリソースを表
+象するクラスであるFMObjectを操作するために、利用者、および
+テンプレートを経由して利用者により定義される個別の
+FMObject(の子孫)の両者に対し、統括的に提供される
+ファシリティ管理API(Application Program Interface)である。
+<BR>
+FMObjectを取り扱う為の基本的操作として、
+<UL>
+<LI> FMObjectの生成
+<LI> FMObjectの削除
+<LI> FMObjectの管理区域間の移動
+<LI> FMObject間の関係付け
+</UL>
+等のサービスが提供される。
+</P>
+
+<P>
+<LI><A HREF="fm-ment.html">メンテナンス機能</A><BR>
+ファシリティ管理において、リソースはそれぞれ管理主体に属し、そこ
+で管理される。管理主体において管理対象であるリソースを矛盾無く管
+理するためのサービスを提供するのがメンテナンス機能である。
+</P>
+
+<P>
+<LI><A HREF="fm-resource.html">リソースの予約、予約の照会/キャンセル機能</A><BR>
+リソースの予約、照会、そして予約のキャンセルを行うため
+の基本サービスのことである。時間軸上の関連に特
+化した予約、照会、および予約のキャンセルが可能となっている。
+</P>
+
+<P>
+<LI><A HREF="fm-scheduling.html">スケジューリング機能</A><BR>
+前項のリソースの予約に関する機能を元に、リソース自
+身を時間軸上の「予約可能なモノ」として取り扱うことにより、その
+スケジューリングを行うサービスが提供される。
+</P>
+
+<P>
+<LI><A HREF="fm-timemang.html">リソースの時間的管理</A><BR>
+ファシリティ管理では、その管理対象であるリソースに対し、発生した
+事象(例えば生成、他のリソースとの関連の結び付き、など)について、
+時間的順序に従った記録が行われる。リソースに対応したこれら記録を
+参照することができる。
+</P>
+
+<P>
+<LI><A HREF="fm-orgmang.html">リソースの組織管理</A><BR>
+他のリソースを組織的に管理することを可能とするために、組
+織を表象するリソースが提供されるている。組織リソースにより
+リソース相互の包含関係を利用者が自由に構成することが可能となる。
+</P>
+	  
+</UL>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href=../../"copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

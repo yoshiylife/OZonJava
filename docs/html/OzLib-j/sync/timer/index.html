@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>Manual of OZ Timer Lib.</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>OZ タイマライブラリ</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+タイマをかけて実行したいメソッド呼び出しごとに、ライブラリ内の 
+MethodRunnable というクラスを継承した Runnable クラスを用意する。<BR>
+
+本線のスレッドと、この Runnable クラスから生成されるスレッドが連動する
+ことによりタイマが実現されている。<BR>
+
+このタイマの使い方には二通りある。今、タイマをかけて実行したいメソッドが
+定義されているクラスをAとする。一般的に、タイマのユーザがクラス A の定義
+を変更することはできない(例えば、クラス A を定義した人がタイマユーザと別
+の人の場合など)。そのような場合の使い方が「タイマの使い方 1」である。
+そして、タイマのユーザがクラス A の定義を変更できる場合の使い方が「タイマ
+の使い方 2」である。
+
+<UL>
+<LI><A HREF="usage1.html">タイマの使い方 1</A>
+<LI><A HREF="usage2.html">タイマの使い方 2</A>
+<LI><A HREF="api.html"><B>API</B></A>
+</UL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

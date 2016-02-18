@@ -1,0 +1,6 @@
+i, JP.go.ipa.oz.user.apl.fed.GenusCategory_if, 0x2000, (JP.go.ipa.oz.user.apl.fed.FedRoot_if)
+m, getType, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, isMemberOf, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if)
+m, setType, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, setCategoryName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getCategoryName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

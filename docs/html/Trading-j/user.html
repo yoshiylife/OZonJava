@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>Trading manual</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>サービス要求の作成(サービス提供者/ユーザ)</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<UL>
+
+<P>
+<LI>ブローカ作成/登録、サービス要求クラスの作成<BR>
+サービス提供者は、サービスに応じたサービス要求クラス
+<B>UserServiceRequest</B> を作成し、コンポーネントカタログに登録する。<BR>
+サービス利用者は <B>UserServiceRequest</B> の必須条件、優先条件を
+書き換え、必要なサービス要求を作成する。
+</P>
+
+<P>
+<LI>サービス要求クラスの作成<BR>
+サービス提供者は、該当サービスのサービス要求クラス <B>ServiceRequest</B> を
+継承して自身の要求を必須条件、優先条件として記述したクラス 
+<B>UserServiceRequest</B> を作成する。
+</P>
+
+<P>
+<LI><B>UserServiceRequest</B> の例<BR>
+<PRE>
+class UserServiceRequest :*ServiceRequest{
+  new create(){super=>create();}
+  //必須条件
+  public bool requirement(UserBroker br){
+    return br->keyWordSearch();
+  }
+  //優先条件
+  public int preference(UserBroker br){
+    int i,j;
+    if(br->wholeText())i=1;else i=0;
+    if(br->japanese())j=1;else j=0;
+    return i*2+j;
+  }
+}
+</PRE>
+</P>
+
+</UL>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+
+
+
+
+
+
+

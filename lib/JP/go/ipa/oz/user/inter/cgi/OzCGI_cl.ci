@@ -1,0 +1,12 @@
+j, JP.go.ipa.oz.user.inter.cgi.OzCGI_cl, 0x2000, JP.go.ipa.oz.user.inter.cgi.OzCGI_if, JP.go.ipa.oz.system.OzCell
+a, input_randezvou_table, 0x80, LJP.go.ipa.oz.user.inter.cgi.RandezvouTable_if, 199, 47
+a, cgi_socket, 0x80, LJP.go.ipa.oz.user.inter.cgi.CGISocket_if, 410, 31
+a, output_randezvou_table, 0x80, LJP.go.ipa.oz.user.inter.cgi.RandezvouTable_if, 315, 48
+m, receiveRequest, 0x1, LJP.go.ipa.oz.user.inter.cgi.HTMLData_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.user.inter.cgi.RandezvouPoint_if, JP.go.ipa.oz.user.inter.cgi.HTMLData_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.user.inter.cgi.RandezvouPoint_cl), (1765, 318, ((1819, 6, JP.go.ipa.oz.lib.standard._System_if), (1930, 14, JP.go.ipa.oz.user.inter.cgi.RandezvouPoint_if), (2030, 8, JP.go.ipa.oz.user.inter.cgi.HTMLData_if)))
+m, go, 0x1, V, (), (JP.go.ipa.oz.user.inter.cgi.OzCGIPropertyReader_if, JP.go.ipa.oz.lang._Thread_if, JP.go.ipa.oz.user.inter.cgi.OzCGIManager_if), (JP.go.ipa.oz.user.inter.cgi.OzCGIPropertyReader_cl, JP.go.ipa.oz.user.inter.cgi.RandezvouTable_cl, JP.go.ipa.oz.user.inter.cgi.CGISocket_cl, JP.go.ipa.oz.lang._Thread_cl, JP.go.ipa.oz.user.inter.cgi.OzCGIManager_cl), (957, 413, ((1010, 19, JP.go.ipa.oz.user.inter.cgi.OzCGIPropertyReader_if), (1215, 6, JP.go.ipa.oz.lang._Thread_if), (1334, 12, JP.go.ipa.oz.user.inter.cgi.OzCGIManager_if)))
+m, sendResult, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.HTMLData_if), (JP.go.ipa.oz.user.inter.cgi.HTMLData_if, JP.go.ipa.oz.lib.standard._String_if), (), (2167, 166, ((2214, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, version, 0x0, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (813, 49, ())
+m, quit, 0x1, V, (), (), (), (2423, 42, ())
+m, quiet, 0x1, V, (), (), (), (1402, 278, ())
+m, initialize, 0x4, V, (), (), (), (894, 31, ())
+m, ping, 0x1, V, (), (), (), (2366, 22, ())

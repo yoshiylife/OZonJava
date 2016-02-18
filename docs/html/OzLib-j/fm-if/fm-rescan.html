@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>予約のキャンセル</H4>
+</CENTER><HR NOSHADE>
+
+<P>
+予約のキャンセルは予約者とリソース(Schedulerオブジェクト)の
+間にアタッチされた特定のReserveオブジェクトに対し、
+cancel()メソッドを実行することで、実現される。
+Reserveはcancel()を要求されると、自信のアタッチされている
+Schedulerに対し、cancel(Reserve)を要求する。
+SchedulerはSchedulableに対しcancel(Reserve)を要求し、
+タイムテーブル内のReserveにより指定された時間の予約の
+キャンセルを行う。
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B> <A href=../../"copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

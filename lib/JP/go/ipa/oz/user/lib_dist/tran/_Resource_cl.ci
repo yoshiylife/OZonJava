@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.lib_dist.tran._Resource_cl, 0x0, JP.go.ipa.oz.user.lib_dist.tran._Resource_if, JP.go.ipa.oz.lang._Root_cl
+a, ur, 0x0, LJP.go.ipa.oz.lang._Root_if, 482, 8
+c, create, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if), (), (497, 22, ())
+m, setUserResource, 0x11, V, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if), (), (570, 49, ())
+m, getUserResource, 0x11, LJP.go.ipa.oz.lang._Root_if, (), (), (), (521, 47, ())

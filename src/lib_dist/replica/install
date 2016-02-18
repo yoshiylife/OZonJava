@@ -1,0 +1,8 @@
+#
+ ozc -i -s school.s CopyScheme.oz
+ ozc -i -s school.s CopyOfPrimaryCopyScheme.oz
+ ozc -i -s school.s CopyOfPeerCopyScheme.oz
+
+ ozc    -s school.s CopyScheme.oz
+ ozc    -s school.s CopyOfPrimaryCopyScheme.oz
+ ozc    -s school.s CopyOfPeerCopyScheme.oz

@@ -1,0 +1,136 @@
+<HTML>
+<HEAD><TITLE>Application Gateway Manual</TITLE></HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>ファイルの設定</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+<H4><B>properties</B> ファイルの設定</H4>
+<UL>
+<LI> <B>$AGHOME/etc/ag.properties</B><BR>
+アプリケーションゲートウェイの設定ファイルである。
+設定すべきプロパティは以下のものである。このうち、
+<B>ag.httpProxy</B> 以外のプロパティは全て設定する必要が有る。<BR>
+# で始まる行はコメントである。
+  <UL>
+  <LI><B>ap.address.executor</B><BR>
+アプリケーションゲートウェイのエグゼキュータからの
+コネクションを受けるポートの通信アドレスを
+<PRE>
+  ドット分離形式(xxx.xxx.xxx.xxx)のIPアドレス：ポート番号
+</PRE>
+の形式で記述する。この通信アドレスはリゾルバの設定
+の <B>oz.application.gateway</B> の内容と一致していなければならない。
+  <LI><B>ap.address.cgi</B><BR>
+アプリケーションゲートウェイ間の通信を中継するCGI
+からのコネクションを受けるポートの通信アドレスを
+<PRE>
+  ドット分離形式(xxx.xxx.xxx.xxx)のIPアドレス：ポート番号
+</PRE>
+の形式で記述する。この通信アドレスはCGIの設定
+のAddress,Portの内容とそれぞれ一致していなければ
+ならない。
+  <LI><B>oz.domain.resolver</B><BR>
+<B>OZ</B> ドメインリゾルバの通信アドレスを
+<PRE>
+  ドット分離形式(xxx.xxx.xxx.xxx)のIPアドレス：ポート番号
+</PRE>
+の形式で記述する。この内容は、親OZドメインリゾルバを
+起動するOZホームにあるoz.propertiesの
+oz.domain.resolverの内容と一致していなければならない。
+  <LI><B>ag.httpProxy</B><BR>
+インターネット上のWWWサーバにアクセスするために用いる
+httpプロクシのURLを記述する。ファイアウォールが
+無い環境など、httpプロクシを使わない場合には、
+ag.httpProxyは設定しない。
+  <LI><B>ag.master.domainTable</B><BR>
+ドメイン名とそのドメインにリモートインボケーションを
+中継するCGIのURLの対応表が管理されているURLを
+設定する。URLのポート番号は省略してはならない。<br>
+通常、インストール時に設定されている<br>
+http://www.etl.go.jp:80/etl/bunsan/OZ_Proj/domains.table
+を変更する必要は無い。
+  </UL>
+	      
+<LI><B>$AGHOME/etc/domain.ACL</B><BR>
+ドメインあるいはOZホーム単位のアクセス制限を指定するファイルである。
+インストール時には、全てのドメインとの間で相互にリモートメソッド
+起動ができる設定になっている。<br>
+各行は次のいずれかを表す文字列、任意個数の空白文字、OKあるいはNGの文字列からなる。<br>
+# で始まる行はコメントである。<br>
+アプリケーションゲートウェイのコマンドenableとdisableを用いて
+内容を変更する事ができ、またaclistコマンドにより
+内容の確認ができる。
+  <UL>
+  <LI><B>incoming</B><BR>
+外部からのリモートメソッド起動を許可するかどうかのデフォールト値。NGだと他のサイトからのリモートメソッド起動を拒絶する。
+  <LI><B>outgoing</B><BR>
+外部へのリモートメソッド起動を許可するかどうかのデフォールト値。NGだと他のサイトへのリモートメソッド起動を拒絶する。
+  <LI>ドメイン名<BR>
+指定したドメインへの／からのリモートメソッド起動の可否。
+デフォールトの設定に優先する。
+  <LI><B>OZ</B> ホーム名<BR>
+指定したOZホームへの／からのリモートメソッド起動の可否。
+デフォールトの設定およびドメインの設定に優先する。
+  </UL>
+<LI><B>$AGHOME/etc/domain.table</B><BR>
+アプリケーションゲートウェイが以前にロードしたドメインの表を
+保存するファイル。<br>
+このファイルが無い場合には、アプリケーションゲートウェイが
+起動時に原本からダウンロードして
+生成し管理するので、ユーザが設定する必要は無い。<br>
+各行は、ドメイン名とそれに対応するCGIのURLを一つ以上の空白で
+区切ったものになっている。
+</UL>
+</P>
+
+<P>
+<H4><B>CGI</B> プログラムの設定</H4>
+
+CGIプログラムは実行形式の$AGHOME/cgi/ozcgi.SunOS、
+$AGHOME/cgi/ozcgi.Solaris、
+シェルスクリプト$AGHOME/cgi/nph-OzAGからなる。<br>
+WWWサーバが稼働している環境に合わせて、どちらかの実行ファイルを
+ozcgiと改名して用いる。
+$AGHOME/cgi/ozcgi.cはソースファイルである。添付の実行ファイルが
+うまく動作しない場合には、<br>
+SunOS4.x.xでは
+<tt> SunOS4.x.x> gcc -o ozcgi.SunOS ozcgi.c </tt><br>
+Solaris(SunOS5.x.x)では
+<tt> Solaris> gcc -o ozcgi.Solaris -lsocket -lnsl ozcgi.c </tt><br>
+のコマンドによって再コンパイルする。<br>
+CGIプログラムを置くディレクトリ(cgi-binなど)にnph-OzAGを
+コピーする。名前をnph-OzAG-ドメイン名(etl.go.jpであれば
+nph-OzAG-EltGoJp)とするのが望ましい。<br>
+CGIファイルの最初に３行を環境に合わせて書き換える。最初の
+二項目の内容は$AGHOME/etc/ag.propertisのag.address.cgiの
+設定内容と矛盾してはいけない。<br>
+<UL>
+<LI><B>AGHOST</B><BR>
+アプリケーションゲートウェイの稼働しているホスト名。
+最初はhost_nameとなっている)
+<LI><B>AGPORT</B><BR>
+アプリケーションゲートウェイのCGIからのポート番号(最初は0になっている)
+<LI><B>CGIPROG</B><BR>
+ozcgiの位置をフルパスで記述する。(最初は /usr/local/bin/ozcgiになっている)
+</UL>
+</P>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

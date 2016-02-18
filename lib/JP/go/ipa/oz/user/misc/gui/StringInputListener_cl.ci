@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.misc.gui.StringInputListener_cl, 0x0, JP.go.ipa.oz.user.misc.gui.StringInputListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, inputDialog, 0x0, LJP.go.ipa.oz.user.misc.gui.StringInputDialog_if, 180, 31
+c, create, (LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl), (373, 79, ())
+m, getDialog, 0x1, LJP.go.ipa.oz.user.misc.gui.StringInputDialog_if, (), (), (), (610, 71, ())
+m, setDialog, 0x1, V, (LJP.go.ipa.oz.user.misc.gui.StringInputDialog_if), (JP.go.ipa.oz.user.misc.gui.StringInputDialog_if), (), (763, 84, ())

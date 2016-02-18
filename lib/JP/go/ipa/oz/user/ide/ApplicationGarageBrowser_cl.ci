@@ -1,0 +1,32 @@
+j, JP.go.ipa.oz.user.ide.ApplicationGarageBrowser_cl, 0x0, JP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, JP.go.ipa.oz.user.ide.GarageBrowser_cl
+a, launcher, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCore_if, 986, 42
+a, gui, 0x0, LJP.go.ipa.oz.user.ide.ApplicationGarageBrowserGUI_if, 688, 37
+a, summaryViewTable, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 832, 50
+a, catalog, 0x0, LJP.go.ipa.oz.user.garage.ApplicationGarage_if, 643, 41
+a, launcherCellDialog, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_if, 1032, 52
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 886, 43
+a, waitForInput, 0x0, N, 729, 46
+a, summaryToExport, 0x0, LJP.go.ipa.oz.user.ide.ApplicationSummary_if, 779, 49
+a, schoolBrowser, 0x0, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, 935, 47
+c, create, (LJP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_if), (JP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_if), (JP.go.ipa.oz.user.ide.GarageBrowser_cl), (1817, 166, ())
+c, create, (LJP.go.ipa.oz.user.launcher.LauncherCore_if), (JP.go.ipa.oz.user.launcher.LauncherCore_if), (JP.go.ipa.oz.user.ide.GarageBrowser_cl), (1582, 149, ())
+c, create, (LJP.go.ipa.oz.user.ide.SchoolBrowser_if), (JP.go.ipa.oz.user.ide.SchoolBrowser_if), (JP.go.ipa.oz.user.ide.GarageBrowser_cl), (1378, 118, ())
+c, create, (), (), (JP.go.ipa.oz.user.ide.GarageBrowser_cl), (1250, 42, ())
+m, exportApplication, 0x21, LJP.go.ipa.oz.user.garage.Key_if, (LJP.go.ipa.oz.user.ide.Application_if), (JP.go.ipa.oz.user.ide.Application_if, JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.garage.GarageException_if, JP.go.ipa.oz.user.garage.GarageOperationCanceledException_if, JP.go.ipa.oz.user.ide.ApplicationSummary_if, JP.go.ipa.oz.lang._Exception_if, JP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.user.garage.GarageOperationCanceledException_cl, JP.go.ipa.oz.user.garage.GarageException_cl), (2642, 947, ((2705, 3, JP.go.ipa.oz.user.garage.Key_if), (2720, 15, JP.go.ipa.oz.user.garage.GarageException_if), (2747, 32, JP.go.ipa.oz.user.garage.GarageOperationCanceledException_if), (2793, 18, JP.go.ipa.oz.user.ide.ApplicationSummary_if), (3309, 21, JP.go.ipa.oz.lang._Exception_if), (3416, 4, JP.go.ipa.oz.lang._Root_if)))
+m, getGUI, 0x1, LJP.go.ipa.oz.lib.standard._Frame_if, (), (), (), (3671, 48, ())
+m, showException, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if), (JP.go.ipa.oz.user.misc.gui.ExceptionDialog_cl), (8783, 120, ((8824, 15, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if)))
+m, init, 0x0, V, (), (), (), (8251, 21, ())
+m, hideSummary, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if), (), (4275, 343, ((4318, 25, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if)))
+m, hideSummary, 0x1, V, (), (JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if), (), (3801, 390, ((3837, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (3857, 25, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if)))
+m, remove, 0x1, V, (LJP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.garage.Key_if), (), (6297, 110, ())
+m, requestGOL, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.misc.gui.StringInputDialog_if, JP.go.ipa.oz.user.ide.GOLInputListenerForApplication_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.ide.GOLInputListenerForApplication_cl, JP.go.ipa.oz.user.misc.gui.StringInputDialog_cl), (8356, 345, ((8398, 17, JP.go.ipa.oz.user.misc.gui.StringInputDialog_if), (8430, 30, JP.go.ipa.oz.user.ide.GOLInputListenerForApplication_if), (8477, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, exportReady, 0x21, V, (LJP.go.ipa.oz.user.ide.ApplicationSummary_if), (JP.go.ipa.oz.user.ide.ApplicationSummary_if), (), (2445, 115, ())
+m, bindServer, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.garage.ApplicationGarage_pcl), (2143, 220, ())
+m, quit, 0x1, V, (), (), (), (6043, 172, ())
+m, importApplication, 0x1, V, (LJP.go.ipa.oz.user.ide.ApplicationSummary_if), (JP.go.ipa.oz.user.ide.ApplicationSummary_if, JP.go.ipa.oz.user.ide.Application_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lang._Exception_if, JP.go.ipa.oz.lib.standard._ClassNotFoundException_if, JP.go.ipa.oz.lang._Root_if), (), (4840, 774, ((4908, 11, JP.go.ipa.oz.user.ide.Application_if), (4931, 6, JP.go.ipa.oz.lib.standard._String_if), (5370, 21, JP.go.ipa.oz.lang._Exception_if), (5464, 22, JP.go.ipa.oz.lib.standard._ClassNotFoundException_if), (5551, 4, JP.go.ipa.oz.lang._Root_if)))
+m, importApplication, 0x1, V, (), (), (), (4702, 56, ())
+m, showSummary, 0x1, V, (LJP.go.ipa.oz.user.ide.ApplicationSummary_if), (JP.go.ipa.oz.user.ide.ApplicationSummary_if, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if, JP.go.ipa.oz.user.garage.Key_if), (JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_cl), (7110, 492, ((7172, 25, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if), (7220, 3, JP.go.ipa.oz.user.garage.Key_if)))
+m, showSummary, 0x1, V, (), (JP.go.ipa.oz.user.ide.ApplicationSummary_if), (), (6812, 216, ((6848, 18, JP.go.ipa.oz.user.ide.ApplicationSummary_if)))
+m, setVisible, 0x1, V, (Z), (JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if), (), (6489, 241, ((6539, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (6559, 25, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if)))
+m, launch, 0x1, V, (), (JP.go.ipa.oz.user.garage.KeyComparator_if), (JP.go.ipa.oz.user.ide.ApplicationGarageBrowserGUI_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.garage.KeyComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl), (5696, 265, ((5727, 13, JP.go.ipa.oz.user.garage.KeyComparator_if)))
+m, sync, 0x1, V, (), (JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.ApplicationSummary_if, JP.go.ipa.oz.lib.standard._Set_if), (JP.go.ipa.oz.lib.standard._Set_cl), (7684, 407, ((7713, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (7733, 18, JP.go.ipa.oz.user.ide.ApplicationSummary_if), (7767, 3, JP.go.ipa.oz.lib.standard._Set_if)))

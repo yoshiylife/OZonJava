@@ -1,0 +1,9 @@
+\ozmethod{ public class Client }
+\ozmethod{ public Client(String ipaddr,int port,ByteArrayOutputStream bo)}
+\ozmethod{ public static void main(String[] args) }
+\ozmethod{ public ByteArrayOutputStream ozDomainResolver()}
+\ozmethod{ public ByteArrayOutputStream executor(String gol)}
+\ozmethod{ public Writer(Client c,ByteArrayOutputStream b)}
+\ozmethod{ public void run()}
+\ozmethod{  public Reader(Client c)}
+\ozmethod{  public void run()}

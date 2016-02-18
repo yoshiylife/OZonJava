@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.apl.fm.FMObjectComparator_cl, 0x0, JP.go.ipa.oz.user.apl.fm.FMObjectComparator_if, JP.go.ipa.oz.lang._Root_cl
+c, create, (), (), (), (121, 13, ())
+m, duplicate, 0x1, LJP.go.ipa.oz.lib.standard._Comparator_if, (), (JP.go.ipa.oz.user.apl.fm.FMObjectComparator_if), (JP.go.ipa.oz.user.apl.fm.FMObjectComparator_cl), (473, 89, ((507, 18, JP.go.ipa.oz.user.apl.fm.FMObjectComparator_if)))
+m, compare, 0x1, Z, (LJP.go.ipa.oz.lang._Root_if, LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.user.apl.fm.FMObject_if), (), (137, 131, ((182, 8, JP.go.ipa.oz.user.apl.fm.FMObject_if)))
+m, hash, 0x1, I, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.lib.standard._StringComparator_if, JP.go.ipa.oz.user.apl.fm.FMObject_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.apl.fm.Pointer_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl), (271, 199, ((301, 16, JP.go.ipa.oz.lib.standard._StringComparator_if), (328, 8, JP.go.ipa.oz.user.apl.fm.FMObject_if), (346, 6, JP.go.ipa.oz.lib.standard._String_if)))

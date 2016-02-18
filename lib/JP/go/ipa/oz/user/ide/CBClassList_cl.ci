@@ -1,0 +1,13 @@
+j, JP.go.ipa.oz.user.ide.CBClassList_cl, 0x10, JP.go.ipa.oz.user.ide.CBClassList_if, JP.go.ipa.oz.lib.standard._List_cl
+a, forLabel, 0x0, Z, 274, 18
+a, eventQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 238, 32
+a, partView, 0x0, LJP.go.ipa.oz.user.ide.CBPartView_if, 213, 21
+a, cidList, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 175, 15
+c, newCBClassList, (I, LJP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.lib.standard._List_cl), (454, 113, ())
+m, initParams, 0x0, V, (LJP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.user.ide.CBPartView_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl), (1765, 87, ())
+m, setImplementationList, 0x1, V, (LJP.go.ipa.oz.lib.standard._Array_if, LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.user.ide.School_if), (), (1256, 105, ())
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (I), (JP.go.ipa.oz.lib.standard._String_if), (), (725, 112, ((767, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, setInterfaceList, 0x1, V, (LJP.go.ipa.oz.lib.standard._Array_if, LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.user.ide.School_if), (), (1075, 99, ())
+m, initGUI, 0x0, V, (), (JP.go.ipa.oz.user.ide.CBClassListListener_if), (JP.go.ipa.oz.user.ide.CBClassListListener_cl), (1520, 163, ((1545, 19, JP.go.ipa.oz.user.ide.CBClassListListener_if)))
+m, setList, 0x0, V, (LJP.go.ipa.oz.lib.standard._Array_if, LJP.go.ipa.oz.user.ide.School_if, Z), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._String_if), (), (1934, 616, ((2005, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, setList, 0x1, V, (LJP.go.ipa.oz.lib.standard._Array_if), (JP.go.ipa.oz.lib.standard._Array_if), (), (919, 74, ())

@@ -1,0 +1,13 @@
+j, JP.go.ipa.oz.user.apl.fm.Person_cl, 0x0, JP.go.ipa.oz.user.apl.fm.Person_if, JP.go.ipa.oz.user.apl.fm.Actor_cl
+a, birthDay, 0x0, LJP.go.ipa.oz.lib.standard._Date_if, 168, 14
+a, bloodType, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 149, 17
+c, create, (LJP.go.ipa.oz.user.apl.fm.Person_if), (JP.go.ipa.oz.user.apl.fm.Person_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Date_if), (JP.go.ipa.oz.user.apl.fm.Actor_cl, JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.lib.standard._Date_cl), (1882, 261, ((1923, 6, JP.go.ipa.oz.lib.standard._String_if), (2033, 4, JP.go.ipa.oz.lib.standard._Date_if)))
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.apl.fm.Actor_cl), (228, 45, ())
+c, create, (), (), (JP.go.ipa.oz.user.apl.fm.Actor_cl), (189, 32, ())
+m, isEqualFMObject, 0x1, Z, (LJP.go.ipa.oz.user.apl.fm.FMObject_if), (JP.go.ipa.oz.user.apl.fm.FMObject_if, JP.go.ipa.oz.user.apl.fm.Person_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Date_if), (), (533, 572, ((660, 6, JP.go.ipa.oz.user.apl.fm.Person_if), (738, 6, JP.go.ipa.oz.lib.standard._String_if), (916, 4, JP.go.ipa.oz.lib.standard._Date_if)))
+m, getBloodType, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (392, 53, ())
+m, init, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Date_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Date_if), (), (276, 87, ())
+m, trace, 0x1, V, (I), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._PrintWriter_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._PrintWriter_cl), (2146, 409, ((2178, 6, JP.go.ipa.oz.lib.standard._System_if), (2205, 11, JP.go.ipa.oz.lib.standard._PrintWriter_if)))
+m, cloneSelf, 0x1, LJP.go.ipa.oz.user.apl.fm.FMObject_if, (), (JP.go.ipa.oz.user.apl.fm.Person_if), (JP.go.ipa.oz.user.apl.fm.Person_cl), (1751, 124, ((1829, 6, JP.go.ipa.oz.user.apl.fm.Person_if)))
+m, update, 0x21, I, (LJP.go.ipa.oz.user.apl.fm.FMObject_if), (JP.go.ipa.oz.user.apl.fm.FMObject_if, JP.go.ipa.oz.user.apl.fm.Person_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Date_if), (), (1108, 640, ((1199, 6, JP.go.ipa.oz.user.apl.fm.Person_if), (1258, 6, JP.go.ipa.oz.lib.standard._String_if), (1498, 4, JP.go.ipa.oz.lib.standard._Date_if)))
+m, getBirthDay, 0x1, LJP.go.ipa.oz.lib.standard._Date_if, (), (), (), (474, 49, ())

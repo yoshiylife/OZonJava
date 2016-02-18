@@ -1,0 +1,7 @@
+ozjc _AtoI_if.java _CDAProperty_if.java _CDAZipFile_if.java
+ozjc _AtoI_cl.java _CDAProperty_cl.java _CDAZipFile_cl.java
+ozc -s school.s NumberStringException.oz DeliveryFile.oz CDAdebug.oz
+ozc -i -s school.s Runnable.oz ClassDeliveryAgent.oz
+ozc -s school.s Runnable.oz ClassDeliveryAgent.oz
+ozc -s school.s MaintenunceTool.oz TestWrap.oz
+cp _Test_* $OZHOME/lib/JP/go/ipa/oz/user/cda/

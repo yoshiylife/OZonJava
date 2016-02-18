@@ -1,0 +1,6 @@
+i, JP.go.ipa.oz.user.ide.SubjectSummary_if, 0x0, (JP.go.ipa.oz.user.ide.Summary_if)
+m, setName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, retreiveSubject, 0x1, LJP.go.ipa.oz.user.ide.Subject_if, ()
+m, getName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, setDescription, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, getDescription, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()

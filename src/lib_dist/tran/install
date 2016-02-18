@@ -1,0 +1,41 @@
+#!/bin/csh
+#compile DistributedTransactionLib.
+#
+
+echo "compiling *.oz"
+ozc -i -s tran_all.s Debug.oz
+ozc -i -s tran_all.s TID.oz
+ozc -i -s tran_all.s Exception.oz
+ozc -i -s tran_all.s Status.oz
+ozc -i -s tran_all.s Resource.oz
+ozc -i -s tran_all.s TransactionResource.oz
+ozc -i -s tran_all.s TransactionTimer.oz
+ozc -i -s tran_all.s Transaction.oz
+ozc -i -s tran_all.s CommitBeforePreCommitException.oz 
+ozc -i -s tran_all.s OverTimeException.oz
+ozc -i -s tran_all.s CommitUnlockedResourceException.oz
+ozc -i -s tran_all.s TimeOutException.oz
+ozc -i -s tran_all.s TransactionAbortException.oz
+ozc -i -s tran_all.s LockRetryOverTimesException.oz
+ozc -i -s tran_all.s TranTimer.oz
+ozc -i -s tran_all.s TranRun.oz
+echo "interface compiled"
+
+ozc -s tran_all.s Debug.oz
+ozc -s tran_all.s TID.oz
+ozc -s tran_all.s Exception.oz
+ozc -s tran_all.s Status.oz
+ozc -s tran_all.s Resource.oz
+ozc -s tran_all.s TransactionResource.oz
+ozc -s tran_all.s TransactionTimer.oz
+ozc -s tran_all.s Transaction.oz
+ozc -i -s tran_all.s CommitBeforePreCommitException.oz 
+ozc -i -s tran_all.s OverTimeException.oz
+ozc -i -s tran_all.s CommitUnlockedResourceException.oz
+ozc -i -s tran_all.s TimeOutException.oz
+ozc -i -s tran_all.s TransactionAbortException.oz
+ozc -i -s tran_all.s LockRetryOverTimesException.oz
+ozc -i -s tran_all.s TranTimer.oz
+ozc -i -s tran_all.s TranRun.oz
+echo "compiled all"
+

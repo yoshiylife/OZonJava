@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.cda._DeliveryFileCache_cl, 0x0, JP.go.ipa.oz.user.cda._DeliveryFileCache_if, JP.go.ipa.oz.lang._Root_cl
+a, defi, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 21165, 16
+c, create, (), (JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl), (21226, 74, ((21240, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+m, below, 0x4, Z, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (21989, 408, ())
+m, put, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.user.cda._DeliveryFile_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.cda._DeliveryFile_if), (), (22401, 108, ())
+m, get, 0x21, LJP.go.ipa.oz.user.cda._DeliveryFile_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.cda._DeliveryFile_if, JP.go.ipa.oz.lib.standard._Iterator_if), (), (21607, 378, ((21660, 12, JP.go.ipa.oz.user.cda._DeliveryFile_if), (21688, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (21757, 6, JP.go.ipa.oz.lib.standard._String_if)))

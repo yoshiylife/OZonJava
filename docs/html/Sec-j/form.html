@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>Security Service: Form of Authentication System List File</TITLE>
+</HEAD>
+
+<BODY>
+<CENTER>
+<H3>認証システムリストファイルの書式</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<CODE>$OZHOME/etc/encoders/myhost.cipher</CODE> ファイルと
+<CODE>GOD/.cipher</CODE> ファイルをまとめて、
+<U>認証システムリストファイル</U>と呼ぶ。
+認証システムリストファイルの書式は、以下の通りである。
+<UL>
+  <LI> 一行にひとつのレコードを含む。
+
+  <LI> ひとつのレコードは、<U>認証システム名</U>か、または、
+       <CODE>PlainText</CODE> という文字列
+       (大文字小文字もこの通りでなければならない) である。
+
+  <LI> 認証システム名とは、
+       その認証システムの<U>認証システムクラス</U>の
+       fully qualified クラス名である。<BR>
+
+  <LI> 認証システムクラスとは、
+       クラス <CODE>JP.go.ipa.oz.system.OzCipher</CODE> の
+       サブクラスであって、
+       その認証システムに対するインタフェースを提供するクラスである。
+       認証システムクラスは、
+       その認証サーバ OZ から利用可能にしようとする者が、
+       <CODE>OzCipher</CODE> の提供する SPI を実装して用意する。<BR>
+       fully qualified クラス名とは、パッケージ名部分を含んだ、
+       完全な Java のクラス名である。
+
+  <LI> <CODE>PlainText</CODE> という文字列は、
+       そのセルが平文の通信も許していることを示す。
+       すべてのマシンは、常に平文の通信が可能なので、
+       <CODE>$OZHOME/etc/encoders/myhost.cipher</CODE> ファイルには
+       <CODE>PlainText</CODE> というエントリがなくても、
+       あるのと同様に扱われる。
+</UL>
+</CENTER>
+
+<HR NOSHADE>
+
+<ADDRESS><B> <A href="copyright-j.html">Copyright</A>(c) 1996-1998 IPA,
+ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B></ADDRESS>
+<P>
+<B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+</P>
+</BODY>
+</HTML>

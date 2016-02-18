@@ -1,0 +1,20 @@
+j, JP.go.ipa.oz.user.ide.SubjectSummaryBrowser_cl, 0x0, JP.go.ipa.oz.user.ide.SubjectSummaryBrowser_if, JP.go.ipa.oz.lib.standard._Frame_cl
+a, targetSubject, 0x0, LJP.go.ipa.oz.user.ide.Subject_if, 763, 46
+a, editTitlePrefix, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 952, 67
+a, nameView, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 673, 41
+a, sgBrowser, 0x0, LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, 627, 42
+a, browseTitlePrefix, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 952, 67
+a, targetSummary, 0x0, LJP.go.ipa.oz.user.ide.SubjectSummary_if, 813, 46
+a, descView, 0x0, LJP.go.ipa.oz.lib.standard._TextArea_if, 718, 41
+a, asEditor, 0x0, Z, 863, 41
+a, menubar, 0x0, LJP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuBar_if, 908, 40
+c, createEditor, (LJP.go.ipa.oz.user.ide.Subject_if, LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if), (JP.go.ipa.oz.user.ide.Subject_if, JP.go.ipa.oz.user.ide.SubjectGarageBrowser_if), (JP.go.ipa.oz.lib.standard._Frame_cl), (1502, 242, ())
+c, create, (LJP.go.ipa.oz.user.ide.SubjectSummary_if, LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if), (JP.go.ipa.oz.user.ide.SubjectSummary_if, JP.go.ipa.oz.user.ide.SubjectGarageBrowser_if), (JP.go.ipa.oz.lib.standard._Frame_cl), (1183, 233, ())
+m, initGUI, 0x0, V, (), (JP.go.ipa.oz.lib.standard._Panel_if, JP.go.ipa.oz.lib.standard._GridBagLayout_if, JP.go.ipa.oz.lib.standard._GridBagConstraints_if, JP.go.ipa.oz.lib.standard._Insets_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.lib.standard._GridBagLayout_cl, JP.go.ipa.oz.lib.standard._GridBagConstraints_cl, JP.go.ipa.oz.lib.standard._Insets_cl), (3084, 970, ((3109, 5, JP.go.ipa.oz.lib.standard._Panel_if), (3143, 13, JP.go.ipa.oz.lib.standard._GridBagLayout_if), (3171, 18, JP.go.ipa.oz.lib.standard._GridBagConstraints_if), (3209, 6, JP.go.ipa.oz.lib.standard._Insets_if)))
+m, getKey, 0x1, LJP.go.ipa.oz.user.garage.Key_if, (), (), (), (2141, 143, ())
+m, initMenubar, 0x0, V, (), (), (JP.go.ipa.oz.user.ide.SubjectSummaryBrowserMenuBar_cl), (4136, 202, ())
+m, getSummary, 0x1, LJP.go.ipa.oz.user.ide.SubjectSummary_if, (), (), (), (2366, 71, ())
+m, show, 0x1, V, (LJP.go.ipa.oz.user.ide.SubjectSummary_if), (JP.go.ipa.oz.user.ide.SubjectSummary_if, JP.go.ipa.oz.lib.standard._String_if), (), (2519, 407, ((2565, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, mkDescPanel, 0x0, LJP.go.ipa.oz.lib.standard._Panel_if, (), (JP.go.ipa.oz.lib.standard._Panel_if, JP.go.ipa.oz.lib.standard._Label_if, JP.go.ipa.oz.lib.standard._GridBagLayout_if, JP.go.ipa.oz.lib.standard._GridBagConstraints_if), (JP.go.ipa.oz.lib.standard._GridBagLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._TextArea_cl, JP.go.ipa.oz.lib.standard._GridBagConstraints_cl), (5139, 643, ((5169, 5, JP.go.ipa.oz.lib.standard._Panel_if), (5188, 5, JP.go.ipa.oz.lib.standard._Label_if), (5207, 13, JP.go.ipa.oz.lib.standard._GridBagLayout_if), (5235, 18, JP.go.ipa.oz.lib.standard._GridBagConstraints_if)))
+m, getInputSummary, 0x1, LJP.go.ipa.oz.user.ide.SubjectSummary_if, (), (JP.go.ipa.oz.user.ide.SubjectSummary_if), (JP.go.ipa.oz.user.ide.SubjectSummary_cl), (1904, 155, ((1954, 14, JP.go.ipa.oz.user.ide.SubjectSummary_if)))
+m, mkNamePanel, 0x0, LJP.go.ipa.oz.lib.standard._Panel_if, (), (JP.go.ipa.oz.lib.standard._Panel_if, JP.go.ipa.oz.lib.standard._Label_if, JP.go.ipa.oz.lib.standard._GridBagLayout_if, JP.go.ipa.oz.lib.standard._GridBagConstraints_if), (JP.go.ipa.oz.lib.standard._GridBagLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._TextField_cl, JP.go.ipa.oz.lib.standard._GridBagConstraints_cl), (4420, 637, ((4450, 5, JP.go.ipa.oz.lib.standard._Panel_if), (4469, 5, JP.go.ipa.oz.lib.standard._Label_if), (4488, 13, JP.go.ipa.oz.lib.standard._GridBagLayout_if), (4516, 18, JP.go.ipa.oz.lib.standard._GridBagConstraints_if)))

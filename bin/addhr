@@ -1,0 +1,5 @@
+#!/bin/csh -f
+#java OzHomeResolver unix[nt] OZHOME
+
+java JP.go.ipa.oz.user.res.AddToOzhr unix $OZHOME d
+

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="blocks.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="empty.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>ローカル変数宣言文（Local Variable Declaration Statements）<BR>
+</H3>
+<BR clear="all">
+<P>
+ローカル変数宣言文はローカル変数を宣言する文です。<BR>
+ローカル変数は型を持っていますから、型名とローカル変数名を対にして宣言します。
+</P>
+<P>
+<BR>
+<B>構文</B><BR>
+基本型のローカル変数の宣言は以下のように行います。
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>型名 ローカル変数名［ = 初期値 ］</B>;</TD></TR>
+</TABLE>
+
+<P>
+初期値は省略できます。省略された場合にはデフォルトの値が設定されます。デフォルトの値は型によって決定されます。「変数」を参照してください。<BR>
+</P>
+<P>
+<BR>
+型がクラス型の場合のローカル変数の宣言は以下のように行います。
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>型名 ローカル変数名 ［ =&gt; コンストラクタ呼出し］</B>;</TD></TR>
+</TABLE>
+
+<P>
+コンストラクタ呼出しでインスタンス生成が指定されます。<BR>
+コンストラクタ呼出しは省略できます。省略された場合にはデフォルトの値nullが設定されます。<BR>
+</P>
+<P>
+<BR>
+<B>LALR(1)文法</B> （以下の\ は次の行への継続を示しています）
+</P>
+<PRE>
+  declaration_stmt : type_name identifier_only_or_with_initializer_list;
+
+  identifier_only_or_with_initializer_list : \
+                identifier_only_or_with_initializer_list , \
+                          identifier_only_or_with_initializer
+                identifier_only_or_with_initializer
+                                            
+  identifier_only_or_with_initializer : IDENTIFIER
+                                        identifier_with_initializer
+                                    
+  identifier_with_initializer : =&gt; instantiate_exp_for_local_variable
+                                IDENTIFIER = exp<BR>
+</PRE>
+<P>
+<BR>
+<B>説明</B><BR>
+ローカル変数宣言文はブロック内でのみ記述できます。<BR>
+ローカル変数名のスコープはそのブロック内です。外側のブロックですでに宣言されている 
+識別子と同じ名前のローカル変数を宣言した場合、その宣言以降そのブロック内では外側のブロックの識別子が隠されます。その結果、そのブロックでは新たに宣言した識別子（ローカル変数名）が有効となり、そのブロックが終了すると再び外側 
+で宣言していた識別子が有効となります。「名前とスコープ」を参照してください。
+</P>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+例: ローカル変数宣言文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  int request_number; // int型の宣言文
+  String command;     // Stringクラスの宣言文
+  StringComparator scomp=&gt;create ();
+  // StringComparator型の宣言、コンストラクタ呼出しを行う
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="blocks.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="empty.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

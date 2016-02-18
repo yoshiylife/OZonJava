@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>Protocol Record Class</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3><B>ProtocolRecord</B> クラス</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+このクラスはレコード形式のプロトコルデータを表すためのクラスである。
+<B>Dictionary</B> クラスを継承し、属性をキーとした辞書形式によりデータを保持す
+ることによって、属性値の取り出し等の操作を <B>Dictionary</B> クラスのインタフェースを用いて実現する。
+</P>
+
+<P>
+<UL>
+<LI><B>ProtcolRecord</B> クラスは以下のコンストラクタを持つ。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>create (String encode_format, String decode_format, String lt)</TD></TR>
+<TR><TD NOWRAP ROWSPAN=3>引数</TD>
+<TD>encode_format</TD> <TD>コマンドデータのエンコードに利用するフォーマット文字列</TD></TR>
+<TR><TD>decode_format</TD> <TD>レスポンスデータのデコードに利用するフォーマット文字列</TD></TR>
+<TR><TD>lt</TD> <TD>データの終端文字列</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<LI>またコマンドデータおよびレスポンスデータのエンコードおよびデコードを、
+それぞれ以下のインタフェースによって実現する。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String encode ()</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>変換後の文字列形式のコマンドデータ</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>void decode (String reponse_data)</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>reponse_data</TD> <TD>受信したレスポンスデータ</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<LI>属性値に関するインタフェースとして以下のものを持つ。
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>String get (String label)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2> label で指定された属性の値を返す。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>label</TD> <TD>属性文字列</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=2>属性の値</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String getStatus ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>ステータスコードの値を返す。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>ステータスコード</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>void set (String label, String value)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>label で指定された属性に値として value を設定する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=2>引数</TD>
+<TD>label</TD> <TD>属性文字列</TD></TR>
+<TR><TD>value</TD> <TD>属性の値</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=3>void setCommand (String command)</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=2>command で指定された値をコマンド文字列として設定する。</TD></TR>
+<TR><TD NOWRAP ROWSPAN=1>引数</TD>
+<TD>command</TD> <TD>コマンド文字列</TD></TR>
+</TABLE>
+</P>
+
+<P>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD COLSPAN=2>String getLineTerminator ()</TD></TR>
+<TR><TD NOWRAP>機能</TD>
+<TD COLSPAN=1>データの終端文字列を返す。</TD></TR>
+<TR><TD NOWRAP>返り値</TD> <TD COLSPAN=1>データの終端文字列</TD></TR>
+</TABLE>
+</P>
+
+</UL>
+
+<HR NOSHADE>
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

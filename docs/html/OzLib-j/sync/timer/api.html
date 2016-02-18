@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>API of OZ timer</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>タイマ API</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+<UL>
+<LI>abstract class MethodRunnable :* Runnable
+  <UL>
+  <LI>new create(Timer t);<BR>
+MethodRunnable を生成する。これはユーザが作る、MethodRunnable を継承
+した Runnable クラスのコンストラクタの中のみから呼ばれるので、ユーザ
+が直接使うことはない。
+  <LI>public Root getResult();<BR>
+タイマをかけて実行したメソッドの返り値を返す。
+このメソッドは Timer の中から呼ばれるものであり、ユーザが直接使うこ
+とはない。
+  </UL>
+<LI>class Timer
+  <UL>
+  <LI>new create();<BR>
+タイマを生成する。
+  <LI>public Root invoke(MethodRunnable mr, int time);<BR>
+ユーザが作る、MethodRunnable を継承した Runnable クラスのオブジェク
+ト mr とタイムアウト時間 time をもとに、タイマをかけてメソッド実行を
+行なう。タイマをかけて実行したいメソッドの返り値が invoke の返り値と
+なる。タイマをかけて実行したいメソッドが発生させる例外はこの invoke
+の例外としてあがる。
+  </UL>
+<LI>class TimeOutException
+  <UL>
+  <LI>new init();<BR>
+タイムアウトを示す例外であるTimeOutExceptionを生成する。
+この例外は Timer の中から投げられるものであり、ユーザが直接生成するこ
+とはない。
+  </UL>
+</UL>
+</P>
+  
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

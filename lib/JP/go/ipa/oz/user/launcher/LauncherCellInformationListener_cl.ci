@@ -1,0 +1,7 @@
+j, JP.go.ipa.oz.user.launcher.LauncherCellInformationListener_cl, 0x0, JP.go.ipa.oz.user.launcher.LauncherCellInformationListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 301, 44
+a, lCore, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCore_if, 208, 40
+a, cellDialog, 0x0, LJP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_if, 252, 45
+c, create, (LJP.go.ipa.oz.user.launcher.LauncherCore_if, LJP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.launcher.LauncherCore_if, JP.go.ipa.oz.user.launcher.LauncherCellInformationDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl), (509, 225, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if), (), (892, 574, ((947, 6, JP.go.ipa.oz.lib.standard._String_if), (965, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, handleException, 0x0, V, (), (JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if), (JP.go.ipa.oz.user.misc.gui.ExceptionDialog_cl), (1548, 146, ((1581, 15, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if)))

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>inet lib</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+
+<H3>ProtocolRecord　クラスの使い方</H3>
+</CENTER>
+<HR noshade>
+<P>
+このクラスはレコード形式、つまり属性ラベルと価の組で表現可能な通信プロトコルの送受信データの処理を簡略化するためのクラスである。<BR>
+<BR>
+</P>
+<H4>*コンストラクタ</H4>
+<P>
+コマンドデータおよびレスポンスデータのそれぞれのフォーマット文字列 と、データの終端文字列を指定する（<B>NetworkClient</B>クラスのコンストラクタを参照）。<BR>
+<BR>
+<BR>
+</P>
+<H4>*メソッド</H4>
+<DL>
+  <DT>-レコードの登録
+  <DD>通常 set メソッドによりラベルと値を登録する。<BR>
+<BR>
+またコマンド文字列については、ラベル<B> COMMAND</B> が予約されており、<B>setCommand</B>
+メソッドにより値のみを指定して登録する。<BR>
+<BR>
+<BR>
+  <DT>-レコードの値の取り出し
+  <DD>通常ラベルを引数として、<B>get</B> メソッドを呼ぶ。<BR>
+<BR>
+またレスポンスデータのステータス文字列については、ラベル STATUS が予約されており、<B>getStatus</B>
+メソッドにより取り出す。<BR>
+<BR>
+<BR>
+  <DT>-コマンドデータのエンコード
+  <DD>登録されているレコードデータを、コマンドデータのフォーマットに従ってエンコードした文字列を
+<B>encode</B> メソッドにより得ることができる。<BR>
+<BR>
+<BR>
+  <DT>-レスポンスデータのデコード
+  <DD>レスポンスデータの文字列を引数として <B>decode</B> メソッドを呼び出すことにより、レスポンスデータのフォーマットに従ってデコードし、ステータス文字列等を抽出することができる。<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<H4>*利用例<BR>
+</H4>
+<P>
+このクラスの利用例としては、<B>NetworkClient</B>, <B>NetworkProtocol</B>
+の各クラスのソースコードを参照のこと。<BR>
+<BR>
+<BR>
+</P>
+<HR noshade>
+<ADDRESS><B><A href="../../copyright-j.html">Copyright</A>(c) 1996-1998
+IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B></ADDRESS>
+<P>
+<B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+</P>
+</BODY>
+</HTML>

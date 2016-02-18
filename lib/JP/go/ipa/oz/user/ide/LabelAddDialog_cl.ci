@@ -1,0 +1,20 @@
+j, JP.go.ipa.oz.user.ide.LabelAddDialog_cl, 0x0, JP.go.ipa.oz.user.ide.LabelAddDialog_if, JP.go.ipa.oz.lib.standard._Dialog_cl
+a, btnOK, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 557, 13
+a, school, 0x0, LJP.go.ipa.oz.user.ide.School_if, 786, 14
+a, addAL, 0x0, LJP.go.ipa.oz.user.ide.LabelAddActionListener_if, 754, 29
+a, lblLabel, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 700, 15
+a, lblSubject, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 680, 17
+a, lblImplID, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 735, 16
+a, txtImplID, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 657, 20
+a, lblIfID, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 718, 14
+a, btnCancel, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 573, 17
+a, schoolBrowser, 0x0, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, 803, 28
+a, txtLabel, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 614, 19
+a, txtIfID, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 636, 18
+a, choSubject, 0x0, LJP.go.ipa.oz.lib.standard._Choice_if, 593, 18
+c, create, (LJP.go.ipa.oz.lib.standard._Frame_if, Z, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Frame_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, JP.go.ipa.oz.lib.standard._GridLayout_if, JP.go.ipa.oz.lib.standard._Font_if, JP.go.ipa.oz.lib.standard._Panel_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._Dictionary_if, JP.go.ipa.oz.user.ide.Subject_if, JP.go.ipa.oz.lib.standard._FlowLayout_if), (JP.go.ipa.oz.lib.standard._Dialog_cl, JP.go.ipa.oz.lib.standard._GridLayout_cl, JP.go.ipa.oz.lib.standard._Font_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._Choice_cl, JP.go.ipa.oz.lib.standard._TextField_cl, JP.go.ipa.oz.lib.standard._FlowLayout_cl, JP.go.ipa.oz.lib.standard._Button_cl, JP.go.ipa.oz.user.ide.LabelAddActionListener_cl), (948, 2240, ((1147, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (1253, 4, JP.go.ipa.oz.lib.standard._Font_if), (1296, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (1337, 5, JP.go.ipa.oz.lib.standard._Panel_if), (1538, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (1615, 7, JP.go.ipa.oz.user.ide.Subject_if), (1841, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (1882, 5, JP.go.ipa.oz.lib.standard._Panel_if), (2138, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (2179, 5, JP.go.ipa.oz.lib.standard._Panel_if), (2430, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (2471, 5, JP.go.ipa.oz.lib.standard._Panel_if), (2738, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (2781, 5, JP.go.ipa.oz.lib.standard._Panel_if)))
+m, getChoSubject, 0x1, LJP.go.ipa.oz.lib.standard._Choice_if, (), (), (), (4591, 57, ())
+m, getBtnOK, 0x1, LJP.go.ipa.oz.lib.standard._Button_if, (), (), (), (4439, 47, ())
+m, getSchoolBrowser, 0x1, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, (), (), (), (4269, 70, ())
+m, putLabel, 0x1, V, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.OzLabel_if), (JP.go.ipa.oz.user.ide.OzLabel_cl), (3780, 374, ((3862, 7, JP.go.ipa.oz.user.ide.OzLabel_if)))
+m, setVisible, 0x1, V, (Z), (JP.go.ipa.oz.lib.standard._Rectangle_if, JP.go.ipa.oz.lib.standard._Container_if), (), (3378, 302, ((3417, 9, JP.go.ipa.oz.lib.standard._Rectangle_if), (3465, 9, JP.go.ipa.oz.lib.standard._Rectangle_if)))

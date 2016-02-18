@@ -1,0 +1,14 @@
+j, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowserMenuListener_cl, 0x10, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowserMenuListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dialogQue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 758, 33
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 795, 15
+a, gBrowser, 0x0, LJP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, 716, 36
+a, sBrowser, 0x0, LJP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if, 676, 36
+c, create, (LJP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, LJP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if), (JP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, JP.go.ipa.oz.user.ide.ApplicationSummaryBrowser_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.lib.standard._System_cl), (972, 260, ((1048, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, doClose, 0x0, V, (), (JP.go.ipa.oz.user.garage.Key_if), (), (2299, 105, ((2324, 3, JP.go.ipa.oz.user.garage.Key_if)))
+m, doCancel, 0x0, V, (), (), (), (2132, 85, ())
+m, isLegalInput, 0x0, Z, (LJP.go.ipa.oz.user.ide.ApplicationSummary_if), (JP.go.ipa.oz.user.ide.ApplicationSummary_if), (), (3555, 221, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if), (), (1390, 584, ((1445, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, doSave, 0x0, V, (), (JP.go.ipa.oz.user.garage.Key_if, JP.go.ipa.oz.user.ide.ApplicationSummary_if), (), (3120, 353, ((3144, 3, JP.go.ipa.oz.user.garage.Key_if), (3159, 18, JP.go.ipa.oz.user.ide.ApplicationSummary_if)))
+m, doImport, 0x0, V, (), (JP.go.ipa.oz.user.ide.ApplicationSummary_if), (), (2486, 143, ((2512, 18, JP.go.ipa.oz.user.ide.ApplicationSummary_if)))
+m, handleException, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if), (JP.go.ipa.oz.user.misc.gui.ExceptionDialog_cl), (3858, 127, ((3901, 15, JP.go.ipa.oz.user.misc.gui.ExceptionDialog_if)))
+m, doExport, 0x0, V, (), (JP.go.ipa.oz.user.ide.ApplicationSummary_if), (), (2711, 327, ((2737, 18, JP.go.ipa.oz.user.ide.ApplicationSummary_if)))

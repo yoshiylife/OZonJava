@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.ide.OzIDE_cl, 0x2000, JP.go.ipa.oz.user.ide.OzIDE_if, JP.go.ipa.oz.system.OzCell
+a, projectMng, 0x0, LJP.go.ipa.oz.user.ide.ProjectManager_if, 479, 26
+a, schoolBrowser, 0x0, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, 507, 28
+m, initialize, 0x4, V, (), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.ide.ProjectManager_cl, JP.go.ipa.oz.user.ide.SchoolBrowser_cl), (538, 303, ((571, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (680, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, quiet, 0x4, V, (), (), (), (1117, 181, ())
+m, go, 0x4, V, (), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl), (844, 270, ((869, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (989, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))

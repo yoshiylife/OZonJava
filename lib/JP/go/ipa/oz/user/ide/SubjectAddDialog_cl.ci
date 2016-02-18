@@ -1,0 +1,12 @@
+j, JP.go.ipa.oz.user.ide.SubjectAddDialog_cl, 0x0, JP.go.ipa.oz.user.ide.SubjectAddDialog_if, JP.go.ipa.oz.lib.standard._Dialog_cl
+a, addAL, 0x0, LJP.go.ipa.oz.user.ide.SubjectAddActionListener_if, 639, 31
+a, school, 0x0, LJP.go.ipa.oz.user.ide.School_if, 673, 14
+a, schoolBrowser, 0x0, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, 690, 28
+a, btnOK, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 603, 13
+a, lblSubject, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 559, 17
+a, btnCancel, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 619, 17
+a, txtSubject, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 579, 21
+c, create, (LJP.go.ipa.oz.lib.standard._Frame_if, Z, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._Frame_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, JP.go.ipa.oz.lib.standard._GridLayout_if, JP.go.ipa.oz.lib.standard._Font_if, JP.go.ipa.oz.lib.standard._FlowLayout_if, JP.go.ipa.oz.lib.standard._Panel_if), (JP.go.ipa.oz.lib.standard._Dialog_cl, JP.go.ipa.oz.lib.standard._GridLayout_cl, JP.go.ipa.oz.lib.standard._Font_cl, JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._FlowLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._TextField_cl, JP.go.ipa.oz.lib.standard._Button_cl, JP.go.ipa.oz.user.ide.SubjectAddActionListener_cl), (837, 1102, ((1036, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (1142, 4, JP.go.ipa.oz.lib.standard._Font_if), (1274, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (1318, 5, JP.go.ipa.oz.lib.standard._Panel_if), (1485, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (1529, 5, JP.go.ipa.oz.lib.standard._Panel_if)))
+m, getBtnOK, 0x1, LJP.go.ipa.oz.lib.standard._Button_if, (), (), (), (2931, 47, ())
+m, addSubject, 0x1, V, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.Subject_if, JP.go.ipa.oz.lib.standard._Choice_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.ide.Subject_cl), (2560, 271, ((2590, 6, JP.go.ipa.oz.lib.standard._String_if), (2684, 7, JP.go.ipa.oz.user.ide.Subject_if)))
+m, setVisible, 0x1, V, (Z), (JP.go.ipa.oz.lib.standard._Rectangle_if, JP.go.ipa.oz.lib.standard._Container_if), (), (2129, 304, ((2168, 9, JP.go.ipa.oz.lib.standard._Rectangle_if), (2216, 9, JP.go.ipa.oz.lib.standard._Rectangle_if)))

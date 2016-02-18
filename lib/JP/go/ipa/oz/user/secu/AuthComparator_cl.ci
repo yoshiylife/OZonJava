@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.secu.AuthComparator_cl, 0x0, JP.go.ipa.oz.user.secu.AuthComparator_if, JP.go.ipa.oz.lang._Root_cl
+c, create, (), (), (), (1803, 10, ())
+m, duplicate, 0x11, LJP.go.ipa.oz.lib.standard._Comparator_if, (), (), (), (1951, 49, ())
+m, compare, 0x11, Z, (LJP.go.ipa.oz.lang._Root_if, LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.lib.standard._String_if), (), (1815, 134, ((1864, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, hash, 0x11, I, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if), (), (2002, 41, ())

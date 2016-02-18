@@ -1,0 +1,57 @@
+ozjc _ASP*.java
+ozjc _Get*.java
+ozjc _P*.java
+
+ozc -s t.s -i Debug.oz
+ozc -s t.s -i Exception.oz
+ozc -s t.s Debug.oz
+ozc -s t.s Exception.oz
+
+ozc -s t.s -i Authenticator.oz
+ozc -s t.s -i user.oz
+ozc -s t.s -i OzAuthenticationServer.oz
+ozc -s t.s -i ASTimer.oz
+ozc -s t.s -i Server.oz
+ozc -s t.s -i Connection.oz
+ozc -s t.s -i acl.oz
+echo "core interface compiled"
+
+ozc -s t.s Authenticator.oz
+ozc -s t.s user.oz
+ozc -s t.s OzAuthenticationServer.oz
+ozc -s t.s ASTimer.oz
+ozc -s t.s Server.oz
+ozc -s t.s Connection.oz
+ozc -s t.s acl.oz
+echo "core implement compiled"
+
+ozc -s t.s -i stopAS.oz
+ozc -s t.s -i setKey.oz
+ozc -s t.s -i addGroup.oz
+ozc -s t.s -i addGroupMember.oz
+ozc -s t.s -i addUser.oz
+ozc -s t.s -i showUser.oz
+ozc -s t.s -i showGroup.oz
+ozc -s t.s -i changeKey.oz
+ozc -s t.s -i changeOwner.oz
+ozc -s t.s -i removeGroup.oz
+ozc -s t.s -i removeGroupMember.oz
+ozc -s t.s -i removeUser.oz
+ozc -s t.s -i isInUser.oz
+echo "maintenance interface compiled"
+
+ozc -s t.s stopAS.oz
+ozc -s t.s setKey.oz
+ozc -s t.s addGroup.oz
+ozc -s t.s addGroupMember.oz
+ozc -s t.s addUser.oz
+ozc -s t.s showUser.oz
+ozc -s t.s showGroup.oz
+ozc -s t.s changeKey.oz
+ozc -s t.s changeOwner.oz
+ozc -s t.s removeGroup.oz
+ozc -s t.s removeGroupMember.oz
+ozc -s t.s removeUser.oz
+ozc -s t.s isInUser.oz
+echo "maintenance implement compiled"
+echo "compiled all"

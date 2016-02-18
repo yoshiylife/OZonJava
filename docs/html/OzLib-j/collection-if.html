@@ -1,0 +1,1000 @@
+<HTML>
+<HEAD>
+<TITLE>OZ libraries (collection interface)</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>Collection interface</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+<FONT SIZE="-1">
+青色(イタリック体)のメソッドは、上位クラスから継承したメソッドの再定義。
+</FONT>
+<HR>
+
+<H3>◇ Plural</H3>
+
+すべての集合の共通サービス。
+<P>
+<BR>
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+abstract class <B>Plural</B>
+<UL>
+  <LI> public abstract Plural <B>clear</B>();
+      <P>
+      <BLOCKQUOTE>
+      すべての要素を削除する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Plural <B>duplicate</B>();
+      <P>
+      <BLOCKQUOTE>
+      オブジェクトのシャロウコピー(shallow copy)を取得する。
+      要素のコピーは行わない。
+      各具象クラスでは、そのクラスのインスタンスを生成する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract boolean <B>isEmpty</B>();
+      <P>
+      <BLOCKQUOTE>
+      要素数が0かどうかを調べる。
+      0のときtrueを返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract int <B>size</B>();
+      <P>
+      <BLOCKQUOTE>
+      要素数を調べる。
+      要素数を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Iterator <B>iterator</B>();
+      <P>
+      <BLOCKQUOTE>
+      イテレータを取得する。
+      イテレータのポインタは、その集合の最初の要素を
+      取り出せる位置に設定される。
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◆ Association</H3>
+
+キーと値の組。
+キーと値は null であってはならない。
+値は置き換え可能。
+<P>
+<BR>
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+final class <B>Association</B>
+<UL>
+  <LI> new <B>create</B>(Root key, Root value);
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: key または value が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public String <FONT COLOR="#0000FF"><B><I>asString</I></B></FONT>();
+      <BLOCKQUOTE>
+      オブジェクトの文字列表現を取得する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Association <B>duplicate</B>();
+      <BLOCKQUOTE>
+      オブジェクトのシャロウコピーを取得する。
+      キーと値のコピーは行わない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Root <B>key</B>();
+      <BLOCKQUOTE>
+      キーを取得する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Association <B>setValue</B>(Root value);
+      <BLOCKQUOTE>
+      値を設定する。
+      このオブジェクト自身を返す。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: value が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Root <B>value</B>();
+      <BLOCKQUOTE>
+      値を取得する。
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◆ Dictionary</H3>
+
+キーから値への写像。
+デフォルトのイテレータは値を返す。
+キーを返すイテレータと、キーと値の組(Association)を返す
+イテレータも取得できる。
+<P>
+<BR>
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+class <B>Dictionary</B> : Plural
+<UL>
+  <LI> new <B>create</B>();
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> new <B>create</B>(Comparator forKeys);
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      キーどうしの等価比較に forKey を使用する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: forKeys が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> new <B>create</B>(Comparator forKeys, Comparator forValues);
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      キーどうしの等価比較に forKey を、
+      値どうしの等価比較には forValues を使用する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: forKeys または forValues が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Iterator <B>assocIterator</B>();
+      <BLOCKQUOTE>
+      イテレータを取得する。
+      このイテレータは、キーと値の組をクラス Association の
+      インスタンスで返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked String
+      <FONT COLOR="#0000FF"><B><I>asString </I></B></FONT>();
+      <BLOCKQUOTE>
+      オブジェクトの文字列表現を取得する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Plural
+      <FONT COLOR="#0000FF"><B><I>clear</I></B></FONT>();
+      <BLOCKQUOTE>
+      すべての値を削除する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked boolean <B>contains</B>(Root value);
+      <BLOCKQUOTE>
+      値 value が登録されているか調べる。
+      登録されているならば true を返す。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: value が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked boolean <B>containsKey</B>(Root key);
+      <BLOCKQUOTE>
+      キー key で登録された値が存在するか調べる。
+      存在するならば true を返す。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: key が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Dictionary <B>copy</B>(Dictionary dic);
+      <BLOCKQUOTE>
+      この Dictionary を別の Dictionary dic のコピーにする。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: dic が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Root <B>get</B>(Root key);
+      <BLOCKQUOTE>
+      キー key で登録された値を返す。
+      存在しない場合は null を返す。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: key が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+      
+  <LI> public Comparator <B>getComparatorForKeys</B>();
+      <BLOCKQUOTE>
+      キーの等価比較を行うオブジェクトを返す。
+      オブジェクトのコピーは行わない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Comparator <B>getComparatorForValues</B>();
+      <BLOCKQUOTE>
+      値の等価比較を行うオブジェクトを返す。
+      オブジェクトのコピーは行わない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public boolean <FONT COLOR="#0000FF"><B><I>isEmpty</I></B></FONT>();
+      <BLOCKQUOTE>
+      登録されている値の数が0かどうか調べる。
+      0ならば true を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Iterator <FONT COLOR="#0000FF"><B><I>iterator</I></B></FONT>();
+      <BLOCKQUOTE>
+      イテレータを取得する。
+      このイテレータは値を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Iterator <B>keyIterator</B>();
+      <BLOCKQUOTE>
+      イテレータを取得する。
+      このイテレータはキーを返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Set <B>keys</B>();
+      <BLOCKQUOTE>
+      キーの集合を取得する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Dictionary <B>put</B>(Associaton assoc);
+      <BLOCKQUOTE>
+      assoc のキーで値を登録する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: assoc またはそのキーか値が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Dictionary <B>put</B>(Root key, Root value);
+      <BLOCKQUOTE>
+      キー key で値 value を登録する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: key または value が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Dictionary <B>remove</B>(Root key);
+      <BLOCKQUOTE>
+      キー key で登録した値を削除する。
+      存在しない場合は何もしない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public int <FONT COLOR="#0000FF"><B><I>size</I></B></FONT>();
+      <BLOCKQUOTE>
+      登録されている要素数を取得する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Set <B>values</B>();
+      <BLOCKQUOTE>
+      登録されている値の集合を取得する。
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◇ Collection</H3>
+
+Dictionary 以外の集合の共通サービス。
+<P>
+<BR>
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+abstract class <B>Collection</B> : Plural
+<UL>
+  <LI> public abstract boolean <B>contains</B>(Root value);
+      <BLOCKQUOTE>
+      値 value を含んでいるか調べる。
+      含んでいるとき true を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Set <B>difference</B>(Collection c);
+      <BLOCKQUOTE>
+      このコレクションに属すが、c には属さない要素の集合を返す。
+      要素の等価比較には、このオブジェクトの Comparator を使用する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Set <B>intersect</B>(Collection c);
+      <BLOCKQUOTE>
+      このコレクションに属し、かつ c にも属す要素の集合を返す。
+      要素の等価比較には、このオブジェクトの Comparator を使用する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Collection <B>remove</B>(Root element);
+      <BLOCKQUOTE>
+      element に等しい要素を削除する。
+      削除する要素数は高々1個。
+      どれを削除するかは、各具象クラスで異なる。
+      要素が存在しない場合は、何もしない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Collection <B>removeAll</B>(Root element);
+      <BLOCKQUOTE>
+      element に等しいすべての要素を削除する。
+      要素の重複が許さないクラスでは、
+      remove(Root element) と同じ効果を得る。
+      要素が存在しない場合は、何もしない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Set <B>union</B>(Collection c);
+      <BLOCKQUOTE>
+      このコレクションに属すか、または c に属す要素の集合を返す。
+      要素の等価比較には、このオブジェクトの Comparator を使用する。
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◆ Set</H3>
+
+集合。
+要素に重複がない。
+要素に null を含められない。
+<P>
+<BR>
+
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+class Set : Collection
+<UL>
+  <LI> new <B>create</B>();
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> new <B>create</B>(Comparator comp);
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      要素の比較に comp を使用する。
+<FONT COLOR="red">
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: comp が null。
+	    </UL>
+      </DL>
+</FONT>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Set <B>add</B>(Root element);
+      <BLOCKQUOTE>
+      element を集合の要素として追加する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: element が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◇ Sequence</H3>
+
+順序付き集合。
+集合の中の各要素の位置は、整数(インデックス)で示す。
+先頭要素のインデックスは0、それ以外の要素のインデックスは直前の要素の
+インデックスよりも1大きい。
+<P>
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+abstract class Sequence : Collection
+<UL>
+  <LI> public abstract Root <B>first</B>();
+      <BLOCKQUOTE>
+      先頭の要素を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract int <B>indexOf</B>(Root value);
+      <BLOCKQUOTE>
+      value と等しい要素のインデックスの中で、最小のものを返す。
+      存在しなければ、-1を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract int <B>indexOf</B>(Root value, int lower);
+      <BLOCKQUOTE>
+      value と等しい要素のインデックスの中で、
+      lower 以上で最小のものを返す。
+      存在しなければ、-1を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Sequence <B>infix</B>(int start, int end);
+      <BLOCKQUOTE>
+      インデックス [start, end) の要素から構成される中置を返す。
+      要素のコピーは行わない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Root <B>last</B>();
+      <BLOCKQUOTE>
+      最後尾の要素を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Sequence <B>postfix</B>(int start);
+      <BLOCKQUOTE>
+      インデックス [start, 要素数) の要素から構成される中置を返す。
+      要素のコピーは行わない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Sequence <B>prefix</B>(int end);
+      <BLOCKQUOTE>
+      インデックス [0, end) の要素から構成される前置を返す。
+      要素のコピーは行わない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract int <B>rIndexOf</B>(Root value);
+      <BLOCKQUOTE>
+      value に等しい要素のインデックスの中で、最大のものを返す。
+      存在しなければ、-1を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract int <B>rIndexOf</B>(Root value, int upper);
+      <BLOCKQUOTE>
+      value と等しい要素のインデックスの中で、
+      upper 未満で最大のものを返す。
+      存在しなければ、-1を返す。
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◆ Array</H3>
+
+配列。
+記憶領域の大きさ(登録できる要素数)はユーザが指定する。
+要素の追加にはインデックスを指定し、
+インデックスによって要素の取り出しを行う。
+要素の重複を許す。
+要素に null を含められる。
+<P>
+
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+class Array : Sequence
+<UL>
+  <LI> new <B>create</B>(int size);
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      サイズを size に設定する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: size が負。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> new <B>create</B>(int size, Comparator comp);
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      サイズを size に設定する。
+      要素の比較に comp を使用する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: size が負。
+	      <LI> CollectionException: comp が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Root <B>at</B>(int index);
+      <BLOCKQUOTE>
+      インデックス index で示される位置の要素を取り出す。
+      取り出した要素が null の場合もある。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: index が0未満またはsize()以上。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Array <B>clear</B>();
+      <BLOCKQUOTE>
+      すべてのインデックスに対する要素を null にする。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public Iterator <B>iterator</B>();
+      <BLOCKQUOTE>
+      イテレータを返す。
+      各インデックスに対する要素が登録されているかどうかに関わらず、
+      ポイントしている要素のインデックスが size()-1 未満であるならば、
+      hasMoreElements() は true を返す。
+      イテレータのメソッド atEnd() は、
+      0 ～ インデックスの最大値(size()-1)に対する要素を
+      ポイントしているときに限り false を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Array <B>putAt</B>(int index, Root element);
+      <BLOCKQUOTE>
+      インデックス index で示される位置に要素 element を登録する。
+      既に登録されている要素があっても上書きする。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: index が0未満またはsize()以上。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Collection
+      <FONT COLOR="#0000FF"><B><I>remove</I></B></FONT>(Root element);
+      <BLOCKQUOTE>
+      element に等しい最初の(インデックスが最小の)要素を削除する。
+      element に等しい要素が存在しないときは何も起こらない。
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: element が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Collection
+      <FONT COLOR="#0000FF"><B><I>removeAll</I></B></FONT>(Root element);
+      <BLOCKQUOTE>
+      element に等しいすべての要素を削除する。
+      element に等しい要素が存在しないときは何も起こらない。
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: element が null。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Array <B>resize</B>(int newSize);
+      <BLOCKQUOTE>
+      サイズを newSize に変更する。
+      要素は保存される。
+      ただし、変更前のサイズ(oldSize)と newSize が等しい場合は、
+      何も起こらない。
+      また、oldSize よりも newSize が小さい場合は、
+      0 ～ newSize-1 のインデックスを持つ要素だけが保存される。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: newSize が負。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◆ SList</H3>
+
+単方向リスト。
+要素の重複を許す。
+要素に null を含められる。
+<P>
+<BR>
+
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+class SList : Sequence
+<UL>
+  <LI> new <B>create</B>();
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> new <B>create</B>(Comparator comp);
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      要素の等価比較に comp を使用する。
+<FONT COLOR="red">
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: comp が null。
+	    </UL>
+      </DL>
+</FONT>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked SList <B>concatenate</B>(SList list);
+      <BLOCKQUOTE>
+      この SList の後ろに list を連結した SList を返す。
+      要素のコピーは行わない。
+      この SList 自身と list には何の変更も行わない。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked SList <B>insertAfter</B>(Root prev, Root element);
+      <BLOCKQUOTE>
+      値 prev に等しい最前の要素の次に要素 element を挿入する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: prev に等しい要素がない。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked SList <B>popFront</B>();
+      <BLOCKQUOTE>
+      リストの先頭の値を削除する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked SList <B>pushBack</B>(Root element);
+      <BLOCKQUOTE>
+      リストの最後に要素 element を追加する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked SList <B>pushFront</B>(Root element);
+      <BLOCKQUOTE>
+      リストの先頭に要素 element を追加する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked Collection
+      <FONT COLOR="#0000FF"><B><I>remove</I></B></FONT>(Root element);
+      <BLOCKQUOTE>
+      element に等しい最前の要素を削除する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public locked SList <B>removeAfter</B>(Root prev);
+      <BLOCKQUOTE>
+      prev に等しい最前の要素の次の要素を削除する。
+
+      <DL>
+	<DT> [例外]
+	<DD>
+	    <UL>
+	      <LI> CollectionException: prev に等しい要素がない。
+	    </UL>
+      </DL>
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◇ Iterator</H3>
+
+イテレータ。
+集合から要素を逐次的に取り出す。
+<!-- Sequence のサブクラス以外のクラス(Dictionary, Set)を
+対象としたイテレータは、
+一方向(前方)の移動だけをサポートする。 -->
+各コレクションのメソッド iterator() は、
+Iterator の具象クラスを返す。
+<P>
+<BR>
+
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+abstract class Iterator
+<UL>
+  <LI> public abstract boolean <B>atEnd</B>();
+      <BLOCKQUOTE>
+      コレクションから取り出せる要素があるかどうか判定する。
+      次に取り出す要素がないならば true を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public boolean <B>hasMoreElements</B>();
+      <BLOCKQUOTE>
+      コレクションからまだ要素を取り出せるか調べる。
+      次に取り出せる要素があるならば true を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract Root <B>nextElement</B>();
+      <BLOCKQUOTE>
+      コレクションから次の要素を返す。
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+<HR SIZE=1>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◇ Comparator</H3>
+
+オブジェクトの比較を行う。
+<P>
+<BR>
+
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+abstract class Comparator
+<UL>
+  <LI> public abstract boolean <B>compare</B>(Root obj1, Root obj2);
+      <BLOCKQUOTE>
+      二つのオブジェクトの比較を行い、
+      等しいと判定した場合に true を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public abstract int <B>hash</B>(Root obj);
+      <BLOCKQUOTE>
+      オブジェクトのハッシュ値を返す。
+      </BLOCKQUOTE>
+
+  <LI> public abstract Comparator <B>duplicate</B>();
+      <BLOCKQUOTE>
+      オブジェクトのコピーを返す。
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+
+<HR>
+<!-- ------------------------------------------------------------ -->
+
+
+<H3>◇ StringComparator</H3>
+
+文字列の構成文字自体の比較を行う。<BR>
+Comparator 付き constructor を持つコレクションで文字列を要素にする場合に
+この StringComparator のインスタンスをコンストラクタの引数に指定する。
+<P>
+<BR>
+
+
+<CENTER>
+<TABLE BORDER=1 CELLPADDING=10 CELLSPACING=0 WIDTH=90% BGCOLOR="#FFFFFF">
+<TR>
+<TD>
+class StringComparator : Comparator
+<UL>
+  <LI> new <B>create</B>();
+      <BLOCKQUOTE>
+      オブジェクトを生成する。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public boolean <B>compare</B>(Root str1, Root str2);
+      <BLOCKQUOTE>
+      二つの文字列の比較を行い、等しい場合に true を返す。
+      </BLOCKQUOTE>
+      <P>
+
+  <LI> public int <B>hash</B>(Root str);
+      <BLOCKQUOTE>
+      文字列のハッシュ値を返す。
+      </BLOCKQUOTE>
+
+  <LI> public Comparator <B>duplicate</B>();
+      <BLOCKQUOTE>
+      オブジェクトのコピーを返す。
+      </BLOCKQUOTE>
+</UL>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+<P>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+

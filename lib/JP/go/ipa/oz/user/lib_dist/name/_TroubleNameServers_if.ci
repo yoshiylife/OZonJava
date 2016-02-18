@@ -1,0 +1,6 @@
+i, JP.go.ipa.oz.user.lib_dist.name._TroubleNameServers_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, remove, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, contains, 0x21, Z, (LJP.go.ipa.oz.lib.standard._String_if)
+m, replace, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Integer_if)
+m, add, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if)
+m, get, 0x1, LJP.go.ipa.oz.lib.standard._Dictionary_if, ()

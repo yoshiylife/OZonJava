@@ -1,0 +1,544 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="hello_test.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_quit.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>MyDialogクラス</B><BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+OZプログラム <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">MyDialog.oz
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+    class MyDialog : *Frame {
+    Button btnOK;
+    Button btnCancel;
+    Label lblMessage;
+    Quit    quit;
+    EventDispatchingQueue queue;
+
+    new create() {
+        super=&gt;newFrame();
+
+        //INIT CONTROLS
+        BorderLayout border;
+        setLayout(border=&gt;newBorderLayout());     // レイアウトの設定    
+
+        addNotify();
+
+        setSize(210,140);                     // フレームサイズの指定
+        setTitle(&quot;My Dialog&quot;);              // フレームタイトルの設定
+
+        lblMessage=&gt;newLabel(&quot;Hello!&quot;);   // アトリビュートの初期設定 
+
+        FlowLayout flow1;
+        Panel panel1=&gt;newPanel(flow1=&gt;newFlowLayout());
+        add(&quot;Center&quot;, panel1);
+        panel1-&gt;add(lblMessage);       // アトリビュート表示位置の設定
+
+        FlowLayout flow2;       
+        Panel panel2=&gt;newPanel(flow2=&gt;newFlowLayout(1,20,20));
+                                                    //1:CENTER
+        add(&quot;South&quot;, panel2);                 // ボタンの配置を決定する 
+        panel2-&gt;addNotify();
+        panel2-&gt;add(btnOK=&gt;newButton(&quot;OK&quot;));
+        panel2-&gt;add(btnCancel=&gt;newButton(&quot;Cancel&quot;));
+
+        activateListeners(queue=&gt;create());             // リスナの登録
+    }
+
+    public void setVisible(boolean b) {
+        setLocation(100, 100);
+        super-&gt;setVisible(b);
+    }
+
+    public void deleteListeners() {
+        if (! queue-&gt;isDestroyed())   queue-&gt;destroy();
+        queue = null;
+        btnOK-&gt;removeActionListener(quit);
+        btnCancel-&gt;removeActionListener(quit);
+        quit = null;
+    }
+
+    public void activateListeners(EventDispatchingQueue queue) {
+        quit=&gt;create(this, queue);
+        btnOK-&gt;addActionListener(quit);
+        btnCancel-&gt;addActionListener(quit);
+    }
+}
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI><A href="#class">class型クラスの宣言</A>
+  <LI><A href="#up">MyDialogクラスの上位クラス</A>
+  <LI><A href="#attr">MyDialogクラスのアトリビュート</A>
+  <LI><A href="#cons">MyDialogクラスのコンストラクタ</A>
+  <LI><A href="#multi">OZ言語の多重継承</A>
+  <LI><A href="#method">MyDialogクラスのメソッド</A>
+</OL>
+<UL>
+  <LI><A href="#app">抽象クラス</A>
+</UL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="class"></A><BR>
+１．class型クラスの宣言
+  <DD><BR>
+ここで宣言されているMyDialogクラスはclass型のクラスです。<BR>
+<BR>
+class型のクラスの宣言は、キーワード <B>class</B> を用いて行います。<BR>
+<BR>
+class型クラスの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class A : [*上位クラス,上位クラス...] {
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+cell 型クラスの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell A : [*上位クラス,上位クラス] {
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+class型のクラスは、ローカルオブジェクトを生成します。ローカルオブジェクトはローカル環境で活動するオブジェクトです。<BR>
+<BR>
+<BR>
+  <DT><A name="up"></A><BR>
+２．MyDialogクラスの上位クラス
+  <DD><BR>
+MyDialogクラスは、Frameクラスの下位クラスとして宣言されています。<BR>
+OZ言語は多重継承を支援しますが、MyDialogクラスの上位クラスはFrameクラスのみです。<BR>
+<BR>
+MyDialogクラスの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class MyDialog : *Frame {
+        ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<TT><FONT color="#400040">Frame</FONT></TT>という文字列の前に* が付けられていますが、これはクラスを継承するという意味です。<BR>
+<BR>
+OZ言語では2種類の継承を支援しています。ここで行われている<B>クラスの継承</B>と、そして、クラスのインタフェースだけを継承する<B>インタフェースの継承</B>です。上位クラスを複数宣言できますが、その中のたかだか１つのクラスだけがメソッド本体の定義も含めて継承できます。その他の上位クラスからは、インタフェースの継承が行われます。クラスを継承する上位クラスのことを、<B>上位実装クラス</B>といいます。<BR>
+<BR>
+<BR>
+Frameクラスはタイトル付の最上位ウィンドウであるフレームを示すクラスで、以下のようなメンバを持っています。<BR>
+<BR>
+コンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top"><B>new newFrame()</B></TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。タイトルなしでフレームを生成します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top"><B>new newFrame(String <FONT color="#800080">arg1</FONT>)</B></TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。タイトル<FONT color="#800080">arg1</FONT>でフレームを生成します。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+メソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void addNotify()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームのピアを生成します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top"><B>public String asString()</B></TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サイズを示す文字列を答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void dispose()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームを破棄します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public MenuBar getMenuBar()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>メニューバーを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String getTitle()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームのタイトルを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean isResizable()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームの大きさが変更可能かどうかを答えます。<BR>
+true=変更できます。 false=変更できません。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void remove(MenuComponent <FONT color="#800080">arg1</FONT>)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームのメニューコンポーネント<FONT color="#800080">arg1</FONT>を削除します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setIconImage(Image <FONT color="#800080">arg1</FONT>)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームがアイコン化されたときのイメージデータを<BR>
+<FONT color="#800080">arg1</FONT> に設定します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setMenuBar(MenuBar arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームにメニューバー<FONT color="#800080">arg1</FONT> を設定します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setResizable(boolean arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームの大きさが変更可能かどうかを設定します。<BR>
+true=変更できます。 false=変更できません。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setTitle(String arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームのタイトルを設定します。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+Frameクラスは、OZ標準クラスライブラリのGUIライブラリに定義されています。GUIライブラリは、JavaのAWTと同様のインタフェースを持ち、AWTと同様の使い方ができます。OZライブラリとして独特なのは、上のボールド体で表示したメソッドです。これはオブジェクトの文字列表現を答えるメソッドで、Frameクラスではサイズの文字列表現を返すように定義されています。<BR>
+<BR>
+MyDialogクラスのオブジェクトも、上記の振舞い（=メソッド）を持っています。<BR>
+<BR>
+<BR>
+  <DT><A name="attr"></A><BR>
+３．MyDialogクラスのアトリビュート
+  <DD><BR>
+MyDialogクラスには5つのアトリビュートメンバが宣言されています。<BR>
+<BR>
+MyDialogクラスのアトリビュート <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class MyDialog : *Frame {
+        Button btnOK;
+        Button btnCancel;
+        Label lblMessage;
+        Quit quit;
+        EventDispatchingQueue queue;
+        ...       
+    }
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+Buttonクラス、LabelクラスはOZ標準クラスライブラリのGUIライブラリに定義されています。<BR>
+両者はGUIコンポーネントを表現するComponentクラスの下位クラスとして宣言されています。ButtonクラスはGUIのボタンを表現します。LabelクラスはGUIラベルを表現します。<BR>
+<BR>
+コンストラクタメンバcreateの中で、<FONT color="#400040">btnOK=&gt;newButton(&quot;OK&quot;)</FONT>
+、<FONT color="#400040">btnCancel=&gt;newButton(&quot;Cancel&quot;)</FONT>
+として生成されています。btnOKは出力ウィンドウのOKボタンを、btnCancelはCancelボタンを表現するオブジェクトへのリファレンスを保持します。<BR>
+同様に、コンストラクタで <FONT color="#400040">lblMessage=&gt;newLabel(&quot;Hello!&quot;);</FONT>
+として生成されているlblMessageは、ウィンドウに表示される文字列を表現するオブジェクトへのリファレンスを保持するものです。<BR>
+<BR>
+Quitクラスは、このサブジェクトのクラスの１つとして宣言、定義されています。<BR>
+<BR>
+EventDispatchingQueueクラスは、OZ標準クラスライブラリのGUIライブラリに定義されています。イベント配送キューを表現するクラスです。<BR>
+<BR>
+<BR>
+  <DT><A name="cons"></A><BR>
+４．MyDialogクラスのコンストラクタ
+  <DD><BR>
+コンストラクタメンバは、名前の前にキーワード <B>new</B> をつけます。コンストラクには、メソッド名と重複しなければ、<B>任意の名前</B>をつけることができます。MyDialogクラスのコンストラクタは
+create という名前です。<BR>
+<BR>
+コンストラクタ <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31"><BR>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    new create() { 
+        super=&gt;newFrame();
+    ...
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<TT><FONT color="#400040">super=&gt;newFrame()</FONT></TT>は上位クラスのインスタンス生成式です。<TT><FONT color="#400040">super</FONT></TT>
+は上位クラスあるいは祖先クラスを指定するキーワードです。先に見たように、MyDialogクラスの上位クラスFrameには、<TT><FONT color="#400040">newFrame()</FONT></TT>というコンストラクタが定義されており、MyDialogクラスのコンストラクタではそれが起動されています。<BR>
+コンストラクタメンバを宣言するときには、その本体定義の中で<B>必ず上位クラスのコンストラクタを起動する</B>必要があります。<BR>
+<BR>
+<BR>
+そのあとフレームの初期設定を行う文が続きます。<BR>
+コンストラクタ本体の定義の中では、ローカル変数宣言、インスタンス生成、メソッド起動を含むOZ言語が規定する文を記述することができます。<BR>
+<BR>
+コンストラクタ本体定義の中で、quit 以外のアトリビュートの初期設定を行っています。<BR>
+<BR>
+アトリビュートのインスタンス生成 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31"><BR>
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    lblMessage=&gt;newLabel(&quot;Hello!&quot;);
+
+    panel2-&gt;add(btnOK=&gt;newButton(&quot;OK&quot;));
+
+    panel2-&gt;add(btnCancel=&gt;newButton(&quot;Cancel&quot;)); 
+
+    activateListeners(queue=&gt;create());
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<B>アトリビュートは、アトリビュート宣言でインスタンス生成を行うことができません。</B>コンストラクタあるいはメソッドでそのオブジェクトを生成します。<BR>
+<BR>
+<BR>
+GUIの詳細については、「GUIアプリケーションの作成」を参照してください。ここでは、コンストラクタ本体定義の一連の文の実行によってHelloウィンドウの初期化が行われていること、および、OZ言語のインスタンス生成、メソッド起動の書き方を見ておいてください。<BR>
+<BR>
+  <DT><A name="multi"></A><BR>
+５．OZ言語の多重継承
+  <DD><BR>
+コンストラクタで定義されている文をみると、MyDialogクラスにもFrameクラスにも宣言されていないメソッドが、このオブジェクトの持つメソッドとして起動されています（setLayoutメソッド、setSizeメソッド、addメソッド）。<BR>
+<BR>
+Frameクラスは <TT><FONT color="#400040">class Frame : *Window, MenuContainer</FONT>
+{...}</TT> と宣言されています。<BR>
+Windowという文字列の前に、* がついているので、WindowクラスはFrameクラスの上位実装クラスです。そして、MenuContainerクラスからインタフェースを継承してFrameクラスが宣言されています。<BR>
+<BR>
+Windowクラスはボーダーとメニューバーのないトップレベルウィンドウを示すクラスで、以下のようなメンバを持っています。<BR>
+MenuContainerクラスは<B>抽象メソッド</B>を持つ<B>抽象クラス</B>です。抽象クラスはインスタンス生成を行うことができないクラスで、下位クラスのインタフェースを決定するためなどの目的で定義されます。<BR>
+  <UL>
+    <LI>MenuContainerクラスの上位クラス： Root
+    <LI>MenuContainerクラスメソッドメンバ
+    <TABLE>
+      <TR>
+        <TD nowrap width="10"></TD>
+        <TD nowrap valign="top">public abstract Font getFont()</TD>
+        <TD nowrap width="10"></TD>
+        <TD nowrap>フォントを答えます。</TD></TR>
+      <TR>
+        <TD nowrap></TD>
+        <TD nowrap valign="top">public abstract boolean postEvent(Event arg1)</TD>
+        <TD nowrap></TD>
+        <TD nowrap>イベントをポストします。</TD></TR>
+      <TR>
+        <TD nowrap width="10"></TD>
+        <TD nowrap valign="top">public abstract void remove(MenuComponent arg1)</TD>
+        <TD nowrap width="10"></TD>
+        <TD nowrap>コンポーネントを削除します。</TD></TR>
+    </TABLE>
+
+<BR>
+  </UL>
+<BR>
+MyDialogクラスのコンストラクタで定義されている以下のメソッドは、Windowクラスの上位実装クラスであるContainerクラスで定義されています。
+  <UL>
+    <LI>public void setLayout(LayoutManager arg1)
+    <LI>public Component add(String arg1, Component arg2)
+  </UL>
+<BR>
+MyDialogクラスのコンストラクタで定義されている以下のメソッドは、Containerクラスの上位実装クラスであるComponentクラスで定義されています。
+  <UL>
+    <LI>public void setLocation(int arg1, int arg2)
+  </UL>
+<BR>
+<BR>
+<BR>
+下位クラスは、祖先クラスを継承して、そこで宣言されているよりも多くのメソッドを持ちます。しかし、継承構造をたどってどのようなメンバが定義されているのかを調べるのは煩雑なことです。OZ
+IDE の<B>クラスブラウザ</B>を利用すると、継承するメソッドを含めてそのクラスが持つメンバを一覧できます。<BR>
+<BR>
+<BR>
+  <DT><A name="method"></A><BR>
+６．MyDialogクラスのメソッド
+  <DD><BR>
+<BR>
+setVisibleメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+        public void setVisible(boolean b) {
+            setLocation(100, 100);
+            super-&gt;setVisible(b);
+        }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+このクラスのオブジェクトの表示位置を設定し、祖先クラスのsetVisibleを起動しています。setVisibleはコンポーネントの表示状態を設定するメソッドで、この場合は、Componentクラスで定義されているsetVisible
+メソッドが起動されます。引数がtrueのときに自分自身を表示します。falseのときには表示されません。<BR>
+<BR>
+<BR>
+deleteListenersメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+        public void deleteListeners() {
+            if (! queue-&gt;isDestroyed()) queue-&gt;destroy();
+            queue = null;
+            btnOK-&gt;removeActionListener(quit);
+            btnCancel-&gt;removeActionListener(quit);
+            quit = null;
+        }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+EventDispatchingQueueクラスのオブジェクトを破壊し、アトリビュートのクリアを行います。<BR>
+<BR>
+<BR>
+activateListenersメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">MyDialog.oz
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+        public void activateListeners(EventDispatchingQueue queue) {
+            quit=&gt;create(this, queue);
+            btnOK-&gt;addActionListener(quit);
+            btnCancel-&gt;addActionListener(quit);
+        }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+Quitクラスのオブジェクト（アトリビュート）を生成し、Buttonクラスのアクションリスナに追加しています。<BR>
+<BR>
+  <DT><A name="app"></A><BR>
+補足: 抽象クラス
+  <DD><BR>
+抽象クラス <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    <B>abstract</B> class ReceiveThread : *ExecuteThread {  
+        String selector;
+
+        public void run () { ...}
+  
+        new create (OzCGI c, String sel) { 
+            super=&gt;create (c, null);
+            selector = sel;
+        }
+
+        protected <B>abstract</B> void dispatch ();
+
+        protected void atExit () {}
+}
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+抽象メソッドを持つクラスは、インスタンスを生成できません。インスタンスを生成しないクラスを抽象クラスといいます。このようなクラスは継承して利用されるために定義されています。抽象クラスを継承する子孫クラスで、抽象メソッドの本体が定義されます。<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<OL>
+  <LI><A href="hello_ele.html">アプリケーションの構成</A>
+  <LI><A href="hello_ide.html">OZ IDE の起動とプロジェクト、サブジェクトの作成</A>
+  <LI><A href="hello_test.html">Testクラス</A>
+  <LI><A href="hello_my.html">MyDialogクラス</A><IMG src="red.gif" height="16" width="13">
+  <LI><A href="hello_quit.html">Quitクラス</A>
+  <LI><A href="hello_compile.html">OZ IDE を利用したコンパイルとテスト実行</A>
+  <LI><A href="hello_s.html">アプリケーションのスクールファイル</A>
+  <LI><A href="hello_go.html">ランチャを利用するグローバルオブジェクトの生成とその活性化</A>
+  <LI><A href="hello_debug.html">OZプログラムのデバック</A>
+  <LI><A href="hello_rel.html">リリースパッケージの配布</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490">
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="hello_test.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="s_ide.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="hello_quit.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

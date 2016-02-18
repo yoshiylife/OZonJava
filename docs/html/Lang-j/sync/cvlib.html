@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="cond.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../grammers/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>排他制御と同期機構に関わるクラスライブラリ<BR>
+</H3>
+<P>
+<BR>
+<BR>
+OZシステムは、排他制御と同期機構に関わるクラスライブラリを提供しています。<BR>
+<BR>
+</P>
+<UL>
+  <LI>バイナリセマフォ
+  <LI>タイムアウトタイマ
+  <LI>同期構造体
+</UL>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>バイナリセマフォ
+  <DD><BR>
+複数のスレッドで実行中の複数メソッドから１つのオブジェクトに対するインスタンス変数を参照することがマルチスレッドプログラムの実行中に発生する場合があります。その状況でインスタンス変数を書き換えるとき、他の一部または全てのスレッドからの参照や変更をブロックしないと健全な値をスレッド間で受渡しすることが不可能になる可能性があります。これを避けるために、複数のスレッドのある区間(クリティカルセクション)への同時侵入を制御する機能がバイナリセマフォです。クリティカルセクションの実行前にP命令に相当するメソッドを、後にV命令に相当するメソッドを起動することでクリティカルセクションを保護します。<BR>
+<BR>
+詳細は「クラスライブラリ」の相当する個所を参照してください。<BR>
+<BR>
+<BR>
+  <DT>タイムアウトタイマ
+  <DD><BR>
+メソッド実行の終了をタイムアウト付きで待ち合わせる機能を実現します。すなわち、タイムアウトタイマをかけて実行したいメソッド起動を行うクラスをユーザが定義し、そのメソッドを実行するプロセスをフォークします。タイマに指定した時間以内に処理が終了すれば、その処理の結果を(戻り値として、あるいは例外として)受けとることができます。処理が終了しない場合は、タイムアウトの例外として受けとることができます。<BR>
+<BR>
+詳細は「クラスライブラリ」の相当する個所を参照してください。<BR>
+<BR>
+<BR>
+  <DT>同期構造体
+  <DD>スレッドの待ち合わせを行うため機能です。以下の2種類の同期構造体を提供しています。<BR>
+<BR>
+  <DL>
+    <DT>I 構造体
+    <DD>読込みのスレッドは、既に値が到着していればそれを読み込みますが、到着していなければ到着するまでブロックします。<BR>
+書込みのスレッドは、値を書き込みます。<BR>
+2回以上の連続した読込みまたは書込みの要求がなされた場合は例外が発生します。<BR>
+<BR>
+    <DT>Q 構造体
+    <DD>2つのスレッド間での複数の値の受渡しを同期させます。<BR>
+読込みのスレッドは、キューに値が入っていればそれを読み込みますが、空であれば、値が入るまでブロックします。<BR>
+書込みのスレッドは、値をキューします。<BR>
+2回以上の連続した書込みは、値をキューされ、正常に動作します。<BR>
+2回以上の連続した読込みは、キューされた値を順に読み出します。<BR>
+  </DL>
+<BR>
+詳細は「クラスライブラリ」の相当する個所を参照してください。<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="cond.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="../grammers/index.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

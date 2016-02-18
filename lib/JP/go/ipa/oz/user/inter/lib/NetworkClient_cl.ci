@@ -1,0 +1,20 @@
+j, JP.go.ipa.oz.user.inter.lib.NetworkClient_cl, 0x400, JP.go.ipa.oz.user.inter.lib.NetworkClient_if, JP.go.ipa.oz.lang._Root_cl
+a, timeout, 0x0, I, 1025, 12
+a, record, 0x4, LJP.go.ipa.oz.user.inter.lib.ProtocolRecord_if, 871, 32
+a, server, 0x4, LJP.go.ipa.oz.lib.standard._Socket_if, 808, 24
+a, response_message, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 943, 34
+a, default_port, 0x0, I, 1073, 17
+c, create, (), (), (JP.go.ipa.oz.user.inter.lib.ProtocolRecord_cl), (1511, 79, ())
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if, I), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.inter.lib.ProtocolRecord_cl), (1307, 150, ())
+m, sendCommand, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._OutputStreamWriter_if), (JP.go.ipa.oz.lib.standard._OutputStreamWriter_cl), (2069, 224, ((2104, 6, JP.go.ipa.oz.lib.standard._String_if), (2141, 18, JP.go.ipa.oz.lib.standard._OutputStreamWriter_if)))
+m, getResponse, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (2734, 57, ())
+m, read_response, 0x0, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._InputStream_if, JP.go.ipa.oz.lib.standard._ByteArray_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._IOException_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.lib.standard._ByteArray_cl, JP.go.ipa.oz.lib.standard._StringBuffer_cl), (3477, 598, ((3507, 11, JP.go.ipa.oz.lib.standard._InputStream_if), (3555, 9, JP.go.ipa.oz.lib.standard._ByteArray_if), (3663, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (3698, 6, JP.go.ipa.oz.lib.standard._String_if), (3852, 6, JP.go.ipa.oz.lib.standard._String_if), (4013, 11, JP.go.ipa.oz.lib.standard._IOException_if)))
+m, moreResponse, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._String_if), (), (3162, 238, ((3201, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, getTimeout, 0x1, I, (), (), (), (4273, 44, ())
+m, connect, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1886, 82, ())
+m, connect, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if, I), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._Socket_cl), (1703, 99, ())
+m, setTimeout, 0x1, V, (I), (), (), (4151, 47, ())
+m, encodeData, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (4480, 58, ())
+m, sendData, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._OutputStreamWriter_if), (JP.go.ipa.oz.lib.standard._OutputStreamWriter_cl), (2425, 231, ((2468, 6, JP.go.ipa.oz.lib.standard._String_if), (2504, 18, JP.go.ipa.oz.lib.standard._OutputStreamWriter_if)))
+m, version, 0x0, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (716, 57, ())
+m, readResponse, 0x4, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._String_if), (), (2856, 216, ((2895, 6, JP.go.ipa.oz.lib.standard._String_if)))

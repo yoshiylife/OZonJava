@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>Manual of OZ Semaphore Lib.</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>OZ セマフォライブラリ</H2>
+<H4>バイナリセマフォの使い方</H4>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+<UL>
+<LI>クリティカルセクションの前に P 命令に相当するメソッドを、後に V 命令に相
+当するメソッドを呼ぶことでクリティカルセクションを保護する。排他モー
+ドのみのセマフォ BinarySemaphore と、共有/排他の両方のモードを持つセ
+マフォ ModedBinarySemaphore がある。ModedBinarySemaphore ではモードに
+応じた二種の P 命令に相当するメソッドを使い分けることで、スレッドのクリ
+ティカルセクション進入時のモードの宣言を行う。
+<LI>使用例<BR>
+あるクラスのあるメソッドの中で、クリティカルセクションとなるある
+ブロック A を保護したいとする。このブロックが locked メソッドなら
+セマフォを使う必要はないが、そうでない場合はセマフォを使う必要が
+ある可能性がある。まず、そのクラスのコンストラクタの中等でクリ
+ティカルセクションごとにセマフォを用意する。今その生成された
+ModedBinarySemaphore が属性 mbs にあるとする。そして、条件 B を満
+たすスレッドは排他モードでブロック A に、満たさないスレッドは共有
+モードでブロック A に進入するとする。そのコードは以下の形になる。
+<PRE>
+  if(B) mbs->exclusiveP(); else mbs->sharedP();
+  A
+  mbs->V();
+</PRE>
+<LI>クリティカルセクション進入順序<BR>
+クリティカルセクション内にいたスレッドが V() メソッドを呼んで次のスレッ
+ドがそこへ進入可能になったとする。しかし、進入を待っているスレッドが
+複数いて、しかも排他モードのものと共有モードのものがいる場合、進入の
+順序が問題となる。この順序決めとしては一般に次の二つの方法がある。
+<OL>
+<LI>待ち状態に入った順にスレッドの進入を試みる方法
+<LI>共有モードのスレッドだけ先に進入させてしまう方法
+</OL>
+本バイナリセマフォでは後者の方法をとっている。
+</UL>
+</P>
+
+<UL>
+<LI><A HREF="api.html"><B>API</B></A>
+</UL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

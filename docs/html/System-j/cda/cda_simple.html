@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Delivery of class</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>CDAの最も単純な使い方</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+<OL>
+
+<LI>OZを起動させる前、libディレクトリのoz.propertiesに二つのプロパティ
+を追加する。<BR><BR>
+
+まず、プロパティoz.classloader.deliveryAgent.urlは、executorとCDAの間のソケット通信に使うソケット(ホスト名とポート番号)を指定するものである。
+例えば、executorを動かすマシンのホスト名がhost1で、このhost1のポート番号6010
+のソケットを指定するのなら、次のようなプロパティ設定になる。<BR>
+oz.classloader.deliveryAgent.url=ozclass://host1:6010/<BR>
+ここで、ozclassとはそのソケット通信のプロトコルの名である。<BR><BR>
+
+次に、プロパティoz.cda.targetである。
+executorは実行に必要なクラスがローカルリポジトリに見当たらない場合は、
+ローカルシステム上のCDAに対してそのクラスをリモートシステムから検索して
+くるように要求する。
+CDAは検索方針に従っていくつかのリモートシステムのCDAに順番に打診を行なっていく。
+ここで検索方針とは、打診を行なっていく順番
+であり、打診とは、リモートシステム
+のリポジトリに目的のクラスがあるかどうかを聞くことである。
+プロパティoz.cda.targetの値はこの検索方針である。
+すなわち、打診を行なっていくリモートシステムのドメイン名:OZHOME識別子を','をデリミタとして並べたものである。
+例えば、oz.ipa.go.jp:remoteoz、oz.ipa.go.jp:farozという順で打診を
+行なっていくのなら次のようなプロパティ設定になる。<BR>
+oz.cda.target=oz.ipa.go.jp:remoteoz,oz.ipa.go.jp:faroz <BR>
+尚、このプロパティoz.cda.targetを設定しない場合は、クラスの検索は行なわれない。
+
+<LI>CDAを動かすにはリゾルバが必要である。リゾルバの設定を
+リゾルバのドキュメントに従って適切に行なっておく。
+設定の際には、ポート番号を上述のozclassプロトコル
+によるソケットのポート番号にぶつからないように注意。
+
+<LI>CDAは"cda"というGODのセルであるので、CDAの起動・停止はセルcdaの起動・停止である。
+
+</OL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></
+B>
+
+</BODY>
+</HTML>

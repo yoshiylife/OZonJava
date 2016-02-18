@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.ide.ClassIDGenerator_cl, 0x0, JP.go.ipa.oz.user.ide.ClassIDGenerator_if, JP.go.ipa.oz.lang._Root_cl
+a, ruleOfImplementationID, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 836, 29
+a, ruleOfInterfaceID, 0x0, LJP.go.ipa.oz.lib.standard._Array_if, 759, 24
+c, create, (), (), (JP.go.ipa.oz.lib.standard._Array_cl), (984, 264, ())
+m, generateImplementationID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (1934, 287, ((1991, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (2021, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, getRuleOfImplementationID, 0x1, LJP.go.ipa.oz.lib.standard._Array_if, (), (), (), (2956, 79, ())
+m, getRuleOfInterfaceID, 0x1, LJP.go.ipa.oz.lib.standard._Array_if, (), (), (), (2378, 69, ())
+m, setRuleOfImplementationID, 0x1, V, (LJP.go.ipa.oz.lib.standard._Array_if), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.lib.standard._String_if), (), (3201, 199, ((3255, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, setRuleOfInterfaceID, 0x1, V, (LJP.go.ipa.oz.lib.standard._Array_if), (JP.go.ipa.oz.lib.standard._Array_if, JP.go.ipa.oz.lib.standard._String_if), (), (2603, 186, ((2652, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, generateInterfaceID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (1473, 272, ((1525, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (1555, 6, JP.go.ipa.oz.lib.standard._String_if)))

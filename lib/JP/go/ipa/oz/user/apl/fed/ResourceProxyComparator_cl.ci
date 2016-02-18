@@ -1,0 +1,6 @@
+j, JP.go.ipa.oz.user.apl.fed.ResourceProxyComparator_cl, 0x0, JP.go.ipa.oz.user.apl.fed.ResourceProxyComparator_if, JP.go.ipa.oz.lang._Root_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 125, 14
+c, create, (), (), (JP.go.ipa.oz.lib.standard._System_cl), (149, 39, ())
+m, duplicate, 0x1, LJP.go.ipa.oz.lib.standard._Comparator_if, (), (JP.go.ipa.oz.user.apl.fed.ResourceProxyComparator_if), (JP.go.ipa.oz.user.apl.fed.ResourceProxyComparator_cl), (1174, 98, ((1211, 23, JP.go.ipa.oz.user.apl.fed.ResourceProxyComparator_if)))
+m, compare, 0x1, Z, (LJP.go.ipa.oz.lang._Root_if, LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (), (194, 794, ((343, 13, JP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (382, 13, JP.go.ipa.oz.user.apl.fed.ResourceProxy_if)))
+m, hash, 0x1, I, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.lib.standard._StringComparator_if, JP.go.ipa.oz.user.apl.fed.ResourceProxy_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl), (994, 174, ((1027, 16, JP.go.ipa.oz.lib.standard._StringComparator_if), (1050, 13, JP.go.ipa.oz.user.apl.fed.ResourceProxy_if), (1069, 6, JP.go.ipa.oz.lib.standard._String_if)))

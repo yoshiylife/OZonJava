@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.lib_dist.name._TroubleNameServers_cl, 0x0, JP.go.ipa.oz.user.lib_dist.name._TroubleNameServers_if, JP.go.ipa.oz.lang._Root_cl
+a, list, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 8600, 16
+c, create, (), (JP.go.ipa.oz.lib.standard._StringComparator_if), (JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl), (8624, 74, ((8638, 16, JP.go.ipa.oz.lib.standard._StringComparator_if)))
+m, remove, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (8827, 92, ())
+m, contains, 0x21, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (9072, 96, ())
+m, replace, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Integer_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Integer_if), (), (8923, 145, ())
+m, add, 0x21, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Integer_if), (JP.go.ipa.oz.lib.standard._Integer_cl), (8702, 121, ((8752, 7, JP.go.ipa.oz.lib.standard._Integer_if)))
+m, get, 0x1, LJP.go.ipa.oz.lib.standard._Dictionary_if, (), (), (), (9172, 45, ())

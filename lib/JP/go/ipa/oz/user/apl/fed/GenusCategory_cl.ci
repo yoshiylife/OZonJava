@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.apl.fed.GenusCategory_cl, 0x2000, JP.go.ipa.oz.user.apl.fed.GenusCategory_if, JP.go.ipa.oz.user.apl.fed.FedRoot_cl
+a, categoryName, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 102, 30
+a, type, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 151, 22
+m, getType, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (957, 119, ())
+m, init, 0x1, V, (), (), (), (249, 82, ())
+m, isMemberOf, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1201, 326, ())
+m, setType, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (737, 214, ())
+m, setCategoryName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (337, 245, ())
+m, quiet, 0x1, V, (), (), (), (198, 45, ())
+m, getCategoryName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (588, 143, ())

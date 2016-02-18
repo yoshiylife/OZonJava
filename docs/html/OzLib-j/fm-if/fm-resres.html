@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>リソースの予約</H4>
+</CENTER><HR NOSHADE>
+
+<P>
+リソースの予約を行うには、予約の開始時刻と
+終了時刻を設定したResereveオブジェクトを
+用意し、予約可能なリソースの役割である
+Schedulerオブジェクトのreserve(Reserve)
+メソッドを利用する。
+<BR>
+Schedulerは受け取ったReserveをもとに
+Schedulableに対しreserve(Reserve)を行う。
+Schedulableは受け取ったReserveの予約開始
+時刻と終了時刻内で予約可能ならば予約を行う。
+予約成功後は、予約に用いたReserveオブジェクトを
+Schedulerと予約したオブジェクト間にアタッチする。
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B> <A href=../../"copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

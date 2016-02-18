@@ -1,0 +1,45 @@
+<HTML>
+<HEAD><TITLE>Application Gateway Manual</TITLE></HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>アプリケーションゲートウェイの起動</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+アプリケーションゲートウェイの起動には次の条件が満たされていなければならない。
+<UL>
+<LI>環境変数 <B>AGHOME</B> が適切に設定されている。
+<LI>起動する計算機に <B>Java</B> の実行環境(<B>JDK</B>)がインストールされている。
+<LI>環境変数 <B>CLASSPATH</B> にアプリケーションゲートウェイのクラス
+ファイル <B>$AGHOME/lib/ApplicationGateway.zip</B> が含まれるように設定されている。
+</UL>
+起動方法は、新たにウィンドウを作成して
+<B>$AGHOME/bin/ag[.bat]</B> を起動する(スクリプトである)。
+これはアプリケーションゲートウェイは標準入力からコマンドを
+受け付けるようになっているからである。
+<br>
+アプリケーションゲートウェイの終了は <B>exit</B> コマンドによって行う。
+<br>
+アプリケーションゲートウェイを介してリモートメソッド起動を
+行うためには、双方のサイトでアプリケーションゲートウェイ、
+<B>OZ</B> ドメインリゾルバ、<B>OZ</B> ホームリゾルバが稼働している必要が有る。<br>
+起動の順序は <B>OZ</B> ドメインリゾルバが先で <B>OZ</B> ホームリゾルバが後である。
+</P>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

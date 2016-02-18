@@ -1,0 +1,9 @@
+j, JP.go.ipa.oz.user.lib_dist.name._PollingRunnable_cl, 0x0, JP.go.ipa.oz.user.lib_dist.name._PollingRunnable_if, JP.go.ipa.oz.lang._Runnable_cl
+a, troubleList, 0x0, LJP.go.ipa.oz.user.lib_dist.name._TroubleNameServers_if, 9331, 31
+a, cond, 0x4, N, 9367, 25
+a, maxPollingNum, 0x0, I, 9462, 18
+a, interval, 0x0, I, 9260, 13
+c, create, (LJP.go.ipa.oz.user.lib_dist.name._TroubleNameServers_if), (JP.go.ipa.oz.user.lib_dist.name._TroubleNameServers_if), (), (9489, 128, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._Dictionary_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.name._NameServerTransactionResource_if, JP.go.ipa.oz.lib.standard._Integer_if, JP.go.ipa.oz.lang._Exception_if, JP.go.ipa.oz.lib.standard._UserException_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.user.lib_dist.name._NameServerTransactionResource_pcl, JP.go.ipa.oz.lib.standard._Integer_cl), (9737, 1306, ((9760, 6, JP.go.ipa.oz.lib.standard._System_if), (9789, 6, JP.go.ipa.oz.lib.standard._System_if), (9992, 10, JP.go.ipa.oz.lib.standard._Dictionary_if), (10012, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (10220, 6, JP.go.ipa.oz.lib.standard._String_if), (10243, 29, JP.go.ipa.oz.user.lib_dist.name._NameServerTransactionResource_if), (10525, 7, JP.go.ipa.oz.lib.standard._Integer_if), (10912, 9, JP.go.ipa.oz.lang._Exception_if), (10977, 13, JP.go.ipa.oz.lib.standard._UserException_if)))
+m, beforePolling, 0x24, V, (), (), (), (9621, 52, ())
+m, pollingStart, 0x21, V, (), (), (), (9676, 57, ())

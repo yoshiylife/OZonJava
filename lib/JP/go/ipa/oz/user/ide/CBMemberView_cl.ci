@@ -1,0 +1,31 @@
+j, JP.go.ipa.oz.user.ide.CBMemberView_cl, 0x10, JP.go.ipa.oz.user.ide.CBMemberView_if, JP.go.ipa.oz.lang._Root_cl
+a, modifierView, 0x0, LJP.go.ipa.oz.user.ide.CBMemberLabel_if, 218, 108
+a, attributeColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 330, 53
+a, typeView, 0x0, LJP.go.ipa.oz.user.ide.CBMemberLabel_if, 218, 108
+a, targetSchool, 0x0, LJP.go.ipa.oz.user.ide.School_if, 193, 21
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 532, 15
+a, methodColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 330, 53
+a, isSelected, 0x0, Z, 506, 20
+a, targetMember, 0x0, LJP.go.ipa.oz.user.ide.CIMember_if, 166, 23
+a, argumentTypeView, 0x0, LJP.go.ipa.oz.user.ide.CBMemberLabel_if, 218, 108
+a, constructorColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 330, 53
+a, declaringClassView, 0x0, LJP.go.ipa.oz.user.ide.CBMemberLabel_if, 218, 108
+a, deselectedFgColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 431, 44
+a, deselectedBgColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 431, 44
+a, nameView, 0x0, LJP.go.ipa.oz.user.ide.CBMemberLabel_if, 218, 108
+a, isInherited, 0x0, Z, 481, 21
+a, selectedFgColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 387, 40
+a, accessLevelView, 0x0, LJP.go.ipa.oz.user.ide.CBMemberLabel_if, 218, 108
+a, selectedBgColor, 0x0, LJP.go.ipa.oz.lib.standard._Color_if, 387, 40
+c, newCBMemberView, (LJP.go.ipa.oz.user.ide.CIMember_if, Z, LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.user.ide.CIMember_if, JP.go.ipa.oz.user.ide.School_if), (), (1259, 120, ())
+c, newCBMemberView, (LJP.go.ipa.oz.user.ide.CIMember_if, Z), (JP.go.ipa.oz.user.ide.CIMember_if), (), (1060, 113, ())
+c, newCBMemberView, (LJP.go.ipa.oz.user.ide.CIMember_if, LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.user.ide.CIMember_if, JP.go.ipa.oz.user.ide.School_if), (), (881, 93, ())
+c, newCBMemberView, (LJP.go.ipa.oz.user.ide.CIMember_if), (JP.go.ipa.oz.user.ide.CIMember_if), (), (709, 86, ())
+m, initParams, 0x0, V, (LJP.go.ipa.oz.user.ide.CIMember_if, Z, LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.user.ide.CIMember_if, JP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._Color_cl), (6703, 481, ())
+m, mkComponents, 0x0, V, (), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._Color_if, JP.go.ipa.oz.lib.standard._Font_if, JP.go.ipa.oz.user.ide.CIAttribute_if, JP.go.ipa.oz.user.ide.CIMethod_if), (JP.go.ipa.oz.user.ide.CBMemberLabel_cl, JP.go.ipa.oz.lib.standard._StringBuffer_cl, JP.go.ipa.oz.lib.standard._Font_cl), (4699, 1922, ((4729, 6, JP.go.ipa.oz.lib.standard._String_if), (4777, 6, JP.go.ipa.oz.user.ide.CIPart_if), (4799, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (4826, 5, JP.go.ipa.oz.lib.standard._Color_if), (4842, 4, JP.go.ipa.oz.lib.standard._Font_if), (5123, 11, JP.go.ipa.oz.user.ide.CIAttribute_if), (5292, 8, JP.go.ipa.oz.user.ide.CIMethod_if)))
+m, initGUI, 0x0, V, (), (), (), (4572, 45, ())
+m, select, 0x1, V, (), (), (), (3645, 769, ())
+m, getMember, 0x1, LJP.go.ipa.oz.user.ide.CIMember_if, (), (), (), (3039, 63, ())
+m, layoutComponents, 0x1, V, (LJP.go.ipa.oz.lib.standard._Panel_if, LJP.go.ipa.oz.lib.standard._Panel_if, LJP.go.ipa.oz.lib.standard._Panel_if, LJP.go.ipa.oz.lib.standard._Panel_if, LJP.go.ipa.oz.lib.standard._Panel_if, LJP.go.ipa.oz.lib.standard._Panel_if), (JP.go.ipa.oz.lib.standard._Panel_if), (), (3184, 379, ())
+m, addMemberListener, 0x1, V, (LJP.go.ipa.oz.user.ide.CBMemberListener_if), (JP.go.ipa.oz.user.ide.CBMemberListener_if), (), (1537, 413, ())
+m, deselect, 0x1, V, (), (), (), (2032, 925, ())

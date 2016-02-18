@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="inherit.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>クラス宣言<BR>
+</H3>
+<BR clear="all">
+<P>
+ここでは、クラス宣言、クラス名のスコープ、クラス修飾子について説明します。<BR>
+</P>
+<P>
+<BR>
+<BR>
+OZクラスは次の宣言文で宣言します。
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>[クラス修飾子] class クラス名 ［上位クラス］ { メンバリスト};</B></TD></TR>
+</TABLE>
+
+<P>
+<BR>
+クラス修飾子は省略することができます。その場合には、省略時の指定が行われます。<BR>
+上位クラスも省略することができます。上位クラスが省略された場合には言語の暗黙クラス、すなわち、Rootクラスが上位クラスだとみなされます。<BR>
+<BR>
+<B>class</B> はキーワードです。<BR>
+<BR>
+<BR>
+<B>クラス修飾子</B><BR>
+<BR>
+以下の指定ができます。
+</P>
+<TABLE cellspacing="5" cellpadding="2">
+  <TR>
+    <TD width="30"></TD>
+    <TD valign="top"><B>abstract</B></TD>
+    <TD>抽象クラス。このクラスを直接の型とするオブジェクトを生成することができません。<BR>
+abstract メソッドを持つクラスはこの属性を持たなければいけません。<BR>
+<BR>
+逆に、 この属性を持たないクラスは、上位クラスで定義されたすべてのabstract
+メソッドに対して、再定義により実装定義を行う必要があります。</TD></TR>
+  <TR>
+    <TD></TD>
+    <TD valign="top" width="80"><B>final</B></TD>
+    <TD>このクラスを上位クラスとして宣言することができません。すなわち、このクラスのサブクラスを定義することができません。<BR>
+この修飾子は abstract 属性と共に指定することができません。<BR>
+<BR>
+逆に、この属性を持たないクラスはそのサブクラスを定義することができます。</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+<BR>
+<B>クラス名</B><BR>
+<BR>
+クラス名はソースプログラム単位でユニークなものを指定します。すなわち、クラス名のスコープはソースプログラムです。クラス名は独立名前空間を持っていますから、クラス名以外で使用されている識別子と同一の名前をクラス名とすることができます。<BR>
+<BR>
+<BR>
+<BR>
+<B>上位クラス</B><BR>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>: [*] クラス名［, クラス名］</B></TD></TR>
+</TABLE>
+
+<P>
+継承もとのクラスのクラス名を指定します。OZでは<I>継承もとのクラス</I> を上位クラスと呼びます。<BR>
+上位クラスが必要でない場合には上位クラスを指定しません。この場合にはシステム定義のクラス（Rootクラス）が上位クラスになります。<BR>
+上位クラスの直前に*をつけると、上位実装クラスの指定になります。<BR>
+上位クラス、上位実装クラスについては「<A href="inherit.html">OZクラスの継承</A>」を参照してください。<BR>
+<BR>
+<BR>
+<BR>
+<B>{メンバリスト}</B><BR>
+<BR>
+ブロックの中に一連のメンバを宣言します。すなわち、
+</P>
+<UL>
+  <LI>アトリビュートの宣言：そのクラスから生成されたオブジェクトの持つデータを定義します
+  <LI>メソッドの宣言：そのクラスから生成されたオブジェクトの持つ振舞いを規定します
+  <LI>コンストラクタの宣言：クラスからインスタンスを生成するための手続きを規定します
+</UL>
+<P>
+を行います。<BR>
+この宣言については、「アトリビュート宣言」、「メソッド宣言」、「コンストラクタ宣言」を参照してください。<BR>
+<BR>
+<BR>
+<BR>
+例: クラスの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+ 1:class CompilerCGI {
+ 2: public void start (OzCGI c) { ... }  // Member 1
+ 3: new create () { ... }                // Member 2
+ 4:}
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>1行目に上位クラスが明示的に宣言されていないので、このクラスはRootクラスのサブクラスです。
+  <LI>2行目、3行目はメンバリストです。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<B>クラスのインタフェース部と動作部 <IMG src="../../image/h_glass.gif" height="30" width="25"></B><BR>
+<BR>
+このクラスの宣言はインタフェース部の宣言と動作部の宣言から構成されています。
+</P>
+<DL>
+  <DT>インタフェース部の宣言
+  <DD>public メソッドのシグネチゃと戻り値の型。<BR>
+上位クラス（親クラス）。<BR>
+  <DT>動作部の宣言
+  <DD>プログラム中に記述するのインタフェース部以外のもの。<BR>
+具体的には、アトリ ビュートおよびコンストラクタの定義、インタフェース部に定義されたメソッ 
+ドの実装定義がこれに含まれます。<BR>
+</DL>
+<P>
+<BR>
+上の例では、暗黙のルートクラスのインタフェース部、2行目のpublic void start
+(OzCGI c) がインタフェース部の宣言であり、2行目の｛ ｝で囲まれた記述と3行目は動作部の宣言になります。暗黙のルートクラスの動作部もこのクラスの動作部に含まれます。<BR>
+<BR>
+このようにインタフェース部と動作部を分離して宣言することによって、インタフェース部と動作部に個別のバージョンを付けて管理することができます。<BR>
+<BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="inherit.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

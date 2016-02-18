@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.ide.Application_cl, 0x0, JP.go.ipa.oz.user.ide.Application_if, JP.go.ipa.oz.user.ide.Summarizable_cl
+a, classID, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 620, 16
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (726, 48, ())
+m, setClassID, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1071, 64, ())
+m, getClassID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (932, 57, ())

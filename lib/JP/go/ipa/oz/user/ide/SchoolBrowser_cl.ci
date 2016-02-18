@@ -1,0 +1,77 @@
+j, JP.go.ipa.oz.user.ide.SchoolBrowser_cl, 0x0, JP.go.ipa.oz.user.ide.SchoolBrowser_if, JP.go.ipa.oz.lib.standard._Frame_cl
+a, group, 0x0, LJP.go.ipa.oz.lib.standard._CheckboxGroup_if, 952, 20
+a, subjectGarageBrowser, 0x0, LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, 616, 42
+a, queue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 1777, 28
+a, lblLabel, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 816, 15
+a, listLabelCtrl, 0x0, LJP.go.ipa.oz.user.ide.ListLabelController_if, 1650, 34
+a, menuItemOpenCBif, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1421, 69
+a, rbtnRelease, 0x0, LJP.go.ipa.oz.lib.standard._Checkbox_if, 1003, 21
+a, lblImplID, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 889, 16
+a, lblSubject, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 796, 17
+a, menuItemOpenCBcl, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1421, 69
+a, subjectStateCtrl, 0x0, LJP.go.ipa.oz.user.ide.SubjectStateController_if, 1732, 40
+a, openFileDialog, 0x0, LJP.go.ipa.oz.lib.standard._FileDialog_if, 751, 42
+a, choiceSubjectCtrl, 0x0, LJP.go.ipa.oz.user.ide.ChoiceSubjectController_if, 1687, 42
+a, sbCtrl, 0x0, LJP.go.ipa.oz.user.ide.SBController_if, 1627, 20
+a, txtIfID, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 868, 18
+a, menuItemVersion, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1573, 25
+a, menuItemSubjectImport, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1493, 77
+a, applGarageBrowser, 0x0, LJP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, 661, 43
+a, txtImplID, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 908, 20
+a, aSchool, 0x0, LJP.go.ipa.oz.user.ide.School_if, 568, 15
+a, choSubject, 0x0, LJP.go.ipa.oz.lib.standard._Choice_if, 931, 18
+a, rbtnDevelopment, 0x0, LJP.go.ipa.oz.lib.standard._Checkbox_if, 975, 25
+a, menuItemEnd, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1182, 88
+a, menuItemSelectSubjecs, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1182, 88
+a, menuItemAddSubject, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1273, 75
+a, menuItemIDGen, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1273, 75
+a, menuItemSubjectExportCL, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1493, 77
+a, menuItemAdd, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1182, 88
+a, menuItemSubjectExportIF, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1421, 69
+a, menuItemRenameSubject, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1351, 67
+a, projectDir, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 707, 18
+a, classBrowser, 0x0, LJP.go.ipa.oz.user.ide.ClassBrowser_if, 587, 26
+a, lstLabel, 0x0, LJP.go.ipa.oz.lib.standard._List_if, 834, 14
+a, lblIfID, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 851, 14
+a, menuItemRun, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1351, 67
+a, menuItemRename, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1273, 75
+a, menu8, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 1168, 11
+a, menuItemImport, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1182, 88
+a, menu7, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 1154, 11
+a, menu6, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 1140, 11
+a, menuItemRemoveSubject, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1351, 67
+a, mainMenuBar, 0x0, LJP.go.ipa.oz.lib.standard._MenuBar_if, 1047, 20
+a, menuItemExport, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1182, 88
+a, menu5, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 1126, 11
+a, saveFileDialog, 0x0, LJP.go.ipa.oz.lib.standard._FileDialog_if, 751, 42
+a, menu4, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 1112, 11
+a, menu3, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 1098, 11
+a, menu2, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 1084, 11
+a, menuItemRemove, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1273, 75
+a, menu1, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 1070, 11
+a, menuItemAppResister, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1493, 77
+c, create, (LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, JP.go.ipa.oz.lib.standard._Dictionary_if, JP.go.ipa.oz.user.ide.Subject_if), (JP.go.ipa.oz.lib.standard._Frame_cl, JP.go.ipa.oz.lib.standard._FileDialog_cl, JP.go.ipa.oz.user.ide.School_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl, JP.go.ipa.oz.user.ide.Subject_cl), (1921, 786, ((2198, 10, JP.go.ipa.oz.lib.standard._Dictionary_if), (2270, 7, JP.go.ipa.oz.user.ide.Subject_if), (2404, 7, JP.go.ipa.oz.user.ide.Subject_if), (2538, 7, JP.go.ipa.oz.user.ide.Subject_if)))
+m, setSchoolList, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Dictionary_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.OzLabel_if, JP.go.ipa.oz.user.ide.Subject_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.user.ide.OzLabel_cl), (10517, 816, ((10568, 10, JP.go.ipa.oz.lib.standard._Dictionary_if), (10626, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (10690, 6, JP.go.ipa.oz.lib.standard._String_if), (10718, 7, JP.go.ipa.oz.user.ide.OzLabel_if), (10744, 7, JP.go.ipa.oz.user.ide.Subject_if)))
+m, getMenuItemSubjectExportCL, 0x1, LJP.go.ipa.oz.lib.standard._MenuItem_if, (), (), (), (12793, 85, ())
+m, getLstLabel, 0x1, LJP.go.ipa.oz.lib.standard._List_if, (), (), (), (12087, 51, ())
+m, initMenu, 0x1, V, (), (), (JP.go.ipa.oz.lib.standard._MenuBar_cl, JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (4228, 2585, ())
+m, getMenuItemAppResister, 0x1, LJP.go.ipa.oz.lib.standard._MenuItem_if, (), (), (), (12955, 77, ())
+m, getSchool, 0x1, LJP.go.ipa.oz.user.ide.School_if, (), (), (), (11962, 50, ())
+m, setProjectDir, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (14469, 64, ())
+m, initGUI, 0x1, V, (), (JP.go.ipa.oz.lib.standard._GridLayout_if, JP.go.ipa.oz.lib.standard._BorderLayout_if, JP.go.ipa.oz.lib.standard._Panel_if, JP.go.ipa.oz.lib.standard._Label_if), (JP.go.ipa.oz.lib.standard._GridLayout_cl, JP.go.ipa.oz.lib.standard._BorderLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._Choice_cl, JP.go.ipa.oz.lib.standard._List_cl, JP.go.ipa.oz.lib.standard._CheckboxGroup_cl, JP.go.ipa.oz.lib.standard._Checkbox_cl, JP.go.ipa.oz.lib.standard._TextField_cl), (2712, 1511, ((2758, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (2866, 12, JP.go.ipa.oz.lib.standard._BorderLayout_if), (2910, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (2960, 5, JP.go.ipa.oz.lib.standard._Panel_if), (2996, 5, JP.go.ipa.oz.lib.standard._Panel_if), (3112, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (3159, 5, JP.go.ipa.oz.lib.standard._Panel_if), (3932, 5, JP.go.ipa.oz.lib.standard._Label_if)))
+m, setVisible, 0x1, V, (Z), (), (), (10288, 88, ())
+m, mergeSubject, 0x1, V, (LJP.go.ipa.oz.user.ide.Subject_if), (JP.go.ipa.oz.user.ide.Subject_if, JP.go.ipa.oz.lib.standard._Dictionary_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.DuplicateMessageDialog_if), (JP.go.ipa.oz.user.ide.DuplicateMessageDialog_cl), (11379, 507, ((11463, 10, JP.go.ipa.oz.lib.standard._Dictionary_if), (11512, 7, JP.go.ipa.oz.user.ide.Subject_if), (11532, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (11802, 22, JP.go.ipa.oz.user.ide.DuplicateMessageDialog_if)))
+m, getChoSubject, 0x1, LJP.go.ipa.oz.lib.standard._Choice_if, (), (), (), (12489, 57, ())
+m, getTxtImplID, 0x1, LJP.go.ipa.oz.lib.standard._TextField_if, (), (), (), (12352, 58, ())
+m, getClassBrowser, 0x1, LJP.go.ipa.oz.user.ide.ClassBrowser_if, (), (), (), (13457, 67, ())
+m, activateListeners, 0x1, V, (LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.ide.SBController_cl, JP.go.ipa.oz.user.ide.ListLabelController_cl, JP.go.ipa.oz.user.ide.ChoiceSubjectController_cl, JP.go.ipa.oz.user.ide.SubjectStateController_cl, JP.go.ipa.oz.user.ide.ClassBrowser_cl, JP.go.ipa.oz.user.ide.SubjectGarageBrowser_cl, JP.go.ipa.oz.user.ide.ApplicationGarageBrowser_cl), (8455, 1689, ((8529, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, getApplicationGarageBrowser, 0x1, LJP.go.ipa.oz.user.ide.ApplicationGarageBrowser_if, (), (), (), (13874, 96, ())
+m, getRbtnRelease, 0x1, LJP.go.ipa.oz.lib.standard._Checkbox_if, (), (), (), (14259, 61, ())
+m, getRbtnDevelopment, 0x1, LJP.go.ipa.oz.lib.standard._Checkbox_if, (), (), (), (14082, 69, ())
+m, getProjectDir, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (14366, 57, ())
+m, getTxtIfID, 0x1, LJP.go.ipa.oz.lib.standard._TextField_if, (), (), (), (12217, 54, ())
+m, getSaveFileDialog, 0x1, LJP.go.ipa.oz.lib.standard._FileDialog_if, (), (), (), (13275, 69, ())
+m, deleteListeners, 0x1, V, (), (), (), (6866, 1584, ())
+m, getOpenFileDialog, 0x1, LJP.go.ipa.oz.lib.standard._FileDialog_if, (), (), (), (13119, 69, ())
+m, getSubjectGarageBrowser, 0x1, LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, (), (), (), (13653, 91, ())
+m, getMenuItemSubjectExportIF, 0x1, LJP.go.ipa.oz.lib.standard._MenuItem_if, (), (), (), (12627, 85, ())

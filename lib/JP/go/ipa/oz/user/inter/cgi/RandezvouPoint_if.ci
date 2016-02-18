@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.inter.cgi.RandezvouPoint_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, setHtml, 0x1, V, (LJP.go.ipa.oz.user.inter.cgi.HTMLData_if)
+m, waitRandezvou, 0x21, V, ()
+m, signalRandezvou, 0x21, V, ()
+m, getHtml, 0x1, LJP.go.ipa.oz.user.inter.cgi.HTMLData_if, ()

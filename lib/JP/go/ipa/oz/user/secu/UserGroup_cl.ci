@@ -1,0 +1,15 @@
+j, JP.go.ipa.oz.user.secu.UserGroup_cl, 0x0, JP.go.ipa.oz.user.secu.UserGroup_if, JP.go.ipa.oz.lang._Root_cl
+a, members, 0x4, LJP.go.ipa.oz.lib.standard._Set_if, 1017, 22
+a, owner, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 992, 23
+a, name, 0x4, LJP.go.ipa.oz.lib.standard._String_if, 968, 22
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Set_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Set_if, JP.go.ipa.oz.user.secu.StringComparator_if), (JP.go.ipa.oz.user.secu.StringComparator_cl, JP.go.ipa.oz.lib.standard._Set_cl), (1084, 159, ((1167, 16, JP.go.ipa.oz.user.secu.StringComparator_if)))
+m, getMembers, 0x1, LJP.go.ipa.oz.lib.standard._Set_if, (), (), (), (1323, 40, ())
+m, removeMembers, 0x1, V, (LJP.go.ipa.oz.lib.standard._Set_if), (JP.go.ipa.oz.lib.standard._Set_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._String_if), (), (1849, 175, ((1889, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (1922, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, changeOwner, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1365, 77, ())
+m, addMember, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1444, 85, ())
+m, getName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1245, 37, ())
+m, showMembers, 0x1, V, (), (JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._System_if), (JP.go.ipa.oz.lib.standard._System_cl), (2026, 183, ((2055, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (2090, 6, JP.go.ipa.oz.lib.standard._String_if), (2102, 6, JP.go.ipa.oz.lib.standard._System_if)))
+m, removeMember, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1757, 90, ())
+m, contains, 0x1, Z, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2211, 96, ())
+m, getOwner, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1283, 39, ())
+m, addMembers, 0x1, V, (LJP.go.ipa.oz.lib.standard._Set_if), (JP.go.ipa.oz.lib.standard._Set_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._String_if), (), (1586, 169, ((1623, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (1656, 6, JP.go.ipa.oz.lib.standard._String_if)))

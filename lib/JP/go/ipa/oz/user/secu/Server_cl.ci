@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.secu.Server_cl, 0x0, JP.go.ipa.oz.user.secu.Server_if, JP.go.ipa.oz.lang._Runnable_cl
+a, port, 0x0, I, 549, 9
+a, time, 0x0, I, 571, 9
+a, s, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 560, 9
+a, as, 0x0, LJP.go.ipa.oz.user.secu.OzAuthenticationServer_if, 491, 26
+a, listen_socket, 0x0, LJP.go.ipa.oz.lib.standard._ServerSocket_if, 520, 27
+a, x, 0x0, I, 590, 6
+a, d, 0x0, LJP.go.ipa.oz.user.secu.Debug_if, 582, 8
+c, create, (I, LJP.go.ipa.oz.user.secu.OzAuthenticationServer_if), (JP.go.ipa.oz.user.secu.OzAuthenticationServer_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.user.secu.Debug_cl), (614, 122, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.lib.standard._Socket_if, JP.go.ipa.oz.user.secu._Conncection_if, JP.go.ipa.oz.lang._Thread_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.lib.standard._ServerSocket_cl, JP.go.ipa.oz.user.secu._Connection_cl, JP.go.ipa.oz.lang._Thread_cl), (738, 304, ((759, 6, JP.go.ipa.oz.lib.standard._Socket_if), (911, 10, JP.go.ipa.oz.user.secu._Conncection_if), (943, 6, JP.go.ipa.oz.lang._Thread_if), (984, 9, JP.go.ipa.oz.lang._Exception_if)))

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="element.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="sysex.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>OZシステムにおける例外の扱い<BR>
+</H3>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><B>厳密な例外</B>
+  <DD><BR>
+OZシステムにおける例外は厳密（precise）です。例外が発生した位置までに存在する文はすべて実行され、式は評価されます。そして、例外が発生した位置より後ろの文は実行されず、式は評価されません。（for文、while文、do文では、ソースプログラムの位置を意味しているわけではありません。実行される順序という意味で、例外が発生した位置よりも後ろの文の実行、式の評価が行われません。）<BR>
+<BR>
+<BR>
+  <DT><B>例外の伝播</B>
+  <DD><BR>
+<BR>
+try文の複文（上のコードの文1から文n）でメソッド起動を行い、その中でtry文が記述される可能性があります。<BR>
+<BR>
+発生した例外にもっとも近いtry文のcatch節あるいはfinally節が実行されます。もっとも近いtry文で処理されない場合は、その1つ外側のtry文、というように、捕獲されるまで例外は伝播されます。その例外を捕獲するcatch節がどこにも記述されない場合、実行時のエラーメッセージが出力され、実行が停止します。<BR>
+<BR>
+<BR>
+例外の伝播<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+<PRE>
+  cell  Emeralds {
+      public void go () {
+          dorothy(); 
+      }
+      void dorothy() {
+          scarecrow();
+      }
+      void scarecrow{
+          int i;
+          int j = 0;
+          i = i / j
+      }
+</PRE>
+<BR>
+  <OL>
+    <LI>メソッドscarecrow で整数をゼロで割っています。システム例外「ArithmeticException」が発生します。
+    <LI>メソッドscarecrow では捕獲されないので、メソッドdorothy に例外が伝播されます。
+    <LI>メソッドdorothy でもこの例外は捕獲されないので、メソッドgo に例外が伝播されます。
+    <LI>メソッドgo もArithmeticExceptionクラスの例外を捕獲しないので、エラーメッセージが表示され、実行が停止します。
+  </OL>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="element.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="sysex.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

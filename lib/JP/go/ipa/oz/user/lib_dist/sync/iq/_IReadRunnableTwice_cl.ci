@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.lib_dist.sync.iq._IReadRunnableTwice_cl, 0x0, JP.go.ipa.oz.user.lib_dist.sync.iq._IReadRunnableTwice_if, JP.go.ipa.oz.lang._Runnable_cl
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 517, 14
+a, is, 0x0, LJP.go.ipa.oz.user.lib_dist.sync.iq._IStruct_if, 503, 11
+c, create, (LJP.go.ipa.oz.user.lib_dist.sync.iq._IStruct_if), (JP.go.ipa.oz.user.lib_dist.sync.iq._IStruct_if), (JP.go.ipa.oz.lib.standard._System_cl), (538, 57, ())
+m, run, 0x1, V, (), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.lib_dist.sync.iq._IStructReadException_if), (), (598, 379, ((622, 4, JP.go.ipa.oz.lang._Root_if), (630, 6, JP.go.ipa.oz.lib.standard._String_if), (893, 20, JP.go.ipa.oz.user.lib_dist.sync.iq._IStructReadException_if)))

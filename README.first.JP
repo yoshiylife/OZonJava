@@ -1,0 +1,98 @@
+/*
+ Copyright(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+
+ 著作権者は全ての権利を保留します。
+ 本ソフトウェア及びその関連ドキュメントは情報処理振興事業協会 (IPA) が
+ 実施した「創造的ソフトウェア育成事業」の成果です。
+
+ 本ソフトウェア及びその関連ドキュメントを利用、複製、変更、配布する場合
+ は、本ソフトウェアのトップディレクトリにあるファイル「COPYRIGHT.JP」に
+ 記載されている利用許諾条件に従って下さい。
+
+ 但し、本リリースに含まれる CUP は Graphics Visualization and Usability 
+ Center と College of Computing at Georgia Tech に所属する Scott Hudson 
+ さんによって作成されたものです。
+ (URL: http://www.cc.gatech.edu/gvu/people/Faculty/hudson/java_cup/home.html)
+ */
+
+このドキュメントは, OZ システムのディレクトリの構成と動作環境について述べた
+ものである.
+
+１. 動作環境
+
+OZ システムのクライアントは以下の環境で動作する。
+
+  (1) SPARC プラットフォーム
+      ハードウェア: SunMicrosystems 社製 SPARC チップ搭載ワークステーション
+      オペレーティングシステム: SunSoft 社製 Solaris オペレーティングシステ
+                                ム
+  (2) Pentium プラットフォーム
+      ハードウェア: Intel 社製 80486 ないし Pentium チップ搭載
+      オペレーティングシステム: Microsoft 社製 Windows-NT オペレーティング
+                                システム
+
+OZ システムを利用してインターネット上で通信を行うためにはアプリケーション
+ゲートウェイが必要である。これは(1)の環境でしか動作しない。
+すなわち少なくともひとつ(1)の環境が必要である。
+
+実際に動作が確認されているものは Solaris 2.5.1(日本語版) と
+Windows-NT4.0 である。
+
+２. 本システム以外に必要なツール
+
+OZ システムを利用するには以下のものを別途用意する必要がある。
+
+  ・ JDK-1.1.4 以上
+
+３. OZ システムのインストールについて
+
+OZ システムのインストールは、ダウンロードしたパッケージを特定のディレクト
+リに解凍する。解凍すると一つのディレクトリが作成される。
+作成されたディレクトリを OZ ホームと呼ぶ。
+OZ ホームは利用者のアカウントとそのファイルシステムを抽象化しているので、
+OZ を利用するには、一人のユーザに対して一つ OZ ホームが必要である。通常は、
+ユーザ個人のホームディレクトリ下に OZ ホームをインストールする。
+
+  ・SUN(Solaris) の場合 ‥‥‥ OZ-V1.0.tar.gz
+      解凍するには標準のコマンド以外に gzip が必要である。
+
+        例) % cd /lhome/taro
+            % gzip -cd OZ-V1.0.tar.gz | tar xf -
+  ・Windows の場合  ‥‥‥‥‥ OZ-V1.0.zip
+      解凍するには標準のコマンド以外に ZIP ファイルを解凍できるツールを
+      実行する。例えば、WinZip などが挙げられる。
+
+OZ-V1.0 というディレクトリが作成される。そこにある INSTALL.JP の内容に
+したがって設定を行う。
+
+４. ディレクトリ構成
+
+    OZ-V1.0/COPYRIGHT        著作権及び利用許諾に関する通知 (英語)
+            COPYRIGHT.JP    著作権及び利用許諾に関する通知 (日本語)
+            INSTALL         インストール方法 (英語)
+            INSTALL.JP      インストール方法 (日本語)
+            README.first    最初に読んで下さい (英語)
+            README.first.JP 最初に読んで下さい (日本語)
+            ReleaseNote     リリースノート (英語)
+            ReleaseNote.JP  リリースノート (日本語)
+            bin/            OZ システムコマンド
+            docs/           各種ドキュメント
+            lib/            OZ ライブラリ群
+            secure/         セキュリティに関係した設定ファイル
+            insecure/       セキュリティ関係ディレクトリ
+            src/            各種ソースプログラム
+            objects/        オブジェクトイメージ
+            user/           サンプルプログラム
+            logs/           OzVM 実行ログ用ディレクトリ
+            ag/             アプリケーションゲートウェイ環境
+
+--------------------------------------------
+* Solaris,JDK, and Java are trademarks or registered trademarks of
+  Sun Microsystems, Inc.
+* All SPARC trademarks are used under license and are trademarks or
+  registered trademarks of SPARC International, Inc.
+* Pentium is a registered trademark of Intel Corporation.
+* i486 is a trademark of Intel Corporation.
+* Windows NT is a trademark of Microsoft Corporation.
+

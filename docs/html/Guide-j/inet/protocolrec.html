@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="netclient.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="netprotocol.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>ProtocolRecord クラスの使い方<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+ProtocolRecord クラスはレコード形式、つまり属性ラベルと価の組で表現可能な通信プロトコルの送受信データの処理を簡略化するためのクラスです。<BR>
+<BR>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>NetworkClientクラスのコンストラクタ
+  <LI>NetworkClientクラスのメソッド
+  <LI>NetworkClientクラスの使用方法
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>１．ProtocolRecordクラスの上位クラスとコンストラクタ
+  <DD><BR>
+  <DL>
+    <DT>class ProtocolRecord : *Dictionary {...}
+    <DD>Dictionaryクラスが上位実装クラスです。<BR>
+<BR>
+  </DL>
+  <TABLE>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">
+<PRE>
+new create (String encode_format, 
+            String decode_format, 
+            String lt) 
+</PRE>
+</TD>
+      <TD nowrap></TD>
+      <TD nowrap>encode_format： エンコードフォーマット<BR>
+decode_format： デコードフォーマット<BR>
+lt： 終端文字列<BR>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>２．ProtocolRecordクラスのメソッド
+  <DD><BR>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String encode ()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>エンコード。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void decode (String response_data)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>デコード。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setCommand (String command)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap></TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void set (String label, String value)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>属性の設定。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String get (String label)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>属性を答えます。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String getStatus ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap>ステータスを答えます。</TD></TR>
+    <TR>
+      <TD nowrap></TD>
+      <TD nowrap valign="top">public String getLineTerminator ()</TD>
+      <TD nowrap></TD>
+      <TD nowrap>終端文字列を答えます。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+  <DT>３．ProtocolRecordクラスの使用方法<BR>
+  <DD>
+  <DL>
+    <DT><B>インスタンス生成</B>
+    <DD><BR>
+例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">ProtocolRecordクラスのインスタンス生成
+    <TABLE width="90%" cellpadding="2">
+      <TR>
+        <TD>
+<PRE>
+    abstract class NetworkClient {
+        ... 
+        <B>protected ProtocolRecord record;</B>
+        int default_port;
+
+        new create (String send_format, String recv_format, String lt, int port) {
+            <B>record=&gt;create (send_format, recv_format, lt);</B>
+            default_port = port;
+        }
+        ...
+    }
+</PRE>
+</TD></TR>
+    </TABLE>
+
+<BR>
+<BR>
+    <DT><B>レコードの登録</B>
+    <DD><BR>
+set メソッドによりラベルと値を登録します。<BR>
+<BR>
+コマンド文字列については、ラベル COMMAND が予約されているので、setCommand
+メソッドにより値のみを指定して登録します。<BR>
+<BR>
+<BR>
+    <DT><B>レコードの値の取り出し</B>
+    <DD><BR>
+ラベルを引数として、get メソッドを起動します。<BR>
+<BR>
+レスポンスデータのステータス文字列については、ラベル STATUS が予約されているので、getStatus
+メソッドにより値を取り出します。<BR>
+<BR>
+<BR>
+    <DT><B>コマンドデータのエンコード</B>
+    <DD><BR>
+登録されているレコードデータを、コマンドデータのフォーマットに従ってエンコードした文字列を
+encode メソッドにより得ることができます。<BR>
+<BR>
+<BR>
+    <DT><B>レスポンスデータのデコード</B>
+    <DD><BR>
+レスポンスデータの文字列を引数として decode メソッドを呼び出すことにより、レスポンスデータのフォーマットに従ってデコードし、ステータス文字列等を抽出することができます。<BR>
+<BR>
+<BR>
+  </DL>
+<BR>
+<BR>
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">NetworkProtocolクラス
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    abstract class NetworkProtocol : *NetworkClient {  
+        ...
+        protected String sendCommand (String command, String param) {
+            <B>record-&gt;setCommand (command);</B> // アトリビュートrecordは
+            <B>record-&gt;set (&quot;PARAM&quot;, param);</B> // 上位実装クラスNetworkClientで定義されています
+            return sendCommand ();
+        }
+        ...
+        protected String recvMultilineResponse () {
+            if (!isLastLine (getResponse ())) {
+                while (!isLastLine (moreResponse ()));
+            }
+            return decodeResponse (<B>record-&gt;getStatus ()</B>);
+        }
+        ...        
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+使用例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">NetworkClientクラス
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    abstract class NetworkClient { 
+        protected Socket server;
+        protected ProtocolRecord record;
+        protected String response_message;
+        int timeout;
+        int default_port;
+
+        new create (String send_format, String recv_format, String lt, int port) {
+            <B>record=&gt;create (send_format, recv_format, lt);</B>
+            default_port = port;
+        }
+
+        public String connect (String h, int p) {
+            ...
+        }
+
+        public String sendCommand () {
+            <B>String buf = record-&gt;encode ();</B>
+
+            OutputStreamWriter out=&gt;breed (server-&gt;getOutputStream ());
+            out-&gt;write (buf, 0, buf-&gt;length ());
+            out-&gt;flush ();
+
+            return readResponse ();
+        }
+
+        public String sendData (String data) {
+            ...
+        }
+
+        public String getResponse () { return response_message; }
+
+        protected String readResponse () {
+            String buf = read_response ();
+            if (buf == null) return null;
+
+            response_message = buf;
+            <B>record-&gt;decode (response_message);</B>
+
+            return <B>record-&gt;getStatus ();</B>
+        }
+
+        protected String moreResponse () {
+            String buf = read_response ();
+            if (buf == null)
+            return null;
+
+            response_message = response_message-&gt;concat (buf);
+            <B>record-&gt;decode (response_message);</B>
+
+            return response_message;
+        }
+        ...        
+    }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="netclient.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="netprotocol.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

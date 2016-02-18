@@ -1,0 +1,12 @@
+j, JP.go.ipa.oz.user.ide.ApplicationSummary_cl, 0x0, JP.go.ipa.oz.user.ide.ApplicationSummary_if, JP.go.ipa.oz.user.ide.Summary_cl
+a, name, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 629, 13
+a, description, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 646, 20
+c, create, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (807, 63, ())
+c, create, (), (), (), (756, 41, ())
+m, setName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1791, 66, ())
+m, describe, 0x1, V, (), (), (), (1030, 32, ())
+m, init, 0x0, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2015, 98, ())
+m, getName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1291, 51, ())
+m, setDescription, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (1631, 78, ())
+m, retreiveApplication, 0x1, LJP.go.ipa.oz.user.ide.Application_if, (), (JP.go.ipa.oz.user.ide.Application_if), (), (1424, 125, ((1475, 11, JP.go.ipa.oz.user.ide.Application_if)))
+m, getDescription, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (1144, 65, ())

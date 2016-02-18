@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="classid.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>OZシステムにおけるクラス<BR>
+</H3>
+<P>
+<BR>
+</P>
+<H4>OZ言語のクラス</H4>
+<P>
+OZ言語の中のクラスは、2つのタイプで宣言されます。<BR>
+</P>
+<UL>
+  <LI>class
+  <LI>cell
+</UL>
+<P>
+どちらもオブジェクト指向プログラミングでのクラスを表現します。<BR>
+<BR>
+この2つのクラスはOzSecureクラスを継承します。OzSecureクラスはすべてのOZクラスの親クラスを継承します。<BR>
+class型クラスは、OzSecureクラスを継承するRootクラスを継承するクラスです。<BR>
+それに対してcell型クラスは、OzSecureクラスを継承するOzCellクラスを継承するクラスです。
+</P>
+<P>
+<BR>
+</P>
+<H4>クラスとOｚVMで生成されるオブジェクトの関係</H4>
+<P>
+OzVMはOZシステムの仮想マシンです。OzVMがクラスからオブジェクトを生成し活性化します。<BR>
+<BR>
+cell型クラスはグローバルオブジェクトを生成します。それに対して、class型クラスはローカルオブジェクトを生成します。グローバルオブジェクトはネットワークを介してコミュニケーションする能力を持ったオブジェクトです。ローカルオブジェクトは、ローカル環境で活動するオブジェクトです。<BR>
+<BR>
+多くのオブジェクト指向プログラミング言語では、フラットなオブジェクトモデルを採用し、すべてのオブジェクトを同一手段によりアクセスしています。 
+しかし、この方法で分散環境で動作するプログラムを作成すると、実行性能が低下する可能性があります。ネットワークを介するオブジェクトアクセスがその原因です。<BR>
+OZでは、この状況を回避するために、ローカルアクセスとネットワークアクセスを区別する計算モデルを採用しました。そして、 
+パフォーマンス的にコストの高いネットワーク経由のアクセスは必要が発生した場合だけに行います。<BR>
+ネットワークを経由するオブジェクトへのアクセスと ローカルなオブジェクトへのアクセスを静的に区別するために、 
+グローバルオブジェクトとローカルオブジェクトというの2種類のオブジェクトを導入し、これをOZ言語の型システムに組み込んでいます。<BR>
+</P>
+<P>
+<BR>
+</P>
+<H4>OｚＶＭのクラス管理</H4>
+<P>
+OzVMではクラスを識別子で管理しています。<BR>
+OZ言語のクラスの名前はコンパイル単位でユニークであることが要求されます。 
+別のコンパイル単位では、同一の名前のクラスが存在していてもかまいません。 
+しかし、分散環境であるOZでは、1つのクラスの定義が世界中でユニークなものでなければなりません。そこで、クラス名とは別にクラス識別子を付与し、それによってクラスのアイデンティティを確立します。<BR>
+したがって、ネットワークでつながった世界規模のOZシステムの中で同じ名前を持つクラスを複数定義できます。また、インタフェース定義とクラス本体の定義を別々に管理することができます。
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="classid.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

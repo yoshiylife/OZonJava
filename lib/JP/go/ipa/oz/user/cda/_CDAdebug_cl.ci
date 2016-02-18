@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.cda._CDAdebug_cl, 0x0, JP.go.ipa.oz.user.cda._CDAdebug_if, JP.go.ipa.oz.lang._Root_cl
+a, on, 0x0, Z, 38, 8
+a, system, 0x0, LJP.go.ipa.oz.lib.standard._System_if, 20, 14
+c, create, (), (), (JP.go.ipa.oz.lib.standard._System_cl), (54, 51, ())
+m, println, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, J), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Long_if), (JP.go.ipa.oz.lib.standard._Long_cl), (532, 189, ((588, 4, JP.go.ipa.oz.lib.standard._Long_if), (614, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, println, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, I), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Integer_if), (JP.go.ipa.oz.lib.standard._Integer_cl), (337, 191, ((392, 7, JP.go.ipa.oz.lib.standard._Integer_if), (421, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, println, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (178, 155, ((237, 6, JP.go.ipa.oz.lib.standard._String_if)))
+m, println, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (109, 65, ())

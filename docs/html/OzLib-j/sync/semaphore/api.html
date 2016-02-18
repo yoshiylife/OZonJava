@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>API of Semaphore</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>セマフォ API</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+<UL>
+<LI>class BinarySemaphore
+  <UL>
+  <LI>new create();<BR>
+排他モードのみのバイナリセマフォを作成する。
+  <LI>public locked void P();<BR>
+P 命令に相当するメソッドである。
+  <LI>public locked void V();<BR>
+V 命令に相当するメソッドである。
+  </UL>
+<LI>class ModedBinarySemaphore :* BinarySemaphore
+  <UL>
+  <LI>new create();<BR>
+共有/排他モードのセマフォを作成する。
+  <LI>public locked void exclusiveP();<BR>
+クリティカルセクションに排他モードで進入する場合の P 命令に相当するメ
+ソッドである。
+  <LI>public locked void sharedP();<BR>
+クリティカルセクションに共有モードで進入する場合の P 命令に相当するメ
+ソッドである。
+  </UL>
+</UL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+

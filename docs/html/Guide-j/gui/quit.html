@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="ex_gui.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H3>Frameクラスとウィンドウの終了</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI>ソケット通信のためのクラス
+  <LI>Socketクラス
+  <LI>ソケット通信のプログラミング
+</OL>
+<UL>
+  <LI>補足：ソケット通信の例
+</UL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="stdout"></A><BR>
+１．Frameクラス
+  <DD><BR>
+Frameクラスはタイトル付の最上位ウィンドウ（= フレーム）を表現するクラスで、以下のようなメンバを持っています。<BR>
+<BR>
+コンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top"><B>new newFrame()</B></TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。タイトルなしでフレームを生成します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top"><B>new newFrame(String <FONT color="#800080">arg1</FONT>)</B></TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。タイトル<FONT color="#800080">arg1</FONT>でフレームを生成します。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+メソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void addNotify()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームのピアを生成します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top"><B>public String asString()</B></TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>サイズを示す文字列を答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void dispose()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームを破棄します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public MenuBar getMenuBar()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>メニューバーを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public String getTitle()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームのタイトルを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public boolean isResizable()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームの大きさが変更可能かどうかを答えます。<BR>
+true=変更できます。 false=変更できません。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void remove(MenuComponent <FONT color="#800080">arg1</FONT>)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームのメニューコンポーネント<FONT color="#800080">arg1</FONT>を削除します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setIconImage(Image <FONT color="#800080">arg1</FONT>)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームがアイコン化されたときのイメージデータを<BR>
+<FONT color="#800080">arg1</FONT> に設定します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setMenuBar(MenuBar arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームにメニューバー<FONT color="#800080">arg1</FONT> を設定します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setResizable(boolean arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームの大きさが変更可能かどうかを設定します。<BR>
+true=変更できます。 false=変更できません。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public void setTitle(String arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>フレームのタイトルを設定します。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+OZシステムのフレームは、ウィンドウ右上の <IMG src="qbutton.gif" height="15" width="17">
+をクリックしても終了しません。<BR>
+フレームを終了させるためには、メニューやボタンを使用して、それがクリックされたときに終了処理を行うようにプログラミングしてください。<BR>
+<BR>
+<BR>
+  <DT>２．OZアプリケーションの終了
+  <DD><BR>
+アプリケーション利用者から終了指示を受け取って終了するようなアプリケーションを構築する場合、いくつか注意することがあります。<BR>
+<BR>
+  <UL>
+    <LI>まず、アプリケーションの終了とは、OZシステムでは<B>グローバルオブジェクトの非活性化</B>だということです。したがって、利用者にとってのアプリケーションの終了状態が、次回の起動時（グローバルオブジェクトの活性化）に再現されます。アプリケーションのメニューの設計、メッセージの設計ではこのことに注意してください。<BR>
+<BR>
+    <LI>グローバルオブジェクトの非活性化を自ら行うメソッドは <B>stopCell</B>メソッドです。このメソッドはOZシステムのあらゆるオブジェクトのメソッドです。グローバルオブジェクトに含まれるいずれかのオブジェクトがこのメソッドを起動すると、グローバルオブジェクトを非活性化する処理が行われます。<BR>
+<BR>
+    <LI>グローバルオブジェクトの非活性化が行われるとき、そのグローバルオブジェクトの中心となるcell型クラス（=
+生成時に動作部クラス識別子が指定されているクラス）で宣言されている <B>quiet</B>メソッドがOZシステムによって起動されます。
+  </UL>
+<BR>
+<BR>
+<BR>
+以下の例は、「はじめてのOZプログラミング」の変形です。MyPrintクラスで stopCell
+メソッドを起動しています。<BR>
+stopCellメソッドによってグローバルオブジェクトが非活性化されるときにも
+quiet メソッドが起動されます。<BR>
+<BR>
+<BR>
+cell型クラスの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">HelloWorld.oz
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    cell HelloWorld    {
+        MyPrint obj;
+
+        public void initialize() { /* Do nothing */ }
+
+        public void go() {
+            obj=&gt;create();
+            for (int i = 0; i &lt; 10; i++) {
+                obj-&gt;print(&quot;Hello world!&quot;);
+            }
+            obj-&gt;exit();
+        }
+
+        public void quiet() {
+            <B>System sys=&gt;create();</B>
+            <B>sys-&gt;println(&quot;Now stopping...&quot;);</B>
+            flushCell(); }
+     }
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+class型クラスの宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">MyPrint.oz
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    class MyPrint : *Root {
+        System system;
+
+        new create()    {
+            system=&gt;create();
+        }
+    
+        public void print(String msg) {
+            system-&gt;println(msg);
+        }
+    
+        public void exit() {
+            <B>stopCell();</B>
+        }
+    }   
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+スクールファイル <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">school.s
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+&quot;System&quot;,&quot;.lib.standard._System&quot;,&quot;.lib.standard._System&quot;
+&quot;String&quot;,&quot;.lib.standard._String&quot;,&quot;.lib.standard._String&quot;
+&quot;Root&quot;,&quot;.lang._Root&quot;,&quot;.lang._Root&quot;
+&quot;HelloWorld&quot;,&quot;.user.iosample.HelloWorld&quot;,&quot;.user.iosample.HelloWorld&quot;
+&quot;MyPrint&quot;,&quot;.user.iosample.MyPrint&quot;,&quot;.user.iosample.MyPrint&quot;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+コマンドプロンプトからのコンパイル： 上のスクールファイルを指定して、ozc
+-s school.s HelloWindow.oz<BR>
+グローバルオブジェクト生成のクラスID： JP.go.ipa.oz.user.iosample.MyPrint&quot;,&quot;.user.iosample.MyPrint&quot;<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="ex_gui.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

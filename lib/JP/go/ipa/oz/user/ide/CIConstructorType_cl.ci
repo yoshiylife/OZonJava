@@ -1,0 +1,5 @@
+j, JP.go.ipa.oz.user.ide.CIConstructorType_cl, 0x10, JP.go.ipa.oz.user.ide.CIConstructorType_if, JP.go.ipa.oz.user.ide.CIType_cl
+c, newCIConstructorType, (), (), (), (346, 32, ())
+m, isPrimitive, 0x1, Z, (), (), (), (806, 57, ())
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (536, 53, ())
+m, isClass, 0x1, Z, (), (), (), (671, 53, ())

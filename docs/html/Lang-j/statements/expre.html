@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="labeled.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="if.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>式文（Expression Statements）<BR>
+</H3>
+<BR clear="all">
+<P>
+式を評価する文です。<BR>
+<BR>
+<B>構文</B>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>式 ;</B></TD></TR>
+</TABLE>
+
+<P>
+セミコロンで終了します。<BR>
+</P>
+<P>
+<BR>
+<B>LALR(1)文法</B>
+</P>
+<PRE>
+  exp_stmt : exp_of_exp_stmt ;
+                    
+  exp_of_exp_stmt : assign_exp
+                    pre_increment_or_decrement_exp
+                    post_increment_or_decrement_exp
+                    method_invoke_exp
+                    instantiate_exp<BR>
+</PRE>
+<P>
+<BR>
+<BR>
+<B>説明</B>
+</P>
+<P>
+式文中で使用できるのは以下の式です。
+</P>
+<UL>
+  <LI>代入式
+  <LI>前置インクリメント式
+  <LI>後置インクリメント式
+  <LI>メソッド起動式
+  <LI>インスタンス生成式
+</UL>
+<P>
+すなわち、副作用を持つ式だけが使用できます。<BR>
+上記以外の式は副作用を持ちません。 単独では意味を持たないため、式文中では使用できません。
+</P>
+<P>
+<BR>
+<BR>
+例: 式文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  birthDay = obirthDay;   // 式文...代入式
+  counter++;                // 式文...後置インクリメント式
+  super-&gt;trace(mark);     // 式分...メソッド起動式
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="labeled.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="if.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

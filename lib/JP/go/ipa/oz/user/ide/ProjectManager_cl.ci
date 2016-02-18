@@ -1,0 +1,56 @@
+j, JP.go.ipa.oz.user.ide.ProjectManager_cl, 0x0, JP.go.ipa.oz.user.ide.ProjectManager_if, JP.go.ipa.oz.lib.standard._Frame_cl
+a, menuItemSave, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1000, 65
+a, schoolBrowser, 0x0, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, 555, 28
+a, menuItemSaveAs, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1000, 65
+a, menuItemRefresh, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1068, 76
+a, queue, 0x0, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, 1462, 28
+a, menuItemEdit, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1147, 41
+a, projectName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 634, 19
+a, projects, 0x0, LJP.go.ipa.oz.lib.standard._Dictionary_if, 586, 20
+a, srcList, 0x0, LJP.go.ipa.oz.lib.standard._List_if, 789, 13
+a, pmCtrl, 0x0, LJP.go.ipa.oz.user.ide.PMController_if, 1377, 20
+a, menuItemSetDir, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1068, 76
+a, menuItemNew, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1000, 65
+a, menuItemCompileAuto, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1286, 43
+a, menuItemEnd, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1068, 76
+a, menuItemCompileIf, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1191, 92
+a, lblProjectDir, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 805, 20
+a, refreshCtrl, 0x0, LJP.go.ipa.oz.user.ide.RefreshController_if, 1427, 30
+a, txtProjectDir, 0x0, LJP.go.ipa.oz.lib.standard._TextField_if, 853, 24
+a, menuItemHelp, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1286, 43
+a, listCtrl, 0x0, LJP.go.ipa.oz.user.ide.ListController_if, 1400, 24
+a, menuItemCompileRelease, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1191, 92
+a, editor, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 724, 14
+a, menuItemCompile, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1191, 92
+a, menuItemSetEditor, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1147, 41
+a, mainMenuBar, 0x0, LJP.go.ipa.oz.lib.standard._MenuBar_if, 921, 20
+a, menuItemProjectRemove, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1068, 76
+a, fName, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 682, 13
+a, menu4, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 972, 11
+a, btnRefresh, 0x0, LJP.go.ipa.oz.lib.standard._Button_if, 880, 18
+a, menu3, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 986, 11
+a, menu2, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 958, 11
+a, menu1, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 944, 11
+a, menuItemCompileSubject, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1191, 92
+a, menuItemOpen, 0x0, LJP.go.ipa.oz.lib.standard._MenuItem_if, 1000, 65
+a, lblProjectFiles, 0x0, LJP.go.ipa.oz.lib.standard._Label_if, 828, 22
+c, create, (LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if, JP.go.ipa.oz.lib.standard._StringComparator_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.user.ide.Project_if), (JP.go.ipa.oz.lib.standard._String_cl, JP.go.ipa.oz.lib.standard._Frame_cl, JP.go.ipa.oz.lib.standard._StringComparator_cl, JP.go.ipa.oz.lib.standard._Dictionary_cl, JP.go.ipa.oz.user.ide.Project_cl), (1607, 507, ((1727, 16, JP.go.ipa.oz.lib.standard._StringComparator_if), (1830, 6, JP.go.ipa.oz.lib.standard._String_if), (1872, 7, JP.go.ipa.oz.user.ide.Project_if)))
+m, getProjectName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (9072, 59, ())
+m, getEditor, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (10056, 49, ())
+m, setSchoolBrowser, 0x1, V, (LJP.go.ipa.oz.user.ide.SchoolBrowser_if), (JP.go.ipa.oz.user.ide.SchoolBrowser_if), (), (8365, 75, ())
+m, getSchoolBrowser, 0x1, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, (), (), (), (8554, 70, ())
+m, getProjects, 0x1, LJP.go.ipa.oz.lib.standard._Dictionary_if, (), (), (), (8730, 57, ())
+m, getSrcList, 0x1, LJP.go.ipa.oz.lib.standard._List_if, (), (), (), (9744, 49, ())
+m, initMenu, 0x1, V, (), (), (JP.go.ipa.oz.lib.standard._MenuBar_cl, JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (3182, 1731, ())
+m, setProjects, 0x1, V, (LJP.go.ipa.oz.lib.standard._Dictionary_if), (JP.go.ipa.oz.lib.standard._Dictionary_if), (), (8903, 64, ())
+m, setProjectDir, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (10211, 89, ())
+m, initGUI, 0x1, V, (), (JP.go.ipa.oz.lib.standard._BorderLayout_if, JP.go.ipa.oz.lib.standard._GridLayout_if, JP.go.ipa.oz.lib.standard._Panel_if, JP.go.ipa.oz.lib.standard._FlowLayout_if), (JP.go.ipa.oz.lib.standard._BorderLayout_cl, JP.go.ipa.oz.lib.standard._GridLayout_cl, JP.go.ipa.oz.lib.standard._Panel_cl, JP.go.ipa.oz.lib.standard._FlowLayout_cl, JP.go.ipa.oz.lib.standard._Label_cl, JP.go.ipa.oz.lib.standard._TextField_cl, JP.go.ipa.oz.lib.standard._Button_cl, JP.go.ipa.oz.lib.standard._List_cl), (2119, 1058, ((2165, 12, JP.go.ipa.oz.lib.standard._BorderLayout_if), (2272, 10, JP.go.ipa.oz.lib.standard._GridLayout_if), (2313, 5, JP.go.ipa.oz.lib.standard._Panel_if), (2398, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (2443, 5, JP.go.ipa.oz.lib.standard._Panel_if), (2609, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (2654, 5, JP.go.ipa.oz.lib.standard._Panel_if), (2843, 10, JP.go.ipa.oz.lib.standard._FlowLayout_if), (2888, 5, JP.go.ipa.oz.lib.standard._Panel_if)))
+m, setVisible, 0x1, V, (Z), (), (), (7406, 96, ())
+m, setFName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (9584, 64, ())
+m, setProjectName, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (9250, 74, ())
+m, activateListeners, 0x1, V, (LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._EventDispatchingQueue_cl, JP.go.ipa.oz.user.ide.PMController_cl, JP.go.ipa.oz.user.ide.ListController_cl, JP.go.ipa.oz.user.ide.RefreshController_cl), (6134, 1128, ((6208, 21, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if)))
+m, setEditor, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (9902, 54, ())
+m, getProjectDir, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (10402, 71, ())
+m, deleteListeners, 0x1, V, (), (), (), (4966, 1163, ())
+m, openEditor, 0x1, V, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._Process_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._IOException_if, JP.go.ipa.oz.lang._Exception_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.lib.standard._StringBuffer_cl, JP.go.ipa.oz.lib.standard._Process_cl), (7594, 648, ((7624, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (7646, 7, JP.go.ipa.oz.lib.standard._Process_if), (7727, 6, JP.go.ipa.oz.lib.standard._String_if), (7756, 6, JP.go.ipa.oz.lib.standard._System_if), (8180, 11, JP.go.ipa.oz.lib.standard._IOException_if), (8214, 9, JP.go.ipa.oz.lang._Exception_if)))
+m, getFName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (9423, 47, ())

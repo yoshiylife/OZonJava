@@ -1,0 +1,19 @@
+j, JP.go.ipa.oz.user.ide.CIModifier_cl, 0x10, JP.go.ipa.oz.user.ide.CIModifier_if, JP.go.ipa.oz.lang._Root_cl
+a, iAmStatic, 0x0, Z, 160, 19
+a, iAmTransient, 0x0, Z, 277, 22
+a, iAmAbstract, 0x0, Z, 316, 21
+a, iAmFinal, 0x0, Z, 199, 18
+a, UPPER, 0x0, I, 433, 11
+a, iAmOnce, 0x0, Z, 355, 17
+a, iAmCell, 0x0, Z, 394, 17
+a, iAmLocked, 0x0, Z, 238, 19
+c, newCIModifier, (I), (), (), (630, 56, ())
+m, initParams, 0x0, V, (I), (), (), (2650, 1096, ())
+m, isFinal, 0x1, Z, (), (), (), (1734, 56, ())
+m, isStatic, 0x1, Z, (), (), (), (1594, 58, ())
+m, isAbstract, 0x1, Z, (), (), (), (2158, 62, ())
+m, isOnce, 0x1, Z, (), (), (), (2302, 54, ())
+m, isCell, 0x1, Z, (), (), (), (2438, 54, ())
+m, isTransient, 0x1, Z, (), (), (), (2012, 64, ())
+m, isLocked, 0x1, Z, (), (), (), (1872, 58, ())
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (844, 668, ((879, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if)))

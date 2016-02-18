@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.Summarizable_cl, 0x400, JP.go.ipa.oz.user.ide.Summarizable_if, JP.go.ipa.oz.lang._Root_cl
+a, summary, 0x4, LJP.go.ipa.oz.user.ide.Summary_if, 613, 27
+m, setSummary, 0x1, V, (LJP.go.ipa.oz.user.ide.Summary_if), (JP.go.ipa.oz.user.ide.Summary_if), (), (1018, 63, ())
+m, getSummary, 0x1, LJP.go.ipa.oz.user.ide.Summary_if, (), (), (), (878, 58, ())

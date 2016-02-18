@@ -1,0 +1,6 @@
+i, JP.go.ipa.oz.user.ide.LabelDeleteDialog_if, 0x0, (JP.go.ipa.oz.lib.standard._Dialog_if)
+m, getLabelName, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, getChoSubject, 0x1, LJP.go.ipa.oz.lib.standard._Choice_if, ()
+m, getSchool, 0x1, LJP.go.ipa.oz.user.ide.School_if, ()
+m, getSchoolBrowser, 0x1, LJP.go.ipa.oz.user.ide.SchoolBrowser_if, ()
+m, getRbtnSubject, 0x1, LJP.go.ipa.oz.lib.standard._Checkbox_if, ()

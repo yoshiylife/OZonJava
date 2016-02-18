@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="primitive.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="variables.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3><B>クラス型（Class Types）</B><BR>
+</H3>
+<BR clear="all">
+<P>
+クラス型とはオブジェクトを参照とする型のことです。OZシステムでは、あらゆるオブジェクトがクラス型のインスタンスとして動的に生成されます。<BR>
+<BR>
+<BR>
+OZ言語におけるクラス型は
+</P>
+<UL>
+  <LI>class 型 (class type)
+  <LI>cell 型 (cell type)
+</UL>
+<P>
+に分類できます。cell 型のインスタンスはネットワークを介してメッセージ送受信を行う振舞いを持つことができます。それに対して、class
+型のインスタンスは、ローカル環境でのみ活動できるオブジェクトです。ソースプログラムにおけるclass型とcell型の定義の違いは、クラス宣言とコンストラクタ宣言の記述可能性に限定されます。<BR>
+<BR>
+また、クラス型を
+</P>
+<UL>
+  <LI>システム定義のクラス型
+  <LI>利用者定義のクラス型<BR>
+</UL>
+<P>
+と区別することができます。システム定義のクラス型は、クラスライブラリとして提供されています。
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<B>型の値の範囲</B><BR>
+<BR>
+クラス型は以下の値を持つことができます
+</P>
+<UL>
+  <LI>クラス型への参照
+  <LI><TT>null</TT>
+</UL>
+<DL>
+  <DD><BR>
+</DL>
+<P>
+<BR>
+<BR>
+<B>型がもつ操作</B><BR>
+<BR>
+すべてのクラス型は以下の操作を持っています。
+</P>
+<UL>
+  <LI>アトリビュートアクセス（attribute access）
+  <LI>メソッド起動（method invocation）
+  <LI>等値演算子（reference equality operators）： <B>==</B>、 <B>!=</B>
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD>但し、リファレンスの等値性を調べる演算が行われます。</TD></TR>
+  </TABLE>
+
+  <LI>条件演算子（condition operator ） ：<B> ? :</B>
+</UL>
+<P>
+<BR>
+<BR>
+参考）:<BR>
+クラス型の代入はすべてリファレンスのコピーです。<BR>
+但し、cell型のメソッド起動（method invocation）はその規定にあてはまりません。この場合には、クラス型識別子の実引数代入に値のコピーが行なわれます。すなわち、実引数のオブジェクトのコピーが作成され、そのコピーのリファレンスが実引数として引き渡されるという仕組みになっています。<BR>
+<BR>
+</P>
+<P>
+クラス型の詳細については「<A href="../classes/index.html">クラス</A>」を参照してください。<BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+例: クラス型の宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+ class Authenticator {
+    ....
+    public void authorize(Root obj)
+    {
+        turnGreen(obj);
+        obj-&gt;toGreen();
+    }
+}
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>キーワード <B>class</B> を使って宣言します。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+例: セル型の宣言 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+ cell FedRoot {
+    protected System system;
+    protected Authenticator auth;
+    protected boolean debug;
+    ....
+}
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>キーワード <B>cell</B> を使って宣言します。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="primitive.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="variables.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

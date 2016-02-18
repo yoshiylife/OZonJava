@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD><TITLE>Security Service</TITLE></HEAD>
+
+<BODY>
+<CENTER>
+<H3><B>OzVM</B>による認証システムの選択</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+マシン <CODE>myhost</CODE> 上にある、OZ ホーム <CODE>ME</CODE> 中の
+セル <CODE>A</CODE> から、
+マシン <CODE>yourhost</CODE> 上にある、 OZ ホーム <CODE>YOU</CODE> 中の
+セル <CODE>B</CODE> への
+リモートメソッド起動で、実際に使用される認証システムは、
+以下の条件をすべて満たすものである。
+<UL>
+  <LI> <A HREF="ex.html#machine">
+       <CODE>ME/etc/encoders/myhost.cipher</CODE>
+       </A>に含まれている。
+  <LI> <A HREF="ex.html#machine">
+       <CODE>YOU/etc/encoders/yourhost.cipher</CODE>
+       </A>に含まれている。
+  <LI> <A HREF="ex.html#cell">
+       <CODE>ME/A/.cipher</CODE>
+       </A>がある場合、そこに含まれている。
+  <LI> <A HREF="ex.html#cell">
+       <CODE>YOU/B/.cipher</CODE>
+       </A>がある場合、そこに含まれている。
+</UL>
+以下の条件がすべて満たされる場合は、
+認証システムを使わない、認証なしの通信が行われる。
+<UL>
+  <LI> <A HREF="ex.html#cell">
+       <CODE>ME/A/.cipher</CODE>
+       </A>がないか、
+       <A HREF="form.html"><CODE>PlainText</CODE></A> が含まれている。
+  <LI> <A HREF="ex.html#cell">
+       <CODE>YOU/B/.cipher</CODE>
+       </A>がないか、
+       <A HREF="form.html"><CODE>PlainText</CODE></A> が含まれている。
+</UL>
+(認証なしの場合を含めて)
+複数の認証システムが使用される可能性がある場合、
+どれが使われるかは、<B>OzVM</B>の実装に依存し、ここでは規定されない。
+</P>
+
+<!--
+<B>OzVM</B>は、あるセルが別のセルにリモートメソッド起動を行ったときに、
+そこで使用した認証システムを覚えておいて、再度同じセルにリモートメソッド起動を
+する際には、認証システムの交渉を省略する機能を有している。
+これを、認証システムの<U>キャッシュ</U>機能と呼ぶ。
+キャッシュは、ファイル <CODE>GOD/.ciphercache</CODE> に蓄えられており、
+そのセルの次回の起動時も有効となる。
+-->
+<HR NOSHADE>
+
+<ADDRESS><B> <A href="copyright-j.html">Copyright</A>(c) 1996-1998 IPA,
+ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B></ADDRESS>
+<P>
+<B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+</P>
+</BODY>
+</HTML>

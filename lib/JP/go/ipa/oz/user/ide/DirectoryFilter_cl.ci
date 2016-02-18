@@ -1,0 +1,3 @@
+j, JP.go.ipa.oz.user.ide.DirectoryFilter_cl, 0x0, JP.go.ipa.oz.user.ide.DirectoryFilter_if, JP.go.ipa.oz.lang._Root_cl
+c, create, (), (), (), (680, 11, ())
+m, accept, 0x1, Z, (LJP.go.ipa.oz.lib.standard._File_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._File_cl), (1039, 111, ((1089, 4, JP.go.ipa.oz.lib.standard._File_if)))

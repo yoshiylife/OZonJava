@@ -1,0 +1,4 @@
+ozc -s school.s Monit.oz
+ozc -s school.s BinarySemaphore.oz
+ozc -s school.s ModedBinarySemaphore.oz
+ozc -s school.s UsrRunnable.oz

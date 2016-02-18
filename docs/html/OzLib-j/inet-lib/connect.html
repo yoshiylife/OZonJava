@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+<HEAD>
+<TITLE>Connection</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>接続の確立/終了</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+クライアントプログラムからサーバへのコネクションに関するコネクションに関
+する処理としては以下のものがある。
+<UL>
+<LI> コネクションの確立
+<LI> コネクションの切断
+<LI> 確立したコネクション上でのデータの送信
+<LI> 確立したコネクション上でのデータの受信
+<LI> コネクション上での異常検出
+</UL>
+</P>
+
+<P>
+ところでソケットを利用するためのライブラリがクラスライブラリにより 
+<B>Socket</B> クラスとして提供されている。このクラスは以上の機能をすべて提供し
+ているため、これを利用してコネクションに関する処理を <A HREF="net_client.html"><B>NetworkClient</B> クラス</A>として実現する。
+<UL> 
+<LI> <A HREF="net_client.html"><B>NetworkClient</B> クラス</A>
+<LI> <A HREF="net_prot.html"><B>NetworkProtocol</B> クラス</A>
+</UL>
+</P>
+
+<P>
+<DL>
+<DT>制約事項
+<DD><B>IP</B> プロトコルをベースとするプロトコルのみをサポートする。
+</DL>
+</P>
+
+<P>
+利用するサブプログラム
+<UL>
+<LI> <A HREF="prot_record.html"><B>ProtocolRecord</B> クラス</A>
+<LI> クラスライブラリ
+  <UL>
+  <LI> <B>Socket</B> クラス
+  </UL>
+</UL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>

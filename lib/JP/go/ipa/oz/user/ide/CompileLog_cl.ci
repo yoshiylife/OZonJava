@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.CompileLog_cl, 0x0, JP.go.ipa.oz.user.ide.CompileLog_if, JP.go.ipa.oz.lib.standard._PrintWriter_cl
+a, infoDialog, 0x0, LJP.go.ipa.oz.user.ide.CompileInfoDialog_if, 501, 29
+c, create, (LJP.go.ipa.oz.lib.standard._Writer_if, LJP.go.ipa.oz.user.ide.CompileInfoDialog_if), (JP.go.ipa.oz.lib.standard._Writer_if, JP.go.ipa.oz.user.ide.CompileInfoDialog_if), (JP.go.ipa.oz.lib.standard._PrintWriter_cl), (540, 91, ())
+m, write, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (637, 74, ())

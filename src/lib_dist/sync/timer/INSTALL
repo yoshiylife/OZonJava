@@ -1,0 +1,5 @@
+ozc -s school.s TimeOutException.oz
+ozc -i -s school.s Timer.oz MethodRunnable.oz
+ozc -s school.s Timer.oz MethodRunnable.oz
+ozc -s school.s ThisFoo.oz MyFoo.oz
+ozc -s school.s ThisMethodRunnable.oz MyMethodRunnable.oz

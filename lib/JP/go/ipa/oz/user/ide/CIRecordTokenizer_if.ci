@@ -1,0 +1,5 @@
+i, JP.go.ipa.oz.user.ide.CIRecordTokenizer_if, 0x10, (JP.go.ipa.oz.lang._Root_if)
+m, nextList, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, hasMoreTokens, 0x1, Z, ()
+m, nextToken, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, countTokens, 0x1, I, ()

@@ -1,0 +1,96 @@
+/*
+ Copyright(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+
+ All rights reserved.  No guarantee.
+ This technology is a result of the Advanced Software  Enrichment 
+ Project of Information-technology Promotion Agency, Japan (IPA).
+
+ Permissions  to  use,  copy, modify and distribute this software
+ are governed by the terms and conditions set forth in  the  file 
+ COPYRIGHT, located on the top directory of this software.
+
+ But CUP was created by Scott Hudson who is part of the Graphics 
+ Visualization and Usability Center and the College of Computing 
+ at Georgia Tech.
+ (URL: http://www.cc.gatech.edu/gvu/people/Faculty/hudson/java_cup/
+ home.html)
+ */
+
+1. What to do first
+  - This systems needs JDK 1.1.4. This package does not include it.
+    You have to install it by yourself.
+
+2. Installing the OZ system
+To install the OZ system, open package to a directory that is called OZMOME.
+One OZHOME is for one user.
+For example, you should install it under your own home directory.
+
+3. Environment settings
+The following are necessary environment settings for the use of the OZ 
+system.
+
+  3.1 Environment variable settings
+      Set the following environment variables.
+    (1) OZHOME 
+        Set full path name of installed directory to OZHOME.
+          Ex)
+            Solaris) When the path is /home/taro/OZ-V1.0,
+              % setenv OZHOME /home/taro/OZ-V1.0
+            Windows) When the path is C:\USERS\taro\OZ-V1.0
+              > set OZHOME=C:\USERS\taro\OZ-V1.0
+
+          Note) A drive name (for example C:) must be a capital.
+    (2) PATH 
+        Add follows to PATH.
+        - $OZHOME/bin
+        - bin of JDK1.1.4
+          Ex)
+            Solaris)
+              % setenv PATH {$OZHOME}/bin:/usr/java/JDK1.1.4/bin:{$PATH}
+            Windows)
+              > set PATH=%OZHOME%\bin;C:\PROGRAM_FILES\jdk1.1.4\bin;%PATH%
+    (3) CLASSPATH 
+        Add follows to CLASSPATH, that is used in Java system.
+        - $OZHOME/lib
+        - $OZHOME/lib/oz.zip
+        
+          Ex)
+            Solaris)
+              % setenv CLASSPATH {$OZHOME}/lib:{$OZHOME}/lib/oz.zip
+            Windows)
+              > set CLASSPATH=%OZHOME%\lib;%OZHOME%\lib\oz.zip
+    (4) LD_LIBRARY_PATH (Solaris Only)
+        Add follows to LD_LIBRATY_PATH
+        - lib/sparc/green_threads in JDK1.1.4
+          Ex) % setenv LD_LIBRARY_PATH \
+                /usr/java/JDK1.1.4/lib/green_threads:{$LD_LIBRARY_PATH}
+
+  3.2 Files
+    You should update following files if necessary.
+
+    (1) $OZHOME/secure/availableCommands
+        The list of programs that can be executed by OZ system.
+
+          Ex)
+            Solaris)
+                oz
+            Windows)
+                oz.bat
+                notepad
+
+  4 Checking
+    Execute the launcher from a command interpreter.
+
+        Ex)
+          % oz launcher
+
+    The window of launcher will be appeared.
+    If you success this, setupping is finished.
+    Please quit the launcher by selecting 'System/quit' menu.
+    Do not kill the process, for example using Ctrl-C.
+
+--------------------------------------
+* JDK, and Java are trademarks or registered trademarks of Sun 
+  Microsystems, Inc.
+

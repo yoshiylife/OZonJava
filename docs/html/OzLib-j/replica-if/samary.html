@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>OZ Libraries</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>概要</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+<P>
+複製ライブラリは指定されたオブジェクトを複製として管理するためのセルで、
+プライマリコピー方式とピアコピー方式の二種類のセルが用意されている。
+複製ライブラリは複製の正否による副作用を取り除くためにトランザクション
+ライブラリを用いている。<BR>
+開発者はサブセルの <B>UserCopyOfPrimaryCopy</B> または <B>UserCopyOfPeerCopy</B> を開発
+することにより、作成したオブジェクトを複製として処理することができる。
+</P>
+
+<P>
+<CENTER>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TD>
+<PRE>
+               cell TransactionResource     cell Transaction
+                            ↑                  ↑
+                            ｜                  ｜
+                     cell CopyScheme  --  cell OtherCopyManeger
+                       ↑        ↑
+                       ｜        ｜
+cell CopyOfPrimaryCopyScheme   cell CopyOfPeerCopyScheme
+           ↑                               ↑
+           ｜                               ｜
+cell UserCopyOfPrimaryCopy     cell UserCopyOfPeerCopy
+</PRE>
+</TD></TR>
+</TABLE>
+<CAPTION>図: クラス関連図</CAPTION>
+</CENTER>
+</P>
+
+<P>
+<A HREF="img.html">(クラス図詳細)</A>
+</P>
+
+<HR NOSHADE> 
+
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
+

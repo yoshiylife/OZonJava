@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H4>変更の反映</H4>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+変更の反映はFMObjectのcommit()とupdate(FMObject)
+により行われる。
+commit()が実行されるとFMObjectは自身の元の
+保持されている管理主体に対しcommit(FMObject)を
+行い自身のデータを管理主体に渡す。管理主体は
+受け取った更新後のFMObjectの元となった
+FMobjectのupdate(FMObject)を行う。
+update(FMObject)により更新後のFMObjectと
+元のリソースとの間で比較が行われ、変更された部分が
+元のリソースに対して反映される。
+また、FMObjectの継承により属性の追加が行われた場合、
+update(FMObject)メソッドを追加分の属性の更新も
+行うよう再定義しなければならない。
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

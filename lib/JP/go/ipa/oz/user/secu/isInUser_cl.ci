@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.secu.isInUser_cl, 0x2000, JP.go.ipa.oz.user.secu.isInUser_if, JP.go.ipa.oz.system.OzCell
+m, initialize, 0x4, V, (), (), (), (15, 29, ())
+m, quiet, 0x14, V, (), (), (), (239, 42, ())
+m, go, 0x4, V, (), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.user.secu.OzAuthenticationServer_if), (JP.go.ipa.oz.lib.standard._System_cl, JP.go.ipa.oz.user.secu.OzAuthenticationServer_pcl), (45, 192, ((67, 6, JP.go.ipa.oz.lib.standard._System_if), (88, 22, JP.go.ipa.oz.user.secu.OzAuthenticationServer_if)))

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="unary.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="rel.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>算術演算子（Arithmetic Operators）<BR>
+</H3>
+<BR clear="all">
+<P>
+<BR>
+</P>
+<P>
+ここでは、OZ言語の算術演算子について説明しています。<BR>
+<BR>
+<BR>
+OZ言語には、以下の5つの算術演算子があります。
+</P>
+<TABLE cellspacing="3">
+  <TR>
+    <TD width="15"></TD>
+    <TD width="15"><B>*</B></TD>
+    <TD width="15"><B>/</B></TD>
+    <TD width="15"><B>%</B></TD>
+    <TD width="15"><B>+</B></TD>
+    <TD width="15"><B>-</B></TD></TR>
+</TABLE>
+
+<P>
+<BR>
+<B>*</B>、<B>/</B>、<B>%</B> を乗法演算子（Multiplicative Operators）、<B>+</B>
+と <B>-</B> を加法演算子(Additive Operators)といいます。<BR>
+<BR>
+等値演算子は左結合的（left-associative）です。<BR>
+<BR>
+<BR>
+算術演算子を用いる式は二項演算式を形成します。<BR>
+<BR>
+<BR>
+</P>
+<P>
+<BR>
+<B>乗法演算子（Multiplicative Operators</B>）
+</P>
+<DL>
+  <DD>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" valign="top" width="15"><B>*</B></TD>
+      <TD>積を計算します</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>/</B></TD>
+      <TD>商を計算します</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>%</B></TD>
+      <TD>剰余を計算します。</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+<PRE>
+  binary_exp_0 : binary_exp_0 binary_operator_0 unary_exp
+                 unary_exp
+                    
+  binary_operator_0 : *
+                      /
+                      %
+ 
+</PRE>
+<BR>
+<BR>
+<B>説明</B><BR>
+<BR>
+乗法演算子の2つのオペランドはともに数値型でなくてはいけません。<BR>
+オペランド間で型の昇格が発生します。そして、式はその昇格された型を持ちます。<BR>
+その型がfloat型、あるいは、double型であれば、浮動少数計算（floating-point
+arithmetic）が行われます。その他の数値型であれば整数計算（integer arithmetic）が行われます。<BR>
+<BR>
+<B>%</B> は整数型にのみ有効です。<BR>
+<BR>
+<BR>
+</DL>
+<P>
+<BR>
+</P>
+<P>
+<BR>
+<B>加法演算子</B>
+</P>
+<DL>
+  <DD>
+  <TABLE cellspacing="2" cellpadding="1">
+    <TR>
+      <TD width="15"></TD>
+      <TD align="center" valign="top" width="15"><B>+</B></TD>
+      <TD>和を計算します</TD></TR>
+    <TR>
+      <TD></TD>
+      <TD align="center" valign="top"><B>-</B></TD>
+      <TD>差を計算します</TD></TR>
+  </TABLE>
+
+<BR>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+<PRE>
+  binary_exp_1 : binary_exp_1 binary_operator_1 binary_exp_0
+                 binary_exp_0
+                    
+  binary_operator_1 : +
+                      -
+ 
+</PRE>
+<BR>
+<BR>
+<B>説明</B><BR>
+<BR>
+加法演算子の2つのオペランドはともに数値型でなくてはいけません。<BR>
+オペランド間で型の昇格が発生します。そして、式はその昇格された型を持ちます。<BR>
+その型がfloat型、あるいは、double型であれば、浮動少数計算（floating-point
+arithmetic）が行われます。その他の数値型であれば整数計算（integer arithmetic）が行われます。<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="unary.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="rel.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

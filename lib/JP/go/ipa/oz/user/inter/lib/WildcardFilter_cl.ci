@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.inter.lib.WildcardFilter_cl, 0x0, JP.go.ipa.oz.user.inter.lib.WildcardFilter_if, JP.go.ipa.oz.lang._Root_cl
+a, wildcard, 0x0, LJP.go.ipa.oz.lib.standard._String_if, 6831, 16
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (6889, 35, ())
+m, accept, 0x1, Z, (LJP.go.ipa.oz.lib.standard._File_if, LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._File_if, JP.go.ipa.oz.lib.standard._String_if), (), (6956, 862, ())

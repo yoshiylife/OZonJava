@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.lib_dist.tran._TranTimer_if, 0x0, (JP.go.ipa.oz.lang._Root_if)
+m, MethodDone, 0x21, V, ()
+m, invoke, 0x1, LJP.go.ipa.oz.user.lib_dist.tran._TransactionResource_if, (LJP.go.ipa.oz.user.lib_dist.tran._TranRun_if, I)

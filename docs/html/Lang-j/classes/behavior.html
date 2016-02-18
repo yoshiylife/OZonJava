@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#000000" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="instance.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="classid.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>オブジェクトの動作<BR>
+</H3>
+<BR clear="all">
+<P>
+OZシステムにおけるオブジェクトはクラス型のインスタンスです。class型のインスタンスもとcell型のインスタンスもオブジェクトです。<BR>
+ここでは、オブジェクトの動作について説明しています。
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT>メソッド起動式
+  <DD><BR>
+オブジェクトはメソッド起動によって動作します。<BR>
+<BR>
+メソッドを起動させるオブジェクトを特定して、そのメソッドを起動します<BR>
+オブジェクトへのリファレンスを保持する式に対して、実行するメソッドを指定することで、オブジェクトを動作させることができます。<BR>
+<BR>
+メソッド起動のための式をメソッド起動式と呼びます。<BR>
+<BR>
+メソッド起動式:<B>[ クラス型の式 －＞ ] メソッド名( [ 引数リスト ] ) </B><BR>
+<BR>
+<BR>
+<BR>
+  <DT>メソッドの型
+  <DD><BR>
+メソッドは型を持っています。メソッド起動式の戻り値は、そのメソッド型と適合する型を持っています。<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+例: メソッド起動式<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+ 1: public void addContent(FMObject cont) {
+ 2:     Overseer over=&gt;create();
+ 3:     over-&gt;permit(cont);
+ 4:     addContentInternal(cont);
+ 5: }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>3行目で、Overseerクラスのインスタンスoverの持つメソッドを起動しています。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+例: メソッド起動式<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+ class Garage {
+     KeyGenerator     keyGen;
+     Dictionary       valueTable;
+
+     new create()  {
+         KeyComparator  keyComp;
+         keyGen =&gt; create();
+         keyComp =&gt; create();
+         valueTable =&gt; create(keyComp);
+     }
+     public Root get(Key key){
+         return valueTable-&gt;get(key);
+     }
+
+     public Collection keys() {
+         return valueTable-&gt;keys();
+     }
+     ...
+ }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<UL>
+  <LI>メソッドget(Key key)とkeys()のメソッド本体の定義で、アトリビュートに対するメソッド起動式が記述されています。
+</UL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="instance.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="classid.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

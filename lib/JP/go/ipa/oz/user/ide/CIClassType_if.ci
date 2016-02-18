@@ -1,0 +1,3 @@
+i, JP.go.ipa.oz.user.ide.CIClassType_if, 0x10, (JP.go.ipa.oz.user.ide.CIType_if)
+m, getCID, 0x1, LJP.go.ipa.oz.lib.standard._String_if, ()
+m, isOzInternalClass, 0x1, Z, ()

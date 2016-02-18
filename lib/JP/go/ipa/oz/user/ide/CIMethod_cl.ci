@@ -1,0 +1,21 @@
+j, JP.go.ipa.oz.user.ide.CIMethod_cl, 0x0, JP.go.ipa.oz.user.ide.CIMethod_if, JP.go.ipa.oz.user.ide.CIMember_cl
+a, iAmConstructor, 0x4, Z, 258, 34
+a, argTypeList, 0x4, LJP.go.ipa.oz.lib.standard._Sequence_if, 201, 32
+a, returnType, 0x4, LJP.go.ipa.oz.user.ide.CIType_if, 168, 29
+c, newCIMethod, (LJP.go.ipa.oz.user.ide.CIAccessLevel_if, LJP.go.ipa.oz.user.ide.CIModifier_if, LJP.go.ipa.oz.user.ide.CIType_if, LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Sequence_if, LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.user.ide.CIAccessLevel_if, JP.go.ipa.oz.user.ide.CIModifier_if, JP.go.ipa.oz.user.ide.CIType_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Sequence_if, JP.go.ipa.oz.user.ide.CIPart_if), (), (454, 297, ())
+c, newCIConstructor, (LJP.go.ipa.oz.lib.standard._String_if, LJP.go.ipa.oz.lib.standard._Sequence_if, LJP.go.ipa.oz.user.ide.CIPart_if), (JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._Sequence_if, JP.go.ipa.oz.user.ide.CIPart_if, JP.go.ipa.oz.user.ide.CIAccessLevel_if, JP.go.ipa.oz.user.ide.CIModifier_if, JP.go.ipa.oz.user.ide.CIConstructorType_if), (JP.go.ipa.oz.user.ide.CIAccessLevel_cl, JP.go.ipa.oz.user.ide.CIModifier_cl, JP.go.ipa.oz.user.ide.CIConstructorType_cl), (837, 419, ((915, 13, JP.go.ipa.oz.user.ide.CIAccessLevel_if), (940, 10, JP.go.ipa.oz.user.ide.CIModifier_if), (962, 17, JP.go.ipa.oz.user.ide.CIConstructorType_if)))
+m, isFinal, 0x1, Z, (), (), (), (5292, 67, ())
+m, isStatic, 0x1, Z, (), (), (), (5890, 69, ())
+m, getReturnType, 0x1, LJP.go.ipa.oz.user.ide.CIType_if, (), (), (), (4854, 63, ())
+m, isConstructor, 0x1, Z, (), (), (), (5140, 68, ())
+m, isAttribute, 0x1, Z, (), (), (), (4999, 57, ())
+m, getReturnTypeAsString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.user.ide.School_if), (), (4667, 105, ())
+m, getReturnTypeAsString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (), (), (4502, 83, ())
+m, isPublic, 0x1, Z, (), (), (), (5736, 72, ())
+m, isMethod, 0x1, Z, (), (), (), (5441, 66, ())
+m, isOnce, 0x1, Z, (), (), (), (5589, 65, ())
+m, argumentTypes, 0x1, LJP.go.ipa.oz.lib.standard._Iterator_if, (), (), (), (1414, 78, ())
+m, getArgumentTypeAsString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.CIType_if, JP.go.ipa.oz.user.ide.CIClassType_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (3299, 1121, ((3362, 6, JP.go.ipa.oz.lib.standard._String_if), (3389, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (3412, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (3445, 6, JP.go.ipa.oz.user.ide.CIType_if), (3464, 11, JP.go.ipa.oz.user.ide.CIClassType_if)))
+m, getArgumentTypeAsString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.CIType_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (2828, 389, ((2878, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (2901, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (2934, 6, JP.go.ipa.oz.user.ide.CIType_if)))
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (LJP.go.ipa.oz.user.ide.School_if), (JP.go.ipa.oz.user.ide.School_if, JP.go.ipa.oz.lib.standard._String_if, JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.user.ide.CIType_if, JP.go.ipa.oz.user.ide.CIClassType_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (2109, 637, ((2157, 6, JP.go.ipa.oz.lib.standard._String_if), (2174, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (2197, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (2217, 6, JP.go.ipa.oz.user.ide.CIType_if), (2236, 11, JP.go.ipa.oz.user.ide.CIClassType_if)))
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.user.ide.CIType_if, JP.go.ipa.oz.lib.standard._Iterator_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (1574, 453, ((1609, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (1632, 6, JP.go.ipa.oz.user.ide.CIType_if), (1651, 8, JP.go.ipa.oz.lib.standard._Iterator_if)))

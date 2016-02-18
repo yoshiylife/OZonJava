@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Programming</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="file.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<H3>標準出力と Systemクラス<BR>
+</H3>
+<P>
+<BR>
+</P>
+<P>
+Contents
+</P>
+<OL>
+  <LI><A href="#stdout">標準出力</A>
+  <LI><A href="#system">Systemクラス</A>
+  <LI><A href="#stdin">キーボードからの入力（標準入力）</A>
+  <LI><A href="#debug">Systemオブジェクトを使用するデバッグ</A>
+</OL>
+<P>
+<BR>
+<BR>
+<IMG src="../../image/line.gif" height="13" width="490"><BR>
+<BR>
+<BR>
+</P>
+<DL>
+  <DT><A name="stdout"></A><BR>
+１．標準出力
+  <DD>標準出力に出力するためには、Systemクラスのオブジェクトを生成し、それに対してprintlnメッセージを送ります（＝Systemuクラスのオブジェクトのprintlnメソッドを起動する）。<BR>
+<BR>
+Systemクラスのprintlnメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+        public void printMsg() {
+            System system;
+            <B>system-&gt;println(&quot;Hello1&quot;);</B>
+        }    
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+ここでは文字列を引数にしてその文字列を出力をしていますが、asStringメソッドが定義されているオブジェクトであればどのようなオブジェクトでも引数にすることができます。<BR>
+String型のオブジェクトが引数に指定された場合にはその文字列が標準出力に指定され、その他の場合は引数オブジェクトのasStringメソッドで獲得される文字列表現が出力されます。<BR>
+<BR>
+<BR>
+  <DT><A name="system"></A><BR>
+２．Systemクラス
+  <DD><BR>
+上位クラス： *Root<BR>
+<BR>
+コンストラクタメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">new create()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>コンストラクタ。</TD></TR>
+  </TABLE>
+
+<BR>
+主なメソッドメンバ
+  <TABLE>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public final void println(Root arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>オブジェクトarg1のasString()メソッドで得られる文字列を<BR>
+標準出力に出力します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public final void println(String arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>文字列arg1を標準出力に出力します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public final void debugPrintln(Root arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>デバッグモードで、オブジェクトarg1のasString()メソッ<BR>
+ドで得られる文字列を標準出力に出力します。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public final void debugPrintln(String arg1)</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>デバッグモードで、文字列arg1を標準出力に出力する。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public final InputStreamReader getStdin()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>標準テキスト入力リーダーを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public final PrintWriter getStdout()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>標準テキスト出力ライターを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public final PrintWriter getStderr()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>標準エラーテキスト出力ライターを答えます。</TD></TR>
+    <TR>
+      <TD nowrap width="10"></TD>
+      <TD nowrap valign="top">public final String getOzHome()</TD>
+      <TD nowrap width="10"></TD>
+      <TD nowrap>OZホームを表現する文字列を答えます。</TD></TR>
+  </TABLE>
+
+<BR>
+標準出力にメッセージを出力するだけでなく、Systemクラスのオブジェクトは標準入力、標準エラー出力を保持し、その問い合わせに答えることができます。<BR>
+<BR>
+（APIの詳細は「ツールリファレンス」の「クラスライブラリ」の該当箇所を参照してください。）<BR>
+<BR>
+<BR>
+  <DT><A name="stdin"></A><BR>
+３．キーボードからの入力（標準入力）
+  <DD><BR>
+キーボードからの入力（標準入力）を受け付けるためには、まず、Systemクラスのオブジェクトに標準入力を問い合わせます。getStdinメソッドがそのサービスを行います。<BR>
+<BR>
+標準入力はInputStreamReaderクラスのオブジェクトです。そのオブジェクトが持つreadメソッドを起動することで標準入力からの入力を受け付けることができます。<BR>
+<BR>
+SystemクラスのgetStdinメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    System sys;
+    CharArray sa=&gt;create(1);
+    int i = 0;
+
+    while(true){
+        if((i=sys-&gt;getStdin()-&gt;read(sa,0,1))==0){
+        s-&gt;debugPrintln(&quot;read fault&quot;);break;
+    }
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+（APIの詳細は「ツールリファレンス」の「クラスライブラリ」の該当箇所を参照してください。）<BR>
+<BR>
+<BR>
+  <DT><A name="debug"></A><BR>
+４．Systemオブジェクトを使用するデバッグ
+  <DD><BR>
+OzVMにはグローバルオブジェクトをデバックモードで稼動させる機能があります。debugPrintlnメソッドを利用するとデバックモードで稼動しているときのみメッセージ出力を行うことができます。<BR>
+<BR>
+SystemクラスのdebugPrintlnメソッド <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    ...
+    OutputStream os = socket-&gt;getOutputStream ();
+    OutputStreamWriter ow=&gt;breed (os);
+
+    String str;
+    /* server was abort */
+    if (html == null) {
+      HTMLData html=&gt;create ();
+      html-&gt;startOutput (&quot;text/html&quot;);
+      html-&gt;beginTag (&quot;html&quot;);
+      html-&gt;addOutput (&quot;OZCGI server stopped.&quot;);
+      html-&gt;endOutput ();
+      str = html-&gt;output ();
+    } else
+      str = html-&gt;output ();
+
+    <B>System sys=&gt;create ();</B>
+    <B>sys-&gt;debugPrintln (&quot;sending data: &quot;);</B>
+    <B>sys-&gt;debugPrintln (str);</B>
+
+    ow-&gt;write (str, 0, str-&gt;length ());
+    ow-&gt;flush ();
+    ...
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+グローバルオブジェクト単位でデバックモードの指定ができます。<BR>
+<BR>
+まず、OzVMをインタラクティブモードで起動します。<BR>
+<BR>
+インタラクティブモード<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; oz -i
+    Logging file F:\oz\logs\dorothy01090.log   
+    ...
+    Executor&gt;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+そして、デバックしたいグローバルオブジェクトを活性化して、そのグローバルオブジェクトををデバックモードにします。グローバルオブジェクトの指定はGODで行います。<BR>
+<BR>
+デバックモード <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    Executor&gt;go &lt;GOD&gt;
+    Executor&gt;debug &lt;GOD&gt; TRUE
+    Executor&gt;
+</PRE>
+</TD></TR>
+  </TABLE>
+
+<BR>
+SystemクラスのオブジェクトへdebugPrintlnメッセージが送信される（=debugPrintlnメソッドが起動される）と、標準出力にメッセージが表示されます。<BR>
+<BR>
+例 <IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+  <TABLE width="90%" cellpadding="2">
+    <TR>
+      <TD>
+<PRE>
+    &gt; oz -i
+    Logging file F:\oz\logs\dorothy01090.log   
+    ...
+    Executor&gt;go htmltest
+    Executor&gt;debug htmltest TRUE
+    Executor&gt;<B>sending data:</B>
+    <B>text/html</B> 
+    ... 
+    <B>OZCGI server stopped.</B>
+
+</PRE>
+</TD></TR>
+  </TABLE>
+
+(リターンキーで、Executor&gt; プロンプトが表示されます)<BR>
+<BR>
+</DL>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="index.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="１つ上へ" height="20" width="100" border="0" " alt="Up One Level"></A>
+<A href="file.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

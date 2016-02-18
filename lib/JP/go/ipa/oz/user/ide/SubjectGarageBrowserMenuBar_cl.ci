@@ -1,0 +1,10 @@
+j, JP.go.ipa.oz.user.ide.SubjectGarageBrowserMenuBar_cl, 0x0, JP.go.ipa.oz.user.ide.SubjectGarageBrowserMenuBar_if, JP.go.ipa.oz.lib.standard._MenuBar_cl
+a, menuSubject, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 730, 37
+a, menuSystem, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 690, 36
+a, sgBrowser, 0x0, LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if, 649, 35
+a, listener, 0x0, LJP.go.ipa.oz.user.ide.SubjectGarageBrowserMenuListener_if, 812, 43
+a, menuCatalog, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, 771, 37
+c, create, (LJP.go.ipa.oz.user.ide.SubjectGarageBrowser_if), (JP.go.ipa.oz.user.ide.SubjectGarageBrowser_if), (JP.go.ipa.oz.lib.standard._MenuBar_cl, JP.go.ipa.oz.user.ide.SubjectGarageBrowserMenuListener_cl), (1017, 330, ())
+m, mkSystemMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (LJP.go.ipa.oz.lib.standard._ActionListener_if), (JP.go.ipa.oz.lib.standard._ActionListener_if, JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if), (JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (1581, 388, ((1634, 4, JP.go.ipa.oz.lib.standard._Menu_if), (1651, 8, JP.go.ipa.oz.lib.standard._MenuItem_if)))
+m, mkSubjectMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (LJP.go.ipa.oz.lib.standard._ActionListener_if), (JP.go.ipa.oz.lib.standard._ActionListener_if, JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if), (JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (2049, 497, ((2103, 4, JP.go.ipa.oz.lib.standard._Menu_if), (2120, 8, JP.go.ipa.oz.lib.standard._MenuItem_if)))
+m, mkCatalogMenu, 0x0, LJP.go.ipa.oz.lib.standard._Menu_if, (LJP.go.ipa.oz.lib.standard._ActionListener_if), (JP.go.ipa.oz.lib.standard._ActionListener_if, JP.go.ipa.oz.lib.standard._Menu_if, JP.go.ipa.oz.lib.standard._MenuItem_if), (JP.go.ipa.oz.lib.standard._Menu_cl, JP.go.ipa.oz.lib.standard._MenuItem_cl), (2628, 479, ((2682, 4, JP.go.ipa.oz.lib.standard._Menu_if), (2708, 8, JP.go.ipa.oz.lib.standard._MenuItem_if)))

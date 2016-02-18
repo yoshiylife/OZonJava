@@ -1,0 +1,4 @@
+j, JP.go.ipa.oz.user.ide.SubjectSelectActionListener_cl, 0x0, JP.go.ipa.oz.user.ide.SubjectSelectActionListener_if, JP.go.ipa.oz.lib.standard._ActionListener_cl
+a, dlg, 0x0, LJP.go.ipa.oz.user.ide.SubjectSelectDialog_if, 591, 24
+c, create, (LJP.go.ipa.oz.user.ide.SubjectSelectDialog_if, LJP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.user.ide.SubjectSelectDialog_if, JP.go.ipa.oz.lib.standard._EventDispatchingQueue_if), (JP.go.ipa.oz.lib.standard._ActionListener_cl), (745, 104, ())
+m, actionPerformed, 0x1, V, (LJP.go.ipa.oz.lib.standard._ActionEvent_if), (JP.go.ipa.oz.lib.standard._ActionEvent_if, JP.go.ipa.oz.lib.standard._String_if), (), (1027, 250, ())

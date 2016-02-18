@@ -1,0 +1,101 @@
+/*
+ Copyright(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+
+ 著作権者は全ての権利を保留します。
+ 本ソフトウェア及びその関連ドキュメントは情報処理振興事業協会 (IPA) が
+ 実施した「創造的ソフトウェア育成事業」の成果です。
+
+ 本ソフトウェア及びその関連ドキュメントを利用、複製、変更、配布する場合
+ は、本ソフトウェアのトップディレクトリにあるファイル「COPYRIGHT.JP」に
+ 記載されている利用許諾条件に従って下さい。
+
+ 但し、本リリースに含まれる CUP は Graphics Visualization and Usability 
+ Center と College of Computing at Georgia Tech に所属する Scott Hudson 
+ さんによって作成されたものです。
+ (URL: http://www.cc.gatech.edu/gvu/people/Faculty/hudson/java_cup/home.html)
+ */
+
+１. 最初にすること
+
+  ・OZ システムの利用には JDK-1.1.4が必要である。
+    これはこのパッケージには含まれていないため
+    別にインストールが必要である。
+
+２. OZ システムのインストール
+
+    パッケージを展開することによってひとつのディレクトリができる。
+    このディレクトリを OZHOME と呼んでいる。
+    OZ ホームは利用者のアカウントとそのファイルシステムを抽象化している
+    ので、OZ を利用するには、一人のユーザに対して一つ OZ ホームが必要で
+    ある。通常は、ユーザ個人のホームディレクトリ下に OZ ホームをインスト
+    ールする。
+
+３. 環境の設定
+
+OZ システム使用するには次の環境設定を行う必要がある。
+
+  3.1 環境変数の設定
+      以下の環境変数を設定する。
+    (1) OZHOME 
+        OZ システムをインストールしたディレクトリをフルパスで設定する。
+          例) 
+             Solaris) ディレクトリが /home/taro/OZ-V1.0 である場合
+                % setenv OZHOME /home/taro/OZ-V1.0
+             Windows) ディレクトリが C:\USERS\taro\OZ-V1.0 である場合
+                > set OZHOME=C:\USERS\taro\OZ-V1.0
+          注意) Windowsの場合 OZHOME はユーザ環境変数として設定しておくこと
+                が望ましい。他の環境変数も同様である。
+                また、ドライブ名(C:)は大文字にしなければならない。
+    (2) PATH 
+        PATHに以下を追加する。
+        ・$OZHOME/bin
+        ・JDK1.1.4のbin
+          例)
+             Solaris)
+                % setenv PATH {$OZHOME}/bin:/usr/java/JDK1.1.4/bin:{$PATH}
+             Windows)
+                > set PATH=%OZHOME%\bin;C:\PROGRAM_FILES\jdk1.1.4\bin;%PATH%
+    (3) CLASSPATH 
+        Javaシステムが利用する CLASSPATH に以下を追加する。
+        ・$OZHOME/lib
+        ・$OZHOME/lib/oz.zip
+          例)
+             Solaris)
+                % setenv CLASSPATH {$OZHOME}/lib:$OZHOME/lib/oz.zip
+             Windows)
+                > set CLASSPATH=%OZHOME%\lib;%OZHOME%\lib\oz.zip
+    (4) LD_LIBRARY_PATH の設定(Solaris のみ)
+        LD_LIBRARY_PATHに以下を追加する。
+        ・JDK1.1.4 にある lib/sparc/green_threads
+          例) % setenv LD_LIBRARY_PATH \
+                  /usr/java/JDK1.1.4/lib/sparc/green_threads:{$LD_LIBRARY_PATH}
+
+  3.2 設定ファイルについて
+    必要であれば以下のファイルを修正する。
+
+    (1) $OZHOME/secure/availableCommands
+        OZ システムから実行できる外部コマンドのリストである。
+
+          例(Solaris の場合)
+            oz
+          例(Windows の場合)
+            oz.bat
+            notepad
+
+４．試しに起動してみる
+
+まずは設定が正常に正常に行われているか確認するためにコマンドライン
+からランチャを起動する。
+正常に起動できればランチャの GUI が表示される。
+
+          例)
+            % oz launcher
+
+ランチャを終了させるには System のポップアップメニューから quit を選択する。
+Ctrl-C などで強制終了してはならない。
+
+--------------------------------------
+* JDK, and Java are trademarks or registered trademarks of Sun 
+  Microsystems, Inc.
+

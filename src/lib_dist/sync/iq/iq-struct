@@ -1,0 +1,67 @@
+class i-struct {
+
+protected string flag; // read<->empty<->written
+protected Object val;
+protected Object queue;
+
+public void new(){
+  flag = empty;
+  queue = Object=>new();
+}
+
+public locked void write(Object o) {
+  if(flag=="written") throw WriteError;
+  else {
+    val = o;
+    if(flag=="empty"){
+      flag = "written";
+    } else {
+      flag = "empty";
+      queue->notify();
+    }
+  }
+}
+
+public locked Object read() {
+  if(flag=="read") throw ReadError;
+  else {
+    if(flag=="empty"){
+      flag = "read"
+      queue->wait();
+    }
+    flag = "empty";
+    return(val);
+  }
+}
+
+}
+
+-----------------------------------------------
+
+import LIFO;
+
+class q-struct {
+
+protected LIFO val-queue;
+protected Object queue;
+
+public void new(){
+  val-queue = LIFO=>new();
+  queue = Object=>new();
+}
+
+public locked void write(Object o) {
+  try{
+    val-queue->push(o);
+  } catch (LIFOfull){
+    // LIFO resize
+  }
+  queue->notify();
+}
+
+public locked Object read() {
+  if(val-queue->how_meny()==0){
+    queue->wait();
+  }
+  return(val-queue->pop());
+}

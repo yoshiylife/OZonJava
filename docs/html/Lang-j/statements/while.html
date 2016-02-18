@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>OZ Language</TITLE>
+</HEAD>
+
+<BODY bgcolor="#FFFFFF" link="#000000" vlink="#808080" alink="#000000" TOPMARGIN=10 BGPROPERTIES="FIXED">
+
+<P>
+<A name="top"></A>
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="for.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="do.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+<P>
+<BR>
+</P>
+<H3>while 文（The while Statement）<BR>
+</H3>
+<BR clear="all">
+<P>
+式の値が false になるまで、文の実行を繰り返します。<BR>
+<BR>
+<B>構文</B>
+</P>
+<TABLE>
+  <CAPTION align="bottom"></CAPTION>
+  <TR>
+    <TD width="30"></TD>
+    <TD><B>while (式) 文</B></TD></TR>
+</TABLE>
+
+<P>
+式は論理型でなくてはいけません。<BR>
+<BR>
+</P>
+<P>
+<BR>
+<BR>
+<BR>
+<B>LALR(1)文法</B>
+</P>
+<PRE>
+  while_stmt : WHILE ( exp ) stmt
+                    
+  no_short_if_while_stmt : WHILE ( exp ) no_short_if_stmt<BR>
+</PRE>
+<P>
+<BR>
+<B>説明</B><BR>
+まず、式の評価が行われます。そして、その値が true ならば文を実行します。すべての文の実行が正常に行われると、再度式の評価が行われます。式の評価の値がfalseになるまで繰り返します。<BR>
+<BR>
+break文によって、文の実行を中断し、while文を終了することができます。<BR>
+ラベルのないcontinue文によって、文の実行を中断し、式の評価に処理を進めることができます。<BR>
+ラベル付きのbreak文があると、そのラベルまで処理が進みます。<BR>
+ラベル付きのcontinue文があると、そのラベルまで処理が進みます。<BR>
+<BR>
+</P>
+<P>
+<BR>
+<BR>
+</P>
+<P>
+例: while文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  while (it-&gt;hasMoreElements ()) {
+      String src;
+      src =| it-&gt;nextElement ();
+      compiler_server-&gt;compile (src, school, log);
+
+      File f=&gt;breed (src);
+      f-&gt;delete ();
+  }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+例: while文<IMG src="../../image/h_dish.gif" align="middle" height="26" width="31">
+break文で繰返しを終了する
+</P>
+<CENTER>
+<TABLE width="90%" cellpadding="2">
+  <TR>
+    <TD>
+<PRE>
+  while (true) {
+      String line = in-&gt;readLine ();
+      if (line == null)
+        break;
+
+      out-&gt;write (line);
+      out-&gt;write (&quot;\n&quot;);
+  }
+</PRE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+</P>
+<P>
+<FONT size="1" color="BLACK" face="MS SANS SERIF"> <A href="../../copyright-j.html" class="cpslug"><FONT size="1" color="BLACK" face="MS SANS SERIF">
+(c)<U class="cpslug"> </U></FONT> 1996-1998 IPA, ETL, AT21, FSIABC, FXIS,
+InArc, MRI, NUL, SBC, Sharp, TEC, TIS. All rights reserved. </A> </FONT><BR clear="all">
+</P>
+<TABLE width="100%" border="0" bgcolor="#000000" class="flush">
+  <TR align="right">
+    <TD valign="top"><FONT size="2" face="VERDANA,ARIAL,HELVETICA"> <A href="#top"><IMG src="../../image/top.gif" alt="トップへ" height="20" width="35" border="0"></A>
+<A href="for.html"><IMG src="../../image/previous.gif" alt="前へ" height="20" width="71" border="0"></A>
+<A href="index.html"><IMG src="../../image/up.gif" alt="1つ上へ" height="20" width="100" border="0"></A>
+<A href="do.html"><IMG src="../../image/next.gif" alt="次へ" height="20" width="55" border="0"></A>
+<A href="mailto:oz-admin@oz.ipa.go.jp"><IMG src="../../image/mail.gif" alt="Contact" height="20" width="80" border="0"></A>
+</FONT>&nbsp;</TD></TR>
+</TABLE>
+
+</BODY>
+</HTML>

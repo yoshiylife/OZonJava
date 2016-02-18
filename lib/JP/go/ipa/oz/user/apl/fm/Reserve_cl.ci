@@ -1,0 +1,25 @@
+j, JP.go.ipa.oz.user.apl.fm.Reserve_cl, 0x0, JP.go.ipa.oz.user.apl.fm.Reserve_if, JP.go.ipa.oz.user.apl.fm.Relation_cl
+a, state, 0x0, I, 210, 10
+a, startMinute, 0x0, I, 176, 16
+a, startHour, 0x0, I, 146, 14
+a, endMinute, 0x0, I, 194, 14
+a, endHour, 0x0, I, 162, 12
+a, day, 0x0, I, 136, 8
+c, create, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.user.apl.fm.Relation_cl), (376, 84, ())
+c, create, (), (), (JP.go.ipa.oz.user.apl.fm.Relation_cl), (281, 88, ())
+m, setState, 0x1, V, (LJP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._String_if), (), (2417, 262, ())
+m, setState, 0x1, V, (I), (), (), (2204, 51, ())
+m, getStartHour, 0x1, I, (), (), (), (1615, 50, ())
+m, getEndMinute, 0x1, I, (), (), (), (1957, 50, ())
+m, getStartMinute, 0x1, I, (), (), (), (1839, 54, ())
+m, setDay, 0x1, V, (I), (), (), (926, 47, ())
+m, cancel, 0x1, V, (), (JP.go.ipa.oz.user.apl.fm.Scheduler_if), (), (2046, 89, ((2071, 9, JP.go.ipa.oz.user.apl.fm.Scheduler_if)))
+m, trace, 0x1, V, (I), (JP.go.ipa.oz.lib.standard._System_if, JP.go.ipa.oz.lib.standard._String_if), (JP.go.ipa.oz.lib.standard._System_cl), (2682, 453, ((2714, 6, JP.go.ipa.oz.lib.standard._System_if)))
+m, init, 0x1, V, (I, I, I, I, I), (), (), (770, 99, ())
+m, getDay, 0x1, I, (), (), (), (1513, 38, ())
+m, setStartMinute, 0x1, V, (I), (), (), (1280, 59, ())
+m, setStartHour, 0x1, V, (I), (), (), (1040, 55, ())
+m, getEndHour, 0x1, I, (), (), (), (1729, 46, ())
+m, setEndHour, 0x1, V, (I), (), (), (1162, 51, ())
+m, setReserve, 0x1, V, (I, I, I, I, I), (), (), (612, 155, ())
+m, setEndMinute, 0x1, V, (I), (), (), (1406, 55, ())

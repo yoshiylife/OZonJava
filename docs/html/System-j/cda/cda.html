@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+<TITLE>Class Delivery Agent</TITLE>
+</HEAD>
+
+<BODY>
+
+<CENTER>
+<H2>クラス配送エージェント(CDA)</H2>
+</CENTER>
+
+<HR NOSHADE>
+
+
+<B>CDA</B> はエグゼキュータとのクラス配送の一部通信には <B>ozclass</B> というプロトコルによるソケット通信を使用する。<BR>
+<B>CDA</B> を起動する <B>OZ</B> ホームの設定ファイル
+(<B>$OZHOME/lib/</B> 下)は次のようにする。
+<P>
+<DL>
+<DT><B>oz.properties</B>
+<DD>
+<TABLE BORDER=2 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD><B>oz.classloader.deliveryAgent.url=</B>ソケットのホスト名とポート番号</TD>
+</TR>
+</TABLE>
+例えば host1 というマシンの 6010 番ポートを指定したいのなら次のような記述となる。
+<PRE>
+<B>oz.classloader.deliveryAgent.url=ozclass://host1:6010/</B>
+</PRE>
+<DD>
+エグゼキュータから <B>CDA</B> へのグローバルクラスサーチ回数指定を指定することができる。
+<TABLE BORDER=2 CELLSPACING=0 CELLPADDING=2>
+<TR>
+<TD><B>oz.classloader.deliveryAgent.retry=</B>サーチ回数</TD>
+</TR>
+</TABLE>
+例えば、グローバルクラスサーチ回数を二回と指定する場合は次のような記述となる。
+<PRE>
+<B>oz.classloader.deliveryAgent.retry=2</B>
+</PRE>
+</DL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></
+B>
+
+</BODY>
+</HTML>
+

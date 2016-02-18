@@ -1,0 +1,8 @@
+j, JP.go.ipa.oz.user.apl.fm.Karte_cl, 0x0, JP.go.ipa.oz.user.apl.fm.Karte_if, JP.go.ipa.oz.lang._Root_cl
+a, dates, 0x0, LJP.go.ipa.oz.lib.standard._SList_if, 250, 12
+a, value, 0x0, LJP.go.ipa.oz.lang._Root_if, 264, 11
+c, create, (LJP.go.ipa.oz.lang._Root_if), (JP.go.ipa.oz.lang._Root_if, JP.go.ipa.oz.lib.standard._DateComparator_if, JP.go.ipa.oz.lib.standard._Date_if), (JP.go.ipa.oz.lib.standard._DateComparator_cl, JP.go.ipa.oz.lib.standard._SList_cl, JP.go.ipa.oz.lib.standard._Date_cl), (282, 240, ((328, 14, JP.go.ipa.oz.lib.standard._DateComparator_if), (382, 4, JP.go.ipa.oz.lib.standard._Date_if)))
+m, asString, 0x1, LJP.go.ipa.oz.lib.standard._String_if, (), (JP.go.ipa.oz.lib.standard._StringBuffer_if, JP.go.ipa.oz.lib.standard._Iterator_if, JP.go.ipa.oz.lib.standard._Date_if), (JP.go.ipa.oz.lib.standard._StringBuffer_cl), (780, 260, ((809, 12, JP.go.ipa.oz.lib.standard._StringBuffer_if), (855, 8, JP.go.ipa.oz.lib.standard._Iterator_if), (929, 4, JP.go.ipa.oz.lib.standard._Date_if)))
+m, getDates, 0x1, LJP.go.ipa.oz.lib.standard._SList_if, (), (), (), (734, 44, ())
+m, getValue, 0x1, LJP.go.ipa.oz.lang._Root_if, (), (), (), (688, 43, ())
+m, add, 0x1, V, (), (JP.go.ipa.oz.lib.standard._Date_if), (JP.go.ipa.oz.lib.standard._Date_cl), (526, 159, ((548, 4, JP.go.ipa.oz.lib.standard._Date_if)))

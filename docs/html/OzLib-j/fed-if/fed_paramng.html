@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<TITLE>Application class library</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H3>フェデレーションの並置的管理</H3>
+</CENTER>
+
+<HR NOSHADE>
+
+<P>
+フェデレーションの並置的管理とは、Autonomy セル同士が
+やりとりを行うための仕組みを提供することである。<BR>
+これを実現するために、Autonomy セルが属する Federation セルを
+仲介して、対象 Autonomy セルのタイプを自 Autonomy セルで
+変換可能なタイプにみなすための ResourceProxy を取得することにする。
+</P>
+
+<UL>
+
+<P>
+<LI>public ResourceProxy Autonomy#getAdapter(String resType, Set pivots)<BR>
+引数として他の Autonomy セルのタイプおよび中間データタイプの集合をとる。<BR>
+当 Autonomy セルが管理している Federation 集合の要素を取り出し、
+引数をキーとして、Autonomy#getAdapter(String, String) により
+当 Autonomy セルが管理しているアダプタ集合を検索する。<BR>
+該当するものがあれば、そのコピーを返す。<BR>
+なければ、 null を返す。
+</P>
+
+</UL>
+
+<HR NOSHADE>
+<P><ADDRESS>
+<B> <A href="../../copyright-j.html">Copyright</A>(c) 1996-1998 IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS </B>
+<P> <B>Contact: <A href="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B> </P>
+</ADDRESS>
+</BODY>
+</HTML>

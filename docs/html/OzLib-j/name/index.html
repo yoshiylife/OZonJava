@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>Manual of OZ naming Lib.</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H2>OZ ネーミングライブラリ</H2>
+</CENTER>
+
+<HR NOSHADE> 
+
+
+<P>
+ネーミングライブラリの使い方
+</P>
+
+<DL>
+<P>
+<DT>○パスについて
+<DD>
+パスはデリミタで幾つかに区切られる文字列であり、名称空間中のオブジェクト
+エントリ)やディレクトリを指し示す。本ライブラリでは、デリミタから始まる
+パスを絶対パス、デリミタから始まらないパスを相対パスとする。例えば、絶対
+パス :src に対して、:src:ozlib の相対パスは ozlib である(デリミタを:とす
+る)。あるパスに対して一つ上位のパスを親パスと呼ぶことにする。例えば、
+src:ozlib の親パスは :src である。また、親パスを持たないパスをルートパス
+と呼ぶことにする。例えば :src はルートパスであるが、:src:ozlib はルート
+パスではない。
+</P>
+
+<P>
+<DT>○ネーミング機能の実現方式の基本
+<DD.
+ネーミング機能は複数のネームサーバと一つのネームサービスで、名称空間
+ディレクトリの木構造)全体を管理する。各ネームサーバは名称空間の部分部分(
+木構造の部分木、そのトップディレクトリをブランチと呼ぶことにする)を管理し、
+ネームサービスがそれらをまとめている。
+</P>
+
+<P>
+<DT>○マルチネームサーバモード
+<DD>
+ネーミングライブラリはトランザクションライブラリを使用して構成されている。<BR>
+一つのネームサーバは、ユーザトランザクションリソースとしての
+NameServerTransactionResource セルとユーザトランザクションとしての
+NameServerTransaction セルという2セルのペアとして構成される。
+また、ネームサービスはユーザトランザクションリソースとしての
+SystemMapTransactionResource セルとして構成される。
+この他に、メンテナンスツールを使用する場合は MaintenunceTool セルが
+必要である。<BR>
+ネーミングライブラリへの指示はいずれかのNameServerTransactionセル
+のメソッドを呼び出すことによって行なう。メンテナンスツールを使用する場合は
+メンテナンスツールに対して命令を出す(メンテナンスツールの使い方のページを
+参照)ことによって行なう。NameServerTransactionResourceセルのメソッドも
+<A HREF="api.html">API マニュアル</A>には示してあるが、これらはシングルネームサーバモード用で
+あり、マルチネームサーバモード時に呼び出してはならない。
+</P>
+
+<P>
+<DT>○シングルネームサーバモード
+<DD>
+名称空間を一つのネームサービスと一つのネームサーバのみで管理することも
+出来る。この場合のネームサーバは NameServerTransactionResource セル一つ
+のみで構成される。<BR>
+メンテナンスツールを使用する場合は MaintenunceTool セルが必要である。<BR>
+ネーミングライブラリへの指示はいずれかのNameServerTransactionResourceセル
+のメソッドを呼び出すことによって行なう。メンテナンスツールを使用する場合は
+メンテナンスツールに対して命令を出す(メンテナンスツールの使い方のページを
+参照)ことによって行なう。
+</P>
+
+<P>
+<DT>○インストール
+<DD>
+トランザクションライブラリのResource.ozをネーミングライブラリのsrc下の
+Resource.ozに置き換えてインストールし直す。その後、ネーミングライブラリの
+lib下のファイルを $OZHOME/lib/JP/go/ipa/oz/user/lib_dist/name/ にコピーする。<BR>
+ネーミングライブラリのtest下のファイルはメンテナンスツールを使った
+ネーミングライブラリのテストである。oz -f test_single 等として実行する。
+</P>
+
+<P>
+<DT>○起動方法
+<DD>
+上述のようにネーミングライブラリはセルの集団として構成されるので、起動は
+エグゼキュータからこれらのセルを create し go することで行なわれる。
+</DL>
+</P>
+
+<P>
+<OL>
+<LI>SystemMapTransactionResource セルを以下のようにして起動する。
+<PRE>
+  create smtr user.lib_dist.name._SystemMapTransactionResource_cl smtr ":" ;
+  stop smtr; go smtr;
+</PRE>
+create の第3引数にはこのセル自身のGOL(smtrは例)を、第4引数にはデリミタ
+を渡す。尚、一般的にデリミタ及びパスは""で囲った方が安全である。
+<LI>NameServerTransactionResource セルを以下のようにして起動する。
+<PRE>
+  create nstr user.lib_dist.name._NameServerTransactionResource_cl nstr ":" ;
+  stop nstr; go nstr;
+</PRE>
+create の第3引数にはこのセル自身のGOL(nstrは例)を、第4引数にはデリミタ
+を渡す。
+<LI>NameServerTransaction セル以下のようにして起動する。<BR>
+シングルネームサーバモードの時はこのセルの起動は必要ない。
+<PRE>
+  create nst user.lib_dist.name._NameServerTransaction_cl nst nstr smtr;
+  stop nstA; go nstA;
+</PRE>
+create の第3引数にはこのセル自身のGOL(nstは例)を、第4引数にはこの
+NameServerTransaction セルとペアを組むNameServerTransactionResource セル
+のGOL(nstrは例)を、第5引数にはSystemMapTransactionResource セルの
+GOL(smtrは例)を渡す。
+<LI>マルチネームサーバモードの時は、上の2.と3.をネームサーバ数分だけ繰り返す。
+当然、GOLは重複してはいけない。
+<LI>メンテナンスツールを使う場合は、MaintenunceTool セルを次のようにして起動
+する。
+<PRE>
+    create mt user.lib_dist.name._MaintenunceTool_cl multi nstA ":" ;
+</PRE>
+第3引数には マルチネームサーバモードの場合には multi を、シングルネーム
+サーバモードの場合は single を渡す。第4引数にはカレントネームサーバ(メンテ
+ナンスツールの使い方のページ参照)を渡す。第4引数にはデリミタを渡す。
+<LI>マルチネームサーバモードの時は、各NameServerTransaction セルに対して
+addNameServer() メソッドを呼び出す。メンテナンスツール使用時は、
+メンテナンスツールから addNameServer 命令を出す(メンテナンスツールの
+使い方のページ参照)
+</OL>
+</P>
+
+<HR>
+
+<P>
+<UL>
+<LI><A HREF="maintenunce.html"><B>メンテナンスツールの使い方</B></A>
+<LI><A HREF="api.html"><B>API</B></A>
+</UL>
+</P>
+
+<HR NOSHADE>
+<ADDRESS>
+<B>
+<A HREF="../copyright-j.html">Copyright</A>(c) 1996-1998
+ IPA, ETL, AT21, FSIABC, FXIS, InArc, MRI, NUL, SBC, Sharp, TEC, TIS
+</B>
+</ADDRESS>
+
+<B>Contact: <A HREF="mailto:oz-admin@oz.ipa.go.jp">oz-admin@oz.ipa.go.jp</A></B>
+
+</BODY>
+</HTML>
